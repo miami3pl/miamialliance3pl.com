@@ -1,0 +1,2709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Admin Control Panel | Miami Alliance 3PL</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css?v=8">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTW0F25ZM1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-KTW0F25ZM1');
+    </script>
+    <script src="../js/analytics.js"></script>
+    <style>
+        /* Admin Badge */
+        .admin-badge {
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        /* Page Header */
+        .page-header-bar {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: white;
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-xl);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+        }
+        .page-header-bar h1 {
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--spacing-xs);
+        }
+        .page-header-bar p { opacity: 0.9; }
+
+        /* Stats Row */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+        }
+        .stat-card {
+            background: white;
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        .stat-card .icon { font-size: 1.8rem; margin-bottom: var(--spacing-xs); }
+        .stat-card .value {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+        .stat-card .label {
+            color: var(--color-gray-500);
+            font-size: var(--font-size-sm);
+            margin-top: 4px;
+        }
+        .stat-card.warning .value { color: #f59e0b; }
+        .stat-card.success .value { color: #10b981; }
+        .stat-card.danger .value { color: #ef4444; }
+        .stat-card.info .value { color: #3b82f6; }
+
+        /* Tabs */
+        .tabs-container {
+            display: flex;
+            gap: 4px;
+            margin-bottom: var(--spacing-xl);
+            overflow-x: auto;
+            border-bottom: 2px solid var(--color-gray-200);
+            padding-bottom: 0;
+        }
+        .tab-btn {
+            padding: var(--spacing-sm) var(--spacing-lg);
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--color-gray-500);
+            font-size: var(--font-size-sm);
+            white-space: nowrap;
+            transition: all 0.2s;
+            margin-bottom: -2px;
+        }
+        .tab-btn:hover { color: var(--color-primary); }
+        .tab-btn.active {
+            color: var(--color-primary);
+            border-bottom-color: var(--color-primary);
+        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        /* Section Cards */
+        .section-card {
+            background: white;
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
+        }
+        .section-card h2 {
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--color-gray-200);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Filters */
+        .filters-bar {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+        .filters-bar input, .filters-bar select {
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: 1px solid var(--color-gray-300);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-sm);
+        }
+        .filters-bar input { flex: 1; min-width: 200px; }
+
+        /* Request Cards */
+        .request-card {
+            background: white;
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+            transition: box-shadow 0.2s;
+        }
+        .request-card:hover { box-shadow: var(--shadow-md); }
+        .request-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-md);
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+        .request-id {
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+            color: var(--color-accent);
+            font-family: monospace;
+        }
+        .request-customer {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-600);
+        }
+        .request-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+        .detail-group h4 {
+            font-size: var(--font-size-xs);
+            color: var(--color-gray-500);
+            text-transform: uppercase;
+            margin-bottom: var(--spacing-xs);
+        }
+        .detail-group p { color: var(--color-gray-900); }
+        .request-actions {
+            display: flex;
+            gap: var(--spacing-sm);
+            padding-top: var(--spacing-md);
+            border-top: 1px solid var(--color-gray-200);
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* Status badges */
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .badge-pending { background: #fef3c7; color: #92400e; }
+        .badge-in_progress, .badge-in_transit, .badge-processing { background: #dbeafe; color: #1e40af; }
+        .badge-approved, .badge-completed, .badge-delivered { background: #d1fae5; color: #065f46; }
+        .badge-rejected, .badge-cancelled { background: #fee2e2; color: #991b1b; }
+        .badge-new { background: #fce7f3; color: #9d174d; }
+        .badge-scheduled { background: #e0e7ff; color: #3730a3; }
+
+        /* Status select */
+        .status-select {
+            padding: 8px 12px;
+            border: 2px solid var(--color-accent);
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: var(--font-size-sm);
+            background: white;
+            cursor: pointer;
+        }
+
+        /* Buttons */
+        .btn-action {
+            padding: 8px 16px;
+            border: none;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-weight: 500;
+            font-size: var(--font-size-sm);
+            transition: all 0.2s;
+        }
+        .btn-approve { background: #10b981; color: white; }
+        .btn-approve:hover { background: #059669; }
+        .btn-reject { background: #ef4444; color: white; }
+        .btn-reject:hover { background: #dc2626; }
+        .btn-view { background: var(--color-primary); color: white; }
+        .btn-view:hover { background: var(--color-primary-dark); }
+        .btn-secondary { background: var(--color-gray-100); color: var(--color-gray-700); border: 1px solid var(--color-gray-300); }
+        .btn-secondary:hover { background: var(--color-gray-200); }
+
+        /* Price Management */
+        .pricing-section {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            border: 1px solid var(--color-gray-200);
+        }
+        .pricing-section h3 {
+            font-size: var(--font-size-lg);
+            color: var(--color-gray-800);
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-md);
+        }
+        .price-card {
+            background: var(--color-gray-50);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+        }
+        .price-card h4 {
+            font-size: var(--font-size-md);
+            color: var(--color-gray-700);
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .price-inputs { display: grid; gap: var(--spacing-xs); }
+        .price-row {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        .price-row label {
+            flex: 1;
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-600);
+        }
+        .price-row input {
+            width: 120px;
+            padding: 8px 12px;
+            border: 1px solid var(--color-gray-300);
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-sm);
+            text-align: right;
+        }
+        .price-row input:focus {
+            border-color: var(--color-primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+        }
+        .price-row .unit {
+            font-size: var(--font-size-xs);
+            color: var(--color-gray-500);
+            width: 60px;
+        }
+        .btn-save-all {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: var(--font-size-md);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+        .btn-save-all:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-1px);
+        }
+
+        /* Customer Table */
+        .customer-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .customer-table th,
+        .customer-table td {
+            padding: var(--spacing-sm) var(--spacing-md);
+            text-align: left;
+            border-bottom: 1px solid var(--color-gray-200);
+            font-size: var(--font-size-sm);
+        }
+        .customer-table th {
+            background: var(--color-gray-50);
+            font-weight: 600;
+            color: var(--color-gray-700);
+            position: sticky;
+            top: 0;
+        }
+        .customer-table tr:hover { background: var(--color-gray-50); }
+        .customer-table .company-name {
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        /* Documents List */
+        .doc-card {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-sm);
+            transition: background 0.2s;
+        }
+        .doc-card:hover { background: var(--color-gray-50); }
+        .doc-icon { font-size: 2rem; }
+        .doc-info { flex: 1; }
+        .doc-info h4 { font-size: var(--font-size-md); color: var(--color-gray-900); }
+        .doc-info p { font-size: var(--font-size-sm); color: var(--color-gray-500); }
+        .doc-actions { display: flex; gap: var(--spacing-sm); }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: var(--spacing-2xl);
+            color: var(--color-gray-500);
+        }
+        .empty-state .icon { font-size: 3rem; margin-bottom: var(--spacing-md); }
+        .empty-state h3 { color: var(--color-gray-700); margin-bottom: var(--spacing-xs); }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #10b981;
+            color: white;
+            padding: 16px 24px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            display: none;
+            max-width: 400px;
+        }
+        .toast.error { background: #ef4444; }
+        .toast.show {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Loading spinner */
+        .loading-spinner {
+            display: flex;
+            justify-content: center;
+            padding: var(--spacing-xl);
+        }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--color-gray-200);
+            border-top: 4px solid var(--color-primary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Quick-edit pricing inline */
+        .services-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .services-table th,
+        .services-table td {
+            padding: var(--spacing-sm);
+            text-align: left;
+            border-bottom: 1px solid var(--color-gray-200);
+        }
+        .services-table th {
+            background: var(--color-gray-50);
+            font-weight: 600;
+            color: var(--color-gray-700);
+        }
+        .services-table input {
+            width: 100px;
+            padding: 6px 10px;
+            border: 1px solid var(--color-gray-300);
+            border-radius: var(--radius-sm);
+            text-align: right;
+        }
+        .services-table input:focus {
+            border-color: var(--color-primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+        }
+
+        /* Pickup/Delivery pricing */
+        .pickup-pricing {
+            background: #f0fdf4;
+            border: 2px solid #86efac;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+        .pickup-pricing h3 { color: #166534; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .tabs-container { gap: 0; }
+            .tab-btn { padding: var(--spacing-xs) var(--spacing-sm); font-size: var(--font-size-xs); }
+            .request-details { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        /* Detail modal overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: var(--spacing-lg);
+        }
+        .modal-overlay.active { display: flex; }
+        .modal-content {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            max-width: 700px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-lg);
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--color-gray-500);
+        }
+        .modal-close:hover { color: var(--color-gray-900); }
+
+        /* Notification dot on tabs */
+        .tab-btn .notif-count {
+            background: #ef4444;
+            color: white;
+            border-radius: 50%;
+            font-size: 0.65rem;
+            padding: 2px 6px;
+            margin-left: 6px;
+            font-weight: 700;
+        }
+
+        /* ======================== NEW REQUESTS TAB ======================== */
+        .new-request-item {
+            background: white;
+            border: 1px solid var(--color-gray-200);
+            border-left: 4px solid #f59e0b;
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md) var(--spacing-lg);
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+        .new-request-item:hover {
+            box-shadow: var(--shadow-md);
+            border-left-color: var(--color-primary);
+        }
+        .new-request-item .req-info {
+            flex: 1;
+            min-width: 200px;
+        }
+        .new-request-item .req-type-badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-right: 8px;
+        }
+        .req-type-badge.shipment { background: #dbeafe; color: #1e40af; }
+        .req-type-badge.pickup { background: #fef3c7; color: #92400e; }
+        .req-type-badge.quote { background: #e0e7ff; color: #3730a3; }
+        .new-request-item .req-customer {
+            font-weight: 600;
+            color: var(--color-gray-900);
+            font-size: var(--font-size-md);
+        }
+        .new-request-item .req-meta {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-500);
+            margin-top: 2px;
+        }
+        .new-request-item .req-actions {
+            display: flex;
+            gap: var(--spacing-sm);
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .new-request-item .req-cost {
+            font-weight: 700;
+            color: var(--color-primary);
+            font-size: var(--font-size-lg);
+            white-space: nowrap;
+        }
+        .btn-approve-sm {
+            padding: 6px 14px;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: #10b981;
+            color: white;
+        }
+        .btn-approve-sm:hover { background: #059669; }
+        .btn-reject-sm {
+            padding: 6px 14px;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: #ef4444;
+            color: white;
+        }
+        .btn-reject-sm:hover { background: #dc2626; }
+        .btn-price-sm {
+            padding: 6px 14px;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: #f59e0b;
+            color: white;
+        }
+        .btn-price-sm:hover { background: #d97706; }
+
+        /* Filter pills for new requests */
+        .filter-pills {
+            display: flex;
+            gap: 6px;
+            margin-bottom: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+        .filter-pill {
+            padding: 6px 16px;
+            border: 2px solid var(--color-gray-200);
+            border-radius: 20px;
+            background: white;
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            color: var(--color-gray-600);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .filter-pill:hover { border-color: var(--color-primary); color: var(--color-primary); }
+        .filter-pill.active { border-color: var(--color-primary); background: var(--color-primary); color: white; }
+
+        /* ======================== DAILY OPS LOG ======================== */
+        .daily-log-form {
+            background: var(--color-gray-50);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+        .daily-log-form h3 {
+            font-size: var(--font-size-lg);
+            color: var(--color-primary);
+            margin: 0 0 var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .daily-log-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+        .daily-log-grid .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .daily-log-grid label {
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            color: var(--color-gray-600);
+            text-transform: uppercase;
+        }
+        .daily-log-grid input,
+        .daily-log-grid select,
+        .daily-log-grid textarea {
+            padding: 8px 12px;
+            border: 1px solid var(--color-gray-300);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-sm);
+            font-family: inherit;
+        }
+        .daily-log-grid input:focus,
+        .daily-log-grid select:focus,
+        .daily-log-grid textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+        }
+        .btn-add-task {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: var(--font-size-sm);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-add-task:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-1px);
+        }
+        .daily-log-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .daily-log-table th,
+        .daily-log-table td {
+            padding: var(--spacing-sm) var(--spacing-md);
+            text-align: left;
+            border-bottom: 1px solid var(--color-gray-200);
+            font-size: var(--font-size-sm);
+        }
+        .daily-log-table th {
+            background: var(--color-gray-50);
+            font-weight: 600;
+            color: var(--color-gray-700);
+            position: sticky;
+            top: 0;
+        }
+        .daily-log-table tr:hover { background: var(--color-gray-50); }
+        .btn-delete-task {
+            background: none;
+            border: none;
+            color: #ef4444;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 4px;
+        }
+        .btn-delete-task:hover { color: #dc2626; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="logo">
+                <span class="logo-text">MIAMI ALLIANCE <span class="logo-accent">3PL</span></span>
+            </a>
+            <button class="nav-toggle sidebar-toggle" aria-label="Toggle sidebar">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><span id="user-name" class="nav-link">Welcome</span></li>
+                <li><a href="#" id="logout-btn" class="nav-link btn btn-outline">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="portal-layout">
+        <!-- Sidebar -->
+        <aside class="portal-sidebar">
+            <nav>
+                <a href="dashboard.html" class="portal-nav-item">
+                    <span>📊</span> <span>Dashboard</span>
+                </a>
+                <a href="shipments.html" class="portal-nav-item">
+                    <span>🚚</span> <span>Shipments</span>
+                </a>
+                <a href="pickups.html" class="portal-nav-item">
+                    <span aria-hidden="true">🏗️</span> <span>Pickup & Delivery</span>
+                </a>
+                <a href="tracking.html" class="portal-nav-item">
+                    <span>🔍</span> <span>Tracking</span>
+                </a>
+                <a href="inventory.html" class="portal-nav-item">
+                    <span>📦</span> <span>Inventory</span>
+                </a>
+                <a href="admin-billing.html" class="portal-nav-item">
+                    <span>💵</span> <span>Billing</span>
+                </a>
+                <div id="employee-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;">Staff</div>
+                    <a href="customers.html" class="portal-nav-item">
+                        <span>👥</span> <span>All Customers</span>
+                    </a>
+                    <a href="admin-shipments.html" class="portal-nav-item">
+                        <span>📋</span> <span>All Shipments</span>
+                    </a>
+                </div>
+                <div id="admin-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;">Admin</div>
+                    <a href="admin-panel.html" class="portal-nav-item active">
+                        <span>🛡️</span> <span>Admin Control Panel</span>
+                    </a>
+                    <a href="admin-pickups.html" class="portal-nav-item">
+                        <span aria-hidden="true">🚛</span> <span>All Pickup Requests</span>
+                    </a>
+                    <a href="admin-billing.html" class="portal-nav-item">
+                        <span>📝</span> <span>Activity Billing</span>
+                    </a>
+                    <a href="invoices.html" class="portal-nav-item">
+                        <span>💵</span> <span>Invoices</span>
+                    </a>
+                    <a href="storage-log.html" class="portal-nav-item">
+                        <span>📊</span> <span>Storage Log</span>
+                    </a>
+                    <a href="pricing.html" class="portal-nav-item">
+                        <span>💰</span> <span>Pricing</span>
+                    </a>
+                    <a href="settings.html" class="portal-nav-item">
+                        <span>⚙️</span> <span>Settings</span>
+                    </a>
+                    <a href="team.html" class="portal-nav-item">
+                        <span>👔</span> <span>Manage Team</span>
+                    </a>
+                    <a href="changelog.html" class="portal-nav-item">
+                        <span>📝</span> <span>Changelog</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="portal-main">
+            <!-- Page Header -->
+            <div class="page-header-bar">
+                <div>
+                    <h1>🛡️ Admin Control Panel</h1>
+                    <p>Full backend visibility. Manage prices, requests, customers, and documents.</p>
+                </div>
+                <div style="display: flex; gap: var(--spacing-sm);">
+                    <button class="btn-save-all" onclick="saveAllPricing()" id="btn-save-pricing" style="display: none;">
+                        💾 Save Pricing
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats Overview -->
+            <div class="stats-row">
+                <div class="stat-card warning" onclick="switchTab('shipments')">
+                    <div class="icon">📦</div>
+                    <div class="value" id="stat-pending-shipments">--</div>
+                    <div class="label">Pending Shipments</div>
+                </div>
+                <div class="stat-card info" onclick="switchTab('pickups')">
+                    <div class="icon">🚛</div>
+                    <div class="value" id="stat-pending-pickups">--</div>
+                    <div class="label">Pending Pickups</div>
+                </div>
+                <div class="stat-card" onclick="switchTab('quotes')">
+                    <div class="icon">📋</div>
+                    <div class="value" id="stat-pending-quotes">--</div>
+                    <div class="label">Quote Requests</div>
+                </div>
+                <div class="stat-card success" onclick="switchTab('customers')">
+                    <div class="icon">👥</div>
+                    <div class="value" id="stat-total-customers">--</div>
+                    <div class="label">Total Customers</div>
+                </div>
+                <div class="stat-card" onclick="switchTab('documents')">
+                    <div class="icon">📄</div>
+                    <div class="value" id="stat-total-docs">--</div>
+                    <div class="label">Documents</div>
+                </div>
+                <div class="stat-card danger" onclick="switchTab('pricing')">
+                    <div class="icon">💰</div>
+                    <div class="value" id="stat-services-priced">--</div>
+                    <div class="label">Services Priced</div>
+                </div>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="tabs-container">
+                <button class="tab-btn active" onclick="switchTab('new-requests')">🔔 New Requests <span class="notif-count" id="tab-new-requests-count" style="display:none">0</span></button>
+                <button class="tab-btn" onclick="switchTab('shipments')">📦 Shipments <span class="notif-count" id="tab-shipments-count" style="display:none">0</span></button>
+                <button class="tab-btn" onclick="switchTab('pickups')">🚛 Pickups <span class="notif-count" id="tab-pickups-count" style="display:none">0</span></button>
+                <button class="tab-btn" onclick="switchTab('quotes')">📋 Quotes <span class="notif-count" id="tab-quotes-count" style="display:none">0</span></button>
+                <button class="tab-btn" onclick="switchTab('daily-ops')">📝 Daily Ops Log</button>
+                <button class="tab-btn" onclick="switchTab('customers')">👥 Customers</button>
+                <button class="tab-btn" onclick="switchTab('documents')">📄 Documents</button>
+                <button class="tab-btn" onclick="switchTab('pricing')">💰 Pricing</button>
+            </div>
+
+            <!-- ======================== TAB: NEW REQUESTS (AGGREGATED) ======================== -->
+            <div id="tab-new-requests" class="tab-content active">
+                <div class="section-card">
+                    <h2>🔔 New Requests — Action Required</h2>
+                    <p style="color: var(--color-gray-600); margin-bottom: var(--spacing-md);">
+                        All pending shipment requests, pickup/delivery requests, and quote inquiries that need your attention.
+                    </p>
+                    <div class="filter-pills">
+                        <button class="filter-pill active" onclick="filterNewRequests('all')">All</button>
+                        <button class="filter-pill" onclick="filterNewRequests('shipment')">📦 Shipments</button>
+                        <button class="filter-pill" onclick="filterNewRequests('pickup')">🚛 Pickups</button>
+                        <button class="filter-pill" onclick="filterNewRequests('quote')">📋 Quotes</button>
+                    </div>
+                    <div id="new-requests-list">
+                        <div class="loading-spinner"><div class="spinner"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======================== TAB: DAILY OPS LOG ======================== -->
+            <div id="tab-daily-ops" class="tab-content">
+                <div class="section-card">
+                    <h2>📝 Daily Operations Log</h2>
+                    <p style="color: var(--color-gray-600); margin-bottom: var(--spacing-md);">
+                        Track daily tasks performed for each customer. Entries are saved to Firestore for billing and audit purposes.
+                    </p>
+
+                    <!-- Add Task Form -->
+                    <div class="daily-log-form">
+                        <h3>+ Add Task Entry</h3>
+                        <div class="daily-log-grid">
+                            <div class="form-group">
+                                <label>Customer</label>
+                                <select id="task-customer">
+                                    <option value="">Select customer...</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Task Description</label>
+                                <input type="text" id="task-description" placeholder="e.g., Unloaded container, labeled 50 units...">
+                            </div>
+                            <div class="form-group">
+                                <label>Date</label>
+                                <input type="date" id="task-date">
+                            </div>
+                            <div class="form-group">
+                                <label>Time Spent</label>
+                                <input type="text" id="task-time-spent" placeholder="e.g., 2 hours, 45 min">
+                            </div>
+                            <div class="form-group" style="grid-column: 1 / -1;">
+                                <label>Notes</label>
+                                <textarea id="task-notes" rows="2" placeholder="Any additional details, issues encountered, etc."></textarea>
+                            </div>
+                        </div>
+                        <button class="btn-add-task" onclick="addDailyTask()">+ Add Task Entry</button>
+                    </div>
+
+                    <!-- Tasks Table -->
+                    <div style="overflow-x: auto;">
+                        <table class="daily-log-table" id="daily-log-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Customer</th>
+                                    <th>Task Description</th>
+                                    <th>Time Spent</th>
+                                    <th>Notes</th>
+                                    <th>Logged By</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="daily-log-tbody">
+                                <tr><td colspan="7"><div class="loading-spinner"><div class="spinner"></div></div></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======================== TAB: SHIPMENT REQUESTS ======================== -->
+            <div id="tab-shipments" class="tab-content">
+                <div class="section-card">
+                    <h2>📦 All Shipment Requests</h2>
+                    <div class="filters-bar">
+                        <input type="text" id="shipment-search" placeholder="Search by tracking #, customer, or destination..." oninput="filterShipments()">
+                        <select id="shipment-status-filter" onchange="filterShipments()">
+                            <option value="">All Statuses</option>
+                            <option value="pending">Pending</option>
+                            <option value="in_transit">In Transit</option>
+                            <option value="delivered">Delivered</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                    <div id="shipments-list">
+                        <div class="loading-spinner"><div class="spinner"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======================== TAB: PICKUP REQUESTS ======================== -->
+            <div id="tab-pickups" class="tab-content">
+                <div class="section-card">
+                    <h2>🚛 All Pickup & Delivery Requests</h2>
+                    <div class="filters-bar">
+                        <input type="text" id="pickup-search" placeholder="Search by customer, address, or ID..." oninput="filterPickups()">
+                        <select id="pickup-status-filter" onchange="filterPickups()">
+                            <option value="">All Statuses</option>
+                            <option value="pending">Pending</option>
+                            <option value="scheduled">Scheduled</option>
+                            <option value="in_progress">In Progress</option>
+                            <option value="completed">Completed</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                    <div id="pickups-list">
+                        <div class="loading-spinner"><div class="spinner"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======================== TAB: QUOTE REQUESTS ======================== -->
+            <div id="tab-quotes" class="tab-content">
+                <div class="section-card">
+                    <h2>📋 Quote Requests</h2>
+                    <p style="color: var(--color-gray-600); margin-bottom: var(--spacing-md);">
+                        Quote requests submitted via the public quote calculator and contact forms.
+                    </p>
+                    <div class="filters-bar">
+                        <input type="text" id="quote-search" placeholder="Search by company, email, or service..." oninput="filterQuotes()">
+                        <select id="quote-status-filter" onchange="filterQuotes()">
+                            <option value="">All Statuses</option>
+                            <option value="new">New</option>
+                            <option value="in_progress">In Progress</option>
+                            <option value="quoted">Quoted</option>
+                            <option value="accepted">Accepted</option>
+                            <option value="declined">Declined</option>
+                        </select>
+                    </div>
+                    <div id="quotes-list">
+                        <div class="loading-spinner"><div class="spinner"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======================== TAB: CUSTOMERS ======================== -->
+            <div id="tab-customers" class="tab-content">
+                <div class="section-card">
+                    <h2>👥 Customer Overview</h2>
+                    <div class="filters-bar">
+                        <input type="text" id="customer-search" placeholder="Search by name, email, or company..." oninput="filterCustomers()">
+                        <select id="customer-role-filter" onchange="filterCustomers()">
+                            <option value="">All Roles</option>
+                            <option value="customer">Customer</option>
+                            <option value="employee">Employee</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                    <div style="overflow-x: auto;">
+                        <table class="customer-table" id="customer-table">
+                            <thead>
+                                <tr>
+                                    <th>Company</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Status</th>
+                                    <th>Role</th>
+                                    <th>Shipments</th>
+                                    <th>Joined</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="customers-tbody">
+                                <tr><td colspan="8"><div class="loading-spinner"><div class="spinner"></div></div></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======================== TAB: DOCUMENTS ======================== -->
+            <div id="tab-documents" class="tab-content">
+                <div class="section-card">
+                    <h2>📄 Uploaded Documents</h2>
+                    <p style="color: var(--color-gray-600); margin-bottom: var(--spacing-md);">
+                        Packing lists, commercial invoices, and BOL documents uploaded by customers and staff.
+                    </p>
+                    <div class="filters-bar">
+                        <input type="text" id="doc-search" placeholder="Search by filename, customer, or shipment..." oninput="filterDocuments()">
+                        <select id="doc-type-filter" onchange="filterDocuments()">
+                            <option value="">All Types</option>
+                            <option value="packing_list">Packing List</option>
+                            <option value="commercial_invoice">Commercial Invoice</option>
+                            <option value="bol">Bill of Lading</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div id="documents-list">
+                        <div class="loading-spinner"><div class="spinner"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======================== TAB: PRICE MANAGEMENT ======================== -->
+            <div id="tab-pricing" class="tab-content">
+                <div class="section-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-lg);">
+                        <h2 style="margin-bottom: 0; border-bottom: none; padding-bottom: 0;">💰 Price Management</h2>
+                        <button class="btn-save-all" onclick="saveAllPricing()">💾 Save All Changes</button>
+                    </div>
+                    <p style="color: var(--color-gray-600); margin-bottom: var(--spacing-lg);">
+                        Adjust service pricing below. Changes are saved to Firestore <code>settings/pricing</code> and apply globally. Use the dedicated
+                        <a href="pricing.html" style="color: var(--color-accent); font-weight: 600;">Pricing Management</a> page for full control including customer-specific rates.
+                    </p>
+
+                    <!-- Storage Rates -->
+                    <div class="pricing-section">
+                        <h3>📦 Storage Rates</h3>
+                        <div class="pricing-grid">
+                            <div class="price-card">
+                                <h4>🎯 Pallet Storage</h4>
+                                <div class="price-inputs">
+                                    <div class="price-row">
+                                        <label>Daily Rate</label>
+                                        <span>$</span>
+                                        <input type="number" step="0.01" min="0" id="p-pallet-daily" placeholder="0.00">
+                                        <span class="unit">/day</span>
+                                    </div>
+                                    <div class="price-row">
+                                        <label>Weekly Rate</label>
+                                        <span>$</span>
+                                        <input type="number" step="0.01" min="0" id="p-pallet-weekly" placeholder="0.00">
+                                        <span class="unit">/week</span>
+                                    </div>
+                                    <div class="price-row">
+                                        <label>Monthly Rate</label>
+                                        <span>$</span>
+                                        <input type="number" step="0.01" min="0" id="p-pallet-monthly" placeholder="0.00">
+                                        <span class="unit">/month</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="price-card">
+                                <h4>📦 Container Storage</h4>
+                                <div class="price-inputs">
+                                    <div class="price-row">
+                                        <label>20ft Container</label>
+                                        <span>$</span>
+                                        <input type="number" step="0.01" min="0" id="p-container-20ft" placeholder="0.00">
+                                        <span class="unit">/day</span>
+                                    </div>
+                                    <div class="price-row">
+                                        <label>40ft Container</label>
+                                        <span>$</span>
+                                        <input type="number" step="0.01" min="0" id="p-container-40ft" placeholder="0.00">
+                                        <span class="unit">/day</span>
+                                    </div>
+                                    <div class="price-row">
+                                        <label>40ft HC</label>
+                                        <span>$</span>
+                                        <input type="number" step="0.01" min="0" id="p-container-40hc" placeholder="0.00">
+                                        <span class="unit">/day</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Handling Services -->
+                    <div class="pricing-section">
+                        <h3>🏗️ Handling Services</h3>
+                        <table class="services-table">
+                            <thead>
+                                <tr>
+                                    <th>Service</th>
+                                    <th>Rate ($)</th>
+                                    <th>Unit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>📥 Receiving</td><td>$ <input type="number" step="0.01" id="p-svc-receiving" placeholder="0.00"></td><td>per pallet</td></tr>
+                                <tr><td>🏗️ Unloading</td><td>$ <input type="number" step="0.01" id="p-svc-unloading" placeholder="0.00"></td><td>per hour</td></tr>
+                                <tr><td>📤 Pick & Pack</td><td>$ <input type="number" step="0.01" id="p-svc-pickpack" placeholder="0.00"></td><td>per order</td></tr>
+                                <tr><td>🏷️ Labeling</td><td>$ <input type="number" step="0.01" id="p-svc-labeling" placeholder="0.00"></td><td>per item</td></tr>
+                                <tr><td>📦 Palletizing</td><td>$ <input type="number" step="0.01" id="p-svc-palletizing" placeholder="0.00"></td><td>per pallet</td></tr>
+                                <tr><td>🎁 Wrapping</td><td>$ <input type="number" step="0.01" id="p-svc-wrapping" placeholder="0.00"></td><td>per pallet</td></tr>
+                                <tr><td>🚚 Loading</td><td>$ <input type="number" step="0.01" id="p-svc-loading" placeholder="0.00"></td><td>per hour</td></tr>
+                                <tr><td>📊 Inventory Count</td><td>$ <input type="number" step="0.01" id="p-svc-inventory" placeholder="0.00"></td><td>per SKU</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pickup/Delivery Pricing -->
+                    <div class="pricing-section pickup-pricing">
+                        <h3>🚛 Pickup & Delivery Rates</h3>
+                        <div class="pricing-grid">
+                            <div class="price-card" style="background: white;">
+                                <h4>🏗️ Base Rate</h4>
+                                <div class="price-inputs">
+                                    <div class="price-row">
+                                        <label>1 Pallet (base)</label>
+                                        <span>$</span>
+                                        <input type="number" step="0.01" min="0" id="p-pickup-base" placeholder="120.00">
+                                        <span class="unit">flat</span>
+                                    </div>
+                                    <div class="price-row">
+                                        <label>Each Additional</label>
+                                        <span>$</span>
+                                        <input type="number" step="0.01" min="0" id="p-pickup-additional" placeholder="30.00">
+                                        <span class="unit">/pallet</span>
+                                    </div>
+                                    <div class="price-row">
+                                        <label>Max Pallets</label>
+                                        <input type="number" step="1" min="1" id="p-pickup-max" placeholder="8" style="width: 80px;">
+                                        <span class="unit">pallets</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="price-card" style="background: white;">
+                                <h4>⛽ Surcharges</h4>
+                                <div class="price-inputs">
+                                    <div class="price-row">
+                                        <label>Fuel Surcharge</label>
+                                        <input type="number" step="0.1" min="0" id="p-fuel-surcharge" placeholder="0.0">
+                                        <span class="unit">%</span>
+                                    </div>
+                                    <div class="price-row">
+                                        <label>Liftgate Fee</label>
+                                        <span>$</span>
+                                        <input type="number" step="0.01" min="0" id="p-liftgate" placeholder="0.00">
+                                        <span class="unit">flat</span>
+                                    </div>
+                                    <div class="price-row">
+                                        <label>Residential</label>
+                                        <span>$</span>
+                                        <input type="number" step="0.01" min="0" id="p-residential" placeholder="0.00">
+                                        <span class="unit">flat</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Services -->
+                    <div class="pricing-section">
+                        <h3>✨ Additional Services</h3>
+                        <table class="services-table">
+                            <thead>
+                                <tr>
+                                    <th>Service</th>
+                                    <th>Rate ($)</th>
+                                    <th>Unit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>🔧 Kitting</td><td>$ <input type="number" step="0.01" id="p-svc-kitting" placeholder="0.00"></td><td>per kit</td></tr>
+                                <tr><td>↩️ Returns Processing</td><td>$ <input type="number" step="0.01" id="p-svc-returns" placeholder="0.00"></td><td>per item</td></tr>
+                                <tr><td>📸 Photography</td><td>$ <input type="number" step="0.01" id="p-svc-photo" placeholder="0.00"></td><td>per SKU</td></tr>
+                                <tr><td>🎯 Quality Check</td><td>$ <input type="number" step="0.01" id="p-svc-qc" placeholder="0.00"></td><td>per item</td></tr>
+                                <tr><td>📝 Custom Packaging</td><td>$ <input type="number" step="0.01" id="p-svc-custom-pkg" placeholder="0.00"></td><td>per order</td></tr>
+                                <tr><td>🚨 Rush Handling</td><td>$ <input type="number" step="0.01" id="p-svc-rush" placeholder="0.00"></td><td>per order</td></tr>
+                                <tr><td>📄 Documentation</td><td>$ <input type="number" step="0.01" id="p-svc-docs" placeholder="0.00"></td><td>per shipment</td></tr>
+                                <tr><td>☎️ Dedicated Support</td><td>$ <input type="number" step="0.01" id="p-svc-support" placeholder="0.00"></td><td>per hour</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div style="text-align: center; padding: var(--spacing-lg);">
+                        <button class="btn-save-all" onclick="saveAllPricing()" style="margin: 0 auto;">💾 Save All Pricing Changes</button>
+                        <p style="color: var(--color-gray-500); font-size: var(--font-size-sm); margin-top: var(--spacing-sm);">
+                            For customer-specific rate overrides, visit the <a href="pricing.html" style="color: var(--color-accent);">full Pricing page</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Detail Modal -->
+    <div class="modal-overlay" id="detail-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Details</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getAuth, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+        import { getFirestore, doc, getDoc, setDoc, updateDoc, collection, getDocs, addDoc, query, orderBy, where, deleteDoc } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyA4wMm8-QmZGt3lJcZgTpbBa1W_TklrmRg",
+            authDomain: "miamialliance3pl.firebaseapp.com",
+            projectId: "miamialliance3pl",
+            storageBucket: "miamialliance3pl.firebasestorage.app",
+            messagingSenderId: "657614666588",
+            appId: "1:657614666588:web:20e50484fe5d90b5aa5f99",
+            measurementId: "G-KTW0F25ZM1"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        const FALLBACK_ADMIN_EMAILS = ['ceo@usglatam.com', 'yuri@megalopolisms.com'];
+
+        let currentUser = null;
+        let userRole = 'customer';
+
+        // Data stores
+        let allShipments = [];
+        let allPickups = [];
+        let allQuotes = [];
+        let allCustomers = [];
+        let allDocuments = [];
+        let allDailyTasks = [];
+        let usersMap = {}; // uid -> user data
+        let newRequestsFilter = 'all'; // filter for new requests tab
+
+        // ===== FILE SIZE FORMATTER =====
+        function formatFileSize(bytes) {
+            if (!bytes) return '';
+            if (bytes < 1024) return bytes + ' B';
+            if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+            return (bytes / 1048576).toFixed(1) + ' MB';
+        }
+        window.formatFileSize = formatFileSize;
+
+        function parseFirestoreDate(value) {
+            if (!value) return null;
+            if (value instanceof Date) return value;
+            if (typeof value.toDate === 'function') return value.toDate();
+            const parsed = new Date(value);
+            return Number.isNaN(parsed.getTime()) ? null : parsed;
+        }
+
+        // ===== TOAST =====
+        function showToast(message, isError = false) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = 'toast show' + (isError ? ' error' : '');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+        window.showToast = showToast;
+
+        // ===== TAB SWITCHING =====
+        window.switchTab = function(tabName) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            const tabEl = document.getElementById('tab-' + tabName);
+            if (tabEl) tabEl.classList.add('active');
+
+            // Find the matching button
+            const buttons = document.querySelectorAll('.tab-btn');
+            const tabMap = { 'new-requests': 0, shipments: 1, pickups: 2, quotes: 3, 'daily-ops': 4, customers: 5, documents: 6, pricing: 7 };
+            if (tabMap[tabName] !== undefined && buttons[tabMap[tabName]]) buttons[tabMap[tabName]].classList.add('active');
+
+            // Show/hide the pricing save button in header
+            document.getElementById('btn-save-pricing').style.display = (tabName === 'pricing') ? 'flex' : 'none';
+        };
+
+        // ===== MODAL =====
+        window.closeModal = function() {
+            document.getElementById('detail-modal').classList.remove('active');
+        };
+        function openModal(title, htmlContent) {
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-body').innerHTML = htmlContent;
+            document.getElementById('detail-modal').classList.add('active');
+        }
+        // Close modal on overlay click
+        document.getElementById('detail-modal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('detail-modal')) closeModal();
+        });
+
+        // ===== AUTH CHECK =====
+        onAuthStateChanged(auth, async (user) => {
+            if (!user) {
+                window.location.href = '../login.html';
+                return;
+            }
+
+            currentUser = user;
+
+            // Get user data
+            const userDoc = await getDoc(doc(db, 'users', user.uid));
+            let userData = userDoc.exists() ? userDoc.data() : null;
+
+            // Determine role
+            if (userData?.role) {
+                userRole = userData.role;
+            } else if (FALLBACK_ADMIN_EMAILS.map(e => e.toLowerCase()).includes(user.email.toLowerCase())) {
+                userRole = 'admin';
+            }
+
+            // Only admins can access this page
+            if (userRole !== 'admin') {
+                showToast('Access denied. Admin only.', true);
+                setTimeout(() => window.location.href = 'dashboard.html', 1500);
+                return;
+            }
+
+            // Update UI
+            document.getElementById('user-name').innerHTML = (userData?.name || user.email) + ' <span class="admin-badge">ADMIN</span>';
+            document.getElementById('employee-nav').style.display = 'block';
+            document.getElementById('admin-nav').style.display = 'block';
+
+            // Load all data
+            await loadAllData();
+        });
+
+        // ===== LOAD ALL DATA (resilient — each loader isolated) =====
+        async function loadAllData() {
+            const loaders = [
+                { name: 'users', fn: loadUsers },
+                { name: 'shipments', fn: loadShipments },
+                { name: 'pickups', fn: loadPickups },
+                { name: 'quotes', fn: loadQuotes },
+                { name: 'documents', fn: loadDocuments },
+                { name: 'pricing', fn: loadPricing },
+                { name: 'daily-tasks', fn: loadDailyTasks }
+            ];
+
+            const results = await Promise.allSettled(loaders.map(l => l.fn()));
+            const failures = [];
+            results.forEach((r, i) => {
+                if (r.status === 'rejected') {
+                    console.error(`Failed to load ${loaders[i].name}:`, r.reason);
+                    failures.push(loaders[i].name);
+                }
+            });
+
+            if (failures.length > 0) {
+                showToast('Some data failed to load: ' + failures.join(', ') + '. Other sections are still available.', true);
+            }
+
+            // Always attempt UI updates with whatever data loaded successfully
+            try { updateStats(); } catch (e) { console.warn('Stats update partial:', e.message); }
+            try { renderNewRequests(); } catch (e) { console.warn('Render requests partial:', e.message); }
+            try { populateCustomerDropdown(); } catch (e) { console.warn('Dropdown partial:', e.message); }
+        }
+
+        // ===== LOAD USERS =====
+        async function loadUsers() {
+            const usersSnap = await getDocs(collection(db, 'users'));
+            allCustomers = [];
+            usersMap = {};
+            usersSnap.forEach(d => {
+                const data = d.data();
+                usersMap[d.id] = data;
+                allCustomers.push({ id: d.id, ...data });
+            });
+            renderCustomers();
+        }
+
+        // ===== LOAD SHIPMENTS =====
+        async function loadShipments() {
+            try {
+                const q = query(collection(db, 'shipments'), orderBy('created_at', 'desc'));
+                const snap = await getDocs(q);
+                allShipments = [];
+                snap.forEach(d => allShipments.push({ id: d.id, ...d.data() }));
+            } catch (e) {
+                // Fallback without ordering if index not ready
+                const snap = await getDocs(collection(db, 'shipments'));
+                allShipments = [];
+                snap.forEach(d => allShipments.push({ id: d.id, ...d.data() }));
+                allShipments.sort((a, b) => (b.created_at || '').localeCompare(a.created_at || ''));
+            }
+            renderShipments();
+        }
+
+        // ===== LOAD PICKUPS =====
+        async function loadPickups() {
+            try {
+                const q = query(collection(db, 'pickup_requests'), orderBy('created_at', 'desc'));
+                const snap = await getDocs(q);
+                allPickups = [];
+                snap.forEach(d => allPickups.push({ id: d.id, ...d.data() }));
+            } catch (e) {
+                // Pickup requests collection may not exist yet
+                allPickups = [];
+            }
+            renderPickups();
+        }
+
+        // ===== LOAD QUOTES =====
+        async function loadQuotes() {
+            try {
+                const q = query(collection(db, 'quote_requests'), orderBy('created_at', 'desc'));
+                const snap = await getDocs(q);
+                allQuotes = [];
+                snap.forEach(d => allQuotes.push({ id: d.id, ...d.data() }));
+            } catch (e) {
+                // Quote requests collection may not exist yet
+                allQuotes = [];
+            }
+            renderQuotes();
+        }
+
+        // ===== LOAD DOCUMENTS =====
+        async function loadDocuments() {
+            try {
+                const q = query(collection(db, 'bol_documents'), orderBy('created_at', 'desc'));
+                const snap = await getDocs(q);
+                allDocuments = [];
+                snap.forEach(d => allDocuments.push({ id: d.id, ...d.data() }));
+            } catch (e) {
+                // BOL documents collection may not exist yet
+                allDocuments = [];
+            }
+
+            // Load from shipment_documents collection (packing lists & invoices stored by shipments.html)
+            try {
+                const shipDocsSnap = await getDocs(query(collection(db, 'shipment_documents'), orderBy('created_at', 'desc')));
+                shipDocsSnap.forEach(d => {
+                    const data = d.data();
+                    allDocuments.push({
+                        id: d.id,
+                        type: data.doc_type || 'other',
+                        filename: data.filename || 'Document',
+                        file_type: data.file_type,
+                        file_size: data.file_size,
+                        file_data: data.file_data || null,
+                        shipment_id: data.shipment_id,
+                        tracking_number: data.tracking_number,
+                        user_id: data.user_id,
+                        created_at: data.created_at
+                    });
+                });
+            } catch (e) {
+                // Shipment documents collection may not exist yet
+            }
+
+            // Also try to load from shipments with attached documents (inline metadata)
+            try {
+                const shipmentsSnap = await getDocs(collection(db, 'shipments'));
+                shipmentsSnap.forEach(d => {
+                    const data = d.data();
+                    // Handle packing_list object (new format from shipments.html)
+                    if (data.packing_list && data.packing_list.filename) {
+                        // Only add if not already loaded from shipment_documents collection
+                        const alreadyLoaded = allDocuments.some(doc => doc.shipment_id === d.id && doc.type === 'packing_list');
+                        if (!alreadyLoaded) {
+                            allDocuments.push({
+                                id: 'ship-pl-' + d.id,
+                                type: 'packing_list',
+                                filename: data.packing_list.filename || ('Packing List - ' + (data.tracking_number || d.id)),
+                                file_type: data.packing_list.file_type,
+                                file_size: data.packing_list.file_size,
+                                shipment_id: d.id,
+                                tracking_number: data.tracking_number,
+                                user_id: data.user_id,
+                                created_at: data.packing_list.uploaded_at || data.created_at
+                            });
+                        }
+                    }
+                    // Handle packing_list_url (legacy format)
+                    if (data.packing_list_url && !data.packing_list) {
+                        allDocuments.push({
+                            id: 'ship-pl-' + d.id,
+                            type: 'packing_list',
+                            filename: 'Packing List - ' + (data.tracking_number || d.id),
+                            url: data.packing_list_url,
+                            shipment_id: d.id,
+                            tracking_number: data.tracking_number,
+                            user_id: data.user_id,
+                            created_at: data.created_at
+                        });
+                    }
+                    // Handle commercial_invoice object (new format from shipments.html)
+                    if (data.commercial_invoice && data.commercial_invoice.filename) {
+                        const alreadyLoaded = allDocuments.some(doc => doc.shipment_id === d.id && doc.type === 'commercial_invoice');
+                        if (!alreadyLoaded) {
+                            allDocuments.push({
+                                id: 'ship-inv-' + d.id,
+                                type: 'commercial_invoice',
+                                filename: data.commercial_invoice.filename || ('Invoice - ' + (data.tracking_number || d.id)),
+                                file_type: data.commercial_invoice.file_type,
+                                file_size: data.commercial_invoice.file_size,
+                                shipment_id: d.id,
+                                tracking_number: data.tracking_number,
+                                user_id: data.user_id,
+                                created_at: data.commercial_invoice.uploaded_at || data.created_at
+                            });
+                        }
+                    }
+                    // Handle invoice_url (legacy format)
+                    if (data.invoice_url && !data.commercial_invoice) {
+                        allDocuments.push({
+                            id: 'ship-inv-' + d.id,
+                            type: 'commercial_invoice',
+                            filename: 'Invoice - ' + (data.tracking_number || d.id),
+                            url: data.invoice_url,
+                            shipment_id: d.id,
+                            tracking_number: data.tracking_number,
+                            user_id: data.user_id,
+                            created_at: data.created_at
+                        });
+                    }
+                    // Handle generic documents array
+                    if (data.documents && Array.isArray(data.documents)) {
+                        data.documents.forEach((docItem, idx) => {
+                            allDocuments.push({
+                                id: 'ship-doc-' + d.id + '-' + idx,
+                                type: docItem.type || 'other',
+                                filename: docItem.name || docItem.filename || ('Document ' + (idx + 1)),
+                                url: docItem.url,
+                                shipment_id: d.id,
+                                tracking_number: data.tracking_number,
+                                user_id: data.user_id,
+                                created_at: docItem.uploaded_at || data.created_at
+                            });
+                        });
+                    }
+                });
+            } catch (e) {
+                // Error loading shipment documents
+            }
+
+            renderDocuments();
+        }
+
+        // ===== UPDATE STATS =====
+        function updateStats() {
+            const pendingShipments = allShipments.filter(s => s.status === 'pending').length;
+            const pendingPickups = allPickups.filter(p => p.status === 'pending').length;
+            const pendingQuotes = allQuotes.filter(q => q.status === 'new' || q.status === 'pending').length;
+            const totalCustomers = allCustomers.filter(c => c.role === 'customer' || !c.role).length;
+            const totalDocs = allDocuments.length;
+
+            // Count priced services
+            let pricedCount = 0;
+            document.querySelectorAll('#tab-pricing input[type="number"]').forEach(input => {
+                if (input.value && parseFloat(input.value) > 0) pricedCount++;
+            });
+
+            document.getElementById('stat-pending-shipments').textContent = pendingShipments;
+            document.getElementById('stat-pending-pickups').textContent = pendingPickups;
+            document.getElementById('stat-pending-quotes').textContent = pendingQuotes;
+            document.getElementById('stat-total-customers').textContent = totalCustomers;
+            document.getElementById('stat-total-docs').textContent = totalDocs;
+            document.getElementById('stat-services-priced').textContent = pricedCount;
+
+            // Tab notification counts
+            const totalNewRequests = pendingShipments + pendingPickups + pendingQuotes;
+            if (totalNewRequests > 0) {
+                const el = document.getElementById('tab-new-requests-count');
+                el.textContent = totalNewRequests;
+                el.style.display = 'inline';
+            }
+            if (pendingShipments > 0) {
+                const el = document.getElementById('tab-shipments-count');
+                el.textContent = pendingShipments;
+                el.style.display = 'inline';
+            }
+            if (pendingPickups > 0) {
+                const el = document.getElementById('tab-pickups-count');
+                el.textContent = pendingPickups;
+                el.style.display = 'inline';
+            }
+            if (pendingQuotes > 0) {
+                const el = document.getElementById('tab-quotes-count');
+                el.textContent = pendingQuotes;
+                el.style.display = 'inline';
+            }
+        }
+
+        // ===== RENDER SHIPMENTS =====
+        function renderShipments(filtered) {
+            const list = filtered || allShipments;
+            const container = document.getElementById('shipments-list');
+
+            if (list.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="icon">📦</div>
+                        <h3>No shipment requests found</h3>
+                        <p>Shipments will appear here when customers create them.</p>
+                    </div>`;
+                return;
+            }
+
+            container.innerHTML = list.map(s => {
+                const user = usersMap[s.user_id] || {};
+                const customerName = user.company_name || user.name || user.email || 'Unknown';
+                const date = s.created_at ? new Date(s.created_at).toLocaleDateString() : 'N/A';
+                const dest = s.destination ? `${s.destination.city || ''}, ${s.destination.state || ''}` : 'N/A';
+                const origin = s.origin ? `${s.origin.city || ''}, ${s.origin.state || ''}` : 'N/A';
+
+                return `
+                    <div class="request-card">
+                        <div class="request-header">
+                            <div>
+                                <div class="request-id">${s.tracking_number || s.id.slice(0, 8)}</div>
+                                <div class="request-customer">👤 ${customerName}</div>
+                            </div>
+                            <span class="badge badge-${s.status || 'pending'}">${(s.status || 'pending').replace(/_/g, ' ').toUpperCase()}</span>
+                        </div>
+                        <div class="request-details">
+                            <div class="detail-group">
+                                <h4>Origin</h4>
+                                <p>${origin}</p>
+                            </div>
+                            <div class="detail-group">
+                                <h4>Destination</h4>
+                                <p>${dest}</p>
+                            </div>
+                            <div class="detail-group">
+                                <h4>Items</h4>
+                                <p>${s.package?.pallet_count || s.package?.quantity || s.pallets || s.items?.length || '?'} pallets</p>
+                            </div>
+                            <div class="detail-group">
+                                <h4>Date</h4>
+                                <p>${date}</p>
+                            </div>
+                        </div>
+                        <div class="request-actions">
+                            <select class="status-select" onchange="updateShipmentStatus('${s.id}', this.value)">
+                                <option value="pending" ${s.status === 'pending' ? 'selected' : ''}>Pending</option>
+                                <option value="processing" ${s.status === 'processing' ? 'selected' : ''}>Processing</option>
+                                <option value="in_transit" ${s.status === 'in_transit' ? 'selected' : ''}>In Transit</option>
+                                <option value="delivered" ${s.status === 'delivered' ? 'selected' : ''}>Delivered</option>
+                                <option value="cancelled" ${s.status === 'cancelled' ? 'selected' : ''}>Cancelled</option>
+                            </select>
+                            <button class="btn-action btn-view" onclick="viewShipmentDetail('${s.id}')">View Details</button>
+                            ${(s.quote_estimate?.total || s.estimated_cost) ? `<span style="color: var(--color-gray-600); font-size: var(--font-size-sm);">Est: $${parseFloat(s.quote_estimate?.total || s.estimated_cost).toFixed(2)}</span>` : ''}
+                        </div>
+                    </div>`;
+            }).join('');
+        }
+
+        window.filterShipments = function() {
+            const search = document.getElementById('shipment-search').value.toLowerCase();
+            const status = document.getElementById('shipment-status-filter').value;
+            const filtered = allShipments.filter(s => {
+                const user = usersMap[s.user_id] || {};
+                const text = `${s.tracking_number || ''} ${user.company_name || ''} ${user.name || ''} ${user.email || ''} ${s.destination?.city || ''} ${s.destination?.state || ''}`.toLowerCase();
+                const matchesSearch = !search || text.includes(search);
+                const matchesStatus = !status || s.status === status;
+                return matchesSearch && matchesStatus;
+            });
+            renderShipments(filtered);
+        };
+
+        window.updateShipmentStatus = async function(shipmentId, newStatus) {
+            try {
+                await updateDoc(doc(db, 'shipments', shipmentId), {
+                    status: newStatus,
+                    updated_at: new Date().toISOString(),
+                    updated_by: currentUser.email
+                });
+                // Update local data
+                const s = allShipments.find(s => s.id === shipmentId);
+                if (s) s.status = newStatus;
+                updateStats();
+                showToast(`Shipment status updated to ${newStatus}`);
+            } catch (e) {
+                console.error('Error updating shipment:', e);
+                showToast('Error updating status: ' + e.message, true);
+            }
+        };
+
+        // XSS prevention helper
+        function escapeHTML(str) {
+            if (str === null || str === undefined) return '';
+            return String(str).replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m]));
+        }
+
+        function getShipmentCargoItems(shipment) {
+            if (Array.isArray(shipment.cargo_items) && shipment.cargo_items.length) return shipment.cargo_items;
+            if (Array.isArray(shipment.tracking_cargo_items) && shipment.tracking_cargo_items.length) return shipment.tracking_cargo_items;
+            return [];
+        }
+
+        function inferShipmentPackageType(shipment, pkg, cargoItems) {
+            if (pkg.type) return pkg.type;
+            const serviceType = typeof shipment.service_type === 'string' ? shipment.service_type.toLowerCase() : '';
+            if (['pallet', 'box', 'mixed'].includes(serviceType)) return serviceType;
+            const palletItemCount = cargoItems.filter(item => item && item.type === 'pallet').length;
+            if (palletItemCount && palletItemCount === cargoItems.length) return 'pallet';
+            if (palletItemCount && cargoItems.length > palletItemCount) return 'mixed';
+            if (cargoItems.length) return 'box';
+            return '';
+        }
+
+        function normalizeShipmentDetail(shipment) {
+            const pkg = shipment.package || {};
+            const quote = shipment.quote_estimate || {};
+            const cargoItems = getShipmentCargoItems(shipment);
+            const packageType = inferShipmentPackageType(shipment, pkg, cargoItems);
+            const cargoCount = Number(shipment.cargo_count || cargoItems.length || 0);
+            const quantity = Number(pkg.quantity || cargoCount || shipment.pallet_count || shipment.pallets || 0);
+            const palletCount = Number(pkg.pallet_count || shipment.pallet_count || shipment.pallets || 0)
+                || (packageType === 'pallet' ? quantity : 0)
+                || cargoItems.filter(item => item && item.type === 'pallet').length;
+            const totalWeight = Number(pkg.total_weight || pkg.weight || shipment.weight || 0);
+            const estCost = Number(quote.total || shipment.estimated_cost || 0);
+            const shippingZone = shipment.shipping_zone || '';
+            const servicesList = [];
+            if (packageType) servicesList.push(packageType === 'pallet' ? 'Pallet' : packageType === 'mixed' ? 'Mixed Cargo' : 'Box/Package');
+            if (shippingZone) servicesList.push(shippingZone.replace(/_/g, ' '));
+            if (shipment.black_wrapping) servicesList.push('Black Wrapping');
+            if (shipment.fba_prep && shipment.fba_prep.enabled) {
+                const fbaServices = shipment.fba_prep.services ? Object.keys(shipment.fba_prep.services).map(k => k.replace(/_/g, ' ')) : [];
+                if (fbaServices.length) servicesList.push('FBA Prep: ' + fbaServices.join(', '));
+            }
+            const costBreakdown = [];
+            if (quote.storage) costBreakdown.push('Storage: $' + parseFloat(quote.storage).toFixed(2));
+            if (quote.handling) costBreakdown.push('Handling: $' + parseFloat(quote.handling).toFixed(2));
+            if (quote.pick_pack) costBreakdown.push('Pick & Pack: $' + parseFloat(quote.pick_pack).toFixed(2));
+            if (quote.shipping) costBreakdown.push('Shipping: $' + parseFloat(quote.shipping).toFixed(2));
+            if (quote.wrapping) costBreakdown.push('Wrapping: $' + parseFloat(quote.wrapping).toFixed(2));
+            if (quote.fba_prep) costBreakdown.push('FBA Prep: $' + parseFloat(quote.fba_prep).toFixed(2));
+            if (quote.dropship) costBreakdown.push('Dropship: $' + parseFloat(quote.dropship).toFixed(2));
+
+            return {
+                pkg,
+                quote,
+                packageType,
+                palletCount,
+                totalWeight,
+                estCost,
+                shippingZone,
+                summaryLabel: pkg.summary_label || (shipment.package_summary && shipment.package_summary.summary_label) || '',
+                servicesStr: servicesList.length ? servicesList.join(' | ') : 'Standard',
+                costBreakdown
+            };
+        }
+
+        window.viewShipmentDetail = function(shipmentId) {
+            const s = allShipments.find(s => s.id === shipmentId);
+            if (!s) return;
+            const user = usersMap[s.user_id] || {};
+            const detail = normalizeShipmentDetail(s);
+            const pkg = detail.pkg;
+            const html = `
+                <div style="display: grid; gap: var(--spacing-md);">
+                    <div><strong>Tracking #:</strong> ${escapeHTML(s.tracking_number || 'N/A')}</div>
+                    <div><strong>Customer:</strong> ${escapeHTML(user.company_name || user.name || user.email || 'Unknown')}</div>
+                    <div><strong>Status:</strong> <span class="badge badge-${escapeHTML(s.status)}">${escapeHTML((s.status || 'pending').replace(/_/g, ' '))}</span></div>
+                    <div><strong>Origin:</strong> ${s.origin ? `${escapeHTML(s.origin.street || s.origin.address || '')}, ${escapeHTML(s.origin.city || '')}, ${escapeHTML(s.origin.state || '')} ${escapeHTML(s.origin.zip || '')}` : 'N/A'}</div>
+                    <div><strong>Destination:</strong> ${s.destination ? `${escapeHTML(s.destination.street || s.destination.address || '')}, ${escapeHTML(s.destination.city || '')}, ${escapeHTML(s.destination.state || '')} ${escapeHTML(s.destination.zip || '')}` : 'N/A'}</div>
+                    <div><strong>Package Type:</strong> ${escapeHTML(detail.packageType || 'N/A')} ${detail.summaryLabel ? '(' + escapeHTML(detail.summaryLabel) + ')' : ''}</div>
+                    <div><strong>Pallets:</strong> ${detail.palletCount || 'N/A'}</div>
+                    <div><strong>Weight:</strong> ${detail.totalWeight ? escapeHTML(detail.totalWeight) + ' lbs' : 'N/A'}${pkg.billable_weight ? ' (Billable: ' + escapeHTML(pkg.billable_weight) + ' lbs)' : ''}</div>
+                    <div><strong>Dimensions:</strong> ${pkg.length ? escapeHTML(pkg.length) + '" × ' + escapeHTML(pkg.width) + '" × ' + escapeHTML(pkg.height) + '"' : 'N/A'}${pkg.cubic_ft ? ' (' + parseFloat(pkg.cubic_ft).toFixed(1) + ' cu ft)' : ''}</div>
+                    <div><strong>Shipping Zone:</strong> ${escapeHTML(detail.shippingZone ? detail.shippingZone.replace(/_/g, ' ') : 'N/A')}</div>
+                    <div><strong>Est. Cost:</strong> ${detail.estCost ? '<span style="color: var(--color-primary); font-weight: 700;">$' + parseFloat(detail.estCost).toFixed(2) + '</span>' : 'N/A'}</div>
+                    ${detail.costBreakdown.length ? '<div style="padding-left: 16px; font-size: 0.85rem; color: var(--color-gray-600);">' + detail.costBreakdown.join(' · ') + '</div>' : ''}
+                    <div><strong>Services:</strong> ${escapeHTML(detail.servicesStr)}</div>
+                    <div><strong>Notes:</strong> ${escapeHTML(s.notes || s.special_instructions || 'None')}</div>
+                    <div><strong>Created:</strong> ${s.created_at ? new Date(s.created_at).toLocaleString() : 'N/A'}</div>
+                    ${s.packing_list ? `<div><strong>Packing List:</strong> <span style="color: var(--color-accent); font-weight: 600;">📋 ${escapeHTML(s.packing_list.filename || 'Uploaded')}</span> <span style="color: var(--color-gray-500); font-size: 0.8rem;">(${s.packing_list.file_size ? formatFileSize(s.packing_list.file_size) : ''})</span></div>` : (s.packing_list_url ? `<div><strong>Packing List:</strong> <a href="${escapeHTML(s.packing_list_url)}" target="_blank" style="color: var(--color-accent);">View Document</a></div>` : '')}
+                    ${s.commercial_invoice ? `<div><strong>Invoice:</strong> <span style="color: var(--color-accent); font-weight: 600;">🧾 ${escapeHTML(s.commercial_invoice.filename || 'Uploaded')}</span> <span style="color: var(--color-gray-500); font-size: 0.8rem;">(${s.commercial_invoice.file_size ? formatFileSize(s.commercial_invoice.file_size) : ''})</span></div>` : (s.invoice_url ? `<div><strong>Invoice:</strong> <a href="${escapeHTML(s.invoice_url)}" target="_blank" style="color: var(--color-accent);">View Document</a></div>` : '')}
+                </div>`;
+            openModal('Shipment ' + escapeHTML(s.tracking_number || s.id.slice(0, 8)), html);
+        };
+
+        // ===== RENDER PICKUPS =====
+        function renderPickups(filtered) {
+            const list = filtered || allPickups;
+            const container = document.getElementById('pickups-list');
+
+            if (list.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="icon">🚛</div>
+                        <h3>No pickup requests found</h3>
+                        <p>Pickup and delivery requests will appear here.</p>
+                    </div>`;
+                return;
+            }
+
+            container.innerHTML = list.map(p => {
+                const user = usersMap[p.user_id] || {};
+                const customerName = user.company_name || user.name || p.customer_name || user.email || 'Unknown';
+                const date = p.created_at ? new Date(p.created_at).toLocaleDateString() : 'N/A';
+                const scheduledDate = p.scheduled_date || p.pickup_date || 'Not scheduled';
+                const pallets = p.pallets || p.pallet_count || '?';
+                const total = p.total_cost || p.estimated_cost || 0;
+
+                return `
+                    <div class="request-card">
+                        <div class="request-header">
+                            <div>
+                                <div class="request-id">${p.request_number || p.id.slice(0, 8)}</div>
+                                <div class="request-customer">👤 ${customerName}</div>
+                            </div>
+                            <span class="badge badge-${p.status || 'pending'}">${(p.status || 'pending').replace(/_/g, ' ').toUpperCase()}</span>
+                        </div>
+                        <div class="request-details">
+                            <div class="detail-group">
+                                <h4>Type</h4>
+                                <p>${(p.type || p.request_type || 'pickup').replace(/_/g, ' ')}</p>
+                            </div>
+                            <div class="detail-group">
+                                <h4>Pallets</h4>
+                                <p>${pallets} pallets</p>
+                            </div>
+                            <div class="detail-group">
+                                <h4>Scheduled</h4>
+                                <p>${scheduledDate}</p>
+                            </div>
+                            <div class="detail-group">
+                                <h4>Est. Cost</h4>
+                                <p>$${parseFloat(total).toFixed(2)}</p>
+                            </div>
+                        </div>
+                        <div class="request-actions">
+                            <select class="status-select" onchange="updatePickupStatus('${p.id}', this.value)">
+                                <option value="pending" ${p.status === 'pending' ? 'selected' : ''}>Pending</option>
+                                <option value="scheduled" ${p.status === 'scheduled' ? 'selected' : ''}>Scheduled</option>
+                                <option value="in_progress" ${p.status === 'in_progress' ? 'selected' : ''}>In Progress</option>
+                                <option value="completed" ${p.status === 'completed' ? 'selected' : ''}>Completed</option>
+                                <option value="cancelled" ${p.status === 'cancelled' ? 'selected' : ''}>Cancelled</option>
+                            </select>
+                            <button class="btn-action btn-view" onclick="viewPickupDetail('${p.id}')">View Details</button>
+                        </div>
+                    </div>`;
+            }).join('');
+        }
+
+        window.filterPickups = function() {
+            const search = document.getElementById('pickup-search').value.toLowerCase();
+            const status = document.getElementById('pickup-status-filter').value;
+            const filtered = allPickups.filter(p => {
+                const user = usersMap[p.user_id] || {};
+                const text = `${p.request_number || ''} ${user.company_name || ''} ${user.name || ''} ${user.email || ''} ${p.pickup_address || ''} ${p.delivery_address || ''}`.toLowerCase();
+                const matchesSearch = !search || text.includes(search);
+                const matchesStatus = !status || p.status === status;
+                return matchesSearch && matchesStatus;
+            });
+            renderPickups(filtered);
+        };
+
+        window.updatePickupStatus = async function(pickupId, newStatus) {
+            try {
+                await updateDoc(doc(db, 'pickup_requests', pickupId), {
+                    status: newStatus,
+                    updated_at: new Date().toISOString(),
+                    updated_by: currentUser.email
+                });
+                const p = allPickups.find(p => p.id === pickupId);
+                if (p) p.status = newStatus;
+                updateStats();
+                showToast(`Pickup status updated to ${newStatus}`);
+            } catch (e) {
+                console.error('Error updating pickup:', e);
+                showToast('Error updating status: ' + e.message, true);
+            }
+        };
+
+        window.viewPickupDetail = function(pickupId) {
+            const p = allPickups.find(p => p.id === pickupId);
+            if (!p) return;
+            const user = usersMap[p.user_id] || {};
+            const html = `
+                <div style="display: grid; gap: var(--spacing-md);">
+                    <div><strong>Request #:</strong> ${p.request_number || p.id.slice(0, 8)}</div>
+                    <div><strong>Customer:</strong> ${user.company_name || user.name || user.email || 'Unknown'}</div>
+                    <div><strong>Type:</strong> ${(p.type || p.request_type || 'pickup').replace(/_/g, ' ')}</div>
+                    <div><strong>Status:</strong> <span class="badge badge-${p.status}">${(p.status || 'pending').replace(/_/g, ' ')}</span></div>
+                    <div><strong>Pallets:</strong> ${p.pallets || p.pallet_count || 'N/A'}</div>
+                    <div><strong>Pickup Address:</strong> ${p.pickup_address || p.origin_address || 'N/A'}</div>
+                    <div><strong>Delivery Address:</strong> ${p.delivery_address || p.destination_address || 'N/A'}</div>
+                    <div><strong>Scheduled Date:</strong> ${p.scheduled_date || p.pickup_date || 'Not scheduled'}</div>
+                    <div><strong>Time Window:</strong> ${p.time_window || p.preferred_time || 'N/A'}</div>
+                    <div><strong>Est. Cost:</strong> $${parseFloat(p.total_cost || p.estimated_cost || 0).toFixed(2)}</div>
+                    <div><strong>Notes:</strong> ${p.notes || p.special_instructions || 'None'}</div>
+                    <div><strong>Created:</strong> ${p.created_at ? new Date(p.created_at).toLocaleString() : 'N/A'}</div>
+                </div>`;
+            openModal('Pickup Request ' + (p.request_number || p.id.slice(0, 8)), html);
+        };
+
+        // ===== RENDER QUOTES =====
+        function renderQuotes(filtered) {
+            const list = filtered || allQuotes;
+            const container = document.getElementById('quotes-list');
+
+            if (list.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="icon">📋</div>
+                        <h3>No quote requests yet</h3>
+                        <p>When customers request quotes via the website, they will appear here. You can also create quote requests from the
+                        <a href="../services.html" style="color: var(--color-accent);">services page</a> or
+                        <a href="../quote.html" style="color: var(--color-accent);">quote calculator</a>.</p>
+                    </div>`;
+                return;
+            }
+
+            container.innerHTML = list.map(q => {
+                const date = q.created_at ? new Date(q.created_at).toLocaleDateString() : 'N/A';
+
+                return `
+                    <div class="request-card">
+                        <div class="request-header">
+                            <div>
+                                <div class="request-id">${q.company_name || q.name || q.email || 'Quote'}</div>
+                                <div class="request-customer">📧 ${q.email || 'N/A'} | 📞 ${q.phone || 'N/A'}</div>
+                            </div>
+                            <span class="badge badge-${q.status || 'new'}">${(q.status || 'new').replace(/_/g, ' ').toUpperCase()}</span>
+                        </div>
+                        <div class="request-details">
+                            <div class="detail-group">
+                                <h4>Service Requested</h4>
+                                <p>${q.service_type || q.services || 'General inquiry'}</p>
+                            </div>
+                            <div class="detail-group">
+                                <h4>Pallets/Volume</h4>
+                                <p>${q.pallets || q.volume || 'N/A'}</p>
+                            </div>
+                            <div class="detail-group">
+                                <h4>Est. Budget</h4>
+                                <p>${q.estimated_budget ? '$' + q.estimated_budget : 'Not specified'}</p>
+                            </div>
+                            <div class="detail-group">
+                                <h4>Date</h4>
+                                <p>${date}</p>
+                            </div>
+                        </div>
+                        <div class="request-actions">
+                            <select class="status-select" onchange="updateQuoteStatus('${q.id}', this.value)">
+                                <option value="new" ${q.status === 'new' || !q.status ? 'selected' : ''}>New</option>
+                                <option value="in_progress" ${q.status === 'in_progress' ? 'selected' : ''}>In Progress</option>
+                                <option value="quoted" ${q.status === 'quoted' ? 'selected' : ''}>Quoted</option>
+                                <option value="accepted" ${q.status === 'accepted' ? 'selected' : ''}>Accepted</option>
+                                <option value="declined" ${q.status === 'declined' ? 'selected' : ''}>Declined</option>
+                            </select>
+                            <button class="btn-action btn-view" onclick="viewQuoteDetail('${q.id}')">View Details</button>
+                        </div>
+                    </div>`;
+            }).join('');
+        }
+
+        window.filterQuotes = function() {
+            const search = document.getElementById('quote-search').value.toLowerCase();
+            const status = document.getElementById('quote-status-filter').value;
+            const filtered = allQuotes.filter(q => {
+                const text = `${q.company_name || ''} ${q.name || ''} ${q.email || ''} ${q.service_type || ''} ${q.services || ''}`.toLowerCase();
+                const matchesSearch = !search || text.includes(search);
+                const matchesStatus = !status || (q.status || 'new') === status;
+                return matchesSearch && matchesStatus;
+            });
+            renderQuotes(filtered);
+        };
+
+        window.updateQuoteStatus = async function(quoteId, newStatus) {
+            try {
+                await updateDoc(doc(db, 'quote_requests', quoteId), {
+                    status: newStatus,
+                    updated_at: new Date().toISOString(),
+                    updated_by: currentUser.email
+                });
+                const q = allQuotes.find(q => q.id === quoteId);
+                if (q) q.status = newStatus;
+                updateStats();
+                showToast(`Quote status updated to ${newStatus}`);
+            } catch (e) {
+                console.error('Error updating quote:', e);
+                showToast('Error updating quote: ' + e.message, true);
+            }
+        };
+
+        window.viewQuoteDetail = function(quoteId) {
+            const q = allQuotes.find(q => q.id === quoteId);
+            if (!q) return;
+            const html = `
+                <div style="display: grid; gap: var(--spacing-md);">
+                    <div><strong>Company:</strong> ${q.company_name || 'N/A'}</div>
+                    <div><strong>Contact:</strong> ${q.name || 'N/A'}</div>
+                    <div><strong>Email:</strong> ${q.email || 'N/A'}</div>
+                    <div><strong>Phone:</strong> ${q.phone || 'N/A'}</div>
+                    <div><strong>Service:</strong> ${q.service_type || q.services || 'General'}</div>
+                    <div><strong>Pallets:</strong> ${q.pallets || 'N/A'}</div>
+                    <div><strong>Volume:</strong> ${q.volume || 'N/A'}</div>
+                    <div><strong>Frequency:</strong> ${q.frequency || 'N/A'}</div>
+                    <div><strong>Message:</strong> ${q.message || q.notes || 'None'}</div>
+                    <div><strong>Status:</strong> <span class="badge badge-${q.status || 'new'}">${(q.status || 'new').replace(/_/g, ' ')}</span></div>
+                    <div><strong>Created:</strong> ${q.created_at ? new Date(q.created_at).toLocaleString() : 'N/A'}</div>
+                </div>`;
+            openModal('Quote Request', html);
+        };
+
+        // ===== RENDER CUSTOMERS =====
+        function renderCustomers(filtered) {
+            const list = filtered || allCustomers;
+            const tbody = document.getElementById('customers-tbody');
+
+            if (list.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="8"><div class="empty-state"><div class="icon">👥</div><h3>No customers found</h3></div></td></tr>`;
+                return;
+            }
+
+            // Count shipments and inventory per user
+            const shipmentCounts = {};
+            const inventoryCounts = {};
+            allShipments.forEach(s => {
+                shipmentCounts[s.user_id] = (shipmentCounts[s.user_id] || 0) + 1;
+            });
+
+            tbody.innerHTML = list.map(c => {
+                const joinedDate = parseFirestoreDate(c.created_at);
+                const joined = joinedDate ? joinedDate.toLocaleDateString() : 'N/A';
+                const role = c.role || 'customer';
+                const shipCount = shipmentCounts[c.id] || 0;
+                const status = c.status || 'active';
+                const statusColor = status === 'active' ? '#10b981' : status === 'inactive' ? '#f59e0b' : '#ef4444';
+                const statusBg = status === 'active' ? '#dcfce7' : status === 'inactive' ? '#fef3c7' : '#fee2e2';
+
+                return `
+                    <tr>
+                        <td class="company-name">${c.company_name || '-'}</td>
+                        <td>${c.name || c.email || '-'}</td>
+                        <td>${c.email || '-'}</td>
+                        <td><span style="display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:12px;font-size:0.7rem;font-weight:700;background:${statusBg};color:${statusColor};text-transform:uppercase;"><span style="width:6px;height:6px;border-radius:50%;background:${statusColor};"></span>${status}</span></td>
+                        <td><span class="badge badge-${role === 'admin' ? 'approved' : role === 'employee' ? 'in_progress' : 'pending'}">${role}</span></td>
+                        <td>${shipCount}</td>
+                        <td>${joined}</td>
+                        <td>
+                            <button class="btn-action btn-view" onclick="viewCustomerDetail('${c.id}')" style="padding: 4px 12px; font-size: 0.75rem;">View</button>
+                        </td>
+                    </tr>`;
+            }).join('');
+        }
+
+        window.filterCustomers = function() {
+            const search = document.getElementById('customer-search').value.toLowerCase();
+            const role = document.getElementById('customer-role-filter').value;
+            const filtered = allCustomers.filter(c => {
+                const text = `${c.company_name || ''} ${c.name || ''} ${c.email || ''}`.toLowerCase();
+                const matchesSearch = !search || text.includes(search);
+                const matchesRole = !role || (c.role || 'customer') === role;
+                return matchesSearch && matchesRole;
+            });
+            renderCustomers(filtered);
+        };
+
+        window.viewCustomerDetail = function(customerId) {
+            const c = allCustomers.find(c => c.id === customerId);
+            if (!c) return;
+            const shipments = allShipments.filter(s => s.user_id === customerId);
+            const pickups = allPickups.filter(p => p.user_id === customerId);
+            const joinedAt = parseFirestoreDate(c.created_at);
+
+            let shipmentsHtml = '<p style="color: var(--color-gray-500);">No shipments</p>';
+            if (shipments.length > 0) {
+                shipmentsHtml = '<table style="width: 100%; font-size: 0.85rem; border-collapse: collapse;">' +
+                    '<tr style="border-bottom: 1px solid #eee;"><th style="text-align:left; padding: 4px 8px;">Tracking</th><th>Status</th><th>Date</th></tr>' +
+                    shipments.slice(0, 10).map(s => `
+                        <tr style="border-bottom: 1px solid #f3f3f3;">
+                            <td style="padding: 4px 8px; font-family: monospace; color: var(--color-accent);">${s.tracking_number || s.id.slice(0, 8)}</td>
+                            <td><span class="badge badge-${s.status}">${(s.status || '').replace(/_/g, ' ')}</span></td>
+                            <td>${s.created_at ? new Date(s.created_at).toLocaleDateString() : 'N/A'}</td>
+                        </tr>`).join('') +
+                    '</table>' +
+                    (shipments.length > 10 ? `<p style="color: var(--color-gray-500); font-size: 0.8rem; margin-top: 8px;">...and ${shipments.length - 10} more</p>` : '');
+            }
+
+            const html = `
+                <div style="display: grid; gap: var(--spacing-md);">
+                    <div><strong>Company:</strong> ${c.company_name || 'N/A'}</div>
+                    <div><strong>Name:</strong> ${c.name || c.email || 'N/A'}</div>
+                    <div><strong>Email:</strong> ${c.email || 'N/A'}</div>
+                    <div><strong>Phone:</strong> ${c.phone || 'N/A'}</div>
+                    <div><strong>Status:</strong> <span style="display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:12px;font-size:0.75rem;font-weight:700;background:${(c.status||'active')==='active'?'#dcfce7':(c.status||'active')==='inactive'?'#fef3c7':'#fee2e2'};color:${(c.status||'active')==='active'?'#166534':(c.status||'active')==='inactive'?'#92400e':'#991b1b'};text-transform:uppercase;">${c.status||'active'}</span></div>
+                    <div><strong>Role:</strong> <span class="badge badge-${(c.role || 'customer') === 'admin' ? 'approved' : 'pending'}">${c.role || 'customer'}</span></div>
+                    <div><strong>Joined:</strong> ${joinedAt ? joinedAt.toLocaleString() : 'N/A'}</div>
+                    <hr style="border: none; border-top: 1px solid var(--color-gray-200);">
+                    <div><strong>Shipments (${shipments.length}):</strong></div>
+                    ${shipmentsHtml}
+                    <div><strong>Pickup Requests:</strong> ${pickups.length}</div>
+                </div>`;
+            openModal('Customer: ' + (c.company_name || c.name || c.email), html);
+        };
+
+        // ===== RENDER DOCUMENTS =====
+        function renderDocuments(filtered) {
+            const list = filtered || allDocuments;
+            const container = document.getElementById('documents-list');
+
+            if (list.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="icon">📄</div>
+                        <h3>No documents uploaded yet</h3>
+                        <p>Packing lists, invoices, and BOL documents uploaded by customers will appear here.</p>
+                    </div>`;
+                return;
+            }
+
+            container.innerHTML = list.map(d => {
+                const user = usersMap[d.user_id] || {};
+                const customerName = user.company_name || user.name || user.email || 'Unknown';
+                const date = d.created_at ? new Date(d.created_at).toLocaleDateString() : 'N/A';
+                const typeLabel = {
+                    'packing_list': 'Packing List',
+                    'commercial_invoice': 'Commercial Invoice',
+                    'bol': 'Bill of Lading',
+                    'shipping_label': 'Shipping Label',
+                    'other': 'Other'
+                }[d.type] || d.type || 'Document';
+
+                const iconMap = {
+                    'packing_list': '📋',
+                    'commercial_invoice': '💵',
+                    'bol': '🚢',
+                    'shipping_label': '🏷️',
+                    'other': '📄'
+                };
+                const icon = iconMap[d.type] || '📄';
+
+                const viewUrl = d.url || d.file_data || null;
+                const sizeStr = d.file_size ? ` (${formatFileSize(d.file_size)})` : '';
+
+                return `
+                    <div class="doc-card">
+                        <div class="doc-icon">${icon}</div>
+                        <div class="doc-info">
+                            <h4>${d.filename || d.name || 'Untitled Document'}${sizeStr}</h4>
+                            <p>👤 ${customerName} | ${typeLabel} | ${d.tracking_number ? 'Shipment: ' + d.tracking_number + ' | ' : ''}${date}</p>
+                        </div>
+                        <div class="doc-actions">
+                            ${viewUrl ? `<a href="${viewUrl}" target="_blank" class="btn-action btn-view" style="text-decoration: none;">View</a>` : '<span style="color: var(--color-gray-400); font-size: 0.8rem;">Metadata only</span>'}
+                            ${viewUrl ? `<a href="${viewUrl}" download="${d.filename || 'document'}" class="btn-action btn-secondary" style="text-decoration: none;">Download</a>` : ''}
+                        </div>
+                    </div>`;
+            }).join('');
+        }
+
+        window.filterDocuments = function() {
+            const search = document.getElementById('doc-search').value.toLowerCase();
+            const type = document.getElementById('doc-type-filter').value;
+            const filtered = allDocuments.filter(d => {
+                const user = usersMap[d.user_id] || {};
+                const text = `${d.filename || ''} ${d.name || ''} ${user.company_name || ''} ${user.name || ''} ${d.tracking_number || ''}`.toLowerCase();
+                const matchesSearch = !search || text.includes(search);
+                const matchesType = !type || d.type === type;
+                return matchesSearch && matchesType;
+            });
+            renderDocuments(filtered);
+        };
+
+        // ===== PRICING: LOAD =====
+        async function loadPricing() {
+            try {
+                const pricingDoc = await getDoc(doc(db, 'settings', 'pricing'));
+                if (pricingDoc.exists()) {
+                    const data = pricingDoc.data();
+
+                    // Storage rates
+                    if (data.storage) {
+                        setVal('p-pallet-daily', data.storage.palletDaily);
+                        setVal('p-pallet-weekly', data.storage.palletWeekly);
+                        setVal('p-pallet-monthly', data.storage.palletMonthly);
+                        setVal('p-container-20ft', data.storage.container20ft);
+                        setVal('p-container-40ft', data.storage.container40ft);
+                        setVal('p-container-40hc', data.storage.container40hc);
+                    }
+
+                    // Handling services
+                    if (data.handling) {
+                        setVal('p-svc-receiving', data.handling.receiving);
+                        setVal('p-svc-unloading', data.handling.unloading);
+                        setVal('p-svc-pickpack', data.handling.pickpack);
+                        setVal('p-svc-labeling', data.handling.labeling);
+                        setVal('p-svc-palletizing', data.handling.palletizing);
+                        setVal('p-svc-wrapping', data.handling.wrapping);
+                        setVal('p-svc-loading', data.handling.loading);
+                        setVal('p-svc-inventory', data.handling.inventory);
+                    }
+
+                    // Additional services
+                    if (data.additional) {
+                        setVal('p-svc-kitting', data.additional.kitting);
+                        setVal('p-svc-returns', data.additional.returns);
+                        setVal('p-svc-photo', data.additional.photo);
+                        setVal('p-svc-qc', data.additional.qc);
+                        setVal('p-svc-custom-pkg', data.additional.customPkg);
+                        setVal('p-svc-rush', data.additional.rush);
+                        setVal('p-svc-docs', data.additional.docs);
+                        setVal('p-svc-support', data.additional.support);
+                    }
+
+                    // Freight
+                    if (data.freight) {
+                        setVal('p-fuel-surcharge', data.freight.fuelSurcharge);
+                        setVal('p-liftgate', data.freight.liftgateDelivery);
+                        setVal('p-residential', data.freight.residentialSurcharge);
+                    }
+
+                    // Pickup/Delivery rates
+                    if (data.pickup) {
+                        setVal('p-pickup-base', data.pickup.baseCost);
+                        setVal('p-pickup-additional', data.pickup.additionalPalletCost);
+                        setVal('p-pickup-max', data.pickup.maxPallets);
+                    }
+                }
+            } catch (e) {
+                console.error('Error loading pricing:', e);
+            }
+        }
+
+        function setVal(id, val) {
+            const el = document.getElementById(id);
+            if (el && val !== undefined && val !== null && val !== 0) el.value = val;
+        }
+
+        function getVal(id) {
+            const el = document.getElementById(id);
+            return el ? parseFloat(el.value) || 0 : 0;
+        }
+
+        // ===== PRICING: SAVE =====
+        window.saveAllPricing = async function() {
+            try {
+                // First read existing pricing data to preserve fields we don't manage here
+                let existingData = {};
+                try {
+                    const existingDoc = await getDoc(doc(db, 'settings', 'pricing'));
+                    if (existingDoc.exists()) existingData = existingDoc.data();
+                } catch (e) { /* first time - ok */ }
+
+                const pricingData = {
+                    ...existingData,
+                    storage: {
+                        ...(existingData.storage || {}),
+                        palletDaily: getVal('p-pallet-daily'),
+                        palletWeekly: getVal('p-pallet-weekly'),
+                        palletMonthly: getVal('p-pallet-monthly'),
+                        container20ft: getVal('p-container-20ft'),
+                        container40ft: getVal('p-container-40ft'),
+                        container40hc: getVal('p-container-40hc'),
+                    },
+                    handling: {
+                        ...(existingData.handling || {}),
+                        receiving: getVal('p-svc-receiving'),
+                        unloading: getVal('p-svc-unloading'),
+                        pickpack: getVal('p-svc-pickpack'),
+                        labeling: getVal('p-svc-labeling'),
+                        palletizing: getVal('p-svc-palletizing'),
+                        wrapping: getVal('p-svc-wrapping'),
+                        loading: getVal('p-svc-loading'),
+                        inventory: getVal('p-svc-inventory'),
+                    },
+                    additional: {
+                        ...(existingData.additional || {}),
+                        kitting: getVal('p-svc-kitting'),
+                        returns: getVal('p-svc-returns'),
+                        photo: getVal('p-svc-photo'),
+                        qc: getVal('p-svc-qc'),
+                        customPkg: getVal('p-svc-custom-pkg'),
+                        rush: getVal('p-svc-rush'),
+                        docs: getVal('p-svc-docs'),
+                        support: getVal('p-svc-support'),
+                    },
+                    freight: {
+                        ...(existingData.freight || {}),
+                        fuelSurcharge: getVal('p-fuel-surcharge'),
+                        liftgateDelivery: getVal('p-liftgate'),
+                        residentialSurcharge: getVal('p-residential'),
+                    },
+                    pickup: {
+                        ...(existingData.pickup || {}),
+                        baseCost: getVal('p-pickup-base'),
+                        additionalPalletCost: getVal('p-pickup-additional'),
+                        maxPallets: parseInt(document.getElementById('p-pickup-max').value) || 8,
+                    },
+                    updated_at: new Date().toISOString(),
+                    updated_by: currentUser.email
+                };
+
+                await setDoc(doc(db, 'settings', 'pricing'), pricingData);
+                showToast('All pricing saved successfully!');
+                updateStats();
+            } catch (e) {
+                console.error('Error saving pricing:', e);
+                showToast('Error saving pricing: ' + e.message, true);
+            }
+        };
+
+        // ============================================================
+        // NEW REQUESTS — AGGREGATED VIEW
+        // ============================================================
+        window.filterNewRequests = function(type) {
+            newRequestsFilter = type;
+            document.querySelectorAll('.filter-pill').forEach(pill => {
+                pill.classList.toggle('active', pill.textContent.toLowerCase().includes(type === 'all' ? 'all' : type));
+            });
+            // More robust: reset all, then activate the clicked one
+            document.querySelectorAll('.filter-pill').forEach(pill => pill.classList.remove('active'));
+            event.target.classList.add('active');
+            renderNewRequests();
+        };
+
+        function renderNewRequests() {
+            const container = document.getElementById('new-requests-list');
+            if (!container) return;
+
+            // Build unified list of pending/new requests
+            let items = [];
+
+            // Pending shipments
+            allShipments.filter(s => s.status === 'pending').forEach(s => {
+                const user = usersMap[s.user_id] || {};
+                items.push({
+                    type: 'shipment',
+                    id: s.id,
+                    customer: user.company_name || user.name || user.email || 'Unknown',
+                    description: `${s.package?.pallet_count || s.package?.quantity || s.pallets || '?'} pallets | ${s.destination?.city || 'Unknown'}, ${s.destination?.state || ''}`,
+                    cost: s.quote_estimate?.total || s.estimated_cost ? parseFloat(s.quote_estimate?.total || s.estimated_cost) : 0,
+                    date: s.created_at ? new Date(s.created_at) : new Date(),
+                    dateStr: s.created_at ? new Date(s.created_at).toLocaleDateString() : 'N/A',
+                    status: s.status || 'pending',
+                    raw: s
+                });
+            });
+
+            // Pending pickups
+            allPickups.filter(p => p.status === 'pending').forEach(p => {
+                const user = usersMap[p.user_id] || {};
+                const pallets = p.pallets || p.pallet_count || '?';
+                const total = p.admin_price_override != null ? p.admin_price_override : (p.pricing?.total || p.total_cost || p.estimated_cost || 0);
+                items.push({
+                    type: 'pickup',
+                    id: p.id,
+                    customer: user.company_name || user.name || p.user_name || user.email || 'Unknown',
+                    description: `${(p.service_type || p.type || 'pickup').replace(/_/g, ' ')} | ${pallets} pallets | ${p.schedule?.preferred_date || p.scheduled_date || 'No date'}`,
+                    cost: parseFloat(total) || 0,
+                    date: p.created_at ? new Date(p.created_at) : new Date(),
+                    dateStr: p.created_at ? new Date(p.created_at).toLocaleDateString() : 'N/A',
+                    status: p.status || 'pending',
+                    raw: p
+                });
+            });
+
+            // New/pending quotes
+            allQuotes.filter(q => q.status === 'new' || q.status === 'pending' || !q.status).forEach(q => {
+                items.push({
+                    type: 'quote',
+                    id: q.id,
+                    customer: q.company_name || q.name || q.email || 'Unknown',
+                    description: `${q.service_type || q.services || 'General inquiry'} | ${q.pallets || q.volume || '?'} pallets`,
+                    cost: q.estimated_budget ? parseFloat(q.estimated_budget) : 0,
+                    date: q.created_at ? new Date(q.created_at) : new Date(),
+                    dateStr: q.created_at ? new Date(q.created_at).toLocaleDateString() : 'N/A',
+                    status: q.status || 'new',
+                    raw: q
+                });
+            });
+
+            // Apply filter
+            if (newRequestsFilter !== 'all') {
+                items = items.filter(i => i.type === newRequestsFilter);
+            }
+
+            // Sort by date descending
+            items.sort((a, b) => b.date - a.date);
+
+            if (items.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="icon">✅</div>
+                        <h3>All caught up!</h3>
+                        <p>No pending requests at the moment. Great job!</p>
+                    </div>`;
+                return;
+            }
+
+            container.innerHTML = items.map(item => {
+                const typeIcon = item.type === 'shipment' ? '📦' : item.type === 'pickup' ? '🚛' : '📋';
+                const typeLabel = item.type.charAt(0).toUpperCase() + item.type.slice(1);
+                const costDisplay = item.cost > 0 ? `$${item.cost.toFixed(2)}` : 'TBD';
+
+                return `
+                    <div class="new-request-item">
+                        <div class="req-info">
+                            <div>
+                                <span class="req-type-badge ${item.type}">${typeIcon} ${typeLabel}</span>
+                                <span class="req-customer">${item.customer}</span>
+                            </div>
+                            <div class="req-meta">${item.description} | Submitted: ${item.dateStr}</div>
+                        </div>
+                        <div class="req-actions">
+                            <span class="req-cost">${costDisplay}</span>
+                            <button class="btn-approve-sm" onclick="approveNewRequest('${item.type}', '${item.id}')">Approve</button>
+                            <button class="btn-price-sm" onclick="viewNewRequest('${item.type}', '${item.id}')">View/Edit</button>
+                            <button class="btn-reject-sm" onclick="rejectNewRequest('${item.type}', '${item.id}')">Reject</button>
+                        </div>
+                    </div>`;
+            }).join('');
+        }
+
+        window.approveNewRequest = async function(type, id) {
+            try {
+                const collectionName = type === 'shipment' ? 'shipments' : type === 'pickup' ? 'pickup_requests' : 'quote_requests';
+                const newStatus = type === 'quote' ? 'in_progress' : type === 'pickup' ? 'confirmed' : 'processing';
+                await updateDoc(doc(db, collectionName, id), {
+                    status: newStatus,
+                    updated_at: new Date().toISOString(),
+                    updated_by: currentUser.email
+                });
+
+                // Update local data
+                if (type === 'shipment') {
+                    const s = allShipments.find(s => s.id === id);
+                    if (s) s.status = newStatus;
+                    renderShipments();
+                } else if (type === 'pickup') {
+                    const p = allPickups.find(p => p.id === id);
+                    if (p) p.status = newStatus;
+                    renderPickups();
+                } else {
+                    const q = allQuotes.find(q => q.id === id);
+                    if (q) q.status = newStatus;
+                    renderQuotes();
+                }
+
+                updateStats();
+                renderNewRequests();
+                showToast(`Request approved (${type} -> ${newStatus})`);
+            } catch (e) {
+                console.error('Error approving request:', e);
+                showToast('Error: ' + e.message, true);
+            }
+        };
+
+        window.rejectNewRequest = async function(type, id) {
+            if (!confirm('Are you sure you want to reject this request?')) return;
+            try {
+                const collectionName = type === 'shipment' ? 'shipments' : type === 'pickup' ? 'pickup_requests' : 'quote_requests';
+                const newStatus = type === 'quote' ? 'declined' : 'cancelled';
+                await updateDoc(doc(db, collectionName, id), {
+                    status: newStatus,
+                    updated_at: new Date().toISOString(),
+                    updated_by: currentUser.email
+                });
+
+                if (type === 'shipment') {
+                    const s = allShipments.find(s => s.id === id);
+                    if (s) s.status = newStatus;
+                    renderShipments();
+                } else if (type === 'pickup') {
+                    const p = allPickups.find(p => p.id === id);
+                    if (p) p.status = newStatus;
+                    renderPickups();
+                } else {
+                    const q = allQuotes.find(q => q.id === id);
+                    if (q) q.status = newStatus;
+                    renderQuotes();
+                }
+
+                updateStats();
+                renderNewRequests();
+                showToast(`Request rejected`);
+            } catch (e) {
+                console.error('Error rejecting request:', e);
+                showToast('Error: ' + e.message, true);
+            }
+        };
+
+        window.viewNewRequest = function(type, id) {
+            if (type === 'shipment') {
+                viewShipmentDetail(id);
+            } else if (type === 'pickup') {
+                viewPickupDetail(id);
+            } else {
+                viewQuoteDetail(id);
+            }
+        };
+
+        // ============================================================
+        // DAILY OPERATIONS LOG
+        // ============================================================
+        async function loadDailyTasks() {
+            try {
+                const q = query(collection(db, 'daily_tasks'), orderBy('task_date', 'desc'));
+                const snap = await getDocs(q);
+                allDailyTasks = [];
+                snap.forEach(d => allDailyTasks.push({ id: d.id, ...d.data() }));
+            } catch (e) {
+                // Fallback: collection may not exist yet
+                try {
+                    const snap = await getDocs(collection(db, 'daily_tasks'));
+                    allDailyTasks = [];
+                    snap.forEach(d => allDailyTasks.push({ id: d.id, ...d.data() }));
+                    allDailyTasks.sort((a, b) => (b.task_date || '').localeCompare(a.task_date || ''));
+                } catch (e2) {
+                    // Daily tasks collection may not exist yet
+                    allDailyTasks = [];
+                }
+            }
+            renderDailyTasks();
+        }
+
+        function populateCustomerDropdown() {
+            const select = document.getElementById('task-customer');
+            if (!select) return;
+
+            // Keep the first option
+            select.innerHTML = '<option value="">Select customer...</option>';
+
+            // Add customers sorted by company name
+            const customers = allCustomers
+                .filter(c => c.role === 'customer' || !c.role)
+                .sort((a, b) => (a.company_name || a.name || a.email || '').localeCompare(b.company_name || b.name || b.email || ''));
+
+            customers.forEach(c => {
+                const label = c.company_name ? `${c.company_name} (${c.name || c.email})` : (c.name || c.email || c.id);
+                const option = document.createElement('option');
+                option.value = c.id;
+                option.textContent = label;
+                select.appendChild(option);
+            });
+
+            // Set default date to today
+            const dateInput = document.getElementById('task-date');
+            if (dateInput) {
+                dateInput.value = new Date().toISOString().split('T')[0];
+            }
+        }
+
+        window.addDailyTask = async function() {
+            const customerId = document.getElementById('task-customer').value;
+            const description = document.getElementById('task-description').value.trim();
+            const taskDate = document.getElementById('task-date').value;
+            const timeSpent = document.getElementById('task-time-spent').value.trim();
+            const notes = document.getElementById('task-notes').value.trim();
+
+            if (!customerId) { showToast('Please select a customer', true); return; }
+            if (!description) { showToast('Please enter a task description', true); return; }
+            if (!taskDate) { showToast('Please select a date', true); return; }
+
+            const customer = allCustomers.find(c => c.id === customerId);
+            const customerName = customer ? (customer.company_name || customer.name || customer.email) : 'Unknown';
+
+            try {
+                const taskData = {
+                    customer_id: customerId,
+                    customer_name: customerName,
+                    description: description,
+                    task_date: taskDate,
+                    time_spent: timeSpent || null,
+                    notes: notes || null,
+                    logged_by: currentUser.email,
+                    created_at: new Date().toISOString()
+                };
+
+                const docRef = await addDoc(collection(db, 'daily_tasks'), taskData);
+
+                // Add to local array
+                allDailyTasks.unshift({ id: docRef.id, ...taskData });
+                renderDailyTasks();
+
+                // Reset form
+                document.getElementById('task-description').value = '';
+                document.getElementById('task-time-spent').value = '';
+                document.getElementById('task-notes').value = '';
+
+                showToast('Task logged successfully!');
+            } catch (e) {
+                console.error('Error adding daily task:', e);
+                showToast('Error saving task: ' + e.message, true);
+            }
+        };
+
+        window.deleteDailyTask = async function(taskId) {
+            if (!confirm('Delete this task entry?')) return;
+            try {
+                await deleteDoc(doc(db, 'daily_tasks', taskId));
+                allDailyTasks = allDailyTasks.filter(t => t.id !== taskId);
+                renderDailyTasks();
+                showToast('Task deleted');
+            } catch (e) {
+                console.error('Error deleting task:', e);
+                showToast('Error deleting task: ' + e.message, true);
+            }
+        };
+
+        function renderDailyTasks() {
+            const tbody = document.getElementById('daily-log-tbody');
+            if (!tbody) return;
+
+            if (allDailyTasks.length === 0) {
+                tbody.innerHTML = `
+                    <tr><td colspan="7">
+                        <div class="empty-state">
+                            <div class="icon">📝</div>
+                            <h3>No daily tasks logged yet</h3>
+                            <p>Use the form above to log tasks performed for customers.</p>
+                        </div>
+                    </td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = allDailyTasks.map(t => {
+                return `
+                    <tr>
+                        <td>${t.task_date || 'N/A'}</td>
+                        <td style="font-weight: 600; color: var(--color-primary);">${t.customer_name || 'Unknown'}</td>
+                        <td>${t.description || ''}</td>
+                        <td>${t.time_spent || '-'}</td>
+                        <td style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${(t.notes || '').replace(/"/g, '&quot;')}">${t.notes || '-'}</td>
+                        <td style="color: var(--color-gray-500);">${t.logged_by || '-'}</td>
+                        <td><button class="btn-delete-task" onclick="deleteDailyTask('${t.id}')" title="Delete">&#x2715;</button></td>
+                    </tr>`;
+            }).join('');
+        }
+
+        // ===== LOGOUT =====
+        document.getElementById('logout-btn').addEventListener('click', async (e) => {
+            e.preventDefault();
+            await signOut(auth);
+            window.location.href = '../login.html';
+        });
+
+        // ===== SIDEBAR TOGGLE =====
+        document.querySelector('.sidebar-toggle')?.addEventListener('click', () => {
+            document.querySelector('.portal-sidebar').classList.toggle('active');
+        });
+    </script>
+    <script src="../js/lang/es.js"></script>
+    <script src="../js/lang/pt-br.js"></script>
+    <script src="../js/lang/zh.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/main.js?v=3"></script>
+    <script src="../js/chat-widget.js"></script>
+</body>
+</html>

@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Contracts | Miami Alliance 3PL Portal</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0f172a">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css?v=8">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTW0F25ZM1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-KTW0F25ZM1');
+    </script>
+    <script src="../js/analytics.js"></script>
+
+    <style>
+        .page-header-bar {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: white;
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+        .page-header-bar h1 {
+            font-size: var(--font-size-2xl);
+            margin-bottom: 4px;
+        }
+        .page-header-bar p {
+            opacity: 0.85;
+        }
+
+        /* Contract cards grid */
+        .contracts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+        .contract-card {
+            background: white;
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            transition: box-shadow 0.2s, transform 0.2s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .contract-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+        .contract-card .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        .contract-card h3 {
+            font-size: var(--font-size-lg);
+            color: var(--color-gray-900);
+            margin-bottom: 4px;
+        }
+        .contract-card .card-desc {
+            color: var(--color-gray-500);
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.5;
+        }
+        .contract-card .card-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--color-accent);
+            font-weight: 600;
+            font-size: var(--font-size-sm);
+        }
+        .contract-card .card-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 3px 10px;
+            border-radius: var(--radius-full);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .badge-template {
+            background: #dbeafe;
+            color: #1d4ed8;
+        }
+        .badge-active {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+        .badge-pending {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        .badge-expired {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+
+        /* Info section */
+        .info-section {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+        .info-section h3 {
+            color: #166534;
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .info-section p {
+            color: #15803d;
+            font-size: var(--font-size-sm);
+            line-height: 1.6;
+        }
+        .info-section ul {
+            margin-top: var(--spacing-sm);
+            margin-left: var(--spacing-md);
+            color: #15803d;
+            font-size: var(--font-size-sm);
+        }
+        .info-section ul li {
+            margin-bottom: 4px;
+        }
+
+        /* Contracts table (admin view) */
+        .contracts-table-wrapper {
+            overflow-x: auto;
+            background: white;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-gray-200);
+        }
+        .contracts-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: var(--font-size-sm);
+        }
+        .contracts-table th {
+            background: var(--color-gray-50);
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            color: var(--color-gray-600);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--color-gray-200);
+            white-space: nowrap;
+        }
+        .contracts-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--color-gray-100);
+            color: var(--color-gray-700);
+        }
+        .contracts-table tr:hover {
+            background: var(--color-gray-50);
+        }
+        .contracts-table .status-pill {
+            padding: 3px 10px;
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+        .status-active { background: #dcfce7; color: #16a34a; }
+        .status-draft { background: #dbeafe; color: #1d4ed8; }
+        .status-pending { background: #fef3c7; color: #d97706; }
+        .status-expired { background: #fee2e2; color: #dc2626; }
+
+        .action-btn {
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            border: 1px solid var(--color-gray-200);
+            background: white;
+            cursor: pointer;
+            transition: all 0.15s;
+            margin-right: 4px;
+        }
+        .action-btn:hover {
+            background: var(--color-gray-50);
+            border-color: var(--color-gray-300);
+        }
+        .action-btn.primary {
+            background: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+        }
+        .action-btn.primary:hover {
+            background: var(--color-primary-dark);
+        }
+
+        /* Admin section */
+        .admin-contracts-section {
+            display: none;
+            margin-top: var(--spacing-xl);
+        }
+        .admin-contracts-section h2 {
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--spacing-md);
+            color: var(--color-gray-900);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: var(--spacing-2xl);
+            color: var(--color-gray-500);
+        }
+        .empty-state .empty-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        /* Quick stats */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+        }
+        .stat-card {
+            background: white;
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            text-align: center;
+        }
+        .stat-card .stat-value {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+        .stat-card .stat-label {
+            font-size: 0.75rem;
+            color: var(--color-gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-box {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .modal-box h3 {
+            margin-bottom: var(--spacing-md);
+        }
+        .modal-box .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+        .modal-box label {
+            display: block;
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            color: var(--color-gray-600);
+            margin-bottom: 4px;
+        }
+        .modal-box input, .modal-box select, .modal-box textarea {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-sm);
+            font-family: inherit;
+        }
+        .modal-box .btn-row {
+            display: flex;
+            gap: 8px;
+            justify-content: flex-end;
+            margin-top: var(--spacing-lg);
+        }
+
+        @media (max-width: 768px) {
+            .contracts-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-bar {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="logo">
+                <span class="logo-text">MIAMI ALLIANCE <span class="logo-accent">3PL</span></span>
+            </a>
+            <button class="nav-toggle sidebar-toggle" aria-label="Toggle sidebar">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><span id="user-name" class="nav-link">Welcome</span></li>
+                <li><a href="#" id="logout-btn" class="nav-link btn btn-outline">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="portal-layout">
+        <!-- Sidebar -->
+        <aside class="portal-sidebar">
+            <nav>
+                <a href="dashboard.html" class="portal-nav-item"><span>📊</span> <span>Dashboard</span></a>
+                <a href="shipments.html" class="portal-nav-item"><span>🚚</span> <span>Shipments</span></a>
+                <a href="pickups.html" class="portal-nav-item"><span>🏗️</span> <span>Pickup & Delivery</span></a>
+                <a href="tracking.html" class="portal-nav-item"><span>🔍</span> <span>Tracking</span></a>
+                <a href="inventory.html" class="portal-nav-item"><span>📦</span> <span>Inventory</span></a>
+                <a href="admin-billing.html" class="portal-nav-item"><span>💵</span> <span>Billing</span></a>
+                <a href="contracts.html" class="portal-nav-item active"><span>📄</span> <span>Contracts</span></a>
+                <div id="employee-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;">Staff</div>
+                    <a href="customers.html" class="portal-nav-item"><span>👥</span> <span>All Customers</span></a>
+                    <a href="admin-shipments.html" class="portal-nav-item"><span>📋</span> <span>All Shipments</span></a>
+                </div>
+                <div id="admin-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;">Admin</div>
+                    <a href="admin-pickups.html" class="portal-nav-item"><span>🚛</span> <span>All Pickup Requests</span></a>
+                    <a href="admin-billing.html" class="portal-nav-item"><span>📝</span> <span>Activity Billing</span></a>
+                    <a href="invoices.html" class="portal-nav-item"><span>💵</span> <span>Invoices</span></a>
+                    <a href="storage-log.html" class="portal-nav-item"><span>📊</span> <span>Storage Log</span></a>
+                    <a href="pricing.html" class="portal-nav-item"><span>💰</span> <span>Pricing</span></a>
+                    <a href="settings.html" class="portal-nav-item"><span>⚙️</span> <span>Settings</span></a>
+                    <a href="team.html" class="portal-nav-item"><span>👔</span> <span>Manage Team</span></a>
+                    <a href="changelog.html" class="portal-nav-item"><span>📝</span> <span>Changelog</span></a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="portal-main">
+            <!-- Header -->
+            <div class="page-header-bar">
+                <h1>📄 Contracts & Agreements</h1>
+                <p>Manage your warehouse service agreements with Miami Alliance 3PL</p>
+            </div>
+
+            <!-- Customer View: My Contract -->
+            <div id="customer-section">
+                <!-- Info Banner -->
+                <div class="info-section">
+                    <h3>About Your Warehouse Services Agreement</h3>
+                    <p>
+                        Your contract with Miami Alliance 3PL outlines the services we provide, pricing, and the terms governing our partnership.
+                        Below you can view and download your current agreement, or request a new contract if you are a new client.
+                    </p>
+                    <ul>
+                        <li>Contracts cover: warehousing, fulfillment, inventory management, pickup/delivery, and more</li>
+                        <li>Pricing is based on a customized Rate Card specific to your account</li>
+                        <li>Contracts auto-renew unless 60-day written notice is given</li>
+                        <li>Questions? Contact us at <strong>contact@miamialliance3pl.com</strong> or <strong>(786) 873-8819</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Contract Cards -->
+                <div class="contracts-grid">
+                    <!-- Active contract (loaded from Firestore if exists) -->
+                    <div id="active-contract-card" class="contract-card" style="display:none;" onclick="viewMyContract()">
+                        <span class="card-badge badge-active">Active</span>
+                        <div class="card-icon">✅</div>
+                        <h3 id="my-contract-title">Warehouse Services Agreement</h3>
+                        <div class="card-desc" id="my-contract-desc">Loading...</div>
+                        <div class="card-action">View Contract →</div>
+                    </div>
+
+                    <!-- New contract template -->
+                    <div class="contract-card" onclick="window.open('../contract-template.html', '_blank')">
+                        <span class="card-badge badge-template">Template</span>
+                        <div class="card-icon">📝</div>
+                        <h3>New Agreement Template</h3>
+                        <div class="card-desc">
+                            View, fill in, and print the standard Warehouse Services Agreement template.
+                            Pre-filled with Miami Alliance 3PL details. Editable fields for your company information.
+                        </div>
+                        <div class="card-action">Open Template →</div>
+                    </div>
+
+                    <!-- Download blank PDF -->
+                    <div class="contract-card" onclick="printBlankContract()">
+                        <div class="card-icon">🖨️</div>
+                        <h3>Print Blank Contract</h3>
+                        <div class="card-desc">
+                            Open the contract template and print it directly to paper or save as PDF for offline completion and signing.
+                        </div>
+                        <div class="card-action">Print / Download PDF →</div>
+                    </div>
+
+                    <!-- Request new contract -->
+                    <div class="contract-card" onclick="openRequestModal()">
+                        <span class="card-badge badge-pending">New</span>
+                        <div class="card-icon">📬</div>
+                        <h3>Request Custom Agreement</h3>
+                        <div class="card-desc">
+                            Need a custom contract with specific terms? Submit a request and our team will prepare a tailored agreement for your needs.
+                        </div>
+                        <div class="card-action">Request Contract →</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admin View: All Contracts -->
+            <div id="admin-contracts-section" class="admin-contracts-section">
+                <h2>All Client Contracts</h2>
+
+                <!-- Stats bar -->
+                <div class="stats-bar" id="contract-stats">
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-active">0</div>
+                        <div class="stat-label">Active</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-pending">0</div>
+                        <div class="stat-label">Pending</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-expired">0</div>
+                        <div class="stat-label">Expired</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-total">0</div>
+                        <div class="stat-label">Total</div>
+                    </div>
+                </div>
+
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: var(--spacing-md); flex-wrap: wrap; gap: 8px;">
+                    <div>
+                        <select id="filter-status" style="padding:6px 12px; border:1px solid var(--color-gray-200); border-radius:var(--radius-sm); font-size:var(--font-size-sm);">
+                            <option value="all">All Statuses</option>
+                            <option value="active">Active</option>
+                            <option value="pending">Pending Signature</option>
+                            <option value="draft">Draft</option>
+                            <option value="expired">Expired</option>
+                        </select>
+                    </div>
+                    <button class="action-btn primary" onclick="openNewContractModal()">+ New Contract</button>
+                </div>
+
+                <div class="contracts-table-wrapper">
+                    <table class="contracts-table">
+                        <thead>
+                            <tr>
+                                <th>Contract #</th>
+                                <th>Client</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Status</th>
+                                <th>Monthly Min</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contracts-tbody">
+                            <tr><td colspan="7" class="empty-state">Loading contracts...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Request Contract Modal -->
+    <div class="modal-overlay" id="request-modal">
+        <div class="modal-box">
+            <h3>📬 Request Custom Agreement</h3>
+            <p style="color: var(--color-gray-500); font-size: var(--font-size-sm); margin-bottom: var(--spacing-md);">
+                Our team will review your requirements and send you a tailored contract within 1-2 business days.
+            </p>
+            <div class="form-group">
+                <label>Company Name</label>
+                <input type="text" id="req-company" placeholder="Your company name" />
+            </div>
+            <div class="form-group">
+                <label>Contact Name</label>
+                <input type="text" id="req-contact" placeholder="Your name" />
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="req-email" placeholder="your@email.com" />
+            </div>
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="tel" id="req-phone" placeholder="(XXX) XXX-XXXX" />
+            </div>
+            <div class="form-group">
+                <label>Services Needed</label>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-size: var(--font-size-sm);">
+                    <label style="font-weight: 400;"><input type="checkbox" checked /> Warehousing</label>
+                    <label style="font-weight: 400;"><input type="checkbox" checked /> Fulfillment</label>
+                    <label style="font-weight: 400;"><input type="checkbox" /> Pickup/Delivery</label>
+                    <label style="font-weight: 400;"><input type="checkbox" /> Black Wrapping</label>
+                    <label style="font-weight: 400;"><input type="checkbox" /> Import Services</label>
+                    <label style="font-weight: 400;"><input type="checkbox" /> Kitting/Assembly</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Estimated Monthly Volume</label>
+                <select id="req-volume">
+                    <option value="">Select volume range...</option>
+                    <option value="1-10">1-10 pallets/month</option>
+                    <option value="11-50">11-50 pallets/month</option>
+                    <option value="51-100">51-100 pallets/month</option>
+                    <option value="100+">100+ pallets/month</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Additional Notes</label>
+                <textarea id="req-notes" rows="3" placeholder="Special requirements, product types, temperature needs, etc."></textarea>
+            </div>
+            <div class="btn-row">
+                <button class="action-btn" onclick="closeRequestModal()">Cancel</button>
+                <button class="action-btn primary" onclick="submitContractRequest()">Submit Request</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin: New Contract Modal -->
+    <div class="modal-overlay" id="new-contract-modal">
+        <div class="modal-box">
+            <h3>+ Create New Contract</h3>
+            <div class="form-group">
+                <label>Client (Select from Customers)</label>
+                <select id="new-client-select">
+                    <option value="">Select client...</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Contract Number</label>
+                <input type="text" id="new-contract-num" placeholder="MA3PL-2026-XXXX" />
+            </div>
+            <div class="form-group">
+                <label>Start Date</label>
+                <input type="date" id="new-start-date" />
+            </div>
+            <div class="form-group">
+                <label>Term (months)</label>
+                <select id="new-term">
+                    <option value="1">1 month (Month-to-Month)</option>
+                    <option value="6">6 months</option>
+                    <option value="12" selected>12 months</option>
+                    <option value="24">24 months</option>
+                    <option value="36">36 months</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Monthly Minimum ($)</label>
+                <input type="number" id="new-monthly-min" placeholder="500" value="500" />
+            </div>
+            <div class="form-group">
+                <label>Status</label>
+                <select id="new-status">
+                    <option value="draft">Draft</option>
+                    <option value="pending">Pending Signature</option>
+                    <option value="active">Active</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Notes</label>
+                <textarea id="new-notes" rows="2" placeholder="Internal notes..."></textarea>
+            </div>
+            <div class="btn-row">
+                <button class="action-btn" onclick="closeNewContractModal()">Cancel</button>
+                <button class="action-btn primary" onclick="createContract()">Create Contract</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form Validation Module -->
+    <script src="../js/form-validation.js"></script>
+    <script src="../js/lang/es.js"></script>
+    <script src="../js/lang/pt-br.js"></script>
+    <script src="../js/lang/zh.js"></script>
+    <script src="../js/i18n.js"></script>
+
+    <!-- Toast helper for accessible notifications -->
+    <script>
+        function showPortalToast(message, type) {
+            var toast = document.createElement('div');
+            toast.setAttribute('role', 'status');
+            toast.setAttribute('aria-live', 'polite');
+            toast.style.cssText = 'position:fixed;bottom:24px;right:24px;padding:16px 24px;border-radius:12px;font-weight:500;z-index:9999;box-shadow:0 8px 24px rgba(0,0,0,0.15);opacity:0;transform:translateY(12px);transition:opacity 0.3s,transform 0.3s;max-width:400px;color:white;font-family:Inter,sans-serif;';
+            if (type === 'error') toast.style.background = '#ef4444';
+            else if (type === 'success') toast.style.background = '#10b981';
+            else if (type === 'warning') toast.style.background = '#f59e0b';
+            else toast.style.background = '#3b82f6';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            requestAnimationFrame(function() { toast.style.opacity = '1'; toast.style.transform = 'translateY(0)'; });
+            setTimeout(function() { toast.style.opacity = '0'; toast.style.transform = 'translateY(12px)'; setTimeout(function() { toast.remove(); }, 300); }, 4000);
+        }
+    </script>
+
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getAuth, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+        import { getFirestore, collection, doc, getDoc, getDocs, addDoc, updateDoc, deleteDoc, query, where, orderBy, Timestamp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyA4wMm8-QmZGt3lJcZgTpbBa1W_TklrmRg",
+            authDomain: "miamialliance3pl.firebaseapp.com",
+            projectId: "miamialliance3pl",
+            storageBucket: "miamialliance3pl.firebasestorage.app",
+            messagingSenderId: "657614666588",
+            appId: "1:657614666588:web:20e50484fe5d90b5aa5f99",
+            measurementId: "G-KTW0F25ZM1"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        const FALLBACK_ADMIN_EMAILS = ['ceo@usglatam.com', 'yuri@megalopolisms.com'];
+
+        let currentUserId = null;
+        let currentUserRole = 'customer';
+        let allContracts = [];
+
+        onAuthStateChanged(auth, async (user) => {
+            if (!user) {
+                window.location.href = '../login.html';
+                return;
+            }
+
+            currentUserId = user.uid;
+
+            // Get user data
+            const userDoc = await getDoc(doc(db, 'users', user.uid));
+            const userData = userDoc.exists() ? userDoc.data() : {};
+            currentUserRole = userData.role || (FALLBACK_ADMIN_EMAILS.includes(user.email.toLowerCase()) ? 'admin' : 'customer');
+
+            document.getElementById('user-name').textContent = userData.name || user.email;
+
+            // Show role-based nav
+            if (currentUserRole === 'admin' || currentUserRole === 'employee') {
+                document.getElementById('employee-nav').style.display = 'block';
+            }
+            if (currentUserRole === 'admin') {
+                document.getElementById('admin-nav').style.display = 'block';
+                document.getElementById('admin-contracts-section').style.display = 'block';
+                loadAllContracts();
+                loadCustomersList();
+            }
+
+            // Load customer's own contract
+            loadMyContract(user.uid);
+        });
+
+        // Load customer's active contract
+        async function loadMyContract(uid) {
+            try {
+                const q = query(
+                    collection(db, 'contracts'),
+                    where('clientId', '==', uid),
+                    where('status', '==', 'active')
+                );
+                const snapshot = await getDocs(q);
+
+                if (!snapshot.empty) {
+                    const contractData = snapshot.docs[0].data();
+                    const card = document.getElementById('active-contract-card');
+                    card.style.display = 'block';
+
+                    document.getElementById('my-contract-title').textContent =
+                        'WSA - ' + (contractData.contractNumber || 'Active Agreement');
+
+                    const startDate = contractData.startDate?.toDate ? contractData.startDate.toDate().toLocaleDateString() : 'N/A';
+                    const endDate = contractData.endDate?.toDate ? contractData.endDate.toDate().toLocaleDateString() : 'Auto-renewal';
+
+                    document.getElementById('my-contract-desc').textContent =
+                        `Effective: ${startDate} | Expires: ${endDate} | Monthly Min: $${contractData.monthlyMin || '0'}`;
+
+                    card.dataset.contractId = snapshot.docs[0].id;
+                }
+            } catch (e) {
+                console.error('Error loading contract:', e);
+            }
+        }
+
+        // Admin: Load all contracts
+        async function loadAllContracts() {
+            try {
+                const snapshot = await getDocs(collection(db, 'contracts'));
+                allContracts = [];
+                let active = 0, pending = 0, expired = 0;
+
+                snapshot.forEach(d => {
+                    const data = { id: d.id, ...d.data() };
+                    allContracts.push(data);
+                    if (data.status === 'active') active++;
+                    else if (data.status === 'pending') pending++;
+                    else if (data.status === 'expired') expired++;
+                });
+
+                document.getElementById('stat-active').textContent = active;
+                document.getElementById('stat-pending').textContent = pending;
+                document.getElementById('stat-expired').textContent = expired;
+                document.getElementById('stat-total').textContent = allContracts.length;
+
+                renderContractsTable(allContracts);
+            } catch (e) {
+                console.error('Error loading contracts:', e);
+                const errMsg = e.code === 'permission-denied' ? 'Permission denied. Please contact your administrator.'
+                    : e.code === 'unavailable' ? 'Database temporarily unavailable. Please try again.'
+                    : 'Error loading contracts: ' + e.message;
+                document.getElementById('contracts-tbody').innerHTML =
+                    `<tr><td colspan="7" class="empty-state">${errMsg}</td></tr>`;
+                if (typeof showToast === 'function') showToast(errMsg, 'error');
+            }
+        }
+
+        // XSS prevention helper
+        function escapeHTML(str) {
+            if (str === null || str === undefined) return '';
+            return String(str).replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m]));
+        }
+
+        // Render contracts table
+        function renderContractsTable(contracts) {
+            const tbody = document.getElementById('contracts-tbody');
+
+            if (contracts.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="7" class="empty-state"><div class="empty-icon">📄</div>No contracts found. Create your first contract to get started.</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = contracts.map(c => {
+                const startDate = c.startDate?.toDate ? c.startDate.toDate().toLocaleDateString() : c.startDate || 'N/A';
+                const endDate = c.endDate?.toDate ? c.endDate.toDate().toLocaleDateString() : c.endDate || 'Auto-renewal';
+                const statusClass = `status-${c.status || 'draft'}`;
+                const statusLabel = (c.status || 'draft').charAt(0).toUpperCase() + (c.status || 'draft').slice(1);
+
+                return `<tr>
+                    <td><strong>${escapeHTML(c.contractNumber || 'N/A')}</strong></td>
+                    <td>${escapeHTML(c.clientName || 'Unknown')}</td>
+                    <td>${startDate}</td>
+                    <td>${endDate}</td>
+                    <td><span class="status-pill ${escapeHTML(statusClass)}">${escapeHTML(statusLabel)}</span></td>
+                    <td>$${escapeHTML(String(c.monthlyMin || '0'))}</td>
+                    <td>
+                        <button class="action-btn" onclick="window.open('../contract-template.html', '_blank')">View Template</button>
+                        <button class="action-btn" onclick="deleteContract('${c.id}')">Delete</button>
+                    </td>
+                </tr>`;
+            }).join('');
+        }
+
+        // Admin: Load customers for dropdown
+        async function loadCustomersList() {
+            try {
+                const snapshot = await getDocs(collection(db, 'users'));
+                const select = document.getElementById('new-client-select');
+                snapshot.forEach(d => {
+                    const data = d.data();
+                    if (data.role !== 'admin' && data.role !== 'employee') {
+                        const opt = document.createElement('option');
+                        opt.value = d.id;
+                        opt.textContent = `${data.name || data.email} (${data.company || 'No company'})`;
+                        opt.dataset.name = data.name || data.email;
+                        opt.dataset.company = data.company || '';
+                        select.appendChild(opt);
+                    }
+                });
+            } catch (e) {
+                console.error('Error loading customers:', e);
+            }
+        }
+
+        // Create a new contract (admin)
+        window.createContract = async function() {
+            const clientSelect = document.getElementById('new-client-select');
+            const selectedOption = clientSelect.options[clientSelect.selectedIndex];
+            const clientId = clientSelect.value;
+
+            if (!clientId) {
+                showPortalToast('Please select a client.', 'warning');
+                return;
+            }
+
+            const startDate = document.getElementById('new-start-date').value;
+            const termMonths = parseInt(document.getElementById('new-term').value);
+            let endDate = null;
+
+            if (startDate) {
+                const d = new Date(startDate);
+                d.setMonth(d.getMonth() + termMonths);
+                endDate = Timestamp.fromDate(d);
+            }
+
+            const contractData = {
+                contractNumber: document.getElementById('new-contract-num').value || generateContractNumber(),
+                clientId: clientId,
+                clientName: selectedOption.dataset.company || selectedOption.dataset.name,
+                startDate: startDate ? Timestamp.fromDate(new Date(startDate)) : null,
+                endDate: endDate,
+                termMonths: termMonths,
+                monthlyMin: parseFloat(document.getElementById('new-monthly-min').value) || 500,
+                status: document.getElementById('new-status').value,
+                notes: document.getElementById('new-notes').value,
+                createdAt: Timestamp.now(),
+                createdBy: currentUserId
+            };
+
+            try {
+                await addDoc(collection(db, 'contracts'), contractData);
+                showPortalToast('Contract created successfully!', 'success');
+                closeNewContractModal();
+                loadAllContracts();
+            } catch (e) {
+                console.error('Error creating contract:', e);
+                showPortalToast('Error creating contract: ' + e.message, 'error');
+            }
+        };
+
+        // Delete contract (admin)
+        window.deleteContract = async function(contractId) {
+            if (!confirm('Are you sure you want to delete this contract? This cannot be undone.')) return;
+            try {
+                await deleteDoc(doc(db, 'contracts', contractId));
+                loadAllContracts();
+            } catch (e) {
+                console.error('Error deleting contract:', e);
+                showPortalToast('Error deleting contract: ' + e.message, 'error');
+            }
+        };
+
+        // Submit contract request (customer)
+        window.submitContractRequest = async function() {
+            const company = document.getElementById('req-company').value;
+            const contact = document.getElementById('req-contact').value;
+            const email = document.getElementById('req-email').value;
+
+            if (!company || !contact || !email) {
+                showPortalToast('Please fill in all required fields (Company, Contact, Email).', 'warning');
+                return;
+            }
+
+            const requestData = {
+                type: 'contract_request',
+                company: company,
+                contact: contact,
+                email: email,
+                phone: document.getElementById('req-phone').value,
+                volume: document.getElementById('req-volume').value,
+                notes: document.getElementById('req-notes').value,
+                requestedBy: currentUserId,
+                status: 'new',
+                createdAt: Timestamp.now()
+            };
+
+            try {
+                await addDoc(collection(db, 'contract_requests'), requestData);
+                showPortalToast('Contract request submitted! Our team will contact you within 1-2 business days.', 'success');
+                closeRequestModal();
+            } catch (e) {
+                console.error('Error submitting request:', e);
+                showPortalToast('Error submitting request: ' + e.message, 'error');
+            }
+        };
+
+        // Filter contracts
+        document.getElementById('filter-status')?.addEventListener('change', function() {
+            const status = this.value;
+            if (status === 'all') {
+                renderContractsTable(allContracts);
+            } else {
+                renderContractsTable(allContracts.filter(c => c.status === status));
+            }
+        });
+
+        // Generate contract number
+        function generateContractNumber() {
+            const year = new Date().getFullYear();
+            const rand = String(Math.floor(Math.random() * 9999)).padStart(4, '0');
+            return `MA3PL-${year}-${rand}`;
+        }
+
+        // View my contract (customer)
+        window.viewMyContract = function() {
+            window.open('../contract-template.html', '_blank');
+        };
+
+        // Print blank contract
+        window.printBlankContract = function() {
+            const w = window.open('../contract-template.html', '_blank');
+            w.addEventListener('load', () => {
+                setTimeout(() => w.print(), 500);
+            });
+        };
+
+        // Modal controls
+        window.openRequestModal = function() {
+            document.getElementById('request-modal').classList.add('active');
+        };
+        window.closeRequestModal = function() {
+            document.getElementById('request-modal').classList.remove('active');
+        };
+        window.openNewContractModal = function() {
+            // Auto-generate contract number
+            document.getElementById('new-contract-num').value = generateContractNumber();
+            // Set default start date to today
+            document.getElementById('new-start-date').value = new Date().toISOString().split('T')[0];
+            document.getElementById('new-contract-modal').classList.add('active');
+        };
+        window.closeNewContractModal = function() {
+            document.getElementById('new-contract-modal').classList.remove('active');
+        };
+
+        // Close modals on outside click
+        document.querySelectorAll('.modal-overlay').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                }
+            });
+        });
+
+        // Logout
+        document.getElementById('logout-btn').addEventListener('click', async (e) => {
+            e.preventDefault();
+            await signOut(auth);
+            window.location.href = '../login.html';
+        });
+
+        // Mobile sidebar toggle
+        document.querySelector('.sidebar-toggle')?.addEventListener('click', () => {
+            document.querySelector('.portal-sidebar')?.classList.toggle('open');
+        });
+    </script>
+    <script src="../js/chat-widget.js"></script>
+</body>
+</html>

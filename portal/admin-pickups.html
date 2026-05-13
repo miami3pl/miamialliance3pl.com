@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Pickup Requests (Admin) | Miami Alliance 3PL Portal</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/style.css?v=8">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTW0F25ZM1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-KTW0F25ZM1');
+    </script>
+    <script src="../js/analytics.js"></script>
+    <style>
+        /* ================================================
+           ADMIN PICKUP REQUESTS — STYLES
+           ================================================ */
+        .admin-hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-xl);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+        }
+        .admin-hero h1 { font-size: var(--font-size-2xl); margin: 0; }
+        .admin-hero p { opacity: 0.9; margin: 4px 0 0; }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+        }
+        .stat-card {
+            background: white;
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+        .stat-card .stat-icon { font-size: 1.8rem; margin-bottom: 4px; }
+        .stat-card .stat-value { font-size: 1.8rem; font-weight: 800; color: var(--color-primary); }
+        .stat-card .stat-label { font-size: 0.82rem; color: var(--color-gray-500); font-weight: 600; }
+        .stat-card.highlight {
+            border-color: #f59e0b;
+            background: #fffbeb;
+        }
+        .stat-card.highlight .stat-value { color: #92400e; }
+
+        /* Notification Banner */
+        .new-request-banner {
+            display: none;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 2px solid #f59e0b;
+            border-radius: var(--radius-lg);
+            padding: 16px 24px;
+            margin-bottom: var(--spacing-lg);
+            animation: bannerPulse 2s ease-in-out infinite;
+            cursor: pointer;
+        }
+        .new-request-banner.active { display: flex; align-items: center; gap: 16px; }
+        .new-request-banner .banner-icon { font-size: 2rem; }
+        .new-request-banner .banner-text { flex: 1; }
+        .new-request-banner .banner-title { font-weight: 700; color: #92400e; font-size: 1.05rem; }
+        .new-request-banner .banner-desc { font-size: 0.85rem; color: #a16207; }
+        .new-request-banner .banner-dismiss {
+            background: none; border: none; font-size: 1.5rem; color: #92400e; cursor: pointer;
+        }
+        @keyframes bannerPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.3); }
+            50% { box-shadow: 0 0 0 8px rgba(245, 158, 11, 0); }
+        }
+
+        /* Pricing Admin Card */
+        .pricing-admin-card {
+            background: white;
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow-sm);
+        }
+        .pricing-admin-card h2 {
+            font-size: 1.15rem;
+            color: var(--color-primary);
+            margin: 0 0 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .pricing-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            align-items: end;
+        }
+        .pricing-form .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .pricing-form label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #475569;
+        }
+        .pricing-form input {
+            padding: 10px 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+        .pricing-form input:focus {
+            outline: none;
+            border-color: #14b8a6;
+        }
+        .pricing-form .pricing-preview {
+            background: #f0fdfa;
+            border: 1px solid #99f6e4;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 0.82rem;
+            color: #0d9488;
+        }
+        .pricing-form .pricing-preview .preview-title {
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .btn-save-pricing {
+            background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-save-pricing:hover {
+            box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
+        }
+
+        /* Filter Tabs */
+        .filter-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: var(--spacing-lg);
+            background: #f1f5f9;
+            padding: 4px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        .filter-tab {
+            padding: 8px 16px;
+            border: none;
+            background: transparent;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .filter-tab.active {
+            background: white;
+            color: var(--color-primary);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .filter-tab .tab-count {
+            background: #e2e8f0;
+            color: #475569;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin-left: 6px;
+        }
+        .filter-tab.active .tab-count {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        /* Requests Table */
+        .requests-table-wrap {
+            background: white;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-gray-200);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        .requests-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .requests-table th {
+            background: #f8fafc;
+            padding: 12px 14px;
+            text-align: left;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #475569;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .requests-table td {
+            padding: 12px 14px;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 0.88rem;
+            color: #1e293b;
+            vertical-align: middle;
+        }
+        .requests-table tr:hover { background: #f8fafc; }
+        .requests-table tr.new-row {
+            background: #fffbeb;
+            animation: highlightNew 3s ease-out;
+        }
+        @keyframes highlightNew {
+            0% { background: #fef3c7; }
+            100% { background: #fffbeb; }
+        }
+
+        /* Status Badge */
+        .status-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.73rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .status-pending { background: #fef3c7; color: #92400e; }
+        .status-confirmed { background: #d1fae5; color: #065f46; }
+        .status-in_progress { background: #dbeafe; color: #1e40af; }
+        .status-completed { background: #d1fae5; color: #065f46; }
+        .status-cancelled { background: #fee2e2; color: #991b1b; }
+
+        /* Action Buttons */
+        .action-btn {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-right: 4px;
+        }
+        .action-btn-view {
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+        .action-btn-view:hover { background: #bae6fd; }
+        .action-btn-status {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        .action-btn-status:hover { background: #a7f3d0; }
+        .action-btn-price {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .action-btn-price:hover { background: #fde68a; }
+
+        /* Detail Modal */
+        .detail-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(8px);
+            z-index: 9999;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 24px;
+            overflow-y: auto;
+        }
+        .detail-overlay.active { display: flex; }
+        .detail-modal {
+            background: #fff;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.25);
+            overflow: hidden;
+            margin: auto;
+        }
+        .detail-modal-header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            padding: 18px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .detail-modal-header h2 {
+            color: #fff; font-size: 1.15rem; font-weight: 700; margin: 0;
+        }
+        .detail-modal-close {
+            background: rgba(255,255,255,0.15);
+            border: none; color: #fff;
+            width: 34px; height: 34px;
+            border-radius: 50%; font-size: 18px;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .detail-modal-body { padding: 24px; }
+
+        .detail-section {
+            margin-bottom: 16px;
+        }
+        .detail-section h4 {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #64748b;
+            margin: 0 0 8px;
+        }
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            font-size: 0.88rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .detail-row:last-child { border-bottom: none; }
+        .detail-row .label { color: #64748b; }
+        .detail-row .value { color: #1e293b; font-weight: 600; }
+
+        .detail-actions {
+            display: flex;
+            gap: 12px;
+            padding-top: 16px;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 16px;
+        }
+        .detail-actions select,
+        .detail-actions input {
+            padding: 8px 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-family: inherit;
+        }
+        .detail-actions select:focus,
+        .detail-actions input:focus {
+            outline: none;
+            border-color: #14b8a6;
+        }
+        .detail-actions button {
+            padding: 8px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.88rem;
+        }
+        .btn-update-detail {
+            background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+            color: white;
+        }
+
+        .doc-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: #f0fdfa;
+            border: 1px solid #99f6e4;
+            border-radius: 6px;
+            color: #0d9488;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        .doc-link:hover { background: #ccfbf1; }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #64748b;
+        }
+        .empty-state .empty-icon { font-size: 3.5rem; margin-bottom: 16px; }
+
+        /* Sound notification ping */
+        @keyframes notifPing {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.5); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .admin-hero { flex-direction: column; text-align: center; }
+            .pricing-form { grid-template-columns: 1fr; }
+            .requests-table th:nth-child(5),
+            .requests-table td:nth-child(5),
+            .requests-table th:nth-child(6),
+            .requests-table td:nth-child(6) {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="logo">
+                <span class="logo-text">MIAMI ALLIANCE <span class="logo-accent">3PL</span></span>
+            </a>
+            <button class="nav-toggle sidebar-toggle" aria-label="Toggle sidebar">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><span id="user-name" class="nav-link">Welcome</span></li>
+                <li><a href="#" id="logout-btn" class="nav-link btn btn-outline">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="portal-layout">
+        <!-- Sidebar -->
+        <aside class="portal-sidebar">
+            <nav role="navigation" aria-label="Main navigation">
+                <a href="dashboard.html" class="portal-nav-item">
+                    <span aria-hidden="true">📊</span> <span>Dashboard</span>
+                </a>
+                <a href="shipments.html" class="portal-nav-item">
+                    <span aria-hidden="true">🚚</span> <span>Shipments</span>
+                </a>
+                <a href="pickups.html" class="portal-nav-item">
+                    <span aria-hidden="true">🏗️</span> <span>Pickup & Delivery</span>
+                </a>
+                <a href="tracking.html" class="portal-nav-item">
+                    <span aria-hidden="true">🔍</span> <span>Tracking</span>
+                </a>
+                <a href="inventory.html" class="portal-nav-item">
+                    <span aria-hidden="true">📦</span> <span>Inventory</span>
+                </a>
+                <a href="admin-billing.html" class="portal-nav-item">
+                    <span aria-hidden="true">💵</span> <span>Billing</span>
+                </a>
+                <a href="contracts.html" class="portal-nav-item">
+                    <span aria-hidden="true">📄</span> <span>Contracts</span>
+                </a>
+                <div id="employee-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;">Staff</div>
+                    <a href="customers.html" class="portal-nav-item">
+                        <span aria-hidden="true">👥</span> <span>All Customers</span>
+                    </a>
+                    <a href="admin-shipments.html" class="portal-nav-item">
+                        <span aria-hidden="true">📋</span> <span>All Shipments</span>
+                    </a>
+                </div>
+                <div id="admin-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;">Admin</div>
+                    <a href="admin-panel.html" class="portal-nav-item">
+                        <span>🛡️</span> <span>Admin Control Panel</span>
+                    </a>                    <a href="admin-pickups.html" class="portal-nav-item active" aria-current="page">
+                        <span aria-hidden="true">🚛</span> <span>All Pickup Requests</span>
+                    </a>
+                    <a href="admin-billing.html" class="portal-nav-item"><span>📝</span> <span>Activity Billing</span></a>
+                    <a href="invoices.html" class="portal-nav-item">
+                        <span aria-hidden="true">💵</span> <span>Invoices</span>
+                    </a>
+                    <a href="storage-log.html" class="portal-nav-item">
+                        <span aria-hidden="true">📊</span> <span>Storage Log</span>
+                    </a>
+                    <a href="pricing.html" class="portal-nav-item">
+                        <span aria-hidden="true">💰</span> <span>Pricing</span>
+                    </a>
+                    <a href="settings.html" class="portal-nav-item">
+                        <span aria-hidden="true">⚙️</span> <span>Settings</span>
+                    </a>
+                    <a href="team.html" class="portal-nav-item">
+                        <span aria-hidden="true">👔</span> <span>Manage Team</span>
+                    </a>
+                    <a href="changelog.html" class="portal-nav-item">
+                        <span aria-hidden="true">📝</span> <span>Changelog</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="portal-main">
+            <!-- Hero -->
+            <div class="admin-hero">
+                <div>
+                    <h1>🚛 Pickup & Delivery Requests</h1>
+                    <p>Manage all customer pickup and delivery requests.</p>
+                </div>
+            </div>
+
+            <!-- New Request Notification Banner -->
+            <div class="new-request-banner" id="new-request-banner">
+                <span class="banner-icon">🔔</span>
+                <div class="banner-text">
+                    <div class="banner-title" id="banner-title">New Request Received!</div>
+                    <div class="banner-desc" id="banner-desc">A customer just submitted a pickup request.</div>
+                </div>
+                <button class="banner-dismiss" onclick="dismissBanner()">&times;</button>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-grid">
+                <div class="stat-card" id="stat-total">
+                    <div class="stat-icon">📋</div>
+                    <div class="stat-value" id="stat-total-val">0</div>
+                    <div class="stat-label">Total Requests</div>
+                </div>
+                <div class="stat-card highlight" id="stat-pending">
+                    <div class="stat-icon">⏳</div>
+                    <div class="stat-value" id="stat-pending-val">0</div>
+                    <div class="stat-label">Pending</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-value" id="stat-completed-val">0</div>
+                    <div class="stat-label">Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-value" id="stat-revenue-val">$0</div>
+                    <div class="stat-label">Total Revenue</div>
+                </div>
+            </div>
+
+            <!-- Pricing Admin -->
+            <div class="pricing-admin-card">
+                <h2>💰 Pickup/Delivery Pricing</h2>
+                <div class="pricing-form">
+                    <div class="form-group">
+                        <label>Base Rate (1 Pallet)</label>
+                        <input type="number" id="admin-base-rate" value="120" min="0" step="5" oninput="updatePricingPreview()">
+                    </div>
+                    <div class="form-group">
+                        <label>Extra Pallet Rate</label>
+                        <input type="number" id="admin-extra-rate" value="25" min="0" step="5" oninput="updatePricingPreview()">
+                    </div>
+                    <div class="form-group">
+                        <label>Max Pallets Per Request</label>
+                        <input type="number" id="admin-max-pallets" value="8" min="1" max="26" step="1" oninput="updatePricingPreview()">
+                    </div>
+                    <div class="pricing-preview" id="pricing-preview">
+                        <div class="preview-title">Price Table Preview</div>
+                        <div id="pricing-preview-text">Loading...</div>
+                    </div>
+                    <div>
+                        <button class="btn-save-pricing" onclick="savePricing()">💾 Save Pricing</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all" onclick="filterRequests('all')">
+                    All <span class="tab-count" id="count-all">0</span>
+                </button>
+                <button class="filter-tab" data-filter="pending" onclick="filterRequests('pending')">
+                    Pending <span class="tab-count" id="count-pending">0</span>
+                </button>
+                <button class="filter-tab" data-filter="confirmed" onclick="filterRequests('confirmed')">
+                    Confirmed <span class="tab-count" id="count-confirmed">0</span>
+                </button>
+                <button class="filter-tab" data-filter="in_progress" onclick="filterRequests('in_progress')">
+                    In Progress <span class="tab-count" id="count-in_progress">0</span>
+                </button>
+                <button class="filter-tab" data-filter="completed" onclick="filterRequests('completed')">
+                    Completed <span class="tab-count" id="count-completed">0</span>
+                </button>
+                <button class="filter-tab" data-filter="cancelled" onclick="filterRequests('cancelled')">
+                    Cancelled <span class="tab-count" id="count-cancelled">0</span>
+                </button>
+            </div>
+
+            <!-- Requests Table -->
+            <div id="requests-container">
+                <div class="empty-state" id="empty-state" style="display: none;">
+                    <div class="empty-icon">🚛</div>
+                    <h3>No pickup requests yet</h3>
+                    <p>When customers submit pickup or delivery requests, they'll appear here.</p>
+                </div>
+                <div class="requests-table-wrap" id="requests-table-wrap">
+                    <table class="requests-table">
+                        <thead>
+                            <tr>
+                                <th>Request #</th>
+                                <th>Customer</th>
+                                <th>Type</th>
+                                <th>Pallets</th>
+                                <th>Date</th>
+                                <th>Address</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="requests-tbody">
+                            <tr><td colspan="9" style="text-align: center; padding: 40px; color: #94a3b8;">Loading requests...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ============================================
+         DETAIL / EDIT MODAL
+         ============================================ -->
+    <div class="detail-overlay" id="detail-overlay">
+        <div class="detail-modal">
+            <div class="detail-modal-header">
+                <h2 id="detail-title">Request Details</h2>
+                <button class="detail-modal-close" onclick="closeDetail()">&times;</button>
+            </div>
+            <div class="detail-modal-body" id="detail-body">
+                <!-- Populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase + Portal JS -->
+    <script type="module">
+        import { initFirebase, onAuthChange, signOutUser, getUserRole, isStaff, isAdmin, getSettings, saveSettings } from '../js/firebase.js';
+
+        // ============================================================
+        // STATE
+        // ============================================================
+        let currentUser = null;
+        let currentRole = 'customer';
+        let allRequests = [];
+        let currentFilter = 'all';
+        let knownRequestIds = new Set();
+        let isFirstLoad = true;
+        let unsubscribe = null;
+
+        // Make functions globally available
+        window.filterRequests = filterRequests;
+        window.openDetail = openDetail;
+        window.closeDetail = closeDetail;
+        window.updateStatus = updateStatus;
+        window.updatePriceOverride = updatePriceOverride;
+        window.savePricing = savePricing;
+        window.updatePricingPreview = updatePricingPreview;
+        window.dismissBanner = dismissBanner;
+
+        // ============================================================
+        // INIT
+        // ============================================================
+        document.addEventListener('DOMContentLoaded', async () => {
+            await initFirebase();
+
+            onAuthChange(async (user, userData, role) => {
+                if (!user) {
+                    window.location.href = '../login.html';
+                    return;
+                }
+
+                // Admin/staff only
+                if (role !== 'admin' && role !== 'employee') {
+                    window.location.href = 'dashboard.html';
+                    return;
+                }
+
+                currentUser = user;
+                currentRole = role;
+
+                document.getElementById('user-name').textContent = `Welcome, ${userData?.company || user.displayName || user.email}`;
+
+                // Show role nav
+                const employeeNav = document.getElementById('employee-nav');
+                const adminNav = document.getElementById('admin-nav');
+                if (role === 'admin') {
+                    if (employeeNav) employeeNav.style.display = 'block';
+                    if (adminNav) adminNav.style.display = 'block';
+                } else if (role === 'employee') {
+                    if (employeeNav) employeeNav.style.display = 'block';
+                }
+
+                // Load pricing
+                await loadPricing();
+
+                // Start real-time listener
+                startRealtimeListener();
+            });
+
+            // Logout
+            document.getElementById('logout-btn').addEventListener('click', async (e) => {
+                e.preventDefault();
+                await signOutUser();
+                window.location.href = '../login.html';
+            });
+        });
+
+        // ============================================================
+        // PRICING ADMIN
+        // ============================================================
+        async function loadPricing() {
+            try {
+                const settings = await getSettings('pickup_pricing');
+                if (settings) {
+                    document.getElementById('admin-base-rate').value = settings.basePallet || 120;
+                    document.getElementById('admin-extra-rate').value = settings.extraPallet || 25;
+                    document.getElementById('admin-max-pallets').value = settings.maxPallets || 8;
+                }
+            } catch (e) {
+                // Using default pricing values
+            }
+            updatePricingPreview();
+        }
+
+        function updatePricingPreview() {
+            const base = parseFloat(document.getElementById('admin-base-rate').value) || 120;
+            const extra = parseFloat(document.getElementById('admin-extra-rate').value) || 25;
+            const maxPallets = parseInt(document.getElementById('admin-max-pallets').value) || 8;
+
+            let lines = [];
+            for (let i = 1; i <= maxPallets; i++) {
+                const total = base + Math.max(0, i - 1) * extra;
+                lines.push(`${i} pallet${i > 1 ? 's' : ''}: $${total.toFixed(0)}`);
+            }
+            document.getElementById('pricing-preview-text').textContent = lines.join(' | ');
+        }
+
+        async function savePricing() {
+            const base = parseFloat(document.getElementById('admin-base-rate').value) || 120;
+            const extra = parseFloat(document.getElementById('admin-extra-rate').value) || 25;
+            const maxPallets = parseInt(document.getElementById('admin-max-pallets').value) || 8;
+
+            try {
+                await saveSettings('pickup_pricing', {
+                    basePallet: base,
+                    extraPallet: extra,
+                    maxPallets: maxPallets
+                });
+                if (window.MA3PL?.toast) window.MA3PL.toast.success('Pricing saved successfully!');
+            } catch (e) {
+                if (window.MA3PL?.toast) window.MA3PL.toast.error('Failed to save pricing: ' + e.message);
+            }
+        }
+
+        // ============================================================
+        // REAL-TIME LISTENER
+        // ============================================================
+        async function startRealtimeListener() {
+            const { collection, query, orderBy, onSnapshot } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js');
+            const { db } = await initFirebase();
+
+            const q = query(collection(db, 'pickup_requests'), orderBy('created_at', 'desc'));
+
+            unsubscribe = onSnapshot(q, (snapshot) => {
+                const requests = [];
+                snapshot.forEach(doc => requests.push({ id: doc.id, ...doc.data() }));
+
+                // Detect new requests
+                if (!isFirstLoad) {
+                    snapshot.docChanges().forEach(change => {
+                        if (change.type === 'added' && !knownRequestIds.has(change.doc.id)) {
+                            const req = change.doc.data();
+                            showNewRequestBanner(req);
+                            playNotificationSound();
+                        }
+                    });
+                }
+
+                // Update known IDs
+                requests.forEach(r => knownRequestIds.add(r.id));
+                isFirstLoad = false;
+
+                allRequests = requests;
+                updateStats();
+                renderFilteredRequests();
+            }, (error) => {
+                console.error('[AdminPickups] Listener error:', error);
+            });
+        }
+
+        // ============================================================
+        // NOTIFICATION
+        // ============================================================
+        function showNewRequestBanner(req) {
+            const banner = document.getElementById('new-request-banner');
+            const typeLabel = req.service_type === 'pickup' ? 'pickup' : 'delivery';
+            document.getElementById('banner-title').textContent = '🔔 New Request Received!';
+            document.getElementById('banner-desc').textContent = `${req.user_name || req.user_email} submitted a ${typeLabel} request for ${req.pallet_count} pallet${req.pallet_count > 1 ? 's' : ''}.`;
+            banner.classList.add('active');
+
+            // Auto-dismiss after 15 seconds
+            setTimeout(() => dismissBanner(), 15000);
+        }
+
+        function dismissBanner() {
+            document.getElementById('new-request-banner').classList.remove('active');
+        }
+
+        function playNotificationSound() {
+            try {
+                // Create a simple beep using Web Audio API
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.frequency.value = 880;
+                osc.type = 'sine';
+                gain.gain.value = 0.3;
+                osc.start();
+                gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.5);
+                osc.stop(ctx.currentTime + 0.5);
+            } catch (e) {
+                // Silently fail if audio not available
+            }
+        }
+
+        // ============================================================
+        // STATS
+        // ============================================================
+        function updateStats() {
+            const total = allRequests.length;
+            const pending = allRequests.filter(r => r.status === 'pending').length;
+            const completed = allRequests.filter(r => r.status === 'completed').length;
+            const revenue = allRequests
+                .filter(r => r.status !== 'cancelled')
+                .reduce((sum, r) => sum + (r.admin_price_override != null ? r.admin_price_override : (r.pricing?.total || 0)), 0);
+
+            document.getElementById('stat-total-val').textContent = total;
+            document.getElementById('stat-pending-val').textContent = pending;
+            document.getElementById('stat-completed-val').textContent = completed;
+            document.getElementById('stat-revenue-val').textContent = `$${revenue.toLocaleString()}`;
+
+            // Update tab counts
+            document.getElementById('count-all').textContent = total;
+            document.getElementById('count-pending').textContent = pending;
+            document.getElementById('count-confirmed').textContent = allRequests.filter(r => r.status === 'confirmed').length;
+            document.getElementById('count-in_progress').textContent = allRequests.filter(r => r.status === 'in_progress').length;
+            document.getElementById('count-completed').textContent = completed;
+            document.getElementById('count-cancelled').textContent = allRequests.filter(r => r.status === 'cancelled').length;
+        }
+
+        // ============================================================
+        // FILTER & RENDER
+        // ============================================================
+        function filterRequests(filter) {
+            currentFilter = filter;
+            document.querySelectorAll('.filter-tab').forEach(tab => {
+                tab.classList.toggle('active', tab.dataset.filter === filter);
+            });
+            renderFilteredRequests();
+        }
+
+        function renderFilteredRequests() {
+            const filtered = currentFilter === 'all'
+                ? allRequests
+                : allRequests.filter(r => r.status === currentFilter);
+
+            const tbody = document.getElementById('requests-tbody');
+            const emptyState = document.getElementById('empty-state');
+            const tableWrap = document.getElementById('requests-table-wrap');
+
+            if (filtered.length === 0) {
+                emptyState.style.display = '';
+                tableWrap.style.display = 'none';
+                return;
+            }
+
+            emptyState.style.display = 'none';
+            tableWrap.style.display = '';
+
+            const esc = str => {
+                if (str === null || str === undefined) return '';
+                return String(str).replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m]));
+            };
+
+            tbody.innerHTML = filtered.map(req => {
+                const shortId = req.id.substring(0, 8).toUpperCase();
+                const typeIcon = req.service_type === 'pickup' ? '🚛' : '📦';
+                const typeLabel = req.service_type === 'pickup' ? 'Pickup' : 'Delivery';
+                const date = req.schedule?.preferred_date || '—';
+                const total = req.admin_price_override != null ? req.admin_price_override : (req.pricing?.total || 0);
+                const status = req.status || 'pending';
+                const customer = req.user_name || req.user_email || '—';
+                const addr = req.address ? `${req.address.city || ''}, ${req.address.state || ''}` : '—';
+                const isNew = status === 'pending';
+
+                return `
+                    <tr class="${isNew ? 'new-row' : ''}">
+                        <td><strong>#${shortId}</strong></td>
+                        <td>${esc(customer)}</td>
+                        <td>${typeIcon} ${typeLabel}</td>
+                        <td>${req.pallet_count}</td>
+                        <td>${esc(date)}</td>
+                        <td>${esc(addr)}</td>
+                        <td><strong>$${total.toFixed(2)}</strong></td>
+                        <td><span class="status-badge status-${esc(status)}">${esc(status.replace('_', ' '))}</span></td>
+                        <td>
+                            <button class="action-btn action-btn-view" onclick="openDetail('${req.id}')">👁 View</button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        // ============================================================
+        // DETAIL MODAL
+        // ============================================================
+        function openDetail(requestId) {
+            const req = allRequests.find(r => r.id === requestId);
+            if (!req) return;
+
+            const overlay = document.getElementById('detail-overlay');
+            const body = document.getElementById('detail-body');
+            const title = document.getElementById('detail-title');
+
+            const shortId = req.id.substring(0, 8).toUpperCase();
+            const typeLabel = req.service_type === 'pickup' ? '🚛 Pickup' : '📦 Delivery';
+            const total = req.admin_price_override != null ? req.admin_price_override : (req.pricing?.total || 0);
+            const timeLabels = { morning: 'Morning (8AM-12PM)', afternoon: 'Afternoon (12PM-5PM)', flexible: 'Flexible' };
+
+            title.textContent = `Request #${shortId}`;
+
+            body.innerHTML = `
+                <div class="detail-section">
+                    <h4>Service Details</h4>
+                    <div class="detail-row"><span class="label">Type</span><span class="value">${typeLabel}</span></div>
+                    <div class="detail-row"><span class="label">Pallets</span><span class="value">${req.pallet_count}</span></div>
+                    <div class="detail-row"><span class="label">Base Price</span><span class="value">$${(req.pricing?.total || 0).toFixed(2)}</span></div>
+                    ${req.admin_price_override != null ? `<div class="detail-row"><span class="label">Admin Override</span><span class="value" style="color: #f59e0b;">$${req.admin_price_override.toFixed(2)}</span></div>` : ''}
+                    <div class="detail-row"><span class="label">Status</span><span class="value"><span class="status-badge status-${req.status}">${(req.status || 'pending').replace('_', ' ')}</span></span></div>
+                </div>
+
+                <div class="detail-section">
+                    <h4>Contact</h4>
+                    <div class="detail-row"><span class="label">Name</span><span class="value">${req.contact?.name || '—'}</span></div>
+                    <div class="detail-row"><span class="label">Phone</span><span class="value">${req.contact?.phone || '—'}</span></div>
+                    <div class="detail-row"><span class="label">Email</span><span class="value">${req.contact?.email || req.user_email || '—'}</span></div>
+                </div>
+
+                <div class="detail-section">
+                    <h4>Address</h4>
+                    <div class="detail-row"><span class="label">Street</span><span class="value">${req.address?.street || '—'}</span></div>
+                    <div class="detail-row"><span class="label">City/State/ZIP</span><span class="value">${req.address?.city || ''}, ${req.address?.state || ''} ${req.address?.zip || ''}</span></div>
+                </div>
+
+                <div class="detail-section">
+                    <h4>Schedule</h4>
+                    <div class="detail-row"><span class="label">Date</span><span class="value">${req.schedule?.preferred_date || '—'}</span></div>
+                    <div class="detail-row"><span class="label">Time</span><span class="value">${timeLabels[req.schedule?.preferred_time] || req.schedule?.preferred_time || '—'}</span></div>
+                </div>
+
+                ${req.special_instructions ? `
+                <div class="detail-section">
+                    <h4>Special Instructions</h4>
+                    <p style="color: #475569; font-size: 0.9rem; margin: 0;">${req.special_instructions}</p>
+                </div>
+                ` : ''}
+
+                <div class="detail-section">
+                    <h4>Documentation</h4>
+                    ${req.document ? `
+                        <a href="${req.document.url}" target="_blank" class="doc-link">
+                            📄 ${req.document.name} (${req.document.type || 'document'})
+                        </a>
+                    ` : '<p style="color: #94a3b8; font-size: 0.85rem; margin: 0;">No document uploaded</p>'}
+                </div>
+
+                ${req.admin_notes ? `
+                <div class="detail-section">
+                    <h4>Admin Notes</h4>
+                    <p style="color: #475569; font-size: 0.9rem; margin: 0;">${req.admin_notes}</p>
+                </div>
+                ` : ''}
+
+                <div class="detail-actions" style="flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 8px; flex: 1; min-width: 200px;">
+                        <label style="font-size: 0.82rem; font-weight: 600; color: #475569; white-space: nowrap;">Status:</label>
+                        <select id="detail-status" style="flex: 1;">
+                            <option value="pending" ${req.status === 'pending' ? 'selected' : ''}>Pending</option>
+                            <option value="confirmed" ${req.status === 'confirmed' ? 'selected' : ''}>Confirmed</option>
+                            <option value="in_progress" ${req.status === 'in_progress' ? 'selected' : ''}>In Progress</option>
+                            <option value="completed" ${req.status === 'completed' ? 'selected' : ''}>Completed</option>
+                            <option value="cancelled" ${req.status === 'cancelled' ? 'selected' : ''}>Cancelled</option>
+                        </select>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px; flex: 1; min-width: 200px;">
+                        <label style="font-size: 0.82rem; font-weight: 600; color: #475569; white-space: nowrap;">Price $:</label>
+                        <input type="number" id="detail-price" value="${total.toFixed(2)}" min="0" step="5" style="flex: 1;">
+                    </div>
+                    <div style="width: 100%; margin-top: 8px;">
+                        <label style="font-size: 0.82rem; font-weight: 600; color: #475569; display: block; margin-bottom: 4px;">Admin Notes:</label>
+                        <textarea id="detail-notes" rows="2" style="width: 100%; padding: 8px 12px; border: 2px solid #e2e8f0; border-radius: 8px; font-family: inherit; font-size: 0.88rem;" placeholder="Internal notes...">${req.admin_notes || ''}</textarea>
+                    </div>
+                    <button class="btn-update-detail" onclick="saveDetail('${req.id}')" style="width: 100%; padding: 12px; margin-top: 8px;">
+                        💾 Save Changes
+                    </button>
+                </div>
+            `;
+
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        window.saveDetail = async function(requestId) {
+            const newStatus = document.getElementById('detail-status').value;
+            const newPrice = parseFloat(document.getElementById('detail-price').value);
+            const newNotes = document.getElementById('detail-notes').value;
+
+            try {
+                const { doc, updateDoc, serverTimestamp } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js');
+                const { db } = await initFirebase();
+
+                const req = allRequests.find(r => r.id === requestId);
+                const originalTotal = req?.pricing?.total || 0;
+
+                await updateDoc(doc(db, 'pickup_requests', requestId), {
+                    status: newStatus,
+                    admin_price_override: newPrice !== originalTotal ? newPrice : null,
+                    admin_notes: newNotes || null,
+                    updated_at: serverTimestamp()
+                });
+
+                if (window.MA3PL?.toast) window.MA3PL.toast.success('Request updated!');
+                closeDetail();
+            } catch (error) {
+                console.error('[AdminPickups] Update error:', error);
+                if (window.MA3PL?.toast) window.MA3PL.toast.error('Update failed: ' + error.message);
+            }
+        };
+
+        function closeDetail() {
+            document.getElementById('detail-overlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close on backdrop click
+        document.getElementById('detail-overlay')?.addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) closeDetail();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeDetail();
+        });
+    </script>
+
+    <!-- Portal UI Components -->
+    <script type="module">
+        import '../js/portal.js';
+    </script>
+    <script src="../js/lang/es.js"></script>
+    <script src="../js/lang/pt-br.js"></script>
+    <script src="../js/lang/zh.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/chat-widget.js"></script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() && (
+        isFallbackAdminEmail() ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin')
+      );
+    }
+
+    function isStaff() {
+      return isAuthenticated() && (
+        isFallbackAdminEmail() ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['admin', 'employee'])
+      );
+    }
+
+    function isJorge() {
+      return isAuthenticated() &&
+        request.auth.token.email == 'ceo@usglatam.com';
+    }
+
+    function isFallbackAdminEmail() {
+      return isAuthenticated() &&
+        request.auth.token.email in [
+          'ceo@usglatam.com',
+          'yuri@megalopolisms.com',
+          'admin@miamialliance3pl.com',
+          'yuri@miamialliance3pl.com'
+        ];
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isInventoryLockedForUser(userId) {
+      return userId != null &&
+        exists(/databases/$(database)/documents/users/$(userId)) &&
+        get(/databases/$(database)/documents/users/$(userId)).data.inventory_locked == true;
+    }
+
+    function hasMatchingPendingInvite() {
+      return isAuthenticated() &&
+        exists(/databases/$(database)/documents/pending_invites/$(request.auth.token.email));
+    }
+
+    function requestedRoleIsAllowedForSelfCreate() {
+      return request.resource.data.role == null ||
+        request.resource.data.role == 'customer' ||
+        (hasMatchingPendingInvite() &&
+          get(/databases/$(database)/documents/pending_invites/$(request.auth.token.email)).data.role == request.resource.data.role) ||
+        (isFallbackAdminEmail() && request.resource.data.role == 'admin');
+    }
+
+    function canSelfUpdateUser(userId) {
+      return isOwner(userId) &&
+        request.resource.data.role == resource.data.role &&
+        request.resource.data.inventory_locked == resource.data.inventory_locked;
+    }
+
+    function canCreateInventoryForUser(userId) {
+      return isAdmin() ||
+        (isStaff() && !isInventoryLockedForUser(userId)) ||
+        (isOwner(userId) && !isInventoryLockedForUser(userId));
+    }
+
+    function canUpdateInventoryForUser(userId) {
+      return isAdmin() ||
+        (isStaff() && !isInventoryLockedForUser(userId)) ||
+        (isOwner(userId) && !isInventoryLockedForUser(userId));
+    }
+
+    // Users collection
+    match /users/{userId} {
+      allow read: if isAuthenticated() && (isOwner(userId) || isStaff());
+      // Allow admins to create any user doc, AND allow users to create their OWN profile (self-registration)
+      allow create: if isAdmin() || (
+        isAuthenticated() &&
+        request.auth.uid == userId &&
+        request.resource.data.email == request.auth.token.email &&
+        requestedRoleIsAllowedForSelfCreate()
+      );
+      allow update: if isAdmin() || canSelfUpdateUser(userId);
+      allow delete: if isAdmin();
+    }
+
+    // Shipments collection
+    match /shipments/{shipmentId} {
+      allow read: if isAuthenticated() && (resource.data.user_id == request.auth.uid || isStaff());
+      allow create: if isAuthenticated();
+      allow update: if isStaff() || resource.data.user_id == request.auth.uid;
+      allow delete: if isAdmin();
+    }
+
+    // Inventory collection (with admin lock support)
+    match /inventory/{itemId} {
+      allow read: if isAuthenticated() && (resource.data.user_id == request.auth.uid || isStaff());
+      allow create: if request.resource.data.user_id != null &&
+        canCreateInventoryForUser(request.resource.data.user_id);
+      allow update: if resource.data.user_id == request.resource.data.user_id &&
+        canUpdateInventoryForUser(resource.data.user_id);
+      allow delete: if isAdmin();
+    }
+
+    // Invoices collection
+    match /invoices/{invoiceId} {
+      allow read: if isAuthenticated() && (resource.data.customer_id == request.auth.uid || isStaff());
+      allow create: if isStaff();
+      allow update: if isStaff();
+      allow delete: if isAdmin();
+    }
+
+    // Storage snapshots
+    match /storage_snapshots/{snapshotId} {
+      allow read: if isStaff();
+      allow write: if isStaff();
+    }
+
+    // Billable events
+    match /billable_events/{eventId} {
+      allow read: if isAuthenticated() && (resource.data.customer_id == request.auth.uid || isStaff());
+      allow write: if isStaff();
+    }
+
+    // Pickup/Delivery Requests
+    match /pickup_requests/{requestId} {
+      allow read: if isAuthenticated() && (resource.data.user_id == request.auth.uid || isStaff());
+      allow create: if isAuthenticated();
+      allow update: if isStaff();
+      allow delete: if isAdmin();
+    }
+
+    // Quote Requests — submitted from public quote calculator and contact forms
+    match /quote_requests/{requestId} {
+      allow read: if isStaff();
+      allow create: if true; // Public submissions (no auth required)
+      allow update: if isStaff();
+      allow delete: if isAdmin();
+    }
+
+    // Leads — captured from exit-intent popup, newsletter, and other lead gen forms
+    match /leads/{leadId} {
+      allow read: if isStaff();
+      allow create: if true; // Public submissions (no auth required for lead capture)
+      allow update: if isStaff();
+      allow delete: if isAdmin();
+    }
+
+    // BOL Documents — uploaded Bills of Lading and Shipping Labels
+    match /bol_documents/{docId} {
+      allow read: if isAuthenticated() && (resource.data.user_id == request.auth.uid || isStaff());
+      allow create: if isAuthenticated();
+      allow update: if isStaff();
+      allow delete: if isAdmin();
+    }
+
+    // Shipment Documents — uploaded Invoices, Packing Lists, and other shipment docs
+    match /shipment_documents/{docId} {
+      allow read: if isAuthenticated() && (resource.data.user_id == request.auth.uid || isStaff());
+      allow create: if isAuthenticated();
+      allow update: if isStaff() || resource.data.user_id == request.auth.uid;
+      allow delete: if isAdmin();
+    }
+
+    // Activity Log — daily warehouse task entries for activity-based billing
+    match /activity_log/{entryId} {
+      allow read: if isAuthenticated() && (resource.data.customer_id == request.auth.uid || isStaff());
+      allow create: if isStaff();
+      allow update: if isStaff();
+      allow delete: if isAdmin();
+    }
+
+    // Cargo Items — individual pallet/box tracking with unique IDs
+    match /cargo_items/{itemId} {
+      allow read: if isAuthenticated() && (resource.data.user_id == request.auth.uid || isStaff());
+      allow create: if isAuthenticated();
+      allow update: if isStaff() || resource.data.user_id == request.auth.uid;
+      allow delete: if isAdmin();
+    }
+
+    // Column labels — ONLY Jorge can rename columns
+    match /settings/column_labels {
+      allow read: if isStaff();
+      allow write: if isJorge();
+    }
+
+    // Settings (admin only write, staff read)
+    match /settings/{settingId} {
+      allow read: if isStaff();
+      allow write: if isAdmin();
+    }
+
+    // Invites
+    match /invites/{inviteId} {
+      allow read: if isAuthenticated();
+      allow create: if isAdmin();
+      allow update: if isAuthenticated();
+      allow delete: if isAdmin();
+    }
+
+    // Pending invites — used during signup to auto-assign roles
+    match /pending_invites/{email} {
+      allow read: if isAuthenticated() && request.auth.token.email == email;
+      allow create: if isAdmin();
+      allow update: if isAdmin();
+      // Allow admin OR the invited user themselves to consume (delete) their invite
+      allow delete: if isAdmin() || (isAuthenticated() && request.auth.token.email == email);
+    }
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Miami3PL Daily Customs Ops"
+  short_description: "Daily passive customs and ops intelligence for Miami3PL"
+  default_prompt: "Use $miami3pl-daily-customs-ops to run today's passive Miami3PL customs and operations tasklist."

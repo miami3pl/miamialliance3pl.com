@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-03-02T15:15:37.367Z",
+  "billing_period": "2026-03-01 to 2026-03-02",
+  "results": [
+    {
+      "customer": "Unknown",
+      "email": "N/A",
+      "invoice_number": "INV-2026-03-1359",
+      "invoice_id": "TF7a35JYxn9EINNzGxPQ",
+      "total": 0,
+      "line_items": 1,
+      "unbilled_events": 0,
+      "unbilled_activities": 0,
+      "shipments": 1
+    },
+    {
+      "customer": "Yuri Petrini",
+      "email": "yuri@megalopolisms.com",
+      "invoice_number": "INV-2026-03-4013",
+      "invoice_id": "aXhXPPHHXn9KggzLsJ5Q",
+      "total": 0,
+      "line_items": 1,
+      "unbilled_events": 0,
+      "unbilled_activities": 0,
+      "shipments": 0
+    },
+    {
+      "customer": "yuri@megalopolisms.com",
+      "email": "yuri@megalopolisms.com",
+      "invoice_number": "INV-2026-03-9000",
+      "invoice_id": "KgkehLhQJBzJjkhvrWy9",
+      "total": 0,
+      "line_items": 1,
+      "unbilled_events": 0,
+      "unbilled_activities": 0,
+      "shipments": 0
+    }
+  ]
+}

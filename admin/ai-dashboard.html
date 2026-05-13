@@ -1,0 +1,1121 @@
+<!--
+================================================================================
+AI COMMAND CENTER - Miami Alliance 3PL Admin Dashboard
+================================================================================
+
+DESCRIPTION:
+    Real-time admin dashboard for monitoring and managing the Claude AI chatbot.
+    Provides visibility into conversations, escalations, campaigns, and analytics.
+
+FEATURES:
+    - Real-time conversation monitoring (live feed)
+    - Sentiment analysis visualization (positive/neutral/negative)
+    - Tool usage analytics with Chart.js
+    - Campaign management (bulk messaging)
+    - Escalation management with resolution workflow
+    - Customer health scoring display
+    - Admin reply capability for escalated chats
+
+DEPENDENCIES:
+    - Firebase Auth (admin authentication)
+    - Firebase Firestore (real-time data)
+    - Chart.js (analytics charts)
+    - ../css/style.css (base styles)
+
+FIREBASE COLLECTIONS USED:
+    - chat_logs: All AI conversation logs
+    - escalations: Human handoff tickets
+    - tool_usage: Tool call analytics
+    - campaigns: Bulk message campaigns
+    - feedback: Customer satisfaction ratings
+
+CLOUD FUNCTIONS CALLED:
+    - getDashboardStats: Real-time metrics
+    - resolveEscalation: Close escalation tickets
+    - sendBulkMessage: Campaign messaging
+    - getConversationSummary: Handoff context
+
+ACCESS:
+    Admin only - requires authenticated user with role='admin'
+
+AUTHOR: Miami Alliance 3PL
+VERSION: 2.0.0
+LAST UPDATED: 2024-12-27
+================================================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Command Center - Miami Alliance 3PL</title>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTW0F25ZM1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-KTW0F25ZM1');
+    </script>
+
+    <!-- Base Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Chart.js for Analytics Visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --ai-primary: #6366f1;
+            --ai-success: #10b981;
+            --ai-warning: #f59e0b;
+            --ai-danger: #ef4444;
+            --ai-dark: #1e293b;
+            --ai-card: #ffffff;
+        }
+
+        .ai-dashboard {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+            padding: 2rem;
+            color: #e2e8f0;
+        }
+
+        .ai-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .ai-header h1 {
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .ai-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(16, 185, 129, 0.2);
+            border-radius: 2rem;
+            font-size: 0.875rem;
+        }
+
+        .ai-status.online::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-card .label {
+            font-size: 0.875rem;
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card .value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .stat-card .trend {
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+
+        .stat-card .trend.up { color: #10b981; }
+        .stat-card .trend.down { color: #ef4444; }
+
+        .stat-card.highlight {
+            background: linear-gradient(135deg, var(--ai-primary) 0%, #8b5cf6 100%);
+            border: none;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 1.5rem;
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .panel-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .live-chat-feed {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .chat-message {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            transition: background 0.2s;
+        }
+
+        .chat-message:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .chat-message.new {
+            animation: slideIn 0.3s ease;
+            border-left: 3px solid var(--ai-primary);
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-10px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .chat-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--ai-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .chat-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .chat-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.25rem;
+        }
+
+        .chat-phone {
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .chat-time {
+            font-size: 0.75rem;
+            color: #64748b;
+        }
+
+        .chat-text {
+            color: #94a3b8;
+            font-size: 0.875rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .chat-badges {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .badge {
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .badge.vip { background: rgba(245, 158, 11, 0.2); color: #f59e0b; }
+        .badge.tool { background: rgba(99, 102, 241, 0.2); color: #818cf8; }
+        .badge.escalated { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+        .badge.spanish { background: rgba(16, 185, 129, 0.2); color: #10b981; }
+
+        .alert-list {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .alert-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .alert-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .alert-item.urgent {
+            border-left: 3px solid var(--ai-danger);
+        }
+
+        .alert-item.warning {
+            border-left: 3px solid var(--ai-warning);
+        }
+
+        .alert-icon {
+            font-size: 1.25rem;
+        }
+
+        .alert-content {
+            flex: 1;
+        }
+
+        .alert-title {
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .alert-meta {
+            font-size: 0.75rem;
+            color: #64748b;
+        }
+
+        .tool-usage-chart {
+            height: 200px;
+        }
+
+        .sentiment-chart {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .sentiment-bar {
+            flex: 1;
+            text-align: center;
+        }
+
+        .sentiment-bar .bar {
+            height: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .sentiment-bar .fill {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-radius: 0.5rem;
+            transition: height 0.5s ease;
+        }
+
+        .sentiment-bar.positive .fill { background: var(--ai-success); }
+        .sentiment-bar.neutral .fill { background: var(--ai-primary); }
+        .sentiment-bar.negative .fill { background: var(--ai-danger); }
+
+        .sentiment-bar .label {
+            font-size: 0.75rem;
+            color: #64748b;
+        }
+
+        .sentiment-bar .value {
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .campaign-form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--ai-primary) 0%, #8b5cf6 100%);
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .quick-action {
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .quick-action:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--ai-primary);
+        }
+
+        .quick-action .icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .quick-action .label {
+            font-size: 0.875rem;
+            color: #94a3b8;
+        }
+
+        .conversation-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .conversation-modal.active {
+            display: block;
+        }
+
+        .modal-content {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--ai-dark);
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+
+        .conversation-bubble {
+            margin-bottom: 1rem;
+            max-width: 80%;
+        }
+
+        .conversation-bubble.user {
+            margin-left: auto;
+        }
+
+        .conversation-bubble .bubble {
+            padding: 0.75rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .conversation-bubble.user .bubble {
+            background: var(--ai-primary);
+            color: #fff;
+            border-bottom-right-radius: 0.25rem;
+        }
+
+        .conversation-bubble.assistant .bubble {
+            background: rgba(255, 255, 255, 0.1);
+            color: #e2e8f0;
+            border-bottom-left-radius: 0.25rem;
+        }
+
+        .conversation-bubble .time {
+            font-size: 0.75rem;
+            color: #64748b;
+            margin-top: 0.25rem;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .typing-indicator {
+            display: inline-flex;
+            gap: 4px;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+        }
+
+        .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            background: #64748b;
+            border-radius: 50%;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-5px); }
+        }
+
+        @media (max-width: 1024px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .ai-dashboard {
+                padding: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .ai-header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ai-dashboard">
+        <!-- Header -->
+        <header class="ai-header">
+            <h1>
+                <span>🤖</span>
+                AI Command Center
+            </h1>
+            <div class="ai-status online" id="aiStatus">
+                <span>AI Online</span>
+                <span id="responseTime">Avg: 1.2s</span>
+            </div>
+        </header>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card highlight">
+                <div class="label">Active Conversations</div>
+                <div class="value" id="activeConversations">--</div>
+                <div class="trend up">Live now</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Today's Messages</div>
+                <div class="value" id="todayMessages">--</div>
+                <div class="trend up" id="messageTrend">+0% vs yesterday</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">AI Resolution Rate</div>
+                <div class="value" id="resolutionRate">--%</div>
+                <div class="trend up">Without escalation</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Satisfaction Score</div>
+                <div class="value" id="satisfactionScore">--</div>
+                <div class="trend" id="satisfactionTrend">Based on feedback</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Tool Calls</div>
+                <div class="value" id="toolCalls">--</div>
+                <div class="trend">Database queries</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Escalations</div>
+                <div class="value" id="escalations">--</div>
+                <div class="trend down" id="escalationTrend">Pending review</div>
+            </div>
+        </div>
+
+        <!-- Main Dashboard Grid -->
+        <div class="dashboard-grid">
+            <!-- Live Chat Feed -->
+            <div class="panel">
+                <div class="panel-header">
+                    <h2 class="panel-title">Live Conversations</h2>
+                    <button class="btn-secondary" onclick="refreshChats()">Refresh</button>
+                </div>
+                <div class="live-chat-feed" id="chatFeed">
+                    <div class="chat-message new">
+                        <div class="chat-avatar">JP</div>
+                        <div class="chat-content">
+                            <div class="chat-header">
+                                <span class="chat-phone">+1 (786) 873-8819</span>
+                                <span class="chat-time">Just now</span>
+                            </div>
+                            <div class="chat-text">Where is my shipment MA3PL-8847?</div>
+                            <div class="chat-badges">
+                                <span class="badge vip">VIP</span>
+                                <span class="badge tool">lookup_shipment</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="typing-indicator">
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alerts & Actions -->
+            <div class="panel">
+                <div class="panel-header">
+                    <h2 class="panel-title">Alerts</h2>
+                    <span class="badge" style="background: var(--ai-danger); color: #fff;" id="alertCount">0</span>
+                </div>
+                <div class="alert-list" id="alertList">
+                    <div class="alert-item urgent">
+                        <div class="alert-icon">🚨</div>
+                        <div class="alert-content">
+                            <div class="alert-title">Frustrated Customer</div>
+                            <div class="alert-meta">+1 (305) 555-0123 - 2 min ago</div>
+                        </div>
+                    </div>
+                    <div class="alert-item warning">
+                        <div class="alert-icon">⏳</div>
+                        <div class="alert-content">
+                            <div class="alert-title">Escalation Pending</div>
+                            <div class="alert-meta">3 tickets awaiting review</div>
+                        </div>
+                    </div>
+                    <div class="alert-item">
+                        <div class="alert-icon">📉</div>
+                        <div class="alert-content">
+                            <div class="alert-title">Low Feedback Score</div>
+                            <div class="alert-meta">2 customers rated poor</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin: 1.5rem 0 1rem; font-size: 1rem;">Quick Actions</h3>
+                <div class="quick-actions">
+                    <div class="quick-action" onclick="openCampaignModal()">
+                        <div class="icon">📢</div>
+                        <div class="label">Send Campaign</div>
+                    </div>
+                    <div class="quick-action" onclick="viewEscalations()">
+                        <div class="icon">🎫</div>
+                        <div class="label">View Tickets</div>
+                    </div>
+                    <div class="quick-action" onclick="runTests()">
+                        <div class="icon">🧪</div>
+                        <div class="label">Test AI</div>
+                    </div>
+                    <div class="quick-action" onclick="exportReport()">
+                        <div class="icon">📊</div>
+                        <div class="label">Export Report</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Row -->
+        <div class="dashboard-grid">
+            <!-- Tool Usage Chart -->
+            <div class="panel">
+                <div class="panel-header">
+                    <h2 class="panel-title">Tool Usage (Today)</h2>
+                </div>
+                <div class="tool-usage-chart">
+                    <canvas id="toolChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Sentiment Analysis -->
+            <div class="panel">
+                <div class="panel-header">
+                    <h2 class="panel-title">Customer Sentiment</h2>
+                </div>
+                <div class="sentiment-chart">
+                    <div class="sentiment-bar positive">
+                        <div class="bar"><div class="fill" style="height: 70%;"></div></div>
+                        <div class="value" id="positivePercent">70%</div>
+                        <div class="label">Positive</div>
+                    </div>
+                    <div class="sentiment-bar neutral">
+                        <div class="bar"><div class="fill" style="height: 20%;"></div></div>
+                        <div class="value" id="neutralPercent">20%</div>
+                        <div class="label">Neutral</div>
+                    </div>
+                    <div class="sentiment-bar negative">
+                        <div class="bar"><div class="fill" style="height: 10%;"></div></div>
+                        <div class="value" id="negativePercent">10%</div>
+                        <div class="label">Negative</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Campaign Panel -->
+        <div class="panel" id="campaignPanel" style="display: none;">
+            <div class="panel-header">
+                <h2 class="panel-title">Send Campaign</h2>
+                <button class="btn-secondary" onclick="closeCampaignModal()">Close</button>
+            </div>
+            <form class="campaign-form" onsubmit="sendCampaign(event)">
+                <div class="form-group">
+                    <label>Audience</label>
+                    <select id="campaignAudience">
+                        <option value="all">All Customers</option>
+                        <option value="vip">VIP Customers Only</option>
+                        <option value="active">Active (Last 7 Days)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea id="campaignMessage" placeholder="Enter your campaign message..."></textarea>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <button type="button" class="btn-secondary" onclick="sendTestCampaign()">Send Test</button>
+                    <button type="submit" class="btn-primary">Send to All</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Conversation Modal -->
+    <div class="conversation-modal" id="conversationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalPhone">+1 (786) 873-8819</h3>
+                <button class="modal-close" onclick="closeConversationModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="conversationBody">
+                <!-- Conversation bubbles will be inserted here -->
+            </div>
+            <div class="modal-actions">
+                <input type="text" id="adminReply" placeholder="Send a message as admin..." style="flex: 1; padding: 0.75rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 0.5rem; color: #fff;">
+                <button class="btn-primary" onclick="sendAdminReply()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+        import { getFirestore, collection, query, where, orderBy, limit, onSnapshot, getDocs, Timestamp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+        import { getFunctions, httpsCallable } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-functions.js';
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyA4wMm8-QmZGt3lJcZgTpbBa1W_TklrmRg",
+            authDomain: "miamialliance3pl.firebaseapp.com",
+            projectId: "miamialliance3pl",
+            storageBucket: "miamialliance3pl.firebasestorage.app",
+            messagingSenderId: "657614666588",
+            appId: "1:657614666588:web:20e50484fe5d90b5aa5f99"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+        const functions = getFunctions(app);
+
+        // Check auth
+        onAuthStateChanged(auth, async (user) => {
+            if (!user) {
+                window.location.href = '../login.html';
+                return;
+            }
+
+            // Verify admin role
+            const userDoc = await getDocs(query(collection(db, 'users'), where('__name__', '==', user.uid)));
+            if (userDoc.empty || userDoc.docs[0].data().role !== 'admin') {
+                alert('Admin access required');
+                window.location.href = '../portal/dashboard.html';
+                return;
+            }
+
+            // Load dashboard data
+            loadDashboardData();
+            setupRealtimeListeners();
+        });
+
+        async function loadDashboardData() {
+            try {
+                const getChatbotMetrics = httpsCallable(functions, 'getChatbotMetrics');
+                const result = await getChatbotMetrics();
+                const data = result.data;
+
+                // Update stats
+                document.getElementById('todayMessages').textContent = data.today.total_messages;
+                document.getElementById('activeConversations').textContent = data.today.unique_customers;
+                document.getElementById('toolCalls').textContent = Object.values(data.today.tool_usage).reduce((a, b) => a + b, 0);
+                document.getElementById('escalations').textContent = data.today.escalations;
+                document.getElementById('resolutionRate').textContent = (100 - parseFloat(data.today.escalation_rate)).toFixed(0) + '%';
+                document.getElementById('satisfactionScore').textContent = data.week.avg_satisfaction || 'N/A';
+
+                // Update tool chart
+                updateToolChart(data.today.tool_usage);
+
+            } catch (error) {
+                console.error('Error loading metrics:', error);
+            }
+        }
+
+        function setupRealtimeListeners() {
+            // Listen for new chat logs
+            const chatLogsQuery = query(
+                collection(db, 'chat_logs'),
+                orderBy('timestamp', 'desc'),
+                limit(20)
+            );
+
+            onSnapshot(chatLogsQuery, (snapshot) => {
+                const chatFeed = document.getElementById('chatFeed');
+                chatFeed.innerHTML = '';
+
+                snapshot.docs.forEach((doc, index) => {
+                    const data = doc.data();
+                    const isNew = index === 0;
+                    chatFeed.innerHTML += createChatMessage(data, isNew);
+                });
+            });
+
+            // Listen for escalations
+            const escalationsQuery = query(
+                collection(db, 'escalations'),
+                where('status', '==', 'open'),
+                orderBy('created_at', 'desc'),
+                limit(10)
+            );
+
+            onSnapshot(escalationsQuery, (snapshot) => {
+                document.getElementById('alertCount').textContent = snapshot.size;
+            });
+        }
+
+        function createChatMessage(data, isNew) {
+            const phone = data.phone || 'Unknown';
+            const initials = phone.slice(-4, -2) + phone.slice(-2);
+            const time = data.timestamp ? formatTime(data.timestamp.toDate()) : 'Just now';
+            const badges = [];
+
+            if (data.source === 'faq') badges.push('<span class="badge tool">FAQ</span>');
+            if (data.tools_used > 0) badges.push(`<span class="badge tool">${data.tools_used} tools</span>`);
+
+            return `
+                <div class="chat-message ${isNew ? 'new' : ''}" onclick="openConversation('${phone}')">
+                    <div class="chat-avatar">${initials}</div>
+                    <div class="chat-content">
+                        <div class="chat-header">
+                            <span class="chat-phone">${phone}</span>
+                            <span class="chat-time">${time}</span>
+                        </div>
+                        <div class="chat-text">${escapeHtml(data.user_message || '')}</div>
+                        <div class="chat-badges">${badges.join('')}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function formatTime(date) {
+            const now = new Date();
+            const diff = (now - date) / 1000;
+
+            if (diff < 60) return 'Just now';
+            if (diff < 3600) return Math.floor(diff / 60) + 'm ago';
+            if (diff < 86400) return Math.floor(diff / 3600) + 'h ago';
+            return date.toLocaleDateString();
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Initialize tool chart
+        let toolChart;
+        function updateToolChart(toolUsage) {
+            const ctx = document.getElementById('toolChart').getContext('2d');
+
+            const labels = Object.keys(toolUsage);
+            const data = Object.values(toolUsage);
+
+            if (toolChart) {
+                toolChart.destroy();
+            }
+
+            toolChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels.map(l => l.replace('_', ' ')),
+                    datasets: [{
+                        data: data,
+                        backgroundColor: 'rgba(99, 102, 241, 0.8)',
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                            ticks: { color: '#94a3b8' }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#94a3b8' }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Make functions globally available
+        window.loadDashboardData = loadDashboardData;
+
+        window.openConversation = async function(phone) {
+            document.getElementById('modalPhone').textContent = phone;
+            document.getElementById('conversationModal').classList.add('active');
+
+            // Load conversation history
+            const convQuery = query(
+                collection(db, 'chat_logs'),
+                where('phone', '==', phone),
+                orderBy('timestamp', 'desc'),
+                limit(50)
+            );
+
+            const snapshot = await getDocs(convQuery);
+            const body = document.getElementById('conversationBody');
+            body.innerHTML = '';
+
+            snapshot.docs.reverse().forEach(doc => {
+                const data = doc.data();
+                body.innerHTML += `
+                    <div class="conversation-bubble user">
+                        <div class="bubble">${escapeHtml(data.user_message)}</div>
+                        <div class="time">${formatTime(data.timestamp.toDate())}</div>
+                    </div>
+                    <div class="conversation-bubble assistant">
+                        <div class="bubble">${escapeHtml(data.ai_response)}</div>
+                    </div>
+                `;
+            });
+
+            body.scrollTop = body.scrollHeight;
+        };
+
+        window.closeConversationModal = function() {
+            document.getElementById('conversationModal').classList.remove('active');
+        };
+
+        window.sendAdminReply = async function() {
+            const phone = document.getElementById('modalPhone').textContent;
+            const message = document.getElementById('adminReply').value;
+            if (!message) return;
+
+            // Call function to send WhatsApp
+            try {
+                const sendNotification = httpsCallable(functions, 'sendShipmentNotification');
+                await sendNotification({ phoneNumber: phone, customMessage: message, channel: 'whatsapp' });
+                document.getElementById('adminReply').value = '';
+                alert('Message sent!');
+            } catch (error) {
+                alert('Failed to send: ' + error.message);
+            }
+        };
+
+        window.openCampaignModal = function() {
+            document.getElementById('campaignPanel').style.display = 'block';
+        };
+
+        window.closeCampaignModal = function() {
+            document.getElementById('campaignPanel').style.display = 'none';
+        };
+
+        window.sendCampaign = async function(e) {
+            e.preventDefault();
+            const audience = document.getElementById('campaignAudience').value;
+            const message = document.getElementById('campaignMessage').value;
+
+            if (!message) {
+                alert('Please enter a message');
+                return;
+            }
+
+            if (!confirm(`Send campaign to ${audience} customers?`)) return;
+
+            try {
+                const sendBulkMessage = httpsCallable(functions, 'sendBulkMessage');
+                const result = await sendBulkMessage({ message, filter: audience, testMode: false });
+                alert(`Campaign sent to ${result.data.sent} customers!`);
+                closeCampaignModal();
+            } catch (error) {
+                alert('Failed: ' + error.message);
+            }
+        };
+
+        window.sendTestCampaign = async function() {
+            const message = document.getElementById('campaignMessage').value;
+            if (!message) {
+                alert('Please enter a message');
+                return;
+            }
+
+            try {
+                const sendBulkMessage = httpsCallable(functions, 'sendBulkMessage');
+                await sendBulkMessage({ message, filter: 'all', testMode: true });
+                alert('Test message sent to admin phone!');
+            } catch (error) {
+                alert('Failed: ' + error.message);
+            }
+        };
+
+        window.refreshChats = loadDashboardData;
+
+        window.runTests = async function() {
+            try {
+                const testChatbot = httpsCallable(functions, 'testChatbot');
+                const result = await testChatbot();
+                alert(`AI Test Results: ${result.data.passed}/${result.data.total} passed`);
+            } catch (error) {
+                alert('Test failed: ' + error.message);
+            }
+        };
+
+        window.viewEscalations = function() {
+            window.location.href = 'escalations.html';
+        };
+
+        window.exportReport = async function() {
+            try {
+                const getChatbotMetrics = httpsCallable(functions, 'getChatbotMetrics');
+                const result = await getChatbotMetrics();
+
+                const report = JSON.stringify(result.data, null, 2);
+                const blob = new Blob([report], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `ai-report-${new Date().toISOString().split('T')[0]}.json`;
+                a.click();
+            } catch (error) {
+                alert('Export failed: ' + error.message);
+            }
+        };
+
+        // Auto-refresh every 30 seconds
+        setInterval(loadDashboardData, 30000);
+    </script>
+</body>
+</html>

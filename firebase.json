@@ -1,0 +1,32 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "functions": {
+    "source": "functions"
+  },
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "**/__pycache__/**",
+      "admin/**",
+      "docs/**",
+      "functions/**",
+      "games/**",
+      "scripts/**",
+      "skills/**",
+      "tests/**",
+      "**/*.md",
+      "**/*.py",
+      "**/*.csv",
+      "todo-*.txt",
+      "todo-*.docx"
+    ],
+    "rewrites": []
+  },
+  "extensions": {}
+}

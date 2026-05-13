@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>EDI Compliance for Wholesale Brands: How a 3PL Prevents Retail Chargebacks | Miami Alliance 3PL</title>
+    <meta name="description" content="EDI compliance is not just paperwork. Learn how a wholesale 3PL handles 850s, 856 ASNs, GS1-128 labels, routing guides, and retail chargeback prevention from one Miami warehouse.">
+    <meta name="keywords" content="EDI compliance 3PL, retailer routing guide compliance, wholesale fulfillment EDI, 856 ASN 3PL, GS1-128 labels, retail chargebacks 3PL, wholesale brand logistics, Miami wholesale 3PL">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="author" content="Miami Alliance 3PL">
+    <link rel="canonical" href="https://miamialliance3pl.com/blog/edi-compliance-retailer-routing-guide-wholesale-3pl.html">
+
+    <meta name="geo.region" content="US-FL">
+    <meta name="geo.placename" content="Medley, Florida">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://miamialliance3pl.com/blog/edi-compliance-retailer-routing-guide-wholesale-3pl.html">
+    <meta property="og:title" content="EDI Compliance for Wholesale Brands: How a 3PL Prevents Retail Chargebacks">
+    <meta property="og:description" content="A practical guide to EDI workflows, retailer routing guides, ASN accuracy, and chargeback prevention inside a wholesale 3PL operation.">
+    <meta property="og:site_name" content="Miami Alliance 3PL">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:published_time" content="2026-04-12">
+    <meta property="article:modified_time" content="2026-04-12">
+    <meta property="article:author" content="Miami Alliance 3PL">
+    <meta property="article:section" content="Wholesale Compliance">
+    <meta property="og:image" content="https://miamialliance3pl.com/images/og-default.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Miami Alliance 3PL wholesale compliance and routing guide support">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="EDI Compliance for Wholesale Brands: How a 3PL Prevents Retail Chargebacks">
+    <meta name="twitter:description" content="Learn how a wholesale 3PL turns EDI transaction sets, GS1-128 labels, and routing guide rules into a repeatable warehouse workflow.">
+    <meta name="twitter:image" content="https://miamialliance3pl.com/images/og-default.svg">
+    <meta name="twitter:image:alt" content="Miami Alliance 3PL wholesale compliance and routing guide support">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTW0F25ZM1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-KTW0F25ZM1');
+    </script>
+    <script src="../js/analytics.js" defer></script>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
+    <link rel="manifest" href="../manifest.json">
+
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <meta name="theme-color" content="#0f172a">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://miamialliance3pl.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://miamialliance3pl.com/blog.html"},
+            {"@type": "ListItem", "position": 3, "name": "EDI Compliance for Wholesale Brands", "item": "https://miamialliance3pl.com/blog/edi-compliance-retailer-routing-guide-wholesale-3pl.html"}
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "EDI Compliance for Wholesale Brands: How a 3PL Prevents Retail Chargebacks",
+        "description": "A practical guide to EDI compliance, retailer routing guide execution, ASN accuracy, and wholesale chargeback prevention inside a 3PL operation.",
+        "author": {
+            "@type": "Organization",
+            "name": "Miami Alliance 3PL",
+            "url": "https://miamialliance3pl.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Miami Alliance 3PL",
+            "url": "https://miamialliance3pl.com"
+        },
+        "datePublished": "2026-04-12",
+        "dateModified": "2026-04-12",
+        "mainEntityOfPage": "https://miamialliance3pl.com/blog/edi-compliance-retailer-routing-guide-wholesale-3pl.html"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What does EDI compliance mean in wholesale fulfillment?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "In wholesale fulfillment, EDI compliance means the warehouse can receive and act on retailer transaction data correctly, including purchase orders, advance ship notices, inventory updates, and invoices. It also means the physical shipment matches that data exactly through labeling, carton detail, pallet configuration, and routing guide execution."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which EDI documents matter most for retail orders?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The most common retail EDI documents are the 850 purchase order, 855 purchase order acknowledgment, 856 advance ship notice, 810 invoice, and 846 inventory advice. Not every retailer uses every document, but the 856 ASN is especially important because carton and pallet data must match the outbound shipment."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does a 3PL reduce retailer chargebacks?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A 3PL reduces chargebacks by building compliance into the warehouse workflow. That includes validating purchase orders, creating accurate ASN data, applying GS1-128 labels, following routing guides, confirming pallet builds, and controlling exception handling before freight leaves the dock."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why use a Miami 3PL for wholesale retail distribution?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Miami gives wholesale brands access to import gateways, bilingual operations, and strong Southeast and Latin America connectivity. For brands importing product and shipping to retailers, distributors, and marketplaces, that makes it a flexible compliance-ready distribution hub."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="logo">
+                <span class="logo-text">MIAMI ALLIANCE <span class="logo-accent">3PL</span></span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../services.html" class="nav-link">Services</a></li>
+                <li><a href="../quote.html" class="nav-link">Instant Quote</a></li>
+                <li><a href="../blog.html" class="nav-link active">Blog</a></li>
+                <li><a href="../about.html" class="nav-link">About</a></li>
+                <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="../contact.html" class="nav-link">Contact</a></li>
+                <li><a href="../login.html" class="nav-link btn btn-outline">Customer Portal</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="page-header blog-header">
+            <div class="container">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="../index.html">Home</a> &rsaquo; <a href="../blog.html">Blog</a> &rsaquo; <span>Wholesale Compliance</span>
+                </nav>
+                <span class="category-tag tag-3pl" style="margin-bottom: 1rem; display: inline-block;">Wholesale Compliance</span>
+                <h1>EDI Compliance for Wholesale Brands: How a 3PL Prevents Retail Chargebacks</h1>
+                <p class="article-subtitle">Why ASN accuracy, GS1-128 labels, and routing guide discipline belong inside the warehouse workflow, not in a last-minute spreadsheet fix</p>
+                <div class="article-byline">
+                    <span>By Miami Alliance 3PL Team</span>
+                    <span class="byline-separator">|</span>
+                    <time datetime="2026-04-12">April 12, 2026</time>
+                    <span class="byline-separator">|</span>
+                    <span>11 min read</span>
+                </div>
+            </div>
+        </section>
+
+        <div style="background: linear-gradient(135deg, #f59e0b, #d97706); padding: 12px 0; text-align: center;">
+            <div class="container">
+                <p style="color: #111827; margin: 0; font-weight: 600;">
+                    Selling wholesale into major retailers?
+                    <a href="../wholesale-3pl.html" style="color: #1e3a8a; text-decoration: underline; margin-left: 8px;">See our wholesale 3PL workflow &rarr;</a>
+                </p>
+            </div>
+        </div>
+
+        <article class="blog-article">
+            <div class="container article-container">
+                <div class="article-body">
+                    <p class="article-lead">Retail chargebacks usually do not start with one catastrophic error. They start with small execution gaps that compound: the purchase order is ingested incorrectly, the ASN is incomplete, the pallet label is wrong, the carrier does not match the routing guide, or the shipment leaves the dock with carton counts that do not match the transmitted data. The problem is often described as "EDI," but the real issue is operational alignment between data and warehouse execution.</p>
+
+                    <p>That is why wholesale brands outgrow providers that only offer storage and parcel shipping. Once you begin shipping into retail distribution centers, marketplace vendor programs, or wholesale accounts with strict compliance standards, you need a 3PL that treats EDI and routing guide execution as warehouse work. This guide explains what that means in practice and how a Miami-based wholesale 3PL can reduce avoidable chargebacks.</p>
+
+                    <div class="article-toc">
+                        <h3>In This Guide</h3>
+                        <ul>
+                            <li><a href="#edi">What EDI compliance actually means</a></li>
+                            <li><a href="#documents">The transaction sets that matter most</a></li>
+                            <li><a href="#routing-guides">Where routing guides create real warehouse work</a></li>
+                            <li><a href="#chargebacks">Common chargeback failure points</a></li>
+                            <li><a href="#workflow">How a 3PL operationalizes compliance</a></li>
+                            <li><a href="#onboarding">What onboarding should look like</a></li>
+                            <li><a href="#miami">Why Miami fits wholesale retail distribution</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                        </ul>
+                    </div>
+
+                    <h2 id="edi">What EDI Compliance Actually Means</h2>
+
+                    <p>EDI stands for Electronic Data Interchange, but the acronym can hide what matters operationally. In a wholesale environment, EDI compliance means the retailer sends structured transaction data, the brand or integration partner translates it, and the warehouse executes that order without breaking the data chain. If the physical shipment deviates from the transmitted data, the retailer treats it as a compliance failure.</p>
+
+                    <p>That means EDI is not just an integration project. It is a warehouse execution standard. The 3PL has to understand:</p>
+
+                    <ul>
+                        <li><strong>How orders enter the system:</strong> purchase order structure, SKU mapping, carton quantities, and ship windows.</li>
+                        <li><strong>How shipments are built:</strong> pallet configuration, carton detail, label placement, and carrier selection.</li>
+                        <li><strong>How outbound data is transmitted:</strong> especially the advance ship notice that tells the retailer what is arriving before the truck gets there.</li>
+                        <li><strong>How exceptions are resolved:</strong> substitutions, shortages, backorders, label errors, and appointment changes before the freight moves.</li>
+                    </ul>
+
+                    <div class="article-callout callout-info">
+                        <div class="callout-icon">📄</div>
+                        <div class="callout-content">
+                            <strong>Useful framing:</strong> EDI tells the retailer what should happen. Routing guides tell the warehouse how it must happen. Chargebacks appear when those two systems fall out of sync.
+                        </div>
+                    </div>
+
+                    <h2 id="documents">The Transaction Sets That Matter Most</h2>
+
+                    <p>Not every retailer uses the exact same document set, but the same core transactions show up repeatedly in wholesale fulfillment programs. A 3PL does not need to be the trading partner itself in every case, but it does need workflows that support the required data and labeling accuracy.</p>
+
+                    <div style="overflow-x: auto; margin: 2rem 0;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                            <thead>
+                                <tr style="background: var(--color-navy, #1e3a5f); color: #fff;">
+                                    <th style="padding: 12px 16px; text-align: left;">Document</th>
+                                    <th style="padding: 12px 16px; text-align: left;">What It Does</th>
+                                    <th style="padding: 12px 16px; text-align: left;">Why Warehouse Execution Matters</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: #f8fafc;">
+                                    <td style="padding: 12px 16px; font-weight: 600;">EDI 850</td>
+                                    <td style="padding: 12px 16px;">Purchase order from the retailer.</td>
+                                    <td style="padding: 12px 16px;">The warehouse has to map SKUs, units of measure, pack counts, and requested ship timing correctly from the start.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px 16px; font-weight: 600;">EDI 855</td>
+                                    <td style="padding: 12px 16px;">Purchase order acknowledgment.</td>
+                                    <td style="padding: 12px 16px;">Exceptions like shortages or split shipments should be caught early, not after freight is booked.</td>
+                                </tr>
+                                <tr style="background: #f8fafc;">
+                                    <td style="padding: 12px 16px; font-weight: 600;">EDI 856</td>
+                                    <td style="padding: 12px 16px;">Advance ship notice (ASN).</td>
+                                    <td style="padding: 12px 16px;">The ASN must reflect actual carton, pallet, and label data. This is one of the most common compliance breakpoints.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px 16px; font-weight: 600;">EDI 810</td>
+                                    <td style="padding: 12px 16px;">Invoice to the retailer.</td>
+                                    <td style="padding: 12px 16px;">If shipment data is wrong upstream, invoicing disputes follow downstream.</td>
+                                </tr>
+                                <tr style="background: #f8fafc;">
+                                    <td style="padding: 12px 16px; font-weight: 600;">EDI 846</td>
+                                    <td style="padding: 12px 16px;">Inventory advice or availability update.</td>
+                                    <td style="padding: 12px 16px;">Inventory accuracy inside the warehouse affects sellable availability and replenishment decisions.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>For brands growing into retail, the 856 ASN deserves special attention. It connects the outbound shipment to the retailer's receiving process. If carton IDs, pallet IDs, SSCC labels, or item counts are wrong, the problem is usually discovered at the retailer DC and converted into a chargeback.</p>
+
+                    <h2 id="routing-guides">Where Routing Guides Create Real Warehouse Work</h2>
+
+                    <p>Routing guides are often treated like PDF documents that sit with the customer service team. In practice, they are warehouse operating instructions. They define how freight must be built, labeled, booked, and tendered to avoid non-compliance penalties.</p>
+
+                    <p>A routing guide may specify:</p>
+
+                    <ul>
+                        <li><strong>Approved carriers or booking channels</strong></li>
+                        <li><strong>Appointment requirements and ship windows</strong></li>
+                        <li><strong>Pallet dimensions, stacking rules, and wrap standards</strong></li>
+                        <li><strong>Carton markings, label formats, and GS1-128 placement</strong></li>
+                        <li><strong>Mixed-SKU or mixed-PO restrictions</strong></li>
+                        <li><strong>Required documentation at pickup and delivery</strong></li>
+                    </ul>
+
+                    <p>This is why a wholesale-ready provider needs more than EDI software. It needs floor controls. The warehouse team has to know which labels print when, which orders require pallet-level detail, and what has to be verified before a truck is released.</p>
+
+                    <h2 id="chargebacks">Common Chargeback Failure Points</h2>
+
+                    <p>Most compliance deductions are avoidable. They happen when the process relies on manual interpretation, disconnected systems, or last-minute exception handling.</p>
+
+                    <ol>
+                        <li><strong>Incorrect ASN data.</strong> Carton counts, pallet hierarchies, or item quantities do not match the freight physically shipped.</li>
+                        <li><strong>Wrong or missing GS1-128 labels.</strong> The retailer cannot scan the shipment cleanly into its receiving system.</li>
+                        <li><strong>Routing guide violations.</strong> Freight is tendered to the wrong carrier, shipped outside the authorized window, or built on non-compliant pallets.</li>
+                        <li><strong>SKU or pack configuration mismatches.</strong> What was ordered is not how the goods were packed or labeled.</li>
+                        <li><strong>Late exception handling.</strong> A shortage or substitution is discovered after the compliance documents are already generated.</li>
+                        <li><strong>Poor inventory discipline.</strong> Inaccurate on-hand balances cause over-promising, rushed picks, and bad outbound data.</li>
+                    </ol>
+
+                    <p>That pattern should shape how you evaluate a provider. If a 3PL cannot explain how it validates ASN data against the physical shipment, the problem is not theoretical. It is waiting to hit your deductions report.</p>
+
+                    <div class="article-cta-inline">
+                        <h3>Need a Compliance-Ready Wholesale Operation?</h3>
+                        <p>Miami Alliance 3PL supports pallet-in, case-out wholesale workflows with routing guide discipline, retail-ready labeling, and cross-channel inventory visibility.</p>
+                        <a href="../quote.html?source=edi-guide-inline" class="btn btn-primary btn-large">Get a Wholesale 3PL Quote</a>
+                    </div>
+
+                    <h2 id="workflow">How a 3PL Operationalizes Compliance</h2>
+
+                    <p>Strong compliance performance usually comes from a simple idea: do not bolt EDI onto the end of the process. Build it into each warehouse checkpoint.</p>
+
+                    <h3>1. Clean SKU and Pack Mapping</h3>
+                    <p>The warehouse should know exactly how each retailer expects the item, carton, and pallet hierarchy to appear. That means pack counts, barcodes, UOMs, and label formats are confirmed before the first live shipment.</p>
+
+                    <h3>2. Retailer-Specific Order Rules</h3>
+                    <p>Orders should flow with account-specific logic attached. One retailer may allow mixed pallets, another may not. One may need appointment scheduling before pickup. Another may require ASN transmission before the truck departs.</p>
+
+                    <h3>3. Controlled Label Generation</h3>
+                    <p>GS1-128 and carton labels should not be improvised. They should be generated from approved templates tied to the outbound workflow so the team is not relying on manual formatting at the dock.</p>
+
+                    <h3>4. ASN Verification Against the Physical Shipment</h3>
+                    <p>Before freight leaves, the shipment record should match the actual cartons and pallets built on the floor. This is one of the most valuable checkpoints in a retail-compliance workflow.</p>
+
+                    <h3>5. Exception Escalation Before Tender</h3>
+                    <p>If inventory is short, labels are wrong, or ship windows are missed, the issue should be escalated before the load is tendered. Once the freight moves with bad data, the retailer usually controls the next step.</p>
+
+                    <h3>6. Post-Shipment Visibility</h3>
+                    <p>Brands should be able to see what was shipped, when the ASN was transmitted, and where compliance-sensitive shipments stand. Visibility is what lets you fix patterns before they become recurring deductions.</p>
+
+                    <p>This is also why many brands prefer one provider that can handle both <a href="../wholesale-3pl.html">wholesale 3PL workflows</a> and broader <a href="b2b-wholesale-fulfillment-distribution-miami-3pl-guide.html">B2B distribution requirements</a> from a single inventory pool.</p>
+
+                    <h2 id="onboarding">What Onboarding Should Look Like</h2>
+
+                    <p>If you are moving into a new retailer program or switching providers, the onboarding process should feel operationally specific. A credible 3PL should be asking for:</p>
+
+                    <ul>
+                        <li>Retailer manuals and routing guides</li>
+                        <li>Current EDI trading partner setup and document flow</li>
+                        <li>SKU master data, barcodes, and pack configurations</li>
+                        <li>Label samples and pallet build examples</li>
+                        <li>Carrier rules, ship windows, and appointment procedures</li>
+                        <li>Exception handling contacts for shortages, substitutions, and rejects</li>
+                    </ul>
+
+                    <p>If the onboarding conversation stays at storage rates and pick fees, it is incomplete. Wholesale compliance failures usually come from missing operational detail, not from a lack of good intentions.</p>
+
+                    <p>Brands making the DTC-to-retail transition often benefit from reading our broader guides on <a href="dtc-to-wholesale-fulfillment-scaling.html">scaling from DTC into wholesale</a> and <a href="3pl-contract-guide-terms-red-flags-negotiation-tips.html">what to lock down contractually with a 3PL</a>.</p>
+
+                    <h2 id="miami">Why Miami Fits Wholesale Retail Distribution</h2>
+
+                    <p>Miami is a strong node for wholesale brands that import product, serve Southeastern retail accounts, and maintain optionality for Latin America. The advantage is not only geography. It is the mix of import infrastructure, multilingual operations, and channel flexibility.</p>
+
+                    <ul>
+                        <li><strong>Import connectivity:</strong> useful for brands bringing product through ocean or air before domestic distribution.</li>
+                        <li><strong>Bilingual operations:</strong> helpful when suppliers, freight partners, or internal teams work across English and Spanish.</li>
+                        <li><strong>Cross-border optionality:</strong> relevant for brands serving both U.S. retail and Latin American channels.</li>
+                        <li><strong>Wholesale + DTC support:</strong> practical for brands that need one inventory pool for retail, distributor, and consumer orders.</li>
+                    </ul>
+
+                    <p>That matters because compliance work becomes harder when inventory is split across too many systems, locations, and handoffs. A well-run Miami warehouse can consolidate those moving parts into one accountable operation.</p>
+
+                    <h2 id="faq">Frequently Asked Questions</h2>
+
+                    <div class="faq-section">
+                        <div class="faq-item">
+                            <h3>What does EDI compliance mean in wholesale fulfillment?</h3>
+                            <p>It means purchase orders, ASNs, invoices, and inventory data are transmitted correctly and the physical shipment matches that data through labels, carton detail, pallet builds, and timing.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Which EDI documents matter most for retail orders?</h3>
+                            <p>The core documents are usually the 850 purchase order, 855 acknowledgment, 856 ASN, 810 invoice, and 846 inventory advice. The 856 is especially sensitive because it has to mirror the outbound shipment accurately.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>How does a 3PL reduce retailer chargebacks?</h3>
+                            <p>By building compliance into the floor workflow: clean SKU mapping, approved labels, ASN validation, routing guide discipline, and exception handling before freight leaves the dock.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Why use a Miami 3PL for wholesale retail distribution?</h3>
+                            <p>Miami combines import access, bilingual operations, and strong domestic plus LATAM distribution options. That makes it a practical hub for brands managing retail, wholesale, and cross-border complexity together.</p>
+                        </div>
+                    </div>
+
+                    <div class="related-articles">
+                        <h3>Related Articles</h3>
+                        <div class="related-grid">
+                            <a href="../wholesale-3pl.html" class="related-card">
+                                <span class="category-tag tag-3pl">Service Page</span>
+                                <h4>Wholesale 3PL Miami</h4>
+                                <p>See how pallet-in, case-out operations support retailer shipping, EDI workflows, and multi-channel inventory.</p>
+                            </a>
+                            <a href="b2b-wholesale-fulfillment-distribution-miami-3pl-guide.html" class="related-card">
+                                <span class="category-tag tag-industry">Wholesale Guide</span>
+                                <h4>B2B Wholesale Fulfillment &amp; Distribution Guide</h4>
+                                <p>A broader overview of wholesale order handling, retailer compliance, and distribution economics.</p>
+                            </a>
+                            <a href="../3pl-for-brands.html" class="related-card">
+                                <span class="category-tag tag-service">Brand Fulfillment</span>
+                                <h4>3PL for Brands</h4>
+                                <p>Learn how growing brands unify DTC, marketplace, and wholesale operations from one warehouse.</p>
+                            </a>
+                            <a href="3pl-contract-guide-terms-red-flags-negotiation-tips.html" class="related-card">
+                                <span class="category-tag tag-3pl">Contract Guide</span>
+                                <h4>3PL Contract Red Flags</h4>
+                                <p>Use this checklist to make sure compliance ownership and service obligations are written into the agreement.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="article-sidebar">
+                    <div class="sidebar-cta">
+                        <h3>Need Help with Retail Compliance?</h3>
+                        <p>Get a plan for EDI-sensitive wholesale fulfillment, routing guide execution, and retail-ready outbound operations from Miami.</p>
+                        <a href="../quote.html?source=edi-guide-sidebar" class="btn btn-primary">Get Instant Quote</a>
+                        <a href="../contact.html?source=edi-guide-sidebar" class="btn btn-outline" style="margin-top: 0.5rem;">Talk to Our Team</a>
+                    </div>
+
+                    <div class="sidebar-stats">
+                        <h3>Compliance Focus</h3>
+                        <div class="stat-item">
+                            <span class="stat-number">850</span>
+                            <span class="stat-label">PO Intake Discipline</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">856</span>
+                            <span class="stat-label">ASN Accuracy Priority</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">GS1</span>
+                            <span class="stat-label">Retail Label Standards</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1 Hub</span>
+                            <span class="stat-label">Wholesale + DTC Support</span>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-toc-sticky">
+                        <h4>Quick Navigation</h4>
+                        <ul>
+                            <li><a href="#edi">What EDI Means</a></li>
+                            <li><a href="#documents">Key Documents</a></li>
+                            <li><a href="#routing-guides">Routing Guides</a></li>
+                            <li><a href="#chargebacks">Chargebacks</a></li>
+                            <li><a href="#workflow">3PL Workflow</a></li>
+                            <li><a href="#onboarding">Onboarding</a></li>
+                            <li><a href="#miami">Why Miami</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </article>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Need a 3PL That Can Handle Retail Compliance Without the Fire Drills?</h2>
+                <p>Miami Alliance 3PL helps wholesale brands align purchase orders, labels, routing guides, and outbound execution so retail growth does not turn into deduction-heavy logistics debt.</p>
+                <div class="cta-buttons">
+                    <a href="../quote.html?source=edi-guide-footer" class="btn btn-primary btn-large">Get a Compliance Review</a>
+                    <a href="../wholesale-3pl.html" class="btn btn-secondary btn-large" style="border-color: rgba(255,255,255,0.3); color: white;">View Wholesale Services</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="../assets/logo.jpg" alt="Miami Alliance 3PL" class="nav-logo-img" style="height: 48px;">
+                        <span class="logo-text">MIAMI ALLIANCE <span class="logo-accent">3PL</span></span>
+                    </div>
+                    <p>Your trusted logistics partner in Miami. Warehousing, fulfillment, and shipping services for businesses of all sizes.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../services.html">Services</a></li>
+                        <li><a href="../quote.html">Instant Quote</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="../login.html">Customer Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../wholesale-3pl.html">Wholesale 3PL</a></li>
+                        <li><a href="../3pl-for-brands.html">3PL for Brands</a></li>
+                        <li><a href="../services.html#warehousing">Warehousing</a></li>
+                        <li><a href="../services.html#fulfillment">Fulfillment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>8780 NW 100th ST</p>
+                    <p>Medley, FL 33178</p>
+                    <p><a href="mailto:contact@miamialliance3pl.com" style="color: var(--color-accent);">contact@miamialliance3pl.com</a></p>
+                    <p><a href="tel:+17868738819" style="color: var(--color-accent);">(786) 873-8819</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Miami Alliance 3PL. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="sticky-cta">
+        <a href="../quote.html?source=edi-guide-sticky"><span class="sticky-cta-icon">📦</span> Get Free Quote</a>
+    </div>
+
+    <script src="../js/main.js" defer></script>
+    <script src="../js/lang/es.js" defer></script>
+    <script src="../js/lang/pt-br.js" defer></script>
+    <script src="../js/lang/zh.js" defer></script>
+    <script src="../js/i18n.js" defer></script>
+    <script src="../js/chat-widget.js"></script>
+</body>
+</html>

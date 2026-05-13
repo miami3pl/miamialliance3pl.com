@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Pickup & Delivery | Miami Alliance 3PL Portal</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0f172a">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/style.css?v=8">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTW0F25ZM1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-KTW0F25ZM1');
+    </script>
+    <script src="../js/analytics.js"></script>
+    <style>
+        /* ================================================
+           PICKUP & DELIVERY REQUEST PAGE STYLES
+           ================================================ */
+        .pickup-hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-xl);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+        }
+        .pickup-hero h1 {
+            font-size: var(--font-size-2xl);
+            margin: 0;
+        }
+        .pickup-hero p {
+            opacity: 0.9;
+            margin: 4px 0 0;
+        }
+        .pickup-hero .btn-new-request {
+            background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .pickup-hero .btn-new-request:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(20, 184, 166, 0.4);
+        }
+
+        /* Request Form Overlay */
+        .request-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(8px);
+            z-index: 9999;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 24px;
+            overflow-y: auto;
+        }
+        .request-overlay.active { display: flex; }
+
+        .request-modal {
+            background: #fff;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 720px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.25);
+            overflow: hidden;
+            margin: auto;
+        }
+        .request-modal-header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            padding: 20px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .request-modal-header h2 {
+            color: #fff;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        .request-modal-header h2 .accent { color: #14b8a6; }
+        .request-modal-close {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #fff;
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        .request-modal-close:hover { background: rgba(255,255,255,0.25); }
+
+        .request-modal-body {
+            padding: 28px;
+        }
+
+        /* Steps Indicator */
+        .steps-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 28px;
+        }
+        .step-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #e2e8f0;
+            transition: all 0.3s;
+        }
+        .step-dot.active {
+            background: #14b8a6;
+            transform: scale(1.2);
+        }
+        .step-dot.completed {
+            background: #1e3a5f;
+        }
+
+        /* Step sections */
+        .form-step {
+            display: none;
+        }
+        .form-step.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .step-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .step-title .step-num {
+            background: #1e3a5f;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        /* Service Type Selector */
+        .service-type-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .service-type-card {
+            border: 2px solid #e2e8f0;
+            border-radius: var(--radius-md);
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: white;
+        }
+        .service-type-card:hover {
+            border-color: #14b8a6;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .service-type-card.selected {
+            border-color: #14b8a6;
+            background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+        }
+        .service-type-card .type-icon {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+        }
+        .service-type-card .type-name {
+            font-weight: 700;
+            color: #1e3a5f;
+            font-size: 1.05rem;
+        }
+        .service-type-card .type-desc {
+            font-size: 0.82rem;
+            color: #64748b;
+            margin-top: 4px;
+        }
+
+        /* Pallet Selector */
+        .pallet-selector {
+            margin-bottom: 24px;
+        }
+        .pallet-selector label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #475569;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .pallet-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .pallet-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid #e2e8f0;
+            background: white;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            color: #1e3a5f;
+        }
+        .pallet-btn:hover {
+            border-color: #14b8a6;
+            background: #f0fdfa;
+        }
+        .pallet-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        .pallet-count {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            min-width: 50px;
+            text-align: center;
+        }
+        .pallet-slider {
+            flex: 1;
+            -webkit-appearance: none;
+            height: 8px;
+            border-radius: 4px;
+            background: linear-gradient(to right, #14b8a6 0%, #14b8a6 var(--pallet-pct, 0%), #e2e8f0 var(--pallet-pct, 0%), #e2e8f0 100%);
+            outline: none;
+        }
+        .pallet-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #1e3a5f;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        .pallet-slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #1e3a5f;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        /* Price Display */
+        .price-display {
+            background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+            border: 2px solid #14b8a6;
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+        .price-display .price-header {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .price-display .price-label {
+            font-size: 0.85rem;
+            color: #0d9488;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .price-display .price-amount {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f766e;
+            margin: 4px 0;
+        }
+        .price-breakdown-table {
+            width: 100%;
+            border-top: 1px dashed #99f6e4;
+            padding-top: 12px;
+            margin-top: 4px;
+        }
+        .price-breakdown-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            font-size: 0.88rem;
+            color: #475569;
+        }
+        .price-breakdown-row.total-row {
+            border-top: 2px solid #0d9488;
+            margin-top: 6px;
+            padding-top: 8px;
+            font-weight: 700;
+            color: #0f766e;
+            font-size: 1rem;
+        }
+        .price-breakdown-row .breakdown-label {
+            color: #64748b;
+        }
+        .price-breakdown-row .breakdown-value {
+            font-weight: 600;
+            color: #1e293b;
+        }
+        .price-breakdown-row.total-row .breakdown-value {
+            color: #0f766e;
+        }
+        .price-rate-info {
+            font-size: 0.78rem;
+            color: #94a3b8;
+            text-align: center;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Form Groups */
+        .form-row {
+            display: grid;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .form-row.cols-2 { grid-template-columns: 1fr 1fr; }
+        .form-row.cols-3 { grid-template-columns: 2fr 1fr 1fr; }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .form-group label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #475569;
+        }
+        .form-group label .required {
+            color: #ef4444;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 10px 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: var(--radius-md, 8px);
+            font-size: 0.9rem;
+            font-family: inherit;
+            color: #1e293b;
+            transition: border-color 0.2s;
+            background: white;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #14b8a6;
+        }
+        .form-group input.error,
+        .form-group select.error {
+            border-color: #ef4444;
+        }
+
+        /* Document Upload */
+        .upload-zone {
+            border: 2px dashed #cbd5e1;
+            border-radius: var(--radius-md);
+            padding: 32px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: #f8fafc;
+            margin-bottom: 16px;
+        }
+        .upload-zone:hover,
+        .upload-zone.dragover {
+            border-color: #14b8a6;
+            background: #f0fdfa;
+        }
+        .upload-zone .upload-icon {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+        }
+        .upload-zone .upload-text {
+            font-size: 0.95rem;
+            color: #475569;
+            font-weight: 500;
+        }
+        .upload-zone .upload-hint {
+            font-size: 0.78rem;
+            color: #94a3b8;
+            margin-top: 4px;
+        }
+        .upload-preview {
+            display: none;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: #f0fdfa;
+            border: 1px solid #99f6e4;
+            border-radius: var(--radius-md);
+            margin-bottom: 16px;
+        }
+        .upload-preview.active {
+            display: flex;
+        }
+        .upload-preview .file-icon {
+            font-size: 1.5rem;
+        }
+        .upload-preview .file-info {
+            flex: 1;
+        }
+        .upload-preview .file-name {
+            font-weight: 600;
+            color: #1e293b;
+            font-size: 0.9rem;
+        }
+        .upload-preview .file-size {
+            font-size: 0.78rem;
+            color: #64748b;
+        }
+        .upload-preview .file-remove {
+            background: none;
+            border: none;
+            color: #ef4444;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        /* Step Navigation Buttons */
+        .step-actions {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+        .btn-step {
+            padding: 12px 28px;
+            border-radius: var(--radius-md);
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+        .btn-step-back {
+            background: #f1f5f9;
+            color: #475569;
+        }
+        .btn-step-back:hover {
+            background: #e2e8f0;
+        }
+        .btn-step-next {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+        }
+        .btn-step-next:hover {
+            box-shadow: 0 4px 12px rgba(30, 58, 95, 0.3);
+        }
+        .btn-step-submit {
+            background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+            color: white;
+            flex: 1;
+        }
+        .btn-step-submit:hover {
+            box-shadow: 0 4px 12px rgba(20, 184, 166, 0.4);
+        }
+        .btn-step:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Summary Review */
+        .summary-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            margin-bottom: 12px;
+        }
+        .summary-card h4 {
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #64748b;
+            margin: 0 0 10px;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            font-size: 0.9rem;
+        }
+        .summary-row .label {
+            color: #64748b;
+        }
+        .summary-row .value {
+            color: #1e293b;
+            font-weight: 600;
+        }
+        .summary-total {
+            background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
+            color: white;
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            text-align: center;
+            margin: 16px 0;
+        }
+        .summary-total .total-label {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+        .summary-total .total-amount {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        /* Requests Table */
+        .requests-table-wrap {
+            background: white;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-gray-200);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        .requests-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .requests-table th {
+            background: #f8fafc;
+            padding: 12px 16px;
+            text-align: left;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #475569;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .requests-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 0.9rem;
+            color: #1e293b;
+        }
+        .requests-table tr:hover {
+            background: #f8fafc;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .status-pending { background: #fef3c7; color: #92400e; }
+        .status-confirmed { background: #d1fae5; color: #065f46; }
+        .status-in_progress { background: #dbeafe; color: #1e40af; }
+        .status-completed { background: #d1fae5; color: #065f46; }
+        .status-cancelled { background: #fee2e2; color: #991b1b; }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #64748b;
+        }
+        .empty-state .empty-icon {
+            font-size: 3.5rem;
+            margin-bottom: 16px;
+        }
+        .empty-state h3 {
+            font-size: 1.15rem;
+            color: #334155;
+            margin-bottom: 8px;
+        }
+        .empty-state p {
+            font-size: 0.9rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .pickup-hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .service-type-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-row.cols-2,
+            .form-row.cols-3 {
+                grid-template-columns: 1fr;
+            }
+            .request-modal {
+                border-radius: 12px;
+            }
+            .requests-table {
+                font-size: 0.82rem;
+            }
+            .requests-table th,
+            .requests-table td {
+                padding: 10px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="logo">
+                <span class="logo-text">MIAMI ALLIANCE <span class="logo-accent">3PL</span></span>
+            </a>
+            <button class="nav-toggle sidebar-toggle" aria-label="Toggle sidebar">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><span id="user-name" class="nav-link">Welcome</span></li>
+                <li><a href="#" id="logout-btn" class="nav-link btn btn-outline">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="portal-layout">
+        <!-- Sidebar -->
+        <aside class="portal-sidebar">
+            <nav role="navigation" aria-label="Main navigation">
+                <a href="dashboard.html" class="portal-nav-item">
+                    <span aria-hidden="true">📊</span> <span>Dashboard</span>
+                </a>
+                <a href="shipments.html" class="portal-nav-item">
+                    <span aria-hidden="true">🚚</span> <span>Shipments</span>
+                </a>
+                <a href="pickups.html" class="portal-nav-item active" aria-current="page">
+                    <span aria-hidden="true">🏗️</span> <span>Pickup & Delivery</span>
+                </a>
+                <a href="tracking.html" class="portal-nav-item">
+                    <span aria-hidden="true">🔍</span> <span>Tracking</span>
+                </a>
+                <a href="inventory.html" class="portal-nav-item">
+                    <span aria-hidden="true">📦</span> <span>Inventory</span>
+                </a>
+                <a href="admin-billing.html" class="portal-nav-item">
+                    <span aria-hidden="true">💵</span> <span>Billing</span>
+                </a>
+                <a href="contracts.html" class="portal-nav-item">
+                    <span aria-hidden="true">📄</span> <span>Contracts</span>
+                </a>
+                <div id="employee-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;" aria-hidden="true">Staff</div>
+                    <a href="customers.html" class="portal-nav-item">
+                        <span aria-hidden="true">👥</span> <span>All Customers</span>
+                    </a>
+                    <a href="admin-shipments.html" class="portal-nav-item">
+                        <span aria-hidden="true">📋</span> <span>All Shipments</span>
+                    </a>
+                </div>
+                <div id="admin-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;" aria-hidden="true">Admin</div>
+                    <a href="admin-panel.html" class="portal-nav-item">
+                        <span>🛡️</span> <span>Admin Control Panel</span>
+                    </a>                    <a href="admin-pickups.html" class="portal-nav-item">
+                        <span aria-hidden="true">🚛</span> <span>All Pickup Requests</span>
+                    </a>
+                    <a href="admin-billing.html" class="portal-nav-item"><span>📝</span> <span>Activity Billing</span></a>
+                    <a href="invoices.html" class="portal-nav-item">
+                        <span aria-hidden="true">💵</span> <span>Invoices</span>
+                    </a>
+                    <a href="storage-log.html" class="portal-nav-item">
+                        <span aria-hidden="true">📊</span> <span>Storage Log</span>
+                    </a>
+                    <a href="pricing.html" class="portal-nav-item">
+                        <span aria-hidden="true">💰</span> <span>Pricing</span>
+                    </a>
+                    <a href="settings.html" class="portal-nav-item">
+                        <span aria-hidden="true">⚙️</span> <span>Settings</span>
+                    </a>
+                    <a href="team.html" class="portal-nav-item">
+                        <span aria-hidden="true">👔</span> <span>Manage Team</span>
+                    </a>
+                    <a href="changelog.html" class="portal-nav-item">
+                        <span aria-hidden="true">📝</span> <span>Changelog</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="portal-main">
+            <!-- Hero Section -->
+            <div class="pickup-hero">
+                <div>
+                    <h1>🏗️ Pickup & Delivery</h1>
+                    <p>Request pallet pickup or delivery service from our warehouse.</p>
+                </div>
+                <button class="btn-new-request" onclick="openRequestForm()">
+                    <span style="font-size: 1.2em;">+</span> New Request
+                </button>
+            </div>
+
+            <!-- Existing Requests Table -->
+            <div id="requests-container">
+                <div class="empty-state" id="empty-state">
+                    <div class="empty-icon">🚛</div>
+                    <h3>No pickup or delivery requests yet</h3>
+                    <p>Click "+ New Request" to schedule a pallet pickup or delivery from our warehouse.</p>
+                </div>
+                <div class="requests-table-wrap" id="requests-table-wrap" style="display: none;">
+                    <table class="requests-table">
+                        <thead>
+                            <tr>
+                                <th>Request #</th>
+                                <th>Type</th>
+                                <th>Pallets</th>
+                                <th>Date</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="requests-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ============================================
+         REQUEST FORM MODAL (MULTI-STEP)
+         ============================================ -->
+    <div class="request-overlay" id="request-overlay">
+        <div class="request-modal">
+            <div class="request-modal-header">
+                <h2>🏗️ New <span class="accent">Pickup / Delivery</span> Request</h2>
+                <button class="request-modal-close" onclick="closeRequestForm()">&times;</button>
+            </div>
+            <div class="request-modal-body">
+                <!-- Steps Indicator -->
+                <div class="steps-indicator">
+                    <div class="step-dot active" data-step="1"></div>
+                    <div class="step-dot" data-step="2"></div>
+                    <div class="step-dot" data-step="3"></div>
+                    <div class="step-dot" data-step="4"></div>
+                </div>
+
+                <form id="pickup-form" onsubmit="return false;">
+
+                    <!-- ========== STEP 1: Service Type & Pallets ========== -->
+                    <div class="form-step active" data-step="1">
+                        <div class="step-title">
+                            <span class="step-num">1</span> Select Service & Quantity
+                        </div>
+
+                        <!-- Service Type -->
+                        <div class="service-type-grid">
+                            <div class="service-type-card" data-type="pickup" onclick="selectServiceType('pickup')">
+                                <div class="type-icon">🚛</div>
+                                <div class="type-name">Pickup</div>
+                                <div class="type-desc">We pick up pallets from your location</div>
+                            </div>
+                            <div class="service-type-card" data-type="dropoff" onclick="selectServiceType('dropoff')">
+                                <div class="type-icon">📦</div>
+                                <div class="type-name">Delivery</div>
+                                <div class="type-desc">We deliver pallets to your location</div>
+                            </div>
+                        </div>
+
+                        <!-- Pallet Count -->
+                        <div class="pallet-selector">
+                            <label>Number of Pallets (1-8)</label>
+                            <div class="pallet-controls">
+                                <button type="button" class="pallet-btn" onclick="adjustPallets(-1)">−</button>
+                                <span class="pallet-count" id="pallet-count">1</span>
+                                <input type="range" class="pallet-slider" id="pallet-slider"
+                                       min="1" max="8" value="1" step="1"
+                                       oninput="updatePallets(this.value)">
+                                <button type="button" class="pallet-btn" onclick="adjustPallets(1)">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Price Display -->
+                        <div class="price-display">
+                            <div class="price-header">
+                                <div class="price-label">Estimated Cost</div>
+                                <div class="price-amount" id="price-amount">$120.00</div>
+                            </div>
+                            <div class="price-breakdown-table" id="price-breakdown">
+                                <div class="price-breakdown-row">
+                                    <span class="breakdown-label">Base rate (1st pallet)</span>
+                                    <span class="breakdown-value" id="breakdown-base">$120.00</span>
+                                </div>
+                                <div class="price-breakdown-row" id="breakdown-extra-row" style="display: none;">
+                                    <span class="breakdown-label" id="breakdown-extra-label">Additional pallets (0 x $25.00)</span>
+                                    <span class="breakdown-value" id="breakdown-extra-value">$0.00</span>
+                                </div>
+                                <div class="price-breakdown-row total-row">
+                                    <span class="breakdown-label">Total</span>
+                                    <span class="breakdown-value" id="breakdown-total">$120.00</span>
+                                </div>
+                            </div>
+                            <div class="price-rate-info">Rate: $120 for 1st pallet + $25 per additional pallet (max 8)</div>
+                        </div>
+
+                        <div class="step-actions">
+                            <div></div>
+                            <button type="button" class="btn-step btn-step-next" onclick="goToStep(2)" id="btn-step1-next" disabled>
+                                Next →
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ========== STEP 2: Location & Schedule ========== -->
+                    <div class="form-step" data-step="2">
+                        <div class="step-title">
+                            <span class="step-num">2</span> <span id="step2-title">Pickup</span> Details
+                        </div>
+
+                        <div class="form-row cols-2">
+                            <div class="form-group">
+                                <label>Contact Name <span class="required">*</span></label>
+                                <input type="text" id="contact-name" name="contact_name" required placeholder="Full name">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="contact-phone" name="contact_phone" required placeholder="(555) 123-4567">
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 16px;">
+                            <label>Email</label>
+                            <input type="email" id="contact-email" name="contact_email" placeholder="email@example.com">
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 16px;">
+                            <label><span id="address-label">Pickup</span> Address <span class="required">*</span></label>
+                            <input type="text" id="address-street" name="address_street" required placeholder="Street address">
+                        </div>
+
+                        <div class="form-row cols-3">
+                            <div class="form-group">
+                                <label>City <span class="required">*</span></label>
+                                <input type="text" id="address-city" name="address_city" required placeholder="City">
+                            </div>
+                            <div class="form-group">
+                                <label>State <span class="required">*</span></label>
+                                <select id="address-state" name="address_state" required>
+                                    <option value="">State</option>
+                                    <option value="FL">FL</option>
+                                    <option value="GA">GA</option>
+                                    <option value="AL">AL</option>
+                                    <option value="SC">SC</option>
+                                    <option value="NC">NC</option>
+                                    <option value="TN">TN</option>
+                                    <option value="MS">MS</option>
+                                    <option value="LA">LA</option>
+                                    <option value="TX">TX</option>
+                                    <option value="NY">NY</option>
+                                    <option value="NJ">NJ</option>
+                                    <option value="PA">PA</option>
+                                    <option value="CA">CA</option>
+                                    <option value="IL">IL</option>
+                                    <option value="OH">OH</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>ZIP <span class="required">*</span></label>
+                                <input type="text" id="address-zip" name="address_zip" required placeholder="ZIP" maxlength="10">
+                            </div>
+                        </div>
+
+                        <div class="form-row cols-2" style="margin-top: 16px;">
+                            <div class="form-group">
+                                <label>Preferred Date <span class="required">*</span></label>
+                                <input type="date" id="preferred-date" name="preferred_date" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Preferred Time</label>
+                                <select id="preferred-time" name="preferred_time">
+                                    <option value="morning">Morning (8AM - 12PM)</option>
+                                    <option value="afternoon">Afternoon (12PM - 5PM)</option>
+                                    <option value="flexible">Flexible</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-top: 16px;">
+                            <label>Special Instructions</label>
+                            <textarea id="special-instructions" name="special_instructions" rows="3" placeholder="Loading dock access, gate codes, forklift needed, etc."></textarea>
+                        </div>
+
+                        <div class="step-actions">
+                            <button type="button" class="btn-step btn-step-back" onclick="goToStep(1)">← Back</button>
+                            <button type="button" class="btn-step btn-step-next" onclick="goToStep(3)" id="btn-step2-next">
+                                Next →
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ========== STEP 3: Document Upload ========== -->
+                    <div class="form-step" data-step="3">
+                        <div class="step-title">
+                            <span class="step-num">3</span> Upload Documentation
+                        </div>
+
+                        <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 16px;">
+                            Please upload a Bill of Lading (BOL) or Invoice for this shipment. Accepted formats: PDF, PNG, JPG.
+                        </p>
+
+                        <!-- Upload Zone -->
+                        <div class="upload-zone" id="upload-zone"
+                             ondragover="handleDragOver(event)"
+                             ondragleave="handleDragLeave(event)"
+                             ondrop="handleDrop(event)"
+                             onclick="document.getElementById('file-input').click()">
+                            <div class="upload-icon">📄</div>
+                            <div class="upload-text">Drag & drop your BOL or Invoice here</div>
+                            <div class="upload-hint">or click to browse — PDF, PNG, JPG (max 10MB)</div>
+                        </div>
+                        <input type="file" id="file-input" accept=".pdf,.png,.jpg,.jpeg" style="display: none;" onchange="handleFileSelect(event)">
+
+                        <!-- Upload Preview -->
+                        <div class="upload-preview" id="upload-preview">
+                            <span class="file-icon" id="file-icon">📄</span>
+                            <div class="file-info">
+                                <div class="file-name" id="file-name">document.pdf</div>
+                                <div class="file-size" id="file-size">2.3 MB</div>
+                            </div>
+                            <button type="button" class="file-remove" onclick="removeFile()">✕</button>
+                        </div>
+
+                        <!-- Document Type -->
+                        <div class="form-group" id="doc-type-group" style="display: none;">
+                            <label>Document Type <span class="required">*</span></label>
+                            <select id="doc-type" name="doc_type">
+                                <option value="bol">Bill of Lading (BOL)</option>
+                                <option value="invoice">Invoice</option>
+                                <option value="packing_list">Packing List</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="step-actions">
+                            <button type="button" class="btn-step btn-step-back" onclick="goToStep(2)">← Back</button>
+                            <button type="button" class="btn-step btn-step-next" onclick="goToStep(4)">
+                                Review →
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ========== STEP 4: Review & Submit ========== -->
+                    <div class="form-step" data-step="4">
+                        <div class="step-title">
+                            <span class="step-num">4</span> Review & Submit
+                        </div>
+
+                        <!-- Summary Cards -->
+                        <div class="summary-card">
+                            <h4>Service Details</h4>
+                            <div class="summary-row">
+                                <span class="label">Type</span>
+                                <span class="value" id="sum-type">—</span>
+                            </div>
+                            <div class="summary-row">
+                                <span class="label">Pallets</span>
+                                <span class="value" id="sum-pallets">—</span>
+                            </div>
+                        </div>
+
+                        <div class="summary-card">
+                            <h4>Location & Schedule</h4>
+                            <div class="summary-row">
+                                <span class="label">Contact</span>
+                                <span class="value" id="sum-contact">—</span>
+                            </div>
+                            <div class="summary-row">
+                                <span class="label">Address</span>
+                                <span class="value" id="sum-address">—</span>
+                            </div>
+                            <div class="summary-row">
+                                <span class="label">Date / Time</span>
+                                <span class="value" id="sum-datetime">—</span>
+                            </div>
+                        </div>
+
+                        <div class="summary-card">
+                            <h4>Documentation</h4>
+                            <div class="summary-row">
+                                <span class="label">File</span>
+                                <span class="value" id="sum-file">No file uploaded</span>
+                            </div>
+                        </div>
+
+                        <div class="summary-card">
+                            <h4>Cost Breakdown</h4>
+                            <div class="summary-row">
+                                <span class="label">Base rate (1st pallet)</span>
+                                <span class="value" id="sum-base">$120.00</span>
+                            </div>
+                            <div class="summary-row" id="sum-extra-row" style="display: none;">
+                                <span class="label" id="sum-extra-label">Additional pallets</span>
+                                <span class="value" id="sum-extra-value">$0.00</span>
+                            </div>
+                        </div>
+
+                        <div class="summary-total">
+                            <div class="total-label">Total Estimated Cost</div>
+                            <div class="total-amount" id="sum-total">$120.00</div>
+                        </div>
+
+                        <div class="step-actions">
+                            <button type="button" class="btn-step btn-step-back" onclick="goToStep(3)">← Back</button>
+                            <button type="button" class="btn-step btn-step-submit" onclick="submitRequest()" id="btn-submit">
+                                ✓ Submit Request
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase + Portal JS -->
+    <script type="module">
+        import { initFirebase, onAuthChange, signOutUser, getUserRole, isStaff, isAdmin, getSettings } from '../js/firebase.js';
+
+        // ============================================================
+        // STATE
+        // ============================================================
+        let currentUser = null;
+        let currentRole = 'customer';
+        let selectedServiceType = null;
+        let palletCount = 1;
+        let uploadedFile = null;
+        let currentStep = 1;
+
+        // Pricing defaults (can be overridden by admin settings)
+        let PRICING = {
+            basePallet: 120,    // $120 for 1 pallet
+            extraPallet: 25,    // $25 per additional pallet
+            maxPallets: 8       // max pallets per request (admin-configurable)
+        };
+
+        // Make functions globally available
+        window.openRequestForm = openRequestForm;
+        window.closeRequestForm = closeRequestForm;
+        window.selectServiceType = selectServiceType;
+        window.adjustPallets = adjustPallets;
+        window.updatePallets = updatePallets;
+        window.goToStep = goToStep;
+        window.submitRequest = submitRequest;
+        window.handleDragOver = handleDragOver;
+        window.handleDragLeave = handleDragLeave;
+        window.handleDrop = handleDrop;
+        window.handleFileSelect = handleFileSelect;
+        window.removeFile = removeFile;
+
+        // ============================================================
+        // INIT
+        // ============================================================
+        document.addEventListener('DOMContentLoaded', async () => {
+            await initFirebase();
+
+            // Set min date for date picker to today
+            const dateInput = document.getElementById('preferred-date');
+            if (dateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                dateInput.min = today;
+                dateInput.value = today;
+            }
+
+            // Auth state listener
+            onAuthChange(async (user, userData, role) => {
+                if (!user) {
+                    window.location.href = '../login.html';
+                    return;
+                }
+
+                currentUser = user;
+                currentRole = role;
+
+                document.getElementById('user-name').textContent = `Welcome, ${userData?.company || user.displayName || user.email}`;
+
+                // Show role-based nav
+                const employeeNav = document.getElementById('employee-nav');
+                const adminNav = document.getElementById('admin-nav');
+                if (role === 'admin') {
+                    if (employeeNav) employeeNav.style.display = 'block';
+                    if (adminNav) adminNav.style.display = 'block';
+                } else if (role === 'employee') {
+                    if (employeeNav) employeeNav.style.display = 'block';
+                }
+
+                // Load admin pricing if available
+                await loadPricing();
+
+                // Load user requests
+                await loadRequests();
+
+                // Auto-open if URL has ?new=1
+                if (new URLSearchParams(window.location.search).get('new') === '1') {
+                    openRequestForm();
+                }
+            });
+
+            // Logout
+            document.getElementById('logout-btn').addEventListener('click', async (e) => {
+                e.preventDefault();
+                await signOutUser();
+                window.location.href = '../login.html';
+            });
+        });
+
+        // ============================================================
+        // PRICING
+        // ============================================================
+        async function loadPricing() {
+            try {
+                const settings = await getSettings('pickup_pricing');
+                if (settings) {
+                    PRICING.basePallet = settings.basePallet || 120;
+                    PRICING.extraPallet = settings.extraPallet || 25;
+                    PRICING.maxPallets = settings.maxPallets || 8;
+                }
+            } catch (e) {
+                // Using default pricing values
+            }
+
+            // Apply max pallets to slider and label
+            const slider = document.getElementById('pallet-slider');
+            if (slider) {
+                slider.max = PRICING.maxPallets;
+            }
+            const palletLabel = document.querySelector('.pallet-selector label');
+            if (palletLabel) {
+                palletLabel.textContent = `Number of Pallets (1-${PRICING.maxPallets})`;
+            }
+
+            updatePrice();
+        }
+
+        function calculatePrice(count) {
+            if (count <= 0) return 0;
+            // First pallet = base rate, each additional = extra rate
+            return PRICING.basePallet + Math.max(0, count - 1) * PRICING.extraPallet;
+        }
+
+        function updatePrice() {
+            const total = calculatePrice(palletCount);
+            const extraCount = Math.max(0, palletCount - 1);
+            const extraCost = extraCount * PRICING.extraPallet;
+
+            // Update main price amount
+            document.getElementById('price-amount').textContent = `$${total.toFixed(2)}`;
+
+            // Update breakdown: base rate
+            document.getElementById('breakdown-base').textContent = `$${PRICING.basePallet.toFixed(2)}`;
+
+            // Update breakdown: additional pallets row
+            const extraRow = document.getElementById('breakdown-extra-row');
+            if (extraCount > 0) {
+                extraRow.style.display = '';
+                document.getElementById('breakdown-extra-label').textContent = `Additional pallets (${extraCount} x $${PRICING.extraPallet.toFixed(2)})`;
+                document.getElementById('breakdown-extra-value').textContent = `$${extraCost.toFixed(2)}`;
+            } else {
+                extraRow.style.display = 'none';
+            }
+
+            // Update breakdown: total
+            document.getElementById('breakdown-total').textContent = `$${total.toFixed(2)}`;
+        }
+
+        // ============================================================
+        // SERVICE TYPE
+        // ============================================================
+        function selectServiceType(type) {
+            selectedServiceType = type;
+
+            document.querySelectorAll('.service-type-card').forEach(card => {
+                card.classList.toggle('selected', card.dataset.type === type);
+            });
+
+            // Update labels
+            const label = type === 'pickup' ? 'Pickup' : 'Delivery';
+            document.getElementById('step2-title').textContent = label;
+            document.getElementById('address-label').textContent = label;
+
+            // Enable next button
+            document.getElementById('btn-step1-next').disabled = false;
+        }
+
+        // ============================================================
+        // PALLET COUNT
+        // ============================================================
+        function adjustPallets(delta) {
+            const max = PRICING.maxPallets || 8;
+            const newCount = Math.max(1, Math.min(max, palletCount + delta));
+            updatePallets(newCount);
+        }
+
+        function updatePallets(count) {
+            const max = PRICING.maxPallets || 8;
+            palletCount = parseInt(count) || 1;
+            palletCount = Math.max(1, Math.min(max, palletCount));
+
+            document.getElementById('pallet-count').textContent = palletCount;
+            document.getElementById('pallet-slider').value = palletCount;
+
+            // Update slider fill
+            const pct = ((palletCount - 1) / Math.max(1, max - 1)) * 100;
+            document.getElementById('pallet-slider').style.setProperty('--pallet-pct', pct + '%');
+
+            updatePrice();
+        }
+
+        // ============================================================
+        // MULTI-STEP NAVIGATION
+        // ============================================================
+        function goToStep(step) {
+            // Validate current step before proceeding
+            if (step > currentStep) {
+                if (!validateStep(currentStep)) return;
+            }
+
+            currentStep = step;
+
+            // Update step dots
+            document.querySelectorAll('.step-dot').forEach(dot => {
+                const dotStep = parseInt(dot.dataset.step);
+                dot.classList.remove('active', 'completed');
+                if (dotStep === step) dot.classList.add('active');
+                else if (dotStep < step) dot.classList.add('completed');
+            });
+
+            // Show active step
+            document.querySelectorAll('.form-step').forEach(s => {
+                s.classList.toggle('active', parseInt(s.dataset.step) === step);
+            });
+
+            // Populate summary on step 4
+            if (step === 4) {
+                populateSummary();
+            }
+        }
+
+        function validateStep(step) {
+            if (step === 1) {
+                if (!selectedServiceType) {
+                    if (window.MA3PL?.toast) window.MA3PL.toast.warning('Please select Pickup or Delivery');
+                    else alert('Please select Pickup or Delivery');
+                    return false;
+                }
+                return true;
+            }
+            if (step === 2) {
+                const required = ['contact-name', 'contact-phone', 'address-street', 'address-city', 'address-state', 'address-zip', 'preferred-date'];
+                let valid = true;
+                required.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (!el.value.trim()) {
+                        el.classList.add('error');
+                        valid = false;
+                    } else {
+                        el.classList.remove('error');
+                    }
+                });
+                if (!valid) {
+                    if (window.MA3PL?.toast) window.MA3PL.toast.warning('Please fill in all required fields');
+                    else alert('Please fill in all required fields');
+                }
+                return valid;
+            }
+            return true; // Steps 3 and 4 don't require validation to proceed
+        }
+
+        // ============================================================
+        // FILE UPLOAD
+        // ============================================================
+        function handleDragOver(e) {
+            e.preventDefault();
+            e.currentTarget.classList.add('dragover');
+        }
+
+        function handleDragLeave(e) {
+            e.currentTarget.classList.remove('dragover');
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            e.currentTarget.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) processFile(files[0]);
+        }
+
+        function handleFileSelect(e) {
+            const files = e.target.files;
+            if (files.length > 0) processFile(files[0]);
+        }
+
+        function processFile(file) {
+            // Validate by MIME and extension (some clients send generic/empty MIME types)
+            const normalizedType = (file.type || '').toLowerCase();
+            const validMimeTypes = ['application/pdf', 'application/x-pdf', 'image/png', 'image/jpeg', 'image/jpg'];
+            const hasValidMime = validMimeTypes.includes(normalizedType);
+            const hasValidExt = /\.(pdf|png|jpe?g)$/i.test(file.name || '');
+            if (!hasValidMime && !hasValidExt) {
+                if (window.MA3PL?.toast) window.MA3PL.toast.error('Invalid file type. Please upload PDF, PNG, or JPG.');
+                else alert('Invalid file type');
+                return;
+            }
+            if (file.size > 10 * 1024 * 1024) {
+                if (window.MA3PL?.toast) window.MA3PL.toast.error('File too large. Maximum size is 10MB.');
+                else alert('File too large (max 10MB)');
+                return;
+            }
+
+            uploadedFile = file;
+
+            // Show preview
+            const preview = document.getElementById('upload-preview');
+            const zone = document.getElementById('upload-zone');
+            const docTypeGroup = document.getElementById('doc-type-group');
+
+            document.getElementById('file-name').textContent = file.name;
+            document.getElementById('file-size').textContent = formatFileSize(file.size);
+            const isPdf = normalizedType === 'application/pdf' || normalizedType === 'application/x-pdf' || /\.pdf$/i.test(file.name || '');
+            document.getElementById('file-icon').textContent = isPdf ? '📄' : '🖼️';
+
+            preview.classList.add('active');
+            zone.style.display = 'none';
+            docTypeGroup.style.display = 'block';
+        }
+
+        function removeFile() {
+            uploadedFile = null;
+            document.getElementById('upload-preview').classList.remove('active');
+            document.getElementById('upload-zone').style.display = '';
+            document.getElementById('doc-type-group').style.display = 'none';
+            document.getElementById('file-input').value = '';
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes < 1024) return bytes + ' B';
+            if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+            return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+        }
+
+        // ============================================================
+        // SUMMARY
+        // ============================================================
+        function populateSummary() {
+            const typeLabel = selectedServiceType === 'pickup' ? '🚛 Pickup' : '📦 Delivery';
+            document.getElementById('sum-type').textContent = typeLabel;
+            document.getElementById('sum-pallets').textContent = `${palletCount} pallet${palletCount > 1 ? 's' : ''}`;
+
+            const name = document.getElementById('contact-name').value;
+            const phone = document.getElementById('contact-phone').value;
+            document.getElementById('sum-contact').textContent = `${name} | ${phone}`;
+
+            const street = document.getElementById('address-street').value;
+            const city = document.getElementById('address-city').value;
+            const state = document.getElementById('address-state').value;
+            const zip = document.getElementById('address-zip').value;
+            document.getElementById('sum-address').textContent = `${street}, ${city}, ${state} ${zip}`;
+
+            const date = document.getElementById('preferred-date').value;
+            const time = document.getElementById('preferred-time').value;
+            const timeLabels = { morning: 'Morning (8AM-12PM)', afternoon: 'Afternoon (12PM-5PM)', flexible: 'Flexible' };
+            document.getElementById('sum-datetime').textContent = `${date} | ${timeLabels[time] || time}`;
+
+            document.getElementById('sum-file').textContent = uploadedFile ? `${uploadedFile.name} (${formatFileSize(uploadedFile.size)})` : 'No file uploaded';
+
+            // Pricing breakdown in summary
+            const total = calculatePrice(palletCount);
+            const extraCount = Math.max(0, palletCount - 1);
+            const extraCost = extraCount * PRICING.extraPallet;
+
+            document.getElementById('sum-base').textContent = `$${PRICING.basePallet.toFixed(2)}`;
+
+            const sumExtraRow = document.getElementById('sum-extra-row');
+            if (extraCount > 0) {
+                sumExtraRow.style.display = '';
+                document.getElementById('sum-extra-label').textContent = `Additional pallets (${extraCount} x $${PRICING.extraPallet.toFixed(2)})`;
+                document.getElementById('sum-extra-value').textContent = `$${extraCost.toFixed(2)}`;
+            } else {
+                sumExtraRow.style.display = 'none';
+            }
+
+            document.getElementById('sum-total').textContent = `$${total.toFixed(2)}`;
+        }
+
+        // ============================================================
+        // SUBMIT REQUEST
+        // ============================================================
+        async function submitRequest() {
+            const btn = document.getElementById('btn-submit');
+            btn.disabled = true;
+            btn.innerHTML = '<span style="display:inline-block;width:16px;height:16px;border:2px solid #fff;border-top-color:transparent;border-radius:50%;animation:spin 1s linear infinite;margin-right:8px;"></span>Submitting...';
+
+            try {
+                const { collection, addDoc, serverTimestamp } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js');
+                const { ref, uploadBytes, getDownloadURL } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js');
+                const { getStorage } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js');
+                const { db } = await initFirebase();
+                const storage = getStorage();
+
+                let fileUrl = null;
+                let fileName = null;
+                let fileType = null;
+
+                // Upload file if present
+                if (uploadedFile) {
+                    const timestamp = Date.now();
+                    const storagePath = `pickup_documents/${currentUser.uid}/${timestamp}_${uploadedFile.name}`;
+                    const storageRef = ref(storage, storagePath);
+                    await uploadBytes(storageRef, uploadedFile);
+                    fileUrl = await getDownloadURL(storageRef);
+                    fileName = uploadedFile.name;
+                    fileType = document.getElementById('doc-type').value;
+                }
+
+                // Build request data
+                const total = calculatePrice(palletCount);
+                const requestData = {
+                    user_id: currentUser.uid,
+                    user_email: currentUser.email,
+                    user_name: currentUser.displayName || document.getElementById('contact-name').value,
+                    service_type: selectedServiceType,
+                    pallet_count: palletCount,
+                    pricing: {
+                        base_rate: PRICING.basePallet,
+                        extra_rate: PRICING.extraPallet,
+                        total: total
+                    },
+                    contact: {
+                        name: document.getElementById('contact-name').value,
+                        phone: document.getElementById('contact-phone').value,
+                        email: document.getElementById('contact-email').value || null
+                    },
+                    address: {
+                        street: document.getElementById('address-street').value,
+                        city: document.getElementById('address-city').value,
+                        state: document.getElementById('address-state').value,
+                        zip: document.getElementById('address-zip').value
+                    },
+                    schedule: {
+                        preferred_date: document.getElementById('preferred-date').value,
+                        preferred_time: document.getElementById('preferred-time').value
+                    },
+                    special_instructions: document.getElementById('special-instructions').value || null,
+                    document: fileUrl ? {
+                        url: fileUrl,
+                        name: fileName,
+                        type: fileType
+                    } : null,
+                    status: 'pending',
+                    admin_notes: null,
+                    admin_price_override: null,
+                    created_at: serverTimestamp(),
+                    updated_at: serverTimestamp()
+                };
+
+                // Save to Firestore
+                const docRef = await addDoc(collection(db, 'pickup_requests'), requestData);
+
+                if (window.MA3PL?.toast) {
+                    window.MA3PL.toast.success('Request submitted successfully! ID: ' + docRef.id.substring(0, 8).toUpperCase());
+                }
+
+                closeRequestForm();
+                resetForm();
+                await loadRequests();
+
+            } catch (error) {
+                console.error('[Pickups] Submit error:', error);
+                if (window.MA3PL?.toast) {
+                    window.MA3PL.toast.error('Failed to submit request: ' + error.message);
+                } else {
+                    alert('Error: ' + error.message);
+                }
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '✓ Submit Request';
+            }
+        }
+
+        // ============================================================
+        // LOAD REQUESTS
+        // ============================================================
+        async function loadRequests() {
+            try {
+                const { collection, query, where, orderBy, getDocs } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js');
+                const { db } = await initFirebase();
+
+                let q;
+                if (isStaff(currentRole)) {
+                    q = query(collection(db, 'pickup_requests'), orderBy('created_at', 'desc'));
+                } else {
+                    q = query(
+                        collection(db, 'pickup_requests'),
+                        where('user_id', '==', currentUser.uid),
+                        orderBy('created_at', 'desc')
+                    );
+                }
+
+                const snapshot = await getDocs(q);
+                const requests = [];
+                snapshot.forEach(doc => requests.push({ id: doc.id, ...doc.data() }));
+
+                renderRequests(requests);
+
+            } catch (error) {
+                console.error('[Pickups] Load error:', error);
+            }
+        }
+
+        function renderRequests(requests) {
+            const tbody = document.getElementById('requests-tbody');
+            const emptyState = document.getElementById('empty-state');
+            const tableWrap = document.getElementById('requests-table-wrap');
+
+            if (requests.length === 0) {
+                emptyState.style.display = '';
+                tableWrap.style.display = 'none';
+                return;
+            }
+
+            emptyState.style.display = 'none';
+            tableWrap.style.display = '';
+
+            tbody.innerHTML = requests.map(req => {
+                const typeIcon = req.service_type === 'pickup' ? '🚛' : '📦';
+                const typeLabel = req.service_type === 'pickup' ? 'Pickup' : 'Delivery';
+                const date = req.schedule?.preferred_date || '—';
+                const total = req.admin_price_override != null ? req.admin_price_override : (req.pricing?.total || 0);
+                const status = req.status || 'pending';
+                const shortId = req.id.substring(0, 8).toUpperCase();
+
+                return `
+                    <tr>
+                        <td><strong>#${shortId}</strong></td>
+                        <td>${typeIcon} ${typeLabel}</td>
+                        <td>${req.pallet_count} pallet${req.pallet_count > 1 ? 's' : ''}</td>
+                        <td>${date}</td>
+                        <td><strong>$${total.toFixed(2)}</strong></td>
+                        <td><span class="status-badge status-${status}">${status.replace('_', ' ')}</span></td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        // ============================================================
+        // FORM CONTROLS
+        // ============================================================
+        function openRequestForm() {
+            document.getElementById('request-overlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            goToStep(1);
+        }
+
+        function closeRequestForm() {
+            document.getElementById('request-overlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function resetForm() {
+            selectedServiceType = null;
+            palletCount = 1;
+            uploadedFile = null;
+            currentStep = 1;
+
+            document.querySelectorAll('.service-type-card').forEach(c => c.classList.remove('selected'));
+            document.getElementById('pickup-form').reset();
+            document.getElementById('pallet-count').textContent = '1';
+            document.getElementById('pallet-slider').value = 1;
+            document.getElementById('btn-step1-next').disabled = true;
+            removeFile();
+            updatePallets(1);
+
+            // Reset date to today
+            const dateInput = document.getElementById('preferred-date');
+            if (dateInput) {
+                dateInput.value = new Date().toISOString().split('T')[0];
+            }
+        }
+
+        // Close overlay on backdrop click
+        document.getElementById('request-overlay')?.addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) closeRequestForm();
+        });
+
+        // Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeRequestForm();
+        });
+    </script>
+
+    <!-- Portal UI Components -->
+    <script type="module">
+        import '../js/portal.js';
+    </script>
+    <script src="../js/lang/es.js"></script>
+    <script src="../js/lang/pt-br.js"></script>
+    <script src="../js/lang/zh.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/chat-widget.js"></script>
+</body>
+</html>
