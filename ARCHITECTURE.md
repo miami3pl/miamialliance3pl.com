@@ -419,7 +419,7 @@ The MCP server maintains state across sessions in `mcp/state.json`:
 {
   name: "Miami Alliance 3PL",
   phone: "+1-305-555-1234",
-  email: "info@miamialliance3pl.com",
+  email: "contact@miamialliance3pl.com",
   website: "https://miamialliance3pl.com",
   address: "8780 NW 100th ST, Medley, FL 33178",
   updatedAt: "2024-01-15T..."
