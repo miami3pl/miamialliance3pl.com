@@ -25,9 +25,9 @@
           pickup: 0,
         },
         localDeliveryBase: 120.0,
-        localDeliveryPerUnit: 25.0,
+        localDeliveryPerUnit: 30.0,
         pickupBase: 120.0,
-        pickupPerUnit: 25.0,
+        pickupPerUnit: 30.0,
         dropShipRates: {
           envelope: 1.5,
           small: 3.0,

@@ -30,15 +30,4 @@ Thumbs.db
 npm-debug.log*
 mcp/node_modules/
 mcp/audit.log
-
-# Recovery cleanup - 2026-05-13
 .tmp/
-node_modules/
-firebase-debug.log
-.DS_Store
-users_export_*.csv
-shipments_export_*.csv
-*_export_*.csv
-todo-*.txt
-todo-*.docx
-admin/__pycache__/

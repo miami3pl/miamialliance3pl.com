@@ -1,38 +1,190 @@
 # Miami Alliance 3PL Robots.txt
 # https://miamialliance3pl.com/
 
+# === DEFAULT CRAWLERS (Google, Bing, etc.) ===
 User-agent: *
 Allow: /
-
-# Disallow private/admin areas
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /ai/
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
 Disallow: /mcp/
 Disallow: /functions/
-
-# Disallow query strings on static pages
 Disallow: /*?*
-
-# Allow important resources
 Allow: /css/
 Allow: /js/
 Allow: /images/
-
-# Crawl-delay for politeness
 Crawl-delay: 1
 
-# Sitemap location
-Sitemap: https://miamialliance3pl.com/sitemap.xml
+# === AI SEARCH CRAWLERS (ALLOW for maximum visibility) ===
 
-# Google specific
-User-agent: Googlebot
+# OpenAI - ChatGPT Search (real-time retrieval)
+User-agent: ChatGPT-User
 Allow: /
 Disallow: /portal/
 Disallow: /login.html
+Disallow: /admin/
 
-# Bing specific
+# OpenAI - SearchBot (search indexing)
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /portal/
+Disallow: /login.html
+Disallow: /admin/
+
+# OpenAI - GPTBot (training + search)
+User-agent: GPTBot
+Allow: /
+Disallow: /portal/
+Disallow: /login.html
+Disallow: /admin/
+
+# Anthropic - Claude crawlers
+User-agent: ClaudeBot
+Allow: /
+Disallow: /portal/
+Disallow: /login.html
+Disallow: /admin/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /portal/
+Disallow: /login.html
+Disallow: /admin/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /portal/
+Disallow: /login.html
+Disallow: /admin/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /portal/
+Disallow: /login.html
+Disallow: /admin/
+
+# Google Gemini / AI Overviews
+User-agent: Google-Extended
+Allow: /
+Disallow: /portal/
+Disallow: /login.html
+Disallow: /admin/
+
+# Perplexity AI Search
+User-agent: PerplexityBot
+Allow: /
+Disallow: /portal/
+Disallow: /login.html
+Disallow: /admin/
+
+# Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+Disallow: /portal/
+Disallow: /login.html
+Disallow: /admin/
+
+# Apple Intelligence / Siri
+User-agent: Applebot
+Allow: /
+Disallow: /portal/
+Disallow: /login.html
+Disallow: /admin/
+
+# Amazon Alexa / AI
+User-agent: Amazonbot
+Allow: /
+Disallow: /portal/
+Disallow: /login.html
+Disallow: /admin/
+
+# Common Crawl (feeds many AI models)
+User-agent: CCBot
+Allow: /
+Disallow: /portal/
+Disallow: /login.html
+Disallow: /admin/
+
+# ByteDance / TikTok AI
+User-agent: Bytespider
+Allow: /
+Disallow: /portal/
+Disallow: /login.html
+Disallow: /admin/
+
+# Microsoft Copilot
 User-agent: Bingbot
 Allow: /
 Disallow: /portal/
 Disallow: /login.html
+Disallow: /admin/
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+Disallow: /portal/
+Disallow: /login.html
+Disallow: /admin/
+
+# You.com AI Search
+User-agent: YouBot
+Allow: /
+Disallow: /portal/
+Disallow: /login.html
+Disallow: /admin/
+
+# Mistral AI
+User-agent: MistralBot
+Allow: /
+Disallow: /portal/
+Disallow: /login.html
+Disallow: /admin/
+
+# DuckDuckGo AI Assist
+User-agent: DuckAssistBot
+Allow: /
+Disallow: /portal/
+Disallow: /login.html
+Disallow: /admin/
+
+# Meta / Facebook AI
+User-agent: FacebookBot
+Allow: /
+Disallow: /portal/
+Disallow: /login.html
+Disallow: /admin/
+
+# Google NotebookLM
+User-agent: Google-NotebookLM
+Allow: /
+Disallow: /portal/
+Disallow: /login.html
+Disallow: /admin/
+
+# Google Vertex AI
+User-agent: Google-CloudVertexBot
+Allow: /
+Disallow: /portal/
+Disallow: /login.html
+Disallow: /admin/
+
+# DeepSeek AI
+User-agent: DeepSeekBot
+Allow: /
+Disallow: /portal/
+Disallow: /login.html
+Disallow: /admin/
+
+# === SITEMAPS ===
+Sitemap: https://miamialliance3pl.com/sitemap.xml
+Sitemap: https://miamialliance3pl.com/sitemap-ai.xml
+
+# === AI CONTENT FILES ===
+# llms.txt provides structured content for AI models
+# See: https://miamialliance3pl.com/llms.txt
+# llms-full.txt and /ai/ contain deeper AI-readable references
+# .well-known/ai-plugin.json for ChatGPT plugin discovery
+# rebuilt 2026-06-08T14:43Z — added AI discovery links to 137 pages + speakable schema to 6 key pages

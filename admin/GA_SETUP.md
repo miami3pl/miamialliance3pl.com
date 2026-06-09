@@ -43,6 +43,7 @@ ga_client.py  →  Firebase Service Account (OAuth2)  →  GA4 Data API v1beta
 cd /Users/yuri/Dropbox/mcp-servers/MCP-51-miami3pl/project/admin
 
 python3 ga_client.py setup          # Verify connection
+python3 ga_client.py ai 30          # AI discovery performance (last 30 days)
 python3 ga_client.py today          # Today's visitors
 python3 ga_client.py overview       # 30-day summary
 python3 ga_client.py realtime       # Who's on the site RIGHT NOW
@@ -70,6 +71,7 @@ Or use `/analytics3pl` in Claude Code.
 
 | Event                        | Trigger             |
 | ---------------------------- | ------------------- |
+| `ai_discovery_visit`         | AI referral landing |
 | `generate_lead`              | Quote calculation   |
 | `file_download`              | PDF quote download  |
 | `form_submit` / `form_error` | Form interactions   |

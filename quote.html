@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Instant 3D Quote Calculator | Miami Alliance 3PL - Warehouse Pricing</title>
-    <meta name="description" content="Get an instant 3PL quote with our interactive 3D calculator. Visualize your box or pallet in real-time and get transparent pricing for storage, handling, pick & pack, and shipping in Miami.">
-    <meta name="keywords" content="3PL quote, warehouse quote Miami, storage pricing calculator, fulfillment costs, logistics calculator, 3D quote tool, pallet storage rates, box storage pricing, Miami warehouse rates, Medley FL 3PL">
+    <meta name="description" content="Get an instant 3PL quote with our interactive 3D calculator. Visualize your box or pallet in real-time and get transparent pricing for storage, handling, pick & pack, and shipping in Miami. $1,000/month minimum spend.">
+    <meta name="keywords" content="3PL quote, warehouse quote Miami, storage pricing calculator, fulfillment costs, logistics calculator, 3D quote tool, pallet storage rates, box storage pricing, Miami warehouse rates, Medley FL 3PL, FBA prep services, Amazon FBA prep, FNSKU labeling, poly bagging, FBA compliance Miami">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="Miami Alliance 3PL">
     <meta name="geo.region" content="US-FL">
     <meta name="geo.placename" content="Medley, Florida">
-    <meta name="geo.position" content="25.8676;-80.3353">
-    <meta name="ICBM" content="25.8676, -80.3353">
+    <meta name="geo.position" content="25.8606;-80.3456">
+    <meta name="ICBM" content="25.8606, -80.3456">
     <link rel="canonical" href="https://miamialliance3pl.com/quote.html">
 
     <!-- Open Graph / Facebook -->
@@ -44,18 +44,20 @@
     <meta name="format-detection" content="telephone=yes">
 
     <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSRV99D8BX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTW0F25ZM1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-QSRV99D8BX');
+        gtag('config', 'G-KTW0F25ZM1');
     </script>
-    <script src="js/analytics.js"></script>
+    <script src="js/analytics.js" defer></script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
     <!-- Structured Data - WebApplication -->
     <script type="application/ld+json">
@@ -151,7 +153,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css?v=202602230300">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- PDF Toast Notification Styles -->
     <style>
@@ -230,6 +232,13 @@
             fill: currentColor;
         }
     </style>
+
+    <!-- AI Content Discovery -->
+    <link rel="alternate" type="text/markdown" title="LLM-friendly site summary" href="/llms.txt">
+    <link rel="alternate" type="text/markdown" title="LLM-friendly full reference" href="https://miamialliance3pl.com/llms-full.txt">
+    <link rel="alternate" type="text/markdown" title="AI business facts" href="https://miamialliance3pl.com/ai/miami-alliance-3pl-facts.md">
+    <link rel="alternate" type="text/markdown" title="AI Miami 3PL overview" href="https://miamialliance3pl.com/ai/miami-3pl-overview.md">
+    <link rel="alternate" type="text/markdown" title="AI pricing and operations" href="https://miamialliance3pl.com/ai/pricing-and-operations.md">
 </head>
 <body>
     <!-- Navigation -->
@@ -244,13 +253,15 @@
                 <span></span>
             </button>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="quote.html" class="nav-link active">Instant Quote</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="login.html" class="nav-link btn btn-outline">Customer Portal</a></li>
+                <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="services.html" class="nav-link" data-i18n="nav.services">Services</a></li>
+                <li><a href="quote.html" class="nav-link active" data-i18n="nav.quote">Instant Quote</a></li>
+                <li><a href="fba-calculator.html" class="nav-link">FBA Calculator</a></li>
+                <li><a href="blog.html" class="nav-link" data-i18n="nav.blog">Blog</a></li>
+                <li><a href="about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li><a href="faq.html" class="nav-link" data-i18n="nav.faq">FAQ</a></li>
+                <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                <li><a href="login.html" class="nav-link btn btn-outline" data-i18n="nav.portal">Customer Portal</a></li>
             </ul>
         </nav>
     </header>
@@ -259,10 +270,22 @@
         <!-- Page Header -->
         <section class="page-header page-header-compact">
             <div class="container">
-                <h1>Instant Quote Calculator</h1>
-                <p>See your package in 3D and get instant pricing</p>
+                <h1 data-i18n="quote.title">Instant Quote Calculator</h1>
+                <p data-i18n="quote.subtitle">See your package in 3D and get instant pricing</p>
             </div>
         </section>
+
+        <!-- $100 Promo Banner -->
+        <div class="promo-inline-banner">
+            <div class="container">
+                <div class="promo-inline-card">
+                    <span class="promo-inline-icon">🎁</span>
+                    <div class="promo-inline-text">
+                        <strong>New Customer Bonus:</strong> First-time customers get <strong>$100 in free storage credit</strong> automatically applied to their first invoice. No promo code needed.
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Quote Tool -->
         <section class="quote-section">
@@ -270,82 +293,106 @@
                 <div class="quote-tool">
                     <!-- Left Panel: Controls -->
                     <div class="quote-controls">
-                        <!-- Package Type -->
+                        <!-- Warehouse Location -->
                         <div class="quote-control-group">
-                            <label class="quote-label">Package Type</label>
-                            <div class="package-toggle">
-                                <button class="package-option active" data-type="box">
-                                    <span class="package-icon">📦</span>
-                                    <span class="package-name">Box</span>
-                                </button>
-                                <button class="package-option" data-type="pallet">
-                                    <span class="package-icon">🏗️</span>
-                                    <span class="package-name">Pallet</span>
-                                </button>
+                            <label class="quote-label">Warehouse Location</label>
+                            <select id="warehouse-select" class="zone-select" style="font-size: 1rem; padding: 12px 16px; border-radius: 12px; border: 2px solid var(--color-gray-200); background: white; font-weight: 600; color: var(--color-gray-900);">
+                                <option value="miami" selected>📍 Miami, FL — Medley (8780 NW 100th ST)</option>
+                                <option value="biloxi">📍 Biloxi, MS — Gulf Coast (1606 Beach Blvd)</option>
+                            </select>
+                            <div id="warehouse-info" style="margin-top: 8px; padding: 10px 14px; background: linear-gradient(135deg, rgba(16,185,129,0.06), rgba(14,165,233,0.04)); border-radius: 10px; border: 1px solid rgba(16,185,129,0.12); font-size: 0.82rem; color: var(--color-gray-600); line-height: 1.5;">
+                                <span id="warehouse-highlights">Minutes from Port Miami & MIA · Gateway to Latin America · I-95, I-75, FL Turnpike access</span>
                             </div>
                         </div>
 
-                        <!-- Dimensions -->
-                        <div class="quote-control-group">
-                            <label class="quote-label">Dimensions (inches)</label>
-                            <div class="dimension-row">
-                                <div class="dimension-input-group">
-                                    <input type="number" id="dim-length" class="dimension-input" value="12" min="1" max="120">
-                                    <span class="dimension-label">Length</span>
-                                </div>
-                                <div class="dimension-input-group">
-                                    <input type="number" id="dim-width" class="dimension-input" value="12" min="1" max="120">
-                                    <span class="dimension-label">Width</span>
-                                </div>
-                                <div class="dimension-input-group">
-                                    <input type="number" id="dim-height" class="dimension-input" value="12" min="1" max="120">
-                                    <span class="dimension-label">Height</span>
+                        <!-- Cargo Items (Multi-Size Support) -->
+                        <div class="quote-control-group" id="cargo-items-container">
+                            <label class="quote-label">Cargo Items</label>
+                            <div style="margin:-2px 0 10px; font-size:0.82rem; color:var(--color-gray-500); line-height:1.45;">
+                                Add another cargo line whenever a box or pallet has a different size, weight, or wrapping requirement.
+                            </div>
+                            <div id="cargo-items-list">
+                                <!-- Item 1 (default) -->
+                                <div class="cargo-item" data-index="0">
+                                    <div class="cargo-item-header">
+                                        <span class="cargo-item-number">Item #1</span>
+                                        <button type="button" class="cargo-item-remove" title="Remove item" style="display:none;">✕</button>
+                                    </div>
+                                    <div class="cargo-item-type">
+                                        <button type="button" class="package-option active" data-type="box">
+                                            <span class="package-icon">📦</span>
+                                            <span class="package-name">Box</span>
+                                        </button>
+                                        <button type="button" class="package-option" data-type="pallet">
+                                            <span class="package-icon">🏗️</span>
+                                            <span class="package-name">Pallet</span>
+                                        </button>
+                                    </div>
+                                    <div class="cargo-item-details">
+                                        <div class="cargo-dim-row">
+                                            <div class="cargo-dim-group">
+                                                <input type="number" class="cargo-dim-input" data-dim="length" value="12" min="1" max="120" placeholder="L">
+                                                <span class="cargo-dim-label">L</span>
+                                            </div>
+                                            <span class="cargo-dim-x">×</span>
+                                            <div class="cargo-dim-group">
+                                                <input type="number" class="cargo-dim-input" data-dim="width" value="12" min="1" max="120" placeholder="W">
+                                                <span class="cargo-dim-label">W</span>
+                                            </div>
+                                            <span class="cargo-dim-x">×</span>
+                                            <div class="cargo-dim-group">
+                                                <input type="number" class="cargo-dim-input" data-dim="height" value="12" min="1" max="120" placeholder="H">
+                                                <span class="cargo-dim-label">H</span>
+                                            </div>
+                                            <span class="cargo-dim-unit">in</span>
+                                        </div>
+                                        <div class="cargo-weight-qty-row">
+                                            <div class="cargo-weight-group">
+                                                <input type="number" class="cargo-weight-input" value="25" min="1" max="2000" placeholder="Weight">
+                                                <span class="cargo-dim-label">lbs</span>
+                                            </div>
+                                            <div class="cargo-qty-group">
+                                                <button type="button" class="qty-btn cargo-qty-dec">−</button>
+                                                <input type="number" class="cargo-qty-input" value="1" min="1" max="1000">
+                                                <button type="button" class="qty-btn cargo-qty-inc">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="cargo-wrapping-row" style="display:none;">
+                                            <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:0.85rem;">
+                                                <input type="checkbox" class="cargo-wrapping-check">
+                                                <span>Black Wrapping (+$7/pallet)</span>
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Weight -->
-                        <div class="quote-control-group">
-                            <label class="quote-label">Weight (lbs)</label>
-                            <div class="weight-input-wrapper">
-                                <input type="range" id="weight-slider" min="1" max="500" value="25" class="weight-slider">
-                                <div class="weight-display">
-                                    <input type="number" id="weight-input" value="25" min="1" max="2000" class="weight-number">
-                                    <span class="weight-unit">lbs</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Quantity -->
-                        <div class="quote-control-group">
-                            <label class="quote-label">Quantity</label>
-                            <div class="quantity-controls">
-                                <button class="qty-btn" data-action="decrease">-</button>
-                                <input type="number" id="quantity-input" value="1" min="1" max="1000" class="quantity-input">
-                                <button class="qty-btn" data-action="increase">+</button>
-                            </div>
+                            <button type="button" id="add-cargo-item" class="btn-add-cargo">
+                                + Add Another Size / Weight
+                            </button>
                         </div>
 
                         <!-- Shipping Zone -->
                         <div class="quote-control-group">
-                            <label class="quote-label">Shipping Zone</label>
+                            <label class="quote-label" data-i18n="quote.zone.label">Shipping Zone</label>
                             <select id="shipping-zone" class="zone-select">
-                                <option value="local">Local (FL)</option>
-                                <option value="regional" selected>Regional (Southeast)</option>
-                                <option value="national">National</option>
-                                <option value="none">No Shipping Required</option>
-                                <option value="dropship">Shipping by Units (Drop Ship)</option>
+                                <option value="none" selected data-i18n="quote.zone.none">No Shipping Required</option>
+                                <option value="localDelivery" data-i18n="quote.zone.localDelivery">🚚 Local Delivery (Our Truck)</option>
+                                <option value="pickup" data-i18n="quote.zone.pickup">🏭 Warehouse Pick Up (Our Truck)</option>
+                                <option value="local" data-i18n="quote.zone.local">Local (FL) — Weight Based</option>
+                                <option value="regional" data-i18n="quote.zone.regional">Regional (Southeast)</option>
+                                <option value="national" data-i18n="quote.zone.national">National</option>
+                                <option value="dropship" data-i18n="quote.zone.dropship">Shipping by Units (Drop Ship)</option>
                             </select>
                         </div>
 
                         <!-- Drop Ship Unit Pricing (shown when "Shipping by Units" selected) -->
                         <div class="quote-control-group" id="dropship-group" style="display: none;">
-                            <label class="quote-label">Drop Ship — Units by Box Size</label>
+                            <label class="quote-label" data-i18n="quote.dropship.label">Drop Ship — Units by Box Size</label>
                             <div class="dropship-grid">
                                 <div class="dropship-item">
                                     <label class="dropship-label">
                                         <span class="dropship-icon">📦</span>
-                                        <span>Envelopes</span>
+                                        <span data-i18n="quote.dropship.envelope">Envelopes</span>
                                         <span class="dropship-price">$1.50/ea</span>
                                     </label>
                                     <div class="dropship-qty">
@@ -357,7 +404,7 @@
                                 <div class="dropship-item">
                                     <label class="dropship-label">
                                         <span class="dropship-icon">📦</span>
-                                        <span>Small Box</span>
+                                        <span data-i18n="quote.dropship.small">Small Box</span>
                                         <span class="dropship-price">$3.00/ea</span>
                                     </label>
                                     <div class="dropship-qty">
@@ -369,7 +416,7 @@
                                 <div class="dropship-item">
                                     <label class="dropship-label">
                                         <span class="dropship-icon">📦</span>
-                                        <span>Medium Box</span>
+                                        <span data-i18n="quote.dropship.medium">Medium Box</span>
                                         <span class="dropship-price">$5.00/ea</span>
                                     </label>
                                     <div class="dropship-qty">
@@ -381,7 +428,7 @@
                                 <div class="dropship-item">
                                     <label class="dropship-label">
                                         <span class="dropship-icon">📦</span>
-                                        <span>Large Box</span>
+                                        <span data-i18n="quote.dropship.large">Large Box</span>
                                         <span class="dropship-price">$20.00/ea</span>
                                     </label>
                                     <div class="dropship-qty">
@@ -393,62 +440,159 @@
                             </div>
                         </div>
 
-                        <!-- Black Wrapping (Pallet Only) - Added by Master Jorge - $7/pallet OPTIONAL -->
-                        <div class="quote-control-group" id="black-wrapping-group" style="display: none;">
-                            <label class="quote-label" style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                                <input type="checkbox" id="black-wrapping" style="width: 18px; height: 18px; cursor: pointer;">
-                                <span>Black Wrapping (+$7/pallet)</span>
+                        <!-- Black Wrapping is now per-item inside cargo items -->
+
+                        <!-- FBA Prep Services -->
+                        <div class="quote-control-group" id="fba-prep-group">
+                            <div class="fba-section-header">
+                                <span class="fba-section-icon">📦</span>
+                                <span class="fba-section-title">Amazon FBA Prep Services</span>
+                                <span class="fba-prep-badge">FBA</span>
+                            </div>
+                            <label class="quote-label fba-prep-toggle" style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" id="fba-prep-enabled" checked style="width: 18px; height: 18px; cursor: pointer;">
+                                <span data-i18n="quote.fbaPrep.label">Select services below — uncheck to hide</span>
                             </label>
+                            <div id="fba-prep-services" class="fba-prep-grid" style="display: grid;">
+                                <div class="fba-prep-item" data-service="fnskuLabeling">
+                                    <label class="fba-prep-service-label">
+                                        <input type="checkbox" class="fba-svc-check" data-service="fnskuLabeling">
+                                        <span class="fba-svc-icon">🏷️</span>
+                                        <span class="fba-svc-name">Label</span>
+                                        <span class="fba-svc-rate">$0.30/unit</span>
+                                    </label>
+                                    <div class="fba-svc-qty" style="display: none;">
+                                        <button class="qty-btn fba-qty-btn" data-service="fnskuLabeling" data-action="decrease">-</button>
+                                        <input type="number" class="fba-qty-input" data-service="fnskuLabeling" value="0" min="0" max="99999">
+                                        <button class="qty-btn fba-qty-btn" data-service="fnskuLabeling" data-action="increase">+</button>
+                                    </div>
+                                </div>
+                                <div class="fba-prep-item" data-service="polyBagging">
+                                    <label class="fba-prep-service-label">
+                                        <input type="checkbox" class="fba-svc-check" data-service="polyBagging">
+                                        <span class="fba-svc-icon">🛍️</span>
+                                        <span class="fba-svc-name">Bag</span>
+                                        <span class="fba-svc-rate">$0.50/unit</span>
+                                    </label>
+                                    <div class="fba-svc-qty" style="display: none;">
+                                        <button class="qty-btn fba-qty-btn" data-service="polyBagging" data-action="decrease">-</button>
+                                        <input type="number" class="fba-qty-input" data-service="polyBagging" value="0" min="0" max="99999">
+                                        <button class="qty-btn fba-qty-btn" data-service="polyBagging" data-action="increase">+</button>
+                                    </div>
+                                </div>
+                                <div class="fba-prep-item" data-service="bubbleWrapping">
+                                    <label class="fba-prep-service-label">
+                                        <input type="checkbox" class="fba-svc-check" data-service="bubbleWrapping">
+                                        <span class="fba-svc-icon">🫧</span>
+                                        <span class="fba-svc-name">Wrap</span>
+                                        <span class="fba-svc-rate">$1.00/unit</span>
+                                    </label>
+                                    <div class="fba-svc-qty" style="display: none;">
+                                        <button class="qty-btn fba-qty-btn" data-service="bubbleWrapping" data-action="decrease">-</button>
+                                        <input type="number" class="fba-qty-input" data-service="bubbleWrapping" value="0" min="0" max="99999">
+                                        <button class="qty-btn fba-qty-btn" data-service="bubbleWrapping" data-action="increase">+</button>
+                                    </div>
+                                </div>
+                                <div class="fba-prep-item" data-service="bundling">
+                                    <label class="fba-prep-service-label">
+                                        <input type="checkbox" class="fba-svc-check" data-service="bundling">
+                                        <span class="fba-svc-icon">📦</span>
+                                        <span class="fba-svc-name">Bundle</span>
+                                        <span class="fba-svc-rate">$2.00/bundle</span>
+                                    </label>
+                                    <div class="fba-svc-qty" style="display: none;">
+                                        <button class="qty-btn fba-qty-btn" data-service="bundling" data-action="decrease">-</button>
+                                        <input type="number" class="fba-qty-input" data-service="bundling" value="0" min="0" max="99999">
+                                        <button class="qty-btn fba-qty-btn" data-service="bundling" data-action="increase">+</button>
+                                    </div>
+                                </div>
+                                <div class="fba-prep-item" data-service="boxLabels">
+                                    <label class="fba-prep-service-label">
+                                        <input type="checkbox" class="fba-svc-check" data-service="boxLabels">
+                                        <span class="fba-svc-icon">📋</span>
+                                        <span class="fba-svc-name">Box</span>
+                                        <span class="fba-svc-rate">$3.00/box</span>
+                                    </label>
+                                    <div class="fba-svc-qty" style="display: none;">
+                                        <button class="qty-btn fba-qty-btn" data-service="boxLabels" data-action="decrease">-</button>
+                                        <input type="number" class="fba-qty-input" data-service="boxLabels" value="0" min="0" max="99999">
+                                        <button class="qty-btn fba-qty-btn" data-service="boxLabels" data-action="increase">+</button>
+                                    </div>
+                                </div>
+                                <div class="fba-prep-item" data-service="inspectionQC">
+                                    <label class="fba-prep-service-label">
+                                        <input type="checkbox" class="fba-svc-check" data-service="inspectionQC">
+                                        <span class="fba-svc-icon">🔍</span>
+                                        <span class="fba-svc-name">Inspect</span>
+                                        <span class="fba-svc-rate">$0.15/unit</span>
+                                    </label>
+                                    <div class="fba-svc-qty" style="display: none;">
+                                        <button class="qty-btn fba-qty-btn" data-service="inspectionQC" data-action="decrease">-</button>
+                                        <input type="number" class="fba-qty-input" data-service="inspectionQC" value="0" min="0" max="99999">
+                                        <button class="qty-btn fba-qty-btn" data-service="inspectionQC" data-action="increase">+</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Quote Results -->
                         <div class="quote-results">
-                            <h3 class="quote-results-title">Estimated Quote</h3>
+                            <h3 class="quote-results-title" data-i18n="quote.results.title">Estimated Quote</h3>
 
                             <div class="quote-line">
-                                <span>Dimensional Weight</span>
+                                <span data-i18n="quote.results.dimweight">Dimensional Weight</span>
                                 <span id="result-dim-weight">12.4 lbs</span>
                             </div>
                             <div class="quote-line">
-                                <span>Cubic Feet</span>
+                                <span data-i18n="quote.results.cubicft">Cubic Feet</span>
                                 <span id="result-cubic-ft">1.0 ft³</span>
                             </div>
 
+                            <!-- Per-item breakdown -->
+                            <div id="cargo-items-breakdown"></div>
                             <div class="quote-divider"></div>
 
                             <div class="quote-line">
-                                <span>Storage (30 days)</span>
+                                <span data-i18n="quote.results.storage">Storage (30 days)</span>
                                 <span id="result-storage">$22.50</span>
                             </div>
                             <div class="quote-line">
-                                <span>Handling Fee</span>
+                                <span data-i18n="quote.results.handling">Handling Fee</span>
                                 <span id="result-handling">$3.50</span>
                             </div>
                             <div class="quote-line">
-                                <span>Pick & Pack</span>
+                                <span data-i18n="quote.results.pickpack">Pick & Pack</span>
                                 <span id="result-pickpack">$1.25</span>
                             </div>
                             <div class="quote-line">
-                                <span>Est. Shipping</span>
+                                <span data-i18n="quote.results.shipping">Est. Shipping</span>
                                 <span id="result-shipping">$16.25</span>
                             </div>
                             <div class="quote-line" id="wrapping-row" style="display: none;">
-                                <span>Black Wrapping</span>
+                                <span data-i18n="quote.results.wrapping">Black Wrapping</span>
                                 <span id="result-wrapping">$7.00</span>
                             </div>
                             <div class="quote-line" id="dropship-row" style="display: none;">
-                                <span>Drop Ship (by unit)</span>
+                                <span data-i18n="quote.results.dropship">Drop Ship (by unit)</span>
                                 <span id="result-dropship">$0.00</span>
                             </div>
+                            <div class="quote-line" id="fba-prep-row" style="display: none;">
+                                <span data-i18n="quote.results.fbaPrep">FBA Prep Services</span>
+                                <span id="result-fba-prep">$0.00</span>
+                            </div>
+                            <div id="fba-prep-breakdown"></div>
 
                             <div class="quote-divider"></div>
 
                             <div class="quote-line quote-total">
-                                <span>TOTAL ESTIMATE</span>
+                                <span data-i18n="quote.results.total">TOTAL ESTIMATE</span>
                                 <span id="result-total">$43.50</span>
                             </div>
 
-                            <p class="quote-disclaimer">* Estimates based on standard rates. Final pricing may vary.</p>
+                            <p class="quote-disclaimer" data-i18n="quote.results.disclaimer">* Estimates based on standard rates. Final pricing may vary.</p>
+                            <p class="quote-disclaimer" style="margin-top: 8px; padding: 10px 12px; background: linear-gradient(135deg, #fef3c7, #fde68a); border-radius: 8px; border-left: 3px solid #f59e0b; color: #92400e; font-weight: 600; font-size: 0.85rem;" data-i18n="quote.results.minimum">
+                                <strong>$1,000/month minimum spend applies.</strong> No long-term contracts. Pay only for what you use.
+                            </p>
                         </div>
 
                         <div class="quote-buttons">
@@ -457,9 +601,9 @@
                                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/>
                                     <path d="M8 12h8v2H8zM8 16h5v2H8z"/>
                                 </svg>
-                                Download PDF Quote
+                                <span data-i18n="quote.btn.download">Download PDF Quote</span>
                             </button>
-                            <a href="contact.html" class="btn btn-primary btn-large quote-cta">
+                            <a href="contact.html" class="btn btn-primary btn-large quote-cta" data-i18n="quote.btn.detailed">
                                 Get Detailed Quote
                             </a>
                         </div>
@@ -474,8 +618,8 @@
                             </div>
                         </div>
                         <div class="canvas-controls">
-                            <button id="reset-view-btn" style="background:#1e3a5f;color:white;border:none;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:12px;margin-right:10px;">Reset View</button>
-                            <span class="canvas-hint">Drag to rotate • Scroll to zoom</span>
+                            <button id="reset-view-btn" style="background:#1e3a5f;color:white;border:none;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:12px;margin-right:10px;" data-i18n="quote.canvas.reset">Reset View</button>
+                            <span class="canvas-hint" data-i18n-html="quote.canvas.hint">Drag to rotate &bull; Scroll to zoom</span>
                         </div>
                     </div>
                     <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
@@ -486,27 +630,27 @@
         <!-- Why Choose Us -->
         <section class="content-section bg-gray">
             <div class="container">
-                <h2 class="section-title">Why Miami Alliance 3PL?</h2>
+                <h2 class="section-title" data-i18n="quote.why.title">Why Miami Alliance 3PL?</h2>
                 <div class="benefits-grid">
                     <div class="benefit-card">
                         <div class="benefit-icon">📍</div>
-                        <h3>Prime Location</h3>
-                        <p>Strategic Medley, FL location near Miami port and major highways</p>
+                        <h3 data-i18n="quote.why.location.title">Prime Location</h3>
+                        <p data-i18n="quote.why.location.desc">Strategic Medley, FL location near Miami port and major highways</p>
                     </div>
                     <div class="benefit-card">
                         <div class="benefit-icon">⚡</div>
-                        <h3>Fast Processing</h3>
-                        <p>Same-day receiving and next-day shipping available</p>
+                        <h3 data-i18n="quote.why.speed.title">Fast Processing</h3>
+                        <p data-i18n="quote.why.speed.desc">Same-day receiving and next-day shipping available</p>
                     </div>
                     <div class="benefit-card">
                         <div class="benefit-icon">📊</div>
-                        <h3>Real-Time Tracking</h3>
-                        <p>Full visibility with our customer portal</p>
+                        <h3 data-i18n="quote.why.tracking.title">Real-Time Tracking</h3>
+                        <p data-i18n="quote.why.tracking.desc">Full visibility with our customer portal</p>
                     </div>
                     <div class="benefit-card">
                         <div class="benefit-icon">💰</div>
-                        <h3>No Hidden Fees</h3>
-                        <p>Transparent pricing with no surprises</p>
+                        <h3 data-i18n="quote.why.fees.title">No Hidden Fees</h3>
+                        <p data-i18n="quote.why.fees.desc">Transparent pricing with no surprises</p>
                     </div>
                 </div>
             </div>
@@ -515,11 +659,11 @@
         <!-- CTA Section -->
         <section class="cta-section">
             <div class="container">
-                <h2>Ready to Get Started?</h2>
-                <p>Contact us for a custom quote tailored to your business needs</p>
+                <h2 data-i18n="quote.cta.title">Ready to Get Started?</h2>
+                <p data-i18n="quote.cta.desc">Contact us for a custom quote tailored to your business needs</p>
                 <div class="cta-buttons">
-                    <a href="contact.html" class="btn btn-primary btn-large">Contact Us</a>
-                    <a href="tel:+13055551234" class="btn btn-outline btn-large">Call Now</a>
+                    <a href="contact.html" class="btn btn-primary btn-large" data-i18n="quote.cta.contact">Contact Us</a>
+                    <a href="tel:+17868738819" class="btn btn-outline btn-large" data-i18n="quote.cta.call">Call Now</a>
                 </div>
             </div>
         </section>
@@ -531,26 +675,28 @@
             <div class="footer-grid">
                 <div class="footer-section">
                     <h4>Miami Alliance 3PL</h4>
-                    <p>Your trusted partner for warehousing, fulfillment, and logistics solutions in South Florida.</p>
+                    <p data-i18n="footer.tagline">Your trusted partner for warehousing, fulfillment, and logistics solutions in South Florida.</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4 data-i18n="footer.quicklinks">Quick Links</h4>
                     <ul>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="quote.html">Instant Quote</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="services.html" data-i18n="footer.services.link">Services</a></li>
+                        <li><a href="quote.html" data-i18n="footer.quote.link">Instant Quote</a></li>
+                        <li><a href="blog.html" data-i18n="footer.blog.link">Blog</a></li>
+                        <li><a href="about.html" data-i18n="footer.about.link">About Us</a></li>
+                        <li><a href="faq.html" data-i18n="footer.faq.link">FAQ</a></li>
+                        <li><a href="contact.html" data-i18n="footer.contact.link">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>8780 NW 100th ST<br>Medley, FL 33178</p>
+                    <h4 data-i18n="footer.contact">Contact</h4>
+                    <p><strong>Miami:</strong> 8780 NW 100th ST, Medley, FL 33178</p>
+                    <p><strong>Biloxi:</strong> 1606 Beach Blvd, Biloxi, MS 39531</p>
                     <p><a href="mailto:contact@miamialliance3pl.com">contact@miamialliance3pl.com</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Miami Alliance 3PL. All rights reserved.</p>
+                <p data-i18n="footer.copyright">&copy; 2024 Miami Alliance 3PL. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -568,8 +714,33 @@
     <!-- jsPDF Library for PDF Generation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
+    <!-- Shared pricing engine -->
+    <script src="js/quote-pricing-engine.js?v=20260527-2" defer></script>
+
     <!-- Quote Calculator (non-module) -->
-    <script src="js/quote-calculator.js?v=20260219-1"></script>
+    <script src="js/quote-calculator.js?v=20260527-2" defer></script>
+
+    <!-- Warehouse selector highlight updater -->
+    <script>
+    (function() {
+        var sel = document.getElementById('warehouse-select');
+        var highlights = document.getElementById('warehouse-highlights');
+        if (!sel || !highlights) return;
+        sel.addEventListener('change', function() {
+            var WH = window.MA3PLQuoteEngine && window.MA3PLQuoteEngine.WAREHOUSES;
+            var wh = WH && WH[sel.value];
+            if (wh && wh.highlights) {
+                highlights.textContent = wh.highlights.join(' · ');
+            }
+        });
+    })();
+    </script>
+
+    <!-- Internationalization -->
+    <script src="js/lang/es.js" defer></script>
+    <script src="js/lang/pt-br.js" defer></script>
+    <script src="js/lang/zh.js" defer></script>
+    <script src="js/i18n.js" defer></script>
 
     <!-- 3D Visualization (ES6 module) -->
     <script type="module">
@@ -1027,6 +1198,8 @@
         window.quote3D = new Quote3DViewer('quote-canvas');
     </script>
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/lead-capture.js" defer></script>
+    <script src="js/chat-widget.js"></script>
 </body>
 </html>

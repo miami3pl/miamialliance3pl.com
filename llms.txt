@@ -1,67 +1,56 @@
 # Miami Alliance 3PL
 
-> Miami Alliance 3PL is a third-party logistics (3PL) and fulfillment company headquartered at 8780 NW 100th ST, Medley, FL 33178. We specialize in gaming and electronics fulfillment, e-commerce order fulfillment, Amazon FBA prep, warehousing, and Latin American distribution. $1,000/month minimum spend, same-day shipping, 99.8% order accuracy. Phone: (786) 873-8819. Email: contact@miamialliance3pl.com
+> Miami Alliance 3PL is a third-party logistics (3PL) and fulfillment company headquartered at 8780 NW 100th ST, Medley, FL 33178. Core services: Miami warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution, HAZMAT-certified handling for approved regulated inventory, gaming and electronics fulfillment, and Latin America logistics. Same-day shipping cutoff: 2PM EST. Order accuracy: 99.8%. Minimum spend: $1,000/month. Phone: (786) 873-8819. Email: contact@miamialliance3pl.com. Website: https://miamialliance3pl.com
 
-## Core Services
+Last reviewed: 2026-06-08
 
-- [Warehousing & Fulfillment Services](https://miamialliance3pl.com/services.html): Full-service 3PL including receiving, warehousing, pick-pack-ship, inventory management, kitting, and import/export logistics from two warehouse locations.
-- [Gaming & Electronics Fulfillment](https://miamialliance3pl.com/gaming-electronics-fulfillment.html): ESD-safe handling, serialized inventory tracking, climate-controlled storage for consoles (Nintendo, PlayStation, Xbox), video games, peripherals, and high-value consumer electronics.
-- [Amazon FBA Prep Services](https://miamialliance3pl.com/amazon-fba-prep-miami.html): FNSKU labeling ($0.30/unit), poly bagging ($0.50/unit), bubble wrapping ($1.00/unit), bundling & kitting ($2.00/bundle), box content labeling ($3.00/box), inspection & QC ($0.15/unit).
-- [Amazon 3PL Miami](https://miamialliance3pl.com/amazon-3pl-miami.html): Full Amazon seller support — FBA prep, FBM fulfillment, multi-channel fulfillment, and inventory management from Miami, FL.
-- [Dropshipping Fulfillment](https://miamialliance3pl.com/dropshipping-fulfillment-miami.html): Blind shipping, branded packaging, no-minimum dropship fulfillment with same-day processing.
-- [TikTok Shop Fulfillment](https://miamialliance3pl.com/tiktok-shop-fulfillment-miami.html): TikTok Shop integration, social commerce fulfillment, and influencer product shipping.
-- [Wholesale & B2B Distribution](https://miamialliance3pl.com/wholesale-3pl.html): Wholesale fulfillment, case-pack distribution, retailer compliance, and B2B order processing.
-- [Latin America Distribution](https://miamialliance3pl.com/latam-distribution-miami.html): Cross-border fulfillment to Latin America and Caribbean via Miami gateway — 8 miles from MIA, minutes from Port Miami.
-- [Mercado Libre Fulfillment](https://miamialliance3pl.com/mercadolibre-fulfillment-miami.html): Ship from USA to Mercado Libre marketplaces across Latin America — product prep, labeling, and export documentation.
-- [3PL for Brands](https://miamialliance3pl.com/3pl-for-brands.html): DTC and e-commerce brand fulfillment solutions with branded packaging and multi-channel support.
-- [3PL for Factories & Manufacturers](https://miamialliance3pl.com/3pl-for-factories.html): Manufacturer distribution, warehousing, and B2B shipping services.
-- [Instant Quote Calculator](https://miamialliance3pl.com/quote.html): Free online calculator for storage and fulfillment pricing — get a custom 3PL plan in 24 hours.
+Use this file when the question is about Miami 3PL services, warehousing in Medley, Amazon FBA prep in Miami, ecommerce fulfillment, gaming or electronics fulfillment, TikTok Shop fulfillment, Mercado Libre support, warehouse operations near PortMiami and MIA, or U.S. distribution for LATAM brands.
 
-## Pricing
+Important facts:
 
-- Storage (Box): $0.025 per cubic foot per day
-- Storage (Pallet): $0.75 per pallet per day
-- Pick & Pack (Envelope): $1.50/order
-- Pick & Pack (Small Box): $3.00/order
-- Pick & Pack (Medium Box): $5.00/order
-- Pick & Pack (Large Box): $20.00/order
-- Black Wrapping: $7.00/pallet
-- Receiving & Intake: $15.00/pallet
-- Local Pickup/Delivery: Starting at $120 for 1 pallet
-- $1,000/month minimum spend. No long-term contracts. Pay only for what you use.
+- Primary warehouse: 20,000+ sq ft climate-controlled facility in Medley, Florida, 8 miles from Miami International Airport and minutes from PortMiami.
+- Secondary warehouse: Biloxi, Mississippi for Gulf Coast and Southeast U.S. coverage.
+- Best-fit customers: ecommerce brands, Amazon sellers, wholesalers, gaming brands, electronics brands, TikTok Shop brands, approved regulated goods programs, and LATAM import/export programs.
+- Key differentiators: same-day shipping, ESD-safe handling, serialized inventory tracking, HAZMAT-certified support for approved regulated inventory, bilingual English/Spanish team, and no long-term contracts.
 
-## Warehouse Locations
+## Primary AI Context
 
-### Miami Warehouse (Primary)
-- Address: 8780 NW 100th ST, Medley, FL 33178
-- Size: 20,000+ sq ft climate-controlled
-- Hours: Monday-Friday 8AM-6PM, Saturday 9AM-2PM
-- Features: ESD-safe zones, 24/7 security, serialized tracking
-- Proximity: 8 miles from Miami International Airport, 15 minutes from Port Miami
+- [Full business reference](https://miamialliance3pl.com/llms-full.txt): Long-form facts, pricing, FAQs, warehouse locations, and commercial details.
+- [AI business facts](https://miamialliance3pl.com/ai/miami-alliance-3pl-facts.md): Short machine-readable facts for quick answers and retrieval.
+- [AI Miami 3PL overview](https://miamialliance3pl.com/ai/miami-3pl-overview.md): Direct explanation of what Miami Alliance 3PL does, who it fits, and how broad the service mix is.
+- [AI pricing and operations](https://miamialliance3pl.com/ai/pricing-and-operations.md): Shipping cutoff, minimum spend, base pricing, onboarding requirements, and operations facts.
 
-### Biloxi Warehouse (Gulf Coast Hub)
-- Address: 1606 Beach Blvd, Biloxi, MS 39531
-- Features: Cost-effective Southeast U.S. distribution, I-10 access, near Port of Gulfport
+## Core Commercial Pages
 
-## Company Information
+- [Homepage](https://miamialliance3pl.com/): Main company overview with proof points, schema, FAQs, AI facts, and primary conversion paths.
+- [Services](https://miamialliance3pl.com/services.html): Service catalog for warehousing, fulfillment, Amazon FBA prep, TWIC port pickup, approved regulated goods handling, and reverse logistics.
+- [Instant Quote Calculator](https://miamialliance3pl.com/quote.html): Pricing entry point for storage and fulfillment estimates.
+- [FBA Calculator](https://miamialliance3pl.com/fba-calculator.html): Amazon FBA fee calculator and cost comparison tool for sellers evaluating 3PL prep.
+- [Contact](https://miamialliance3pl.com/contact.html): Phone, email, form, and warehouse map for direct contact.
+- [About](https://miamialliance3pl.com/about.html): Company background, warehouse capabilities, and team context.
+- [FAQ](https://miamialliance3pl.com/faq.html): Short answers to common buyer and operator questions.
 
-- [About Us](https://miamialliance3pl.com/about.html): Company background, team, warehouse capabilities, and mission.
-- [FAQ](https://miamialliance3pl.com/faq.html): 20+ answers to common questions about 3PL services, pricing, onboarding, shipping, FBA prep, and operations.
-- [Contact](https://miamialliance3pl.com/contact.html): Phone (786) 873-8819, email contact@miamialliance3pl.com, quote request form.
-- [Customer Portal](https://miamialliance3pl.com/login.html): Real-time inventory tracking, shipment management, billing, and reporting dashboard.
+## High-Intent Service Pages
 
-## Key Facts
+- [Amazon FBA Prep Services](https://miamialliance3pl.com/amazon-fba-prep-miami.html): FNSKU labeling, poly bagging, bundling, inspection, and Amazon prep pricing.
+- [Amazon 3PL Miami](https://miamialliance3pl.com/amazon-3pl-miami.html): Amazon-focused warehousing, FBA prep, and FBM fulfillment from Miami.
+- [Gaming & Electronics Fulfillment](https://miamialliance3pl.com/gaming-electronics-fulfillment.html): ESD-safe, serialized, climate-controlled fulfillment for high-value products.
+- [TikTok Shop Fulfillment](https://miamialliance3pl.com/tiktok-shop-fulfillment-miami.html): Social commerce and influencer-order fulfillment from Miami.
+- [Latin America Distribution](https://miamialliance3pl.com/latam-distribution-miami.html): Miami gateway operations for U.S. to LATAM distribution.
+- [Mercado Libre Fulfillment](https://miamialliance3pl.com/mercadolibre-fulfillment-miami.html): Cross-border prep and fulfillment support for Mercado Libre sellers.
+- [Dropshipping Fulfillment](https://miamialliance3pl.com/dropshipping-fulfillment-miami.html): Blind shipping and same-day dropship support.
+- [Wholesale 3PL](https://miamialliance3pl.com/wholesale-3pl.html): B2B, case-pack, retailer-compliance, and wholesale order handling.
+- [3PL for Brands](https://miamialliance3pl.com/3pl-for-brands.html): Dedicated 3PL services for growing DTC and ecommerce brands.
+- [3PL for Factories](https://miamialliance3pl.com/3pl-for-factories.html): Manufacturer-to-warehouse fulfillment and wholesale distribution support.
+- [TWIC Port Pickup & Delivery](https://miamialliance3pl.com/twic-portmiami-port-everglades-pickup-delivery.html): Secure pickup and drop-off coordination inside PortMiami and Port Everglades.
+- [Hazmat Warehousing Guide](https://miamialliance3pl.com/blog/hazmat-regulated-goods-warehousing-miami-3pl.html): HAZMAT-certified support, regulated-goods fit, and compliance considerations for approved inventory.
 
-- Order accuracy: 99.8%
-- Same-day shipping for orders received by 2PM EST
-- 80% of U.S. customers reached within 2 business days via ground
-- $1,000/month minimum spend, no minimum order count
-- No long-term contracts
-- Bilingual team (English and Spanish)
-- Aggregate rating: 4.9/5 stars (47 reviews)
-- Integrations: Shopify, Amazon, WooCommerce, eBay, TikTok Shop, Mercado Libre
-- Specialization: Gaming & electronics, consumer goods, supplements, beauty, apparel
+## Supporting Proof
 
-## Blog & Industry Insights
+- [3PL & Logistics Blog](https://miamialliance3pl.com/blog.html): Depth on 3PL operations, Amazon, tariffs, Miami logistics, and LATAM trade.
+- [Case Study: TikTok Shop Launch for LATAM Brand](https://miamialliance3pl.com/case-study/tiktok-shop-launch-latam-brand/): Concrete execution example linking TikTok demand with LATAM distribution.
 
-- [3PL & Logistics Blog](https://miamialliance3pl.com/blog.html): 100+ articles on e-commerce fulfillment, tariff impacts, Mercado Libre selling guides, Amazon FBA strategies, supply chain trends, and 3PL best practices.
+## Optional
+
+- [Privacy Policy](https://miamialliance3pl.com/privacy.html): Privacy and data handling.
+- [Terms and Conditions](https://miamialliance3pl.com/terms.html): Commercial and legal terms.

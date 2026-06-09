@@ -2,7 +2,15 @@
   "projects": {
     "default": "miamialliance3pl"
   },
-  "targets": {},
+  "targets": {
+    "miamialliance3pl": {
+      "hosting": {
+        "miamialliance3pl": [
+          "miamialliance3pl"
+        ]
+      }
+    }
+  },
   "etags": {
     "miamialliance3pl": {
       "extensionInstances": {}

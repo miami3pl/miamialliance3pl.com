@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Storage Log | Miami Alliance 3PL</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css?v=202602230300">
+    <link rel="stylesheet" href="../css/style.css?v=8">
     <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSRV99D8BX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTW0F25ZM1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-QSRV99D8BX');
+        gtag('config', 'G-KTW0F25ZM1');
     </script>
     <script src="../js/analytics.js"></script>
     <style>
@@ -159,8 +159,8 @@
                 <span class="logo-text">MIAMI ALLIANCE <span class="logo-accent">3PL</span></span>
             </a>
             <ul class="nav-menu">
-                <li><span id="user-name" class="nav-link">Welcome</span></li>
-                <li><a href="#" id="logout-btn" class="nav-link btn btn-outline">Logout</a></li>
+                <li><span id="user-name" class="nav-link" data-i18n="portal.nav.welcome">Welcome</span></li>
+                <li><a href="#" id="logout-btn" class="nav-link btn btn-outline" data-i18n="portal.sidebar.logout">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -168,90 +168,101 @@
     <div class="portal-layout">
         <aside class="portal-sidebar">
             <nav>
-                <a href="dashboard.html" class="portal-nav-item"><span>📊</span> Dashboard</a>
-                <a href="shipments.html" class="portal-nav-item"><span>🚚</span> Shipments</a>
-                <a href="tracking.html" class="portal-nav-item"><span>🔍</span> Tracking</a>
-                <a href="inventory.html" class="portal-nav-item"><span>📦</span> Inventory</a>
+                <a href="dashboard.html" class="portal-nav-item" data-i18n-html="portal.sidebar.dashboard"><span>📊</span> Dashboard</a>
+                <a href="shipments.html" class="portal-nav-item" data-i18n-html="portal.sidebar.shipments"><span>🚚</span> Shipments</a>
+                <a href="pickups.html" class="portal-nav-item">
+                    <span aria-hidden="true">🏗️</span> <span>Pickup & Delivery</span>
+                </a>
+                <a href="tracking.html" class="portal-nav-item" data-i18n-html="portal.sidebar.tracking"><span>🔍</span> Tracking</a>
+                <a href="inventory.html" class="portal-nav-item" data-i18n-html="portal.sidebar.inventory"><span>📦</span> Inventory</a>
+                <a href="admin-billing.html" class="portal-nav-item"><span>💵</span> <span>Billing</span></a>
+                <a href="contracts.html" class="portal-nav-item"><span>📄</span> <span>Contracts</span></a>
                 <div id="employee-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
-                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;">Staff</div>
-                    <a href="customers.html" class="portal-nav-item"><span>👥</span> All Customers</a>
-                    <a href="admin-shipments.html" class="portal-nav-item"><span>📋</span> All Shipments</a>
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;" data-i18n="portal.sidebar.staffLabel">Staff</div>
+                    <a href="customers.html" class="portal-nav-item" data-i18n-html="portal.sidebar.customers"><span>👥</span> All Customers</a>
+                    <a href="admin-shipments.html" class="portal-nav-item" data-i18n-html="portal.sidebar.allShipments"><span>📋</span> All Shipments</a>
                 </div>
                 <div id="admin-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
-                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;">Admin</div>
-                    <a href="invoices.html" class="portal-nav-item"><span>💵</span> Invoices</a>
-                    <a href="storage-log.html" class="portal-nav-item active"><span>📊</span> Storage Log</a>
-                    <a href="pricing.html" class="portal-nav-item"><span>💰</span> Pricing</a>
-                    <a href="settings.html" class="portal-nav-item"><span>⚙️</span> Settings</a>
-                    <a href="team.html" class="portal-nav-item"><span>👔</span> Manage Team</a>
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;" data-i18n="portal.sidebar.adminLabel">Admin</div>
+                    <a href="admin-panel.html" class="portal-nav-item">
+                        <span>🛡️</span> <span>Admin Control Panel</span>
+                    </a>                    <a href="admin-pickups.html" class="portal-nav-item">
+                        <span aria-hidden="true">🚛</span> <span>All Pickup Requests</span>
+                    </a>
+                    <a href="admin-billing.html" class="portal-nav-item"><span>📝</span> <span>Activity Billing</span></a>
+                    <a href="invoices.html" class="portal-nav-item" data-i18n-html="portal.sidebar.invoices"><span>💵</span> Invoices</a>
+                    <a href="storage-log.html" class="portal-nav-item active" data-i18n-html="portal.sidebar.storagelog"><span>📊</span> Storage Log</a>
+                    <a href="pricing.html" class="portal-nav-item" data-i18n-html="portal.sidebar.pricing"><span>💰</span> Pricing</a>
+                    <a href="settings.html" class="portal-nav-item" data-i18n-html="portal.sidebar.settings"><span>⚙️</span> Settings</a>
+                    <a href="team.html" class="portal-nav-item" data-i18n-html="portal.sidebar.team"><span>👔</span> Manage Team</a>
                 </div>
             </nav>
         </aside>
 
         <main class="portal-main">
             <div class="page-header-bar">
-                <h1>📊 Storage Log</h1>
-                <p>Record daily storage snapshots for billing</p>
+                <h1 data-i18n="portal.storagelog.title">📊 Storage Log</h1>
+                <p data-i18n="portal.storagelog.subtitle">Record daily storage snapshots for billing</p>
             </div>
 
             <!-- Tabs -->
             <div class="tabs">
-                <button class="tab active" onclick="showTab('record')">Record Snapshot</button>
-                <button class="tab" onclick="showTab('history')">History</button>
-                <button class="tab" onclick="showTab('summary')">Monthly Summary</button>
+                <button class="tab active" onclick="showTab('record')" data-i18n="portal.storagelog.tab.record">Record Snapshot</button>
+                <button class="tab" onclick="showTab('history')" data-i18n="portal.storagelog.tab.history">History</button>
+                <button class="tab" onclick="showTab('summary')" data-i18n="portal.storagelog.tab.summary">Monthly Summary</button>
             </div>
 
             <!-- Record Tab -->
             <div id="tab-record" class="tab-content">
                 <div class="snapshot-card">
-                    <h3>📝 Record Storage Snapshot</h3>
+                    <h3 data-i18n="portal.storagelog.record.title">📝 Record Storage Snapshot</h3>
 
                     <!-- Auto-count from inventory -->
                     <div class="auto-count-banner">
                         <span>🤖</span>
                         <div>
-                            <strong>Auto-count from Inventory:</strong>
-                            <span id="auto-pallet-count">Calculating...</span> estimated pallets
+                            <strong data-i18n="portal.storagelog.autocount.label">Auto-count from Inventory:</strong>
+                            <span id="auto-pallet-count" data-i18n="portal.storagelog.autocount.calculating">Calculating...</span> <span data-i18n="portal.storagelog.autocount.estimated">estimated pallets</span>
                         </div>
-                        <button class="btn btn-outline" onclick="useAutoCount()" style="margin-left: auto;">Use This Count</button>
+                        <button class="btn btn-outline" onclick="useAutoCount()" style="margin-left: auto;" data-i18n="portal.storagelog.autocount.use">Use This Count</button>
                     </div>
 
                     <form id="snapshot-form">
                         <div class="snapshot-form">
                             <div class="form-group">
-                                <label for="snapshot-date">Date *</label>
+                                <label for="snapshot-date" data-i18n="portal.storagelog.form.date">Date *</label>
                                 <input type="date" id="snapshot-date" required>
                             </div>
                             <div class="form-group">
-                                <label for="snapshot-customer">Customer *</label>
+                                <label for="snapshot-customer" data-i18n="portal.storagelog.form.customer">Customer *</label>
                                 <select id="snapshot-customer" required>
-                                    <option value="">Select customer...</option>
+                                    <option value="" data-i18n="portal.storagelog.form.selectCustomer">Select customer...</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="snapshot-pallets">Pallet Count *</label>
+                                <label for="snapshot-pallets" data-i18n="portal.storagelog.form.pallets">Pallet Count *</label>
                                 <input type="number" id="snapshot-pallets" min="0" required placeholder="0">
                             </div>
                             <div class="form-group">
-                                <label for="snapshot-containers">Container Count</label>
+                                <label for="snapshot-containers" data-i18n="portal.storagelog.form.containers">Container Count</label>
                                 <input type="number" id="snapshot-containers" min="0" value="0">
                             </div>
                             <div class="form-group">
-                                <label for="snapshot-boxes">Box/Carton Count</label>
+                                <label for="snapshot-boxes" data-i18n="portal.storagelog.form.boxes">Box/Carton Count</label>
                                 <input type="number" id="snapshot-boxes" min="0" value="0">
                             </div>
                             <div class="form-group">
-                                <label for="snapshot-sqft">Square Feet Used</label>
+                                <label for="snapshot-sqft" data-i18n="portal.storagelog.form.sqft">Square Feet Used</label>
                                 <input type="number" id="snapshot-sqft" min="0" step="0.1" value="0">
                             </div>
                         </div>
                         <div class="form-group" style="margin-top: var(--spacing-md);">
-                            <label for="snapshot-notes">Notes</label>
-                            <input type="text" id="snapshot-notes" placeholder="Optional notes...">
+                            <label for="snapshot-notes" data-i18n="portal.storagelog.form.notes">Notes</label>
+                            <input type="text" id="snapshot-notes" placeholder="Optional notes..." data-i18n-placeholder="portal.storagelog.form.notesPlaceholder">
                         </div>
                         <div class="btn-row">
-                            <button type="submit" class="btn btn-primary">Save Snapshot</button>
-                            <button type="button" class="btn btn-outline" onclick="recordAllCustomers()">Record All Customers (Auto)</button>
+                            <button type="submit" class="btn btn-primary" data-i18n="portal.storagelog.form.save">Save Snapshot</button>
+                            <button type="button" class="btn btn-outline" onclick="recordAllCustomers()" data-i18n="portal.storagelog.form.recordAll">Record All Customers (Auto)</button>
                         </div>
                     </form>
                 </div>
@@ -260,10 +271,10 @@
             <!-- History Tab -->
             <div id="tab-history" class="tab-content" style="display: none;">
                 <div class="snapshot-card">
-                    <h3>📅 Snapshot History</h3>
+                    <h3 data-i18n="portal.storagelog.history.title">📅 Snapshot History</h3>
                     <div style="display: flex; gap: var(--spacing-sm); margin-bottom: var(--spacing-md);">
                         <select id="history-customer" onchange="loadHistory()">
-                            <option value="">All Customers</option>
+                            <option value="" data-i18n="portal.storagelog.history.allCustomers">All Customers</option>
                         </select>
                         <input type="month" id="history-month" onchange="loadHistory()">
                     </div>
@@ -271,17 +282,17 @@
                         <table class="history-table">
                             <thead>
                                 <tr>
-                                    <th>Date</th>
-                                    <th>Customer</th>
-                                    <th>Pallets</th>
-                                    <th>Containers</th>
-                                    <th>Boxes</th>
-                                    <th>Sq Ft</th>
-                                    <th>Recorded By</th>
+                                    <th data-i18n="portal.storagelog.table.date">Date</th>
+                                    <th data-i18n="portal.storagelog.table.customer">Customer</th>
+                                    <th data-i18n="portal.storagelog.table.pallets">Pallets</th>
+                                    <th data-i18n="portal.storagelog.table.containers">Containers</th>
+                                    <th data-i18n="portal.storagelog.table.boxes">Boxes</th>
+                                    <th data-i18n="portal.storagelog.table.sqft">Sq Ft</th>
+                                    <th data-i18n="portal.storagelog.table.recordedBy">Recorded By</th>
                                 </tr>
                             </thead>
                             <tbody id="history-tbody">
-                                <tr><td colspan="7" style="text-align: center; padding: 20px;">Loading...</td></tr>
+                                <tr><td colspan="7" style="text-align: center; padding: 20px;" data-i18n="portal.storagelog.loading">Loading...</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -291,10 +302,10 @@
             <!-- Summary Tab -->
             <div id="tab-summary" class="tab-content" style="display: none;">
                 <div class="snapshot-card">
-                    <h3>📈 Monthly Billing Summary</h3>
+                    <h3 data-i18n="portal.storagelog.summary.title">📈 Monthly Billing Summary</h3>
                     <div style="display: flex; gap: var(--spacing-sm); margin-bottom: var(--spacing-md);">
                         <select id="summary-customer" onchange="loadSummary()">
-                            <option value="">Select Customer</option>
+                            <option value="" data-i18n="portal.storagelog.summary.selectCustomer">Select Customer</option>
                         </select>
                         <input type="month" id="summary-month" onchange="loadSummary()">
                     </div>
@@ -302,19 +313,19 @@
                     <div class="summary-grid" id="summary-grid">
                         <div class="summary-card">
                             <div class="value" id="sum-pallet-days">0</div>
-                            <div class="label">Pallet-Days</div>
+                            <div class="label" data-i18n="portal.storagelog.summary.palletDays">Pallet-Days</div>
                         </div>
                         <div class="summary-card">
                             <div class="value" id="sum-avg-pallets">0</div>
-                            <div class="label">Avg Pallets/Day</div>
+                            <div class="label" data-i18n="portal.storagelog.summary.avgPallets">Avg Pallets/Day</div>
                         </div>
                         <div class="summary-card">
                             <div class="value" id="sum-peak-pallets">0</div>
-                            <div class="label">Peak Pallets</div>
+                            <div class="label" data-i18n="portal.storagelog.summary.peakPallets">Peak Pallets</div>
                         </div>
                         <div class="summary-card">
                             <div class="value" id="sum-storage-cost">$0</div>
-                            <div class="label">Est. Storage Cost</div>
+                            <div class="label" data-i18n="portal.storagelog.summary.storageCost">Est. Storage Cost</div>
                         </div>
                     </div>
 
@@ -326,6 +337,10 @@
 
     <div id="toast" class="toast"></div>
 
+    <script src="../js/lang/es.js"></script>
+    <script src="../js/lang/pt-br.js"></script>
+    <script src="../js/lang/zh.js"></script>
+    <script src="../js/i18n.js"></script>
     <script src="../js/column-prefs.js"></script>
     <script type="module">
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
@@ -338,7 +353,8 @@
             projectId: "miamialliance3pl",
             storageBucket: "miamialliance3pl.firebasestorage.app",
             messagingSenderId: "657614666588",
-            appId: "1:657614666588:web:20e50484fe5d90b5aa5f99"
+            appId: "1:657614666588:web:20e50484fe5d90b5aa5f99",
+            measurementId: "G-KTW0F25ZM1"
         };
 
         const app = initializeApp(firebaseConfig);
@@ -494,8 +510,8 @@
                 box_count: parseInt(document.getElementById('snapshot-boxes').value) || 0,
                 sqft: parseFloat(document.getElementById('snapshot-sqft').value) || 0,
                 notes: document.getElementById('snapshot-notes').value,
-                recorded_by: auth.currentUser.uid,
-                recorded_by_email: auth.currentUser.email,
+                recorded_by: auth.currentUser?.uid || 'unknown',
+                recorded_by_email: auth.currentUser?.email || 'unknown',
                 created_at: new Date().toISOString()
             };
 
@@ -656,5 +672,6 @@
             window.location.href = '../login.html';
         });
     </script>
+    <script src="../js/chat-widget.js"></script>
 </body>
 </html>

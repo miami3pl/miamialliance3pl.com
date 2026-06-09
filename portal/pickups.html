@@ -1090,7 +1090,7 @@
         // Pricing defaults (can be overridden by admin settings)
         let PRICING = {
             basePallet: 120,    // $120 for 1 pallet
-            extraPallet: 25,    // $25 per additional pallet
+            extraPallet: 30,    // $30 per additional pallet
             maxPallets: 8       // max pallets per request (admin-configurable)
         };
 
@@ -1172,7 +1172,7 @@
                 const settings = await getSettings('pickup_pricing');
                 if (settings) {
                     PRICING.basePallet = settings.basePallet || 120;
-                    PRICING.extraPallet = settings.extraPallet || 25;
+                    PRICING.extraPallet = settings.extraPallet === 25 ? 30 : (settings.extraPallet || 30);
                     PRICING.maxPallets = settings.maxPallets || 8;
                 }
             } catch (e) {

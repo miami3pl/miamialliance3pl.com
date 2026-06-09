@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Inventory | Miami Alliance 3PL Portal</title>
     <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0f172a">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
@@ -15,14 +16,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="../css/style.css?v=202602230300">
+    <link rel="stylesheet" href="../css/style.css">
     <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSRV99D8BX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTW0F25ZM1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-QSRV99D8BX');
+        gtag('config', 'G-KTW0F25ZM1');
     </script>
     <script src="../js/analytics.js"></script>
 </head>
@@ -34,14 +35,14 @@
                 <span class="logo-icon">📦</span>
                 <span class="logo-text">MIAMI ALLIANCE <span class="logo-accent">3PL</span></span>
             </a>
-            <button class="nav-toggle sidebar-toggle" aria-label="Toggle sidebar">
+            <button class="nav-toggle sidebar-toggle" aria-label="Toggle sidebar" data-i18n-aria="portal.nav.toggleSidebar">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <ul class="nav-menu">
-                <li><span id="user-name" class="nav-link">Welcome</span></li>
-                <li><a href="#" id="logout-btn" class="nav-link btn btn-outline">Logout</a></li>
+                <li><span id="user-name" class="nav-link" data-i18n="portal.nav.welcome">Welcome</span></li>
+                <li><a href="#" id="logout-btn" class="nav-link btn btn-outline" data-i18n="portal.nav.logout">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -51,25 +52,87 @@
         <aside class="portal-sidebar">
             <nav role="navigation" aria-label="Main navigation">
                 <a href="dashboard.html" class="portal-nav-item">
-                    <span aria-hidden="true">📊</span> Dashboard
+                    <span aria-hidden="true">📊</span> <span data-i18n="portal.sidebar.dashboard">Dashboard</span>
                 </a>
                 <a href="shipments.html" class="portal-nav-item">
-                    <span aria-hidden="true">🚚</span> Shipments
+                    <span aria-hidden="true">🚚</span> <span data-i18n="portal.sidebar.shipments">Shipments</span>
+                </a>
+                <a href="pickups.html" class="portal-nav-item">
+                    <span aria-hidden="true">🏗️</span> <span>Pickup & Delivery</span>
                 </a>
                 <a href="tracking.html" class="portal-nav-item">
-                    <span aria-hidden="true">🔍</span> Tracking
+                    <span aria-hidden="true">🔍</span> <span data-i18n="portal.sidebar.tracking">Tracking</span>
                 </a>
                 <a href="inventory.html" class="portal-nav-item active" aria-current="page">
-                    <span aria-hidden="true">📦</span> Inventory
+                    <span aria-hidden="true">📦</span> <span data-i18n="portal.sidebar.inventory">Inventory</span>
                 </a>
+                <a href="admin-billing.html" class="portal-nav-item">
+                    <span aria-hidden="true">💵</span> <span data-i18n="portal.sidebar.billing">Billing</span>
+                </a>
+                <a href="contracts.html" class="portal-nav-item">
+                    <span aria-hidden="true">📄</span> <span>Contracts</span>
+                </a>
+                <div id="employee-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;" aria-hidden="true" data-i18n="portal.sidebar.staffLabel">Staff</div>
+                    <a href="customers.html" class="portal-nav-item" id="nav-all-users">
+                        <span aria-hidden="true">👥</span> <span data-i18n="portal.sidebar.allCustomers">All Customers</span>
+                    </a>
+                    <a href="admin-shipments.html" class="portal-nav-item" id="nav-all-shipments">
+                        <span aria-hidden="true">📋</span> <span data-i18n="portal.sidebar.allShipments">All Shipments</span>
+                    </a>
+                </div>
+                <div id="admin-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;" aria-hidden="true" data-i18n="portal.sidebar.adminLabel">Admin</div>
+                    <a href="admin-panel.html" class="portal-nav-item">
+                        <span>🛡️</span> <span>Admin Control Panel</span>
+                    </a>
+                    <a href="admin-pickups.html" class="portal-nav-item">
+                        <span aria-hidden="true">🚛</span> <span>All Pickup Requests</span>
+                    </a>
+                    <a href="admin-billing.html" class="portal-nav-item"><span>📝</span> <span>Activity Billing</span></a>
+                    <a href="invoices.html" class="portal-nav-item">
+                        <span aria-hidden="true">💵</span> <span data-i18n="portal.sidebar.invoices">Invoices</span>
+                    </a>
+                    <a href="storage-log.html" class="portal-nav-item">
+                        <span aria-hidden="true">📊</span> <span data-i18n="portal.sidebar.storagelog">Storage Log</span>
+                    </a>
+                    <a href="pricing.html" class="portal-nav-item">
+                        <span aria-hidden="true">💰</span> <span data-i18n="portal.sidebar.pricing">Pricing</span>
+                    </a>
+                    <a href="settings.html" class="portal-nav-item">
+                        <span aria-hidden="true">⚙️</span> <span data-i18n="portal.sidebar.settings">Settings</span>
+                    </a>
+                    <a href="team.html" class="portal-nav-item">
+                        <span aria-hidden="true">👔</span> <span data-i18n="portal.sidebar.team">Manage Team</span>
+                    </a>
+                    <a href="changelog.html" class="portal-nav-item">
+                        <span aria-hidden="true">📝</span> <span data-i18n="portal.sidebar.changelog">Changelog</span>
+                    </a>
+                </div>
             </nav>
         </aside>
 
         <!-- Main Content -->
         <main class="portal-main">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-lg); flex-wrap: wrap; gap: var(--spacing-sm);">
-                <h1 style="color: var(--color-gray-900);">Inventory</h1>
-                <button id="new-item-btn" class="btn btn-primary" style="display: none;">+ Add Item</button>
+                <h1 style="color: var(--color-gray-900);" data-i18n="portal.inventory.title">Inventory</h1>
+                <button id="new-item-btn" class="btn btn-primary" style="display: none;" data-i18n="portal.inventory.addItem">+ Add Item</button>
+            </div>
+
+            <!-- Locked Banner (shown to customers when admin has locked their inventory) -->
+            <div id="locked-banner" style="display: none; background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 12px 16px; margin-bottom: var(--spacing-md); color: #92400e; font-weight: 500;">
+                🔒 Your inventory has been locked by the warehouse administrator. Please contact us to request changes.
+            </div>
+
+            <!-- Admin Inventory Lock Controls -->
+            <div id="admin-lock-controls" style="display: none; background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 8px; padding: 12px 16px; margin-bottom: var(--spacing-md); align-items: center; gap: 12px; flex-wrap: wrap;">
+                <span style="font-weight: 600; color: var(--color-gray-700);">🛡️ Inventory Lock:</span>
+                <select id="lock-customer-select" style="padding: 6px 10px; border: 1px solid var(--color-gray-300); border-radius: var(--radius-md); font-size: 0.85rem;">
+                    <option value="">-- Select Customer --</option>
+                </select>
+                <button id="lock-inventory-btn" class="btn" style="background: #dc2626; color: white; font-size: 0.85rem; padding: 6px 16px; border-radius: 6px; display: none; cursor: pointer;">🔒 Lock Inventory</button>
+                <button id="unlock-inventory-btn" class="btn" style="background: #16a34a; color: white; font-size: 0.85rem; padding: 6px 16px; border-radius: 6px; display: none; cursor: pointer;">🔓 Unlock Inventory</button>
+                <span id="lock-status-indicator" style="font-size: 0.85rem; font-weight: 600;"></span>
             </div>
 
             <!-- Toast Notification -->
@@ -78,40 +141,55 @@
 
             <!-- Add Item Form (hidden by default) -->
             <div id="item-form-container" class="dashboard-card" style="display: none; margin-bottom: var(--spacing-xl);">
-                <h2 style="font-size: var(--font-size-xl); margin-bottom: var(--spacing-md); color: var(--color-gray-900);">Add Inventory Item</h2>
+                <h2 style="font-size: var(--font-size-xl); margin-bottom: var(--spacing-md); color: var(--color-gray-900);" data-i18n="portal.inventory.addItemTitle">Add Inventory Item</h2>
                 <form id="item-form">
                     <input type="hidden" id="item-edit-id">
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-md);">
                         <div class="form-group">
-                            <label for="item-sku">SKU</label>
-                            <input type="text" id="item-sku" required placeholder="ABC-123" aria-required="true">
+                            <label for="item-sku" data-i18n="portal.inventory.form.sku">SKU</label>
+                            <input type="text" id="item-sku" required placeholder="ABC-123" aria-required="true" data-i18n-placeholder="portal.inventory.form.skuPlaceholder">
                         </div>
                         <div class="form-group">
-                            <label for="item-name">Product Name</label>
-                            <input type="text" id="item-name" required placeholder="Product Name" aria-required="true">
+                            <label for="item-name" data-i18n="portal.inventory.form.productName">Product Name</label>
+                            <input type="text" id="item-name" required placeholder="Product Name" aria-required="true" data-i18n-placeholder="portal.inventory.form.productNamePlaceholder">
                         </div>
                         <div class="form-group">
-                            <label for="item-qty">Quantity</label>
+                            <label for="item-qty" data-i18n="portal.inventory.form.quantity">Quantity</label>
                             <input type="number" id="item-qty" required placeholder="0" min="0" aria-required="true">
                         </div>
                         <div class="form-group">
-                            <label for="item-location">Location</label>
-                            <input type="text" id="item-location" placeholder="A1-01">
+                            <label for="item-location" data-i18n="portal.inventory.form.location">Location</label>
+                            <input type="text" id="item-location" placeholder="A1-01" data-i18n-placeholder="portal.inventory.form.locationPlaceholder">
                         </div>
                         <div class="form-group">
-                            <label for="item-reorder">Reorder Level</label>
+                            <label for="item-upc">UPC / Barcode</label>
+                            <input type="text" id="item-upc" placeholder="012345678901">
+                        </div>
+                        <div class="form-group">
+                            <label for="item-tags">Tags (comma-separated)</label>
+                            <input type="text" id="item-tags" placeholder="fragile, electronics">
+                        </div>
+                        <div class="form-group">
+                            <label for="item-reorder" data-i18n="portal.inventory.form.reorderLevel">Reorder Level</label>
                             <input type="number" id="item-reorder" placeholder="10" min="0">
                         </div>
+                        <div class="form-group">
+                            <label for="item-warehouse">Warehouse</label>
+                            <select id="item-warehouse" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--color-gray-300); border-radius: var(--radius-md);">
+                                <option value="miami">📍 Miami, FL — Medley</option>
+                                <option value="biloxi">📍 Biloxi, MS — Gulf Coast</option>
+                            </select>
+                        </div>
                         <div class="form-group" id="customer-select-group" style="display: none;">
-                            <label for="item-customer">Customer (Owner)</label>
+                            <label for="item-customer" data-i18n="portal.inventory.form.customerOwner">Customer (Owner)</label>
                             <select id="item-customer" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--color-gray-300); border-radius: var(--radius-md);">
-                                <option value="">-- Select Customer --</option>
+                                <option value="" data-i18n="portal.inventory.form.selectCustomer">-- Select Customer --</option>
                             </select>
                         </div>
                     </div>
                     <div style="display: flex; gap: var(--spacing-sm); margin-top: var(--spacing-md);">
-                        <button type="submit" class="btn btn-primary" id="item-submit-btn">Add Item</button>
-                        <button type="button" id="cancel-item" class="btn btn-outline">Cancel</button>
+                        <button type="submit" class="btn btn-primary" id="item-submit-btn" data-i18n="portal.inventory.form.addItemBtn">Add Item</button>
+                        <button type="button" id="cancel-item" class="btn btn-outline" data-i18n="portal.inventory.form.cancel">Cancel</button>
                     </div>
                 </form>
             </div>
@@ -119,42 +197,50 @@
             <!-- Stats -->
             <div class="dashboard-stats" style="margin-bottom: var(--spacing-lg);">
                 <div class="dashboard-card">
-                    <h3>Total Items</h3>
+                    <h3 data-i18n="portal.inventory.stats.totalItems">Total Items</h3>
                     <div class="value" id="total-items">0</div>
                 </div>
                 <div class="dashboard-card">
-                    <h3>Total Units</h3>
+                    <h3 data-i18n="portal.inventory.stats.totalUnits">Total Units</h3>
                     <div class="value" id="total-units">0</div>
                 </div>
                 <div class="dashboard-card">
-                    <h3>Low Stock</h3>
+                    <h3 data-i18n="portal.inventory.stats.lowStock">Low Stock</h3>
                     <div class="value" id="low-stock" style="color: var(--color-accent);">0</div>
                 </div>
             </div>
 
-            <!-- Search -->
-            <div style="margin-bottom: var(--spacing-md);">
-                <label for="search-input" class="visually-hidden">Search inventory</label>
-                <input type="text" id="search-input" placeholder="Search by SKU or product name..." style="width: 100%; max-width: 400px; padding: 0.75rem 1rem; border: 1px solid var(--color-gray-300); border-radius: var(--radius-md);" role="searchbox" aria-label="Search inventory by SKU or product name">
+            <!-- Search & Warehouse Filter -->
+            <div style="margin-bottom: var(--spacing-md); display: flex; gap: var(--spacing-sm); flex-wrap: wrap; align-items: center;">
+                <label for="search-input" class="visually-hidden" data-i18n="portal.inventory.searchLabel">Search inventory</label>
+                <input type="text" id="search-input" placeholder="Search by SKU or product name..." style="flex: 1; min-width: 250px; max-width: 400px; padding: 0.75rem 1rem; border: 1px solid var(--color-gray-300); border-radius: var(--radius-md);" role="searchbox" aria-label="Search inventory by SKU or product name" data-i18n-placeholder="portal.inventory.searchPlaceholder" data-i18n-aria="portal.inventory.searchAria">
+                <select id="warehouse-filter" style="padding: 0.75rem 1rem; border: 1px solid var(--color-gray-300); border-radius: var(--radius-md); font-weight: 600; min-width: 160px;">
+                    <option value="">All Warehouses</option>
+                    <option value="miami">📍 Miami, FL</option>
+                    <option value="biloxi">📍 Biloxi, MS</option>
+                </select>
             </div>
 
             <!-- Inventory Table -->
             <div class="table-wrapper">
-                <table class="data-table" role="table" aria-label="Inventory items list">
+                <table class="data-table" role="table" aria-label="Inventory items list" data-i18n-aria="portal.inventory.tableAria">
                     <thead>
                         <tr>
-                            <th scope="col">SKU</th>
-                            <th scope="col">Product Name</th>
-                            <th scope="col" id="customer-col-header" style="display: none;">Customer</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Location</th>
-                            <th scope="col">Last Updated</th>
-                            <th scope="col">Actions</th>
+                            <th scope="col" data-i18n="portal.inventory.table.sku">SKU</th>
+                            <th scope="col" data-i18n="portal.inventory.table.productName">Product Name</th>
+                            <th scope="col" id="customer-col-header" style="display: none;" data-i18n="portal.inventory.table.customer">Customer</th>
+                            <th scope="col" data-i18n="portal.inventory.table.quantity">Quantity</th>
+                            <th scope="col">UPC</th>
+                            <th scope="col">Tags</th>
+                            <th scope="col">Warehouse</th>
+                            <th scope="col" data-i18n="portal.inventory.table.location">Location</th>
+                            <th scope="col" data-i18n="portal.inventory.table.lastUpdated">Last Updated</th>
+                            <th scope="col" data-i18n="portal.inventory.table.actions">Actions</th>
                         </tr>
                     </thead>
                     <tbody id="inventory-list">
                         <tr>
-                            <td colspan="7" style="text-align: center; padding: var(--spacing-xl); color: var(--color-gray-500);">
+                            <td colspan="10" style="text-align: center; padding: var(--spacing-xl); color: var(--color-gray-500);" data-i18n="portal.inventory.loading">
                                 Loading inventory...
                             </td>
                         </tr>
@@ -165,12 +251,12 @@
             <!-- Delete Confirmation Modal -->
             <div id="delete-modal" role="dialog" aria-modal="true" aria-labelledby="delete-modal-title" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 2000; align-items: center; justify-content: center;">
                 <div class="dashboard-card" style="width: 100%; max-width: 400px; margin: var(--spacing-md); text-align: center;">
-                    <h2 id="delete-modal-title" style="font-size: var(--font-size-xl); margin-bottom: var(--spacing-md); color: var(--color-gray-900);">Confirm Delete</h2>
-                    <p style="margin-bottom: var(--spacing-lg); color: var(--color-gray-600);">Are you sure you want to delete <strong id="delete-item-name"></strong>? This action cannot be undone.</p>
+                    <h2 id="delete-modal-title" style="font-size: var(--font-size-xl); margin-bottom: var(--spacing-md); color: var(--color-gray-900);" data-i18n="portal.inventory.modal.confirmDelete">Confirm Delete</h2>
+                    <p style="margin-bottom: var(--spacing-lg); color: var(--color-gray-600);" data-i18n-html="portal.inventory.modal.deleteWarning">Are you sure you want to delete <strong id="delete-item-name"></strong>? This action cannot be undone.</p>
                     <input type="hidden" id="delete-item-id">
                     <div style="display: flex; gap: var(--spacing-sm); justify-content: center;">
-                        <button id="confirm-delete-btn" class="btn" style="background: #ef4444; color: white;">Delete</button>
-                        <button id="cancel-delete-btn" class="btn btn-outline">Cancel</button>
+                        <button id="confirm-delete-btn" class="btn" style="background: #ef4444; color: white;" data-i18n="portal.inventory.modal.deleteBtn">Delete</button>
+                        <button id="cancel-delete-btn" class="btn btn-outline" data-i18n="portal.inventory.modal.cancelBtn">Cancel</button>
                     </div>
                 </div>
             </div>
@@ -180,34 +266,49 @@
     <!-- Edit Modal (Full Edit for Staff) -->
     <div id="edit-modal" role="dialog" aria-modal="true" aria-labelledby="edit-modal-title" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 2000; align-items: center; justify-content: center;">
         <div class="dashboard-card" style="width: 100%; max-width: 500px; margin: var(--spacing-md);">
-            <h2 id="edit-modal-title" style="font-size: var(--font-size-xl); margin-bottom: var(--spacing-md); color: var(--color-gray-900);">Edit Inventory Item</h2>
+            <h2 id="edit-modal-title" style="font-size: var(--font-size-xl); margin-bottom: var(--spacing-md); color: var(--color-gray-900);" data-i18n="portal.inventory.modal.editTitle">Edit Inventory Item</h2>
             <form id="edit-form">
                 <input type="hidden" id="edit-id">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-md);">
                     <div class="form-group">
-                        <label for="edit-sku">SKU</label>
+                        <label for="edit-sku" data-i18n="portal.inventory.form.sku">SKU</label>
                         <input type="text" id="edit-sku" required aria-required="true">
                     </div>
                     <div class="form-group">
-                        <label for="edit-name">Product Name</label>
+                        <label for="edit-name" data-i18n="portal.inventory.form.productName">Product Name</label>
                         <input type="text" id="edit-name" required aria-required="true">
                     </div>
                     <div class="form-group">
-                        <label for="edit-qty">Quantity</label>
+                        <label for="edit-qty" data-i18n="portal.inventory.form.quantity">Quantity</label>
                         <input type="number" id="edit-qty" required min="0" aria-required="true">
                     </div>
                     <div class="form-group">
-                        <label for="edit-location">Location</label>
+                        <label for="edit-location" data-i18n="portal.inventory.form.location">Location</label>
                         <input type="text" id="edit-location">
                     </div>
                     <div class="form-group">
-                        <label for="edit-reorder">Reorder Level</label>
+                        <label for="edit-upc">UPC / Barcode</label>
+                        <input type="text" id="edit-upc">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-tags">Tags</label>
+                        <input type="text" id="edit-tags" placeholder="comma-separated">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-reorder" data-i18n="portal.inventory.form.reorderLevel">Reorder Level</label>
                         <input type="number" id="edit-reorder" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-warehouse">Warehouse</label>
+                        <select id="edit-warehouse" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--color-gray-300); border-radius: var(--radius-md);">
+                            <option value="miami">📍 Miami, FL — Medley</option>
+                            <option value="biloxi">📍 Biloxi, MS — Gulf Coast</option>
+                        </select>
                     </div>
                 </div>
                 <div style="display: flex; gap: var(--spacing-sm); margin-top: var(--spacing-md);">
-                    <button type="submit" class="btn btn-primary">Save Changes</button>
-                    <button type="button" id="cancel-edit" class="btn btn-outline">Cancel</button>
+                    <button type="submit" class="btn btn-primary" data-i18n="portal.inventory.modal.saveChanges">Save Changes</button>
+                    <button type="button" id="cancel-edit" class="btn btn-outline" data-i18n="portal.inventory.form.cancel">Cancel</button>
                 </div>
             </form>
         </div>
@@ -225,7 +326,8 @@
             projectId: "miamialliance3pl",
             storageBucket: "miamialliance3pl.firebasestorage.app",
             messagingSenderId: "657614666588",
-            appId: "1:657614666588:web:20e50484fe5d90b5aa5f99"
+            appId: "1:657614666588:web:20e50484fe5d90b5aa5f99",
+            measurementId: "G-KTW0F25ZM1"
         };
 
         const app = initializeApp(firebaseConfig);
@@ -233,19 +335,96 @@
         const db = getFirestore(app);
 
         // Fallback admin emails (used only if Firestore role is missing)
-        const FALLBACK_ADMIN_EMAILS = [
-            'admin@miamialliance3pl.com',
-            'yuri@miamialliance3pl.com'
-        ];
+        const FALLBACK_ADMIN_EMAILS = ['ceo@usglatam.com', 'yuri@megalopolisms.com'];
 
         let currentUser = null;
         let currentUserRole = null;
         let inventoryData = [];
         let customersMap = {}; // Map of user_id -> customer name for staff view
+        let inventoryLocked = false; // Whether current customer's inventory is locked by admin
+        let customersLockMap = {}; // Map of user_id -> lock status (admin view)
+
+        // Sanitize string for safe HTML attribute/content injection (prevent XSS)
+        function esc(str) {
+            if (str == null) return '';
+            const d = document.createElement('div');
+            d.textContent = String(str);
+            return d.innerHTML;
+        }
+
+        // Real-time lock re-check: fetch fresh lock status from Firestore before save
+        async function recheckInventoryLock(userId) {
+            try {
+                const userDoc = await getDoc(doc(db, 'users', userId));
+                if (userDoc.exists()) {
+                    return userDoc.data().inventory_locked === true;
+                }
+            } catch (e) {
+                console.warn('Lock re-check failed, using cached value:', e.message);
+            }
+            return inventoryLocked;
+        }
 
         // Helper to check if user is staff (admin or employee)
         function isStaff() {
             return currentUserRole === 'admin' || currentUserRole === 'employee';
+        }
+
+        function isAdmin() {
+            return currentUserRole === 'admin';
+        }
+
+        function getUserDisplayName(userData = {}, fallbackId = '') {
+            return userData.company_name || userData.name || userData.email || fallbackId || 'Unknown';
+        }
+
+        function getInventoryOwnerId(item) {
+            if (!item || typeof item !== 'object') return '';
+            return item.user_id || item.customer_id || '';
+        }
+
+        function normalizeInventoryItem(docSnap) {
+            const data = docSnap.data() || {};
+            const ownerId = getInventoryOwnerId(data);
+            return {
+                id: docSnap.id,
+                ...data,
+                user_id: data.user_id || ownerId || '',
+                customer_id: data.customer_id || ownerId || ''
+            };
+        }
+
+        function shouldIncludeInCustomerSelectors(userData, userId, activeOwnerIds) {
+            const role = (userData.role || '').toLowerCase();
+            return role === 'customer' || role === '' || activeOwnerIds.has(userId);
+        }
+
+        function isCustomerInventoryLocked(customerId) {
+            if (!customerId) return false;
+            if (!isStaff() && currentUser && customerId === currentUser.uid) {
+                return inventoryLocked;
+            }
+            return customersLockMap[customerId] === true;
+        }
+
+        function canManageInventoryForCustomer(customerId) {
+            if (isAdmin()) {
+                return true;
+            }
+
+            if (isStaff()) {
+                return !isCustomerInventoryLocked(customerId);
+            }
+
+            return currentUser && customerId === currentUser.uid && !inventoryLocked;
+        }
+
+        function sortInventoryItems(items) {
+            return items.sort((a, b) => {
+                const aTime = a.last_updated ? new Date(a.last_updated).getTime() : 0;
+                const bTime = b.last_updated ? new Date(b.last_updated).getTime() : 0;
+                return bTime - aTime;
+            });
         }
 
         // Toast notification function
@@ -264,25 +443,70 @@
             }, 3000);
         }
 
-        // Load customers list for staff
+        // Load customers list for staff (also populates lock status)
+        // Loads all users for row rendering, then keeps selector options scoped
+        // to customer-role users plus any legacy/active owners found in operations data.
         async function loadCustomers() {
             if (!isStaff()) return;
 
             try {
-                const usersSnapshot = await getDocs(query(collection(db, 'users'), where('role', '==', 'customer')));
+                const [usersSnapshot, inventorySnapshot, shipmentsSnapshot] = await Promise.all([
+                    getDocs(collection(db, 'users')),
+                    getDocs(collection(db, 'inventory')),
+                    getDocs(collection(db, 'shipments'))
+                ]);
                 const customerSelect = document.getElementById('item-customer');
+                const lockCustomerSelect = document.getElementById('lock-customer-select');
+                customersMap = {};
+                customersLockMap = {};
                 customerSelect.innerHTML = '<option value="">-- Select Customer --</option>';
+                lockCustomerSelect.innerHTML = '<option value="">-- Select Customer --</option>';
+                const activeOwnerIds = new Set();
+                const customerOptions = [];
 
-                usersSnapshot.forEach((doc) => {
-                    const userData = doc.data();
-                    customersMap[doc.id] = userData.name || userData.email || doc.id;
-                    const option = document.createElement('option');
-                    option.value = doc.id;
-                    option.textContent = userData.name || userData.email;
-                    customerSelect.appendChild(option);
+                inventorySnapshot.forEach((docSnap) => {
+                    const ownerId = getInventoryOwnerId(docSnap.data());
+                    if (ownerId) activeOwnerIds.add(ownerId);
                 });
+
+                shipmentsSnapshot.forEach((docSnap) => {
+                    const ownerId = docSnap.data()?.user_id;
+                    if (ownerId) activeOwnerIds.add(ownerId);
+                });
+
+                usersSnapshot.forEach((docSnap) => {
+                    const userData = docSnap.data() || {};
+                    const displayName = getUserDisplayName(userData, docSnap.id);
+
+                    // Always populate the name/lock maps (so inventory rows resolve correctly)
+                    customersMap[docSnap.id] = displayName;
+                    customersLockMap[docSnap.id] = userData.inventory_locked === true;
+
+                    if (shouldIncludeInCustomerSelectors(userData, docSnap.id, activeOwnerIds)) {
+                        customerOptions.push({
+                            id: docSnap.id,
+                            label: displayName,
+                            locked: userData.inventory_locked === true
+                        });
+                    }
+                });
+
+                customerOptions
+                    .sort((a, b) => a.label.localeCompare(b.label, undefined, { sensitivity: 'base' }))
+                    .forEach((customer) => {
+                        const option = document.createElement('option');
+                        option.value = customer.id;
+                        option.textContent = customer.label;
+                        customerSelect.appendChild(option);
+
+                        const lockOption = document.createElement('option');
+                        lockOption.value = customer.id;
+                        lockOption.textContent = customer.label + (customer.locked ? ' 🔒' : '');
+                        lockCustomerSelect.appendChild(lockOption);
+                    });
             } catch (error) {
                 console.error('Error loading customers:', error);
+                showToast('Error loading customer list: ' + error.message, 'error');
             }
         }
 
@@ -302,27 +526,52 @@
 
                 // Check role from Firestore, fallback to admin check by email
                 if (userData.role) {
-                    currentUserRole = userData.role;
-                } else if (FALLBACK_ADMIN_EMAILS.includes(user.email)) {
+                    currentUserRole = String(userData.role).toLowerCase();
+                } else if (FALLBACK_ADMIN_EMAILS.includes((user.email || '').toLowerCase())) {
                     currentUserRole = 'admin';
                 } else {
                     currentUserRole = 'customer';
                 }
             } else {
                 // No user doc - check fallback admin emails
-                if (FALLBACK_ADMIN_EMAILS.includes(user.email)) {
+                if (FALLBACK_ADMIN_EMAILS.includes((user.email || '').toLowerCase())) {
                     currentUserRole = 'admin';
                 } else {
                     currentUserRole = 'customer';
                 }
             }
 
+            // Check inventory lock status for customers
+            if (!isStaff()) {
+                const userData = userDoc.exists() ? userDoc.data() : {};
+                inventoryLocked = userData.inventory_locked === true;
+                if (inventoryLocked) {
+                    document.getElementById('locked-banner').style.display = 'block';
+                }
+            }
+
+            // Show Add Item button for all users (unless inventory is locked)
+            if (isStaff() || !inventoryLocked) {
+                document.getElementById('new-item-btn').style.display = 'inline-flex';
+            }
+
+            // Show staff/admin nav for authorized users
+            if (isStaff()) {
+                const empNav = document.getElementById('employee-nav');
+                const admNav = document.getElementById('admin-nav');
+                if (empNav) empNav.style.display = 'block';
+                if (admNav) admNav.style.display = 'block';
+            }
+
             // Show staff-only UI elements
             if (isStaff()) {
-                document.getElementById('new-item-btn').style.display = 'inline-flex';
                 document.getElementById('customer-select-group').style.display = 'block';
                 document.getElementById('customer-col-header').style.display = 'table-cell';
                 await loadCustomers();
+
+                if (isAdmin()) {
+                    document.getElementById('admin-lock-controls').style.display = 'flex';
+                }
 
                 // Initialize column preferences (staff only — full column set)
                 if (window.ColumnPrefs) {
@@ -362,16 +611,30 @@
             document.getElementById('item-edit-id').value = '';
         });
 
-        // Search
-        document.getElementById('search-input').addEventListener('input', (e) => {
-            const search = e.target.value.toLowerCase();
-            const filtered = inventoryData.filter(item =>
-                item.sku.toLowerCase().includes(search) ||
-                item.name.toLowerCase().includes(search) ||
-                (customersMap[item.user_id] && customersMap[item.user_id].toLowerCase().includes(search))
-            );
+        // Search & warehouse filter
+        function applyInventoryFilters() {
+            const search = document.getElementById('search-input').value.toLowerCase();
+            const whFilter = document.getElementById('warehouse-filter').value;
+            let filtered = inventoryData;
+
+            if (search) {
+                filtered = filtered.filter((item) => {
+                    const ownerId = getInventoryOwnerId(item);
+                    const customerName = customersMap[ownerId] || item.customer_name || ownerId || '';
+                    return String(item.sku || '').toLowerCase().includes(search) ||
+                        String(item.name || '').toLowerCase().includes(search) ||
+                        customerName.toLowerCase().includes(search);
+                });
+            }
+
+            if (whFilter) {
+                filtered = filtered.filter(item => (item.warehouse || 'miami') === whFilter);
+            }
+
             renderInventory(filtered);
-        });
+        }
+        document.getElementById('search-input').addEventListener('input', applyInventoryFilters);
+        document.getElementById('warehouse-filter').addEventListener('change', applyInventoryFilters);
 
         // Add/Edit item form submission
         document.getElementById('item-form').addEventListener('submit', async (e) => {
@@ -389,12 +652,33 @@
                 }
             }
 
+            if (!canManageInventoryForCustomer(itemUserId)) {
+                showToast('This inventory is locked. Only an administrator can make changes right now.', 'error');
+                return;
+            }
+
+            // Real-time lock re-check to prevent race condition
+            // (admin may have locked between page load and form submission)
+            if (!isAdmin()) {
+                const freshLock = await recheckInventoryLock(itemUserId);
+                if (freshLock) {
+                    inventoryLocked = true;
+                    document.getElementById('locked-banner').style.display = 'block';
+                    showToast('Inventory was just locked by an administrator. Your changes cannot be saved.', 'error');
+                    return;
+                }
+            }
+
             const itemData = {
                 user_id: itemUserId,
+                customer_id: itemUserId,
                 sku: document.getElementById('item-sku').value,
                 name: document.getElementById('item-name').value,
                 quantity: parseInt(document.getElementById('item-qty').value),
+                upc: document.getElementById('item-upc').value.trim() || '',
+                tags: (document.getElementById('item-tags').value || '').split(',').map(t => t.trim()).filter(Boolean),
                 location: document.getElementById('item-location').value || 'Unassigned',
+                warehouse: document.getElementById('item-warehouse').value || 'miami',
                 reorder_level: parseInt(document.getElementById('item-reorder').value) || 10,
                 last_updated: new Date().toISOString()
             };
@@ -423,13 +707,37 @@
 
         document.getElementById('edit-form').addEventListener('submit', async (e) => {
             e.preventDefault();
+
             const id = document.getElementById('edit-id').value;
+            const existingItem = inventoryData.find((entry) => entry.id === id);
+            const itemUserId = getInventoryOwnerId(existingItem) || currentUser.uid;
+
+            if (!canManageInventoryForCustomer(itemUserId)) {
+                showToast('This inventory is locked. Only an administrator can make changes right now.', 'error');
+                return;
+            }
+
+            // Real-time lock re-check (race condition guard)
+            if (!isAdmin()) {
+                const freshLock = await recheckInventoryLock(itemUserId);
+                if (freshLock) {
+                    inventoryLocked = true;
+                    document.getElementById('locked-banner').style.display = 'block';
+                    showToast('Inventory was just locked by an administrator. Your changes cannot be saved.', 'error');
+                    return;
+                }
+            }
 
             const updateData = {
                 sku: document.getElementById('edit-sku').value,
                 name: document.getElementById('edit-name').value,
                 quantity: parseInt(document.getElementById('edit-qty').value),
+                user_id: itemUserId,
+                customer_id: itemUserId,
+                upc: document.getElementById('edit-upc').value.trim() || '',
+                tags: (document.getElementById('edit-tags').value || '').split(',').map(t => t.trim()).filter(Boolean),
                 location: document.getElementById('edit-location').value || 'Unassigned',
+                warehouse: document.getElementById('edit-warehouse').value || 'miami',
                 reorder_level: parseInt(document.getElementById('edit-reorder').value) || 10,
                 last_updated: new Date().toISOString()
             };
@@ -465,11 +773,18 @@
         async function adjustQuantity(itemId, delta) {
             const item = inventoryData.find(i => i.id === itemId);
             if (!item) return;
+            const itemUserId = getInventoryOwnerId(item);
+
+            if (!canManageInventoryForCustomer(itemUserId)) {
+                showToast('This inventory is locked. Only an administrator can make changes right now.', 'error');
+                return;
+            }
 
             const newQty = Math.max(0, item.quantity + delta);
             try {
                 await updateDoc(doc(db, 'inventory', itemId), {
                     quantity: newQty,
+                    customer_id: itemUserId || null,
                     last_updated: new Date().toISOString()
                 });
                 showToast(`Quantity ${delta > 0 ? 'increased' : 'decreased'} to ${newQty}`, 'success');
@@ -482,25 +797,91 @@
         // Make adjustQuantity globally accessible for inline handlers
         window.adjustQuantity = adjustQuantity;
 
+        // ─── Admin Inventory Lock Controls ───
+        function updateLockControls(customerId) {
+            const lockBtn = document.getElementById('lock-inventory-btn');
+            const unlockBtn = document.getElementById('unlock-inventory-btn');
+            const indicator = document.getElementById('lock-status-indicator');
+
+            if (!customerId) {
+                lockBtn.style.display = 'none';
+                unlockBtn.style.display = 'none';
+                indicator.textContent = '';
+                return;
+            }
+
+            const isLocked = customersLockMap[customerId] === true;
+            lockBtn.style.display = isLocked ? 'none' : 'inline-flex';
+            unlockBtn.style.display = isLocked ? 'inline-flex' : 'none';
+            indicator.textContent = isLocked ? '🔒 Inventory Locked' : '🔓 Inventory Open';
+            indicator.style.color = isLocked ? '#dc2626' : '#16a34a';
+        }
+
+        async function lockCustomerInventory(customerId) {
+            try {
+                await updateDoc(doc(db, 'users', customerId), { inventory_locked: true });
+                customersLockMap[customerId] = true;
+                updateLockControls(customerId);
+                // Update lock dropdown text
+                const lockSelect = document.getElementById('lock-customer-select');
+                for (let opt of lockSelect.options) {
+                    if (opt.value === customerId) {
+                        opt.textContent = (customersMap[customerId] || 'Unknown') + ' 🔒';
+                    }
+                }
+                showToast('Customer inventory locked 🔒', 'success');
+                loadInventory();
+            } catch (e) {
+                showToast('Error locking inventory: ' + e.message, 'error');
+            }
+        }
+
+        async function unlockCustomerInventory(customerId) {
+            try {
+                await updateDoc(doc(db, 'users', customerId), { inventory_locked: false });
+                customersLockMap[customerId] = false;
+                updateLockControls(customerId);
+                // Update lock dropdown text
+                const lockSelect = document.getElementById('lock-customer-select');
+                for (let opt of lockSelect.options) {
+                    if (opt.value === customerId) {
+                        opt.textContent = customersMap[customerId] || 'Unknown';
+                    }
+                }
+                showToast('Customer inventory unlocked 🔓', 'success');
+                loadInventory();
+            } catch (e) {
+                showToast('Error unlocking inventory: ' + e.message, 'error');
+            }
+        }
+
+        // Lock control event listeners
+        document.getElementById('lock-customer-select').addEventListener('change', function() {
+            updateLockControls(this.value);
+        });
+
+        document.getElementById('lock-inventory-btn').addEventListener('click', () => {
+            const customerId = document.getElementById('lock-customer-select').value;
+            if (customerId) lockCustomerInventory(customerId);
+        });
+
+        document.getElementById('unlock-inventory-btn').addEventListener('click', () => {
+            const customerId = document.getElementById('lock-customer-select').value;
+            if (customerId) unlockCustomerInventory(customerId);
+        });
+
         async function loadInventory() {
             const tbody = document.getElementById('inventory-list');
-            const colspan = isStaff() ? 7 : 6;
+            const colspan = isStaff() ? 10 : 9;
             tbody.innerHTML = `<tr><td colspan="${colspan}" style="text-align: center; padding: var(--spacing-xl); color: var(--color-gray-500);">Loading...</td></tr>`;
 
             try {
                 let q;
-                // Staff (admin/employee) see all inventory, customers see only their own
+                // Avoid composite-index dependencies here; sort by timestamp client-side.
                 if (isStaff()) {
-                    q = query(
-                        collection(db, 'inventory'),
-                        orderBy('last_updated', 'desc')
-                    );
+                    q = collection(db, 'inventory');
                 } else {
-                    q = query(
-                        collection(db, 'inventory'),
-                        where('user_id', '==', currentUser.uid),
-                        orderBy('last_updated', 'desc')
-                    );
+                    q = query(collection(db, 'inventory'), where('user_id', '==', currentUser.uid));
                 }
                 const snapshot = await getDocs(q);
 
@@ -509,13 +890,15 @@
                 let lowStock = 0;
 
                 snapshot.forEach((docSnap) => {
-                    const data = { id: docSnap.id, ...docSnap.data() };
+                    const data = normalizeInventoryItem(docSnap);
                     inventoryData.push(data);
-                    totalUnits += data.quantity;
-                    if (data.quantity <= (data.reorder_level || 10)) {
+                    totalUnits += parseInt(data.quantity, 10) || 0;
+                    if ((parseInt(data.quantity, 10) || 0) <= (parseInt(data.reorder_level, 10) || 10)) {
                         lowStock++;
                     }
                 });
+
+                sortInventoryItems(inventoryData);
 
                 document.getElementById('total-items').textContent = inventoryData.length;
                 document.getElementById('total-units').textContent = totalUnits;
@@ -524,14 +907,18 @@
                 renderInventory(inventoryData);
             } catch (error) {
                 console.error('Error loading inventory:', error);
-                const colspan = isStaff() ? 7 : 6;
-                tbody.innerHTML = `<tr><td colspan="${colspan}" style="text-align: center; padding: var(--spacing-xl); color: var(--color-gray-500);">Error loading inventory</td></tr>`;
+                const colspan = isStaff() ? 10 : 9;
+                const errMsg = error.code === 'permission-denied'
+                    ? 'Permission denied — your account may not have staff/admin role in Firestore. Contact support.'
+                    : 'Error loading inventory: ' + error.message;
+                tbody.innerHTML = `<tr><td colspan="${colspan}" style="text-align: center; padding: var(--spacing-xl); color: #ef4444; font-weight: 500;">${errMsg}</td></tr>`;
+                showToast(errMsg, 'error');
             }
         }
 
         function renderInventory(items) {
             const tbody = document.getElementById('inventory-list');
-            const colspan = isStaff() ? 7 : 6;
+            const colspan = isStaff() ? 10 : 9;
 
             if (items.length === 0) {
                 tbody.innerHTML = `<tr><td colspan="${colspan}" style="text-align: center; padding: var(--spacing-xl); color: var(--color-gray-500);">No inventory items found</td></tr>`;
@@ -541,71 +928,96 @@
             tbody.innerHTML = '';
             items.forEach((item) => {
                 const isLowStock = item.quantity <= (item.reorder_level || 10);
-                const customerName = customersMap[item.user_id] || 'Unknown';
+                const ownerId = getInventoryOwnerId(item);
+                const customerName = customersMap[ownerId] || item.customer_name || ownerId || 'Unknown';
                 const row = document.createElement('tr');
 
-                // Build customer column HTML for staff
-                const customerCol = isStaff() ? `<td style="color: var(--color-gray-600); font-size: var(--font-size-sm);">${customerName}</td>` : '';
+                // Build customer column HTML for staff (with lock indicator) — escaped to prevent XSS
+                const isCustomerLocked = customersLockMap[ownerId] === true;
+                const safeCustomerName = esc(customerName);
+                const safeName = esc(item.name);
+                const customerCol = isStaff() ? `<td style="color: var(--color-gray-600); font-size: var(--font-size-sm);">${safeCustomerName}${isCustomerLocked ? ' <span title="Inventory locked" style="color:#dc2626;">🔒</span>' : ''}</td>` : '';
 
-                // Build actions based on role
+                // Build actions based on role and lock status
                 let actionsHtml = '';
-                if (isStaff()) {
+                const canManageItem = canManageInventoryForCustomer(ownerId);
+
+                if (isAdmin()) {
                     actionsHtml = `
                         <div style="display: flex; align-items: center; gap: 4px; flex-wrap: wrap;">
-                            <button class="btn-qty-minus" data-id="${item.id}" style="background: var(--color-gray-200); border: none; border-radius: 4px; width: 28px; height: 28px; cursor: pointer; font-weight: bold;" title="Decrease quantity" aria-label="Decrease quantity for ${item.name}">-</button>
-                            <button class="btn-qty-plus" data-id="${item.id}" style="background: var(--color-gray-200); border: none; border-radius: 4px; width: 28px; height: 28px; cursor: pointer; font-weight: bold;" title="Increase quantity" aria-label="Increase quantity for ${item.name}">+</button>
-                            <button class="btn-edit" data-id="${item.id}" style="background: none; border: none; color: var(--color-primary); cursor: pointer; padding: 4px 8px; font-size: var(--font-size-sm);" aria-label="Edit ${item.name}">Edit</button>
-                            <button class="btn-delete" data-id="${item.id}" data-name="${item.name}" style="background: none; border: none; color: #ef4444; cursor: pointer; padding: 4px 8px; font-size: var(--font-size-sm);" aria-label="Delete ${item.name}">Delete</button>
+                            <button class="btn-qty-minus" data-id="${item.id}" style="background: var(--color-gray-200); border: none; border-radius: 4px; width: 28px; height: 28px; cursor: pointer; font-weight: bold;" title="Decrease quantity" aria-label="Decrease quantity for ${safeName}">-</button>
+                            <button class="btn-qty-plus" data-id="${item.id}" style="background: var(--color-gray-200); border: none; border-radius: 4px; width: 28px; height: 28px; cursor: pointer; font-weight: bold;" title="Increase quantity" aria-label="Increase quantity for ${safeName}">+</button>
+                            <button class="btn-edit" data-id="${item.id}" style="background: none; border: none; color: var(--color-primary); cursor: pointer; padding: 4px 8px; font-size: var(--font-size-sm);" aria-label="Edit ${safeName}">Edit</button>
+                            <button class="btn-delete" data-id="${item.id}" data-name="${safeName}" style="background: none; border: none; color: #ef4444; cursor: pointer; padding: 4px 8px; font-size: var(--font-size-sm);" aria-label="Delete ${safeName}">Delete</button>
+                        </div>
+                    `;
+                } else if (canManageItem) {
+                    actionsHtml = `
+                        <div style="display: flex; align-items: center; gap: 4px; flex-wrap: wrap;">
+                            <button class="btn-qty-minus" data-id="${item.id}" style="background: var(--color-gray-200); border: none; border-radius: 4px; width: 28px; height: 28px; cursor: pointer; font-weight: bold;" title="Decrease quantity" aria-label="Decrease quantity for ${safeName}">-</button>
+                            <button class="btn-qty-plus" data-id="${item.id}" style="background: var(--color-gray-200); border: none; border-radius: 4px; width: 28px; height: 28px; cursor: pointer; font-weight: bold;" title="Increase quantity" aria-label="Increase quantity for ${safeName}">+</button>
+                            <button class="btn-edit" data-id="${item.id}" style="background: none; border: none; color: var(--color-primary); cursor: pointer; padding: 4px 8px; font-size: var(--font-size-sm);" aria-label="Edit ${safeName}">Edit</button>
                         </div>
                     `;
                 } else {
-                    // Customers can only view
-                    actionsHtml = '<span style="color: var(--color-gray-400);">View only</span>';
+                    // Inventory is locked — customer can only view
+                    actionsHtml = '<span style="color: #dc2626; font-weight: 500;">🔒 Locked</span>';
                 }
 
+                const whId = item.warehouse || 'miami';
+                const whLabel = whId === 'biloxi' ? '📍 Biloxi' : '📍 Miami';
+                const whColor = whId === 'biloxi' ? '#8b5cf6' : '#14b8a6';
+
+                const upcVal = esc(item.upc || '');
+                const tagsArr = Array.isArray(item.tags) ? item.tags : (typeof item.tags === 'string' && item.tags ? item.tags.split(',').map(t => t.trim()) : []);
+                const tagsHtml = tagsArr.length > 0 ? tagsArr.map(t => `<span style="background:#e0f2fe;color:#0369a1;padding:1px 6px;border-radius:8px;font-size:0.7rem;font-weight:600;margin:1px;">${esc(t)}</span>`).join(' ') : '<span style="color:var(--color-gray-400);font-size:0.75rem;">—</span>';
+
                 row.innerHTML = `
-                    <td><strong>${item.sku}</strong></td>
-                    <td>${item.name}</td>
+                    <td><strong>${esc(item.sku)}</strong></td>
+                    <td>${safeName}</td>
                     ${customerCol}
                     <td style="color: ${isLowStock ? 'var(--color-accent)' : 'inherit'}; font-weight: ${isLowStock ? '600' : '400'};">
-                        ${item.quantity}
+                        ${parseInt(item.quantity) || 0}
                         ${isLowStock ? '<span style="font-size: var(--font-size-sm); margin-left: 4px;">Low Stock</span>' : ''}
                     </td>
-                    <td>${item.location}</td>
-                    <td>${new Date(item.last_updated).toLocaleDateString()}</td>
+                    <td style="font-family:monospace;font-size:0.8rem;color:var(--color-gray-600);">${upcVal || '<span style="color:var(--color-gray-400);">—</span>'}</td>
+                    <td style="max-width:150px;">${tagsHtml}</td>
+                    <td><span style="background: ${whColor}; color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.75rem; font-weight: 600;">${whLabel}</span></td>
+                    <td>${esc(item.location)}</td>
+                    <td>${item.last_updated ? new Date(item.last_updated).toLocaleDateString() : '—'}</td>
                     <td>${actionsHtml}</td>
                 `;
                 tbody.appendChild(row);
             });
 
-            // Add event listeners for staff actions
-            if (isStaff()) {
-                // Quantity adjustment buttons
-                document.querySelectorAll('.btn-qty-plus').forEach(btn => {
-                    btn.addEventListener('click', () => adjustQuantity(btn.dataset.id, 1));
-                });
+            document.querySelectorAll('.btn-qty-plus').forEach(btn => {
+                btn.addEventListener('click', () => adjustQuantity(btn.dataset.id, 1));
+            });
 
-                document.querySelectorAll('.btn-qty-minus').forEach(btn => {
-                    btn.addEventListener('click', () => adjustQuantity(btn.dataset.id, -1));
-                });
+            document.querySelectorAll('.btn-qty-minus').forEach(btn => {
+                btn.addEventListener('click', () => adjustQuantity(btn.dataset.id, -1));
+            });
 
-                // Edit buttons - open modal with full item data
-                document.querySelectorAll('.btn-edit').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        const item = inventoryData.find(i => i.id === btn.dataset.id);
-                        if (item) {
-                            document.getElementById('edit-id').value = item.id;
-                            document.getElementById('edit-sku').value = item.sku;
-                            document.getElementById('edit-name').value = item.name;
-                            document.getElementById('edit-qty').value = item.quantity;
-                            document.getElementById('edit-location').value = item.location || '';
-                            document.getElementById('edit-reorder').value = item.reorder_level || 10;
-                            document.getElementById('edit-modal').style.display = 'flex';
-                        }
-                    });
+            document.querySelectorAll('.btn-edit').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const item = inventoryData.find(i => i.id === btn.dataset.id);
+                    if (item) {
+                        document.getElementById('edit-id').value = item.id;
+                        document.getElementById('edit-sku').value = item.sku;
+                        document.getElementById('edit-name').value = item.name;
+                        document.getElementById('edit-qty').value = item.quantity;
+                        document.getElementById('edit-upc').value = item.upc || '';
+                        document.getElementById('edit-tags').value = Array.isArray(item.tags) ? item.tags.join(', ') : (item.tags || '');
+                        document.getElementById('edit-location').value = item.location || '';
+                        document.getElementById('edit-reorder').value = item.reorder_level || 10;
+                        document.getElementById('edit-warehouse').value = item.warehouse || 'miami';
+                        document.getElementById('edit-modal').style.display = 'flex';
+                    }
                 });
+            });
 
-                // Delete buttons - open confirmation modal
+            // Delete buttons - admin only
+            if (isAdmin()) {
                 document.querySelectorAll('.btn-delete').forEach(btn => {
                     btn.addEventListener('click', () => {
                         document.getElementById('delete-item-id').value = btn.dataset.id;
@@ -618,5 +1030,10 @@
     </script>
     <script src="../js/column-prefs.js"></script>
     <script src="../js/main.js"></script>
+    <script src="../js/lang/es.js"></script>
+    <script src="../js/lang/pt-br.js"></script>
+    <script src="../js/lang/zh.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/chat-widget.js"></script>
 </body>
 </html>

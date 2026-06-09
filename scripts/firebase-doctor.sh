@@ -39,13 +39,23 @@ printf "Project root: %s\n" "$PROJECT_ROOT"
 printf "Project id: %s\n\n" "$PROJECT_ID"
 
 # Required files
-for f in firebase.json firestore.rules functions/index.js functions/package.json mcp/server.js mcp/package.json; do
+for f in firebase.json firestore.rules functions/index.js functions/package.json; do
   if [[ -f "$f" ]]; then
     ok "file present: $f"
   else
     fail "file missing: $f"
   fi
 done
+
+HAS_MCP="false"
+if [[ -f mcp/server.js && -f mcp/package.json ]]; then
+  HAS_MCP="true"
+  ok "optional MCP app present"
+elif [[ -e mcp/server.js || -e mcp/package.json || -d mcp ]]; then
+  fail "mcp/ exists but is incomplete (expected mcp/server.js and mcp/package.json)"
+else
+  warn "optional mcp/ app not present; skipping MCP checks"
+fi
 
 # Firebase CLI installation
 if command -v firebase >/dev/null 2>&1; then
@@ -94,7 +104,7 @@ if [[ -f functions/package-lock.json ]]; then
   fi
 fi
 
-if [[ -f mcp/package-lock.json ]]; then
+if [[ "$HAS_MCP" == "true" && -f mcp/package-lock.json ]]; then
   if [[ "$SELFHEAL" == "true" ]]; then
     (cd mcp && npm ci >/dev/null)
     ok "mcp dependencies installed"
@@ -110,10 +120,12 @@ else
   fail "functions/index.js syntax invalid"
 fi
 
-if node --check mcp/server.js >/dev/null 2>&1; then
-  ok "mcp/server.js syntax valid"
-else
-  fail "mcp/server.js syntax invalid"
+if [[ "$HAS_MCP" == "true" ]]; then
+  if node --check mcp/server.js >/dev/null 2>&1; then
+    ok "mcp/server.js syntax valid"
+  else
+    fail "mcp/server.js syntax invalid"
+  fi
 fi
 
 # Auth check

@@ -7,6 +7,19 @@
 (function() {
   'use strict';
 
+  var AI_DISCOVERY_STORAGE_KEY = 'ma3pl_ai_discovery_context';
+  var AI_SOURCE_RULES = [
+    { pattern: /(^|\.)chatgpt\.com$/i, source: 'chatgpt' },
+    { pattern: /(^|\.)chat\.openai\.com$/i, source: 'chatgpt' },
+    { pattern: /(^|\.)claude\.ai$/i, source: 'claude' },
+    { pattern: /(^|\.)gemini\.google\.com$/i, source: 'gemini' },
+    { pattern: /(^|\.)copilot\.com$/i, source: 'copilot' },
+    { pattern: /(^|\.)copilot\.microsoft\.com$/i, source: 'copilot' },
+    { pattern: /(^|\.)perplexity\.ai$/i, source: 'perplexity' },
+    { pattern: /(^|\.)poe\.com$/i, source: 'poe' },
+    { pattern: /(^|\.)you\.com$/i, source: 'you' }
+  ];
+
   var MA3PLAnalytics = {
     debug: false,
 
@@ -16,15 +29,200 @@
      * @param {Object} params - Event parameters
      */
     track: function(eventName, params) {
+      var eventParams = this.withAIDiscoveryContext(params || {});
+
       if (this.debug) {
-        console.log('[MA3PL Analytics] Event:', eventName, params);
+        console.log('[MA3PL Analytics] Event:', eventName, eventParams);
       }
 
       if (typeof gtag === 'function') {
-        gtag('event', eventName, params);
+        gtag('event', eventName, eventParams);
       } else if (this.debug) {
         console.warn('[MA3PL Analytics] gtag not available');
       }
+    },
+
+    getStorage: function() {
+      try {
+        return window.sessionStorage;
+      } catch (error) {
+        if (this.debug) {
+          console.warn('[MA3PL Analytics] sessionStorage unavailable', error);
+        }
+        return null;
+      }
+    },
+
+    getCurrentPath: function() {
+      return window.location.pathname + window.location.search;
+    },
+
+    extractHostname: function(url) {
+      if (!url) {
+        return '';
+      }
+
+      try {
+        return new URL(url).hostname.toLowerCase();
+      } catch (error) {
+        return '';
+      }
+    },
+
+    isInternalHost: function(hostname) {
+      return hostname === window.location.hostname.toLowerCase();
+    },
+
+    normalizeAISource: function(value) {
+      var normalized = (value || '').toString().trim().toLowerCase();
+      var index;
+
+      if (!normalized) {
+        return null;
+      }
+
+      for (index = 0; index < AI_SOURCE_RULES.length; index += 1) {
+        if (normalized === AI_SOURCE_RULES[index].source || AI_SOURCE_RULES[index].pattern.test(normalized)) {
+          return AI_SOURCE_RULES[index].source;
+        }
+      }
+
+      return null;
+    },
+
+    detectAIReferrer: function(hostname) {
+      var index;
+
+      for (index = 0; index < AI_SOURCE_RULES.length; index += 1) {
+        if (AI_SOURCE_RULES[index].pattern.test(hostname)) {
+          return AI_SOURCE_RULES[index].source;
+        }
+      }
+
+      return null;
+    },
+
+    readAIDiscoveryContext: function() {
+      var storage = this.getStorage();
+      var storedValue;
+
+      if (!storage) {
+        return null;
+      }
+
+      storedValue = storage.getItem(AI_DISCOVERY_STORAGE_KEY);
+      if (!storedValue) {
+        return null;
+      }
+
+      try {
+        return JSON.parse(storedValue);
+      } catch (error) {
+        storage.removeItem(AI_DISCOVERY_STORAGE_KEY);
+        return null;
+      }
+    },
+
+    writeAIDiscoveryContext: function(context) {
+      var storage = this.getStorage();
+
+      if (storage) {
+        storage.setItem(AI_DISCOVERY_STORAGE_KEY, JSON.stringify(context));
+      }
+
+      return context;
+    },
+
+    clearAIDiscoveryContext: function() {
+      var storage = this.getStorage();
+
+      if (storage) {
+        storage.removeItem(AI_DISCOVERY_STORAGE_KEY);
+      }
+    },
+
+    detectAIDiscoveryContext: function() {
+      var params = new URLSearchParams(window.location.search);
+      var referrerHost = this.extractHostname(document.referrer);
+      var querySource = params.get('utm_source') || params.get('source') || params.get('ref');
+      var normalizedSource = this.normalizeAISource(querySource);
+
+      if (normalizedSource) {
+        return {
+          ai_discovery: 'true',
+          ai_source: normalizedSource,
+          ai_medium: (params.get('utm_medium') || 'utm').toLowerCase(),
+          ai_referrer_host: referrerHost || querySource.toLowerCase(),
+          ai_entry_page: this.getCurrentPath(),
+          ai_detection: 'query'
+        };
+      }
+
+      normalizedSource = this.detectAIReferrer(referrerHost);
+      if (normalizedSource) {
+        return {
+          ai_discovery: 'true',
+          ai_source: normalizedSource,
+          ai_medium: 'referral',
+          ai_referrer_host: referrerHost,
+          ai_entry_page: this.getCurrentPath(),
+          ai_detection: 'referrer'
+        };
+      }
+
+      return null;
+    },
+
+    withAIDiscoveryContext: function(params) {
+      var context = this.readAIDiscoveryContext();
+      var enrichedParams = {};
+      var key;
+
+      for (key in params) {
+        if (Object.prototype.hasOwnProperty.call(params, key)) {
+          enrichedParams[key] = params[key];
+        }
+      }
+
+      if (!context) {
+        return enrichedParams;
+      }
+
+      for (key in context) {
+        if (Object.prototype.hasOwnProperty.call(context, key) && typeof enrichedParams[key] === 'undefined') {
+          enrichedParams[key] = context[key];
+        }
+      }
+
+      return enrichedParams;
+    },
+
+    refreshAIDiscoveryContext: function() {
+      var detectedContext = this.detectAIDiscoveryContext();
+      var existingContext = this.readAIDiscoveryContext();
+      var referrerHost = this.extractHostname(document.referrer);
+
+      if (detectedContext) {
+        this.writeAIDiscoveryContext(detectedContext);
+
+        if (
+          !existingContext ||
+          existingContext.ai_source !== detectedContext.ai_source ||
+          existingContext.ai_entry_page !== detectedContext.ai_entry_page ||
+          existingContext.ai_referrer_host !== detectedContext.ai_referrer_host
+        ) {
+          this.track('ai_discovery_visit', detectedContext);
+        }
+
+        return detectedContext;
+      }
+
+      if (referrerHost && !this.isInternalHost(referrerHost)) {
+        this.clearAIDiscoveryContext();
+        return null;
+      }
+
+      return existingContext;
     },
 
     /**
@@ -139,5 +337,6 @@
 
   // Expose to global scope
   window.MA3PLAnalytics = MA3PLAnalytics;
+  MA3PLAnalytics.refreshAIDiscoveryContext();
 
 })();

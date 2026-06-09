@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Settings | Miami Alliance 3PL Admin</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css?v=202602230300">
+    <link rel="stylesheet" href="../css/style.css?v=8">
     <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSRV99D8BX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTW0F25ZM1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-QSRV99D8BX');
+        gtag('config', 'G-KTW0F25ZM1');
     </script>
     <script src="../js/analytics.js"></script>
     <style>
@@ -183,7 +183,7 @@
             </button>
             <ul class="nav-menu">
                 <li><span id="user-name" class="nav-link">Welcome</span></li>
-                <li><a href="#" id="logout-btn" class="nav-link btn btn-outline">Logout</a></li>
+                <li><a href="#" id="logout-btn" class="nav-link btn btn-outline" data-i18n="portal.sidebar.logout">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -191,99 +191,130 @@
     <div class="portal-layout">
         <aside class="portal-sidebar">
             <nav>
-                <a href="dashboard.html" class="portal-nav-item"><span>📊</span> Dashboard</a>
-                <a href="shipments.html" class="portal-nav-item"><span>🚚</span> Shipments</a>
-                <a href="tracking.html" class="portal-nav-item"><span>🔍</span> Tracking</a>
-                <a href="inventory.html" class="portal-nav-item"><span>📦</span> Inventory</a>
-                <div style="margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
-                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;">Staff</div>
-                    <a href="customers.html" class="portal-nav-item"><span>👥</span> All Customers</a>
-                    <a href="admin-shipments.html" class="portal-nav-item"><span>📋</span> All Shipments</a>
+                <a href="dashboard.html" class="portal-nav-item"><span>📊</span> <span data-i18n="portal.sidebar.dashboard">Dashboard</span></a>
+                <a href="shipments.html" class="portal-nav-item"><span>🚚</span> <span data-i18n="portal.sidebar.shipments">Shipments</span></a>
+                <a href="pickups.html" class="portal-nav-item">
+                    <span aria-hidden="true">🏗️</span> <span>Pickup & Delivery</span>
+                </a>
+                <a href="tracking.html" class="portal-nav-item"><span>🔍</span> <span data-i18n="portal.sidebar.tracking">Tracking</span></a>
+                <a href="inventory.html" class="portal-nav-item"><span>📦</span> <span data-i18n="portal.sidebar.inventory">Inventory</span></a>
+                <a href="admin-billing.html" class="portal-nav-item"><span>💵</span> <span>Billing</span></a>
+                <a href="contracts.html" class="portal-nav-item"><span>📄</span> <span>Contracts</span></a>
+                <div id="employee-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;" aria-hidden="true" data-i18n="portal.sidebar.staffLabel">Staff</div>
+                    <a href="customers.html" class="portal-nav-item" id="nav-all-users">
+                        <span aria-hidden="true">👥</span> <span data-i18n="portal.sidebar.allCustomers">All Customers</span>
+                    </a>
+                    <a href="admin-shipments.html" class="portal-nav-item" id="nav-all-shipments">
+                        <span aria-hidden="true">📋</span> <span data-i18n="portal.sidebar.allShipments">All Shipments</span>
+                    </a>
                 </div>
-                <div style="margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
-                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;">Admin</div>
-                    <a href="pricing.html" class="portal-nav-item"><span>💰</span> Pricing</a>
-                    <a href="settings.html" class="portal-nav-item active"><span>⚙️</span> Settings</a>
-                    <a href="team.html" class="portal-nav-item"><span>👔</span> Manage Team</a>
+                <div id="admin-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;" aria-hidden="true" data-i18n="portal.sidebar.adminLabel">Admin</div>
+                    <a href="admin-panel.html" class="portal-nav-item">
+                        <span>🛡️</span> <span>Admin Control Panel</span>
+                    </a>
+                    <a href="admin-pickups.html" class="portal-nav-item">
+                        <span aria-hidden="true">🚛</span> <span>All Pickup Requests</span>
+                    </a>
+                    <a href="admin-billing.html" class="portal-nav-item"><span>📝</span> <span>Activity Billing</span></a>
+                    <a href="invoices.html" class="portal-nav-item">
+                        <span aria-hidden="true">💵</span> <span data-i18n="portal.sidebar.invoices">Invoices</span>
+                    </a>
+                    <a href="storage-log.html" class="portal-nav-item">
+                        <span aria-hidden="true">📊</span> <span data-i18n="portal.sidebar.storagelog">Storage Log</span>
+                    </a>
+                    <a href="pricing.html" class="portal-nav-item">
+                        <span aria-hidden="true">💰</span> <span data-i18n="portal.sidebar.pricing">Pricing</span>
+                    </a>
+                    <a href="settings.html" class="portal-nav-item active">
+                        <span aria-hidden="true">⚙️</span> <span data-i18n="portal.sidebar.settings">Settings</span>
+                    </a>
+                    <a href="team.html" class="portal-nav-item">
+                        <span aria-hidden="true">👔</span> <span data-i18n="portal.sidebar.team">Manage Team</span>
+                    </a>
+                    <a href="changelog.html" class="portal-nav-item">
+                        <span aria-hidden="true">📝</span> <span data-i18n="portal.sidebar.changelog">Changelog</span>
+                    </a>
                 </div>
             </nav>
         </aside>
 
         <main class="portal-main">
             <div class="page-header">
-                <h1>⚙️ Settings</h1>
-                <p>Configure your Miami Alliance 3PL portal settings.</p>
+                <h1 data-i18n="portal.settings.title">⚙️ Settings</h1>
+                <p data-i18n="portal.settings.subtitle">Configure your Miami Alliance 3PL portal settings.</p>
             </div>
 
             <!-- Quick Actions -->
             <div class="settings-section">
-                <h2>🚀 Quick Actions</h2>
+                <h2 data-i18n="portal.settings.quickActions">🚀 Quick Actions</h2>
                 <div class="quick-actions">
                     <a href="pricing.html" class="action-card">
                         <div class="icon">💰</div>
-                        <h3>Manage Pricing</h3>
-                        <p>Storage, handling & services</p>
+                        <h3 data-i18n="portal.settings.qa.managePricing">Manage Pricing</h3>
+                        <p data-i18n="portal.settings.qa.managePricingDesc">Storage, handling & services</p>
                     </a>
                     <a href="team.html" class="action-card">
                         <div class="icon">👔</div>
-                        <h3>Manage Team</h3>
-                        <p>Add admins & employees</p>
+                        <h3 data-i18n="portal.settings.qa.manageTeam">Manage Team</h3>
+                        <p data-i18n="portal.settings.qa.manageTeamDesc">Add admins & employees</p>
                     </a>
                     <a href="customers.html" class="action-card">
                         <div class="icon">👥</div>
-                        <h3>View Customers</h3>
-                        <p>Manage customer accounts</p>
+                        <h3 data-i18n="portal.settings.qa.viewCustomers">View Customers</h3>
+                        <p data-i18n="portal.settings.qa.viewCustomersDesc">Manage customer accounts</p>
                     </a>
                     <a href="admin-shipments.html" class="action-card">
                         <div class="icon">📦</div>
-                        <h3>All Shipments</h3>
-                        <p>View & manage shipments</p>
+                        <h3 data-i18n="portal.settings.qa.allShipments">All Shipments</h3>
+                        <p data-i18n="portal.settings.qa.allShipmentsDesc">View & manage shipments</p>
                     </a>
                     <div class="action-card" id="export-data">
                         <div class="icon">📊</div>
-                        <h3>Export Data</h3>
-                        <p>Download reports</p>
+                        <h3 data-i18n="portal.settings.qa.exportData">Export Data</h3>
+                        <p data-i18n="portal.settings.qa.exportDataDesc">Download reports</p>
                     </div>
                 </div>
             </div>
 
             <!-- Company Information -->
             <div class="settings-section">
-                <h2>🏢 Company Information</h2>
+                <h2 data-i18n="portal.settings.companyInfo">🏢 Company Information</h2>
                 <form id="company-form" data-validate-form>
                     <div class="company-info-grid">
                         <div class="form-group">
-                            <label for="company-name">Company Name</label>
+                            <label for="company-name" data-i18n="portal.settings.companyName">Company Name</label>
                             <input type="text" id="company-name" name="company-name" required minlength="2" value="Miami Alliance 3PL">
                         </div>
                         <div class="form-group">
-                            <label for="company-phone">Phone</label>
+                            <label for="company-phone" data-i18n="portal.settings.phone">Phone</label>
                             <input type="tel" id="company-phone" name="company-phone" data-validate="phone" placeholder="(555) 555-5555">
                         </div>
                         <div class="form-group">
-                            <label for="company-email">Email</label>
-                            <input type="email" id="company-email" name="company-email" required placeholder="contact@company.com">
+                            <label for="company-email" data-i18n="portal.settings.email">Email</label>
+                            <input type="email" id="company-email" name="company-email" required placeholder="contact@company.com" data-i18n-placeholder="portal.settings.emailPlaceholder">
                         </div>
                         <div class="form-group">
-                            <label for="company-website">Website</label>
+                            <label for="company-website" data-i18n="portal.settings.website">Website</label>
                             <input type="url" id="company-website" name="company-website" value="https://miamialliance3pl.com" placeholder="https://example.com">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="company-address">Address</label>
+                        <label for="company-address" data-i18n="portal.settings.address">Address</label>
                         <textarea id="company-address" name="company-address" rows="2" required>8780 NW 100th ST, Medley, FL 33178</textarea>
                     </div>
-                    <button type="submit" class="btn-sm" id="save-company">Save Company Info</button>
+                    <button type="submit" class="btn-sm" id="save-company" data-i18n="portal.settings.saveCompanyInfo">Save Company Info</button>
                 </form>
             </div>
 
             <!-- Notification Settings -->
             <div class="settings-section">
-                <h2>🔔 Notifications</h2>
+                <h2 data-i18n="portal.settings.notifications">🔔 Notifications</h2>
                 <div class="setting-row">
                     <div class="setting-info">
-                        <h3>Email Notifications</h3>
-                        <p>Receive email alerts for new shipments and status updates</p>
+                        <h3 data-i18n="portal.settings.emailNotifications">Email Notifications</h3>
+                        <p data-i18n="portal.settings.emailNotificationsDesc">Receive email alerts for new shipments and status updates</p>
                     </div>
                     <label class="toggle">
                         <input type="checkbox" id="email-notifications" checked>
@@ -292,8 +323,8 @@
                 </div>
                 <div class="setting-row">
                     <div class="setting-info">
-                        <h3>New Customer Alerts</h3>
-                        <p>Get notified when new customers sign up</p>
+                        <h3 data-i18n="portal.settings.newCustomerAlerts">New Customer Alerts</h3>
+                        <p data-i18n="portal.settings.newCustomerAlertsDesc">Get notified when new customers sign up</p>
                     </div>
                     <label class="toggle">
                         <input type="checkbox" id="new-customer-alerts" checked>
@@ -302,8 +333,8 @@
                 </div>
                 <div class="setting-row">
                     <div class="setting-info">
-                        <h3>Daily Summary</h3>
-                        <p>Receive a daily summary of shipments and activity</p>
+                        <h3 data-i18n="portal.settings.dailySummary">Daily Summary</h3>
+                        <p data-i18n="portal.settings.dailySummaryDesc">Receive a daily summary of shipments and activity</p>
                     </div>
                     <label class="toggle">
                         <input type="checkbox" id="daily-summary">
@@ -314,23 +345,23 @@
 
             <!-- Stripe Payment Settings -->
             <div class="settings-section">
-                <h2>💳 Payment Settings (Stripe)</h2>
-                <p style="color: var(--color-gray-600); margin-bottom: var(--spacing-md);">Configure Stripe for accepting online payments. Get your keys from <a href="https://dashboard.stripe.com/apikeys" target="_blank">Stripe Dashboard</a>.</p>
+                <h2 data-i18n="portal.settings.paymentSettings">💳 Payment Settings (Stripe)</h2>
+                <p style="color: var(--color-gray-600); margin-bottom: var(--spacing-md);" data-i18n-html="portal.settings.paymentSettingsDesc">Configure Stripe for accepting online payments. Get your keys from <a href="https://dashboard.stripe.com/apikeys" target="_blank" rel="noopener noreferrer">Stripe Dashboard</a>.</p>
                 <form id="stripe-form" data-validate-form>
                     <div class="company-info-grid">
                         <div class="form-group">
-                            <label for="stripe-pk">Stripe Publishable Key</label>
+                            <label for="stripe-pk" data-i18n="portal.settings.stripePK">Stripe Publishable Key</label>
                             <input type="text" id="stripe-pk" name="stripe-pk" pattern="pk_(live|test)_.*" title="Must start with pk_live_ or pk_test_" placeholder="pk_live_...">
                         </div>
                         <div class="form-group">
-                            <label for="payment-terms">Payment Terms (Days)</label>
+                            <label for="payment-terms" data-i18n="portal.settings.paymentTerms">Payment Terms (Days)</label>
                             <input type="number" id="payment-terms" name="payment-terms" value="30" min="1" max="90" required>
                         </div>
                     </div>
                 <div class="setting-row">
                     <div class="setting-info">
-                        <h3>Enable Online Payments</h3>
-                        <p>Allow customers to pay invoices online via Stripe</p>
+                        <h3 data-i18n="portal.settings.enableOnlinePayments">Enable Online Payments</h3>
+                        <p data-i18n="portal.settings.enableOnlinePaymentsDesc">Allow customers to pay invoices online via Stripe</p>
                     </div>
                     <label class="toggle">
                         <input type="checkbox" id="stripe-enabled">
@@ -339,15 +370,15 @@
                 </div>
                 <div class="setting-row">
                     <div class="setting-info">
-                        <h3>Auto-send Payment Reminders</h3>
-                        <p>Send email reminders for overdue invoices</p>
+                        <h3 data-i18n="portal.settings.autoPaymentReminders">Auto-send Payment Reminders</h3>
+                        <p data-i18n="portal.settings.autoPaymentRemindersDesc">Send email reminders for overdue invoices</p>
                     </div>
                     <label class="toggle">
                         <input type="checkbox" id="payment-reminders">
                         <span class="toggle-slider"></span>
                     </label>
                 </div>
-                <button type="submit" class="btn-sm" id="save-stripe">Save Payment Settings</button>
+                <button type="submit" class="btn-sm" id="save-stripe" data-i18n="portal.settings.savePaymentSettings">Save Payment Settings</button>
                 <p style="margin-top: var(--spacing-md); font-size: var(--font-size-sm); color: var(--color-gray-500);">
                     Note: For full Stripe integration, deploy Firebase Functions. See <code>/functions/README.md</code> for setup instructions.
                 </p>
@@ -356,32 +387,32 @@
 
             <!-- System Stats -->
             <div class="settings-section">
-                <h2>📈 System Statistics</h2>
+                <h2 data-i18n="portal.settings.systemStats">📈 System Statistics</h2>
                 <div class="company-info-grid">
                     <div style="padding: var(--spacing-md); background: var(--color-gray-50); border-radius: var(--radius-md);">
                         <div style="font-size: var(--font-size-2xl); font-weight: 700; color: var(--color-primary);" id="stat-users">0</div>
-                        <div style="color: var(--color-gray-600);">Total Users</div>
+                        <div style="color: var(--color-gray-600);" data-i18n="portal.settings.totalUsers">Total Users</div>
                     </div>
                     <div style="padding: var(--spacing-md); background: var(--color-gray-50); border-radius: var(--radius-md);">
                         <div style="font-size: var(--font-size-2xl); font-weight: 700; color: var(--color-primary);" id="stat-shipments">0</div>
-                        <div style="color: var(--color-gray-600);">Total Shipments</div>
+                        <div style="color: var(--color-gray-600);" data-i18n="portal.settings.totalShipments">Total Shipments</div>
                     </div>
                     <div style="padding: var(--spacing-md); background: var(--color-gray-50); border-radius: var(--radius-md);">
                         <div style="font-size: var(--font-size-2xl); font-weight: 700; color: var(--color-primary);" id="stat-inventory">0</div>
-                        <div style="color: var(--color-gray-600);">Inventory Items</div>
+                        <div style="color: var(--color-gray-600);" data-i18n="portal.settings.inventoryItems">Inventory Items</div>
                     </div>
                 </div>
             </div>
 
             <!-- Danger Zone -->
             <div class="settings-section" style="border-color: #fecaca;">
-                <h2 style="color: #dc2626;">⚠️ Danger Zone</h2>
+                <h2 style="color: #dc2626;" data-i18n="portal.settings.dangerZone">⚠️ Danger Zone</h2>
                 <div class="setting-row">
                     <div class="setting-info">
-                        <h3>Clear All Test Data</h3>
-                        <p>Remove all test shipments and inventory items (cannot be undone)</p>
+                        <h3 data-i18n="portal.settings.clearTestData">Clear All Test Data</h3>
+                        <p data-i18n="portal.settings.clearTestDataDesc">Remove all test shipments and inventory items (cannot be undone)</p>
                     </div>
-                    <button class="btn-sm btn-danger" id="clear-test-data">Clear Test Data</button>
+                    <button class="btn-sm btn-danger" id="clear-test-data" data-i18n="portal.settings.clearTestDataBtn">Clear Test Data</button>
                 </div>
             </div>
         </main>
@@ -399,7 +430,7 @@
             storageBucket: "miamialliance3pl.firebasestorage.app",
             messagingSenderId: "657614666588",
             appId: "1:657614666588:web:20e50484fe5d90b5aa5f99",
-            measurementId: "G-QSRV99D8BX"
+            measurementId: "G-KTW0F25ZM1"
         };
 
         const FALLBACK_ADMIN_EMAILS = ['ceo@usglatam.com', 'yuri@megalopolisms.com'];
@@ -422,7 +453,10 @@
                 if (userDoc.exists() && userDoc.data().role === 'admin') {
                     isAdmin = true;
                 }
-            } catch (e) {}
+            } catch (e) {
+                console.error('Failed to verify admin role:', e.message);
+                // Admin check failed — deny access for safety
+            }
 
             if (!isAdmin) {
                 window.location.href = 'dashboard.html';
@@ -430,6 +464,13 @@
             }
 
             document.getElementById('user-name').innerHTML = `${user.displayName || user.email} <span class="admin-badge">ADMIN</span>`;
+
+            // Show staff/admin nav
+            const empNav = document.getElementById('employee-nav');
+            const admNav = document.getElementById('admin-nav');
+            if (empNav) empNav.style.display = 'block';
+            if (admNav) admNav.style.display = 'block';
+
             loadStats();
             loadSettings();
         });
@@ -555,7 +596,12 @@
         }
     </script>
     <script src="../js/main.js?v=3"></script>
+    <script src="../js/lang/es.js"></script>
+    <script src="../js/lang/pt-br.js"></script>
+    <script src="../js/lang/zh.js"></script>
+    <script src="../js/i18n.js"></script>
     <!-- Form Validation Module -->
     <script src="../js/form-validation.js"></script>
+    <script src="../js/chat-widget.js"></script>
 </body>
 </html>

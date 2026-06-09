@@ -4,6 +4,51 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   // =========================================================================
+  // Urgency Banner Height → CSS Custom Property
+  // Keeps fixed header & hero padding in sync with the banner height
+  // =========================================================================
+  function updateBannerHeight() {
+    var banner = document.querySelector(".urgency-banner");
+    if (banner) {
+      // Use bounding box + ceil so sub-pixel layout never underestimates height
+      var h = Math.ceil(banner.getBoundingClientRect().height);
+      document.documentElement.style.setProperty("--banner-height", h + "px");
+    } else {
+      document.documentElement.style.setProperty("--banner-height", "0px");
+    }
+  }
+
+  function scheduleBannerHeightUpdate() {
+    window.requestAnimationFrame(updateBannerHeight);
+  }
+
+  updateBannerHeight();
+  window.addEventListener("load", scheduleBannerHeightUpdate);
+  window.addEventListener("resize", scheduleBannerHeightUpdate, {
+    passive: true,
+  });
+
+  // Mobile browsers can change visual viewport without triggering window resize
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener(
+      "resize",
+      scheduleBannerHeightUpdate,
+      {
+        passive: true,
+      },
+    );
+  }
+
+  // Recalculate when banner content wraps/un-wraps (font load, viewport changes)
+  if ("ResizeObserver" in window) {
+    var observedBanner = document.querySelector(".urgency-banner");
+    if (observedBanner) {
+      var bannerResizeObserver = new ResizeObserver(scheduleBannerHeightUpdate);
+      bannerResizeObserver.observe(observedBanner);
+    }
+  }
+
+  // =========================================================================
   // Mobile Navigation Toggle
   // =========================================================================
   const navToggle = document.querySelector(".nav-toggle");
@@ -13,12 +58,15 @@ document.addEventListener("DOMContentLoaded", function () {
     navToggle.addEventListener("click", function () {
       navMenu.classList.toggle("active");
       navToggle.classList.toggle("active");
+      var expanded = navToggle.getAttribute("aria-expanded") === "true";
+      navToggle.setAttribute("aria-expanded", String(!expanded));
     });
 
     navMenu.querySelectorAll(".nav-link").forEach((link) => {
       link.addEventListener("click", function () {
         navMenu.classList.remove("active");
         navToggle.classList.remove("active");
+        navToggle.setAttribute("aria-expanded", "false");
       });
     });
 
@@ -26,49 +74,93 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
         navMenu.classList.remove("active");
         navToggle.classList.remove("active");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Close mobile nav on Escape key
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && navMenu.classList.contains("active")) {
+        navMenu.classList.remove("active");
+        navToggle.classList.remove("active");
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.focus();
       }
     });
   }
 
   // =========================================================================
-  // Glassmorphism Header on Scroll
+  // Unified Scroll Handler (throttled via rAF — single listener for all scroll effects)
+  // Consolidates: header glassmorphism, scroll progress, sticky CTA, WhatsApp float, parallax
   // =========================================================================
   const header = document.querySelector(".header");
-  if (header) {
-    let lastScroll = 0;
-    window.addEventListener(
-      "scroll",
-      function () {
-        const currentScroll = window.scrollY;
-        if (currentScroll > 50) {
-          header.classList.add("scrolled");
-        } else {
-          header.classList.remove("scrolled");
-        }
-        lastScroll = currentScroll;
-      },
-      { passive: true },
-    );
+  const progressBar = document.querySelector(".scroll-progress");
+  let _scrollTicking = false;
+
+  function _onScrollFrame() {
+    const scrollY = window.scrollY;
+
+    // 1. Glassmorphism header
+    if (header) {
+      if (scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    }
+
+    // 2. Scroll progress bar
+    if (progressBar) {
+      const docHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      progressBar.style.width =
+        (docHeight > 0 ? (scrollY / docHeight) * 100 : 0) + "%";
+    }
+
+    // 3. Sticky CTA (show after scrolling past hero)
+    if (stickyCta && heroSection) {
+      const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+      if (scrollY > heroBottom) {
+        stickyCta.classList.add("visible");
+      } else {
+        stickyCta.classList.remove("visible");
+      }
+    }
+
+    // 4. WhatsApp float button
+    if (whatsappFloat) {
+      if (scrollY > 400) {
+        whatsappFloat.classList.add("visible");
+      } else {
+        whatsappFloat.classList.remove("visible");
+      }
+    }
+
+    // 5. Parallax on hero shapes/icons
+    if ((heroShapes || heroFloatingIcons) && scrollY < window.innerHeight) {
+      if (heroShapes) {
+        heroShapes.style.transform = "translateY(" + scrollY * 0.15 + "px)";
+      }
+      if (heroFloatingIcons) {
+        heroFloatingIcons.style.transform =
+          "translateY(" + scrollY * 0.1 + "px)";
+      }
+    }
+
+    _scrollTicking = false;
   }
 
-  // =========================================================================
-  // Scroll Progress Bar
-  // =========================================================================
-  const progressBar = document.querySelector(".scroll-progress");
-  if (progressBar) {
-    window.addEventListener(
-      "scroll",
-      function () {
-        const winScroll = document.documentElement.scrollTop;
-        const height =
-          document.documentElement.scrollHeight -
-          document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-        progressBar.style.width = scrolled + "%";
-      },
-      { passive: true },
-    );
-  }
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!_scrollTicking) {
+        _scrollTicking = true;
+        requestAnimationFrame(_onScrollFrame);
+      }
+    },
+    { passive: true },
+  );
 
   // =========================================================================
   // Scroll Reveal (Intersection Observer)
@@ -166,43 +258,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // =========================================================================
-  // Sticky CTA (show after scrolling past hero)
+  // Sticky CTA & WhatsApp Float — merged into unified scroll handler
   // =========================================================================
   const stickyCta = document.querySelector(".sticky-cta");
   const heroSection = document.querySelector(".hero");
-
-  if (stickyCta && heroSection) {
-    window.addEventListener(
-      "scroll",
-      function () {
-        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-        if (window.scrollY > heroBottom) {
-          stickyCta.classList.add("visible");
-        } else {
-          stickyCta.classList.remove("visible");
-        }
-      },
-      { passive: true },
-    );
-  }
-
-  // =========================================================================
-  // WhatsApp Float Button (show after scrolling)
-  // =========================================================================
   const whatsappFloat = document.querySelector(".whatsapp-float");
-  if (whatsappFloat) {
-    window.addEventListener(
-      "scroll",
-      function () {
-        if (window.scrollY > 400) {
-          whatsappFloat.classList.add("visible");
-        } else {
-          whatsappFloat.classList.remove("visible");
-        }
-      },
-      { passive: true },
-    );
-  }
 
   // =========================================================================
   // Smooth Scroll for Anchor Links
@@ -216,10 +276,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (target) {
           const headerHeight =
             document.querySelector(".header")?.offsetHeight || 70;
+          const bannerHeight =
+            document.querySelector(".urgency-banner")?.offsetHeight || 0;
           const targetPosition =
             target.getBoundingClientRect().top +
             window.scrollY -
             headerHeight -
+            bannerHeight -
             20;
           window.scrollTo({
             top: targetPosition,
@@ -239,6 +302,8 @@ document.addEventListener("DOMContentLoaded", function () {
   if (sidebarToggle && portalSidebar) {
     sidebarToggle.addEventListener("click", function () {
       portalSidebar.classList.toggle("active");
+      var expanded = sidebarToggle.getAttribute("aria-expanded") === "true";
+      sidebarToggle.setAttribute("aria-expanded", String(!expanded));
     });
   }
 
@@ -319,35 +384,17 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // =========================================================================
-  // Parallax on Hero (subtle)
+  // Parallax on Hero (subtle) — merged into unified scroll handler
   // =========================================================================
   const heroShapes = document.querySelector(".hero-shapes");
   const heroFloatingIcons = document.querySelector(".hero-floating-icons");
 
-  if (heroShapes || heroFloatingIcons) {
-    window.addEventListener(
-      "scroll",
-      function () {
-        const scrolled = window.scrollY;
-        if (scrolled < window.innerHeight) {
-          if (heroShapes) {
-            heroShapes.style.transform =
-              "translateY(" + scrolled * 0.15 + "px)";
-          }
-          if (heroFloatingIcons) {
-            heroFloatingIcons.style.transform =
-              "translateY(" + scrolled * 0.1 + "px)";
-          }
-        }
-      },
-      { passive: true },
-    );
-  }
-
   // =========================================================================
   // Homepage Funnel Selection
   // =========================================================================
-  const funnelPills = document.querySelectorAll(".funnel-pill[data-funnel-service]");
+  const funnelPills = document.querySelectorAll(
+    ".funnel-pill[data-funnel-service]",
+  );
   const funnelServiceInput = document.getElementById("funnelServiceInput");
   const funnelCopy = document.querySelector("[data-funnel-copy]");
 
@@ -397,7 +444,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // =========================================================================
   document.querySelectorAll(".footer-bottom p").forEach(function (p) {
     const year = new Date().getFullYear();
-    p.innerHTML = p.innerHTML.replace(/\d{4}/, year);
+    // Use textContent-safe approach: only replace 4-digit year in the text
+    if (p.textContent && /\d{4}/.test(p.textContent)) {
+      p.textContent = p.textContent.replace(/\d{4}/, year);
+    }
   });
 
   // =========================================================================

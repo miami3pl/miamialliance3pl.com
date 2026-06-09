@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Team Management | Miami Alliance 3PL Admin</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css?v=202602230300">
+    <link rel="stylesheet" href="../css/style.css?v=8">
     <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSRV99D8BX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTW0F25ZM1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-QSRV99D8BX');
+        gtag('config', 'G-KTW0F25ZM1');
     </script>
     <script src="../js/analytics.js"></script>
     <style>
@@ -313,7 +313,7 @@
             </button>
             <ul class="nav-menu">
                 <li><span id="user-name" class="nav-link">Welcome</span></li>
-                <li><a href="#" id="logout-btn" class="nav-link btn btn-outline">Logout</a></li>
+                <li><a href="#" id="logout-btn" class="nav-link btn btn-outline" data-i18n="portal.sidebar.logout">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -322,36 +322,57 @@
         <aside class="portal-sidebar">
             <nav>
                 <a href="dashboard.html" class="portal-nav-item">
-                    <span>📊</span> Dashboard
+                    <span>📊</span> <span data-i18n="portal.sidebar.dashboard">Dashboard</span>
                 </a>
                 <a href="shipments.html" class="portal-nav-item">
-                    <span>🚚</span> Shipments
+                    <span>🚚</span> <span data-i18n="portal.sidebar.shipments">Shipments</span>
+                </a>
+                <a href="pickups.html" class="portal-nav-item">
+                    <span aria-hidden="true">🏗️</span> <span>Pickup & Delivery</span>
                 </a>
                 <a href="tracking.html" class="portal-nav-item">
-                    <span>🔍</span> Tracking
+                    <span>🔍</span> <span data-i18n="portal.sidebar.tracking">Tracking</span>
                 </a>
                 <a href="inventory.html" class="portal-nav-item">
-                    <span>📦</span> Inventory
+                    <span>📦</span> <span data-i18n="portal.sidebar.inventory">Inventory</span>
                 </a>
-                <div id="employee-nav" style="margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
-                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;">Staff</div>
-                    <a href="customers.html" class="portal-nav-item">
-                        <span>👥</span> All Customers
+                <a href="admin-billing.html" class="portal-nav-item"><span>💵</span> <span>Billing</span></a>
+                <a href="contracts.html" class="portal-nav-item"><span>📄</span> <span>Contracts</span></a>
+                <div id="employee-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;" aria-hidden="true" data-i18n="portal.sidebar.staffLabel">Staff</div>
+                    <a href="customers.html" class="portal-nav-item" id="nav-all-users">
+                        <span aria-hidden="true">👥</span> <span data-i18n="portal.sidebar.allCustomers">All Customers</span>
                     </a>
-                    <a href="admin-shipments.html" class="portal-nav-item">
-                        <span>📋</span> All Shipments
+                    <a href="admin-shipments.html" class="portal-nav-item" id="nav-all-shipments">
+                        <span aria-hidden="true">📋</span> <span data-i18n="portal.sidebar.allShipments">All Shipments</span>
                     </a>
                 </div>
-                <div id="admin-nav" style="margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
-                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;">Admin</div>
+                <div id="admin-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;" aria-hidden="true" data-i18n="portal.sidebar.adminLabel">Admin</div>
+                    <a href="admin-panel.html" class="portal-nav-item">
+                        <span>🛡️</span> <span>Admin Control Panel</span>
+                    </a>
+                    <a href="admin-pickups.html" class="portal-nav-item">
+                        <span aria-hidden="true">🚛</span> <span>All Pickup Requests</span>
+                    </a>
+                    <a href="admin-billing.html" class="portal-nav-item"><span>📝</span> <span>Activity Billing</span></a>
+                    <a href="invoices.html" class="portal-nav-item">
+                        <span aria-hidden="true">💵</span> <span data-i18n="portal.sidebar.invoices">Invoices</span>
+                    </a>
+                    <a href="storage-log.html" class="portal-nav-item">
+                        <span aria-hidden="true">📊</span> <span data-i18n="portal.sidebar.storagelog">Storage Log</span>
+                    </a>
                     <a href="pricing.html" class="portal-nav-item">
-                        <span>💰</span> Pricing
+                        <span aria-hidden="true">💰</span> <span data-i18n="portal.sidebar.pricing">Pricing</span>
                     </a>
                     <a href="settings.html" class="portal-nav-item">
-                        <span>⚙️</span> Settings
+                        <span aria-hidden="true">⚙️</span> <span data-i18n="portal.sidebar.settings">Settings</span>
                     </a>
                     <a href="team.html" class="portal-nav-item active">
-                        <span>👔</span> Manage Team
+                        <span aria-hidden="true">👔</span> <span data-i18n="portal.sidebar.team">Manage Team</span>
+                    </a>
+                    <a href="changelog.html" class="portal-nav-item">
+                        <span aria-hidden="true">📝</span> <span data-i18n="portal.sidebar.changelog">Changelog</span>
                     </a>
                 </div>
             </nav>
@@ -360,49 +381,49 @@
         <main class="portal-main">
             <div class="page-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--spacing-md);">
                 <div>
-                    <h1>👔 Team Management</h1>
-                    <p>Manage user roles and permissions. Admins have full access, Employees can view all data.</p>
+                    <h1 data-i18n="portal.team.title">👔 Team Management</h1>
+                    <p data-i18n="portal.team.subtitle">Manage user roles and permissions. Admins have full access, Employees can view all data.</p>
                 </div>
-                <button class="btn-invite" id="btn-invite">
+                <button class="btn-invite" id="btn-invite" data-i18n="portal.team.inviteBtn">
                     <span>+</span> Invite Team Member
                 </button>
             </div>
 
             <!-- Pending Invites Section -->
             <div class="pending-invites" id="pending-invites" style="display: none;">
-                <h3>📧 Pending Invites</h3>
-                <p style="font-size: var(--font-size-sm); color: #92400e;">These emails will automatically receive their assigned role when they sign up.</p>
+                <h3 data-i18n="portal.team.pendingInvites">📧 Pending Invites</h3>
+                <p style="font-size: var(--font-size-sm); color: #92400e;" data-i18n="portal.team.pendingInvitesDesc">These emails will automatically receive their assigned role when they sign up.</p>
                 <div id="invites-list"></div>
             </div>
 
             <div class="stats-row">
                 <div class="stat-card">
                     <div class="count" id="admin-count">0</div>
-                    <div class="label">Admins</div>
+                    <div class="label" data-i18n="portal.team.admins">Admins</div>
                 </div>
                 <div class="stat-card">
                     <div class="count" id="employee-count">0</div>
-                    <div class="label">Employees</div>
+                    <div class="label" data-i18n="portal.team.employees">Employees</div>
                 </div>
                 <div class="stat-card">
                     <div class="count" id="customer-count">0</div>
-                    <div class="label">Customers</div>
+                    <div class="label" data-i18n="portal.team.customers">Customers</div>
                 </div>
             </div>
 
             <div class="search-bar">
-                <input type="text" id="search-input" placeholder="Search by name or email...">
+                <input type="text" id="search-input" placeholder="Search by name or email..." data-i18n-placeholder="portal.team.searchPlaceholder">
             </div>
 
             <div class="filter-tabs">
-                <button class="filter-tab active" data-filter="all">All Users</button>
-                <button class="filter-tab" data-filter="admin">Admins</button>
-                <button class="filter-tab" data-filter="employee">Employees</button>
-                <button class="filter-tab" data-filter="customer">Customers</button>
+                <button class="filter-tab active" data-filter="all" data-i18n="portal.team.filterAll">All Users</button>
+                <button class="filter-tab" data-filter="admin" data-i18n="portal.team.filterAdmins">Admins</button>
+                <button class="filter-tab" data-filter="employee" data-i18n="portal.team.filterEmployees">Employees</button>
+                <button class="filter-tab" data-filter="customer" data-i18n="portal.team.filterCustomers">Customers</button>
             </div>
 
             <div id="users-list">
-                <p style="text-align: center; padding: var(--spacing-xl); color: var(--color-gray-500);">
+                <p style="text-align: center; padding: var(--spacing-xl); color: var(--color-gray-500);" data-i18n="portal.team.loading">
                     Loading users...
                 </p>
             </div>
@@ -412,28 +433,28 @@
     <!-- Invite Modal -->
     <div class="modal-overlay hidden" id="invite-modal">
         <div class="modal">
-            <h2>Invite Team Member</h2>
-            <p style="color: var(--color-gray-600); margin-bottom: var(--spacing-lg);">
+            <h2 data-i18n="portal.team.inviteTitle">Invite Team Member</h2>
+            <p style="color: var(--color-gray-600); margin-bottom: var(--spacing-lg);" data-i18n="portal.team.inviteDesc">
                 Enter the email address of the person you want to invite. They'll receive the assigned role automatically when they sign up.
             </p>
             <div class="form-group">
-                <label for="invite-email">Email Address</label>
-                <input type="email" id="invite-email" placeholder="employee@company.com" required>
+                <label for="invite-email" data-i18n="portal.team.emailAddress">Email Address</label>
+                <input type="email" id="invite-email" placeholder="employee@company.com" data-i18n-placeholder="portal.team.emailPlaceholder" required>
             </div>
             <div class="form-group">
-                <label for="invite-role">Role</label>
+                <label for="invite-role" data-i18n="portal.team.role">Role</label>
                 <select id="invite-role">
-                    <option value="employee">Employee (can view all data)</option>
-                    <option value="admin">Admin (full access)</option>
+                    <option value="employee" data-i18n="portal.team.roleEmployee">Employee (can view all data)</option>
+                    <option value="admin" data-i18n="portal.team.roleAdmin">Admin (full access)</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="invite-name">Name (optional)</label>
-                <input type="text" id="invite-name" placeholder="John Smith">
+                <label for="invite-name" data-i18n="portal.team.nameOptional">Name (optional)</label>
+                <input type="text" id="invite-name" placeholder="John Smith" data-i18n-placeholder="portal.team.namePlaceholder">
             </div>
             <div class="modal-actions">
-                <button class="btn-cancel" id="cancel-invite">Cancel</button>
-                <button class="btn-submit" id="send-invite">Send Invite</button>
+                <button class="btn-cancel" id="cancel-invite" data-i18n="portal.team.cancel">Cancel</button>
+                <button class="btn-submit" id="send-invite" data-i18n="portal.team.sendInvite">Send Invite</button>
             </div>
         </div>
     </div>
@@ -450,7 +471,7 @@
             storageBucket: "miamialliance3pl.firebasestorage.app",
             messagingSenderId: "657614666588",
             appId: "1:657614666588:web:20e50484fe5d90b5aa5f99",
-            measurementId: "G-QSRV99D8BX"
+            measurementId: "G-KTW0F25ZM1"
         };
 
         const FALLBACK_ADMIN_EMAILS = ['ceo@usglatam.com', 'yuri@megalopolisms.com'];
@@ -477,7 +498,10 @@
                 if (userDoc.exists() && userDoc.data().role === 'admin') {
                     isAdmin = true;
                 }
-            } catch (e) {}
+            } catch (e) {
+                console.error('Failed to verify admin role:', e.message);
+                // Admin check failed — deny access for safety
+            }
 
             if (!isAdmin) {
                 window.location.href = 'dashboard.html';
@@ -485,6 +509,13 @@
             }
 
             document.getElementById('user-name').innerHTML = `${user.displayName || user.email} <span class="admin-badge">ADMIN</span>`;
+
+            // Show staff/admin nav
+            const empNav = document.getElementById('employee-nav');
+            const admNav = document.getElementById('admin-nav');
+            if (empNav) empNav.style.display = 'block';
+            if (admNav) admNav.style.display = 'block';
+
             loadUsers();
             loadPendingInvites();
         });
@@ -667,7 +698,7 @@
                     role: role,
                     name: name,
                     invited_at: new Date().toISOString(),
-                    invited_by: auth.currentUser.email
+                    invited_by: auth.currentUser?.email || 'unknown'
                 });
 
                 showToast(`Invite sent! ${email} will be ${role} when they sign up.`, 'success');
@@ -727,5 +758,10 @@
         }
     </script>
     <script src="../js/main.js?v=3"></script>
+    <script src="../js/lang/es.js"></script>
+    <script src="../js/lang/pt-br.js"></script>
+    <script src="../js/lang/zh.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/chat-widget.js"></script>
 </body>
 </html>

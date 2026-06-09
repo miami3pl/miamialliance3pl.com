@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Tracking | Miami Alliance 3PL Portal</title>
     <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0f172a">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
@@ -15,14 +16,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="../css/style.css?v=202602230300">
+    <link rel="stylesheet" href="../css/style.css">
     <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSRV99D8BX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTW0F25ZM1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-QSRV99D8BX');
+        gtag('config', 'G-KTW0F25ZM1');
     </script>
     <script src="../js/analytics.js"></script>
 </head>
@@ -41,7 +42,7 @@
             </button>
             <ul class="nav-menu">
                 <li><span id="user-name" class="nav-link">Welcome</span></li>
-                <li><a href="#" id="logout-btn" class="nav-link btn btn-outline">Logout</a></li>
+                <li><a href="#" id="logout-btn" class="nav-link btn btn-outline" data-i18n="portal.sidebar.logout">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -51,30 +52,76 @@
         <aside class="portal-sidebar">
             <nav role="navigation" aria-label="Main navigation">
                 <a href="dashboard.html" class="portal-nav-item">
-                    <span aria-hidden="true">📊</span> Dashboard
+                    <span aria-hidden="true">📊</span> <span data-i18n="portal.sidebar.dashboard">Dashboard</span>
                 </a>
                 <a href="shipments.html" class="portal-nav-item">
-                    <span aria-hidden="true">🚚</span> Shipments
+                    <span aria-hidden="true">🚚</span> <span data-i18n="portal.sidebar.shipments">Shipments</span>
+                </a>
+                <a href="pickups.html" class="portal-nav-item">
+                    <span aria-hidden="true">🏗️</span> <span>Pickup & Delivery</span>
                 </a>
                 <a href="tracking.html" class="portal-nav-item active" aria-current="page">
-                    <span aria-hidden="true">🔍</span> Tracking
+                    <span aria-hidden="true">🔍</span> <span data-i18n="portal.sidebar.tracking">Tracking</span>
                 </a>
                 <a href="inventory.html" class="portal-nav-item">
-                    <span aria-hidden="true">📦</span> Inventory
+                    <span aria-hidden="true">📦</span> <span data-i18n="portal.sidebar.inventory">Inventory</span>
                 </a>
+                <a href="admin-billing.html" class="portal-nav-item">
+                    <span aria-hidden="true">💵</span> <span data-i18n="portal.sidebar.billing">Billing</span>
+                </a>
+                <a href="contracts.html" class="portal-nav-item">
+                    <span aria-hidden="true">📄</span> <span>Contracts</span>
+                </a>
+                <div id="employee-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;" aria-hidden="true" data-i18n="portal.sidebar.staffLabel">Staff</div>
+                    <a href="customers.html" class="portal-nav-item" id="nav-all-users">
+                        <span aria-hidden="true">👥</span> <span data-i18n="portal.sidebar.allCustomers">All Customers</span>
+                    </a>
+                    <a href="admin-shipments.html" class="portal-nav-item" id="nav-all-shipments">
+                        <span aria-hidden="true">📋</span> <span data-i18n="portal.sidebar.allShipments">All Shipments</span>
+                    </a>
+                </div>
+                <div id="admin-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;" aria-hidden="true" data-i18n="portal.sidebar.adminLabel">Admin</div>
+                    <a href="admin-panel.html" class="portal-nav-item">
+                        <span>🛡️</span> <span>Admin Control Panel</span>
+                    </a>
+                    <a href="admin-pickups.html" class="portal-nav-item">
+                        <span aria-hidden="true">🚛</span> <span>All Pickup Requests</span>
+                    </a>
+                    <a href="admin-billing.html" class="portal-nav-item"><span>📝</span> <span>Activity Billing</span></a>
+                    <a href="invoices.html" class="portal-nav-item">
+                        <span aria-hidden="true">💵</span> <span data-i18n="portal.sidebar.invoices">Invoices</span>
+                    </a>
+                    <a href="storage-log.html" class="portal-nav-item">
+                        <span aria-hidden="true">📊</span> <span data-i18n="portal.sidebar.storagelog">Storage Log</span>
+                    </a>
+                    <a href="pricing.html" class="portal-nav-item">
+                        <span aria-hidden="true">💰</span> <span data-i18n="portal.sidebar.pricing">Pricing</span>
+                    </a>
+                    <a href="settings.html" class="portal-nav-item">
+                        <span aria-hidden="true">⚙️</span> <span data-i18n="portal.sidebar.settings">Settings</span>
+                    </a>
+                    <a href="team.html" class="portal-nav-item">
+                        <span aria-hidden="true">👔</span> <span data-i18n="portal.sidebar.team">Manage Team</span>
+                    </a>
+                    <a href="changelog.html" class="portal-nav-item">
+                        <span aria-hidden="true">📝</span> <span data-i18n="portal.sidebar.changelog">Changelog</span>
+                    </a>
+                </div>
             </nav>
         </aside>
 
         <!-- Main Content -->
         <main class="portal-main">
-            <h1 style="margin-bottom: var(--spacing-lg); color: var(--color-gray-900);">Track Shipment</h1>
+            <h1 style="margin-bottom: var(--spacing-lg); color: var(--color-gray-900);" data-i18n="portal.tracking.title">Track Shipment</h1>
 
             <!-- Search Form -->
             <div class="dashboard-card" style="margin-bottom: var(--spacing-xl);">
                 <form id="tracking-form" style="display: flex; gap: var(--spacing-sm); flex-wrap: wrap;" role="search" aria-label="Track shipment">
                     <label for="tracking-input" class="visually-hidden">Tracking number</label>
-                    <input type="text" id="tracking-input" placeholder="Enter tracking number (e.g., MA3PL12345678)" style="flex: 1; min-width: 250px; padding: 0.75rem 1rem; border: 1px solid var(--color-gray-300); border-radius: var(--radius-md); font-size: var(--font-size-base);" aria-required="true">
-                    <button type="submit" class="btn btn-primary">Track</button>
+                    <input type="text" id="tracking-input" placeholder="Enter tracking number (e.g., MA3PL12345678)" data-i18n-placeholder="portal.tracking.inputPh" style="flex: 1; min-width: 250px; padding: 0.75rem 1rem; border: 1px solid var(--color-gray-300); border-radius: var(--radius-md); font-size: var(--font-size-base);" aria-required="true">
+                    <button type="submit" class="btn btn-primary" data-i18n="portal.tracking.trackBtn">Track</button>
                 </form>
             </div>
 
@@ -83,36 +130,40 @@
                 <div class="dashboard-card" style="margin-bottom: var(--spacing-lg);">
                     <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: var(--spacing-md);">
                         <div>
-                            <h2 style="font-size: var(--font-size-xl); color: var(--color-gray-900); margin-bottom: var(--spacing-xs);">Tracking # <span id="result-tracking"></span></h2>
-                            <p style="color: var(--color-gray-500);">Created: <span id="result-date"></span></p>
+                            <h2 style="font-size: var(--font-size-xl); color: var(--color-gray-900); margin-bottom: var(--spacing-xs);"><span data-i18n="portal.tracking.trackingHash">Tracking #</span> <span id="result-tracking"></span></h2>
+                            <p style="color: var(--color-gray-500);"><span data-i18n="portal.tracking.created">Created:</span> <span id="result-date"></span></p>
                         </div>
                         <span id="result-status" class="badge"></span>
                     </div>
                 </div>
 
                 <!-- Shipment Details -->
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-md); margin-bottom: var(--spacing-lg);">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-md); margin-bottom: var(--spacing-lg);">
                     <div class="dashboard-card">
-                        <h3 style="font-size: var(--font-size-base); color: var(--color-gray-500); margin-bottom: var(--spacing-sm);">Origin</h3>
+                        <h3 style="font-size: var(--font-size-base); color: var(--color-gray-500); margin-bottom: var(--spacing-sm);">📍 Warehouse</h3>
+                        <p id="result-warehouse" style="color: var(--color-gray-900); font-weight: 600;"></p>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3 style="font-size: var(--font-size-base); color: var(--color-gray-500); margin-bottom: var(--spacing-sm);" data-i18n="portal.tracking.origin">Origin</h3>
                         <p id="result-origin" style="color: var(--color-gray-900);"></p>
                     </div>
                     <div class="dashboard-card">
-                        <h3 style="font-size: var(--font-size-base); color: var(--color-gray-500); margin-bottom: var(--spacing-sm);">Destination</h3>
+                        <h3 style="font-size: var(--font-size-base); color: var(--color-gray-500); margin-bottom: var(--spacing-sm);" data-i18n="portal.tracking.destination">Destination</h3>
                         <p id="result-destination" style="color: var(--color-gray-900);"></p>
                     </div>
                     <div class="dashboard-card">
-                        <h3 style="font-size: var(--font-size-base); color: var(--color-gray-500); margin-bottom: var(--spacing-sm);">Package Details</h3>
+                        <h3 style="font-size: var(--font-size-base); color: var(--color-gray-500); margin-bottom: var(--spacing-sm);" data-i18n="portal.tracking.packageDetails">Package Details</h3>
                         <p id="result-package" style="color: var(--color-gray-900);"></p>
                     </div>
                     <div class="dashboard-card">
-                        <h3 style="font-size: var(--font-size-base); color: var(--color-gray-500); margin-bottom: var(--spacing-sm);">Service</h3>
+                        <h3 style="font-size: var(--font-size-base); color: var(--color-gray-500); margin-bottom: var(--spacing-sm);" data-i18n="portal.tracking.service">Service</h3>
                         <p id="result-service" style="color: var(--color-gray-900); text-transform: capitalize;"></p>
                     </div>
                 </div>
 
                 <!-- Timeline -->
                 <div class="dashboard-card">
-                    <h3 style="font-size: var(--font-size-lg); color: var(--color-gray-900); margin-bottom: var(--spacing-md);">Tracking History</h3>
+                    <h3 style="font-size: var(--font-size-lg); color: var(--color-gray-900); margin-bottom: var(--spacing-md);" data-i18n="portal.tracking.history">Tracking History</h3>
                     <div id="tracking-timeline" style="border-left: 2px solid var(--color-gray-200); padding-left: var(--spacing-md); margin-left: var(--spacing-xs);">
                         <!-- Timeline items will be inserted here -->
                     </div>
@@ -123,12 +174,18 @@
             <div id="no-result" style="display: none;" class="dashboard-card" role="alert" aria-live="polite">
                 <div style="text-align: center; padding: var(--spacing-xl);">
                     <div style="font-size: 3rem; margin-bottom: var(--spacing-sm);">🔍</div>
-                    <h3 style="color: var(--color-gray-900); margin-bottom: var(--spacing-xs);">Shipment Not Found</h3>
-                    <p style="color: var(--color-gray-500);">Please check the tracking number and try again.</p>
+                    <h3 style="color: var(--color-gray-900); margin-bottom: var(--spacing-xs);" data-i18n="portal.tracking.notFound">Shipment Not Found</h3>
+                    <p style="color: var(--color-gray-500);" data-i18n="portal.tracking.notFoundDesc">Please check the tracking number and try again.</p>
                 </div>
             </div>
         </main>
     </div>
+
+    <!-- i18n -->
+    <script src="../js/lang/es.js"></script>
+    <script src="../js/lang/pt-br.js"></script>
+    <script src="../js/lang/zh.js"></script>
+    <script src="../js/i18n.js"></script>
 
     <!-- Firebase SDK -->
     <script type="module">
@@ -142,7 +199,8 @@
             projectId: "miamialliance3pl",
             storageBucket: "miamialliance3pl.firebasestorage.app",
             messagingSenderId: "657614666588",
-            appId: "1:657614666588:web:20e50484fe5d90b5aa5f99"
+            appId: "1:657614666588:web:20e50484fe5d90b5aa5f99",
+            measurementId: "G-KTW0F25ZM1"
         };
 
         const app = initializeApp(firebaseConfig);
@@ -150,10 +208,7 @@
         const db = getFirestore(app);
 
         // Fallback admin emails (used only if Firestore role check fails)
-        const FALLBACK_ADMIN_EMAILS = [
-            'admin@miamialliance3pl.com',
-            'operations@miamialliance3pl.com'
-        ];
+        const FALLBACK_ADMIN_EMAILS = ['ceo@usglatam.com', 'yuri@megalopolisms.com'];
 
         // Current user data
         let currentUser = null;
@@ -198,6 +253,14 @@
                 } else {
                     currentUserRole = 'customer';
                 }
+            }
+
+            // Show staff/admin nav for authorized users
+            if (isStaff()) {
+                const empNav = document.getElementById('employee-nav');
+                const admNav = document.getElementById('admin-nav');
+                if (empNav) empNav.style.display = 'block';
+                if (admNav) admNav.style.display = 'block';
             }
 
             // Check for URL parameter
@@ -265,31 +328,54 @@
             }
         }
 
+        // Sanitize string to prevent XSS when using innerHTML
+        function esc(str) {
+            if (str == null) return '';
+            const d = document.createElement('div');
+            d.textContent = String(str);
+            return d.innerHTML;
+        }
+
         function displayShipment(data) {
             document.getElementById('tracking-result').style.display = 'block';
 
-            document.getElementById('result-tracking').textContent = data.tracking_number;
-            document.getElementById('result-date').textContent = new Date(data.created_at).toLocaleString();
+            document.getElementById('result-tracking').textContent = data.tracking_number || '';
+            document.getElementById('result-date').textContent = data.created_at ? new Date(data.created_at).toLocaleString() : '';
 
             const statusEl = document.getElementById('result-status');
-            statusEl.className = 'badge badge-' + data.status;
-            statusEl.textContent = data.status.replace('_', ' ');
+            statusEl.className = 'badge badge-' + (data.status || 'pending');
+            statusEl.textContent = (data.status || 'pending').replace('_', ' ');
 
+            // Warehouse location (static values — safe HTML)
+            const whId = data.warehouse || data.warehouseId || 'miami';
+            const warehouseEl = document.getElementById('result-warehouse');
+            if (whId === 'biloxi') {
+                warehouseEl.innerHTML = '<span style="background: linear-gradient(135deg, #8b5cf6, #6d28d9); color: white; padding: 4px 12px; border-radius: 12px; font-size: 0.85rem;">📍 Biloxi, MS</span><br><span style="font-size: 0.8rem; color: var(--color-gray-500);">1606 Beach Blvd, Biloxi, MS 39531</span>';
+            } else {
+                warehouseEl.innerHTML = '<span style="background: linear-gradient(135deg, #14b8a6, #0d9488); color: white; padding: 4px 12px; border-radius: 12px; font-size: 0.85rem;">📍 Miami, FL</span><br><span style="font-size: 0.8rem; color: var(--color-gray-500);">8780 NW 100th ST, Medley, FL 33178</span>';
+            }
+
+            // Origin — escaped to prevent XSS
+            const origin = data.origin || {};
             document.getElementById('result-origin').innerHTML = `
-                ${data.origin.street}<br>
-                ${data.origin.city}, ${data.origin.state} ${data.origin.zip}
+                ${esc(origin.street)}<br>
+                ${esc(origin.city)}${origin.state ? ', ' + esc(origin.state) : ''} ${esc(origin.zip)}
             `;
 
+            // Destination — escaped to prevent XSS
+            const dest = data.destination || {};
             document.getElementById('result-destination').innerHTML = `
-                ${data.destination.name}<br>
-                ${data.destination.street}<br>
-                ${data.destination.city}, ${data.destination.state} ${data.destination.zip}
+                ${esc(dest.name)}<br>
+                ${esc(dest.street)}<br>
+                ${esc(dest.city)}${dest.state ? ', ' + esc(dest.state) : ''} ${esc(dest.zip)}
             `;
 
+            // Package info — escaped to prevent XSS
+            const pkg = data.package || {};
             document.getElementById('result-package').innerHTML = `
-                Weight: ${data.package.weight} lbs<br>
-                Dimensions: ${data.package.length || '-'}×${data.package.width || '-'}×${data.package.height || '-'} in<br>
-                Quantity: ${data.package.quantity}
+                Weight: ${esc(pkg.weight)} lbs<br>
+                Dimensions: ${esc(pkg.length || '-')}×${esc(pkg.width || '-')}×${esc(pkg.height || '-')} in<br>
+                Quantity: ${esc(pkg.quantity)}
             `;
 
             document.getElementById('result-service').textContent = data.service_type;
@@ -342,5 +428,6 @@
         }
     </script>
     <script src="../js/main.js"></script>
+    <script src="../js/chat-widget.js"></script>
 </body>
 </html>

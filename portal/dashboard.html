@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Dashboard | Miami Alliance 3PL Portal</title>
     <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0f172a">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
@@ -18,14 +19,14 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="../css/style.css?v=202602230300">
+    <link rel="stylesheet" href="../css/style.css?v=8">
     <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSRV99D8BX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTW0F25ZM1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-QSRV99D8BX');
+        gtag('config', 'G-KTW0F25ZM1');
     </script>
     <script src="../js/analytics.js"></script>
     <style>
@@ -176,7 +177,7 @@
             </button>
             <ul class="nav-menu">
                 <li><span id="user-name" class="nav-link">Welcome</span></li>
-                <li><a href="#" id="logout-btn" class="nav-link btn btn-outline">Logout</a></li>
+                <li><a href="#" id="logout-btn" class="nav-link btn btn-outline" data-i18n="portal.sidebar.logout">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -186,48 +187,60 @@
         <aside class="portal-sidebar">
             <nav role="navigation" aria-label="Main navigation">
                 <a href="dashboard.html" class="portal-nav-item active" aria-current="page">
-                    <span aria-hidden="true">📊</span> Dashboard
+                    <span aria-hidden="true">📊</span> <span data-i18n="portal.sidebar.dashboard">Dashboard</span>
                 </a>
                 <a href="shipments.html" class="portal-nav-item">
-                    <span aria-hidden="true">🚚</span> Shipments
+                    <span aria-hidden="true">🚚</span> <span data-i18n="portal.sidebar.shipments">Shipments</span>
+                </a>
+                <a href="pickups.html" class="portal-nav-item">
+                    <span aria-hidden="true">🏗️</span> <span>Pickup & Delivery</span>
                 </a>
                 <a href="tracking.html" class="portal-nav-item">
-                    <span aria-hidden="true">🔍</span> Tracking
+                    <span aria-hidden="true">🔍</span> <span data-i18n="portal.sidebar.tracking">Tracking</span>
                 </a>
                 <a href="inventory.html" class="portal-nav-item">
-                    <span aria-hidden="true">📦</span> Inventory
+                    <span aria-hidden="true">📦</span> <span data-i18n="portal.sidebar.inventory">Inventory</span>
                 </a>
-                <a href="billing.html" class="portal-nav-item">
-                    <span aria-hidden="true">💵</span> Billing
+                <a href="admin-billing.html" class="portal-nav-item">
+                    <span aria-hidden="true">💵</span> <span data-i18n="portal.sidebar.billing">Billing</span>
+                </a>
+                <a href="contracts.html" class="portal-nav-item">
+                    <span aria-hidden="true">📄</span> <span>Contracts</span>
                 </a>
                 <div id="employee-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
-                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;" aria-hidden="true">Staff</div>
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;" aria-hidden="true" data-i18n="portal.sidebar.staffLabel">Staff</div>
                     <a href="customers.html" class="portal-nav-item" id="nav-all-users">
-                        <span aria-hidden="true">👥</span> All Customers
+                        <span aria-hidden="true">👥</span> <span data-i18n="portal.sidebar.allCustomers">All Customers</span>
                     </a>
                     <a href="admin-shipments.html" class="portal-nav-item" id="nav-all-shipments">
-                        <span aria-hidden="true">📋</span> All Shipments
+                        <span aria-hidden="true">📋</span> <span data-i18n="portal.sidebar.allShipments">All Shipments</span>
                     </a>
                 </div>
                 <div id="admin-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
-                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;" aria-hidden="true">Admin</div>
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;" aria-hidden="true" data-i18n="portal.sidebar.adminLabel">Admin</div>
+                    <a href="admin-panel.html" class="portal-nav-item">
+                        <span>🛡️</span> <span>Admin Control Panel</span>
+                    </a>                    <a href="admin-pickups.html" class="portal-nav-item">
+                        <span aria-hidden="true">🚛</span> <span>All Pickup Requests</span>
+                    </a>
+                    <a href="admin-billing.html" class="portal-nav-item"><span>📝</span> <span>Activity Billing</span></a>
                     <a href="invoices.html" class="portal-nav-item">
-                        <span aria-hidden="true">💵</span> Invoices
+                        <span aria-hidden="true">💵</span> <span data-i18n="portal.sidebar.invoices">Invoices</span>
                     </a>
                     <a href="storage-log.html" class="portal-nav-item">
-                        <span aria-hidden="true">📊</span> Storage Log
+                        <span aria-hidden="true">📊</span> <span data-i18n="portal.sidebar.storagelog">Storage Log</span>
                     </a>
                     <a href="pricing.html" class="portal-nav-item">
-                        <span aria-hidden="true">💰</span> Pricing
+                        <span aria-hidden="true">💰</span> <span data-i18n="portal.sidebar.pricing">Pricing</span>
                     </a>
                     <a href="settings.html" class="portal-nav-item">
-                        <span aria-hidden="true">⚙️</span> Settings
+                        <span aria-hidden="true">⚙️</span> <span data-i18n="portal.sidebar.settings">Settings</span>
                     </a>
                     <a href="team.html" class="portal-nav-item">
-                        <span aria-hidden="true">👔</span> Manage Team
+                        <span aria-hidden="true">👔</span> <span data-i18n="portal.sidebar.team">Manage Team</span>
                     </a>
                     <a href="changelog.html" class="portal-nav-item">
-                        <span aria-hidden="true">📝</span> Changelog
+                        <span aria-hidden="true">📝</span> <span data-i18n="portal.sidebar.changelog">Changelog</span>
                     </a>
                 </div>
             </nav>
@@ -237,35 +250,45 @@
         <main class="portal-main">
             <!-- Welcome Hero -->
             <div class="welcome-hero">
-                <h1 id="welcome-title">Welcome back!</h1>
-                <p id="welcome-subtitle">Here's what's happening with your logistics today.</p>
+                <h1 id="welcome-title" data-i18n="portal.dashboard.welcomeTitle">Welcome back!</h1>
+                <p id="welcome-subtitle" data-i18n="portal.dashboard.welcomeSubtitle">Here's what's happening with your logistics today.</p>
                 <p id="jorge-quote" style="display: none; margin-top: var(--spacing-md); font-style: italic; opacity: 0.8; font-size: var(--font-size-lg);">"Do or do not ship. There is no try." - Master Yoda, Logistics Division</p>
             </div>
 
             <!-- Admin Section (hidden by default) -->
             <div id="admin-section" class="admin-section" style="display: none;">
-                <h2 id="admin-title">👑 Admin Dashboard</h2>
-                <p id="admin-subtitle" style="color: #92400e; margin-bottom: var(--spacing-sm);">You have full access to manage all customers and shipments.</p>
+                <h2 id="admin-title" data-i18n="portal.dashboard.adminTitle">👑 Admin Dashboard</h2>
+                <p id="admin-subtitle" style="color: #92400e; margin-bottom: var(--spacing-sm);" data-i18n="portal.dashboard.adminSubtitle">You have full access to manage all customers and shipments.</p>
                 <div class="admin-grid">
                     <div class="admin-card" onclick="location.href='#users'">
                         <div class="icon">👥</div>
                         <div class="count" id="total-users">0</div>
-                        <div class="label" id="label-users">Total Customers</div>
+                        <div class="label" id="label-users" data-i18n="portal.dashboard.totalCustomers">Total Customers</div>
                     </div>
                     <div class="admin-card" onclick="location.href='#shipments'">
                         <div class="icon" id="icon-shipments">📦</div>
                         <div class="count" id="total-shipments">0</div>
-                        <div class="label" id="label-shipments">Total Shipments</div>
+                        <div class="label" id="label-shipments" data-i18n="portal.dashboard.totalShipments">Total Shipments</div>
                     </div>
                     <div class="admin-card" onclick="location.href='#inventory'">
                         <div class="icon" id="icon-inventory">🏭</div>
                         <div class="count" id="total-inventory">0</div>
-                        <div class="label" id="label-inventory">Inventory Items</div>
+                        <div class="label" id="label-inventory" data-i18n="portal.dashboard.inventoryItems">Inventory Items</div>
+                    </div>
+                    <div class="admin-card" onclick="location.href='admin-pickups.html'">
+                        <div class="icon">🚛</div>
+                        <div class="count" id="total-pickups">0</div>
+                        <div class="label" data-i18n="portal.dashboard.pickupRequests">Pickup Requests</div>
                     </div>
                     <div class="admin-card" onclick="location.href='#pending'">
                         <div class="icon" id="icon-pending">⏳</div>
                         <div class="count" id="total-pending">0</div>
-                        <div class="label" id="label-pending">Pending Actions</div>
+                        <div class="label" id="label-pending" data-i18n="portal.dashboard.pendingActions">Pending Actions</div>
+                    </div>
+                    <div class="admin-card" onclick="location.href='#leads'" style="border: 2px solid #10b981;">
+                        <div class="icon">🎯</div>
+                        <div class="count" id="total-leads">0</div>
+                        <div class="label">New Leads</div>
                     </div>
                 </div>
             </div>
@@ -273,40 +296,82 @@
             <!-- Stats Cards -->
             <div class="dashboard-stats">
                 <div class="dashboard-card">
-                    <h3>Pending Shipments</h3>
+                    <h3 data-i18n="portal.dashboard.pendingShipments">Pending Shipments</h3>
                     <div class="value" id="pending-count">0</div>
                 </div>
                 <div class="dashboard-card">
-                    <h3>In Transit</h3>
+                    <h3 data-i18n="portal.dashboard.inTransit">In Transit</h3>
                     <div class="value" id="transit-count">0</div>
                 </div>
                 <div class="dashboard-card">
-                    <h3>Delivered (30 days)</h3>
+                    <h3 data-i18n="portal.dashboard.delivered30">Delivered (30 days)</h3>
                     <div class="value" id="delivered-count">0</div>
                 </div>
                 <div class="dashboard-card">
-                    <h3>Inventory Items</h3>
+                    <h3 data-i18n="portal.dashboard.inventoryItemsCard">Inventory Items</h3>
                     <div class="value" id="inventory-count">0</div>
+                </div>
+            </div>
+
+            <!-- Warehouse Location Breakdown (Staff only) -->
+            <div id="warehouse-breakdown" style="display: none; margin-bottom: var(--spacing-xl);">
+                <h2 style="font-size: var(--font-size-xl); margin-bottom: var(--spacing-md); color: var(--color-gray-900);">📍 Warehouse Locations</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-md);">
+                    <div class="dashboard-card" style="border-left: 4px solid #14b8a6;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm);">
+                            <h3 style="margin: 0; color: var(--color-gray-900);">📍 Miami, FL</h3>
+                            <span style="background: linear-gradient(135deg, #14b8a6, #0d9488); color: white; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Medley</span>
+                        </div>
+                        <p style="font-size: var(--font-size-sm); color: var(--color-gray-500); margin-bottom: var(--spacing-sm);">8780 NW 100th ST, Medley, FL 33178</p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-sm);">
+                            <div>
+                                <div style="font-size: var(--font-size-xs); color: var(--color-gray-500);">Shipments</div>
+                                <div style="font-size: var(--font-size-xl); font-weight: 700; color: var(--color-primary);" id="miami-shipments">0</div>
+                            </div>
+                            <div>
+                                <div style="font-size: var(--font-size-xs); color: var(--color-gray-500);">Inventory</div>
+                                <div style="font-size: var(--font-size-xl); font-weight: 700; color: var(--color-primary);" id="miami-inventory">0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-card" style="border-left: 4px solid #8b5cf6;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm);">
+                            <h3 style="margin: 0; color: var(--color-gray-900);">📍 Biloxi, MS</h3>
+                            <span style="background: linear-gradient(135deg, #8b5cf6, #6d28d9); color: white; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Gulf Coast</span>
+                        </div>
+                        <p style="font-size: var(--font-size-sm); color: var(--color-gray-500); margin-bottom: var(--spacing-sm);">1606 Beach Blvd, Biloxi, MS 39531</p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-sm);">
+                            <div>
+                                <div style="font-size: var(--font-size-xs); color: var(--color-gray-500);">Shipments</div>
+                                <div style="font-size: var(--font-size-xl); font-weight: 700; color: #8b5cf6;" id="biloxi-shipments">0</div>
+                            </div>
+                            <div>
+                                <div style="font-size: var(--font-size-xs); color: var(--color-gray-500);">Inventory</div>
+                                <div style="font-size: var(--font-size-xl); font-weight: 700; color: #8b5cf6;" id="biloxi-inventory">0</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- Quick Actions -->
             <div style="margin-bottom: var(--spacing-xl);">
-                <h2 style="font-size: var(--font-size-xl); margin-bottom: var(--spacing-md); color: var(--color-gray-900);">Quick Actions</h2>
+                <h2 style="font-size: var(--font-size-xl); margin-bottom: var(--spacing-md); color: var(--color-gray-900);" data-i18n="portal.dashboard.quickActions">Quick Actions</h2>
                 <div style="display: flex; gap: var(--spacing-sm); flex-wrap: wrap;">
-                    <a href="shipments.html" class="btn btn-primary">+ Create Shipment</a>
-                    <a href="tracking.html" class="btn btn-outline">Track Package</a>
-                    <a href="inventory.html" class="btn btn-outline">View Inventory</a>
+                    <a href="shipments.html?new=1" class="btn btn-primary" data-i18n="portal.dashboard.createShipment">+ Create Shipment</a>
+                    <a href="pickups.html?new=1" class="btn btn-primary" style="background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);" data-i18n="portal.dashboard.newPickup">🚛 New Pickup / Delivery</a>
+                    <a href="tracking.html" class="btn btn-outline" data-i18n="portal.dashboard.trackPackage">Track Package</a>
+                    <a href="inventory.html" class="btn btn-outline" data-i18n="portal.dashboard.viewInventory">View Inventory</a>
                 </div>
             </div>
 
             <!-- Analytics Section (Staff only) -->
             <div id="analytics-section" class="analytics-section" style="display: none;">
-                <h2>📈 Analytics Overview</h2>
+                <h2 data-i18n="portal.dashboard.analyticsOverview">📈 Analytics Overview</h2>
                 <div class="charts-grid">
                     <!-- Shipment Status Chart -->
                     <div class="chart-card">
-                        <h3>📊 Shipment Status</h3>
+                        <h3 data-i18n="portal.dashboard.chartShipmentStatus">📊 Shipment Status</h3>
                         <div class="chart-container">
                             <canvas id="statusChart"></canvas>
                         </div>
@@ -314,7 +379,7 @@
 
                     <!-- Monthly Trends Chart -->
                     <div class="chart-card">
-                        <h3>📅 Monthly Shipments</h3>
+                        <h3 data-i18n="portal.dashboard.chartMonthlyShipments">📅 Monthly Shipments</h3>
                         <div class="chart-container">
                             <canvas id="trendsChart"></canvas>
                         </div>
@@ -322,7 +387,7 @@
 
                     <!-- Top Customers (Admin only) -->
                     <div class="chart-card" id="customers-chart-card" style="display: none;">
-                        <h3>👥 Top Customers</h3>
+                        <h3 data-i18n="portal.dashboard.chartTopCustomers">👥 Top Customers</h3>
                         <div class="chart-container">
                             <canvas id="customersChart"></canvas>
                         </div>
@@ -330,7 +395,7 @@
 
                     <!-- Revenue by Service -->
                     <div class="chart-card" id="services-chart-card" style="display: none;">
-                        <h3>💰 Inventory by Type</h3>
+                        <h3 data-i18n="portal.dashboard.chartInventoryByType">💰 Inventory by Type</h3>
                         <div class="chart-container">
                             <canvas id="inventoryChart"></canvas>
                         </div>
@@ -339,35 +404,35 @@
 
                 <!-- Key Metrics -->
                 <div class="chart-card" style="margin-top: var(--spacing-lg);">
-                    <h3>📋 Key Performance Metrics</h3>
+                    <h3 data-i18n="portal.dashboard.keyMetrics">📋 Key Performance Metrics</h3>
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-lg);">
                         <div>
                             <div class="metric-row">
-                                <span class="metric-label"><span class="metric-dot" style="background: #10b981;"></span> On-Time Delivery</span>
+                                <span class="metric-label"><span class="metric-dot" style="background: #10b981;"></span> <span data-i18n="portal.dashboard.metricOnTime">On-Time Delivery</span></span>
                                 <span class="metric-value" id="metric-ontime">--</span>
                             </div>
                             <div class="metric-row">
-                                <span class="metric-label"><span class="metric-dot" style="background: #3b82f6;"></span> Avg. Transit Time</span>
+                                <span class="metric-label"><span class="metric-dot" style="background: #3b82f6;"></span> <span data-i18n="portal.dashboard.metricTransit">Avg. Transit Time</span></span>
                                 <span class="metric-value" id="metric-transit">--</span>
                             </div>
                         </div>
                         <div>
                             <div class="metric-row">
-                                <span class="metric-label"><span class="metric-dot" style="background: #f59e0b;"></span> Active Shipments</span>
+                                <span class="metric-label"><span class="metric-dot" style="background: #f59e0b;"></span> <span data-i18n="portal.dashboard.metricActive">Active Shipments</span></span>
                                 <span class="metric-value" id="metric-active">--</span>
                             </div>
                             <div class="metric-row">
-                                <span class="metric-label"><span class="metric-dot" style="background: #8b5cf6;"></span> Warehouse Utilization</span>
+                                <span class="metric-label"><span class="metric-dot" style="background: #8b5cf6;"></span> <span data-i18n="portal.dashboard.metricWarehouse">Warehouse Utilization</span></span>
                                 <span class="metric-value" id="metric-warehouse">--</span>
                             </div>
                         </div>
                         <div>
                             <div class="metric-row">
-                                <span class="metric-label"><span class="metric-dot" style="background: #ec4899;"></span> This Month</span>
+                                <span class="metric-label"><span class="metric-dot" style="background: #ec4899;"></span> <span data-i18n="portal.dashboard.metricThisMonth">This Month</span></span>
                                 <span class="metric-value" id="metric-month">--</span>
                             </div>
                             <div class="metric-row">
-                                <span class="metric-label"><span class="metric-dot" style="background: #06b6d4;"></span> Total Pallets</span>
+                                <span class="metric-label"><span class="metric-dot" style="background: #06b6d4;"></span> <span data-i18n="portal.dashboard.metricPallets">Total Pallets</span></span>
                                 <span class="metric-value" id="metric-pallets">--</span>
                             </div>
                         </div>
@@ -377,21 +442,22 @@
 
             <!-- Recent Shipments -->
             <div>
-                <h2 style="font-size: var(--font-size-xl); margin-bottom: var(--spacing-md); color: var(--color-gray-900);">Recent Shipments</h2>
+                <h2 style="font-size: var(--font-size-xl); margin-bottom: var(--spacing-md); color: var(--color-gray-900);" data-i18n="portal.dashboard.recentShipments">Recent Shipments</h2>
                 <div class="table-wrapper">
                     <table class="data-table" role="table" aria-label="Recent shipments list">
                         <thead>
                             <tr>
-                                <th scope="col">Tracking #</th>
-                                <th scope="col">Destination</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Date</th>
+                                <th scope="col" data-i18n="portal.table.tracking">Tracking #</th>
+                                <th scope="col">Warehouse</th>
+                                <th scope="col" data-i18n="portal.table.destination">Destination</th>
+                                <th scope="col" data-i18n="portal.table.status">Status</th>
+                                <th scope="col" data-i18n="portal.table.date">Date</th>
                             </tr>
                         </thead>
                         <tbody id="recent-shipments">
                             <tr>
-                                <td colspan="4" style="text-align: center; padding: var(--spacing-xl); color: var(--color-gray-500);">
-                                    No shipments yet. <a href="shipments.html" style="color: var(--color-accent);">Create your first shipment</a>
+                                <td colspan="5" style="text-align: center; padding: var(--spacing-xl); color: var(--color-gray-500);">
+                                    <span data-i18n="portal.dashboard.noShipments">No shipments yet.</span> <a href="shipments.html?new=1" style="color: var(--color-accent);" data-i18n="portal.dashboard.createFirst">Create your first shipment</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -400,6 +466,12 @@
             </div>
         </main>
     </div>
+
+    <!-- i18n -->
+    <script src="../js/lang/es.js"></script>
+    <script src="../js/lang/pt-br.js"></script>
+    <script src="../js/lang/zh.js"></script>
+    <script src="../js/i18n.js"></script>
 
     <!-- Firebase SDK -->
     <script type="module">
@@ -415,7 +487,7 @@
             storageBucket: "miamialliance3pl.firebasestorage.app",
             messagingSenderId: "657614666588",
             appId: "1:657614666588:web:20e50484fe5d90b5aa5f99",
-            measurementId: "G-QSRV99D8BX"
+            measurementId: "G-KTW0F25ZM1"
         };
 
         // Fallback admin emails (for initial setup before Firestore roles exist)
@@ -468,9 +540,32 @@
                     userData = userDoc.data();
                     if (userData.name) userName = userData.name;
                     if (userData.role) userRole = userData.role;
+                } else {
+                    // Profile recovery: Auth user exists but Firestore profile missing
+                    // This can happen if registration was interrupted or rules blocked the initial write
+                    const isFallbackAdmin = FALLBACK_ADMIN_EMAILS.map(e => e.toLowerCase()).includes(userEmail);
+                    const recoveredRole = isFallbackAdmin ? 'admin' : 'customer';
+                    const recoveredData = {
+                        name: user.displayName || '',
+                        email: user.email,
+                        company_name: '',
+                        phone: user.phoneNumber || '',
+                        role: recoveredRole,
+                        created_at: new Date().toISOString(),
+                        terms_accepted: true,
+                        terms_version: '1.0',
+                        terms_accepted_at: new Date().toISOString(),
+                        privacy_policy_accepted: true,
+                        recovered_profile: true
+                    };
+                    await setDoc(doc(db, 'users', user.uid), recoveredData);
+                    userData = recoveredData;
+                    userRole = recoveredRole;
+                    if (recoveredData.name) userName = recoveredData.name;
+                    console.log('Profile recovered for:', user.email);
                 }
             } catch (e) {
-                console.log('Could not fetch user doc:', e);
+                console.error('User doc fetch/recovery failed:', e);
             }
 
             // Fallback: Check hardcoded admin emails if no Firestore role
@@ -569,18 +664,60 @@
                 const usersSnap = await getDocs(collection(db, 'users'));
                 document.getElementById('total-users').textContent = usersSnap.size;
 
-                // Total shipments
+                // Total shipments + warehouse breakdown
                 const shipmentsSnap = await getDocs(collection(db, 'shipments'));
                 document.getElementById('total-shipments').textContent = shipmentsSnap.size;
 
-                // Total inventory
+                let miamiShipments = 0, biloxiShipments = 0;
+                shipmentsSnap.forEach(d => {
+                    const wh = d.data().warehouse || d.data().warehouseId || 'miami';
+                    if (wh === 'biloxi') biloxiShipments++;
+                    else miamiShipments++;
+                });
+
+                // Total inventory + warehouse breakdown
                 const inventorySnap = await getDocs(collection(db, 'inventory'));
                 document.getElementById('total-inventory').textContent = inventorySnap.size;
+
+                let miamiInventory = 0, biloxiInventory = 0;
+                inventorySnap.forEach(d => {
+                    const wh = d.data().warehouse || d.data().warehouseId || 'miami';
+                    if (wh === 'biloxi') biloxiInventory++;
+                    else miamiInventory++;
+                });
+
+                // Update warehouse breakdown widget
+                const whBreakdown = document.getElementById('warehouse-breakdown');
+                if (whBreakdown) {
+                    whBreakdown.style.display = 'block';
+                    document.getElementById('miami-shipments').textContent = miamiShipments;
+                    document.getElementById('biloxi-shipments').textContent = biloxiShipments;
+                    document.getElementById('miami-inventory').textContent = miamiInventory;
+                    document.getElementById('biloxi-inventory').textContent = biloxiInventory;
+                }
 
                 // Pending shipments (all)
                 const pendingQuery = query(collection(db, 'shipments'), where('status', '==', 'pending'));
                 const pendingSnap = await getDocs(pendingQuery);
                 document.getElementById('total-pending').textContent = pendingSnap.size;
+
+                // Pickup requests count
+                try {
+                    const pickupsSnap = await getDocs(collection(db, 'pickup_requests'));
+                    const pickupEl = document.getElementById('total-pickups');
+                    if (pickupEl) pickupEl.textContent = pickupsSnap.size;
+                } catch (e) {
+                    // Pickup requests collection may not exist yet
+                }
+
+                // Leads count (from lead capture engine)
+                try {
+                    const leadsSnap = await getDocs(collection(db, 'leads'));
+                    const leadsEl = document.getElementById('total-leads');
+                    if (leadsEl) leadsEl.textContent = leadsSnap.size;
+                } catch (e) {
+                    // Leads collection may not exist yet
+                }
 
             } catch (error) {
                 console.error('Error loading admin stats:', error);
@@ -851,9 +988,13 @@
                 tbody.innerHTML = '';
                 snapshot.forEach((doc) => {
                     const data = doc.data();
+                    const whId = data.warehouse || data.warehouseId || 'miami';
+                    const whLabel = whId === 'biloxi' ? '📍 Biloxi' : '📍 Miami';
+                    const whColor = whId === 'biloxi' ? '#8b5cf6' : '#14b8a6';
                     const row = document.createElement('tr');
                     row.innerHTML = `
                         <td><a href="tracking.html?id=${data.tracking_number}" style="color: var(--color-accent);">${data.tracking_number || 'N/A'}</a></td>
+                        <td><span style="background: ${whColor}; color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.7rem; font-weight: 600;">${whLabel}</span></td>
                         <td>${data.destination?.city || 'N/A'}, ${data.destination?.state || ''}</td>
                         <td><span class="badge badge-${data.status}">${(data.status || 'unknown').replace('_', ' ')}</span></td>
                         <td>${data.created_at ? new Date(data.created_at).toLocaleDateString() : 'N/A'}</td>
@@ -865,5 +1006,6 @@
     </script>
     <script src="../js/column-prefs.js"></script>
     <script src="../js/main.js?v=3"></script>
+    <script src="../js/chat-widget.js"></script>
 </body>
 </html>

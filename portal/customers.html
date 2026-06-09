@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Customers | Miami Alliance 3PL Admin</title>
     <meta name="robots" content="noindex, nofollow">
 
@@ -15,14 +15,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="../css/style.css?v=202602230300">
+    <link rel="stylesheet" href="../css/style.css">
     <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSRV99D8BX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTW0F25ZM1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-QSRV99D8BX');
+        gtag('config', 'G-KTW0F25ZM1');
     </script>
     <script src="../js/analytics.js"></script>
     <style>
@@ -258,6 +258,141 @@
             background: var(--color-gray-400);
             cursor: not-allowed;
         }
+
+        /* ===== Client Status System ===== */
+        .bulk-action-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md) var(--spacing-lg);
+            background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+            border: 2px solid #86efac;
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+        .bulk-action-bar .bulk-info {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-weight: 600;
+            color: #166534;
+        }
+        .bulk-action-bar .bulk-info .count {
+            background: #166534;
+            color: white;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+        .bulk-action-bar .bulk-actions {
+            display: flex;
+            gap: var(--spacing-sm);
+            flex-wrap: wrap;
+        }
+        .btn-activate-all {
+            padding: 10px 24px;
+            background: #10b981;
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: var(--font-size-sm);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn-activate-all:hover { background: #059669; transform: translateY(-1px); }
+        .btn-activate-all:disabled { background: var(--color-gray-400); cursor: not-allowed; transform: none; }
+        .btn-deactivate-all {
+            padding: 10px 24px;
+            background: #f59e0b;
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: var(--font-size-sm);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn-deactivate-all:hover { background: #d97706; }
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .status-badge.active {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #86efac;
+        }
+        .status-badge.inactive {
+            background: #fef3c7;
+            color: #92400e;
+            border: 1px solid #fcd34d;
+        }
+        .status-badge.suspended {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+        }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .status-dot.active { background: #10b981; }
+        .status-dot.inactive { background: #f59e0b; }
+        .status-dot.suspended { background: #ef4444; }
+        .btn-toggle-status {
+            padding: 4px 12px;
+            border: 1px solid var(--color-gray-300);
+            border-radius: var(--radius-md);
+            background: white;
+            font-size: 0.7rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-toggle-status:hover {
+            background: var(--color-gray-100);
+            border-color: var(--color-primary);
+        }
+        .btn-toggle-status.activate {
+            border-color: #10b981;
+            color: #10b981;
+        }
+        .btn-toggle-status.activate:hover {
+            background: #dcfce7;
+        }
+        .btn-toggle-status.deactivate {
+            border-color: #f59e0b;
+            color: #92400e;
+        }
+        .btn-toggle-status.deactivate:hover {
+            background: #fef3c7;
+        }
+        /* Status filter dropdown */
+        .status-filter {
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: 1px solid var(--color-gray-300);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-base);
+            background: white;
+        }
         /* Toast styles */
         .toast-container {
             position: fixed;
@@ -321,7 +456,7 @@
             </button>
             <ul class="nav-menu">
                 <li><span id="user-name" class="nav-link">Welcome</span></li>
-                <li><a href="#" id="logout-btn" class="nav-link btn btn-outline">Logout</a></li>
+                <li><a href="#" id="logout-btn" class="nav-link btn btn-outline" data-i18n="portal.sidebar.logout">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -331,27 +466,57 @@
         <aside class="portal-sidebar">
             <nav>
                 <a href="dashboard.html" class="portal-nav-item">
-                    <span>📊</span> Dashboard
+                    <span>📊</span> <span data-i18n="portal.sidebar.dashboard">Dashboard</span>
                 </a>
                 <a href="shipments.html" class="portal-nav-item">
-                    <span>🚚</span> Shipments
+                    <span>🚚</span> <span data-i18n="portal.sidebar.shipments">Shipments</span>
+                </a>
+                <a href="pickups.html" class="portal-nav-item">
+                    <span aria-hidden="true">🏗️</span> <span>Pickup & Delivery</span>
                 </a>
                 <a href="tracking.html" class="portal-nav-item">
-                    <span>🔍</span> Tracking
+                    <span>🔍</span> <span data-i18n="portal.sidebar.tracking">Tracking</span>
                 </a>
                 <a href="inventory.html" class="portal-nav-item">
-                    <span>📦</span> Inventory
+                    <span>📦</span> <span data-i18n="portal.sidebar.inventory">Inventory</span>
                 </a>
+                <a href="admin-billing.html" class="portal-nav-item"><span>💵</span> <span>Billing</span></a>
+                <a href="contracts.html" class="portal-nav-item"><span>📄</span> <span>Contracts</span></a>
+                <div id="employee-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;" data-i18n="portal.sidebar.staffLabel">Staff</div>
+                    <a href="customers.html" class="portal-nav-item active" aria-current="page">
+                        <span>👥</span> <span data-i18n="portal.sidebar.allCustomers">All Customers</span>
+                    </a>
+                    <a href="admin-shipments.html" class="portal-nav-item">
+                        <span>📋</span> <span data-i18n="portal.sidebar.allShipments">All Shipments</span>
+                    </a>
+                </div>
                 <div id="admin-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
-                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;">Admin</div>
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;" data-i18n="portal.sidebar.adminLabel">Admin</div>
+                    <a href="admin-panel.html" class="portal-nav-item">
+                        <span>🛡️</span> <span>Admin Control Panel</span>
+                    </a>
+                    <a href="admin-pickups.html" class="portal-nav-item">
+                        <span aria-hidden="true">🚛</span> <span>All Pickup Requests</span>
+                    </a>
+                    <a href="admin-billing.html" class="portal-nav-item"><span>📝</span> <span>Activity Billing</span></a>
+                    <a href="invoices.html" class="portal-nav-item">
+                        <span>💵</span> <span data-i18n="portal.sidebar.invoices">Invoices</span>
+                    </a>
+                    <a href="storage-log.html" class="portal-nav-item">
+                        <span>📊</span> <span data-i18n="portal.sidebar.storagelog">Storage Log</span>
+                    </a>
                     <a href="pricing.html" class="portal-nav-item">
-                        <span>💰</span> Pricing
+                        <span>💰</span> <span data-i18n="portal.sidebar.pricing">Pricing</span>
                     </a>
                     <a href="settings.html" class="portal-nav-item">
-                        <span>⚙️</span> Settings
+                        <span>⚙️</span> <span data-i18n="portal.sidebar.settings">Settings</span>
                     </a>
                     <a href="team.html" class="portal-nav-item">
-                        <span>👔</span> Manage Team
+                        <span>👔</span> <span data-i18n="portal.sidebar.team">Manage Team</span>
+                    </a>
+                    <a href="changelog.html" class="portal-nav-item">
+                        <span>📝</span> <span data-i18n="portal.sidebar.changelog">Changelog</span>
                     </a>
                 </div>
             </nav>
@@ -361,29 +526,56 @@
         <main class="portal-main">
             <!-- Page Header -->
             <div class="page-header-bar">
-                <h1 id="page-title">👥 All Customers</h1>
-                <p>Manage and view all registered customers</p>
+                <h1 id="page-title" data-i18n="portal.customers.title">👥 All Customers</h1>
+                <p data-i18n="portal.customers.subtitle">Manage and view all registered customers</p>
             </div>
 
             <!-- Search Bar -->
             <div class="search-bar">
-                <input type="text" id="search-input" placeholder="Search by name, email, or company...">
-                <button class="btn btn-primary" onclick="searchCustomers()">Search</button>
+                <input type="text" id="search-input" placeholder="Search by name, email, or company..." data-i18n-placeholder="portal.customers.searchPlaceholder">
+                <select class="status-filter" id="status-filter" onchange="filterByStatus()">
+                    <option value="">All Statuses</option>
+                    <option value="active">✅ Active</option>
+                    <option value="inactive">⏸️ Inactive</option>
+                    <option value="suspended">🚫 Suspended</option>
+                </select>
+                <button class="btn btn-primary" onclick="searchCustomers()" data-i18n="portal.customers.searchBtn">Search</button>
+            </div>
+
+            <!-- Bulk Action Bar -->
+            <div class="bulk-action-bar" id="bulk-action-bar">
+                <div class="bulk-info">
+                    ⚡ Client Status Control
+                    <span class="count" id="active-count-badge">0 active</span>
+                    <span class="count" style="background: #f59e0b;" id="inactive-count-badge">0 inactive</span>
+                </div>
+                <div class="bulk-actions">
+                    <button class="btn-activate-all" id="btn-activate-all" onclick="activateAllClients()">
+                        ✅ Activate All Clients
+                    </button>
+                    <button class="btn-deactivate-all" id="btn-deactivate-all" onclick="deactivateAllClients()">
+                        ⏸️ Deactivate All
+                    </button>
+                </div>
             </div>
 
             <!-- Stats Summary -->
             <div class="dashboard-stats" style="margin-bottom: var(--spacing-xl);">
                 <div class="dashboard-card">
-                    <h3>Total Customers</h3>
+                    <h3 data-i18n="portal.customers.totalCustomers">Total Customers</h3>
                     <div class="value" id="total-customers">0</div>
                 </div>
                 <div class="dashboard-card">
-                    <h3>New This Month</h3>
+                    <h3 data-i18n="portal.customers.newThisMonth">New This Month</h3>
                     <div class="value" id="new-customers">0</div>
                 </div>
                 <div class="dashboard-card">
-                    <h3>Active Shippers</h3>
-                    <div class="value" id="active-customers">0</div>
+                    <h3 style="color: #10b981;">Active Clients</h3>
+                    <div class="value" id="active-customers" style="color: #10b981;">0</div>
+                </div>
+                <div class="dashboard-card">
+                    <h3 style="color: #f59e0b;">Inactive Clients</h3>
+                    <div class="value" id="inactive-customers" style="color: #f59e0b;">0</div>
                 </div>
             </div>
 
@@ -391,7 +583,7 @@
             <div id="customers-list">
                 <div class="empty-state">
                     <div class="icon">⏳</div>
-                    <p>Loading customers...</p>
+                    <p data-i18n="portal.customers.loading">Loading customers...</p>
                 </div>
             </div>
         </main>
@@ -401,34 +593,42 @@
     <div class="modal-overlay" id="edit-modal">
         <div class="modal">
             <div class="modal-header">
-                <h2>Edit Customer</h2>
+                <h2 data-i18n="portal.customers.editTitle">Edit Customer</h2>
                 <button class="modal-close" onclick="closeEditModal()">&times;</button>
             </div>
             <form id="edit-customer-form">
                 <input type="hidden" id="edit-customer-id">
                 <div class="form-group">
-                    <label for="edit-name">Name</label>
+                    <label for="edit-name" data-i18n="portal.customers.form.name">Name</label>
                     <input type="text" id="edit-name" required>
                 </div>
                 <div class="form-group">
-                    <label for="edit-company">Company Name</label>
+                    <label for="edit-company" data-i18n="portal.customers.form.company">Company Name</label>
                     <input type="text" id="edit-company">
                 </div>
                 <div class="form-group">
-                    <label for="edit-email">Email</label>
+                    <label for="edit-email" data-i18n="portal.customers.form.email">Email</label>
                     <input type="email" id="edit-email" required>
                 </div>
                 <div class="form-group">
-                    <label for="edit-phone">Phone</label>
+                    <label for="edit-phone" data-i18n="portal.customers.form.phone">Phone</label>
                     <input type="tel" id="edit-phone">
                 </div>
                 <div class="form-group">
-                    <label>Total Shipments</label>
+                    <label for="edit-status">Account Status</label>
+                    <select id="edit-status" style="width: 100%; padding: var(--spacing-sm) var(--spacing-md); border: 1px solid var(--color-gray-300); border-radius: var(--radius-md); font-size: var(--font-size-base);">
+                        <option value="active">✅ Active</option>
+                        <option value="inactive">⏸️ Inactive</option>
+                        <option value="suspended">🚫 Suspended</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="portal.customers.form.totalShipments">Total Shipments</label>
                     <div class="readonly-value" id="edit-shipments-count">0</div>
                 </div>
                 <div class="modal-actions">
-                    <button type="button" class="btn-cancel" onclick="closeEditModal()">Cancel</button>
-                    <button type="submit" class="btn-save" id="save-btn">Save Changes</button>
+                    <button type="button" class="btn-cancel" onclick="closeEditModal()" data-i18n="portal.customers.form.cancel">Cancel</button>
+                    <button type="submit" class="btn-save" id="save-btn" data-i18n="portal.customers.form.save">Save Changes</button>
                 </div>
             </form>
         </div>
@@ -451,7 +651,7 @@
             storageBucket: "miamialliance3pl.firebasestorage.app",
             messagingSenderId: "657614666588",
             appId: "1:657614666588:web:20e50484fe5d90b5aa5f99",
-            measurementId: "G-QSRV99D8BX"
+            measurementId: "G-KTW0F25ZM1"
         };
 
         // Fallback admin emails (used only if no Firestore role exists)
@@ -504,9 +704,15 @@
             }
 
             const userNameEl = document.getElementById('user-name');
+            const employeeNav = document.getElementById('employee-nav');
+            const adminNav = document.getElementById('admin-nav');
             if (isAdmin) {
+                if (employeeNav) employeeNav.style.display = 'block';
+                if (adminNav) adminNav.style.display = 'block';
                 userNameEl.innerHTML = `${userName} <span class="admin-badge">ADMIN</span>`;
             } else if (isEmployee) {
+                if (employeeNav) employeeNav.style.display = 'block';
+                if (adminNav) adminNav.style.display = 'none';
                 userNameEl.innerHTML = `${userName} <span class="admin-badge">EMPLOYEE</span>`;
             }
 
@@ -519,6 +725,19 @@
             await signOut(auth);
             window.location.href = '../login.html';
         });
+
+        function toDateValue(value) {
+            if (!value) return null;
+            if (value instanceof Date) return value;
+            if (typeof value.toDate === 'function') return value.toDate();
+            const parsed = new Date(value);
+            return Number.isNaN(parsed.getTime()) ? null : parsed;
+        }
+
+        function toDateLabel(value) {
+            const date = toDateValue(value);
+            return date ? date.toLocaleDateString() : 'Unknown';
+        }
 
         async function loadCustomers() {
             try {
@@ -535,26 +754,25 @@
                     allCustomers.push(data);
 
                     // Check if new this month
-                    if (data.created_at) {
-                        const createdDate = new Date(data.created_at);
-                        if (createdDate >= firstOfMonth) {
-                            newThisMonth++;
-                        }
+                    const createdDate = toDateValue(data.created_at);
+                    if (createdDate && createdDate >= firstOfMonth) {
+                        newThisMonth++;
                     }
                 });
+
+                // Count active/inactive clients
+                const activeClients = allCustomers.filter(c => (c.status || 'active') === 'active');
+                const inactiveClients = allCustomers.filter(c => c.status === 'inactive' || c.status === 'suspended');
 
                 // Update stats
                 document.getElementById('total-customers').textContent = allCustomers.length;
                 document.getElementById('new-customers').textContent = newThisMonth;
+                document.getElementById('active-customers').textContent = activeClients.length;
+                document.getElementById('inactive-customers').textContent = inactiveClients.length;
 
-                // Count active shippers (have at least 1 shipment)
-                const shipmentsSnap = await getDocs(collection(db, 'shipments'));
-                const activeUserIds = new Set();
-                shipmentsSnap.forEach((doc) => {
-                    const data = doc.data();
-                    if (data.user_id) activeUserIds.add(data.user_id);
-                });
-                document.getElementById('active-customers').textContent = activeUserIds.size;
+                // Update bulk action bar badges
+                document.getElementById('active-count-badge').textContent = `${activeClients.length} active`;
+                document.getElementById('inactive-count-badge').textContent = `${inactiveClients.length} inactive`;
 
                 // Display customers
                 displayCustomers(allCustomers);
@@ -595,30 +813,37 @@
 
             // Sort by created_at descending
             customers.sort((a, b) => {
-                const dateA = a.created_at ? new Date(a.created_at) : new Date(0);
-                const dateB = b.created_at ? new Date(b.created_at) : new Date(0);
+                const dateA = toDateValue(a.created_at) || new Date(0);
+                const dateB = toDateValue(b.created_at) || new Date(0);
                 return dateB - dateA;
             });
 
             // Store shipment counts globally for modal access
             window.customerShipmentCounts = shipmentCounts;
 
-            container.innerHTML = customers.map(customer => `
-                <div class="customer-card">
+            container.innerHTML = customers.map(customer => {
+                const status = customer.status || 'active';
+                const statusLabel = status.charAt(0).toUpperCase() + status.slice(1);
+                const toggleClass = status === 'active' ? 'deactivate' : 'activate';
+                const toggleLabel = status === 'active' ? '⏸️ Deactivate' : '✅ Activate';
+                return `
+                <div class="customer-card" data-status="${status}">
                     <div class="customer-header">
                         <div>
-                            <div class="customer-name">${customer.name || 'Unknown'}</div>
+                            <div class="customer-name">${customer.name || customer.email || 'Unknown'}</div>
                             <div class="customer-company">${customer.company_name || 'No company'}</div>
                         </div>
-                        <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                            <span class="status-badge ${status}"><span class="status-dot ${status}"></span> ${statusLabel}</span>
+                            <button class="btn-toggle-status ${toggleClass}" onclick="toggleClientStatus('${customer.id}', '${status}')">${toggleLabel}</button>
                             <button class="btn-edit" onclick="openEditModal('${customer.id}')">Edit</button>
-                            <span class="badge ${customer.isAdmin ? 'badge-pending' : 'badge-delivered'}">${customer.isAdmin ? 'Admin' : 'Customer'}</span>
+                            <span class="badge ${customer.role === 'admin' ? 'badge-pending' : customer.role === 'employee' ? 'badge-in_transit' : 'badge-delivered'}">${customer.role === 'admin' ? 'Admin' : customer.role === 'employee' ? 'Employee' : 'Customer'}</span>
                         </div>
                     </div>
                     <div class="customer-meta">
                         <span>📧 ${customer.email || 'No email'}</span>
                         <span>📞 ${customer.phone || 'No phone'}</span>
-                        <span>📅 Joined: ${customer.created_at ? new Date(customer.created_at).toLocaleDateString() : 'Unknown'}</span>
+                        <span>📅 Joined: ${toDateLabel(customer.created_at)}</span>
                     </div>
                     <div class="customer-stats">
                         <div class="stat-item">
@@ -631,18 +856,13 @@
                         </div>
                     </div>
                 </div>
-            `).join('');
+                `;
+            }).join('');
         }
 
-        // Search functionality
+        // Search functionality (combined with status filter)
         window.searchCustomers = function() {
-            const searchTerm = document.getElementById('search-input').value.toLowerCase();
-            const filtered = allCustomers.filter(c =>
-                (c.name && c.name.toLowerCase().includes(searchTerm)) ||
-                (c.email && c.email.toLowerCase().includes(searchTerm)) ||
-                (c.company_name && c.company_name.toLowerCase().includes(searchTerm))
-            );
-            displayCustomers(filtered);
+            filterByStatus();
         };
 
         // Search on Enter key
@@ -679,6 +899,7 @@
             document.getElementById('edit-company').value = customer.company_name || '';
             document.getElementById('edit-email').value = customer.email || '';
             document.getElementById('edit-phone').value = customer.phone || '';
+            document.getElementById('edit-status').value = customer.status || 'active';
             document.getElementById('edit-shipments-count').textContent = window.customerShipmentCounts[customer.id] || 0;
 
             // Show modal
@@ -728,6 +949,7 @@
                     company_name: document.getElementById('edit-company').value.trim(),
                     email: document.getElementById('edit-email').value.trim(),
                     phone: document.getElementById('edit-phone').value.trim(),
+                    status: document.getElementById('edit-status').value,
                     updated_at: new Date().toISOString()
                 });
 
@@ -745,7 +967,137 @@
                 saveBtn.textContent = 'Save Changes';
             }
         });
+        // ======================== CLIENT STATUS SYSTEM ========================
+
+        // Toggle individual client status
+        window.toggleClientStatus = async function(customerId, currentStatus) {
+            const newStatus = currentStatus === 'active' ? 'inactive' : 'active';
+            try {
+                const customerRef = doc(db, 'users', customerId);
+                await updateDoc(customerRef, {
+                    status: newStatus,
+                    status_updated_at: new Date().toISOString()
+                });
+
+                const customer = allCustomers.find(c => c.id === customerId);
+                const name = customer ? (customer.company_name || customer.name || customer.email) : customerId;
+                showToast(`${name} → ${newStatus.toUpperCase()}`, 'success');
+                loadCustomers();
+            } catch (error) {
+                console.error('Error toggling status:', error);
+                showToast('Failed to update status: ' + error.message, 'error');
+            }
+        };
+
+        // Activate ALL clients
+        window.activateAllClients = async function() {
+            const btn = document.getElementById('btn-activate-all');
+            btn.disabled = true;
+            btn.textContent = '⏳ Activating...';
+
+            try {
+                const customersOnly = allCustomers.filter(c => (c.role || 'customer') === 'customer');
+                let updated = 0;
+
+                for (const customer of customersOnly) {
+                    if ((customer.status || 'active') !== 'active') {
+                        const customerRef = doc(db, 'users', customer.id);
+                        await updateDoc(customerRef, {
+                            status: 'active',
+                            status_updated_at: new Date().toISOString()
+                        });
+                        updated++;
+                    }
+                }
+
+                // Also set any customers without a status field
+                for (const customer of customersOnly) {
+                    if (!customer.status) {
+                        const customerRef = doc(db, 'users', customer.id);
+                        await updateDoc(customerRef, {
+                            status: 'active',
+                            status_updated_at: new Date().toISOString()
+                        });
+                        updated++;
+                    }
+                }
+
+                showToast(`✅ All ${customersOnly.length} clients activated! (${updated} updated)`, 'success');
+                loadCustomers();
+            } catch (error) {
+                console.error('Error activating all:', error);
+                showToast('Error: ' + error.message, 'error');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '✅ Activate All Clients';
+            }
+        };
+
+        // Deactivate ALL clients
+        window.deactivateAllClients = async function() {
+            if (!confirm('⚠️ This will set ALL customer accounts to INACTIVE. They will not be able to access the portal. Continue?')) return;
+
+            const btn = document.getElementById('btn-deactivate-all');
+            btn.disabled = true;
+            btn.textContent = '⏳ Deactivating...';
+
+            try {
+                const customersOnly = allCustomers.filter(c => (c.role || 'customer') === 'customer');
+                let updated = 0;
+
+                for (const customer of customersOnly) {
+                    if ((customer.status || 'active') !== 'inactive') {
+                        const customerRef = doc(db, 'users', customer.id);
+                        await updateDoc(customerRef, {
+                            status: 'inactive',
+                            status_updated_at: new Date().toISOString()
+                        });
+                        updated++;
+                    }
+                }
+
+                showToast(`⏸️ All ${customersOnly.length} clients deactivated. (${updated} updated)`, 'success');
+                loadCustomers();
+            } catch (error) {
+                console.error('Error deactivating all:', error);
+                showToast('Error: ' + error.message, 'error');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '⏸️ Deactivate All';
+            }
+        };
+
+        // Filter by status
+        window.filterByStatus = function() {
+            const statusFilter = document.getElementById('status-filter').value;
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+
+            let filtered = allCustomers;
+
+            if (statusFilter) {
+                filtered = filtered.filter(c => {
+                    const status = c.status || 'active';
+                    return status === statusFilter;
+                });
+            }
+
+            if (searchTerm) {
+                filtered = filtered.filter(c =>
+                    (c.name && c.name.toLowerCase().includes(searchTerm)) ||
+                    (c.email && c.email.toLowerCase().includes(searchTerm)) ||
+                    (c.company_name && c.company_name.toLowerCase().includes(searchTerm))
+                );
+            }
+
+            displayCustomers(filtered);
+        };
+
     </script>
     <script src="../js/main.js"></script>
+    <script src="../js/lang/es.js"></script>
+    <script src="../js/lang/pt-br.js"></script>
+    <script src="../js/lang/zh.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/chat-widget.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@ The service account must have Viewer+ role in GA4 Admin > Property Access.
 
 Usage:
   python3 ga_client.py setup          # Check prerequisites & discover property
+  python3 ga_client.py ai [N]         # AI discovery performance (default 30 days)
   python3 ga_client.py overview [N]   # Last N days overview (default 30)
   python3 ga_client.py today          # Today's stats
   python3 ga_client.py realtime       # Real-time active users
@@ -37,6 +38,28 @@ PROPERTY_CACHE = Path(__file__).parent / ".ga_property_id"
 GA4_MEASUREMENT_ID = "G-KTW0F25ZM1"
 # Max age for cached property ID before re-validation (seconds)
 CACHE_MAX_AGE = 86400  # 24 hours
+AI_SOURCES = (
+    "chatgpt.com",
+    "chat.openai.com",
+    "claude.ai",
+    "gemini.google.com",
+    "copilot.com",
+    "copilot.microsoft.com",
+    "perplexity.ai",
+    "perplexity",
+    "openai.com",
+    "poe.com",
+    "you.com",
+)
+AI_KEY_EVENTS = (
+    "ai_discovery_visit",
+    "generate_lead",
+    "form_submit",
+    "file_download",
+    "chat_open",
+    "chat_message",
+    "select_content",
+)
 
 # ══════════════════════════════════════════════════════════
 # SINGLETONS — avoid redundant auth + client creation
@@ -330,11 +353,45 @@ def parse_int_arg(args, default):
         return default
 
 
+def pct(part, total):
+    """Safely calculate a percentage."""
+    if not total:
+        return 0.0
+    return (part / total) * 100
+
+
 # ══════════════════════════════════════════════════════════
 # DATA QUERIES
 # ══════════════════════════════════════════════════════════
 
-def run_report(property_id, start, end, dimensions, metrics, limit=20, order_by_metric=None):
+def build_in_list_filter(field_name, values, case_sensitive=False):
+    """Build a GA4 in-list dimension filter."""
+    from google.analytics.data_v1beta.types import FilterExpression, Filter
+
+    return FilterExpression(
+        filter=Filter(
+            field_name=field_name,
+            in_list_filter=Filter.InListFilter(
+                values=list(values),
+                case_sensitive=case_sensitive,
+            ),
+        )
+    )
+
+
+def build_and_filter(*expressions):
+    """Combine multiple filter expressions with AND."""
+    from google.analytics.data_v1beta.types import FilterExpression, FilterExpressionList
+
+    active = [expr for expr in expressions if expr is not None]
+    if not active:
+        return None
+    if len(active) == 1:
+        return active[0]
+    return FilterExpression(and_group=FilterExpressionList(expressions=active))
+
+
+def run_report(property_id, start, end, dimensions, metrics, limit=20, order_by_metric=None, dimension_filter=None):
     """Generic GA4 report runner with auto-recovery on stale property ID."""
     from google.analytics.data_v1beta.types import (
         RunReportRequest, DateRange, Dimension, Metric, OrderBy
@@ -354,6 +411,7 @@ def run_report(property_id, start, end, dimensions, metrics, limit=20, order_by_
         metrics=[Metric(name=m) for m in metrics],
         limit=limit,
         order_bys=order_bys or None,
+        dimension_filter=dimension_filter,
     )
 
     try:
@@ -504,6 +562,129 @@ def cmd_overview(days=30):
 
     print(f"{'=' * 55}")
     return response
+
+
+def cmd_ai(days=30):
+    """AI discovery performance for the period."""
+    prop_id = get_property_id()
+    ai_filter = build_in_list_filter("sessionSource", AI_SOURCES)
+    total_response = run_report(
+        prop_id, f"{days}daysAgo", "today", [],
+        ["sessions", "activeUsers"],
+    )
+    current_response = run_report(
+        prop_id, f"{days}daysAgo", "today", [],
+        ["sessions", "activeUsers", "engagedSessions", "engagementRate", "screenPageViews", "averageSessionDuration"],
+        dimension_filter=ai_filter,
+    )
+    previous_response = run_report(
+        prop_id, f"{days * 2}daysAgo", f"{days + 1}daysAgo", [],
+        ["sessions", "activeUsers"],
+        dimension_filter=ai_filter,
+    )
+    sources_response = run_report(
+        prop_id, f"{days}daysAgo", "today",
+        ["sessionSource", "sessionMedium"],
+        ["sessions", "activeUsers", "engagementRate"],
+        limit=20,
+        order_by_metric="sessions",
+        dimension_filter=ai_filter,
+    )
+    pages_response = run_report(
+        prop_id, f"{days}daysAgo", "today",
+        ["landingPagePlusQueryString"],
+        ["sessions", "activeUsers", "engagementRate"],
+        limit=10,
+        order_by_metric="sessions",
+        dimension_filter=ai_filter,
+    )
+    events_response = run_report(
+        prop_id, f"{days}daysAgo", "today",
+        ["eventName"],
+        ["eventCount", "totalUsers"],
+        limit=20,
+        order_by_metric="eventCount",
+        dimension_filter=build_and_filter(
+            ai_filter,
+            build_in_list_filter("eventName", AI_KEY_EVENTS),
+        ),
+    )
+
+    total_vals = [v.value for v in total_response.rows[0].metric_values] if total_response.rows else ["0", "0"]
+    current_vals = [v.value for v in current_response.rows[0].metric_values] if current_response.rows else ["0"] * 6
+    previous_vals = [v.value for v in previous_response.rows[0].metric_values] if previous_response.rows else ["0", "0"]
+
+    total_sessions = safe_int(total_vals[0])
+    total_users = safe_int(total_vals[1])
+    ai_sessions = safe_int(current_vals[0])
+    ai_users = safe_int(current_vals[1])
+    ai_engaged_sessions = safe_int(current_vals[2])
+    ai_engagement_rate = safe_float(current_vals[3]) * 100
+    ai_page_views = safe_int(current_vals[4])
+    ai_avg_session = current_vals[5]
+    previous_ai_sessions = safe_int(previous_vals[0])
+    previous_ai_users = safe_int(previous_vals[1])
+
+    key_event_counts = {
+        row.dimension_values[0].value: safe_int(row.metric_values[0].value)
+        for row in (events_response.rows or [])
+    }
+    lead_event_total = sum(
+        count for event_name, count in key_event_counts.items()
+        if event_name in {"generate_lead", "form_submit", "file_download", "chat_open", "chat_message", "select_content"}
+    )
+
+    print(f"\n{'=' * 72}")
+    print(f"  MIAMI 3PL — AI DISCOVERY PERFORMANCE (Last {days} Days)")
+    print(f"{'=' * 72}")
+    print(f"  AI Sessions           {ai_sessions:>7,}   {pct(ai_sessions, total_sessions):>5.1f}% of all sessions   {fmt_delta(ai_sessions, previous_ai_sessions):>8}")
+    print(f"  AI Users              {ai_users:>7,}   {pct(ai_users, total_users):>5.1f}% of all users      {fmt_delta(ai_users, previous_ai_users):>8}")
+    print(f"  AI Engaged Sessions   {ai_engaged_sessions:>7,}")
+    print(f"  AI Engagement Rate    {fmt_pct(ai_engagement_rate):>7}")
+    print(f"  AI Page Views         {ai_page_views:>7,}")
+    print(f"  AI Avg Session        {fmt_dur(ai_avg_session):>7}")
+    print(f"  AI Lead Events        {lead_event_total:>7,}")
+    print(f"  AI Discovery Visits   {key_event_counts.get('ai_discovery_visit', 0):>7,}")
+
+    print(f"\n  {'#':>3}  {'AI Source / Medium':<28} {'Sessions':>9} {'Users':>7} {'Engage%':>8}")
+    print(f"  {'─' * 3}  {'─' * 28} {'─' * 9} {'─' * 7} {'─' * 8}")
+    for i, row in enumerate(sources_response.rows or [], 1):
+        source_medium = f"{row.dimension_values[0].value} / {row.dimension_values[1].value}"[:28]
+        vals = [v.value for v in row.metric_values]
+        print(f"  {i:>3}  {source_medium:<28} {safe_int(vals[0]):>9,} {safe_int(vals[1]):>7,} {fmt_pct(safe_float(vals[2]) * 100):>8}")
+
+    print(f"\n  {'#':>3}  {'Top AI Landing Pages':<40} {'Sessions':>9} {'Users':>7} {'Engage%':>8}")
+    print(f"  {'─' * 3}  {'─' * 40} {'─' * 9} {'─' * 7} {'─' * 8}")
+    for i, row in enumerate(pages_response.rows or [], 1):
+        page = row.dimension_values[0].value[:40]
+        vals = [v.value for v in row.metric_values]
+        print(f"  {i:>3}  {page:<40} {safe_int(vals[0]):>9,} {safe_int(vals[1]):>7,} {fmt_pct(safe_float(vals[2]) * 100):>8}")
+
+    print(f"\n  {'#':>3}  {'Key Events From AI Sessions':<30} {'Count':>9} {'Users':>7}")
+    print(f"  {'─' * 3}  {'─' * 30} {'─' * 9} {'─' * 7}")
+    for i, row in enumerate(events_response.rows or [], 1):
+        event_name = row.dimension_values[0].value[:30]
+        vals = [v.value for v in row.metric_values]
+        print(f"  {i:>3}  {event_name:<30} {safe_int(vals[0]):>9,} {safe_int(vals[1]):>7,}")
+
+    print(f"{'=' * 72}")
+    return {
+        "totals": {
+            "sessions": ai_sessions,
+            "users": ai_users,
+            "engagedSessions": ai_engaged_sessions,
+            "engagementRate": ai_engagement_rate,
+            "pageViews": ai_page_views,
+            "averageSessionDuration": ai_avg_session,
+            "shareOfSessions": pct(ai_sessions, total_sessions),
+            "shareOfUsers": pct(ai_users, total_users),
+            "leadEvents": lead_event_total,
+            "discoveryVisits": key_event_counts.get("ai_discovery_visit", 0),
+        },
+        "sources": to_json(sources_response, ["sessionSource", "sessionMedium"], ["sessions", "activeUsers", "engagementRate"]),
+        "pages": to_json(pages_response, ["landingPagePlusQueryString"], ["sessions", "activeUsers", "engagementRate"]),
+        "events": to_json(events_response, ["eventName"], ["eventCount", "totalUsers"]),
+    }
 
 
 def cmd_today():
@@ -821,6 +1002,7 @@ def cmd_json(subcmd, args):
     prop_id = get_property_id()
 
     handlers = {
+        "ai": lambda: _json_ai(prop_id, args),
         "overview": lambda: _json_overview(prop_id, args),
         "visitors": lambda: _json_visitors(prop_id, args),
         "pages": lambda: _json_pages(prop_id, args),
@@ -899,6 +1081,50 @@ def _json_realtime(prop_id):
     print(json.dumps({"timestamp": datetime.now().isoformat(), "activeUsers": total, "pages": rows}, indent=2))
 
 
+def _json_ai(prop_id, args):
+    days = parse_int_arg(args, 30)
+    ai_filter = build_in_list_filter("sessionSource", AI_SOURCES)
+    totals = run_report(
+        prop_id, f"{days}daysAgo", "today", [],
+        ["sessions", "activeUsers", "engagedSessions", "engagementRate", "screenPageViews", "averageSessionDuration"],
+        dimension_filter=ai_filter,
+    )
+    sources = run_report(
+        prop_id, f"{days}daysAgo", "today",
+        ["sessionSource", "sessionMedium"],
+        ["sessions", "activeUsers", "engagementRate"],
+        limit=20,
+        order_by_metric="sessions",
+        dimension_filter=ai_filter,
+    )
+    pages = run_report(
+        prop_id, f"{days}daysAgo", "today",
+        ["landingPagePlusQueryString"],
+        ["sessions", "activeUsers", "engagementRate"],
+        limit=10,
+        order_by_metric="sessions",
+        dimension_filter=ai_filter,
+    )
+    events = run_report(
+        prop_id, f"{days}daysAgo", "today",
+        ["eventName"],
+        ["eventCount", "totalUsers"],
+        limit=20,
+        order_by_metric="eventCount",
+        dimension_filter=build_and_filter(
+            ai_filter,
+            build_in_list_filter("eventName", AI_KEY_EVENTS),
+        ),
+    )
+    print(json.dumps({
+        "period": f"last_{days}_days",
+        "totals": to_json(totals, [], ["sessions", "activeUsers", "engagedSessions", "engagementRate", "screenPageViews", "averageSessionDuration"]),
+        "sources": to_json(sources, ["sessionSource", "sessionMedium"], ["sessions", "activeUsers", "engagementRate"]),
+        "pages": to_json(pages, ["landingPagePlusQueryString"], ["sessions", "activeUsers", "engagementRate"]),
+        "events": to_json(events, ["eventName"], ["eventCount", "totalUsers"]),
+    }, indent=2))
+
+
 # ══════════════════════════════════════════════════════════
 # CLI ENTRY POINT
 # ══════════════════════════════════════════════════════════
@@ -912,6 +1138,7 @@ def main():
     args = sys.argv[2:]
 
     commands = {
+        "ai": lambda: cmd_ai(parse_int_arg(args, 30)),
         "setup": lambda: cmd_setup(),
         "overview": lambda: cmd_overview(parse_int_arg(args, 30)),
         "today": lambda: cmd_today(),

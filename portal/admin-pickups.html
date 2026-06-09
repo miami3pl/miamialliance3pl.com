@@ -726,7 +726,7 @@
                 const settings = await getSettings('pickup_pricing');
                 if (settings) {
                     document.getElementById('admin-base-rate').value = settings.basePallet || 120;
-                    document.getElementById('admin-extra-rate').value = settings.extraPallet || 25;
+                    document.getElementById('admin-extra-rate').value = settings.extraPallet === 25 ? 30 : (settings.extraPallet || 30);
                     document.getElementById('admin-max-pallets').value = settings.maxPallets || 8;
                 }
             } catch (e) {
@@ -737,7 +737,7 @@
 
         function updatePricingPreview() {
             const base = parseFloat(document.getElementById('admin-base-rate').value) || 120;
-            const extra = parseFloat(document.getElementById('admin-extra-rate').value) || 25;
+            const extra = parseFloat(document.getElementById('admin-extra-rate').value) || 30;
             const maxPallets = parseInt(document.getElementById('admin-max-pallets').value) || 8;
 
             let lines = [];
@@ -750,7 +750,7 @@
 
         async function savePricing() {
             const base = parseFloat(document.getElementById('admin-base-rate').value) || 120;
-            const extra = parseFloat(document.getElementById('admin-extra-rate').value) || 25;
+            const extra = parseFloat(document.getElementById('admin-extra-rate').value) || 30;
             const maxPallets = parseInt(document.getElementById('admin-max-pallets').value) || 8;
 
             try {

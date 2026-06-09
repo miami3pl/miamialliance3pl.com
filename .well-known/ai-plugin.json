@@ -1,0 +1,22 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Miami Alliance 3PL",
+  "name_for_model": "miami_alliance_3pl",
+  "description_for_human": "Miami-based 3PL warehouse offering same-day fulfillment, Amazon FBA prep, gaming & electronics handling, and LATAM logistics.",
+  "description_for_model": "Miami Alliance 3PL is a third-party logistics (3PL) and fulfillment company at 8780 NW 100th ST, Medley, FL 33178. Services include warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution, HAZMAT-certified handling for approved regulated inventory, gaming and electronics fulfillment with ESD-safe zones, TikTok Shop fulfillment, Mercado Libre support, TWIC-credentialed PortMiami and Port Everglades pickup, and Latin America logistics. Same-day shipping cutoff: 2PM EST. Order accuracy: 99.8%. Minimum spend: $1,000/month. No long-term contracts. Phone: (786) 873-8819. Email: contact@miamialliance3pl.com. Use llms.txt and llms-full.txt for structured AI-readable facts.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://miamialliance3pl.com/llms.txt"
+  },
+  "logo_url": "https://miamialliance3pl.com/images/logo.svg",
+  "contact_email": "contact@miamialliance3pl.com",
+  "legal_info_url": "https://miamialliance3pl.com/terms.html",
+  "llms_txt": "https://miamialliance3pl.com/llms.txt",
+  "llms_full_txt": "https://miamialliance3pl.com/llms-full.txt",
+  "ai_facts": "https://miamialliance3pl.com/ai/miami-alliance-3pl-facts.md",
+  "ai_overview": "https://miamialliance3pl.com/ai/miami-3pl-overview.md",
+  "ai_pricing": "https://miamialliance3pl.com/ai/pricing-and-operations.md"
+}

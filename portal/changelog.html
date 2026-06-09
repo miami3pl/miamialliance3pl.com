@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Development Changelog | Miami Alliance 3PL Portal</title>
     <meta name="robots" content="noindex, nofollow">
 
@@ -15,14 +15,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="../css/style.css?v=202602230300">
+    <link rel="stylesheet" href="../css/style.css?v=8">
     <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSRV99D8BX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTW0F25ZM1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-QSRV99D8BX');
+        gtag('config', 'G-KTW0F25ZM1');
     </script>
     <script src="../js/analytics.js"></script>
     <style>
@@ -268,8 +268,8 @@
                 <span></span>
             </button>
             <ul class="nav-menu">
-                <li><span id="user-name" class="nav-link">Welcome</span></li>
-                <li><a href="#" id="logout-btn" class="nav-link btn btn-outline">Logout</a></li>
+                <li><span id="user-name" class="nav-link" data-i18n="portal.nav.welcome">Welcome</span></li>
+                <li><a href="#" id="logout-btn" class="nav-link btn btn-outline" data-i18n="portal.sidebar.logout">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -278,40 +278,60 @@
         <!-- Sidebar -->
         <aside class="portal-sidebar">
             <nav>
-                <a href="dashboard.html" class="portal-nav-item">
+                <a href="dashboard.html" class="portal-nav-item" data-i18n-html="portal.sidebar.dashboard">
                     <span>📊</span> Dashboard
                 </a>
-                <a href="shipments.html" class="portal-nav-item">
+                <a href="shipments.html" class="portal-nav-item" data-i18n-html="portal.sidebar.shipments">
                     <span>🚚</span> Shipments
                 </a>
-                <a href="tracking.html" class="portal-nav-item">
+                <a href="pickups.html" class="portal-nav-item">
+                    <span aria-hidden="true">🏗️</span> <span>Pickup & Delivery</span>
+                </a>
+                <a href="tracking.html" class="portal-nav-item" data-i18n-html="portal.sidebar.tracking">
                     <span>🔍</span> Tracking
                 </a>
-                <a href="inventory.html" class="portal-nav-item">
+                <a href="inventory.html" class="portal-nav-item" data-i18n-html="portal.sidebar.inventory">
                     <span>📦</span> Inventory
                 </a>
-                <a href="billing.html" class="portal-nav-item">
+                <a href="admin-billing.html" class="portal-nav-item" data-i18n-html="portal.sidebar.billing">
                     <span>💵</span> Billing
                 </a>
-                <div id="admin-nav" style="margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
-                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;">Admin</div>
+                <a href="contracts.html" class="portal-nav-item"><span>📄</span> <span>Contracts</span></a>
+                <div id="employee-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;" aria-hidden="true" data-i18n="portal.sidebar.staffLabel">Staff</div>
+                    <a href="customers.html" class="portal-nav-item" id="nav-all-users">
+                        <span aria-hidden="true">👥</span> <span data-i18n="portal.sidebar.allCustomers">All Customers</span>
+                    </a>
+                    <a href="admin-shipments.html" class="portal-nav-item" id="nav-all-shipments">
+                        <span aria-hidden="true">📋</span> <span data-i18n="portal.sidebar.allShipments">All Shipments</span>
+                    </a>
+                </div>
+                <div id="admin-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;" data-i18n="portal.sidebar.adminLabel">Admin</div>
+                    <a href="admin-panel.html" class="portal-nav-item">
+                        <span>🛡️</span> <span>Admin Control Panel</span>
+                    </a>
+                    <a href="admin-pickups.html" class="portal-nav-item">
+                        <span aria-hidden="true">🚛</span> <span>All Pickup Requests</span>
+                    </a>
+                    <a href="admin-billing.html" class="portal-nav-item"><span>📝</span> <span>Activity Billing</span></a>
                     <a href="invoices.html" class="portal-nav-item">
-                        <span>💵</span> Invoices
+                        <span aria-hidden="true">💵</span> <span data-i18n="portal.sidebar.invoices">Invoices</span>
                     </a>
                     <a href="storage-log.html" class="portal-nav-item">
-                        <span>📊</span> Storage Log
+                        <span aria-hidden="true">📊</span> <span data-i18n="portal.sidebar.storagelog">Storage Log</span>
                     </a>
                     <a href="pricing.html" class="portal-nav-item">
-                        <span>💰</span> Pricing
+                        <span aria-hidden="true">💰</span> <span data-i18n="portal.sidebar.pricing">Pricing</span>
                     </a>
                     <a href="settings.html" class="portal-nav-item">
-                        <span>⚙️</span> Settings
+                        <span aria-hidden="true">⚙️</span> <span data-i18n="portal.sidebar.settings">Settings</span>
                     </a>
                     <a href="team.html" class="portal-nav-item">
-                        <span>👔</span> Manage Team
+                        <span aria-hidden="true">👔</span> <span data-i18n="portal.sidebar.team">Manage Team</span>
                     </a>
                     <a href="changelog.html" class="portal-nav-item active">
-                        <span>📝</span> Changelog
+                        <span aria-hidden="true">📝</span> <span data-i18n="portal.sidebar.changelog">Changelog</span>
                     </a>
                 </div>
             </nav>
@@ -321,8 +341,8 @@
         <main class="portal-main">
             <!-- Hero -->
             <div class="changelog-hero">
-                <h1>📝 Development Changelog</h1>
-                <p>Track every feature, fix, and improvement made to Miami Alliance 3PL</p>
+                <h1 data-i18n="portal.changelog.title">📝 Development Changelog</h1>
+                <p data-i18n="portal.changelog.subtitle">Track every feature, fix, and improvement made to Miami Alliance 3PL</p>
                 <div class="tech-stack">
                     <span class="tech-badge">HTML5</span>
                     <span class="tech-badge">CSS3</span>
@@ -337,19 +357,19 @@
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="value">17,800+</div>
-                    <div class="label">Lines of Code</div>
+                    <div class="label" data-i18n="portal.changelog.stat.lines">Lines of Code</div>
                 </div>
                 <div class="stat-card">
                     <div class="value">50+</div>
-                    <div class="label">Commits</div>
+                    <div class="label" data-i18n="portal.changelog.stat.commits">Commits</div>
                 </div>
                 <div class="stat-card">
                     <div class="value">20+</div>
-                    <div class="label">Portal Pages</div>
+                    <div class="label" data-i18n="portal.changelog.stat.pages">Portal Pages</div>
                 </div>
                 <div class="stat-card">
                     <div class="value">57</div>
-                    <div class="label">MCP Tools</div>
+                    <div class="label" data-i18n="portal.changelog.stat.tools">MCP Tools</div>
                 </div>
             </div>
 
@@ -360,12 +380,12 @@
                 <div class="timeline-item">
                     <div class="version-section">
                         <div class="version-header">
-                            <div class="version-title">
+                            <div class="version-title" data-i18n="portal.changelog.v2.title">
                                 🚀 Version 2.0 - Full Portal Launch
                             </div>
                             <div>
                                 <span class="version-date">December 26, 2025</span>
-                                <span class="version-badge">CURRENT</span>
+                                <span class="version-badge" data-i18n="portal.changelog.badge.current">CURRENT</span>
                             </div>
                         </div>
                         <div class="version-body">
@@ -373,8 +393,8 @@
                                 <li class="feature-item">
                                     <div class="feature-icon feat">📄</div>
                                     <div class="feature-content">
-                                        <div class="feature-title">PDF Quote Generation <span class="tag tag-new">NEW</span></div>
-                                        <div class="feature-desc">Download professional PDF quotes with company branding, 3D logo, pricing breakdown, and unique quote numbers.</div>
+                                        <div class="feature-title" data-i18n-html="portal.changelog.v2.feat1.title">PDF Quote Generation <span class="tag tag-new">NEW</span></div>
+                                        <div class="feature-desc" data-i18n="portal.changelog.v2.feat1.desc">Download professional PDF quotes with company branding, 3D logo, pricing breakdown, and unique quote numbers.</div>
                                         <div class="feature-meta">
                                             <span class="lines-added">+426 lines</span>
                                             <span>quote-calculator.js, quote.html</span>
@@ -384,8 +404,8 @@
                                 <li class="feature-item">
                                     <div class="feature-icon feat">🎨</div>
                                     <div class="feature-content">
-                                        <div class="feature-title">3D Quote Calculator <span class="tag tag-new">NEW</span></div>
-                                        <div class="feature-desc">Interactive Three.js visualization with real-time pricing. Rotate, zoom, and see your package in 3D before getting an instant quote.</div>
+                                        <div class="feature-title" data-i18n-html="portal.changelog.v2.feat2.title">3D Quote Calculator <span class="tag tag-new">NEW</span></div>
+                                        <div class="feature-desc" data-i18n="portal.changelog.v2.feat2.desc">Interactive Three.js visualization with real-time pricing. Rotate, zoom, and see your package in 3D before getting an instant quote.</div>
                                         <div class="feature-meta">
                                             <span class="lines-added">+650 lines</span>
                                             <span>quote.html, quote-3d.js, quote-calculator.js</span>
@@ -395,8 +415,8 @@
                                 <li class="feature-item">
                                     <div class="feature-icon feat">🔍</div>
                                     <div class="feature-content">
-                                        <div class="feature-title">Comprehensive SEO Package <span class="tag tag-new">NEW</span></div>
-                                        <div class="feature-desc">Meta tags, Open Graph, Twitter Cards, JSON-LD structured data, robots.txt, sitemap.xml, geo meta tags for local SEO.</div>
+                                        <div class="feature-title" data-i18n-html="portal.changelog.v2.feat3.title">Comprehensive SEO Package <span class="tag tag-new">NEW</span></div>
+                                        <div class="feature-desc" data-i18n="portal.changelog.v2.feat3.desc">Meta tags, Open Graph, Twitter Cards, JSON-LD structured data, robots.txt, sitemap.xml, geo meta tags for local SEO.</div>
                                         <div class="feature-meta">
                                             <span class="lines-added">+400 lines</span>
                                             <span>All pages, robots.txt, sitemap.xml</span>
@@ -406,8 +426,8 @@
                                 <li class="feature-item">
                                     <div class="feature-icon feat">🧾</div>
                                     <div class="feature-content">
-                                        <div class="feature-title">Professional Invoice Template <span class="tag tag-new">NEW</span></div>
-                                        <div class="feature-desc">Print-optimized invoice with company branding, SVG logo, line items, and payment terms. Ready for PDF export.</div>
+                                        <div class="feature-title" data-i18n-html="portal.changelog.v2.feat4.title">Professional Invoice Template <span class="tag tag-new">NEW</span></div>
+                                        <div class="feature-desc" data-i18n="portal.changelog.v2.feat4.desc">Print-optimized invoice with company branding, SVG logo, line items, and payment terms. Ready for PDF export.</div>
                                         <div class="feature-meta">
                                             <span class="lines-added">+500 lines</span>
                                             <span>invoice-template.html</span>
@@ -417,8 +437,8 @@
                                 <li class="feature-item">
                                     <div class="feature-icon feat">🤖</div>
                                     <div class="feature-content">
-                                        <div class="feature-title">MCP Server Integration <span class="tag tag-new">NEW</span></div>
-                                        <div class="feature-desc">57 Firebase Admin SDK tools for Claude Code integration. Manage shipments, customers, and inventory via AI commands.</div>
+                                        <div class="feature-title" data-i18n-html="portal.changelog.v2.feat5.title">MCP Server Integration <span class="tag tag-new">NEW</span></div>
+                                        <div class="feature-desc" data-i18n="portal.changelog.v2.feat5.desc">57 Firebase Admin SDK tools for Claude Code integration. Manage shipments, customers, and inventory via AI commands.</div>
                                         <div class="feature-meta">
                                             <span class="lines-added">+2,500 lines</span>
                                             <span>mcp/server.py, tools/*.py</span>
@@ -434,7 +454,7 @@
                 <div class="timeline-item">
                     <div class="version-section">
                         <div class="version-header" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
-                            <div class="version-title">
+                            <div class="version-title" data-i18n="portal.changelog.v15.title">
                                 💳 Version 1.5 - Billing & Payments
                             </div>
                             <span class="version-date">December 25-26, 2025</span>
@@ -444,8 +464,8 @@
                                 <li class="feature-item">
                                     <div class="feature-icon feat">💰</div>
                                     <div class="feature-content">
-                                        <div class="feature-title">Stripe Payment Integration</div>
-                                        <div class="feature-desc">Full Stripe setup with Firebase Functions for secure payment processing.</div>
+                                        <div class="feature-title" data-i18n="portal.changelog.v15.feat1.title">Stripe Payment Integration</div>
+                                        <div class="feature-desc" data-i18n="portal.changelog.v15.feat1.desc">Full Stripe setup with Firebase Functions for secure payment processing.</div>
                                         <div class="feature-meta">
                                             <span class="lines-added">+800 lines</span>
                                             <span>functions/index.js, billing.html</span>
@@ -455,8 +475,8 @@
                                 <li class="feature-item">
                                     <div class="feature-icon feat">📊</div>
                                     <div class="feature-content">
-                                        <div class="feature-title">Invoicing System</div>
-                                        <div class="feature-desc">Auto-generate invoices with storage tracking, billable events, and line items.</div>
+                                        <div class="feature-title" data-i18n="portal.changelog.v15.feat2.title">Invoicing System</div>
+                                        <div class="feature-desc" data-i18n="portal.changelog.v15.feat2.desc">Auto-generate invoices with storage tracking, billable events, and line items.</div>
                                         <div class="feature-meta">
                                             <span class="lines-added">+600 lines</span>
                                             <span>invoices.html, storage-log.html</span>
@@ -466,8 +486,8 @@
                                 <li class="feature-item">
                                     <div class="feature-icon feat">📈</div>
                                     <div class="feature-content">
-                                        <div class="feature-title">Dashboard Analytics</div>
-                                        <div class="feature-desc">Chart.js integration with shipment status, monthly trends, top customers, and KPIs.</div>
+                                        <div class="feature-title" data-i18n="portal.changelog.v15.feat3.title">Dashboard Analytics</div>
+                                        <div class="feature-desc" data-i18n="portal.changelog.v15.feat3.desc">Chart.js integration with shipment status, monthly trends, top customers, and KPIs.</div>
                                         <div class="feature-meta">
                                             <span class="lines-added">+400 lines</span>
                                             <span>dashboard.html</span>
@@ -477,8 +497,8 @@
                                 <li class="feature-item">
                                     <div class="feature-icon feat">💵</div>
                                     <div class="feature-content">
-                                        <div class="feature-title">3PL Pricing Management</div>
-                                        <div class="feature-desc">Configure storage, handling, pick & pack, and shipping rates per customer.</div>
+                                        <div class="feature-title" data-i18n="portal.changelog.v15.feat4.title">3PL Pricing Management</div>
+                                        <div class="feature-desc" data-i18n="portal.changelog.v15.feat4.desc">Configure storage, handling, pick & pack, and shipping rates per customer.</div>
                                         <div class="feature-meta">
                                             <span class="lines-added">+450 lines</span>
                                             <span>pricing.html</span>
@@ -494,7 +514,7 @@
                 <div class="timeline-item">
                     <div class="version-section">
                         <div class="version-header" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                            <div class="version-title">
+                            <div class="version-title" data-i18n="portal.changelog.v1.title">
                                 🏢 Version 1.0 - Core Portal
                             </div>
                             <span class="version-date">December 14-17, 2025</span>
@@ -504,8 +524,8 @@
                                 <li class="feature-item">
                                     <div class="feature-icon feat">🔐</div>
                                     <div class="feature-content">
-                                        <div class="feature-title">Firebase Authentication</div>
-                                        <div class="feature-desc">Google Sign-In with email/password fallback. Secure auth persistence across sessions.</div>
+                                        <div class="feature-title" data-i18n="portal.changelog.v1.feat1.title">Firebase Authentication</div>
+                                        <div class="feature-desc" data-i18n="portal.changelog.v1.feat1.desc">Google Sign-In with email/password fallback. Secure auth persistence across sessions.</div>
                                         <div class="feature-meta">
                                             <span class="lines-added">+350 lines</span>
                                             <span>login.html, auth flows</span>
@@ -515,8 +535,8 @@
                                 <li class="feature-item">
                                     <div class="feature-icon feat">👥</div>
                                     <div class="feature-content">
-                                        <div class="feature-title">Role-Based Access Control</div>
-                                        <div class="feature-desc">Customer, Employee, and Admin roles with different access levels and UI elements.</div>
+                                        <div class="feature-title" data-i18n="portal.changelog.v1.feat2.title">Role-Based Access Control</div>
+                                        <div class="feature-desc" data-i18n="portal.changelog.v1.feat2.desc">Customer, Employee, and Admin roles with different access levels and UI elements.</div>
                                         <div class="feature-meta">
                                             <span class="lines-added">+500 lines</span>
                                             <span>All portal pages</span>
@@ -526,8 +546,8 @@
                                 <li class="feature-item">
                                     <div class="feature-icon feat">🚚</div>
                                     <div class="feature-content">
-                                        <div class="feature-title">Shipment Management</div>
-                                        <div class="feature-desc">Create, track, and manage shipments with status updates, dimensions, and weight.</div>
+                                        <div class="feature-title" data-i18n="portal.changelog.v1.feat3.title">Shipment Management</div>
+                                        <div class="feature-desc" data-i18n="portal.changelog.v1.feat3.desc">Create, track, and manage shipments with status updates, dimensions, and weight.</div>
                                         <div class="feature-meta">
                                             <span class="lines-added">+700 lines</span>
                                             <span>shipments.html, tracking.html</span>
@@ -537,8 +557,8 @@
                                 <li class="feature-item">
                                     <div class="feature-icon feat">📦</div>
                                     <div class="feature-content">
-                                        <div class="feature-title">Inventory Management</div>
-                                        <div class="feature-desc">Track pallets, boxes, and items with SKU, quantity, and warehouse location.</div>
+                                        <div class="feature-title" data-i18n="portal.changelog.v1.feat4.title">Inventory Management</div>
+                                        <div class="feature-desc" data-i18n="portal.changelog.v1.feat4.desc">Track pallets, boxes, and items with SKU, quantity, and warehouse location.</div>
                                         <div class="feature-meta">
                                             <span class="lines-added">+550 lines</span>
                                             <span>inventory.html</span>
@@ -548,8 +568,8 @@
                                 <li class="feature-item">
                                     <div class="feature-icon feat">💬</div>
                                     <div class="feature-content">
-                                        <div class="feature-title">Chat Wizard for Shipments</div>
-                                        <div class="feature-desc">Amazon-style conversational UI for creating shipments step-by-step with animations.</div>
+                                        <div class="feature-title" data-i18n="portal.changelog.v1.feat5.title">Chat Wizard for Shipments</div>
+                                        <div class="feature-desc" data-i18n="portal.changelog.v1.feat5.desc">Amazon-style conversational UI for creating shipments step-by-step with animations.</div>
                                         <div class="feature-meta">
                                             <span class="lines-added">+400 lines</span>
                                             <span>shipments.html</span>
@@ -559,8 +579,8 @@
                                 <li class="feature-item">
                                     <div class="feature-icon feat">⭐</div>
                                     <div class="feature-content">
-                                        <div class="feature-title">Star Wars Easter Egg</div>
-                                        <div class="feature-desc">Special Jedi-themed UI for admin users with random Star Wars quotes.</div>
+                                        <div class="feature-title" data-i18n="portal.changelog.v1.feat6.title">Star Wars Easter Egg</div>
+                                        <div class="feature-desc" data-i18n="portal.changelog.v1.feat6.desc">Special Jedi-themed UI for admin users with random Star Wars quotes.</div>
                                         <div class="feature-meta">
                                             <span class="lines-added">+100 lines</span>
                                             <span>dashboard.html</span>
@@ -576,7 +596,7 @@
                 <div class="timeline-item">
                     <div class="version-section">
                         <div class="version-header" style="background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);">
-                            <div class="version-title">
+                            <div class="version-title" data-i18n="portal.changelog.v05.title">
                                 🌱 Version 0.5 - Foundation
                             </div>
                             <span class="version-date">December 14, 2025</span>
@@ -586,8 +606,8 @@
                                 <li class="feature-item">
                                     <div class="feature-icon feat">🏠</div>
                                     <div class="feature-content">
-                                        <div class="feature-title">Landing Page</div>
-                                        <div class="feature-desc">Hero section, services overview, Pablo Nicotine case study, contact form.</div>
+                                        <div class="feature-title" data-i18n="portal.changelog.v05.feat1.title">Landing Page</div>
+                                        <div class="feature-desc" data-i18n="portal.changelog.v05.feat1.desc">Hero section, services overview, Pablo Nicotine case study, contact form.</div>
                                         <div class="feature-meta">
                                             <span class="lines-added">+800 lines</span>
                                             <span>index.html</span>
@@ -597,8 +617,8 @@
                                 <li class="feature-item">
                                     <div class="feature-icon feat">📋</div>
                                     <div class="feature-content">
-                                        <div class="feature-title">Services Page</div>
-                                        <div class="feature-desc">Detailed breakdown of warehousing, fulfillment, import/export services.</div>
+                                        <div class="feature-title" data-i18n="portal.changelog.v05.feat2.title">Services Page</div>
+                                        <div class="feature-desc" data-i18n="portal.changelog.v05.feat2.desc">Detailed breakdown of warehousing, fulfillment, import/export services.</div>
                                         <div class="feature-meta">
                                             <span class="lines-added">+500 lines</span>
                                             <span>services.html</span>
@@ -608,8 +628,8 @@
                                 <li class="feature-item">
                                     <div class="feature-icon feat">📍</div>
                                     <div class="feature-content">
-                                        <div class="feature-title">Contact with Google Maps</div>
-                                        <div class="feature-desc">Dark-themed Google Maps embed with overlay card showing warehouse location.</div>
+                                        <div class="feature-title" data-i18n="portal.changelog.v05.feat3.title">Contact with Google Maps</div>
+                                        <div class="feature-desc" data-i18n="portal.changelog.v05.feat3.desc">Dark-themed Google Maps embed with overlay card showing warehouse location.</div>
                                         <div class="feature-meta">
                                             <span class="lines-added">+400 lines</span>
                                             <span>contact.html</span>
@@ -619,8 +639,8 @@
                                 <li class="feature-item">
                                     <div class="feature-icon feat">🎨</div>
                                     <div class="feature-content">
-                                        <div class="feature-title">Design System</div>
-                                        <div class="feature-desc">CSS variables, responsive grid, typography scale, component library.</div>
+                                        <div class="feature-title" data-i18n="portal.changelog.v05.feat4.title">Design System</div>
+                                        <div class="feature-desc" data-i18n="portal.changelog.v05.feat4.desc">CSS variables, responsive grid, typography scale, component library.</div>
                                         <div class="feature-meta">
                                             <span class="lines-added">+1,200 lines</span>
                                             <span>css/style.css</span>
@@ -636,39 +656,39 @@
 
             <!-- Progress -->
             <div class="stat-card" style="margin-top: var(--spacing-xl);">
-                <h3 style="margin-bottom: var(--spacing-md); color: var(--color-gray-800);">Development Progress</h3>
+                <h3 style="margin-bottom: var(--spacing-md); color: var(--color-gray-800);" data-i18n="portal.changelog.progress.title">Development Progress</h3>
                 <div style="display: grid; gap: var(--spacing-md);">
                     <div>
                         <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
-                            <span>Core Portal Features</span>
+                            <span data-i18n="portal.changelog.progress.core">Core Portal Features</span>
                             <span style="font-weight: 600; color: #10b981;">100%</span>
                         </div>
                         <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
                     </div>
                     <div>
                         <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
-                            <span>Billing & Invoicing</span>
+                            <span data-i18n="portal.changelog.progress.billing">Billing & Invoicing</span>
                             <span style="font-weight: 600; color: #10b981;">95%</span>
                         </div>
                         <div class="progress-bar"><div class="progress-fill" style="width: 95%;"></div></div>
                     </div>
                     <div>
                         <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
-                            <span>3D Quote Calculator</span>
+                            <span data-i18n="portal.changelog.progress.quote">3D Quote Calculator</span>
                             <span style="font-weight: 600; color: #10b981;">100%</span>
                         </div>
                         <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
                     </div>
                     <div>
                         <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
-                            <span>SEO & Marketing</span>
+                            <span data-i18n="portal.changelog.progress.seo">SEO & Marketing</span>
                             <span style="font-weight: 600; color: #10b981;">100%</span>
                         </div>
                         <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
                     </div>
                     <div>
                         <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
-                            <span>MCP Integration</span>
+                            <span data-i18n="portal.changelog.progress.mcp">MCP Integration</span>
                             <span style="font-weight: 600; color: #f59e0b;">85%</span>
                         </div>
                         <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
@@ -679,7 +699,7 @@
             <!-- Commit History -->
             <div class="version-section" style="margin-top: var(--spacing-xl);">
                 <div class="version-header" style="background: var(--color-gray-800);">
-                    <div class="version-title">
+                    <div class="version-title" data-i18n-html="portal.changelog.commits.title">
                         <span>📜</span> Recent Commits
                     </div>
                 </div>
@@ -784,7 +804,8 @@
             projectId: "miamialliance3pl",
             storageBucket: "miamialliance3pl.firebasestorage.app",
             messagingSenderId: "657614666588",
-            appId: "1:657614666588:web:20e50484fe5d90b5aa5f99"
+            appId: "1:657614666588:web:20e50484fe5d90b5aa5f99",
+            measurementId: "G-KTW0F25ZM1"
         };
 
         const ADMIN_EMAILS = ['ceo@usglatam.com', 'yuri@megalopolisms.com'];
@@ -811,7 +832,7 @@
                     if (data.role) userRole = data.role;
                 }
             } catch (e) {
-                console.log('Could not fetch user doc:', e);
+                // User doc fetch failed (non-fatal)
             }
 
             // Fallback admin check
@@ -826,6 +847,12 @@
             }
 
             document.getElementById('user-name').textContent = `Welcome, ${userName}`;
+
+            // Show staff/admin nav
+            const empNav = document.getElementById('employee-nav');
+            const admNav = document.getElementById('admin-nav');
+            if (empNav) empNav.style.display = 'block';
+            if (admNav) admNav.style.display = 'block';
         });
 
         document.getElementById('logout-btn').addEventListener('click', async (e) => {
@@ -835,5 +862,10 @@
         });
     </script>
     <script src="../js/main.js?v=3"></script>
+    <script src="../js/lang/es.js"></script>
+    <script src="../js/lang/pt-br.js"></script>
+    <script src="../js/lang/zh.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/chat-widget.js"></script>
 </body>
 </html>

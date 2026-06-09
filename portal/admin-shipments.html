@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>All Shipments | Miami Alliance 3PL Admin</title>
     <meta name="robots" content="noindex, nofollow">
 
@@ -12,20 +12,24 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="../css/style.css?v=202602230300">
+    <link rel="stylesheet" href="../css/style.css">
     <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSRV99D8BX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTW0F25ZM1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-QSRV99D8BX');
+        gtag('config', 'G-KTW0F25ZM1');
     </script>
     <script src="../js/analytics.js"></script>
     <style>
+        /* ============================================================
+           ADMIN SHIPMENTS - ENHANCED PAGE STYLES
+           ============================================================ */
+
         .admin-badge {
             background: linear-gradient(135deg, #f97316, #ea580c);
             color: white;
@@ -35,240 +39,39 @@
             font-weight: 600;
             margin-left: 8px;
         }
+
+        /* Page Header */
         .page-header-bar {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            background: linear-gradient(135deg, var(--color-primary) 0%, #1e293b 50%, var(--color-primary-dark) 100%);
             color: white;
-            padding: var(--spacing-lg);
+            padding: var(--spacing-lg) var(--spacing-xl);
             border-radius: var(--radius-lg);
-            margin-bottom: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
         }
         .page-header-bar h1 {
             font-size: var(--font-size-2xl);
-            margin-bottom: var(--spacing-xs);
+            font-weight: 800;
+            margin-bottom: 2px;
+            letter-spacing: -0.02em;
         }
-        .filters-bar {
-            display: flex;
-            gap: var(--spacing-sm);
-            margin-bottom: var(--spacing-lg);
-            flex-wrap: wrap;
-        }
-        .filters-bar input, .filters-bar select {
-            padding: var(--spacing-sm) var(--spacing-md);
-            border: 1px solid var(--color-gray-300);
-            border-radius: var(--radius-md);
-            font-size: var(--font-size-base);
-        }
-        .filters-bar input {
-            flex: 1;
-            min-width: 200px;
-        }
-        .shipment-card {
-            background: white;
-            border: 1px solid var(--color-gray-200);
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-lg);
-            margin-bottom: var(--spacing-md);
-            transition: box-shadow 0.2s;
-        }
-        .shipment-card:hover {
-            box-shadow: var(--shadow-lg);
-        }
-        .shipment-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: var(--spacing-md);
-            flex-wrap: wrap;
-            gap: var(--spacing-sm);
-        }
-        .tracking-number {
-            font-size: var(--font-size-lg);
-            font-weight: 700;
-            color: var(--color-accent);
-            font-family: monospace;
-        }
-        .shipment-customer {
-            font-size: var(--font-size-sm);
-            color: var(--color-gray-600);
-        }
-        .shipment-details {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-md);
-            margin-bottom: var(--spacing-md);
-        }
-        .detail-group h4 {
-            font-size: var(--font-size-xs);
-            color: var(--color-gray-500);
-            text-transform: uppercase;
-            margin-bottom: var(--spacing-xs);
-        }
-        .detail-group p {
-            color: var(--color-gray-900);
-        }
-        .shipment-actions {
-            display: flex;
-            gap: var(--spacing-sm);
-            padding-top: var(--spacing-md);
-            border-top: 1px solid var(--color-gray-200);
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .status-select {
-            padding: 8px 12px;
-            border: 2px solid var(--color-accent);
-            border-radius: var(--radius-md);
-            font-weight: 600;
-            background: white;
-            cursor: pointer;
-        }
-        .status-select:focus {
-            outline: none;
-            border-color: var(--color-primary);
-        }
-        .btn-update {
-            background: var(--color-accent);
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: var(--radius-md);
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .btn-update:hover {
-            background: var(--color-accent-hover);
-        }
-        .btn-update:disabled {
-            background: var(--color-gray-300);
-            cursor: not-allowed;
-        }
-        .update-success {
-            color: #16a34a;
-            font-weight: 500;
-            display: none;
-        }
-        .empty-state {
-            text-align: center;
-            padding: var(--spacing-2xl);
-            color: var(--color-gray-500);
-        }
-        .empty-state .icon {
-            font-size: 4rem;
-            margin-bottom: var(--spacing-md);
-        }
-        .package-info {
-            background: var(--color-gray-100);
-            padding: var(--spacing-sm);
-            border-radius: var(--radius-md);
+        .page-header-bar p {
+            opacity: 0.8;
             font-size: var(--font-size-sm);
         }
-
-        /* Toast notification styles */
-        .toast-container {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 2000;
+        .header-actions {
             display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .toast {
-            background: #1e3a5f;
-            color: white;
-            padding: 16px 24px;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-lg);
-            display: flex;
+            gap: var(--spacing-sm);
             align-items: center;
-            gap: 12px;
-            animation: slideIn 0.3s ease-out;
-            min-width: 280px;
         }
-        .toast.success {
-            background: linear-gradient(135deg, #16a34a, #15803d);
-        }
-        .toast.error {
-            background: linear-gradient(135deg, #dc2626, #b91c1c);
-        }
-        .toast.warning {
-            background: linear-gradient(135deg, #f59e0b, #d97706);
-        }
-        .toast-icon {
-            font-size: 1.25rem;
-        }
-        .toast-message {
-            flex: 1;
-            font-weight: 500;
-        }
-        .toast-close {
-            background: none;
-            border: none;
+        .btn-refresh {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
             color: white;
-            cursor: pointer;
-            font-size: 1.25rem;
-            opacity: 0.7;
-        }
-        .toast-close:hover {
-            opacity: 1;
-        }
-        @keyframes slideIn {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-        @keyframes slideOut {
-            from {
-                transform: translateX(0);
-                opacity: 1;
-            }
-            to {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-        }
-
-        /* Status badge colors */
-        .badge-pending {
-            background: #fef3c7;
-            color: #92400e;
-        }
-        .badge-processing {
-            background: #dbeafe;
-            color: #1e40af;
-        }
-        .badge-picked_up {
-            background: #e0e7ff;
-            color: #3730a3;
-        }
-        .badge-in_transit {
-            background: #cffafe;
-            color: #0e7490;
-        }
-        .badge-out_for_delivery {
-            background: #d1fae5;
-            color: #065f46;
-        }
-        .badge-delivered {
-            background: #dcfce7;
-            color: #166534;
-        }
-        .badge-cancelled {
-            background: #fee2e2;
-            color: #991b1b;
-        }
-
-        /* Update button styling */
-        .btn-update-status {
-            background: linear-gradient(135deg, var(--color-accent), #ea580c);
-            color: white;
-            border: none;
             padding: 8px 16px;
             border-radius: var(--radius-md);
             font-weight: 600;
@@ -277,74 +80,1242 @@
             display: flex;
             align-items: center;
             gap: 6px;
+            font-size: var(--font-size-sm);
         }
-        .btn-update-status:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+        .btn-refresh:hover {
+            background: rgba(255,255,255,0.25);
         }
-        .btn-update-status:disabled {
-            background: var(--color-gray-300);
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-        .btn-update-status.loading {
-            pointer-events: none;
-        }
-        .btn-update-status .spinner {
-            width: 14px;
-            height: 14px;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-top-color: white;
-            border-radius: 50%;
+        .btn-refresh.spinning .refresh-icon {
             animation: spin 0.8s linear infinite;
         }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+
+        /* ============================================================
+           STATS ROW
+           ============================================================ */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+        }
+        .stat-card {
+            background: white;
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            border-radius: 4px 0 0 4px;
+        }
+        .stat-card.total::before { background: var(--color-primary); }
+        .stat-card.pending::before { background: #f59e0b; }
+        .stat-card.transit::before { background: #3b82f6; }
+        .stat-card.delivered::before { background: #10b981; }
+        .stat-card.cancelled::before { background: #ef4444; }
+        .stat-card.processing::before { background: #8b5cf6; }
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        .stat-card.active {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 2px rgba(15,23,42,0.1);
+        }
+        .stat-icon {
+            font-size: 1.6rem;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+        .stat-card.total .stat-icon { background: #f1f5f9; }
+        .stat-card.pending .stat-icon { background: #fef3c7; }
+        .stat-card.transit .stat-icon { background: #dbeafe; }
+        .stat-card.delivered .stat-icon { background: #d1fae5; }
+        .stat-card.cancelled .stat-icon { background: #fee2e2; }
+        .stat-card.processing .stat-icon { background: #ede9fe; }
+        .stat-info .stat-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            line-height: 1;
+        }
+        .stat-info .stat-label {
+            font-size: 0.75rem;
+            color: var(--color-gray-500);
+            font-weight: 500;
+            margin-top: 2px;
         }
 
-        /* Modal styles */
-        .modal-overlay {
-            display: none;
+        /* ============================================================
+           FILTERS & SEARCH BAR
+           ============================================================ */
+        .filters-bar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: var(--spacing-lg);
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .search-wrapper {
+            position: relative;
+            flex: 1;
+            min-width: 240px;
+        }
+        .search-wrapper .search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-gray-400);
+            pointer-events: none;
+            font-size: 1rem;
+        }
+        .search-wrapper input {
+            width: 100%;
+            padding: 10px 14px 10px 38px;
+            border: 2px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-sm);
+            transition: border-color 0.2s;
+            background: white;
+        }
+        .search-wrapper input:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px rgba(16,185,129,0.1);
+        }
+        .filter-select {
+            padding: 10px 14px;
+            border: 2px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-sm);
+            background: white;
+            cursor: pointer;
+            min-width: 140px;
+            transition: border-color 0.2s;
+        }
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--color-accent);
+        }
+        .sort-select {
+            padding: 10px 14px;
+            border: 2px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-sm);
+            background: white;
+            cursor: pointer;
+            min-width: 160px;
+        }
+        .filter-count {
+            font-size: 0.8rem;
+            color: var(--color-gray-500);
+            font-weight: 500;
+            padding: 8px 0;
+            white-space: nowrap;
+        }
+        .btn-clear-filters {
+            background: none;
+            border: 1px solid var(--color-gray-300);
+            color: var(--color-gray-600);
+            padding: 9px 14px;
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-sm);
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .btn-clear-filters:hover {
+            background: var(--color-gray-100);
+            border-color: var(--color-gray-400);
+        }
+
+        /* ============================================================
+           SHIPMENT TABLE
+           ============================================================ */
+        .shipments-table-wrapper {
+            background: white;
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+        .shipments-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .shipments-table thead th {
+            background: var(--color-gray-50);
+            padding: 12px 16px;
+            text-align: left;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--color-gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid var(--color-gray-200);
+            white-space: nowrap;
+            user-select: none;
+        }
+        .shipments-table thead th.sortable {
+            cursor: pointer;
+        }
+        .shipments-table thead th.sortable:hover {
+            color: var(--color-primary);
+            background: var(--color-gray-100);
+        }
+        .shipments-table tbody tr {
+            border-bottom: 1px solid var(--color-gray-100);
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .shipments-table tbody tr:hover {
+            background: #f0fdf4;
+        }
+        .shipments-table tbody tr:last-child {
+            border-bottom: none;
+        }
+        .shipments-table tbody td {
+            padding: 14px 16px;
+            font-size: var(--font-size-sm);
+            vertical-align: middle;
+        }
+        .table-tracking {
+            font-weight: 700;
+            color: var(--color-primary);
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 0.85rem;
+        }
+        .table-customer {
+            max-width: 180px;
+        }
+        .table-customer-name {
+            font-weight: 600;
+            color: var(--color-gray-900);
+        }
+        .table-customer-company {
+            font-size: 0.75rem;
+            color: var(--color-gray-400);
+        }
+        .table-destination {
+            max-width: 200px;
+        }
+        .table-dest-city {
+            font-weight: 600;
+            color: var(--color-gray-700);
+        }
+        .table-dest-state {
+            font-size: 0.75rem;
+            color: var(--color-gray-400);
+        }
+        .table-warehouse {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+        .warehouse-miami {
+            background: linear-gradient(135deg, #ccfbf1, #99f6e4);
+            color: #0d9488;
+        }
+        .warehouse-biloxi {
+            background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+            color: #7c3aed;
+        }
+        .table-date {
+            font-size: 0.8rem;
+            color: var(--color-gray-500);
+        }
+        .table-docs {
+            display: flex;
+            gap: 4px;
+        }
+        .table-doc-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .table-doc-dot.bol { background: #3b82f6; }
+        .table-doc-dot.pl { background: #22c55e; }
+        .table-doc-dot.inv { background: #f59e0b; }
+
+        /* Status badges */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            white-space: nowrap;
+        }
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .status-pending { background: #fef3c7; color: #92400e; }
+        .status-pending .status-dot { background: #f59e0b; }
+        .status-processing { background: #ede9fe; color: #5b21b6; }
+        .status-processing .status-dot { background: #8b5cf6; }
+        .status-picked_up { background: #e0e7ff; color: #3730a3; }
+        .status-picked_up .status-dot { background: #6366f1; }
+        .status-in_transit { background: #dbeafe; color: #1e40af; }
+        .status-in_transit .status-dot { background: #3b82f6; animation: pulse-dot 2s infinite; }
+        .status-out_for_delivery { background: #cffafe; color: #0e7490; }
+        .status-out_for_delivery .status-dot { background: #06b6d4; animation: pulse-dot 1.5s infinite; }
+        .status-delivered { background: #dcfce7; color: #166534; }
+        .status-delivered .status-dot { background: #22c55e; }
+        .status-cancelled { background: #fee2e2; color: #991b1b; }
+        .status-cancelled .status-dot { background: #ef4444; }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        /* ============================================================
+           EMPTY & LOADING STATES
+           ============================================================ */
+        .empty-state {
+            text-align: center;
+            padding: var(--spacing-2xl) var(--spacing-lg);
+            color: var(--color-gray-500);
+        }
+        .empty-state .icon {
+            font-size: 3.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        .empty-state p {
+            font-size: var(--font-size-base);
+        }
+        .loading-skeleton {
+            background: linear-gradient(90deg, var(--color-gray-100) 25%, var(--color-gray-200) 50%, var(--color-gray-100) 75%);
+            background-size: 200% 100%;
+            animation: skeleton-shimmer 1.5s infinite;
+            border-radius: var(--radius-md);
+            height: 52px;
+            margin-bottom: 2px;
+        }
+        @keyframes skeleton-shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        /* ============================================================
+           SLIDE-OUT DETAIL PANEL
+           ============================================================ */
+        .panel-overlay {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0,0,0,0.5);
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(4px);
             z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        .panel-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .detail-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 800px;
+            max-width: 100vw;
+            background: #f8fafc;
+            z-index: 1001;
+            transform: translateX(100%);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            box-shadow: -20px 0 60px rgba(0,0,0,0.15);
+        }
+        .detail-panel.active {
+            transform: translateX(0);
+        }
+
+        /* Panel Header */
+        .panel-header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #1e293b 100%);
+            color: white;
+            padding: 20px 28px;
+            flex-shrink: 0;
+        }
+        .panel-header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        .panel-tracking {
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+        }
+        .panel-close {
+            background: rgba(255,255,255,0.12);
+            border: none;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            flex-shrink: 0;
+        }
+        .panel-close:hover {
+            background: rgba(255,255,255,0.25);
+        }
+        .panel-header-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .panel-customer-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        .panel-header .status-badge {
+            font-size: 0.72rem;
+        }
+
+        /* Panel Body */
+        .panel-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 24px 28px 100px;
+        }
+
+        /* Section blocks inside panel */
+        .panel-section {
+            background: white;
+            border: 1px solid var(--color-gray-200);
+            border-radius: 14px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            transition: box-shadow 0.2s;
+        }
+        .panel-section:hover {
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+        .panel-section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--color-gray-100);
+        }
+        .panel-section-icon {
+            font-size: 1.2rem;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+        .panel-section-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            letter-spacing: -0.01em;
+        }
+        .panel-section-subtitle {
+            font-size: 0.72rem;
+            color: var(--color-gray-400);
+            font-weight: 500;
+        }
+
+        /* Form fields inside panel */
+        .panel-form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .panel-form-grid.cols-3 {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .panel-form-grid.cols-1 {
+            grid-template-columns: 1fr;
+        }
+        .panel-field {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .panel-field.full-width {
+            grid-column: 1 / -1;
+        }
+        .panel-field label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--color-gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .panel-field input,
+        .panel-field select,
+        .panel-field textarea {
+            padding: 10px 14px;
+            border: 2px solid var(--color-gray-200);
+            border-radius: 10px;
+            font-size: 0.88rem;
+            font-family: 'Inter', sans-serif;
+            color: var(--color-gray-900);
+            transition: all 0.2s;
+            background: white;
+        }
+        .panel-field input:focus,
+        .panel-field select:focus,
+        .panel-field textarea:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px rgba(16,185,129,0.12);
+        }
+        .panel-field input[readonly] {
+            background: var(--color-gray-50);
+            color: var(--color-gray-500);
+            cursor: default;
+        }
+        .panel-field textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .panel-field .field-hint {
+            font-size: 0.7rem;
+            color: var(--color-gray-400);
+        }
+
+        /* Read-only display values */
+        .panel-value {
+            font-size: 0.88rem;
+            color: var(--color-gray-700);
+            padding: 10px 0;
+        }
+        .panel-value.mono {
+            font-family: 'SF Mono', 'Fira Code', monospace;
+        }
+
+        /* Documents in panel */
+        .panel-docs-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .panel-doc-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            border-radius: 10px;
+            transition: all 0.2s;
+        }
+        .panel-doc-item.bol {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+        }
+        .panel-doc-item.packing-list {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+        }
+        .panel-doc-item.invoice {
+            background: #fefce8;
+            border: 1px solid #fde68a;
+        }
+        .panel-doc-item:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+        .panel-doc-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .panel-doc-icon {
+            font-size: 1.5rem;
+        }
+        .panel-doc-name {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--color-gray-900);
+        }
+        .panel-doc-size {
+            font-size: 0.72rem;
+            color: var(--color-gray-400);
+        }
+        .panel-doc-actions {
+            display: flex;
+            gap: 6px;
+        }
+        .panel-doc-btn {
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+        .panel-doc-btn.view {
+            background: var(--color-primary);
+            color: white;
+        }
+        .panel-doc-btn.view:hover {
+            background: #1e293b;
+        }
+        .panel-doc-btn.download {
+            background: white;
+            color: var(--color-gray-700);
+            border: 1px solid var(--color-gray-300);
+        }
+        .panel-doc-btn.download:hover {
+            background: var(--color-gray-50);
+        }
+        .no-docs-msg {
+            color: var(--color-gray-400);
+            font-size: 0.85rem;
+            font-style: italic;
+            padding: 8px 0;
+        }
+
+        /* Incoming items editor in panel */
+        .panel-incoming-items-editor {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .panel-incoming-row {
+            border: 1px solid var(--color-gray-200);
+            border-radius: 10px;
+            background: #f8fafc;
+            padding: 10px;
+        }
+        .panel-incoming-row-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        .panel-incoming-row-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #0d9488;
+            background: #f0fdfa;
+            border: 1px solid #99f6e4;
+            border-radius: 999px;
+            padding: 2px 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .panel-incoming-remove {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 1px solid #fecaca;
+            background: #fef2f2;
+            color: #dc2626;
+            cursor: pointer;
+            font-size: 14px;
+            line-height: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .panel-incoming-remove:hover {
+            background: #fee2e2;
+        }
+        .panel-incoming-grid {
+            display: grid;
+            gap: 8px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .panel-incoming-grid .panel-field {
+            margin: 0;
+        }
+        .panel-incoming-grid .panel-field.full-width {
+            grid-column: 1 / -1;
+        }
+        .panel-incoming-grid .panel-field label .optional {
+            font-size: 0.65rem;
+            color: var(--color-gray-400);
+            font-weight: 500;
+            margin-left: 4px;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+        .panel-incoming-grid input.incoming-field-error {
+            border-color: #ef4444;
+            background: #fef2f2;
+        }
+        .panel-incoming-actions {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 4px;
+        }
+        .panel-incoming-add {
+            border: 1px dashed #94a3b8;
+            background: white;
+            color: #475569;
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .panel-incoming-add:hover {
+            border-color: #0d9488;
+            color: #0d9488;
+            background: #f0fdfa;
+        }
+        .panel-incoming-summary {
+            font-size: 0.76rem;
+            color: #0f766e;
+            font-weight: 600;
+            background: #f0fdfa;
+            border: 1px solid #99f6e4;
+            border-radius: 8px;
+            padding: 6px 10px;
+        }
+        @media (max-width: 768px) {
+            .panel-incoming-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Timestamps section */
+        .timestamps-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .timestamp-item {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        .timestamp-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--color-gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .timestamp-value {
+            font-size: 0.85rem;
+            color: var(--color-gray-700);
+            font-weight: 500;
+        }
+
+        /* Activity log */
+        .activity-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .activity-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--color-gray-100);
+        }
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+        .activity-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+        .activity-text {
+            font-size: 0.82rem;
+            color: var(--color-gray-700);
+        }
+        .activity-time {
+            font-size: 0.72rem;
+            color: var(--color-gray-400);
+            margin-top: 2px;
+        }
+
+        /* Panel Footer (Save bar) */
+        .panel-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid var(--color-gray-200);
+            padding: 16px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 5;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.06);
+        }
+        .panel-footer-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: var(--color-gray-400);
+        }
+        .panel-footer-right {
+            display: flex;
+            gap: 10px;
+        }
+        .btn-cancel-panel {
+            padding: 10px 20px;
+            border: 2px solid var(--color-gray-200);
+            border-radius: 10px;
+            background: white;
+            color: var(--color-gray-600);
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-cancel-panel:hover {
+            border-color: var(--color-gray-300);
+            background: var(--color-gray-50);
+        }
+        .btn-save-panel {
+            padding: 10px 28px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            font-weight: 700;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-save-panel:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(16,185,129,0.35);
+        }
+        .btn-save-panel:disabled {
+            background: var(--color-gray-300);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        .btn-save-panel .spinner {
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        /* ============================================================
+           TOAST NOTIFICATIONS
+           ============================================================ */
+        .toast-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 3000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .toast {
+            background: var(--color-primary);
+            color: white;
+            padding: 14px 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: toastIn 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            min-width: 300px;
+            max-width: 450px;
+        }
+        .toast.success { background: linear-gradient(135deg, #059669, #047857); }
+        .toast.error { background: linear-gradient(135deg, #dc2626, #b91c1c); }
+        .toast.warning { background: linear-gradient(135deg, #d97706, #b45309); }
+        .toast-icon { font-size: 1.1rem; flex-shrink: 0; }
+        .toast-message { flex: 1; font-weight: 500; font-size: 0.88rem; }
+        .toast-close {
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.7);
+            cursor: pointer;
+            font-size: 1.1rem;
+            padding: 2px;
+        }
+        .toast-close:hover { color: white; }
+
+        @keyframes toastIn {
+            from { transform: translateX(100%) scale(0.9); opacity: 0; }
+            to { transform: translateX(0) scale(1); opacity: 1; }
+        }
+        @keyframes toastOut {
+            from { transform: translateX(0) scale(1); opacity: 1; }
+            to { transform: translateX(100%) scale(0.9); opacity: 0; }
+        }
+
+        /* ============================================================
+           CONFIRM DIALOG
+           ============================================================ */
+        .confirm-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15,23,42,0.5);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            display: flex;
             justify-content: center;
             align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s;
         }
-        .modal-overlay.active {
-            display: flex;
+        .confirm-overlay.active {
+            opacity: 1;
+            visibility: visible;
         }
-        .modal {
+        .confirm-dialog {
             background: white;
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-xl);
-            max-width: 500px;
+            border-radius: 16px;
+            padding: 28px;
+            max-width: 420px;
             width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            transform: scale(0.9);
+            transition: transform 0.2s;
         }
-        .modal h2 {
-            margin-bottom: var(--spacing-md);
+        .confirm-overlay.active .confirm-dialog {
+            transform: scale(1);
         }
-        .modal .form-group {
-            margin-bottom: var(--spacing-md);
+        .confirm-icon {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 12px;
         }
-        .modal-actions {
+        .confirm-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-gray-900);
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .confirm-message {
+            font-size: 0.9rem;
+            color: var(--color-gray-500);
+            text-align: center;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+        .confirm-actions {
             display: flex;
-            gap: var(--spacing-sm);
-            justify-content: flex-end;
-            margin-top: var(--spacing-lg);
+            gap: 10px;
+            justify-content: center;
+        }
+        .confirm-btn {
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .confirm-btn.cancel {
+            background: white;
+            border: 2px solid var(--color-gray-200);
+            color: var(--color-gray-600);
+        }
+        .confirm-btn.cancel:hover {
+            background: var(--color-gray-50);
+        }
+        .confirm-btn.danger {
+            background: #ef4444;
+            border: none;
+            color: white;
+        }
+        .confirm-btn.danger:hover {
+            background: #dc2626;
+        }
+        .confirm-btn.primary {
+            background: var(--color-accent);
+            border: none;
+            color: white;
+        }
+        .confirm-btn.primary:hover {
+            background: var(--color-accent-hover);
+        }
+
+        /* ============================================================
+           DOCUMENT VIEWER MODAL
+           ============================================================ */
+        .doc-viewer-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(6px);
+            z-index: 2500;
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+        }
+        .doc-viewer-overlay.active {
+            display: flex;
+        }
+        .doc-viewer-modal {
+            background: white;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 800px;
+            max-height: 85vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+        }
+        .doc-viewer-header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        .doc-viewer-header h3 {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        .doc-type-pill {
+            font-size: 0.7rem;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-left: 8px;
+        }
+        .doc-type-pill.bol { background: #3b82f6; }
+        .doc-type-pill.packing-list { background: #22c55e; }
+        .doc-type-pill.invoice { background: #eab308; color: #1e293b; }
+        .doc-viewer-close {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: white;
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .doc-viewer-close:hover { background: rgba(255,255,255,0.25); }
+        .doc-viewer-body {
+            flex: 1;
+            overflow: auto;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+        }
+        .doc-viewer-body img {
+            max-width: 100%;
+            max-height: 60vh;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        .doc-viewer-body iframe {
+            width: 100%;
+            height: 60vh;
+            border: none;
+            border-radius: 8px;
+        }
+        .doc-viewer-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            width: 100%;
+            margin-top: 16px;
+            padding: 12px 16px;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+        .doc-info-item { font-size: 0.8rem; }
+        .doc-info-item .label { color: #64748b; font-weight: 500; }
+        .doc-info-item .value { color: #1e293b; font-weight: 700; }
+        .doc-viewer-no-preview {
+            text-align: center;
+            color: #64748b;
+            padding: 40px 20px;
+        }
+        .doc-viewer-no-preview .icon { font-size: 3rem; margin-bottom: 12px; }
+        .doc-download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #14b8a6, #0d9488);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 12px;
+            transition: all 0.2s;
+        }
+        .doc-download-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(20, 184, 166, 0.4);
+        }
+
+        /* ============================================================
+           ANIMATIONS
+           ============================================================ */
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 1024px) {
+            .stats-row {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .shipments-table .hide-tablet {
+                display: none;
+            }
+        }
+        @media (max-width: 768px) {
+            .detail-panel {
+                width: 100vw;
+            }
+            .stats-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .panel-form-grid {
+                grid-template-columns: 1fr;
+            }
+            .panel-form-grid.cols-3 {
+                grid-template-columns: 1fr;
+            }
+            .filters-bar {
+                flex-direction: column;
+            }
+            .search-wrapper {
+                min-width: 100%;
+            }
+            .filter-select, .sort-select {
+                width: 100%;
+            }
+            .timestamps-grid {
+                grid-template-columns: 1fr;
+            }
+            .page-header-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .shipments-table .hide-mobile {
+                display: none;
+            }
+            .shipments-table tbody td {
+                padding: 10px 12px;
+            }
+            .panel-body {
+                padding: 16px 18px 100px;
+            }
+            .panel-section {
+                padding: 16px;
+            }
+        }
+        @media (max-width: 480px) {
+            .stats-row {
+                grid-template-columns: 1fr 1fr;
+            }
+            .stat-card {
+                padding: var(--spacing-sm);
+            }
         }
     </style>
 </head>
 <body>
     <!-- Toast Container -->
     <div class="toast-container" id="toast-container"></div>
+
+    <!-- Confirm Dialog -->
+    <div class="confirm-overlay" id="confirm-overlay">
+        <div class="confirm-dialog">
+            <div class="confirm-icon" id="confirm-icon"></div>
+            <div class="confirm-title" id="confirm-title"></div>
+            <div class="confirm-message" id="confirm-message"></div>
+            <div class="confirm-actions">
+                <button class="confirm-btn cancel" id="confirm-cancel">Cancel</button>
+                <button class="confirm-btn" id="confirm-ok">Confirm</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Navigation -->
     <header class="header">
@@ -358,8 +1329,8 @@
                 <span></span>
             </button>
             <ul class="nav-menu">
-                <li><span id="user-name" class="nav-link">Welcome</span></li>
-                <li><a href="#" id="logout-btn" class="nav-link btn btn-outline">Logout</a></li>
+                <li><span id="user-name" class="nav-link" data-i18n="portal.nav.welcome">Welcome</span></li>
+                <li><a href="#" id="logout-btn" class="nav-link btn btn-outline" data-i18n="portal.sidebar.logout">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -368,28 +1339,58 @@
         <!-- Sidebar -->
         <aside class="portal-sidebar">
             <nav>
-                <a href="dashboard.html" class="portal-nav-item">
+                <a href="dashboard.html" class="portal-nav-item" data-i18n-html="portal.sidebar.dashboard">
                     <span>📊</span> Dashboard
                 </a>
-                <a href="shipments.html" class="portal-nav-item">
+                <a href="shipments.html" class="portal-nav-item" data-i18n-html="portal.sidebar.shipments">
                     <span>🚚</span> Shipments
                 </a>
-                <a href="tracking.html" class="portal-nav-item">
+                <a href="pickups.html" class="portal-nav-item">
+                    <span aria-hidden="true">🏗️</span> <span>Pickup & Delivery</span>
+                </a>
+                <a href="tracking.html" class="portal-nav-item" data-i18n-html="portal.sidebar.tracking">
                     <span>🔍</span> Tracking
                 </a>
-                <a href="inventory.html" class="portal-nav-item">
+                <a href="inventory.html" class="portal-nav-item" data-i18n-html="portal.sidebar.inventory">
                     <span>📦</span> Inventory
                 </a>
+                <a href="admin-billing.html" class="portal-nav-item"><span>💵</span> <span>Billing</span></a>
+                <a href="contracts.html" class="portal-nav-item"><span>📄</span> <span>Contracts</span></a>
+                <div id="employee-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;" aria-hidden="true" data-i18n="portal.sidebar.staffLabel">Staff</div>
+                    <a href="customers.html" class="portal-nav-item" id="nav-all-users">
+                        <span aria-hidden="true">👥</span> <span data-i18n="portal.sidebar.allCustomers">All Customers</span>
+                    </a>
+                    <a href="admin-shipments.html" class="portal-nav-item active" id="nav-all-shipments">
+                        <span aria-hidden="true">📋</span> <span data-i18n="portal.sidebar.allShipments">All Shipments</span>
+                    </a>
+                </div>
                 <div id="admin-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
-                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;">Admin</div>
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;" data-i18n="portal.sidebar.adminLabel">Admin</div>
+                    <a href="admin-panel.html" class="portal-nav-item">
+                        <span>🛡️</span> <span>Admin Control Panel</span>
+                    </a>
+                    <a href="admin-pickups.html" class="portal-nav-item">
+                        <span aria-hidden="true">🚛</span> <span>All Pickup Requests</span>
+                    </a>
+                    <a href="admin-billing.html" class="portal-nav-item"><span>📝</span> <span>Activity Billing</span></a>
+                    <a href="invoices.html" class="portal-nav-item">
+                        <span aria-hidden="true">💵</span> <span data-i18n="portal.sidebar.invoices">Invoices</span>
+                    </a>
+                    <a href="storage-log.html" class="portal-nav-item">
+                        <span aria-hidden="true">📊</span> <span data-i18n="portal.sidebar.storagelog">Storage Log</span>
+                    </a>
                     <a href="pricing.html" class="portal-nav-item">
-                        <span>💰</span> Pricing
+                        <span aria-hidden="true">💰</span> <span data-i18n="portal.sidebar.pricing">Pricing</span>
                     </a>
                     <a href="settings.html" class="portal-nav-item">
-                        <span>⚙️</span> Settings
+                        <span aria-hidden="true">⚙️</span> <span data-i18n="portal.sidebar.settings">Settings</span>
                     </a>
                     <a href="team.html" class="portal-nav-item">
-                        <span>👔</span> Manage Team
+                        <span aria-hidden="true">👔</span> <span data-i18n="portal.sidebar.team">Manage Team</span>
+                    </a>
+                    <a href="changelog.html" class="portal-nav-item">
+                        <span aria-hidden="true">📝</span> <span data-i18n="portal.sidebar.changelog">Changelog</span>
                     </a>
                 </div>
             </nav>
@@ -399,14 +1400,70 @@
         <main class="portal-main">
             <!-- Page Header -->
             <div class="page-header-bar">
-                <h1 id="page-title">📋 All Shipments</h1>
-                <p>View and manage shipments from all customers</p>
+                <div>
+                    <h1>All Shipments</h1>
+                    <p>View, search, and manage all customer shipments</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-refresh" id="btn-refresh" title="Refresh shipments">
+                        <span class="refresh-icon">&#x21bb;</span> Refresh
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="stats-row" id="stats-row">
+                <div class="stat-card total" data-filter="" title="Show all shipments">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="stat-total">--</div>
+                        <div class="stat-label">Total</div>
+                    </div>
+                </div>
+                <div class="stat-card pending" data-filter="pending" title="Filter: Pending">
+                    <div class="stat-icon">⏳</div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="stat-pending">--</div>
+                        <div class="stat-label">Pending</div>
+                    </div>
+                </div>
+                <div class="stat-card processing" data-filter="processing" title="Filter: Processing">
+                    <div class="stat-icon">⚙️</div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="stat-processing">--</div>
+                        <div class="stat-label">Processing</div>
+                    </div>
+                </div>
+                <div class="stat-card transit" data-filter="in_transit" title="Filter: In Transit">
+                    <div class="stat-icon">🚚</div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="stat-transit">--</div>
+                        <div class="stat-label">In Transit</div>
+                    </div>
+                </div>
+                <div class="stat-card delivered" data-filter="delivered" title="Filter: Delivered">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="stat-delivered">--</div>
+                        <div class="stat-label">Delivered</div>
+                    </div>
+                </div>
+                <div class="stat-card cancelled" data-filter="cancelled" title="Filter: Cancelled">
+                    <div class="stat-icon">❌</div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="stat-cancelled">--</div>
+                        <div class="stat-label">Cancelled</div>
+                    </div>
+                </div>
             </div>
 
             <!-- Filters Bar -->
             <div class="filters-bar">
-                <input type="text" id="search-input" placeholder="Search tracking #, customer, destination...">
-                <select id="status-filter">
+                <div class="search-wrapper">
+                    <span class="search-icon">&#x1F50D;</span>
+                    <input type="text" id="search-input" placeholder="Search tracking #, customer, destination, company...">
+                </div>
+                <select class="filter-select" id="status-filter">
                     <option value="">All Statuses</option>
                     <option value="pending">Pending</option>
                     <option value="processing">Processing</option>
@@ -416,71 +1473,378 @@
                     <option value="delivered">Delivered</option>
                     <option value="cancelled">Cancelled</option>
                 </select>
-                <button class="btn btn-primary" onclick="applyFilters()">Filter</button>
-                <button class="btn btn-outline" onclick="clearFilters()">Clear</button>
+                <select class="filter-select" id="warehouse-filter">
+                    <option value="">All Warehouses</option>
+                    <option value="miami">Miami, FL</option>
+                    <option value="biloxi">Biloxi, MS</option>
+                </select>
+                <select class="sort-select" id="sort-select">
+                    <option value="date_desc">Newest First</option>
+                    <option value="date_asc">Oldest First</option>
+                    <option value="status">By Status</option>
+                    <option value="customer">By Customer</option>
+                    <option value="tracking">By Tracking #</option>
+                </select>
+                <button class="btn-clear-filters" id="btn-clear-filters">Clear Filters</button>
+                <span class="filter-count" id="filter-count"></span>
             </div>
 
-            <!-- Stats Summary -->
-            <div class="dashboard-stats" style="margin-bottom: var(--spacing-xl);">
-                <div class="dashboard-card">
-                    <h3>Total Shipments</h3>
-                    <div class="value" id="total-shipments">0</div>
-                </div>
-                <div class="dashboard-card">
-                    <h3>Pending</h3>
-                    <div class="value" id="pending-shipments">0</div>
-                </div>
-                <div class="dashboard-card">
-                    <h3>In Transit</h3>
-                    <div class="value" id="transit-shipments">0</div>
-                </div>
-                <div class="dashboard-card">
-                    <h3>Delivered</h3>
-                    <div class="value" id="delivered-shipments">0</div>
-                </div>
+            <!-- Shipments Table -->
+            <div class="shipments-table-wrapper" id="shipments-table-wrapper">
+                <table class="shipments-table" id="shipments-table">
+                    <thead>
+                        <tr>
+                            <th>Tracking #</th>
+                            <th>Customer</th>
+                            <th>Status</th>
+                            <th class="hide-tablet">Destination</th>
+                            <th class="hide-mobile">Warehouse</th>
+                            <th class="hide-mobile">Service</th>
+                            <th class="hide-tablet">Docs</th>
+                            <th class="hide-mobile">Created</th>
+                        </tr>
+                    </thead>
+                    <tbody id="shipments-tbody">
+                    </tbody>
+                </table>
             </div>
 
-            <!-- Shipments List -->
-            <div id="shipments-list">
-                <div class="empty-state">
-                    <div class="icon">⏳</div>
-                    <p>Loading shipments...</p>
-                </div>
+            <!-- Loading State -->
+            <div id="loading-state" style="display: none;">
+                <div class="loading-skeleton"></div>
+                <div class="loading-skeleton"></div>
+                <div class="loading-skeleton"></div>
+                <div class="loading-skeleton"></div>
+                <div class="loading-skeleton"></div>
+                <div class="loading-skeleton"></div>
+                <div class="loading-skeleton"></div>
+                <div class="loading-skeleton"></div>
+            </div>
+
+            <!-- Empty State -->
+            <div id="empty-state" style="display: none;" class="empty-state">
+                <div class="icon">📦</div>
+                <p>No shipments found</p>
             </div>
         </main>
     </div>
 
-    <!-- Edit Modal -->
-    <div class="modal-overlay" id="edit-modal">
-        <div class="modal">
-            <h2>📝 Edit Shipment</h2>
-            <form id="edit-form">
-                <input type="hidden" id="edit-shipment-id">
-                <div class="form-group">
-                    <label>Tracking Number</label>
-                    <input type="text" id="edit-tracking" readonly style="background: var(--color-gray-100);">
+    <!-- Slide-Out Detail Panel -->
+    <div class="panel-overlay" id="panel-overlay"></div>
+    <div class="detail-panel" id="detail-panel">
+        <!-- Panel Header -->
+        <div class="panel-header">
+            <div class="panel-header-top">
+                <div>
+                    <div class="panel-tracking" id="panel-tracking">--</div>
                 </div>
-                <div class="form-group">
-                    <label>Status</label>
-                    <select id="edit-status">
-                        <option value="pending">Pending</option>
-                        <option value="processing">Processing</option>
-                        <option value="picked_up">Picked Up</option>
-                        <option value="in_transit">In Transit</option>
-                        <option value="out_for_delivery">Out for Delivery</option>
-                        <option value="delivered">Delivered</option>
-                        <option value="cancelled">Cancelled</option>
-                    </select>
+                <button class="panel-close" id="panel-close" title="Close panel">&times;</button>
+            </div>
+            <div class="panel-header-meta">
+                <span class="panel-customer-name" id="panel-customer-name">--</span>
+                <span class="status-badge" id="panel-status-badge">--</span>
+            </div>
+        </div>
+
+        <!-- Panel Body (scrollable) -->
+        <div class="panel-body" id="panel-body">
+
+            <!-- STATUS & SERVICE -->
+            <div class="panel-section">
+                <div class="panel-section-header">
+                    <div class="panel-section-icon" style="background: #ede9fe;">🔄</div>
+                    <div>
+                        <div class="panel-section-title">Status & Service</div>
+                        <div class="panel-section-subtitle">Update shipment status and service type</div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Admin Notes</label>
-                    <textarea id="edit-notes" rows="3" placeholder="Internal notes about this shipment..."></textarea>
+                <div class="panel-form-grid">
+                    <div class="panel-field">
+                        <label for="panel-status">Status</label>
+                        <select id="panel-status">
+                            <option value="pending">Pending</option>
+                            <option value="processing">Processing</option>
+                            <option value="picked_up">Picked Up</option>
+                            <option value="in_transit">In Transit</option>
+                            <option value="out_for_delivery">Out for Delivery</option>
+                            <option value="delivered">Delivered</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                    <div class="panel-field">
+                        <label for="panel-service-type">Service Type</label>
+                        <select id="panel-service-type">
+                            <option value="standard">Standard</option>
+                            <option value="express">Express</option>
+                            <option value="overnight">Overnight</option>
+                        </select>
+                    </div>
+                    <div class="panel-field">
+                        <label for="panel-warehouse">Warehouse</label>
+                        <select id="panel-warehouse">
+                            <option value="miami">Miami, FL</option>
+                            <option value="biloxi">Biloxi, MS</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="modal-actions">
-                    <button type="button" class="btn btn-outline" onclick="closeModal()">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Save Changes</button>
+            </div>
+
+            <!-- ORIGIN ADDRESS -->
+            <div class="panel-section">
+                <div class="panel-section-header">
+                    <div class="panel-section-icon" style="background: #dbeafe;">📍</div>
+                    <div>
+                        <div class="panel-section-title">Origin Address</div>
+                        <div class="panel-section-subtitle">Pickup / sender location</div>
+                    </div>
                 </div>
-            </form>
+                <div class="panel-form-grid">
+                    <div class="panel-field full-width">
+                        <label for="panel-origin-address">Street Address</label>
+                        <input type="text" id="panel-origin-address" placeholder="123 Main St">
+                    </div>
+                    <div class="panel-field">
+                        <label for="panel-origin-city">City</label>
+                        <input type="text" id="panel-origin-city" placeholder="Miami">
+                    </div>
+                    <div class="panel-field">
+                        <label for="panel-origin-state">State</label>
+                        <input type="text" id="panel-origin-state" placeholder="FL" maxlength="2">
+                    </div>
+                    <div class="panel-field">
+                        <label for="panel-origin-zip">ZIP Code</label>
+                        <input type="text" id="panel-origin-zip" placeholder="33178" maxlength="10">
+                    </div>
+                </div>
+            </div>
+
+            <!-- DESTINATION ADDRESS -->
+            <div class="panel-section">
+                <div class="panel-section-header">
+                    <div class="panel-section-icon" style="background: #d1fae5;">🎯</div>
+                    <div>
+                        <div class="panel-section-title">Destination Address</div>
+                        <div class="panel-section-subtitle">Delivery / receiver location</div>
+                    </div>
+                </div>
+                <div class="panel-form-grid">
+                    <div class="panel-field full-width">
+                        <label for="panel-dest-name">Recipient Name</label>
+                        <input type="text" id="panel-dest-name" placeholder="John Doe">
+                    </div>
+                    <div class="panel-field full-width">
+                        <label for="panel-dest-address">Street Address</label>
+                        <input type="text" id="panel-dest-address" placeholder="456 Oak Ave">
+                    </div>
+                    <div class="panel-field">
+                        <label for="panel-dest-city">City</label>
+                        <input type="text" id="panel-dest-city" placeholder="New York">
+                    </div>
+                    <div class="panel-field">
+                        <label for="panel-dest-state">State</label>
+                        <input type="text" id="panel-dest-state" placeholder="NY" maxlength="2">
+                    </div>
+                    <div class="panel-field">
+                        <label for="panel-dest-zip">ZIP Code</label>
+                        <input type="text" id="panel-dest-zip" placeholder="10001" maxlength="10">
+                    </div>
+                </div>
+            </div>
+
+            <!-- PACKAGE DETAILS -->
+            <div class="panel-section">
+                <div class="panel-section-header">
+                    <div class="panel-section-icon" style="background: #fef3c7;">📦</div>
+                    <div>
+                        <div class="panel-section-title">Package Details</div>
+                        <div class="panel-section-subtitle">Dimensions and weight</div>
+                    </div>
+                </div>
+                <div class="panel-form-grid cols-3">
+                    <div class="panel-field">
+                        <label for="panel-pkg-weight">Weight (lbs)</label>
+                        <input type="number" id="panel-pkg-weight" placeholder="0" step="0.1" min="0">
+                    </div>
+                    <div class="panel-field">
+                        <label for="panel-pkg-length">Length (in)</label>
+                        <input type="number" id="panel-pkg-length" placeholder="0" step="0.1" min="0">
+                    </div>
+                    <div class="panel-field">
+                        <label for="panel-pkg-width">Width (in)</label>
+                        <input type="number" id="panel-pkg-width" placeholder="0" step="0.1" min="0">
+                    </div>
+                    <div class="panel-field">
+                        <label for="panel-pkg-height">Height (in)</label>
+                        <input type="number" id="panel-pkg-height" placeholder="0" step="0.1" min="0">
+                    </div>
+                    <div class="panel-field">
+                        <label for="panel-pkg-quantity">Quantity</label>
+                        <input type="number" id="panel-pkg-quantity" placeholder="1" min="1">
+                    </div>
+                    <div class="panel-field">
+                        <label for="panel-pkg-pallets">Pallets</label>
+                        <input type="number" id="panel-pkg-pallets" placeholder="0" min="0" readonly style="background: var(--color-gray-100);">
+                    </div>
+                </div>
+                <!-- Estimated Cost & Services (read-only from quote calculation) -->
+                <div id="panel-quote-summary" style="margin-top: 12px; padding: 12px 16px; background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%); border-radius: 8px; border: 1px solid #bbf7d0; display: none;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span style="font-weight: 600; font-size: 0.85rem; color: #166534;">💰 Estimated Cost</span>
+                        <span id="panel-est-cost" style="font-weight: 700; font-size: 1.1rem; color: #15803d;">--</span>
+                    </div>
+                    <div id="panel-cost-breakdown" style="font-size: 0.8rem; color: #4b5563; line-height: 1.6;"></div>
+                    <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #d1fae5;">
+                        <span style="font-weight: 600; font-size: 0.8rem; color: #166534;">📋 Services:</span>
+                        <span id="panel-services" style="font-size: 0.8rem; color: #4b5563;">--</span>
+                    </div>
+                    <div style="margin-top: 4px;">
+                        <span style="font-weight: 600; font-size: 0.8rem; color: #166534;">📍 Zone:</span>
+                        <span id="panel-shipping-zone" style="font-size: 0.8rem; color: #4b5563;">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INCOMING INVENTORY ITEMS -->
+            <div class="panel-section">
+                <div class="panel-section-header">
+                    <div class="panel-section-icon" style="background: #d1fae5;">📋</div>
+                    <div>
+                        <div class="panel-section-title">Incoming Inventory Items</div>
+                        <div class="panel-section-subtitle">Itemized SKUs from this shipment (admin editable)</div>
+                    </div>
+                </div>
+                <div id="panel-incoming-items" style="padding: 0;">
+                    <div style="padding: 12px 16px; color: var(--color-gray-400); font-size: 0.85rem;">No items listed</div>
+                </div>
+            </div>
+
+            <!-- ADMIN NOTES -->
+            <div class="panel-section">
+                <div class="panel-section-header">
+                    <div class="panel-section-icon" style="background: #fee2e2;">📝</div>
+                    <div>
+                        <div class="panel-section-title">Notes</div>
+                        <div class="panel-section-subtitle">Internal admin notes (not visible to customer)</div>
+                    </div>
+                </div>
+                <div class="panel-form-grid cols-1">
+                    <div class="panel-field">
+                        <label for="panel-admin-notes">Admin Notes</label>
+                        <textarea id="panel-admin-notes" placeholder="Internal notes about this shipment..." rows="3"></textarea>
+                    </div>
+                    <div class="panel-field">
+                        <label for="panel-customer-notes">Customer Notes</label>
+                        <textarea id="panel-customer-notes" placeholder="Notes from the customer..." rows="2" readonly style="background: var(--color-gray-50);"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DOCUMENTS -->
+            <div class="panel-section">
+                <div class="panel-section-header">
+                    <div class="panel-section-icon" style="background: #e0e7ff;">📎</div>
+                    <div>
+                        <div class="panel-section-title">Documents</div>
+                        <div class="panel-section-subtitle">Attached shipment documents</div>
+                    </div>
+                </div>
+                <div class="panel-docs-grid" id="panel-docs-grid">
+                    <div class="no-docs-msg">No documents available</div>
+                </div>
+            </div>
+
+            <!-- CUSTOMER INFO -->
+            <div class="panel-section">
+                <div class="panel-section-header">
+                    <div class="panel-section-icon" style="background: #cffafe;">👤</div>
+                    <div>
+                        <div class="panel-section-title">Customer Information</div>
+                        <div class="panel-section-subtitle">Read-only customer details</div>
+                    </div>
+                </div>
+                <div class="panel-form-grid">
+                    <div class="panel-field">
+                        <label>Customer Name</label>
+                        <input type="text" id="panel-cust-name" readonly>
+                    </div>
+                    <div class="panel-field">
+                        <label>Email</label>
+                        <input type="text" id="panel-cust-email" readonly>
+                    </div>
+                    <div class="panel-field">
+                        <label>Company</label>
+                        <input type="text" id="panel-cust-company" readonly>
+                    </div>
+                    <div class="panel-field">
+                        <label>User ID</label>
+                        <input type="text" id="panel-cust-uid" readonly class="mono" style="font-family: monospace; font-size: 0.78rem;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- TIMESTAMPS -->
+            <div class="panel-section">
+                <div class="panel-section-header">
+                    <div class="panel-section-icon" style="background: #f1f5f9;">🕐</div>
+                    <div>
+                        <div class="panel-section-title">Timestamps</div>
+                        <div class="panel-section-subtitle">Record creation and modification history</div>
+                    </div>
+                </div>
+                <div class="timestamps-grid">
+                    <div class="timestamp-item">
+                        <span class="timestamp-label">Created</span>
+                        <span class="timestamp-value" id="panel-created-at">--</span>
+                    </div>
+                    <div class="timestamp-item">
+                        <span class="timestamp-label">Last Updated</span>
+                        <span class="timestamp-value" id="panel-updated-at">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACTIVITY LOG -->
+            <div class="panel-section">
+                <div class="panel-section-header">
+                    <div class="panel-section-icon" style="background: #fce7f3;">📜</div>
+                    <div>
+                        <div class="panel-section-title">Activity Log</div>
+                        <div class="panel-section-subtitle">Status change history</div>
+                    </div>
+                </div>
+                <div class="activity-list" id="panel-activity-log">
+                    <div class="no-docs-msg">No activity recorded</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Panel Footer (Save Bar) -->
+        <div class="panel-footer">
+            <div class="panel-footer-left">
+                <span id="panel-save-hint">Edit fields above, then save.</span>
+            </div>
+            <div class="panel-footer-right">
+                <button class="btn-cancel-panel" id="btn-panel-cancel">Cancel</button>
+                <button class="btn-save-panel" id="btn-panel-sync-inventory" style="background:#059669;margin-right:6px;" title="Force sync incoming items to inventory collection">
+                    <span class="btn-text">&#x1f4e6; Sync Inventory</span>
+                </button>
+                <button class="btn-save-panel" id="btn-panel-save">
+                    <span class="btn-text">Save Changes</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Document Viewer Modal -->
+    <div class="doc-viewer-overlay" id="doc-viewer-overlay">
+        <div class="doc-viewer-modal">
+            <div class="doc-viewer-header">
+                <h3 id="doc-viewer-title">Document Viewer</h3>
+                <button class="doc-viewer-close" onclick="closeDocViewer()">&times;</button>
+            </div>
+            <div class="doc-viewer-body" id="doc-viewer-body">
+            </div>
         </div>
     </div>
 
@@ -488,9 +1852,11 @@
     <script type="module">
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
         import { getAuth, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
-        import { getFirestore, collection, query, where, orderBy, getDocs, doc, getDoc, updateDoc } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+        import { getFirestore, collection, query, where, orderBy, getDocs, doc, getDoc, updateDoc, addDoc, setDoc, Timestamp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
 
-        // Firebase configuration
+        // ============================================================
+        // FIREBASE CONFIGURATION
+        // ============================================================
         const firebaseConfig = {
             apiKey: "AIzaSyA4wMm8-QmZGt3lJcZgTpbBa1W_TklrmRg",
             authDomain: "miamialliance3pl.firebaseapp.com",
@@ -498,20 +1864,44 @@
             storageBucket: "miamialliance3pl.firebasestorage.app",
             messagingSenderId: "657614666588",
             appId: "1:657614666588:web:20e50484fe5d90b5aa5f99",
-            measurementId: "G-QSRV99D8BX"
+            measurementId: "G-KTW0F25ZM1"
         };
 
-        // Fallback admin emails (used when no Firestore role exists)
         const FALLBACK_ADMIN_EMAILS = ['ceo@usglatam.com', 'yuri@megalopolisms.com'];
 
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
         const db = getFirestore(app);
 
+        // ============================================================
+        // GLOBAL STATE
+        // ============================================================
         let allShipments = [];
+        let filteredShipments = [];
         let usersMap = {};
+        let currentShipmentId = null;
+        let originalPanelData = null; // for dirty-check
+        let panelIncomingItems = [];
 
-        // Check authentication and role
+        const STATUS_ORDER = ['pending', 'processing', 'picked_up', 'in_transit', 'out_for_delivery', 'delivered', 'cancelled'];
+        const STATUS_LABELS = {
+            'pending': 'Pending',
+            'processing': 'Processing',
+            'picked_up': 'Picked Up',
+            'in_transit': 'In Transit',
+            'out_for_delivery': 'Out for Delivery',
+            'delivered': 'Delivered',
+            'cancelled': 'Cancelled'
+        };
+        const SERVICE_LABELS = {
+            'standard': 'Standard',
+            'express': 'Express',
+            'overnight': 'Overnight'
+        };
+
+        // ============================================================
+        // AUTH & INIT
+        // ============================================================
         onAuthStateChanged(auth, async (user) => {
             if (!user) {
                 window.location.href = '../login.html';
@@ -521,7 +1911,6 @@
             let userName = user.displayName || user.email;
             const userEmail = user.email.toLowerCase();
 
-            // Check user role from Firestore
             let userRole = null;
             let isStaff = false;
 
@@ -535,371 +1924,1349 @@
                 console.error('Error fetching user role:', error);
             }
 
-            // Determine if user is staff (admin or employee)
             if (userRole === 'admin' || userRole === 'employee') {
                 isStaff = true;
             } else if (!userRole) {
-                // Fallback: check against fallback admin emails if no Firestore role exists
                 isStaff = FALLBACK_ADMIN_EMAILS.map(e => e.toLowerCase()).includes(userEmail);
             }
 
-            // Redirect non-staff users to dashboard
             if (!isStaff) {
                 window.location.href = 'dashboard.html';
                 return;
             }
 
-            // Display appropriate badge based on role
+            // Show admin nav
+            const empNav = document.getElementById('employee-nav');
+            if (empNav) empNav.style.display = 'block';
+            const adminNav = document.getElementById('admin-nav');
+            if (adminNav) adminNav.style.display = 'block';
+
+            // Display badge
             const userNameEl = document.getElementById('user-name');
-            if (userRole === 'admin') {
+            if (userRole === 'admin' || FALLBACK_ADMIN_EMAILS.map(e => e.toLowerCase()).includes(userEmail)) {
                 userNameEl.innerHTML = `${userName} <span class="admin-badge">ADMIN</span>`;
-            } else if (userRole === 'employee') {
-                userNameEl.innerHTML = `${userName} <span class="admin-badge">STAFF</span>`;
             } else {
-                // Fallback admin (no Firestore role but in fallback list)
-                userNameEl.innerHTML = `${userName} <span class="admin-badge">ADMIN</span>`;
+                userNameEl.innerHTML = `${userName} <span class="admin-badge">STAFF</span>`;
             }
 
+            // Load data
+            showLoading(true);
             await loadUsers();
-            loadShipments();
+            await loadShipments();
+            showLoading(false);
         });
 
-        // Logout handler
+        // Logout
         document.getElementById('logout-btn').addEventListener('click', async (e) => {
             e.preventDefault();
             await signOut(auth);
             window.location.href = '../login.html';
         });
 
+        // ============================================================
+        // DATA LOADING
+        // ============================================================
         async function loadUsers() {
-            const usersSnap = await getDocs(collection(db, 'users'));
-            usersSnap.forEach((doc) => {
-                usersMap[doc.id] = doc.data();
-            });
+            try {
+                const usersSnap = await getDocs(collection(db, 'users'));
+                usersMap = {};
+                usersSnap.forEach((d) => {
+                    usersMap[d.id] = d.data();
+                });
+            } catch (e) {
+                console.error('Error loading users:', e);
+            }
         }
 
         async function loadShipments() {
             try {
-                const shipmentsRef = collection(db, 'shipments');
-                const shipmentsSnap = await getDocs(shipmentsRef);
-
+                const shipmentsSnap = await getDocs(collection(db, 'shipments'));
                 allShipments = [];
-                let pending = 0, transit = 0, delivered = 0;
-
-                shipmentsSnap.forEach((doc) => {
-                    const data = { id: doc.id, ...doc.data() };
-                    allShipments.push(data);
-
-                    if (data.status === 'pending') pending++;
-                    if (data.status === 'in_transit' || data.status === 'picked_up' || data.status === 'out_for_delivery') transit++;
-                    if (data.status === 'delivered') delivered++;
+                shipmentsSnap.forEach((d) => {
+                    allShipments.push({ id: d.id, ...d.data() });
                 });
-
-                // Update stats
-                document.getElementById('total-shipments').textContent = allShipments.length;
-                document.getElementById('pending-shipments').textContent = pending;
-                document.getElementById('transit-shipments').textContent = transit;
-                document.getElementById('delivered-shipments').textContent = delivered;
-
-                // Display shipments
-                displayShipments(allShipments);
-
+                updateStats();
+                applyFiltersAndSort();
             } catch (error) {
                 console.error('Error loading shipments:', error);
-                document.getElementById('shipments-list').innerHTML = `
-                    <div class="empty-state">
-                        <div class="icon">❌</div>
-                        <p>Error loading shipments: ${error.message}</p>
-                    </div>
+                showToast('Error loading shipments: ' + error.message, 'error');
+                document.getElementById('shipments-table-wrapper').style.display = 'none';
+                document.getElementById('empty-state').style.display = 'block';
+                document.getElementById('empty-state').innerHTML = `
+                    <div class="icon">&#10060;</div>
+                    <p>Error loading shipments: ${error.message}</p>
                 `;
             }
         }
 
-        function displayShipments(shipments) {
-            const container = document.getElementById('shipments-list');
+        function showLoading(show) {
+            document.getElementById('loading-state').style.display = show ? 'block' : 'none';
+            document.getElementById('shipments-table-wrapper').style.display = show ? 'none' : '';
+        }
+
+        // ============================================================
+        // STATS
+        // ============================================================
+        function updateStats() {
+            let counts = { total: 0, pending: 0, processing: 0, transit: 0, delivered: 0, cancelled: 0 };
+            allShipments.forEach(s => {
+                counts.total++;
+                if (s.status === 'pending') counts.pending++;
+                if (s.status === 'processing') counts.processing++;
+                if (['in_transit', 'picked_up', 'out_for_delivery'].includes(s.status)) counts.transit++;
+                if (s.status === 'delivered') counts.delivered++;
+                if (s.status === 'cancelled') counts.cancelled++;
+            });
+            document.getElementById('stat-total').textContent = counts.total;
+            document.getElementById('stat-pending').textContent = counts.pending;
+            document.getElementById('stat-processing').textContent = counts.processing;
+            document.getElementById('stat-transit').textContent = counts.transit;
+            document.getElementById('stat-delivered').textContent = counts.delivered;
+            document.getElementById('stat-cancelled').textContent = counts.cancelled;
+        }
+
+        // ============================================================
+        // FILTER, SORT, DISPLAY
+        // ============================================================
+        function applyFiltersAndSort() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase().trim();
+            const statusFilter = document.getElementById('status-filter').value;
+            const warehouseFilter = document.getElementById('warehouse-filter').value;
+            const sortBy = document.getElementById('sort-select').value;
+
+            let filtered = [...allShipments];
+
+            // Search
+            if (searchTerm) {
+                filtered = filtered.filter(s => {
+                    const customer = usersMap[s.user_id] || {};
+                    const dest = s.destination || {};
+                    const origin = s.origin || {};
+                    const searchFields = [
+                        s.tracking_number,
+                        customer.name,
+                        customer.email,
+                        customer.company_name,
+                        dest.name,
+                        dest.city,
+                        dest.state,
+                        dest.street,
+                        dest.address,
+                        origin.street,
+                        origin.city,
+                        origin.state,
+                        s.admin_notes
+                    ].filter(Boolean).map(f => f.toLowerCase());
+                    return searchFields.some(f => f.includes(searchTerm));
+                });
+            }
+
+            // Status filter
+            if (statusFilter) {
+                filtered = filtered.filter(s => s.status === statusFilter);
+            }
+
+            // Warehouse filter
+            if (warehouseFilter) {
+                filtered = filtered.filter(s => (s.warehouse || s.warehouseId || 'miami') === warehouseFilter);
+            }
+
+            // Sort
+            filtered.sort((a, b) => {
+                switch (sortBy) {
+                    case 'date_asc':
+                        return (new Date(a.created_at || 0)) - (new Date(b.created_at || 0));
+                    case 'status':
+                        return STATUS_ORDER.indexOf(a.status) - STATUS_ORDER.indexOf(b.status);
+                    case 'customer': {
+                        const ca = usersMap[a.user_id]?.name || usersMap[a.user_id]?.email || '';
+                        const cb = usersMap[b.user_id]?.name || usersMap[b.user_id]?.email || '';
+                        return ca.localeCompare(cb);
+                    }
+                    case 'tracking':
+                        return (a.tracking_number || '').localeCompare(b.tracking_number || '');
+                    case 'date_desc':
+                    default:
+                        return (new Date(b.created_at || 0)) - (new Date(a.created_at || 0));
+                }
+            });
+
+            filteredShipments = filtered;
+            renderTable(filtered);
+
+            // Update count
+            const countEl = document.getElementById('filter-count');
+            if (searchTerm || statusFilter || warehouseFilter) {
+                countEl.textContent = `Showing ${filtered.length} of ${allShipments.length}`;
+            } else {
+                countEl.textContent = '';
+            }
+        }
+
+        function renderTable(shipments) {
+            const tbody = document.getElementById('shipments-tbody');
+            const tableWrapper = document.getElementById('shipments-table-wrapper');
+            const emptyState = document.getElementById('empty-state');
 
             if (shipments.length === 0) {
-                container.innerHTML = `
-                    <div class="empty-state">
-                        <div class="icon">📦</div>
-                        <p>No shipments found</p>
-                    </div>
-                `;
+                tableWrapper.style.display = 'none';
+                emptyState.style.display = 'block';
                 return;
             }
 
-            // Sort by created_at descending
-            shipments.sort((a, b) => {
-                const dateA = a.created_at ? new Date(a.created_at) : new Date(0);
-                const dateB = b.created_at ? new Date(b.created_at) : new Date(0);
-                return dateB - dateA;
+            tableWrapper.style.display = '';
+            emptyState.style.display = 'none';
+
+            tbody.innerHTML = shipments.map(s => {
+                const customer = usersMap[s.user_id] || {};
+                const dest = s.destination || {};
+                const wh = s.warehouse || s.warehouseId || 'miami';
+                const hasBol = !!s.bol_document;
+                const hasPl = !!s.packing_list;
+                const hasInv = !!s.commercial_invoice;
+                const dateStr = s.created_at ? new Date(s.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: '2-digit' }) : '--';
+                const serviceLabel = SERVICE_LABELS[s.service_type] || s.service_type || '--';
+
+                return `<tr data-id="${s.id}" class="fade-in">
+                    <td><span class="table-tracking">${s.tracking_number || '--'}</span></td>
+                    <td class="table-customer">
+                        <div class="table-customer-name">${customer.name || customer.email || 'Unknown'}</div>
+                        ${customer.company_name ? `<div class="table-customer-company">${customer.company_name}</div>` : ''}
+                    </td>
+                    <td>
+                        <span class="status-badge status-${s.status || 'pending'}">
+                            <span class="status-dot"></span>
+                            ${STATUS_LABELS[s.status] || s.status || 'Unknown'}
+                        </span>
+                    </td>
+                    <td class="table-destination hide-tablet">
+                        <div class="table-dest-city">${dest.city || '--'}</div>
+                        <div class="table-dest-state">${dest.state || ''} ${dest.zip || ''}</div>
+                    </td>
+                    <td class="hide-mobile">
+                        <span class="table-warehouse warehouse-${wh}">${wh === 'biloxi' ? 'Biloxi' : 'Miami'}</span>
+                    </td>
+                    <td class="hide-mobile" style="font-size: 0.8rem; color: var(--color-gray-600);">${serviceLabel}</td>
+                    <td class="table-docs hide-tablet">
+                        ${hasBol ? '<span class="table-doc-dot bol" title="BOL"></span>' : ''}
+                        ${hasPl ? '<span class="table-doc-dot pl" title="Packing List"></span>' : ''}
+                        ${hasInv ? '<span class="table-doc-dot inv" title="Invoice"></span>' : ''}
+                        ${!hasBol && !hasPl && !hasInv ? '<span style="color:var(--color-gray-300);font-size:0.75rem;">--</span>' : ''}
+                    </td>
+                    <td class="table-date hide-mobile">${dateStr}</td>
+                </tr>`;
+            }).join('');
+
+            // Attach click handlers
+            tbody.querySelectorAll('tr[data-id]').forEach(row => {
+                row.addEventListener('click', () => {
+                    openPanel(row.dataset.id);
+                });
+            });
+        }
+
+        // ============================================================
+        // EVENT LISTENERS FOR FILTERS
+        // ============================================================
+        document.getElementById('search-input').addEventListener('input', debounce(applyFiltersAndSort, 250));
+        document.getElementById('status-filter').addEventListener('change', applyFiltersAndSort);
+        document.getElementById('warehouse-filter').addEventListener('change', applyFiltersAndSort);
+        document.getElementById('sort-select').addEventListener('change', applyFiltersAndSort);
+
+        document.getElementById('btn-clear-filters').addEventListener('click', () => {
+            document.getElementById('search-input').value = '';
+            document.getElementById('status-filter').value = '';
+            document.getElementById('warehouse-filter').value = '';
+            document.getElementById('sort-select').value = 'date_desc';
+            // Clear stat card active states
+            document.querySelectorAll('.stat-card').forEach(c => c.classList.remove('active'));
+            applyFiltersAndSort();
+        });
+
+        // Stat card click => filter
+        document.querySelectorAll('.stat-card[data-filter]').forEach(card => {
+            card.addEventListener('click', () => {
+                const filterVal = card.dataset.filter;
+                document.getElementById('status-filter').value = filterVal;
+                document.querySelectorAll('.stat-card').forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+                applyFiltersAndSort();
+            });
+        });
+
+        // Refresh button
+        document.getElementById('btn-refresh').addEventListener('click', async () => {
+            const btn = document.getElementById('btn-refresh');
+            btn.classList.add('spinning');
+            btn.disabled = true;
+            showLoading(true);
+            await loadUsers();
+            await loadShipments();
+            showLoading(false);
+            btn.classList.remove('spinning');
+            btn.disabled = false;
+            showToast('Shipments refreshed', 'success');
+        });
+
+        function escHtml(value) {
+            return String(value || '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+        }
+
+        function parseTags(value) {
+            if (Array.isArray(value)) return value.map(t => String(t || '').trim()).filter(Boolean);
+            return String(value || '').split(',').map(t => t.trim()).filter(Boolean);
+        }
+
+        function createBlankIncomingItem() {
+            return { sku: '', name: '', qty: 1, upc: '', tags: '' };
+        }
+
+        function normalizeIncomingItemsForPanel(items) {
+            if (!Array.isArray(items) || items.length === 0) return [createBlankIncomingItem()];
+            const normalized = items.map(item => {
+                const qty = Math.max(0, Math.floor(Number(item && item.qty) || 0));
+                return {
+                    sku: String((item && item.sku) || '').trim(),
+                    name: String((item && item.name) || '').trim(),
+                    qty: qty || 1,
+                    upc: String((item && item.upc) || '').trim(),
+                    tags: parseTags(item && item.tags).join(', ')
+                };
+            });
+            return normalized.length ? normalized : [createBlankIncomingItem()];
+        }
+
+        function getPanelIncomingItemsForSave() {
+            return (panelIncomingItems || []).map(item => ({
+                sku: String(item.sku || '').trim(),
+                name: String(item.name || '').trim(),
+                qty: Math.max(0, Math.floor(Number(item.qty) || 0)),
+                upc: String(item.upc || '').trim(),
+                tags: parseTags(item.tags)
+            })).filter(item => item.sku && item.name && item.qty > 0);
+        }
+
+        function normalizeInventorySyncItem(item) {
+            return {
+                sku: String((item && item.sku) || '').trim(),
+                name: String((item && item.name) || '').trim(),
+                qty: Math.max(0, Math.floor(Number(item && item.qty) || 0)),
+                upc: String((item && item.upc) || '').trim(),
+                tags: parseTags(item && item.tags),
+                photos: Array.isArray(item && item.photos) ? item.photos.filter(Boolean).slice(0, 10) : []
+            };
+        }
+
+        function buildShipmentInventorySyncState(items, warehouseId) {
+            const resolvedWarehouse = warehouseId || 'miami';
+            const groupedItems = new Map();
+
+            (Array.isArray(items) ? items : []).forEach((rawItem) => {
+                const item = normalizeInventorySyncItem(rawItem);
+                if (!item.sku || !item.name || item.qty < 1) return;
+
+                const itemKey = `${item.sku.toLowerCase()}::${resolvedWarehouse}`;
+                const existing = groupedItems.get(itemKey);
+                if (existing) {
+                    existing.qty += item.qty;
+                    if (!existing.upc && item.upc) existing.upc = item.upc;
+                    if (!existing.name && item.name) existing.name = item.name;
+                    if (item.tags.length > 0) {
+                        existing.tags = [...new Set([...existing.tags, ...item.tags])];
+                    }
+                    if (item.photos.length > 0) {
+                        existing.photos = [...existing.photos, ...item.photos].slice(0, 10);
+                    }
+                    return;
+                }
+
+                groupedItems.set(itemKey, {
+                    ...item,
+                    warehouse: resolvedWarehouse
+                });
             });
 
-            container.innerHTML = shipments.map(shipment => {
-                const customer = usersMap[shipment.user_id] || {};
-                const origin = shipment.origin || {};
-                const destination = shipment.destination || {};
+            return {
+                warehouse: resolvedWarehouse,
+                items: Array.from(groupedItems.values()).sort((a, b) =>
+                    a.sku.localeCompare(b.sku, undefined, { sensitivity: 'base' })
+                )
+            };
+        }
 
-                return `
-                <div class="shipment-card" data-id="${shipment.id}">
-                    <div class="shipment-header">
-                        <div>
-                            <div class="tracking-number">${shipment.tracking_number || 'No tracking #'}</div>
-                            <div class="shipment-customer">
-                                👤 ${customer.name || customer.email || 'Unknown Customer'}
-                                ${customer.company_name ? `• ${customer.company_name}` : ''}
+        function getShipmentInventorySyncState(shipment) {
+            const syncState = shipment && shipment._inventory_sync_state;
+            if (syncState && Array.isArray(syncState.items)) {
+                return buildShipmentInventorySyncState(
+                    syncState.items,
+                    syncState.warehouse || shipment.warehouse || 'miami'
+                );
+            }
+
+            if (shipment && shipment._inventory_synced) {
+                return buildShipmentInventorySyncState(
+                    shipment.incoming_items || [],
+                    shipment.warehouse || 'miami'
+                );
+            }
+
+            return buildShipmentInventorySyncState([], (shipment && shipment.warehouse) || 'miami');
+        }
+
+        async function reconcileShipmentInventory({ shipmentRef, shipmentUserId, trackingNumber, previousState, nextState }) {
+            if (!shipmentUserId) {
+                throw new Error('Shipment has no user_id — cannot sync.');
+            }
+
+            const nowIso = new Date().toISOString();
+            const existingInventorySnapshot = await getDocs(
+                query(collection(db, 'inventory'), where('user_id', '==', shipmentUserId))
+            );
+            const existingInventoryByKey = new Map();
+
+            existingInventorySnapshot.forEach((docSnap) => {
+                const data = docSnap.data();
+                const skuKey = String(data.sku || '').trim().toLowerCase();
+                const warehouseKey = data.warehouse || 'miami';
+                if (!skuKey) return;
+                existingInventoryByKey.set(`${skuKey}::${warehouseKey}`, {
+                    id: docSnap.id,
+                    ref: docSnap.ref,
+                    ...data
+                });
+            });
+
+            const previousByKey = new Map();
+            (previousState.items || []).forEach((item) => {
+                previousByKey.set(
+                    `${String(item.sku || '').trim().toLowerCase()}::${item.warehouse || previousState.warehouse || 'miami'}`,
+                    item
+                );
+            });
+
+            const nextByKey = new Map();
+            (nextState.items || []).forEach((item) => {
+                nextByKey.set(
+                    `${String(item.sku || '').trim().toLowerCase()}::${item.warehouse || nextState.warehouse || 'miami'}`,
+                    item
+                );
+            });
+
+            const allKeys = new Set([...previousByKey.keys(), ...nextByKey.keys()]);
+            let created = 0;
+            let updated = 0;
+
+            for (const itemKey of allKeys) {
+                const previousItem = previousByKey.get(itemKey);
+                const nextItem = nextByKey.get(itemKey);
+                const delta = (nextItem ? nextItem.qty : 0) - (previousItem ? previousItem.qty : 0);
+                const existingEntry = existingInventoryByKey.get(itemKey);
+                const referenceItem = nextItem || previousItem;
+
+                if (existingEntry) {
+                    const existingData = existingEntry;
+                    const updatedData = {
+                        quantity: Math.max(0, (Number(existingData.quantity) || 0) + delta),
+                        customer_id: shipmentUserId,
+                        warehouse: (referenceItem && referenceItem.warehouse) || existingData.warehouse || 'miami',
+                        last_updated: nowIso,
+                        last_shipment: trackingNumber || existingData.last_shipment || ''
+                    };
+
+                    if (referenceItem) {
+                        if (referenceItem.upc) updatedData.upc = referenceItem.upc;
+                        if (referenceItem.name) updatedData.name = referenceItem.name;
+                        updatedData.tags = [...new Set([
+                            ...parseTags(existingData.tags),
+                            ...parseTags(referenceItem.tags)
+                        ])];
+                        if (referenceItem.photos && referenceItem.photos.length > 0) {
+                            const existingPhotos = Array.isArray(existingData.photos) ? existingData.photos : [];
+                            updatedData.photos = [...existingPhotos, ...referenceItem.photos].slice(0, 10);
+                        }
+                    }
+
+                    await setDoc(existingEntry.ref, updatedData, { merge: true });
+                    existingInventoryByKey.set(itemKey, { ...existingData, ...updatedData });
+                    updated++;
+                    continue;
+                }
+
+                if (delta > 0 && nextItem) {
+                    const newItem = {
+                        user_id: shipmentUserId,
+                        customer_id: shipmentUserId,
+                        sku: nextItem.sku,
+                        name: nextItem.name,
+                        quantity: delta,
+                        upc: nextItem.upc || '',
+                        tags: Array.isArray(nextItem.tags) ? nextItem.tags : [],
+                        photos: Array.isArray(nextItem.photos) ? nextItem.photos : [],
+                        warehouse: nextItem.warehouse || nextState.warehouse || 'miami',
+                        location: 'Receiving',
+                        reorder_level: 10,
+                        source_shipment: trackingNumber || '',
+                        last_shipment: trackingNumber || '',
+                        last_updated: nowIso
+                    };
+                    const newDocRef = await addDoc(collection(db, 'inventory'), newItem);
+                    existingInventoryByKey.set(itemKey, { id: newDocRef.id, ref: newDocRef, ...newItem });
+                    created++;
+                    continue;
+                }
+
+                if (delta < 0) {
+                    console.warn('Inventory reconcile skipped missing document for negative delta:', itemKey, trackingNumber || '');
+                }
+            }
+
+            const syncMeta = {
+                _inventory_synced: true,
+                _inventory_synced_at: nowIso,
+                _inventory_sync_state: {
+                    warehouse: nextState.warehouse || 'miami',
+                    items: (nextState.items || []).map((item) => ({
+                        sku: item.sku,
+                        name: item.name,
+                        qty: item.qty,
+                        upc: item.upc || '',
+                        tags: Array.isArray(item.tags) ? item.tags : [],
+                        photos: Array.isArray(item.photos) ? item.photos.slice(0, 10) : []
+                    }))
+                }
+            };
+
+            await updateDoc(shipmentRef, syncMeta);
+
+            return {
+                created,
+                updated,
+                total: (nextState.items || []).length,
+                syncMeta
+            };
+        }
+
+        function clearPanelIncomingFieldErrors() {
+            document.querySelectorAll('#panel-incoming-items .incoming-field-error').forEach(el => {
+                el.classList.remove('incoming-field-error');
+            });
+        }
+
+        function updatePanelIncomingSummary() {
+            const summaryEl = document.getElementById('panel-incoming-summary');
+            if (!summaryEl) return;
+            const validItems = getPanelIncomingItemsForSave();
+            const totalUnits = validItems.reduce((sum, item) => sum + (item.qty || 0), 0);
+            summaryEl.textContent = `Total: ${validItems.length} SKU(s), ${totalUnits} units`;
+        }
+
+        function renderPanelIncomingItemsEditor() {
+            const itemsContainer = document.getElementById('panel-incoming-items');
+            if (!itemsContainer) return;
+            if (!Array.isArray(panelIncomingItems) || panelIncomingItems.length === 0) {
+                panelIncomingItems = [createBlankIncomingItem()];
+            }
+
+            itemsContainer.innerHTML = `
+                <div class="panel-incoming-items-editor">
+                    ${panelIncomingItems.map((item, index) => `
+                        <div class="panel-incoming-row">
+                            <div class="panel-incoming-row-head">
+                                <span class="panel-incoming-row-label">Item #${index + 1}</span>
+                                ${panelIncomingItems.length > 1 ? `<button type="button" class="panel-incoming-remove" data-index="${index}" title="Remove item">&times;</button>` : ''}
+                            </div>
+                            <div class="panel-incoming-grid">
+                                <div class="panel-field">
+                                    <label>SKU *</label>
+                                    <input type="text" class="panel-incoming-input" data-index="${index}" data-field="sku" value="${escHtml(item.sku)}" placeholder="ABC-123">
+                                </div>
+                                <div class="panel-field">
+                                    <label>Product Name *</label>
+                                    <input type="text" class="panel-incoming-input" data-index="${index}" data-field="name" value="${escHtml(item.name)}" placeholder="Widget Pro">
+                                </div>
+                                <div class="panel-field">
+                                    <label>Quantity *</label>
+                                    <input type="number" class="panel-incoming-input" data-index="${index}" data-field="qty" value="${Number(item.qty) || 1}" min="1" step="1" inputmode="numeric" placeholder="1">
+                                </div>
+                                <div class="panel-field">
+                                    <label>UPC / Barcode <span class="optional">optional</span></label>
+                                    <input type="text" class="panel-incoming-input" data-index="${index}" data-field="upc" value="${escHtml(item.upc)}" placeholder="012345678901">
+                                </div>
+                                <div class="panel-field full-width">
+                                    <label>Tags (comma-separated) <span class="optional">optional</span></label>
+                                    <input type="text" class="panel-incoming-input" data-index="${index}" data-field="tags" value="${escHtml(item.tags)}" placeholder="fragile, electronics, lot-2024">
+                                </div>
                             </div>
                         </div>
-                        <span class="badge badge-${shipment.status}" id="badge-${shipment.id}">${formatStatus(shipment.status || 'unknown')}</span>
-                    </div>
-
-                    <div class="shipment-details">
-                        <div class="detail-group">
-                            <h4>📍 Origin</h4>
-                            <p>${origin.address || 'N/A'}<br>${origin.city || ''}, ${origin.state || ''} ${origin.zip || ''}</p>
-                        </div>
-                        <div class="detail-group">
-                            <h4>🎯 Destination</h4>
-                            <p>${destination.address || 'N/A'}<br>${destination.city || ''}, ${destination.state || ''} ${destination.zip || ''}</p>
-                        </div>
-                    </div>
-
-                    <div class="package-info">
-                        📦 ${shipment.packages?.length || 0} package(s)
-                        • Created: ${shipment.created_at ? new Date(shipment.created_at).toLocaleDateString() : 'N/A'}
-                        ${shipment.admin_notes ? `• 📝 Notes: ${shipment.admin_notes}` : ''}
-                    </div>
-
-                    <div class="shipment-actions">
-                        <label style="font-weight: 500; margin-right: 8px;">Status:</label>
-                        <select class="status-select" id="status-${shipment.id}" data-original="${shipment.status}">
-                            <option value="pending" ${shipment.status === 'pending' ? 'selected' : ''}>Pending</option>
-                            <option value="processing" ${shipment.status === 'processing' ? 'selected' : ''}>Processing</option>
-                            <option value="picked_up" ${shipment.status === 'picked_up' ? 'selected' : ''}>Picked Up</option>
-                            <option value="in_transit" ${shipment.status === 'in_transit' ? 'selected' : ''}>In Transit</option>
-                            <option value="out_for_delivery" ${shipment.status === 'out_for_delivery' ? 'selected' : ''}>Out for Delivery</option>
-                            <option value="delivered" ${shipment.status === 'delivered' ? 'selected' : ''}>Delivered</option>
-                            <option value="cancelled" ${shipment.status === 'cancelled' ? 'selected' : ''}>Cancelled</option>
-                        </select>
-                        <button class="btn-update-status" id="btn-update-${shipment.id}" onclick="updateShipmentStatus('${shipment.id}')">
-                            <span class="btn-text">Update Status</span>
-                        </button>
-                        <button class="btn btn-outline" style="margin-left: auto;" onclick="openEditModal('${shipment.id}')">✏️ Edit Details</button>
+                    `).join('')}
+                    <div class="panel-incoming-actions">
+                        <button type="button" class="panel-incoming-add" id="panel-incoming-add-btn">+ Add SKU Item</button>
+                        <div class="panel-incoming-summary" id="panel-incoming-summary">Total: 0 SKU(s), 0 units</div>
                     </div>
                 </div>
-            `}).join('');
+            `;
+
+            itemsContainer.querySelectorAll('.panel-incoming-remove').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const idx = Number(btn.dataset.index);
+                    panelIncomingItems.splice(idx, 1);
+                    if (!panelIncomingItems.length) panelIncomingItems = [createBlankIncomingItem()];
+                    renderPanelIncomingItemsEditor();
+                });
+            });
+
+            itemsContainer.querySelectorAll('.panel-incoming-input').forEach(input => {
+                input.addEventListener('input', () => {
+                    const idx = Number(input.dataset.index);
+                    const field = input.dataset.field;
+                    if (!panelIncomingItems[idx]) return;
+                    if (field === 'qty') {
+                        panelIncomingItems[idx][field] = Math.max(0, Math.floor(Number(input.value) || 0));
+                    } else {
+                        panelIncomingItems[idx][field] = input.value;
+                    }
+                    updatePanelIncomingSummary();
+                });
+            });
+
+            const addBtn = document.getElementById('panel-incoming-add-btn');
+            if (addBtn) {
+                addBtn.addEventListener('click', () => {
+                    panelIncomingItems.push(createBlankIncomingItem());
+                    renderPanelIncomingItemsEditor();
+                    const newSkuInput = document.querySelector(`#panel-incoming-items .panel-incoming-input[data-index="${panelIncomingItems.length - 1}"][data-field="sku"]`);
+                    if (newSkuInput) newSkuInput.focus();
+                });
+            }
+
+            updatePanelIncomingSummary();
         }
 
-        // Format status for display
-        function formatStatus(status) {
-            const statusMap = {
-                'pending': 'Pending',
-                'processing': 'Processing',
-                'picked_up': 'Picked Up',
-                'in_transit': 'In Transit',
-                'out_for_delivery': 'Out for Delivery',
-                'delivered': 'Delivered',
-                'cancelled': 'Cancelled'
+        function validatePanelIncomingItems() {
+            clearPanelIncomingFieldErrors();
+            let completedItems = 0;
+
+            for (let i = 0; i < panelIncomingItems.length; i++) {
+                const normalized = {
+                    sku: String(panelIncomingItems[i].sku || '').trim(),
+                    name: String(panelIncomingItems[i].name || '').trim(),
+                    qty: Math.max(0, Math.floor(Number(panelIncomingItems[i].qty) || 0)),
+                    upc: String(panelIncomingItems[i].upc || '').trim(),
+                    tags: parseTags(panelIncomingItems[i].tags)
+                };
+
+                const hasUserInput = !!(normalized.sku || normalized.name || normalized.upc || normalized.tags.length || normalized.qty !== 1);
+                if (!hasUserInput) continue;
+
+                if (!normalized.sku) {
+                    const input = document.querySelector(`#panel-incoming-items .panel-incoming-input[data-index="${i}"][data-field="sku"]`);
+                    if (input) { input.classList.add('incoming-field-error'); input.focus(); }
+                    return { valid: false, message: `Item #${i + 1}: SKU is required.` };
+                }
+                if (!normalized.name) {
+                    const input = document.querySelector(`#panel-incoming-items .panel-incoming-input[data-index="${i}"][data-field="name"]`);
+                    if (input) { input.classList.add('incoming-field-error'); input.focus(); }
+                    return { valid: false, message: `Item #${i + 1}: Product name is required.` };
+                }
+                if (normalized.qty < 1) {
+                    const input = document.querySelector(`#panel-incoming-items .panel-incoming-input[data-index="${i}"][data-field="qty"]`);
+                    if (input) { input.classList.add('incoming-field-error'); input.focus(); }
+                    return { valid: false, message: `Item #${i + 1}: Quantity must be at least 1.` };
+                }
+
+                completedItems++;
+            }
+
+            if (completedItems === 0) {
+                return { valid: true, items: [] };
+            }
+
+            return { valid: true, items: getPanelIncomingItemsForSave() };
+        }
+
+        function getShipmentCargoItems(shipment) {
+            if (Array.isArray(shipment.cargo_items) && shipment.cargo_items.length) return shipment.cargo_items;
+            if (Array.isArray(shipment.tracking_cargo_items) && shipment.tracking_cargo_items.length) return shipment.tracking_cargo_items;
+            return [];
+        }
+
+        function inferShipmentPackageType(shipment, pkg, cargoItems) {
+            if (pkg.type) return pkg.type;
+            const serviceType = typeof shipment.service_type === 'string' ? shipment.service_type.toLowerCase() : '';
+            if (['pallet', 'box', 'mixed'].includes(serviceType)) return serviceType;
+            const palletItemCount = cargoItems.filter(item => item && item.type === 'pallet').length;
+            if (palletItemCount && palletItemCount === cargoItems.length) return 'pallet';
+            if (palletItemCount && cargoItems.length > palletItemCount) return 'mixed';
+            if (cargoItems.length) return 'box';
+            return '';
+        }
+
+        function normalizeShipmentPanelDetail(shipment) {
+            const pkg = shipment.package || {};
+            const quote = shipment.quote_estimate || {};
+            const cargoItems = getShipmentCargoItems(shipment);
+            const packageType = inferShipmentPackageType(shipment, pkg, cargoItems);
+            const cargoCount = Number(shipment.cargo_count || cargoItems.length || 0);
+            const quantity = Number(pkg.quantity || cargoCount || shipment.pallet_count || shipment.pallets || 1);
+            const palletCount = Number(pkg.pallet_count || shipment.pallet_count || shipment.pallets || 0)
+                || (packageType === 'pallet' ? quantity : 0)
+                || cargoItems.filter(item => item && item.type === 'pallet').length;
+            const totalWeight = Number(pkg.total_weight || pkg.weight || shipment.weight || 0);
+            const estCost = Number(quote.total || shipment.estimated_cost || 0);
+            const shippingZone = shipment.shipping_zone || '';
+            const services = [];
+            if (packageType) services.push(packageType === 'pallet' ? 'Pallet Storage' : packageType === 'mixed' ? 'Mixed Cargo' : 'Box/Package');
+            if (shippingZone) services.push(shippingZone.replace(/_/g, ' '));
+            if (shipment.black_wrapping) services.push('Black Wrapping');
+            if (shipment.fba_prep && shipment.fba_prep.enabled) {
+                const fbaKeys = shipment.fba_prep.services ? Object.keys(shipment.fba_prep.services).map(k => k.replace(/_/g, ' ')) : [];
+                if (fbaKeys.length) services.push('FBA Prep (' + fbaKeys.join(', ') + ')');
+            }
+            const breakdown = [];
+            if (quote.storage) breakdown.push('Storage: $' + parseFloat(quote.storage).toFixed(2));
+            if (quote.handling) breakdown.push('Handling: $' + parseFloat(quote.handling).toFixed(2));
+            if (quote.pick_pack) breakdown.push('Pick & Pack: $' + parseFloat(quote.pick_pack).toFixed(2));
+            if (quote.shipping) breakdown.push('Shipping: $' + parseFloat(quote.shipping).toFixed(2));
+            if (quote.wrapping) breakdown.push('Wrapping: $' + parseFloat(quote.wrapping).toFixed(2));
+            if (quote.fba_prep) breakdown.push('FBA Prep: $' + parseFloat(quote.fba_prep).toFixed(2));
+            if (quote.dropship) breakdown.push('Dropship: $' + parseFloat(quote.dropship).toFixed(2));
+
+            return {
+                pkg,
+                quantity,
+                palletCount,
+                totalWeight,
+                estCost,
+                shippingZone,
+                servicesText: services.length ? services.join(' | ') : 'Standard',
+                breakdownText: breakdown.join(' · ') || 'No breakdown available'
             };
-            return statusMap[status] || status.replace('_', ' ');
         }
 
-        // Toast notification function
+        // ============================================================
+        // SLIDE-OUT PANEL
+        // ============================================================
+        function openPanel(shipmentId) {
+            const shipment = allShipments.find(s => s.id === shipmentId);
+            if (!shipment) return;
+
+            currentShipmentId = shipmentId;
+            const customer = usersMap[shipment.user_id] || {};
+            const origin = shipment.origin || {};
+            const dest = shipment.destination || {};
+            const detail = normalizeShipmentPanelDetail(shipment);
+            const pkg = detail.pkg;
+
+            // Header
+            document.getElementById('panel-tracking').textContent = shipment.tracking_number || 'No Tracking #';
+            document.getElementById('panel-customer-name').textContent = customer.name || customer.email || 'Unknown Customer';
+            updatePanelStatusBadge(shipment.status);
+
+            // Status & Service
+            document.getElementById('panel-status').value = shipment.status || 'pending';
+            document.getElementById('panel-service-type').value = shipment.service_type || 'standard';
+            document.getElementById('panel-warehouse').value = shipment.warehouse || shipment.warehouseId || 'miami';
+
+            // Origin
+            document.getElementById('panel-origin-address').value = origin.street || origin.address || '';
+            document.getElementById('panel-origin-city').value = origin.city || '';
+            document.getElementById('panel-origin-state').value = origin.state || '';
+            document.getElementById('panel-origin-zip').value = origin.zip || '';
+
+            // Destination
+            document.getElementById('panel-dest-name').value = dest.name || '';
+            document.getElementById('panel-dest-address').value = dest.street || dest.address || '';
+            document.getElementById('panel-dest-city').value = dest.city || '';
+            document.getElementById('panel-dest-state').value = dest.state || '';
+            document.getElementById('panel-dest-zip').value = dest.zip || '';
+
+            // Package
+            document.getElementById('panel-pkg-weight').value = detail.totalWeight || '';
+            document.getElementById('panel-pkg-length').value = pkg.length || '';
+            document.getElementById('panel-pkg-width').value = pkg.width || '';
+            document.getElementById('panel-pkg-height').value = pkg.height || '';
+            document.getElementById('panel-pkg-quantity').value = detail.quantity || 1;
+            document.getElementById('panel-pkg-pallets').value = detail.palletCount || 0;
+
+            // Quote Estimate & Services
+            const quoteSummaryEl = document.getElementById('panel-quote-summary');
+            if (detail.estCost || detail.shippingZone || detail.servicesText !== 'Standard') {
+                quoteSummaryEl.style.display = 'block';
+                document.getElementById('panel-est-cost').textContent = detail.estCost ? '$' + parseFloat(detail.estCost).toFixed(2) : 'N/A';
+                document.getElementById('panel-cost-breakdown').textContent = detail.breakdownText;
+                document.getElementById('panel-services').textContent = detail.servicesText;
+                document.getElementById('panel-shipping-zone').textContent = detail.shippingZone ? detail.shippingZone.replace(/_/g, ' ') : 'N/A';
+            } else {
+                quoteSummaryEl.style.display = 'none';
+            }
+
+            panelIncomingItems = normalizeIncomingItemsForPanel(shipment.incoming_items || []);
+            renderPanelIncomingItemsEditor();
+
+            // Notes
+            document.getElementById('panel-admin-notes').value = shipment.admin_notes || '';
+            document.getElementById('panel-customer-notes').value = shipment.notes || '';
+
+            // Customer info (read-only)
+            document.getElementById('panel-cust-name').value = customer.name || '--';
+            document.getElementById('panel-cust-email').value = customer.email || '--';
+            document.getElementById('panel-cust-company').value = customer.company_name || '--';
+            document.getElementById('panel-cust-uid').value = shipment.user_id || '--';
+
+            // Timestamps
+            document.getElementById('panel-created-at').textContent = shipment.created_at
+                ? new Date(shipment.created_at).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' })
+                : '--';
+            document.getElementById('panel-updated-at').textContent = shipment.updated_at
+                ? new Date(shipment.updated_at).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' })
+                : '--';
+
+            // Documents
+            renderPanelDocs(shipment);
+
+            // Activity log
+            renderActivityLog(shipment);
+
+            // Store original data for dirty check
+            originalPanelData = getPanelFormData();
+
+            // Show panel
+            document.getElementById('panel-overlay').classList.add('active');
+            document.getElementById('detail-panel').classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            // Scroll panel body to top
+            document.getElementById('panel-body').scrollTop = 0;
+        }
+
+        function closePanel() {
+            document.getElementById('panel-overlay').classList.remove('active');
+            document.getElementById('detail-panel').classList.remove('active');
+            document.body.style.overflow = '';
+            currentShipmentId = null;
+            originalPanelData = null;
+            panelIncomingItems = [];
+        }
+
+        function updatePanelStatusBadge(status) {
+            const badge = document.getElementById('panel-status-badge');
+            badge.className = `status-badge status-${status || 'pending'}`;
+            badge.innerHTML = `<span class="status-dot"></span> ${STATUS_LABELS[status] || status || 'Unknown'}`;
+        }
+
+        // Close panel events
+        document.getElementById('panel-close').addEventListener('click', closePanel);
+        document.getElementById('panel-overlay').addEventListener('click', closePanel);
+        document.getElementById('btn-panel-cancel').addEventListener('click', closePanel);
+
+        // Update header badge when status dropdown changes
+        document.getElementById('panel-status').addEventListener('change', (e) => {
+            updatePanelStatusBadge(e.target.value);
+        });
+
+        // ESC key closes panel
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (document.getElementById('doc-viewer-overlay').classList.contains('active')) {
+                    closeDocViewer();
+                } else if (document.getElementById('detail-panel').classList.contains('active')) {
+                    closePanel();
+                }
+            }
+        });
+
+        // ============================================================
+        // PANEL: DOCUMENTS
+        // ============================================================
+        function renderPanelDocs(shipment) {
+            const container = document.getElementById('panel-docs-grid');
+            const docs = [];
+
+            if (shipment.bol_document) {
+                docs.push({
+                    type: 'bol',
+                    label: 'Bill of Lading (BOL)',
+                    icon: '📄',
+                    data: shipment.bol_document,
+                    cssClass: 'bol'
+                });
+            }
+            if (shipment.packing_list) {
+                docs.push({
+                    type: 'packing_list',
+                    label: 'Packing List',
+                    icon: '📋',
+                    data: shipment.packing_list,
+                    cssClass: 'packing-list'
+                });
+            }
+            if (shipment.commercial_invoice) {
+                docs.push({
+                    type: 'commercial_invoice',
+                    label: 'Commercial Invoice',
+                    icon: '🧾',
+                    data: shipment.commercial_invoice,
+                    cssClass: 'invoice'
+                });
+            }
+
+            if (docs.length === 0) {
+                container.innerHTML = '<div class="no-docs-msg">No documents uploaded for this shipment</div>';
+                return;
+            }
+
+            container.innerHTML = docs.map(d => `
+                <div class="panel-doc-item ${d.cssClass}">
+                    <div class="panel-doc-left">
+                        <span class="panel-doc-icon">${d.icon}</span>
+                        <div>
+                            <div class="panel-doc-name">${d.label}</div>
+                            <div class="panel-doc-size">${d.data.filename || 'Unknown file'} &middot; ${formatDocSize(d.data.file_size)}</div>
+                        </div>
+                    </div>
+                    <div class="panel-doc-actions">
+                        <button class="panel-doc-btn view" onclick="viewDocument('${shipment.id}', '${d.type}')">View</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // ============================================================
+        // PANEL: ACTIVITY LOG
+        // ============================================================
+        function renderActivityLog(shipment) {
+            const container = document.getElementById('panel-activity-log');
+            const activities = [];
+
+            // Check for activity_log or status_history fields
+            const log = shipment.activity_log || shipment.status_history || [];
+
+            if (Array.isArray(log) && log.length > 0) {
+                log.forEach(entry => {
+                    activities.push({
+                        text: entry.message || `Status changed to "${STATUS_LABELS[entry.status] || entry.status}"`,
+                        time: entry.timestamp || entry.date || ''
+                    });
+                });
+            }
+
+            // Always add created_at
+            if (shipment.created_at) {
+                activities.push({
+                    text: 'Shipment created',
+                    time: shipment.created_at
+                });
+            }
+
+            if (shipment.updated_at && shipment.updated_at !== shipment.created_at) {
+                activities.unshift({
+                    text: 'Last modified',
+                    time: shipment.updated_at
+                });
+            }
+
+            if (activities.length === 0) {
+                container.innerHTML = '<div class="no-docs-msg">No activity recorded</div>';
+                return;
+            }
+
+            container.innerHTML = activities.map(a => {
+                const timeStr = a.time ? new Date(a.time).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' }) : '';
+                return `
+                    <div class="activity-item">
+                        <div class="activity-dot"></div>
+                        <div>
+                            <div class="activity-text">${a.text}</div>
+                            ${timeStr ? `<div class="activity-time">${timeStr}</div>` : ''}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // ============================================================
+        // PANEL: SAVE
+        // ============================================================
+        function getPanelFormData() {
+            const originStreet = document.getElementById('panel-origin-address').value.trim();
+            const destinationStreet = document.getElementById('panel-dest-address').value.trim();
+            return {
+                status: document.getElementById('panel-status').value,
+                service_type: document.getElementById('panel-service-type').value,
+                warehouse: document.getElementById('panel-warehouse').value,
+                origin: {
+                    street: originStreet,
+                    address: originStreet,
+                    city: document.getElementById('panel-origin-city').value.trim(),
+                    state: document.getElementById('panel-origin-state').value.trim().toUpperCase(),
+                    zip: document.getElementById('panel-origin-zip').value.trim()
+                },
+                destination: {
+                    name: document.getElementById('panel-dest-name').value.trim(),
+                    street: destinationStreet,
+                    address: destinationStreet,
+                    city: document.getElementById('panel-dest-city').value.trim(),
+                    state: document.getElementById('panel-dest-state').value.trim().toUpperCase(),
+                    zip: document.getElementById('panel-dest-zip').value.trim()
+                },
+                package: {
+                    weight: parseFloat(document.getElementById('panel-pkg-weight').value) || 0,
+                    length: parseFloat(document.getElementById('panel-pkg-length').value) || 0,
+                    width: parseFloat(document.getElementById('panel-pkg-width').value) || 0,
+                    height: parseFloat(document.getElementById('panel-pkg-height').value) || 0,
+                    quantity: parseInt(document.getElementById('panel-pkg-quantity').value) || 1
+                },
+                incoming_items: getPanelIncomingItemsForSave(),
+                admin_notes: document.getElementById('panel-admin-notes').value.trim()
+            };
+        }
+
+        document.getElementById('btn-panel-save').addEventListener('click', async () => {
+            if (!currentShipmentId) return;
+
+            const formData = getPanelFormData();
+            const shipment = allShipments.find(s => s.id === currentShipmentId);
+            if (!shipment) return;
+
+            const incomingValidation = validatePanelIncomingItems();
+            if (!incomingValidation.valid) {
+                showToast(incomingValidation.message, 'warning');
+                return;
+            }
+            formData.incoming_items = incomingValidation.items;
+
+            // Confirm for dangerous status changes
+            if ((formData.status === 'cancelled' || formData.status === 'delivered') && formData.status !== shipment.status) {
+                const confirmed = await showConfirm(
+                    formData.status === 'cancelled' ? '&#9888;&#65039;' : '&#9989;',
+                    formData.status === 'cancelled' ? 'Cancel this shipment?' : 'Mark as delivered?',
+                    formData.status === 'cancelled'
+                        ? `This will mark shipment ${shipment.tracking_number} as cancelled. This action can be reversed but may affect the customer.`
+                        : `This will mark shipment ${shipment.tracking_number} as delivered. Make sure the delivery has been confirmed.`,
+                    formData.status === 'cancelled' ? 'danger' : 'primary'
+                );
+                if (!confirmed) return;
+            }
+
+            // Validate required fields
+            if (!formData.destination.city && !formData.destination.street) {
+                showToast('Destination street or city is required.', 'warning');
+                return;
+            }
+
+            const saveBtn = document.getElementById('btn-panel-save');
+            saveBtn.disabled = true;
+            saveBtn.innerHTML = '<span class="spinner"></span> Saving...';
+
+            try {
+                const updateData = {
+                    status: formData.status,
+                    service_type: formData.service_type,
+                    warehouse: formData.warehouse,
+                    origin: formData.origin,
+                    destination: formData.destination,
+                    'package': formData.package,
+                    incoming_items: formData.incoming_items,
+                    admin_notes: formData.admin_notes,
+                    updated_at: new Date().toISOString()
+                };
+
+                const shipmentRef = doc(db, 'shipments', currentShipmentId);
+                const previousInventoryState = getShipmentInventorySyncState(shipment);
+                await updateDoc(shipmentRef, updateData);
+
+                let inventorySyncMeta = null;
+                let inventorySyncError = null;
+                const nextInventoryState = buildShipmentInventorySyncState(formData.incoming_items || [], formData.warehouse || 'miami');
+                if (shipment.user_id && (previousInventoryState.items.length > 0 || nextInventoryState.items.length > 0)) {
+                    try {
+                        const syncResult = await reconcileShipmentInventory({
+                            shipmentRef,
+                            shipmentUserId: shipment.user_id,
+                            trackingNumber: shipment.tracking_number || '',
+                            previousState: previousInventoryState,
+                            nextState: nextInventoryState
+                        });
+                        inventorySyncMeta = syncResult.syncMeta;
+                        console.log(`Inventory reconciled: ${syncResult.created} created, ${syncResult.updated} updated for ${shipment.tracking_number || currentShipmentId}`);
+                    } catch (invErr) {
+                        inventorySyncError = invErr;
+                        console.warn('Inventory sync failed:', invErr.message);
+                    }
+                } else if (!shipment.user_id && nextInventoryState.items.length > 0) {
+                    inventorySyncError = new Error('Shipment has no user_id — cannot sync.');
+                }
+
+                // Update local data
+                Object.assign(shipment, updateData, inventorySyncMeta || {});
+                originalPanelData = getPanelFormData();
+
+                // Refresh UI
+                updateStats();
+                applyFiltersAndSort();
+                updatePanelStatusBadge(formData.status);
+
+                // Update timestamps in panel
+                document.getElementById('panel-updated-at').textContent = new Date().toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' });
+
+                if (inventorySyncError) {
+                    showToast(`Shipment ${shipment.tracking_number} updated, but inventory sync failed: ${inventorySyncError.message}`, 'warning');
+                } else {
+                    showToast(`Shipment ${shipment.tracking_number} updated successfully!`, 'success');
+                }
+            } catch (error) {
+                console.error('Error saving shipment:', error);
+                showToast('Error saving: ' + error.message, 'error');
+            } finally {
+                saveBtn.disabled = false;
+                saveBtn.innerHTML = '<span class="btn-text">Save Changes</span>';
+            }
+        });
+
+        // ============================================================
+        // FORCE SYNC INVENTORY BUTTON
+        // ============================================================
+        document.getElementById('btn-panel-sync-inventory').addEventListener('click', async () => {
+            if (!currentShipmentId) return;
+            const shipment = allShipments.find(s => s.id === currentShipmentId);
+            if (!shipment) return;
+
+            const syncBtn = document.getElementById('btn-panel-sync-inventory');
+            syncBtn.disabled = true;
+            syncBtn.innerHTML = '<span class="spinner"></span> Syncing...';
+
+            try {
+                const previousInventoryState = getShipmentInventorySyncState(shipment);
+                const nextInventoryState = buildShipmentInventorySyncState(shipment.incoming_items || [], shipment.warehouse || 'miami');
+                if (!nextInventoryState.items.length && !previousInventoryState.items.length) {
+                    showToast('No incoming items to sync.', 'warning');
+                    return;
+                }
+                if (!shipment.user_id) {
+                    showToast('Shipment has no user_id — cannot sync.', 'error');
+                    return;
+                }
+
+                const shipmentRef = doc(db, 'shipments', currentShipmentId);
+                const syncResult = await reconcileShipmentInventory({
+                    shipmentRef,
+                    shipmentUserId: shipment.user_id,
+                    trackingNumber: shipment.tracking_number || '',
+                    previousState: previousInventoryState,
+                    nextState: nextInventoryState
+                });
+
+                Object.assign(shipment, syncResult.syncMeta || {});
+                showToast(`Inventory reconciled: ${syncResult.created} created, ${syncResult.updated} updated (${syncResult.total} SKU(s))`, 'success');
+            } catch (err) {
+                console.error('Force inventory sync error:', err);
+                showToast('Inventory sync failed: ' + err.message, 'error');
+            } finally {
+                syncBtn.disabled = false;
+                syncBtn.innerHTML = '<span class="btn-text">&#x1f4e6; Sync Inventory</span>';
+            }
+        });
+
+        // ============================================================
+        // DOCUMENT VIEWER
+        // ============================================================
+        const docTypeLabels = {
+            'bol': { label: 'Bill of Lading', icon: '📄', cssClass: 'bol' },
+            'packing_list': { label: 'Packing List', icon: '📋', cssClass: 'packing-list' },
+            'commercial_invoice': { label: 'Commercial Invoice', icon: '🧾', cssClass: 'invoice' }
+        };
+
+        function formatDocSize(bytes) {
+            if (!bytes) return '--';
+            if (bytes < 1024) return bytes + ' B';
+            if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+            return (bytes / 1048576).toFixed(1) + ' MB';
+        }
+
+        window.viewDocument = async function(shipmentId, docType) {
+            const shipment = allShipments.find(s => s.id === shipmentId);
+            if (!shipment) return;
+
+            const meta = docTypeLabels[docType] || { label: docType, icon: '📎', cssClass: '' };
+            let docData = null;
+            let fileData = null;
+
+            if (docType === 'bol') docData = shipment.bol_document;
+            else if (docType === 'packing_list') docData = shipment.packing_list;
+            else if (docType === 'commercial_invoice') docData = shipment.commercial_invoice;
+
+            if (!docData) {
+                showToast('Document metadata not found.', 'warning');
+                return;
+            }
+
+            // Try to load file data from Firestore collections
+            try {
+                let docsQuery;
+                if (docType === 'bol') {
+                    docsQuery = query(collection(db, 'bol_documents'), where('shipment_id', '==', shipmentId));
+                } else {
+                    docsQuery = query(collection(db, 'shipment_documents'), where('shipment_id', '==', shipmentId), where('doc_type', '==', docType));
+                }
+                const snap = await getDocs(docsQuery);
+                if (!snap.empty) {
+                    fileData = snap.docs[0].data().file_data || null;
+                }
+            } catch (e) {
+                console.warn('Could not load file data:', e.message);
+            }
+
+            // Build viewer header
+            const title = document.getElementById('doc-viewer-title');
+            title.innerHTML = `${meta.icon} ${meta.label} <span class="doc-type-pill ${meta.cssClass}">${meta.label}</span>`;
+
+            // Build viewer body
+            const body = document.getElementById('doc-viewer-body');
+            let previewHtml = '';
+
+            if (fileData) {
+                const isImage = docData.file_type?.startsWith('image/');
+                const isPdf = docData.file_type === 'application/pdf';
+
+                if (isImage) {
+                    previewHtml = `<img src="${fileData}" alt="${docData.filename}" />`;
+                } else if (isPdf) {
+                    previewHtml = `<iframe src="${fileData}" title="${docData.filename}"></iframe>`;
+                } else {
+                    previewHtml = `
+                        <div class="doc-viewer-no-preview">
+                            <div class="icon">${meta.icon}</div>
+                            <p><strong>${docData.filename}</strong></p>
+                            <p>Preview not available for this file type.</p>
+                            <button class="doc-download-btn" onclick="downloadDoc('${fileData}', '${docData.filename}')">Download File</button>
+                        </div>
+                    `;
+                }
+                if (isImage || isPdf) {
+                    previewHtml += `<button class="doc-download-btn" onclick="downloadDoc('${fileData}', '${docData.filename}')">Download ${docData.filename}</button>`;
+                }
+            } else {
+                previewHtml = `
+                    <div class="doc-viewer-no-preview">
+                        <div class="icon">${meta.icon}</div>
+                        <p><strong>${docData.filename}</strong></p>
+                        <p>File data not stored (file was larger than 1MB). Metadata only.</p>
+                    </div>
+                `;
+            }
+
+            previewHtml += `
+                <div class="doc-viewer-info">
+                    <div class="doc-info-item"><span class="label">Filename: </span><span class="value">${docData.filename || '--'}</span></div>
+                    <div class="doc-info-item"><span class="label">Type: </span><span class="value">${docData.file_type || '--'}</span></div>
+                    <div class="doc-info-item"><span class="label">Size: </span><span class="value">${formatDocSize(docData.file_size)}</span></div>
+                    <div class="doc-info-item"><span class="label">Uploaded: </span><span class="value">${docData.uploaded_at ? new Date(docData.uploaded_at).toLocaleString() : '--'}</span></div>
+                    ${docData.bol_number ? `<div class="doc-info-item"><span class="label">BOL #: </span><span class="value">${docData.bol_number}</span></div>` : ''}
+                    ${docData.carrier ? `<div class="doc-info-item"><span class="label">Carrier: </span><span class="value">${docData.carrier}</span></div>` : ''}
+                    ${docData.po_number ? `<div class="doc-info-item"><span class="label">PO #: </span><span class="value">${docData.po_number}</span></div>` : ''}
+                    ${docData.external_tracking ? `<div class="doc-info-item"><span class="label">Tracking: </span><span class="value">${docData.external_tracking}</span></div>` : ''}
+                </div>
+            `;
+
+            body.innerHTML = previewHtml;
+            document.getElementById('doc-viewer-overlay').classList.add('active');
+        };
+
+        window.closeDocViewer = function() {
+            document.getElementById('doc-viewer-overlay').classList.remove('active');
+            document.getElementById('doc-viewer-body').innerHTML = '';
+        };
+
+        document.getElementById('doc-viewer-overlay').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('doc-viewer-overlay')) {
+                closeDocViewer();
+            }
+        });
+
+        window.downloadDoc = function(dataUrl, filename) {
+            const a = document.createElement('a');
+            a.href = dataUrl;
+            a.download = filename || 'document';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        };
+
+        // ============================================================
+        // CONFIRM DIALOG
+        // ============================================================
+        function showConfirm(icon, title, message, btnType = 'primary') {
+            return new Promise((resolve) => {
+                const overlay = document.getElementById('confirm-overlay');
+                document.getElementById('confirm-icon').innerHTML = icon;
+                document.getElementById('confirm-title').textContent = title;
+                document.getElementById('confirm-message').textContent = message;
+
+                const okBtn = document.getElementById('confirm-ok');
+                okBtn.className = `confirm-btn ${btnType}`;
+                okBtn.textContent = btnType === 'danger' ? 'Yes, Cancel It' : 'Yes, Confirm';
+
+                overlay.classList.add('active');
+
+                const cleanup = (result) => {
+                    overlay.classList.remove('active');
+                    okBtn.removeEventListener('click', onOk);
+                    document.getElementById('confirm-cancel').removeEventListener('click', onCancel);
+                    resolve(result);
+                };
+
+                const onOk = () => cleanup(true);
+                const onCancel = () => cleanup(false);
+
+                okBtn.addEventListener('click', onOk);
+                document.getElementById('confirm-cancel').addEventListener('click', onCancel);
+            });
+        }
+
+        // ============================================================
+        // TOAST NOTIFICATIONS
+        // ============================================================
         function showToast(message, type = 'success') {
             const container = document.getElementById('toast-container');
             const toast = document.createElement('div');
             toast.className = `toast ${type}`;
 
-            const icons = {
-                success: '✓',
-                error: '✕',
-                warning: '⚠'
-            };
+            const icons = { success: '&#10003;', error: '&#10007;', warning: '&#9888;' };
 
             toast.innerHTML = `
                 <span class="toast-icon">${icons[type] || icons.success}</span>
                 <span class="toast-message">${message}</span>
-                <button class="toast-close" onclick="this.parentElement.remove()">×</button>
+                <button class="toast-close" onclick="this.parentElement.remove()">&times;</button>
             `;
 
             container.appendChild(toast);
 
-            // Auto-remove after 4 seconds
             setTimeout(() => {
-                toast.style.animation = 'slideOut 0.3s ease-out forwards';
+                toast.style.animation = 'toastOut 0.3s ease-out forwards';
                 setTimeout(() => toast.remove(), 300);
             }, 4000);
         }
 
-        // Update shipment status with button click
-        window.updateShipmentStatus = async function(shipmentId) {
-            const selectEl = document.getElementById(`status-${shipmentId}`);
-            const btnEl = document.getElementById(`btn-update-${shipmentId}`);
-            const newStatus = selectEl.value;
-            const originalStatus = selectEl.dataset.original;
-
-            // Check if status actually changed
-            if (newStatus === originalStatus) {
-                showToast('Status unchanged. Select a different status to update.', 'warning');
-                return;
-            }
-
-            // Show loading state
-            btnEl.classList.add('loading');
-            btnEl.innerHTML = '<span class="spinner"></span> Updating...';
-            btnEl.disabled = true;
-
-            try {
-                const shipmentRef = doc(db, 'shipments', shipmentId);
-                await updateDoc(shipmentRef, {
-                    status: newStatus,
-                    updated_at: new Date().toISOString()
-                });
-
-                // Update local data
-                const shipment = allShipments.find(s => s.id === shipmentId);
-                if (shipment) shipment.status = newStatus;
-
-                // Update badge
-                const badge = document.getElementById(`badge-${shipmentId}`);
-                badge.className = `badge badge-${newStatus}`;
-                badge.textContent = formatStatus(newStatus);
-
-                // Update the original status data attribute
-                selectEl.dataset.original = newStatus;
-
-                // Show success toast
-                showToast(`Status updated to "${formatStatus(newStatus)}" successfully!`, 'success');
-
-                // Update stats
-                updateStats();
-
-            } catch (error) {
-                console.error('Error updating status:', error);
-                showToast('Error updating status: ' + error.message, 'error');
-                // Revert select to original value
-                selectEl.value = originalStatus;
-            } finally {
-                // Reset button state
-                btnEl.classList.remove('loading');
-                btnEl.innerHTML = '<span class="btn-text">Update Status</span>';
-                btnEl.disabled = false;
-            }
-        };
-
-        // Update stats after status change
-        function updateStats() {
-            let pending = 0, transit = 0, delivered = 0;
-            allShipments.forEach(data => {
-                if (data.status === 'pending') pending++;
-                if (data.status === 'in_transit' || data.status === 'picked_up' || data.status === 'out_for_delivery' || data.status === 'processing') transit++;
-                if (data.status === 'delivered') delivered++;
-            });
-            document.getElementById('total-shipments').textContent = allShipments.length;
-            document.getElementById('pending-shipments').textContent = pending;
-            document.getElementById('transit-shipments').textContent = transit;
-            document.getElementById('delivered-shipments').textContent = delivered;
+        // ============================================================
+        // UTILITY
+        // ============================================================
+        function debounce(fn, ms) {
+            let timer;
+            return function(...args) {
+                clearTimeout(timer);
+                timer = setTimeout(() => fn.apply(this, args), ms);
+            };
         }
-
-        // Edit modal functions
-        window.openEditModal = function(shipmentId) {
-            const shipment = allShipments.find(s => s.id === shipmentId);
-            if (!shipment) return;
-
-            document.getElementById('edit-shipment-id').value = shipmentId;
-            document.getElementById('edit-tracking').value = shipment.tracking_number || '';
-            document.getElementById('edit-status').value = shipment.status || 'pending';
-            document.getElementById('edit-notes').value = shipment.admin_notes || '';
-
-            document.getElementById('edit-modal').classList.add('active');
-        };
-
-        window.closeModal = function() {
-            document.getElementById('edit-modal').classList.remove('active');
-        };
-
-        // Edit form submission
-        document.getElementById('edit-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const shipmentId = document.getElementById('edit-shipment-id').value;
-            const newStatus = document.getElementById('edit-status').value;
-            const adminNotes = document.getElementById('edit-notes').value;
-            const submitBtn = e.target.querySelector('button[type="submit"]');
-
-            // Show loading state
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Saving...';
-
-            try {
-                const shipmentRef = doc(db, 'shipments', shipmentId);
-                await updateDoc(shipmentRef, {
-                    status: newStatus,
-                    admin_notes: adminNotes,
-                    updated_at: new Date().toISOString()
-                });
-
-                // Update local data and UI
-                const shipment = allShipments.find(s => s.id === shipmentId);
-                if (shipment) {
-                    shipment.status = newStatus;
-                    shipment.admin_notes = adminNotes;
-                }
-
-                closeModal();
-                displayShipments(allShipments);
-                updateStats();
-
-                showToast('Shipment updated successfully!', 'success');
-            } catch (error) {
-                console.error('Error updating shipment:', error);
-                showToast('Error updating shipment: ' + error.message, 'error');
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Save Changes';
-            }
-        });
-
-        // Filter functions
-        window.applyFilters = function() {
-            const searchTerm = document.getElementById('search-input').value.toLowerCase();
-            const statusFilter = document.getElementById('status-filter').value;
-
-            let filtered = allShipments;
-
-            if (searchTerm) {
-                filtered = filtered.filter(s => {
-                    const customer = usersMap[s.user_id] || {};
-                    return (s.tracking_number && s.tracking_number.toLowerCase().includes(searchTerm)) ||
-                           (customer.name && customer.name.toLowerCase().includes(searchTerm)) ||
-                           (customer.email && customer.email.toLowerCase().includes(searchTerm)) ||
-                           (s.destination?.city && s.destination.city.toLowerCase().includes(searchTerm));
-                });
-            }
-
-            if (statusFilter) {
-                filtered = filtered.filter(s => s.status === statusFilter);
-            }
-
-            displayShipments(filtered);
-        };
-
-        window.clearFilters = function() {
-            document.getElementById('search-input').value = '';
-            document.getElementById('status-filter').value = '';
-            displayShipments(allShipments);
-        };
-
-        // Search on Enter key
-        document.getElementById('search-input').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') applyFilters();
-        });
-
-        // Close modal on overlay click
-        document.getElementById('edit-modal').addEventListener('click', (e) => {
-            if (e.target.id === 'edit-modal') closeModal();
-        });
     </script>
     <script src="../js/main.js"></script>
+    <script src="../js/lang/es.js"></script>
+    <script src="../js/lang/pt-br.js"></script>
+    <script src="../js/lang/zh.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/chat-widget.js"></script>
 </body>
 </html>

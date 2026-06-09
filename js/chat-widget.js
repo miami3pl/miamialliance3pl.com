@@ -95,29 +95,31 @@
  * ============================================================================
  */
 
-(function() {
-    'use strict';
+(function () {
+  "use strict";
 
-    /**
-     * Widget configuration
-     * @constant {Object} CONFIG
-     * @property {string} webhookUrl - Cloud Function endpoint for AI chat
-     * @property {string} brandColor - Primary accent color (hex)
-     * @property {string} position - Widget position on screen
-     * @property {string} greeting - Initial AI greeting message
-     */
-    const CONFIG = {
-        webhookUrl: 'https://us-central1-miamialliance3pl.cloudfunctions.net/portalChatWebhook',
-        brandColor: '#6366f1',
-        position: 'bottom-right',
-        greeting: 'Hi! I\'m the Miami Alliance 3PL AI assistant. How can I help you today?'
-    };
+  /**
+   * Widget configuration
+   * @constant {Object} CONFIG
+   * @property {string} webhookUrl - Cloud Function endpoint for AI chat
+   * @property {string} brandColor - Primary accent color (hex)
+   * @property {string} position - Widget position on screen
+   * @property {string} greeting - Initial AI greeting message
+   */
+  const CONFIG = {
+    webhookUrl:
+      "https://us-central1-miamialliance3pl.cloudfunctions.net/portalChatWebhook",
+    brandColor: "#6366f1",
+    position: "bottom-right",
+    greeting:
+      "Hi! I'm the Miami Alliance 3PL AI assistant. How can I help you today?",
+  };
 
-    // Create widget HTML
-    function createWidget() {
-        const widget = document.createElement('div');
-        widget.id = 'ma3pl-chat-widget';
-        widget.innerHTML = `
+  // Create widget HTML
+  function createWidget() {
+    const widget = document.createElement("div");
+    widget.id = "ma3pl-chat-widget";
+    widget.innerHTML = `
             <style>
                 #ma3pl-chat-widget {
                     --chat-primary: ${CONFIG.brandColor};
@@ -127,7 +129,7 @@
                     --chat-muted: #94a3b8;
                     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
                     position: fixed;
-                    ${CONFIG.position === 'bottom-right' ? 'right: 20px; bottom: 20px;' : 'left: 20px; bottom: 20px;'}
+                    ${CONFIG.position === "bottom-right" ? "right: 20px; bottom: 20px;" : "left: 20px; bottom: 20px;"}
                     z-index: 99999;
                 }
 
@@ -163,7 +165,7 @@
                 .chat-window {
                     position: absolute;
                     bottom: 70px;
-                    ${CONFIG.position === 'bottom-right' ? 'right: 0;' : 'left: 0;'}
+                    ${CONFIG.position === "bottom-right" ? "right: 0;" : "left: 0;"}
                     width: 380px;
                     height: 500px;
                     background: var(--chat-bg);
@@ -381,7 +383,7 @@
                 }
             </style>
 
-            <button class="chat-toggle" onclick="window.MA3PLChat.toggle()">
+            <button class="chat-toggle" onclick="window.MA3PLChat.toggle()" aria-label="Toggle chat assistant" aria-expanded="false">
                 <svg class="chat-icon" viewBox="0 0 24 24">
                     <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
                 </svg>
@@ -411,135 +413,141 @@
                     </button>
                 </div>
                 <div class="powered-by">
-                    Powered by <a href="https://claude.ai" target="_blank">Claude AI</a>
+                    Powered by <a href="https://claude.ai" target="_blank" rel="noopener">Claude AI</a>
                 </div>
             </div>
         `;
-        document.body.appendChild(widget);
-    }
+    document.body.appendChild(widget);
+  }
 
-    // Chat functionality
-    const MA3PLChat = {
-        isOpen: false,
-        messages: [],
-        sessionId: null,
+  // Chat functionality
+  const MA3PLChat = {
+    isOpen: false,
+    messages: [],
+    sessionId: null,
 
-        init: function() {
-            createWidget();
-            this.sessionId = 'session_' + Date.now();
-            this.addMessage('assistant', CONFIG.greeting);
-        },
+    init: function () {
+      createWidget();
+      this.sessionId = "session_" + Date.now();
+      this.addMessage("assistant", CONFIG.greeting);
+    },
 
-        toggle: function() {
-            this.isOpen = !this.isOpen;
-            const toggle = document.querySelector('.chat-toggle');
-            const window = document.querySelector('.chat-window');
+    toggle: function () {
+      this.isOpen = !this.isOpen;
+      const toggle = document.querySelector(".chat-toggle");
+      const window = document.querySelector(".chat-window");
 
-            toggle.classList.toggle('open', this.isOpen);
-            window.classList.toggle('open', this.isOpen);
+      toggle.classList.toggle("open", this.isOpen);
+      toggle.setAttribute("aria-expanded", String(this.isOpen));
+      window.classList.toggle("open", this.isOpen);
 
-            if (this.isOpen) {
-                document.getElementById('ma3pl-input').focus();
-                if (window.MA3PLAnalytics) {
-                    MA3PLAnalytics.trackChatOpen();
-                }
-            }
-        },
-
-        addMessage: function(role, content) {
-            const container = document.getElementById('ma3pl-messages');
-            const msg = document.createElement('div');
-            msg.className = `chat-message ${role}`;
-            msg.textContent = content;
-            container.appendChild(msg);
-            container.scrollTop = container.scrollHeight;
-
-            this.messages.push({ role, content });
-
-            // Hide quick replies after first message
-            if (this.messages.length > 1) {
-                document.getElementById('ma3pl-quick-replies').style.display = 'none';
-            }
-        },
-
-        showTyping: function() {
-            const container = document.getElementById('ma3pl-messages');
-            const typing = document.createElement('div');
-            typing.className = 'chat-message typing';
-            typing.id = 'typing-indicator';
-            typing.innerHTML = '<div class="typing-dots"><span></span><span></span><span></span></div>';
-            container.appendChild(typing);
-            container.scrollTop = container.scrollHeight;
-        },
-
-        hideTyping: function() {
-            const typing = document.getElementById('typing-indicator');
-            if (typing) typing.remove();
-        },
-
-        send: async function(text) {
-            const input = document.getElementById('ma3pl-input');
-            const message = text || input.value.trim();
-
-            if (!message) return;
-
-            // Add user message
-            this.addMessage('user', message);
-            input.value = '';
-
-            // Track chat message
-            if (window.MA3PLAnalytics) {
-                MA3PLAnalytics.trackChatMessage(this.messages.length <= 2);
-            }
-
-            // Show typing indicator
-            this.showTyping();
-
-            try {
-                // Get user ID from Firebase if available
-                let userId = null;
-                if (window.firebase && firebase.auth) {
-                    const user = firebase.auth().currentUser;
-                    if (user) userId = user.uid;
-                }
-
-                // Send to backend
-                const response = await fetch(CONFIG.webhookUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        message: message,
-                        sessionId: this.sessionId,
-                        userId: userId,
-                        history: this.messages.slice(-10)
-                    })
-                });
-
-                const data = await response.json();
-                this.hideTyping();
-
-                if (data.response) {
-                    this.addMessage('assistant', data.response);
-                } else {
-                    this.addMessage('assistant', 'Sorry, I couldn\'t process that. Please try again.');
-                }
-
-            } catch (error) {
-                console.error('Chat error:', error);
-                this.hideTyping();
-                this.addMessage('assistant', 'Connection error. Please try again or call (305) 555-3PL1.');
-            }
+      if (this.isOpen) {
+        document.getElementById("ma3pl-input").focus();
+        if (window.MA3PLAnalytics) {
+          MA3PLAnalytics.trackChatOpen();
         }
-    };
+      }
+    },
 
-    // Initialize on DOM ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => MA3PLChat.init());
-    } else {
-        MA3PLChat.init();
-    }
+    addMessage: function (role, content) {
+      const container = document.getElementById("ma3pl-messages");
+      const msg = document.createElement("div");
+      msg.className = `chat-message ${role}`;
+      msg.textContent = content;
+      container.appendChild(msg);
+      container.scrollTop = container.scrollHeight;
 
-    // Expose globally
-    window.MA3PLChat = MA3PLChat;
+      this.messages.push({ role, content });
 
+      // Hide quick replies after first message
+      if (this.messages.length > 1) {
+        document.getElementById("ma3pl-quick-replies").style.display = "none";
+      }
+    },
+
+    showTyping: function () {
+      const container = document.getElementById("ma3pl-messages");
+      const typing = document.createElement("div");
+      typing.className = "chat-message typing";
+      typing.id = "typing-indicator";
+      typing.innerHTML =
+        '<div class="typing-dots"><span></span><span></span><span></span></div>';
+      container.appendChild(typing);
+      container.scrollTop = container.scrollHeight;
+    },
+
+    hideTyping: function () {
+      const typing = document.getElementById("typing-indicator");
+      if (typing) typing.remove();
+    },
+
+    send: async function (text) {
+      const input = document.getElementById("ma3pl-input");
+      const message = text || input.value.trim();
+
+      if (!message) return;
+
+      // Add user message
+      this.addMessage("user", message);
+      input.value = "";
+
+      // Track chat message
+      if (window.MA3PLAnalytics) {
+        MA3PLAnalytics.trackChatMessage(this.messages.length <= 2);
+      }
+
+      // Show typing indicator
+      this.showTyping();
+
+      try {
+        // Get user ID from Firebase if available
+        let userId = null;
+        if (window.firebase && firebase.auth) {
+          const user = firebase.auth().currentUser;
+          if (user) userId = user.uid;
+        }
+
+        // Send to backend
+        const response = await fetch(CONFIG.webhookUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            message: message,
+            sessionId: this.sessionId,
+            userId: userId,
+            history: this.messages.slice(-10),
+          }),
+        });
+
+        const data = await response.json();
+        this.hideTyping();
+
+        if (data.response) {
+          this.addMessage("assistant", data.response);
+        } else {
+          this.addMessage(
+            "assistant",
+            "Sorry, I couldn't process that. Please try again.",
+          );
+        }
+      } catch (error) {
+        console.error("Chat error:", error);
+        this.hideTyping();
+        this.addMessage(
+          "assistant",
+          "Connection error. Please try again or call (305) 555-3PL1.",
+        );
+      }
+    },
+  };
+
+  // Initialize on DOM ready
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => MA3PLChat.init());
+  } else {
+    MA3PLChat.init();
+  }
+
+  // Expose globally
+  window.MA3PLChat = MA3PLChat;
 })();

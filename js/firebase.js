@@ -24,7 +24,7 @@ const FIREBASE_CONFIG = {
     storageBucket: "miamialliance3pl.firebasestorage.app",
     messagingSenderId: "657614666588",
     appId: "1:657614666588:web:20e50484fe5d90b5aa5f99",
-    measurementId: "G-QSRV99D8BX"
+    measurementId: "G-KTW0F25ZM1"
 };
 
 // Fallback admin emails (used before Firestore roles exist)

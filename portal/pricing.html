@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Pricing Management | Miami Alliance 3PL Portal</title>
     <meta name="robots" content="noindex, nofollow">
 
@@ -15,14 +15,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="../css/style.css?v=202602230300">
+    <link rel="stylesheet" href="../css/style.css?v=8">
     <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSRV99D8BX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTW0F25ZM1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-QSRV99D8BX');
+        gtag('config', 'G-KTW0F25ZM1');
     </script>
     <script src="../js/analytics.js"></script>
     <style>
@@ -266,7 +266,7 @@
             </button>
             <ul class="nav-menu">
                 <li><span id="user-name" class="nav-link">Welcome</span></li>
-                <li><a href="#" id="logout-btn" class="nav-link btn btn-outline">Logout</a></li>
+                <li><a href="#" id="logout-btn" class="nav-link btn btn-outline" data-i18n="portal.sidebar.logout">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -276,36 +276,47 @@
         <aside class="portal-sidebar">
             <nav>
                 <a href="dashboard.html" class="portal-nav-item">
-                    <span>📊</span> Dashboard
+                    <span>📊</span> <span data-i18n="portal.sidebar.dashboard">Dashboard</span>
                 </a>
                 <a href="shipments.html" class="portal-nav-item">
-                    <span>🚚</span> Shipments
+                    <span>🚚</span> <span data-i18n="portal.sidebar.shipments">Shipments</span>
+                </a>
+                <a href="pickups.html" class="portal-nav-item">
+                    <span aria-hidden="true">🏗️</span> <span>Pickup & Delivery</span>
                 </a>
                 <a href="tracking.html" class="portal-nav-item">
-                    <span>🔍</span> Tracking
+                    <span>🔍</span> <span data-i18n="portal.sidebar.tracking">Tracking</span>
                 </a>
                 <a href="inventory.html" class="portal-nav-item">
-                    <span>📦</span> Inventory
+                    <span>📦</span> <span data-i18n="portal.sidebar.inventory">Inventory</span>
                 </a>
+                <a href="admin-billing.html" class="portal-nav-item"><span>💵</span> <span>Billing</span></a>
+                <a href="contracts.html" class="portal-nav-item"><span>📄</span> <span>Contracts</span></a>
                 <div id="employee-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
-                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;">Staff</div>
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;" data-i18n="portal.sidebar.staffLabel">Staff</div>
                     <a href="customers.html" class="portal-nav-item">
-                        <span>👥</span> All Customers
+                        <span>👥</span> <span data-i18n="portal.sidebar.customers">All Customers</span>
                     </a>
                     <a href="admin-shipments.html" class="portal-nav-item">
-                        <span>📋</span> All Shipments
+                        <span>📋</span> <span data-i18n="portal.sidebar.allShipments">All Shipments</span>
                     </a>
                 </div>
                 <div id="admin-nav" style="display: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-gray-200);">
-                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;">Admin</div>
+                    <div style="padding: 8px 16px; font-size: 0.75rem; color: var(--color-gray-500); text-transform: uppercase;" data-i18n="portal.sidebar.adminLabel">Admin</div>
+                    <a href="admin-panel.html" class="portal-nav-item">
+                        <span>🛡️</span> <span>Admin Control Panel</span>
+                    </a>                    <a href="admin-pickups.html" class="portal-nav-item">
+                        <span aria-hidden="true">🚛</span> <span>All Pickup Requests</span>
+                    </a>
+                    <a href="admin-billing.html" class="portal-nav-item"><span>📝</span> <span>Activity Billing</span></a>
                     <a href="pricing.html" class="portal-nav-item active">
-                        <span>💰</span> Pricing
+                        <span>💰</span> <span data-i18n="portal.sidebar.pricing">Pricing</span>
                     </a>
                     <a href="settings.html" class="portal-nav-item">
-                        <span>⚙️</span> Settings
+                        <span>⚙️</span> <span data-i18n="portal.sidebar.settings">Settings</span>
                     </a>
                     <a href="team.html" class="portal-nav-item">
-                        <span>👔</span> Manage Team
+                        <span>👔</span> <span data-i18n="portal.sidebar.team">Manage Team</span>
                     </a>
                 </div>
             </nav>
@@ -314,113 +325,111 @@
         <!-- Main Content -->
         <main class="portal-main">
             <div class="page-header">
-                <h1>💰 Pricing Management</h1>
-                <button class="btn-save-all" onclick="saveAllPricing()">
-                    💾 Save All Changes
-                </button>
+                <h1 data-i18n="portal.pricing.title">💰 Pricing Management</h1>
+                <button class="btn-save-all" onclick="saveAllPricing()" data-i18n="portal.pricing.saveAll">💾 Save All Changes</button>
             </div>
 
             <div class="info-banner">
                 <span class="icon">ℹ️</span>
                 <div>
-                    <p><strong>Default Pricing:</strong> Set your standard rates below. These apply to all customers unless a custom rate is defined.</p>
-                    <p style="margin-top: 4px;">Prices are in USD. Leave empty or set to 0 to disable a service.</p>
+                    <p data-i18n-html="portal.pricing.infoBanner"><strong>Default Pricing:</strong> Set your standard rates below. These apply to all customers unless a custom rate is defined.</p>
+                    <p style="margin-top: 4px;" data-i18n="portal.pricing.infoBannerNote">Prices are in USD. Leave empty or set to 0 to disable a service.</p>
                 </div>
             </div>
 
             <!-- Storage Rates -->
             <div class="pricing-section">
-                <h2>📦 Storage Rates</h2>
+                <h2 data-i18n="portal.pricing.storageRates">📦 Storage Rates</h2>
                 <div class="pricing-grid">
                     <div class="price-card">
-                        <h4>🎯 Pallet Storage</h4>
+                        <h4 data-i18n="portal.pricing.palletStorage">🎯 Pallet Storage</h4>
                         <div class="price-inputs">
                             <div class="price-row">
-                                <label for="pallet-daily">Daily Rate</label>
+                                <label for="pallet-daily" data-i18n="portal.pricing.dailyRate">Daily Rate</label>
                                 <span>$</span>
                                 <input type="number" step="0.01" min="0" id="pallet-daily" name="pallet-daily" data-validate="currency" placeholder="0.00">
-                                <span class="unit">/day</span>
+                                <span class="unit" data-i18n="portal.pricing.perDay">/day</span>
                             </div>
                             <div class="price-row">
-                                <label for="pallet-weekly">Weekly Rate</label>
+                                <label for="pallet-weekly" data-i18n="portal.pricing.weeklyRate">Weekly Rate</label>
                                 <span>$</span>
                                 <input type="number" step="0.01" min="0" id="pallet-weekly" name="pallet-weekly" data-validate="currency" placeholder="0.00">
-                                <span class="unit">/week</span>
+                                <span class="unit" data-i18n="portal.pricing.perWeek">/week</span>
                             </div>
                             <div class="price-row">
-                                <label for="pallet-monthly">Monthly Rate</label>
+                                <label for="pallet-monthly" data-i18n="portal.pricing.monthlyRate">Monthly Rate</label>
                                 <span>$</span>
                                 <input type="number" step="0.01" min="0" id="pallet-monthly" name="pallet-monthly" data-validate="currency" placeholder="0.00">
-                                <span class="unit">/month</span>
+                                <span class="unit" data-i18n="portal.pricing.perMonth">/month</span>
                             </div>
                         </div>
                     </div>
                     <div class="price-card">
-                        <h4>📦 Container Storage</h4>
+                        <h4 data-i18n="portal.pricing.containerStorage">📦 Container Storage</h4>
                         <div class="price-inputs">
                             <div class="price-row">
-                                <label for="container-20ft">20ft Container</label>
+                                <label for="container-20ft" data-i18n="portal.pricing.container20ft">20ft Container</label>
                                 <span>$</span>
                                 <input type="number" step="0.01" min="0" id="container-20ft" name="container-20ft" data-validate="currency" placeholder="0.00">
-                                <span class="unit">/day</span>
+                                <span class="unit" data-i18n="portal.pricing.perDay">/day</span>
                             </div>
                             <div class="price-row">
-                                <label for="container-40ft">40ft Container</label>
+                                <label for="container-40ft" data-i18n="portal.pricing.container40ft">40ft Container</label>
                                 <span>$</span>
                                 <input type="number" step="0.01" min="0" id="container-40ft" name="container-40ft" data-validate="currency" placeholder="0.00">
-                                <span class="unit">/day</span>
+                                <span class="unit" data-i18n="portal.pricing.perDay">/day</span>
                             </div>
                             <div class="price-row">
-                                <label for="container-40hc">40ft HC</label>
+                                <label for="container-40hc" data-i18n="portal.pricing.container40hc">40ft HC</label>
                                 <span>$</span>
                                 <input type="number" step="0.01" min="0" id="container-40hc" name="container-40hc" data-validate="currency" placeholder="0.00">
-                                <span class="unit">/day</span>
+                                <span class="unit" data-i18n="portal.pricing.perDay">/day</span>
                             </div>
                         </div>
                     </div>
                     <div class="price-card">
-                        <h4>📋 Box/Carton Storage</h4>
+                        <h4 data-i18n="portal.pricing.boxStorage">📋 Box/Carton Storage</h4>
                         <div class="price-inputs">
                             <div class="price-row">
-                                <label>Small Box</label>
+                                <label data-i18n="portal.pricing.smallBox">Small Box</label>
                                 <span>$</span>
                                 <input type="number" step="0.01" id="box-small" placeholder="0.00">
-                                <span class="unit">/month</span>
+                                <span class="unit" data-i18n="portal.pricing.perMonth">/month</span>
                             </div>
                             <div class="price-row">
-                                <label>Medium Box</label>
+                                <label data-i18n="portal.pricing.mediumBox">Medium Box</label>
                                 <span>$</span>
                                 <input type="number" step="0.01" id="box-medium" placeholder="0.00">
-                                <span class="unit">/month</span>
+                                <span class="unit" data-i18n="portal.pricing.perMonth">/month</span>
                             </div>
                             <div class="price-row">
-                                <label>Large Box</label>
+                                <label data-i18n="portal.pricing.largeBox">Large Box</label>
                                 <span>$</span>
                                 <input type="number" step="0.01" id="box-large" placeholder="0.00">
-                                <span class="unit">/month</span>
+                                <span class="unit" data-i18n="portal.pricing.perMonth">/month</span>
                             </div>
                         </div>
                     </div>
                     <div class="price-card">
-                        <h4>🏢 Cubic Storage</h4>
+                        <h4 data-i18n="portal.pricing.cubicStorage">🏢 Cubic Storage</h4>
                         <div class="price-inputs">
                             <div class="price-row">
-                                <label>Per Cubic Foot</label>
+                                <label data-i18n="portal.pricing.perCubicFoot">Per Cubic Foot</label>
                                 <span>$</span>
                                 <input type="number" step="0.01" id="cubic-foot" placeholder="0.00">
-                                <span class="unit">/month</span>
+                                <span class="unit" data-i18n="portal.pricing.perMonth">/month</span>
                             </div>
                             <div class="price-row">
-                                <label>Per Sq Foot</label>
+                                <label data-i18n="portal.pricing.perSqFoot">Per Sq Foot</label>
                                 <span>$</span>
                                 <input type="number" step="0.01" id="sqft" placeholder="0.00">
-                                <span class="unit">/month</span>
+                                <span class="unit" data-i18n="portal.pricing.perMonth">/month</span>
                             </div>
                             <div class="price-row">
-                                <label>Min. Monthly</label>
+                                <label data-i18n="portal.pricing.minMonthly">Min. Monthly</label>
                                 <span>$</span>
                                 <input type="number" step="0.01" id="storage-min" placeholder="0.00">
-                                <span class="unit">min</span>
+                                <span class="unit" data-i18n="portal.pricing.min">min</span>
                             </div>
                         </div>
                     </div>
@@ -429,64 +438,64 @@
 
             <!-- Handling Services -->
             <div class="pricing-section">
-                <h2>🏗️ Handling Services</h2>
+                <h2 data-i18n="portal.pricing.handlingServices">🏗️ Handling Services</h2>
                 <table class="services-table">
                     <thead>
                         <tr>
-                            <th>Service</th>
-                            <th>Description</th>
-                            <th>Rate</th>
-                            <th>Unit</th>
+                            <th data-i18n="portal.pricing.thService">Service</th>
+                            <th data-i18n="portal.pricing.thDescription">Description</th>
+                            <th data-i18n="portal.pricing.thRate">Rate</th>
+                            <th data-i18n="portal.pricing.thUnit">Unit</th>
                         </tr>
                     </thead>
                     <tbody id="handling-services">
                         <tr>
-                            <td><div class="service-name">📥 Receiving</div></td>
-                            <td class="service-desc">Unloading & checking inbound shipments</td>
+                            <td><div class="service-name" data-i18n="portal.pricing.svc.receiving">📥 Receiving</div></td>
+                            <td class="service-desc" data-i18n="portal.pricing.svc.receivingDesc">Unloading & checking inbound shipments</td>
                             <td>$ <input type="number" step="0.01" id="svc-receiving" placeholder="0.00"></td>
-                            <td>per pallet</td>
+                            <td data-i18n="portal.pricing.unit.perPallet">per pallet</td>
                         </tr>
                         <tr>
-                            <td><div class="service-name">🏗️ Unloading</div></td>
-                            <td class="service-desc">Container/truck unloading labor</td>
+                            <td><div class="service-name" data-i18n="portal.pricing.svc.unloading">🏗️ Unloading</div></td>
+                            <td class="service-desc" data-i18n="portal.pricing.svc.unloadingDesc">Container/truck unloading labor</td>
                             <td>$ <input type="number" step="0.01" id="svc-unloading" placeholder="0.00"></td>
-                            <td>per hour</td>
+                            <td data-i18n="portal.pricing.unit.perHour">per hour</td>
                         </tr>
                         <tr>
-                            <td><div class="service-name">📤 Pick & Pack</div></td>
-                            <td class="service-desc">Order picking and packing</td>
+                            <td><div class="service-name" data-i18n="portal.pricing.svc.pickpack">📤 Pick & Pack</div></td>
+                            <td class="service-desc" data-i18n="portal.pricing.svc.pickpackDesc">Order picking and packing</td>
                             <td>$ <input type="number" step="0.01" id="svc-pickpack" placeholder="0.00"></td>
-                            <td>per order</td>
+                            <td data-i18n="portal.pricing.unit.perOrder">per order</td>
                         </tr>
                         <tr>
-                            <td><div class="service-name">🏷️ Labeling</div></td>
-                            <td class="service-desc">Product labeling service</td>
+                            <td><div class="service-name" data-i18n="portal.pricing.svc.labeling">🏷️ Labeling</div></td>
+                            <td class="service-desc" data-i18n="portal.pricing.svc.labelingDesc">Product labeling service</td>
                             <td>$ <input type="number" step="0.01" id="svc-labeling" placeholder="0.00"></td>
-                            <td>per item</td>
+                            <td data-i18n="portal.pricing.unit.perItem">per item</td>
                         </tr>
                         <tr>
-                            <td><div class="service-name">📦 Palletizing</div></td>
-                            <td class="service-desc">Building pallets from loose cargo</td>
+                            <td><div class="service-name" data-i18n="portal.pricing.svc.palletizing">📦 Palletizing</div></td>
+                            <td class="service-desc" data-i18n="portal.pricing.svc.palletizingDesc">Building pallets from loose cargo</td>
                             <td>$ <input type="number" step="0.01" id="svc-palletizing" placeholder="0.00"></td>
-                            <td>per pallet</td>
+                            <td data-i18n="portal.pricing.unit.perPallet">per pallet</td>
                         </tr>
                         <tr>
-                            <td><div class="service-name">🎁 Wrapping</div></td>
-                            <td class="service-desc">Shrink wrap / stretch wrap</td>
+                            <td><div class="service-name" data-i18n="portal.pricing.svc.wrapping">🎁 Wrapping</div></td>
+                            <td class="service-desc" data-i18n="portal.pricing.svc.wrappingDesc">Shrink wrap / stretch wrap</td>
                             <td>$ <input type="number" step="0.01" id="svc-wrapping" placeholder="0.00"></td>
-                            <td>per pallet</td>
+                            <td data-i18n="portal.pricing.unit.perPallet">per pallet</td>
                         </tr>
                         <tr>
-                            <td><div class="service-name">🚚 Loading</div></td>
-                            <td class="service-desc">Loading outbound trucks/containers</td>
+                            <td><div class="service-name" data-i18n="portal.pricing.svc.loading">🚚 Loading</div></td>
+                            <td class="service-desc" data-i18n="portal.pricing.svc.loadingDesc">Loading outbound trucks/containers</td>
                             <td>$ <input type="number" step="0.01" id="svc-loading" placeholder="0.00"></td>
-                            <td>per hour</td>
+                            <td data-i18n="portal.pricing.unit.perHour">per hour</td>
                         </tr>
                         <tr>
-                            <td><div class="service-name">📊 Inventory Count</div></td>
-                            <td class="service-desc">Physical inventory counting</td>
+                            <td><div class="service-name" data-i18n="portal.pricing.svc.inventoryCount">📊 Inventory Count</div></td>
+                            <td class="service-desc" data-i18n="portal.pricing.svc.inventoryCountDesc">Physical inventory counting</td>
                             <td>$ <input type="number" step="0.01" id="svc-inventory" placeholder="0.00"></td>
-                            <td>per SKU</td>
+                            <td data-i18n="portal.pricing.unit.perSKU">per SKU</td>
                         </tr>
                     </tbody>
                 </table>
@@ -494,64 +503,64 @@
 
             <!-- Additional Services -->
             <div class="pricing-section">
-                <h2>✨ Additional Services</h2>
+                <h2 data-i18n="portal.pricing.additionalServices">✨ Additional Services</h2>
                 <table class="services-table">
                     <thead>
                         <tr>
-                            <th>Service</th>
-                            <th>Description</th>
-                            <th>Rate</th>
-                            <th>Unit</th>
+                            <th data-i18n="portal.pricing.thService">Service</th>
+                            <th data-i18n="portal.pricing.thDescription">Description</th>
+                            <th data-i18n="portal.pricing.thRate">Rate</th>
+                            <th data-i18n="portal.pricing.thUnit">Unit</th>
                         </tr>
                     </thead>
                     <tbody id="additional-services">
                         <tr>
-                            <td><div class="service-name">🔧 Kitting</div></td>
-                            <td class="service-desc">Assembling product kits/bundles</td>
+                            <td><div class="service-name" data-i18n="portal.pricing.svc.kitting">🔧 Kitting</div></td>
+                            <td class="service-desc" data-i18n="portal.pricing.svc.kittingDesc">Assembling product kits/bundles</td>
                             <td>$ <input type="number" step="0.01" id="svc-kitting" placeholder="0.00"></td>
-                            <td>per kit</td>
+                            <td data-i18n="portal.pricing.unit.perKit">per kit</td>
                         </tr>
                         <tr>
-                            <td><div class="service-name">↩️ Returns Processing</div></td>
-                            <td class="service-desc">Inspect, repack, restock returns</td>
+                            <td><div class="service-name" data-i18n="portal.pricing.svc.returns">↩️ Returns Processing</div></td>
+                            <td class="service-desc" data-i18n="portal.pricing.svc.returnsDesc">Inspect, repack, restock returns</td>
                             <td>$ <input type="number" step="0.01" id="svc-returns" placeholder="0.00"></td>
-                            <td>per item</td>
+                            <td data-i18n="portal.pricing.unit.perItem">per item</td>
                         </tr>
                         <tr>
-                            <td><div class="service-name">📸 Photography</div></td>
-                            <td class="service-desc">Product photography services</td>
+                            <td><div class="service-name" data-i18n="portal.pricing.svc.photography">📸 Photography</div></td>
+                            <td class="service-desc" data-i18n="portal.pricing.svc.photographyDesc">Product photography services</td>
                             <td>$ <input type="number" step="0.01" id="svc-photo" placeholder="0.00"></td>
-                            <td>per SKU</td>
+                            <td data-i18n="portal.pricing.unit.perSKU">per SKU</td>
                         </tr>
                         <tr>
-                            <td><div class="service-name">🎯 Quality Check</div></td>
-                            <td class="service-desc">Quality control inspection</td>
+                            <td><div class="service-name" data-i18n="portal.pricing.svc.qualityCheck">🎯 Quality Check</div></td>
+                            <td class="service-desc" data-i18n="portal.pricing.svc.qualityCheckDesc">Quality control inspection</td>
                             <td>$ <input type="number" step="0.01" id="svc-qc" placeholder="0.00"></td>
-                            <td>per item</td>
+                            <td data-i18n="portal.pricing.unit.perItem">per item</td>
                         </tr>
                         <tr>
-                            <td><div class="service-name">📝 Custom Packaging</div></td>
-                            <td class="service-desc">Custom box/packaging setup</td>
+                            <td><div class="service-name" data-i18n="portal.pricing.svc.customPackaging">📝 Custom Packaging</div></td>
+                            <td class="service-desc" data-i18n="portal.pricing.svc.customPackagingDesc">Custom box/packaging setup</td>
                             <td>$ <input type="number" step="0.01" id="svc-custom-pkg" placeholder="0.00"></td>
-                            <td>per order</td>
+                            <td data-i18n="portal.pricing.unit.perOrder">per order</td>
                         </tr>
                         <tr>
-                            <td><div class="service-name">🚨 Rush Handling</div></td>
-                            <td class="service-desc">Same-day priority processing</td>
+                            <td><div class="service-name" data-i18n="portal.pricing.svc.rushHandling">🚨 Rush Handling</div></td>
+                            <td class="service-desc" data-i18n="portal.pricing.svc.rushHandlingDesc">Same-day priority processing</td>
                             <td>$ <input type="number" step="0.01" id="svc-rush" placeholder="0.00"></td>
-                            <td>per order</td>
+                            <td data-i18n="portal.pricing.unit.perOrder">per order</td>
                         </tr>
                         <tr>
-                            <td><div class="service-name">📄 Documentation</div></td>
-                            <td class="service-desc">Customs/shipping paperwork</td>
+                            <td><div class="service-name" data-i18n="portal.pricing.svc.documentation">📄 Documentation</div></td>
+                            <td class="service-desc" data-i18n="portal.pricing.svc.documentationDesc">Customs/shipping paperwork</td>
                             <td>$ <input type="number" step="0.01" id="svc-docs" placeholder="0.00"></td>
-                            <td>per shipment</td>
+                            <td data-i18n="portal.pricing.unit.perShipment">per shipment</td>
                         </tr>
                         <tr>
-                            <td><div class="service-name">☎️ Dedicated Support</div></td>
-                            <td class="service-desc">Account management hours</td>
+                            <td><div class="service-name" data-i18n="portal.pricing.svc.dedicatedSupport">☎️ Dedicated Support</div></td>
+                            <td class="service-desc" data-i18n="portal.pricing.svc.dedicatedSupportDesc">Account management hours</td>
                             <td>$ <input type="number" step="0.01" id="svc-support" placeholder="0.00"></td>
-                            <td>per hour</td>
+                            <td data-i18n="portal.pricing.unit.perHour">per hour</td>
                         </tr>
                     </tbody>
                 </table>
@@ -559,59 +568,59 @@
 
             <!-- Freight/Shipping Surcharges -->
             <div class="pricing-section">
-                <h2>🚛 Freight & Surcharges</h2>
+                <h2 data-i18n="portal.pricing.freightSurcharges">🚛 Freight & Surcharges</h2>
                 <div class="pricing-grid">
                     <div class="price-card">
-                        <h4>⛽ Fuel Surcharge</h4>
+                        <h4 data-i18n="portal.pricing.fuelSurcharge">⛽ Fuel Surcharge</h4>
                         <div class="price-inputs">
                             <div class="price-row">
-                                <label>Percentage</label>
+                                <label data-i18n="portal.pricing.percentage">Percentage</label>
                                 <input type="number" step="0.1" id="fuel-surcharge" placeholder="0.0">
                                 <span class="unit">%</span>
                             </div>
                         </div>
                     </div>
                     <div class="price-card">
-                        <h4>🏢 Residential Delivery</h4>
+                        <h4 data-i18n="portal.pricing.residentialDelivery">🏢 Residential Delivery</h4>
                         <div class="price-inputs">
                             <div class="price-row">
-                                <label>Surcharge</label>
+                                <label data-i18n="portal.pricing.surcharge">Surcharge</label>
                                 <span>$</span>
                                 <input type="number" step="0.01" id="residential-surcharge" placeholder="0.00">
-                                <span class="unit">flat</span>
+                                <span class="unit" data-i18n="portal.pricing.flat">flat</span>
                             </div>
                         </div>
                     </div>
                     <div class="price-card">
-                        <h4>🏗️ Liftgate Fee</h4>
+                        <h4 data-i18n="portal.pricing.liftgateFee">🏗️ Liftgate Fee</h4>
                         <div class="price-inputs">
                             <div class="price-row">
-                                <label>Delivery</label>
+                                <label data-i18n="portal.pricing.delivery">Delivery</label>
                                 <span>$</span>
                                 <input type="number" step="0.01" id="liftgate-del" placeholder="0.00">
-                                <span class="unit">flat</span>
+                                <span class="unit" data-i18n="portal.pricing.flat">flat</span>
                             </div>
                             <div class="price-row">
-                                <label>Pickup</label>
+                                <label data-i18n="portal.pricing.pickup">Pickup</label>
                                 <span>$</span>
                                 <input type="number" step="0.01" id="liftgate-pu" placeholder="0.00">
-                                <span class="unit">flat</span>
+                                <span class="unit" data-i18n="portal.pricing.flat">flat</span>
                             </div>
                         </div>
                     </div>
                     <div class="price-card">
-                        <h4>⏰ Detention</h4>
+                        <h4 data-i18n="portal.pricing.detention">⏰ Detention</h4>
                         <div class="price-inputs">
                             <div class="price-row">
-                                <label>Free Time</label>
+                                <label data-i18n="portal.pricing.freeTime">Free Time</label>
                                 <input type="number" step="1" id="detention-free" placeholder="0">
-                                <span class="unit">hours</span>
+                                <span class="unit" data-i18n="portal.pricing.hours">hours</span>
                             </div>
                             <div class="price-row">
-                                <label>Rate After</label>
+                                <label data-i18n="portal.pricing.rateAfter">Rate After</label>
                                 <span>$</span>
                                 <input type="number" step="0.01" id="detention-rate" placeholder="0.00">
-                                <span class="unit">/hour</span>
+                                <span class="unit" data-i18n="portal.pricing.perHour">/hour</span>
                             </div>
                         </div>
                     </div>
@@ -620,22 +629,22 @@
 
             <!-- Customer-Specific Rates -->
             <div class="pricing-section customer-rates-section">
-                <h2>🎯 Customer-Specific Rates</h2>
-                <p style="color: #92400e; margin-bottom: var(--spacing-md);">Override default pricing for specific customers. These rates take priority over standard rates.</p>
+                <h2 data-i18n="portal.pricing.customerRates">🎯 Customer-Specific Rates</h2>
+                <p style="color: #92400e; margin-bottom: var(--spacing-md);" data-i18n="portal.pricing.customerRatesDesc">Override default pricing for specific customers. These rates take priority over standard rates.</p>
 
                 <div id="customer-rates-container">
                     <div class="custom-rate-row" style="font-weight: 600; border-bottom: 2px solid #fbbf24;">
-                        <div>Customer</div>
-                        <div>Service/Item</div>
-                        <div>Custom Rate</div>
-                        <div>Unit</div>
+                        <div data-i18n="portal.pricing.crCustomer">Customer</div>
+                        <div data-i18n="portal.pricing.crServiceItem">Service/Item</div>
+                        <div data-i18n="portal.pricing.crCustomRate">Custom Rate</div>
+                        <div data-i18n="portal.pricing.crUnit">Unit</div>
                         <div></div>
                     </div>
                     <!-- Customer rates will be loaded here -->
                 </div>
 
                 <div class="add-service-btn" onclick="addCustomerRate()">
-                    <span>➕</span> Add Customer-Specific Rate
+                    <span>➕</span> <span data-i18n="portal.pricing.addCustomerRate">Add Customer-Specific Rate</span>
                 </div>
             </div>
 
@@ -662,7 +671,7 @@
             storageBucket: "miamialliance3pl.firebasestorage.app",
             messagingSenderId: "657614666588",
             appId: "1:657614666588:web:20e50484fe5d90b5aa5f99",
-            measurementId: "G-QSRV99D8BX"
+            measurementId: "G-KTW0F25ZM1"
         };
 
         // Initialize Firebase
@@ -948,5 +957,10 @@
             document.querySelector('.portal-sidebar').classList.toggle('active');
         });
     </script>
+    <script src="../js/lang/es.js"></script>
+    <script src="../js/lang/pt-br.js"></script>
+    <script src="../js/lang/zh.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/chat-widget.js"></script>
 </body>
 </html>
