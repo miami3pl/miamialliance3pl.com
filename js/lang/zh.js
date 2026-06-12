@@ -557,7 +557,7 @@ window.MA3PL_TRANSLATIONS.zh = {
   "blog.title": "3PL与物流洞察博客",
   "blog.subtitle":
     "专家指南、行业分析和实用建议，帮助电商品牌驾驭仓储、履行和第三方物流。",
-  "blog.count": "98 篇文章",
+  "blog.count": "134 篇文章",
   "blog.readarticle": "阅读文章 →",
   "blog.minread": "分钟阅读",
 
