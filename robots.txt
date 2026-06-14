@@ -7,6 +7,10 @@ Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt
 Allow: /ai/
+Allow: /ai/search-answer-map.md
+Allow: /.well-known/
+Allow: /sitemap.xml
+Allow: /sitemap-ai.xml
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
@@ -16,9 +20,8 @@ Disallow: /*?*
 Allow: /css/
 Allow: /js/
 Allow: /images/
-Crawl-delay: 1
 
-# === AI SEARCH CRAWLERS (ALLOW for maximum visibility) ===
+# === AI SEARCH AND ASSISTANT CRAWLERS (ALLOW PUBLIC CONTENT) ===
 
 # OpenAI - ChatGPT Search (real-time retrieval)
 User-agent: ChatGPT-User
@@ -183,8 +186,8 @@ Sitemap: https://miamialliance3pl.com/sitemap.xml
 Sitemap: https://miamialliance3pl.com/sitemap-ai.xml
 
 # === AI CONTENT FILES ===
-# llms.txt provides structured content for AI models
+# Public AI-readable files for compact business facts and answer routing
 # See: https://miamialliance3pl.com/llms.txt
-# llms-full.txt and /ai/ contain deeper AI-readable references
-# .well-known/ai-plugin.json for ChatGPT plugin discovery
-# rebuilt 2026-06-08T14:43Z — added AI discovery links to 137 pages + speakable schema to 6 key pages
+# See: https://miamialliance3pl.com/llms-full.txt
+# See: https://miamialliance3pl.com/ai/search-answer-map.md
+# Updated 2026-06-14 for SEO and AI discovery coverage

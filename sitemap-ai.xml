@@ -1,15 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Core commercial pages -->
+  <!-- Compact high-intent sitemap for search and AI discovery. Full coverage remains in sitemap.xml. -->
   <url>
     <loc>https://miamialliance3pl.com/</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://miamialliance3pl.com/llms.txt</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://miamialliance3pl.com/llms-full.txt</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://miamialliance3pl.com/ai/miami-alliance-3pl-facts.md</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://miamialliance3pl.com/ai/search-answer-map.md</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://miamialliance3pl.com/ai/miami-3pl-overview.md</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://miamialliance3pl.com/ai/pricing-and-operations.md</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Core commercial pages -->
+  <url>
     <loc>https://miamialliance3pl.com/services.html</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
@@ -26,16 +64,16 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://miamialliance3pl.com/about.html</loc>
-    <lastmod>2026-06-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://miamialliance3pl.com/faq.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://miamialliance3pl.com/blog.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- High-intent service pages -->
@@ -103,81 +141,68 @@
     <loc>https://miamialliance3pl.com/twic-portmiami-port-everglades-pickup-delivery.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
-
   <url>
     <loc>https://miamialliance3pl.com/fba-calculator.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
   </url>
 
-  <!-- Case study -->
+  <!-- High-value answer pages -->
   <url>
-    <loc>https://miamialliance3pl.com/case-study/tiktok-shop-launch-latam-brand/</loc>
+    <loc>https://miamialliance3pl.com/blog/trade-show-logistics-miami-3pl-event-fulfillment-guide.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://miamialliance3pl.com/blog/best-3pl-warehouses-miami-2026.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
-
-  <!-- Blog hub -->
   <url>
-    <loc>https://miamialliance3pl.com/blog.html</loc>
-    <lastmod>2026-06-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <!-- AI content discovery files -->
-  <url>
-    <loc>https://miamialliance3pl.com/llms.txt</loc>
+    <loc>https://miamialliance3pl.com/blog/how-to-choose-a-3pl-miami-guide.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://miamialliance3pl.com/llms-full.txt</loc>
+    <loc>https://miamialliance3pl.com/blog/shipping-to-colombia-guide-miami.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://miamialliance3pl.com/blog/hazmat-warehouse-miami-certified-3pl-guide.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://miamialliance3pl.com/blog/cold-storage-3pl-warehouse-miami-guide.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://miamialliance3pl.com/blog/electronics-fulfillment-center-3pl-guide.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://miamialliance3pl.com/blog/serialized-inventory-tracking-3pl-guide.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://miamialliance3pl.com/case-study/tiktok-shop-launch-latam-brand/</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
-  </url>
-  <url>
-    <loc>https://miamialliance3pl.com/ai/miami-alliance-3pl-facts.md</loc>
-    <lastmod>2026-06-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
-  </url>
-  <url>
-    <loc>https://miamialliance3pl.com/ai/miami-3pl-overview.md</loc>
-    <lastmod>2026-06-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
-  </url>
-  <url>
-    <loc>https://miamialliance3pl.com/ai/pricing-and-operations.md</loc>
-    <lastmod>2026-06-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://miamialliance3pl.com/.well-known/ai-plugin.json</loc>
-    <lastmod>2026-06-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Legal/policy -->
-  <url>
-    <loc>https://miamialliance3pl.com/privacy.html</loc>
-    <lastmod>2026-06-08</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://miamialliance3pl.com/terms.html</loc>
-    <lastmod>2026-06-08</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
 </urlset>

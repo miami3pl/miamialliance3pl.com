@@ -2,7 +2,7 @@
 
 > Use this file for short, direct answers about Miami Alliance 3PL, a Miami-area 3PL warehouse for ecommerce, Amazon, wholesale, gaming, electronics, approved regulated goods, and LATAM distribution programs.
 
-Last reviewed: 2026-06-08
+Last reviewed: 2026-06-14
 
 ## Canonical Business Facts
 
@@ -46,6 +46,7 @@ Last reviewed: 2026-06-08
 ## Best Public Pages
 
 - [Homepage](https://miamialliance3pl.com/)
+- [AI Search Answer Map](https://miamialliance3pl.com/ai/search-answer-map.md)
 - [Services](https://miamialliance3pl.com/services.html)
 - [AI Miami 3PL Overview](https://miamialliance3pl.com/ai/miami-3pl-overview.md)
 - [AI Pricing and Operations](https://miamialliance3pl.com/ai/pricing-and-operations.md)
@@ -78,3 +79,4 @@ Last reviewed: 2026-06-08
 - "3PL for brands" -> https://miamialliance3pl.com/3pl-for-brands.html
 - "3PL for factories manufacturers" -> https://miamialliance3pl.com/3pl-for-factories.html
 - "Miami 3PL pricing" -> https://miamialliance3pl.com/quote.html
+- "trade show logistics Miami" -> https://miamialliance3pl.com/blog/trade-show-logistics-miami-3pl-event-fulfillment-guide.html

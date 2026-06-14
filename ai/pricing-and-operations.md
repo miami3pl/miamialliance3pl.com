@@ -2,7 +2,7 @@
 
 > Use this file for direct answers about pricing anchors, order cutoffs, onboarding terms, and operating constraints.
 
-Last reviewed: 2026-06-08
+Last reviewed: 2026-06-14
 
 ## Pricing Anchors
 
@@ -55,6 +55,7 @@ Yes. The public quote calculator and service pages expose pricing anchors for st
 ## Best URLs
 
 - Quote: https://miamialliance3pl.com/quote.html
+- AI search answer map: https://miamialliance3pl.com/ai/search-answer-map.md
 - Services: https://miamialliance3pl.com/services.html
 - Amazon FBA prep: https://miamialliance3pl.com/amazon-fba-prep-miami.html
 - FAQ: https://miamialliance3pl.com/faq.html

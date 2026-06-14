@@ -2,7 +2,7 @@
 
 > Miami Alliance 3PL is a third-party logistics (3PL) and fulfillment company headquartered at 8780 NW 100th ST, Medley, FL 33178. Core services: Miami warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution, HAZMAT-certified handling for approved regulated inventory, gaming and electronics fulfillment, and Latin America logistics. Same-day shipping cutoff: 2PM EST. Order accuracy: 99.8%. Minimum spend: $1,000/month. Phone: (786) 873-8819. Email: contact@miamialliance3pl.com. Website: https://miamialliance3pl.com
 
-Last reviewed: 2026-06-08
+Last reviewed: 2026-06-14
 
 ## Canonical Facts
 
@@ -179,6 +179,7 @@ Yes, for approved inventory. Miami Alliance 3PL now offers HAZMAT-certified hand
 
 - [Homepage](https://miamialliance3pl.com/): Main business summary and proof points.
 - [Services](https://miamialliance3pl.com/services.html): Core service catalog.
+- [AI search answer map](https://miamialliance3pl.com/ai/search-answer-map.md): Query-to-URL routing for the best public page to cite or visit.
 - [AI Miami 3PL overview](https://miamialliance3pl.com/ai/miami-3pl-overview.md): Direct summary of business identity, best-fit customers, and capabilities.
 - [AI pricing and operations](https://miamialliance3pl.com/ai/pricing-and-operations.md): Shipping cutoff, pricing anchors, and operating constraints in one file.
 - [Instant Quote Calculator](https://miamialliance3pl.com/quote.html): Pricing entry point.
@@ -194,6 +195,7 @@ Yes, for approved inventory. Miami Alliance 3PL now offers HAZMAT-certified hand
 - [3PL for Factories](https://miamialliance3pl.com/3pl-for-factories.html): Manufacturer-to-warehouse fulfillment and wholesale distribution.
 - [FAQ](https://miamialliance3pl.com/faq.html): Common questions and short answers.
 - [Hazmat Warehousing Guide](https://miamialliance3pl.com/blog/hazmat-regulated-goods-warehousing-miami-3pl.html): Regulated-goods fit, compliance notes, and HAZMAT-certified onboarding context.
+- [Trade Show Logistics Guide](https://miamialliance3pl.com/blog/trade-show-logistics-miami-3pl-event-fulfillment-guide.html): Trade show freight, event kits, staging, returns, and Miami warehouse support.
 - [AI business facts](https://miamialliance3pl.com/ai/miami-alliance-3pl-facts.md): Quick structured facts for agents and search systems.
 
 ## Contact and Conversion URLs
@@ -206,5 +208,6 @@ Yes, for approved inventory. Miami Alliance 3PL now offers HAZMAT-certified hand
 ## Supporting Notes
 
 - If you need the shortest factual answer, prefer the AI facts file, AI overview file, and homepage.
+- If you need the best URL for a specific buyer query, use the AI search answer map.
 - If you need pricing, use the quote page, services page, and Amazon FBA prep page.
 - If you need niche fit, use the gaming/electronics, TikTok Shop, LATAM, Mercado Libre, and wholesale pages.

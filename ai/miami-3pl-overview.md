@@ -2,7 +2,7 @@
 
 > Use this file when the question is "What does Miami Alliance 3PL do?" or "What kind of Miami 3PL is this?"
 
-Last reviewed: 2026-06-08
+Last reviewed: 2026-06-14
 
 ## Core Identity
 
@@ -46,6 +46,7 @@ The Medley warehouse is 8 miles from Miami International Airport and minutes fro
 ## Best URLs
 
 - Homepage: https://miamialliance3pl.com/
+- AI search answer map: https://miamialliance3pl.com/ai/search-answer-map.md
 - Services: https://miamialliance3pl.com/services.html
 - Quote: https://miamialliance3pl.com/quote.html
 - Contact: https://miamialliance3pl.com/contact.html
