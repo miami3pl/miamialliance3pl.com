@@ -160,7 +160,7 @@ window.MA3PL_TRANSLATIONS.zh = {
     "几分钟内连接您的店铺。自动导入订单、实时库存同步，追踪信息直接推送给您的客户。",
   "home.benefits.nominimums.title": "无最低订单量",
   "home.benefits.nominimums.desc":
-    "无论您每月发送10单还是10,000单，我们都能随您扩展。无长期合同。按用量付费。",
+    "无论您每月发送10单还是10,000单，我们都能随您扩展。每月最低消费$1,000。无长期合同。",
   "home.benefits.latam.title": "通往拉丁美洲和加勒比地区的门户",
   "home.benefits.latam.desc":
     "距Miami国际机场仅8英里，距Miami港数分钟。国际运输至中南美洲的理想枢纽。",
@@ -525,7 +525,7 @@ window.MA3PL_TRANSLATIONS.zh = {
   "quote.results.total": "预估总计",
   "quote.results.disclaimer": "* 基于标准费率的估算。最终价格可能有所不同。",
   "quote.results.minimum":
-    "<strong>适用每月最低消费 $1,000。</strong> 无长期合同。只为实际使用的服务付费。",
+    "<strong>适用每月最低消费 $1,000。</strong> 无长期合同。超过该最低消费后按实际使用计费。",
   "quote.btn.download": "下载报价PDF",
   "quote.btn.detailed": "获取详细报价",
   "quote.canvas.reset": "重置视角",
@@ -583,7 +583,7 @@ window.MA3PL_TRANSLATIONS.zh = {
   "blog.sidebar.stats.processing": "处理速度",
   "blog.sidebar.stats.delivery": "美国境内配送",
   "blog.sidebar.stats.minimums": "最低要求",
-  "blog.sidebar.stats.minimums.val": "无",
+  "blog.sidebar.stats.minimums.val": "$1,000/月",
   "blog.sidebar.cta.title": "需要履行合作伙伴？",
   "blog.sidebar.cta.desc":
     "为您的精确订单量获取透明定价。无隐藏费用，无长期合同。",
@@ -1342,14 +1342,14 @@ window.MA3PL_TRANSLATIONS.zh = {
   "dropship.hero.stat.accuracy": "订单准确率",
   "dropship.hero.stat.sameday.value": "当日",
   "dropship.hero.stat.processing": "订单处理",
-  "dropship.hero.stat.minimums": "无最低要求",
+  "dropship.hero.stat.minimums": "$1,000/月最低消费",
   "dropship.hero.cta.quote": "免费代发货报价",
   "dropship.hero.cta.specialist": "与专家交流",
 
   // Hero Pricing Card
   "dropship.hero.card.title": "代发货履行定价",
   "dropship.hero.card.subtitle":
-    "透明定价。无隐藏费用。无长期合同。只为您发出的货物付费。",
+    "透明定价。无隐藏费用。无长期合同。$1,000/月最低消费。",
   "dropship.hero.price.pickpack": "拣选与打包",
   "dropship.hero.price.pickpack.val": "从$1.50/单起",
   "dropship.hero.price.shipping": "标准运费",
@@ -1372,7 +1372,7 @@ window.MA3PL_TRANSLATIONS.zh = {
   "dropship.trust.fulfillment": "代发货履行",
   "dropship.trust.whitelabel": "白标发货",
   "dropship.trust.sameday": "当日处理",
-  "dropship.trust.nominimums": "无最低要求",
+  "dropship.trust.nominimums": "$1,000/月最低消费",
   "dropship.trust.sync": "Shopify和Amazon同步",
 
   // ═══════════════════════════════════════════════════════════════════
@@ -1471,7 +1471,7 @@ window.MA3PL_TRANSLATIONS.zh = {
   "dropship.whymiami.b4.title": "多承运商折扣费率",
   "dropship.whymiami.b4.desc":
     "我们与UPS、USPS、FedEx和DHL的出货量意味着为您提供更优的费率。当运费降低时，代发货利润就会提升。我们将承运商折扣直接传递给您。",
-  "dropship.whymiami.b5.title": "无最低要求，无合同",
+  "dropship.whymiami.b5.title": "$1,000/月最低消费，无合同",
   "dropship.whymiami.b5.desc":
     "刚起步？没问题。我们没有最低订单要求，也没有长期合同。旺季扩展，淡季缩减。代发货灵活性的最佳体现。",
   "dropship.whymiami.b6.title": "实时客户门户",
@@ -1488,7 +1488,7 @@ window.MA3PL_TRANSLATIONS.zh = {
     "代发货履行意味着我们存储您的产品，当客户在您的在线商店下单时直接发货给他们。您从不接触产品。我们处理收货、存储、拣选、打包和发货&mdash;一切都在我们Miami的仓库完成。",
   "dropship.faq.q2.title": "代发货履行费用是多少？",
   "dropship.faq.q2.answer":
-    "拣选打包从$1.50/单起，标准运费从$3.50/件起，仓储$0.75/托盘/天。无最低要求，无合同。可提供定制包装、品牌插页和组合套装。使用我们的免费在线报价计算器获取您的精确价格。",
+    "拣选打包从$1.50/单起，标准运费从$3.50/件起，仓储$0.75/托盘/天。$1,000/月最低消费，无合同。可提供定制包装、品牌插页和组合套装。使用我们的免费在线报价计算器获取您的精确价格。",
   "dropship.faq.q3.title": "你们与Shopify集成吗？",
   "dropship.faq.q3.answer":
     "是的！我们与Shopify、Amazon、WooCommerce、TikTok Shop、eBay、Etsy和BigCommerce集成。订单自动同步&mdash;客户下单，我们发货。库存和追踪更新实时回传到您的商店。",
@@ -1529,7 +1529,7 @@ window.MA3PL_TRANSLATIONS.zh = {
   // ═══════════════════════════════════════════════════════════════════
   "dropship.cta.title": "准备好扩展您的代发货业务了吗？",
   "dropship.cta.subtitle":
-    "立即获取免费代发货履行报价。无最低要求，无长期合同，无隐藏费用。我们的代发货专家将在24小时内回复。",
+    "立即获取免费代发货履行报价。$1,000/月最低消费，无长期合同，无隐藏费用。我们的代发货专家将在24小时内回复。",
   "dropship.cta.promo":
     "🎁 新客户可获得$100免费仓储信用额度 — 自动应用于您的第一张发票。",
   "dropship.cta.btn.quote": "即时代发货报价",
@@ -1568,12 +1568,12 @@ window.MA3PL_TRANSLATIONS.zh = {
   "amazon3pl.hero.stat.accuracy": "准确率",
   "amazon3pl.hero.stat.sameday": "当日",
   "amazon3pl.hero.stat.processing": "FBA处理",
-  "amazon3pl.hero.stat.minimums": "无最低要求",
+  "amazon3pl.hero.stat.minimums": "$1,000/月最低消费",
   "amazon3pl.hero.cta.quote": "免费Amazon 3PL报价",
   "amazon3pl.hero.cta.specialist": "与Amazon专家交流",
   "amazon3pl.hero.card.title": "Amazon FBA准备定价",
   "amazon3pl.hero.card.subtitle":
-    "透明定价。无隐藏费用。无长期合同。只为您使用的服务付费。",
+    "透明定价。无隐藏费用。无长期合同。$1,000/月最低消费。",
   "amazon3pl.hero.price.fnsku": "FNSKU贴标",
   "amazon3pl.hero.price.fnsku.val": "$0.20/件",
   "amazon3pl.hero.price.poly": "塑料袋包装",
@@ -1595,7 +1595,7 @@ window.MA3PL_TRANSLATIONS.zh = {
   "amazon3pl.trust.fbafbm": "Amazon FBA和FBM",
   "amazon3pl.trust.fnsku": "FNSKU贴标",
   "amazon3pl.trust.sameday": "当日处理",
-  "amazon3pl.trust.nominimums": "无最低要求",
+  "amazon3pl.trust.nominimums": "$1,000/月最低消费",
   "amazon3pl.trust.secure": "全天候安保设施",
 
   // Services
@@ -1694,7 +1694,7 @@ window.MA3PL_TRANSLATIONS.zh = {
     "为Amazon卖家提供全面服务：FBA准备、FBM履行、库存存储、检验与质检、贴标和退货处理。",
   "amazon3pl.faq.q2.title": "FBA准备费用是多少？",
   "amazon3pl.faq.q2.answer":
-    "FNSKU：$0.20/件。塑料袋：$0.30/件。气泡膜：$0.50/件。捆绑：$1.00/套。标签：$3.00/箱。检验：$0.15/件。无最低要求，无合同。",
+    "FNSKU：$0.20/件。塑料袋：$0.30/件。气泡膜：$0.50/件。捆绑：$1.00/套。标签：$3.00/箱。检验：$0.15/件。$1,000/月最低消费，无合同。",
   "amazon3pl.faq.q3.title": "你们处理FBA和FBM吗？",
   "amazon3pl.faq.q3.answer":
     "是的！我们同时处理FBA准备和FBM履行。许多客户采用混合方式以获得最大灵活性。",
@@ -1730,7 +1730,7 @@ window.MA3PL_TRANSLATIONS.zh = {
   // CTA
   "amazon3pl.cta.title": "准备好扩展您的Amazon业务了吗？",
   "amazon3pl.cta.subtitle":
-    "立即获取免费Amazon 3PL报价。无最低要求，无合同，无隐藏费用。",
+    "立即获取免费Amazon 3PL报价。$1,000/月最低消费，无合同，无隐藏费用。",
   "amazon3pl.cta.promo": "🎁 新客户可获得$100免费仓储信用额度",
   "amazon3pl.cta.btn.quote": "Amazon即时报价",
   "amazon3pl.cta.btn.specialist": "与Amazon专家交流",
@@ -1784,7 +1784,7 @@ window.MA3PL_TRANSLATIONS.zh = {
   "meli.trust.secure": "全天候安保设施",
   "meli.cta.title": "从 Miami 开始在 Mercado Libre 销售",
   "meli.cta.subtitle":
-    "立即向 Miami Alliance 3PL 获取免费报价。无最低要求，无长期合同。我们的多语团队会在 24 小时内回复。",
+    "立即向 Miami Alliance 3PL 获取免费报价。$1,000/月最低消费，无长期合同。我们的多语团队会在 24 小时内回复。",
   "meli.cta.quote": "获取免费报价",
   "meli.cta.contact": "联系我们",
   "meli.cta.call": "致电 (786) 873-8819",

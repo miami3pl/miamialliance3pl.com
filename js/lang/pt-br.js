@@ -174,7 +174,7 @@ window.MA3PL_TRANSLATIONS["pt-br"] = {
     "Conecte sua loja em minutos. Importação automática de pedidos, sincronização de estoque em tempo real e atualizações de rastreamento enviadas diretamente aos seus clientes.",
   "home.benefits.nominimums.title": "Sem Pedidos Mínimos",
   "home.benefits.nominimums.desc":
-    "Seja enviando 10 pedidos ou 10.000 por mês, escalamos com você. Sem contratos de longo prazo. Pague apenas pelo que usar.",
+    "Seja enviando 10 pedidos ou 10.000 por mês, escalamos com você. Gasto mínimo mensal de $1,000. Sem contratos de longo prazo.",
   "home.benefits.latam.title": "Portal para a América Latina e Caribe",
   "home.benefits.latam.desc":
     "A 8 milhas do Aeroporto de Miami, minutos do Porto de Miami. O hub perfeito para envios internacionais para a América Central e do Sul.",
@@ -560,7 +560,7 @@ window.MA3PL_TRANSLATIONS["pt-br"] = {
   "quote.results.disclaimer":
     "* Estimativas baseadas em tarifas padrão. O preço final pode variar.",
   "quote.results.minimum":
-    "<strong>Aplica-se um gasto mínimo de $1.000/mês.</strong> Sem contratos de longo prazo. Pague apenas pelo que usar.",
+    "<strong>Aplica-se um gasto mínimo de $1.000/mês.</strong> Sem contratos de longo prazo. Preços baseados no uso acima desse mínimo.",
   "quote.btn.download": "Baixar Cotação em PDF",
   "quote.btn.detailed": "Obter Cotação Detalhada",
   "quote.canvas.reset": "Redefinir Vista",
@@ -619,8 +619,8 @@ window.MA3PL_TRANSLATIONS["pt-br"] = {
   "blog.sidebar.stats.accuracy": "Precisão nos Pedidos",
   "blog.sidebar.stats.processing": "Processamento",
   "blog.sidebar.stats.delivery": "Entrega nos EUA",
-  "blog.sidebar.stats.minimums": "Mínimos",
-  "blog.sidebar.stats.minimums.val": "Nenhum",
+  "blog.sidebar.stats.minimums": "Gasto Mínimo",
+  "blog.sidebar.stats.minimums.val": "$1,000/mês",
   "blog.sidebar.cta.title": "Precisa de um Parceiro de Fulfillment?",
   "blog.sidebar.cta.desc":
     "Obtenha preços transparentes para seu volume exato. Sem custos ocultos, sem contratos de longo prazo.",
@@ -1407,14 +1407,14 @@ window.MA3PL_TRANSLATIONS["pt-br"] = {
   "dropship.hero.stat.accuracy": "Precisão nos Pedidos",
   "dropship.hero.stat.sameday.value": "Mesmo Dia",
   "dropship.hero.stat.processing": "Processamento de Pedidos",
-  "dropship.hero.stat.minimums": "Sem Mínimos Exigidos",
+  "dropship.hero.stat.minimums": "$1,000/mês mínimo",
   "dropship.hero.cta.quote": "Orçamento Grátis de Dropshipping",
   "dropship.hero.cta.specialist": "Fale com um Especialista",
 
   // Hero Pricing Card
   "dropship.hero.card.title": "Preços de Fulfillment Dropshipping",
   "dropship.hero.card.subtitle":
-    "Preços transparentes. Sem taxas ocultas. Sem contratos de longo prazo. Pague apenas pelo que você envia.",
+    "Preços transparentes. Sem taxas ocultas. Sem contratos de longo prazo. $1,000/mês mínimo.",
   "dropship.hero.price.pickpack": "Pick & Pack",
   "dropship.hero.price.pickpack.val": "A partir de $1.50/pedido",
   "dropship.hero.price.shipping": "Envio Padrão",
@@ -1437,7 +1437,7 @@ window.MA3PL_TRANSLATIONS["pt-br"] = {
   "dropship.trust.fulfillment": "Fulfillment Dropshipping",
   "dropship.trust.whitelabel": "Envio White-Label",
   "dropship.trust.sameday": "Processamento no Mesmo Dia",
-  "dropship.trust.nominimums": "Sem Mínimos",
+  "dropship.trust.nominimums": "$1,000/mês mínimo",
   "dropship.trust.sync": "Sincronização Shopify e Amazon",
 
   // ═══════════════════════════════════════════════════════════════════
@@ -1552,7 +1552,7 @@ window.MA3PL_TRANSLATIONS["pt-br"] = {
   "dropship.whymiami.b4.title": "Tarifas Multi-Transportadora com Desconto",
   "dropship.whymiami.b4.desc":
     "Nosso volume com UPS, USPS, FedEx e DHL significa melhores tarifas para você. As margens de dropshipping melhoram quando os custos de envio diminuem. Repassamos nossos descontos de transportadora diretamente para você.",
-  "dropship.whymiami.b5.title": "Sem Mínimos, Sem Contratos",
+  "dropship.whymiami.b5.title": "$1,000/mês mínimo, sem contratos",
   "dropship.whymiami.b5.desc":
     "Começando pequeno? Perfeito. Não temos requisitos mínimos de pedido nem contratos de longo prazo. Escale na alta temporada, reduza quando estiver calmo. Flexibilidade dropshipping no seu melhor.",
   "dropship.whymiami.b6.title": "Portal do Cliente em Tempo Real",
@@ -1571,7 +1571,7 @@ window.MA3PL_TRANSLATIONS["pt-br"] = {
     "Fulfillment dropshipping significa que armazenamos seus produtos e os enviamos diretamente para seus clientes quando eles fazem um pedido na sua loja online. Você nunca toca o produto. Nós cuidamos de recebimento, armazenamento, separação, embalagem e envio &mdash; tudo do nosso armazém em Miami.",
   "dropship.faq.q2.title": "Quanto custa o fulfillment dropshipping?",
   "dropship.faq.q2.answer":
-    "Pick &amp; pack a partir de $1.50/pedido, envio padrão a partir de $3.50/pacote, armazenagem a $0.75/pallet/dia. Sem mínimos, sem contratos. Embalagem personalizada, insertos de marca e kitting disponíveis. Use nossa calculadora de orçamento gratuita online para seu preço exato.",
+    "Pick &amp; pack a partir de $1.50/pedido, envio padrão a partir de $3.50/pacote, armazenagem a $0.75/pallet/dia. $1,000/mês mínimo, sem contratos. Embalagem personalizada, insertos de marca e kitting disponíveis. Use nossa calculadora de orçamento gratuita online para seu preço exato.",
   "dropship.faq.q3.title": "Vocês integram com Shopify?",
   "dropship.faq.q3.answer":
     "Sim! Integramos com Shopify, Amazon, WooCommerce, TikTok Shop, eBay, Etsy e BigCommerce. Os pedidos sincronizam automaticamente &mdash; quando um cliente compra, nós enviamos. Atualizações de estoque e rastreamento voltam para sua loja em tempo real.",
@@ -1616,7 +1616,7 @@ window.MA3PL_TRANSLATIONS["pt-br"] = {
   // ═══════════════════════════════════════════════════════════════════
   "dropship.cta.title": "Pronto para Escalar Seu Negócio de Dropshipping?",
   "dropship.cta.subtitle":
-    "Obtenha seu orçamento gratuito de fulfillment dropshipping hoje. Sem mínimos, sem contratos de longo prazo, sem taxas ocultas. Nosso especialista em dropshipping responde em 24 horas.",
+    "Obtenha seu orçamento gratuito de fulfillment dropshipping hoje. $1,000/mês mínimo, sem contratos de longo prazo, sem taxas ocultas. Nosso especialista em dropshipping responde em 24 horas.",
   "dropship.cta.promo":
     "🎁 Novos clientes recebem $100 em crédito de armazenagem GRÁTIS — aplicado automaticamente na sua primeira fatura.",
   "dropship.cta.btn.quote": "Orçamento Instantâneo de Dropshipping",
@@ -1656,12 +1656,12 @@ window.MA3PL_TRANSLATIONS["pt-br"] = {
   "amazon3pl.hero.stat.accuracy": "Taxa de Precisão",
   "amazon3pl.hero.stat.sameday": "Mesmo Dia",
   "amazon3pl.hero.stat.processing": "Processamento FBA",
-  "amazon3pl.hero.stat.minimums": "Sem Mínimos",
+  "amazon3pl.hero.stat.minimums": "$1,000/mês mínimo",
   "amazon3pl.hero.cta.quote": "Cotação Grátis Amazon 3PL",
   "amazon3pl.hero.cta.specialist": "Fale com um Especialista Amazon",
   "amazon3pl.hero.card.title": "Preços de Preparação Amazon FBA",
   "amazon3pl.hero.card.subtitle":
-    "Preços transparentes. Sem taxas ocultas. Sem contratos de longo prazo. Pague apenas pelo que usar.",
+    "Preços transparentes. Sem taxas ocultas. Sem contratos de longo prazo. $1,000/mês mínimo.",
   "amazon3pl.hero.price.fnsku": "Etiquetamento FNSKU",
   "amazon3pl.hero.price.fnsku.val": "$0.20/unidade",
   "amazon3pl.hero.price.poly": "Embalagem em Saco Plástico",
@@ -1683,7 +1683,7 @@ window.MA3PL_TRANSLATIONS["pt-br"] = {
   "amazon3pl.trust.fbafbm": "Amazon FBA e FBM",
   "amazon3pl.trust.fnsku": "Etiquetamento FNSKU",
   "amazon3pl.trust.sameday": "Processamento no Mesmo Dia",
-  "amazon3pl.trust.nominimums": "Sem Mínimos",
+  "amazon3pl.trust.nominimums": "$1,000/mês mínimo",
   "amazon3pl.trust.secure": "Instalação Segura 24/7",
 
   // Services
@@ -1797,7 +1797,7 @@ window.MA3PL_TRANSLATIONS["pt-br"] = {
     "Serviços completos para vendedores Amazon: preparação FBA, fulfillment FBM, armazenamento de estoque, inspeção e QC, etiquetamento e processamento de devoluções.",
   "amazon3pl.faq.q2.title": "Quanto custa a preparação FBA?",
   "amazon3pl.faq.q2.answer":
-    "FNSKU: $0.20/unidade. Saco: $0.30/unidade. Bolha: $0.50/unidade. Bundling: $1.00/pacote. Etiquetas: $3.00/caixa. Inspeção: $0.15/unidade. Sem mínimos, sem contratos.",
+    "FNSKU: $0.20/unidade. Saco: $0.30/unidade. Bolha: $0.50/unidade. Bundling: $1.00/pacote. Etiquetas: $3.00/caixa. Inspeção: $0.15/unidade. $1,000/mês mínimo, sem contratos.",
   "amazon3pl.faq.q3.title": "Vocês fazem FBA e FBM?",
   "amazon3pl.faq.q3.answer":
     "Sim! Fazemos tanto preparação FBA quanto fulfillment FBM. Muitos clientes usam uma abordagem híbrida para máxima flexibilidade.",
@@ -1838,7 +1838,7 @@ window.MA3PL_TRANSLATIONS["pt-br"] = {
   // CTA
   "amazon3pl.cta.title": "Pronto para Escalar Seu Negócio Amazon?",
   "amazon3pl.cta.subtitle":
-    "Obtenha sua cotação gratuita de Amazon 3PL hoje. Sem mínimos, sem contratos, sem taxas ocultas.",
+    "Obtenha sua cotação gratuita de Amazon 3PL hoje. $1,000/mês mínimo, sem contratos, sem taxas ocultas.",
   "amazon3pl.cta.promo":
     "🎁 Novos clientes recebem $100 em crédito de armazenamento GRÁTIS",
   "amazon3pl.cta.btn.quote": "Cotação Instantânea Amazon",
