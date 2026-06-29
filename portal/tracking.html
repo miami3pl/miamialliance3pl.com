@@ -17,6 +17,49 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .tracking-owner-card {
+            display: none;
+            margin-bottom: var(--spacing-lg);
+        }
+        .tracking-owner-grid {
+            display: grid;
+            grid-template-columns: minmax(180px, 1fr) minmax(220px, 2fr) auto;
+            gap: var(--spacing-md);
+            align-items: end;
+        }
+        .tracking-owner-current {
+            padding: 10px 12px;
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            background: var(--color-gray-50);
+            color: var(--color-gray-700);
+            min-height: 43px;
+        }
+        .tracking-owner-current strong {
+            display: block;
+            color: var(--color-gray-900);
+            font-size: var(--font-size-sm);
+        }
+        .tracking-owner-card select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--color-gray-300);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-base);
+            background: white;
+        }
+        .tracking-owner-note {
+            margin-top: var(--spacing-sm);
+            color: var(--color-gray-500);
+            font-size: var(--font-size-sm);
+        }
+        .tracking-owner-note.error { color: #dc2626; }
+        .tracking-owner-note.success { color: #059669; }
+        @media (max-width: 768px) {
+            .tracking-owner-grid { grid-template-columns: 1fr; }
+        }
+    </style>
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTW0F25ZM1"></script>
     <script>
@@ -137,6 +180,24 @@
                     </div>
                 </div>
 
+                <div id="tracking-owner-card" class="dashboard-card tracking-owner-card">
+                    <h3 style="font-size: var(--font-size-base); color: var(--color-gray-900); margin-bottom: var(--spacing-sm);">Customer Ownership</h3>
+                    <div class="tracking-owner-grid">
+                        <div>
+                            <label style="font-size: var(--font-size-sm); color: var(--color-gray-500); display: block; margin-bottom: 6px;">Current customer</label>
+                            <div id="tracking-owner-current" class="tracking-owner-current">Unassigned</div>
+                        </div>
+                        <div>
+                            <label for="tracking-owner-select" style="font-size: var(--font-size-sm); color: var(--color-gray-500); display: block; margin-bottom: 6px;">Assign to customer</label>
+                            <select id="tracking-owner-select">
+                                <option value="">Select customer...</option>
+                            </select>
+                        </div>
+                        <button type="button" id="tracking-owner-save" class="btn btn-primary">Save Customer</button>
+                    </div>
+                    <p id="tracking-owner-note" class="tracking-owner-note">Updates this shipment and unbilled shipment billing records.</p>
+                </div>
+
                 <!-- Shipment Details -->
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-md); margin-bottom: var(--spacing-lg);">
                     <div class="dashboard-card">
@@ -191,7 +252,7 @@
     <script type="module">
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
         import { getAuth, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
-        import { getFirestore, collection, query, where, getDocs, doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+        import { getFirestore, collection, query, where, getDocs, doc, getDoc, updateDoc, writeBatch } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
 
         const firebaseConfig = {
             apiKey: "AIzaSyA4wMm8-QmZGt3lJcZgTpbBa1W_TklrmRg",
@@ -214,10 +275,169 @@
         let currentUser = null;
         let currentUserRole = null;
         let currentUserEmail = null;
+        let currentShipment = null;
+        let customers = [];
 
         // Check if user is staff (admin or employee)
         function isStaff() {
             return currentUserRole === 'admin' || currentUserRole === 'employee';
+        }
+
+        function getCustomerLabel(customer) {
+            if (!customer) return 'Unknown';
+            return customer.company_name || customer.name || customer.email || 'Unknown';
+        }
+
+        function getShipmentOwner(shipment) {
+            const ownerId = shipment.user_id || shipment.customer_id || '';
+            const customer = customers.find((row) => row.id === ownerId);
+            return {
+                id: ownerId,
+                name: customer ? getCustomerLabel(customer) : (shipment.customer_name || shipment.user_name || shipment.customer_email || 'Unassigned'),
+                email: customer?.email || shipment.customer_email || ''
+            };
+        }
+
+        async function loadCustomers() {
+            const snap = await getDocs(collection(db, 'users'));
+            customers = [];
+            snap.forEach((row) => {
+                const data = row.data();
+                if (!data.role || data.role === 'customer') {
+                    customers.push({ id: row.id, ...data });
+                }
+            });
+            customers.sort((a, b) => getCustomerLabel(a).localeCompare(getCustomerLabel(b)));
+        }
+
+        function renderOwnerSelect(selectedId) {
+            const select = document.getElementById('tracking-owner-select');
+            select.innerHTML = '<option value="">Select customer...</option>';
+
+            if (selectedId && !customers.some((customer) => customer.id === selectedId)) {
+                const currentOpt = document.createElement('option');
+                currentOpt.value = selectedId;
+                currentOpt.textContent = `Current owner (${selectedId.slice(0, 8)}...)`;
+                select.appendChild(currentOpt);
+            }
+
+            customers.forEach((customer) => {
+                const opt = document.createElement('option');
+                opt.value = customer.id;
+                opt.textContent = getCustomerLabel(customer);
+                select.appendChild(opt);
+            });
+
+            select.value = selectedId || '';
+        }
+
+        function setOwnerNote(message, type = '') {
+            const note = document.getElementById('tracking-owner-note');
+            note.textContent = message;
+            note.className = `tracking-owner-note ${type}`.trim();
+        }
+
+        function renderOwnerEditor(shipment) {
+            const card = document.getElementById('tracking-owner-card');
+            if (!isStaff()) {
+                card.style.display = 'none';
+                return;
+            }
+
+            const owner = getShipmentOwner(shipment);
+            const locked = (shipment.billing_status || 'pending') === 'invoiced';
+            document.getElementById('tracking-owner-current').innerHTML = `
+                <strong>${esc(owner.name)}</strong>
+                ${owner.email ? esc(owner.email) : (owner.id ? esc(owner.id) : 'No customer assigned')}
+            `;
+            renderOwnerSelect(owner.id);
+            document.getElementById('tracking-owner-select').disabled = locked;
+            document.getElementById('tracking-owner-save').disabled = locked;
+            setOwnerNote(
+                locked
+                    ? 'This shipment is invoiced. Change the invoice before changing ownership.'
+                    : 'Updates this shipment and unbilled shipment billing records.',
+                locked ? 'error' : ''
+            );
+            card.style.display = 'block';
+        }
+
+        async function collectShipmentBillingDocs(shipmentId) {
+            const [activitySnap, eventSnap] = await Promise.all([
+                getDocs(query(collection(db, 'activity_log'), where('source_shipment_id', '==', shipmentId))),
+                getDocs(query(collection(db, 'billable_events'), where('shipment_id', '==', shipmentId)))
+            ]);
+
+            const activityDocs = [];
+            const eventDocs = [];
+            const locked = [];
+
+            activitySnap.forEach((row) => {
+                const data = row.data();
+                if (data.billed || data.invoice_id) locked.push(row.id);
+                else activityDocs.push(row.ref);
+            });
+
+            eventSnap.forEach((row) => {
+                const data = row.data();
+                if (data.invoiced || data.billed || data.invoice_id) locked.push(row.id);
+                else eventDocs.push(row.ref);
+            });
+
+            return { activityDocs, eventDocs, locked };
+        }
+
+        async function updateShipmentCustomerBillingRows(shipment, customer, options = {}) {
+            const nowIso = options.nowIso || new Date().toISOString();
+            const billingDocs = options.billingDocs || await collectShipmentBillingDocs(shipment.id);
+            if (billingDocs.locked.length) {
+                throw new Error('This shipment has invoiced billing rows and cannot be reassigned safely.');
+            }
+
+            const ownerUpdate = {
+                customer_id: customer.id,
+                customer_name: getCustomerLabel(customer),
+                customer_email: customer.email || '',
+                billing_customer_updated_at: nowIso,
+                billing_customer_updated_by: currentUser.uid
+            };
+
+            const batch = writeBatch(db);
+            billingDocs.activityDocs.forEach((ref) => batch.update(ref, ownerUpdate));
+            billingDocs.eventDocs.forEach((ref) => batch.update(ref, {
+                ...ownerUpdate,
+                updated_at: nowIso,
+                updated_by: currentUser.uid
+            }));
+            if (billingDocs.activityDocs.length || billingDocs.eventDocs.length) {
+                await batch.commit();
+            }
+        }
+
+        async function resetImportedShipmentBilling(shipment, billingDocs, nowIso) {
+            if (billingDocs.locked.length) {
+                throw new Error('This shipment has invoiced billing rows and cannot be reassigned safely.');
+            }
+
+            const batch = writeBatch(db);
+            billingDocs.activityDocs.forEach((ref) => batch.delete(ref));
+            billingDocs.eventDocs.forEach((ref) => batch.delete(ref));
+            if (billingDocs.activityDocs.length || billingDocs.eventDocs.length) {
+                await batch.commit();
+            }
+
+            await updateDoc(doc(db, 'shipments', shipment.id), {
+                billing_status: 'pending',
+                billing_activity_ids: [],
+                billing_imported_at: null,
+                billing_imported_by: null,
+                billing_reset_reason: 'Customer ownership changed from tracking page',
+                billing_reset_at: nowIso,
+                billing_updated_at: nowIso,
+                billing_updated_by: currentUser.uid
+            });
+            shipment.billing_status = 'pending';
+            shipment.billing_activity_ids = [];
         }
 
         // Check authentication and get user role from Firestore
@@ -261,6 +481,7 @@
                 const admNav = document.getElementById('admin-nav');
                 if (empNav) empNav.style.display = 'block';
                 if (admNav) admNav.style.display = 'block';
+                await loadCustomers();
             }
 
             // Check for URL parameter
@@ -288,6 +509,69 @@
             }
         });
 
+        document.getElementById('tracking-owner-save').addEventListener('click', async () => {
+            const customerId = document.getElementById('tracking-owner-select').value;
+            if (!currentShipment) return;
+            if (!customerId) {
+                setOwnerNote('Select a customer before saving.', 'error');
+                return;
+            }
+
+            const customer = customers.find((row) => row.id === customerId);
+            if (!customer) {
+                setOwnerNote('Selected customer was not found.', 'error');
+                return;
+            }
+            if ((currentShipment.billing_status || 'pending') === 'invoiced') {
+                setOwnerNote('This shipment is invoiced and cannot be reassigned here.', 'error');
+                return;
+            }
+
+            const saveBtn = document.getElementById('tracking-owner-save');
+            saveBtn.disabled = true;
+            setOwnerNote('Saving customer ownership...');
+
+            try {
+                const nowIso = new Date().toISOString();
+                const billingDocs = await collectShipmentBillingDocs(currentShipment.id);
+                if (billingDocs.locked.length) {
+                    throw new Error('This shipment has invoiced billing rows and cannot be reassigned safely.');
+                }
+
+                const customerName = getCustomerLabel(customer);
+                const updateData = {
+                    user_id: customer.id,
+                    customer_id: customer.id,
+                    customer_name: customerName,
+                    customer_email: customer.email || '',
+                    customer_company: customer.company_name || '',
+                    customer_updated_at: nowIso,
+                    customer_updated_by: currentUser.uid,
+                    updated_at: nowIso
+                };
+
+                await updateDoc(doc(db, 'shipments', currentShipment.id), updateData);
+                Object.assign(currentShipment, updateData);
+
+                if ((currentShipment.billing_status || 'pending') === 'imported') {
+                    await resetImportedShipmentBilling(currentShipment, billingDocs, nowIso);
+                    renderOwnerEditor(currentShipment);
+                    setOwnerNote(`Saved. Billing was reset to pending so ${customerName} can be resynced with the correct rates.`, 'success');
+                } else {
+                    await updateShipmentCustomerBillingRows(currentShipment, customer, { billingDocs, nowIso });
+                    renderOwnerEditor(currentShipment);
+                    setOwnerNote(`Saved. Shipment now belongs to ${customerName}.`, 'success');
+                }
+            } catch (error) {
+                console.error('Customer ownership update failed:', error);
+                setOwnerNote('Update failed: ' + error.message, 'error');
+            } finally {
+                if ((currentShipment.billing_status || 'pending') !== 'invoiced') {
+                    saveBtn.disabled = false;
+                }
+            }
+        });
+
         async function trackShipment(trackingNumber) {
             document.getElementById('tracking-result').style.display = 'none';
             document.getElementById('no-result').style.display = 'none';
@@ -304,7 +588,8 @@
                     return;
                 }
 
-                const shipmentData = snapshot.docs[0].data();
+                const shipmentData = { id: snapshot.docs[0].id, ...snapshot.docs[0].data() };
+                currentShipment = shipmentData;
 
                 // Role-based access control:
                 // Staff (admin/employee) can track any shipment
@@ -338,6 +623,7 @@
 
         function displayShipment(data) {
             document.getElementById('tracking-result').style.display = 'block';
+            renderOwnerEditor(data);
 
             document.getElementById('result-tracking').textContent = data.tracking_number || '';
             document.getElementById('result-date').textContent = data.created_at ? new Date(data.created_at).toLocaleString() : '';

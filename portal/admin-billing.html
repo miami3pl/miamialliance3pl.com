@@ -385,6 +385,47 @@
             border-top: 1px solid var(--color-gray-200);
         }
         .sb-card.expanded .sb-card-body { display: block; }
+        .sb-owner-editor {
+            display: grid;
+            grid-template-columns: minmax(180px, 1fr) minmax(220px, 2fr) auto;
+            gap: var(--spacing-md);
+            align-items: end;
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            background: #f8fafc;
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+        }
+        .sb-owner-current {
+            color: var(--color-gray-500);
+            font-size: var(--font-size-sm);
+        }
+        .sb-owner-current strong {
+            display: block;
+            color: var(--color-gray-900);
+            font-size: var(--font-size-base);
+        }
+        .sb-owner-editor label {
+            color: var(--color-gray-500);
+            display: flex;
+            flex-direction: column;
+            font-size: var(--font-size-sm);
+            gap: 6px;
+        }
+        .sb-owner-editor select {
+            width: 100%;
+            padding: 9px 10px;
+            border: 1px solid var(--color-gray-300);
+            border-radius: var(--radius-md);
+            background: white;
+            color: var(--color-gray-900);
+            font-size: var(--font-size-sm);
+        }
+        .sb-owner-editor .owner-note {
+            grid-column: 1 / -1;
+            color: var(--color-gray-500);
+            font-size: 0.75rem;
+        }
         .sb-charges-table {
             width: 100%;
             border-collapse: collapse;
@@ -748,6 +789,7 @@
             .filters-bar { flex-direction: column; }
             .generate-invoice-bar { flex-direction: column; gap: var(--spacing-md); text-align: center; }
             .sb-card-header { flex-direction: column; align-items: flex-start; }
+            .sb-owner-editor { grid-template-columns: 1fr; }
             .sb-summary-row { flex-direction: column; gap: var(--spacing-sm); text-align: center; }
             .sb-bulk-bar { flex-direction: column; text-align: center; }
             .tabs { flex-wrap: wrap; }
@@ -1903,6 +1945,89 @@
             return '$' + BillingEngine.roundCurrency(n).toFixed(2);
         }
 
+        function getCustomerLabel(customer) {
+            if (!customer) return 'Unknown';
+            return customer.company_name || customer.name || customer.email || 'Unknown';
+        }
+
+        function getShipmentCustomer(shipment) {
+            const ownerId = shipment.user_id || shipment.customer_id || '';
+            const customer = customers.find(c => c.id === ownerId);
+            return {
+                id: ownerId,
+                customer,
+                name: customer ? getCustomerLabel(customer) : (shipment.customer_name || shipment.user_name || shipment.customer_email || 'Unknown'),
+                email: customer?.email || shipment.customer_email || ''
+            };
+        }
+
+        function buildCustomerOptions(selectedId) {
+            let html = '<option value="">Select customer...</option>';
+            if (selectedId && !customers.some((customer) => customer.id === selectedId)) {
+                html += `<option value="${escapeHTML(selectedId)}" selected>Current owner (${escapeHTML(selectedId.slice(0, 8))}...)</option>`;
+            }
+            html += customers.map((customer) => `
+                <option value="${escapeHTML(customer.id)}" ${customer.id === selectedId ? 'selected' : ''}>${escapeHTML(getCustomerLabel(customer))}</option>
+            `).join('');
+            return html;
+        }
+
+        async function collectShipmentCustomerDocs(shipmentId) {
+            const [activitySnap, eventSnap] = await Promise.all([
+                getDocs(query(collection(db, 'activity_log'), where('source_shipment_id', '==', shipmentId))),
+                getDocs(query(collection(db, 'billable_events'), where('shipment_id', '==', shipmentId)))
+            ]);
+
+            const activityRefs = [];
+            const eventRefs = [];
+            const locked = [];
+
+            activitySnap.forEach((entryDoc) => {
+                const data = entryDoc.data();
+                if (data.billed || data.invoice_id) locked.push(entryDoc.id);
+                else activityRefs.push(entryDoc.ref);
+            });
+
+            eventSnap.forEach((eventDoc) => {
+                const data = eventDoc.data();
+                if (data.invoiced || data.billed || data.invoice_id) locked.push(eventDoc.id);
+                else eventRefs.push(eventDoc.ref);
+            });
+
+            return { activityRefs, eventRefs, locked };
+        }
+
+        async function updateShipmentCustomerRows(syncDocs, customer, nowIso, options = {}) {
+            const includeActivity = options.includeActivity !== false;
+            const includeEvents = options.includeEvents !== false;
+            const customerName = getCustomerLabel(customer);
+            const updateData = {
+                customer_id: customer.id,
+                customer_name: customerName,
+                customer_email: customer.email || '',
+                billing_customer_updated_at: nowIso,
+                billing_customer_updated_by: currentUser.uid
+            };
+
+            const batch = writeBatch(db);
+            if (includeActivity) {
+                syncDocs.activityRefs.forEach((ref) => batch.update(ref, updateData));
+            }
+            if (includeEvents) {
+                syncDocs.eventRefs.forEach((ref) => batch.update(ref, {
+                    ...updateData,
+                    updated_at: nowIso,
+                    updated_by: currentUser.uid
+                }));
+            }
+
+            const updateCount = (includeActivity ? syncDocs.activityRefs.length : 0)
+                + (includeEvents ? syncDocs.eventRefs.length : 0);
+            if (updateCount > 0) {
+                await batch.commit();
+            }
+        }
+
         function getActivityLabel(type) {
             return BillingEngine.getActivityLabel(type);
         }
@@ -2036,7 +2161,7 @@
                 customers.forEach(c => {
                     const opt = document.createElement('option');
                     opt.value = c.id;
-                    opt.textContent = c.company_name || c.name || c.email;
+                    opt.textContent = getCustomerLabel(c);
                     select.appendChild(opt);
                 });
             });
@@ -3212,8 +3337,9 @@
             }
 
             container.innerHTML = shipmentBillingData.map((shipment, idx) => {
-                const customer = customers.find(c => c.id === shipment.user_id);
-                const customerName = customer?.company_name || customer?.name || customer?.email || 'Unknown';
+                const owner = getShipmentCustomer(shipment);
+                const customerName = owner.name;
+                const ownerEmail = owner.email;
                 const tracking = shipment.tracking_number || shipment.id.slice(0, 10);
                 const createdDate = (shipment.created_at || '').split('T')[0] || 'N/A';
                 const pkg = shipment.package || {};
@@ -3280,17 +3406,36 @@
                     <div class="sb-card ${idx === 0 ? 'expanded' : ''}" id="sb-card-${idx}">
                         <div class="sb-card-header" onclick="toggleShipmentCard(${idx})">
                             <div>
-                                <span class="tracking">${tracking}</span>
+                                <span class="tracking">${escapeHTML(tracking)}</span>
                                 ${statusBadge}
                             </div>
                             <div class="meta">
-                                <span>${createdDate}</span>
-                                <span>${customerName}</span>
-                                <span>${pkgIcon} ${pkgSummary}</span>
+                                <span>${escapeHTML(createdDate)}</span>
+                                <span>${escapeHTML(customerName)}</span>
+                                <span>${pkgIcon} ${escapeHTML(pkgSummary)}</span>
                                 <span style="font-weight: 700; color: var(--color-primary);">${formatCurrency(currentTotal)}</span>
                             </div>
                         </div>
                         <div class="sb-card-body">
+                            <div class="sb-owner-editor">
+                                <div class="sb-owner-current">
+                                    Current customer
+                                    <strong>${escapeHTML(customerName)}</strong>
+                                    ${ownerEmail ? escapeHTML(ownerEmail) : (owner.id ? escapeHTML(owner.id) : 'No customer assigned')}
+                                </div>
+                                <label>
+                                    Assign shipment to
+                                    <select id="sb-owner-${idx}" ${status === 'invoiced' ? 'disabled' : ''}>
+                                        ${buildCustomerOptions(owner.id)}
+                                    </select>
+                                </label>
+                                <button class="btn-save-rates" onclick="saveShipmentCustomer(${idx})" ${status === 'invoiced' ? 'disabled' : ''}>Save Customer</button>
+                                <div class="owner-note">
+                                    ${status === 'invoiced'
+                                        ? 'Locked after invoice generation.'
+                                        : 'Changing an imported shipment resyncs unbilled activity rows under the selected customer.'}
+                                </div>
+                            </div>
                             <div style="overflow-x: auto;">
                                 <table class="sb-charges-table">
                                     <thead>
@@ -3387,9 +3532,74 @@
             refreshShipmentBillingUI();
         };
 
+        window.saveShipmentCustomer = async function(idx) {
+            const shipment = shipmentBillingData[idx];
+            if (!shipment) return;
+
+            const status = shipment.billing_status || 'pending';
+            if (status === 'invoiced') {
+                showToast('This shipment is invoiced and cannot be reassigned here.', 'error');
+                return;
+            }
+
+            const select = document.getElementById('sb-owner-' + idx);
+            const customerId = select ? select.value : '';
+            if (!customerId) {
+                showToast('Select a customer before saving.', 'error');
+                return;
+            }
+
+            const customer = customers.find(c => c.id === customerId);
+            if (!customer) {
+                showToast('Selected customer was not found.', 'error');
+                return;
+            }
+
+            const customerName = getCustomerLabel(customer);
+            const tracking = shipment.tracking_number || shipment.id.slice(0, 10);
+            const nowIso = new Date().toISOString();
+
+            try {
+                const syncDocs = await collectShipmentCustomerDocs(shipment.id);
+                if (syncDocs.locked.length) {
+                    throw new Error('This shipment has invoiced billing rows and cannot be reassigned safely.');
+                }
+
+                const updateData = {
+                    user_id: customer.id,
+                    customer_id: customer.id,
+                    customer_name: customerName,
+                    customer_email: customer.email || '',
+                    customer_company: customer.company_name || '',
+                    customer_updated_at: nowIso,
+                    customer_updated_by: currentUser.uid,
+                    billing_updated_at: nowIso,
+                    billing_updated_by: currentUser.uid,
+                    updated_at: nowIso
+                };
+
+                await updateDoc(doc(db, 'shipments', shipment.id), updateData);
+                Object.assign(shipment, updateData);
+
+                if (status === 'imported') {
+                    await updateShipmentCustomerRows(syncDocs, customer, nowIso, { includeActivity: false });
+                    await syncShipmentToActivity(shipment, { skipConfirm: true });
+                    showToast(`Customer saved and billing resynced for ${tracking} (${customerName}).`);
+                } else {
+                    await updateShipmentCustomerRows(syncDocs, customer, nowIso);
+                    showToast(`Customer saved for ${tracking}: ${customerName}.`);
+                }
+
+                await loadShipmentBilling();
+                await loadStats();
+            } catch (err) {
+                showToast('Customer update failed: ' + err.message, 'error');
+            }
+        };
+
         async function syncShipmentToActivity(shipment, options = {}) {
             const customer = customers.find(c => c.id === shipment.user_id);
-            const customerName = customer?.company_name || customer?.name || customer?.email || 'Unknown';
+            const customerName = customer ? getCustomerLabel(customer) : (shipment.customer_name || shipment.user_name || shipment.customer_email || 'Unknown');
             const tracking = shipment.tracking_number || shipment.id.slice(0, 10);
             const charges = buildShipmentCharges(shipment);
             const total = charges.reduce((sum, charge) => sum + charge.amount, 0);
