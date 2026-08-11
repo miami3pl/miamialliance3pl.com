@@ -164,7 +164,7 @@
   </url>
   <url>
     <loc>https://miamialliance3pl.com/blog.html</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1005,6 +1005,12 @@
   <url>
     <loc>https://miamialliance3pl.com/blog/warehouse-slotting-strategy-ecommerce-fulfillment-3pl-guide.html</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://miamialliance3pl.com/blog/pallet-storage-vs-bin-storage-3pl-warehouse-guide.html</loc>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
