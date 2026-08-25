@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Inbound Freight Appointment Scheduling: 3PL Dock Management Guide | Miami Alliance 3PL</title>
+    <meta name="description" content="Inbound freight appointment scheduling guide for brands using a 3PL warehouse. Learn dock windows, carrier communication, ASNs, unloading prep, detention control, and Miami receiving workflows.">
+    <meta name="keywords" content="inbound freight appointment scheduling, 3PL dock management, warehouse delivery appointment, receiving appointment 3PL, inbound freight scheduling, dock scheduling warehouse, Miami 3PL receiving, LTL delivery appointment, container delivery appointment, freight detention prevention">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="author" content="Miami Alliance 3PL">
+    <link rel="canonical" href="https://miamialliance3pl.com/blog/inbound-freight-appointment-scheduling-3pl-dock-management-guide.html">
+
+    <meta name="geo.region" content="US-FL">
+    <meta name="geo.placename" content="Medley, Florida">
+    <meta name="geo.position" content="25.8606;-80.3456">
+    <meta name="ICBM" content="25.8606, -80.3456">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://miamialliance3pl.com/blog/inbound-freight-appointment-scheduling-3pl-dock-management-guide.html">
+    <meta property="og:title" content="Inbound Freight Appointment Scheduling: 3PL Dock Management Guide">
+    <meta property="og:description" content="How brands and carriers coordinate delivery windows, ASNs, dock capacity, unloading prep, and exception handling before inbound freight reaches a 3PL warehouse.">
+    <meta property="og:site_name" content="Miami Alliance 3PL">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:published_time" content="2026-08-25">
+    <meta property="article:modified_time" content="2026-08-25">
+    <meta property="article:author" content="Miami Alliance 3PL">
+    <meta property="article:section" content="Warehousing">
+    <meta property="og:image" content="https://miamialliance3pl.com/images/og-default.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Inbound freight appointment scheduling at a Miami 3PL warehouse">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Inbound Freight Appointment Scheduling: 3PL Dock Management Guide">
+    <meta name="twitter:description" content="A practical dock scheduling guide for brands shipping pallets, containers, cartons, and parcel freight into a 3PL warehouse.">
+    <meta name="twitter:image" content="https://miamialliance3pl.com/images/og-default.svg">
+    <meta name="twitter:image:alt" content="3PL dock scheduling and inbound receiving guide">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTW0F25ZM1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-KTW0F25ZM1');
+    </script>
+    <script src="../js/analytics.js" defer></script>
+
+    <link rel="icon" type="image/jpeg" href="../assets/logo.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <meta name="theme-color" content="#0f172a">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://miamialliance3pl.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://miamialliance3pl.com/blog.html"},
+            {"@type": "ListItem", "position": 3, "name": "Inbound Freight Appointment Scheduling", "item": "https://miamialliance3pl.com/blog/inbound-freight-appointment-scheduling-3pl-dock-management-guide.html"}
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Inbound Freight Appointment Scheduling: How 3PL Dock Management Prevents Receiving Delays",
+        "description": "A practical guide to inbound freight appointment scheduling, dock management, carrier communication, unloading prep, detention control, and exception handling for brands using a 3PL warehouse.",
+        "author": {
+            "@type": "Organization",
+            "name": "Miami Alliance 3PL",
+            "url": "https://miamialliance3pl.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Miami Alliance 3PL",
+            "url": "https://miamialliance3pl.com"
+        },
+        "datePublished": "2026-08-25",
+        "dateModified": "2026-08-25",
+        "mainEntityOfPage": "https://miamialliance3pl.com/blog/inbound-freight-appointment-scheduling-3pl-dock-management-guide.html"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is inbound freight appointment scheduling?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Inbound freight appointment scheduling is the process of reserving a warehouse delivery window before a carrier arrives. The appointment ties the carrier, BOL, PO or ASN, pallet or carton count, unloading needs, and contact details to a specific receiving slot so the 3PL can plan dock labor and avoid unidentified freight."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why do 3PL warehouses require delivery appointments?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "3PL warehouses require delivery appointments because inbound freight competes for dock doors, forklifts, receiving staff, staging space, and system processing time. Appointments help prevent carrier wait time, mixed freight, missed counts, receiving backlogs, and storage delays."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What information should a brand send before booking a dock appointment?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A brand should send the PO or ASN, carrier name, PRO or tracking number, BOL, expected arrival date, pallet count, carton count, SKU list, units of measure, special handling instructions, unloading requirements, and the contact who can approve decisions if the freight arrives short, damaged, late, or undocumented."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does dock scheduling reduce detention and accessorial charges?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Dock scheduling reduces detention and accessorial charges by matching the delivery to an available dock window, confirming unloading requirements before arrival, preparing labor and equipment, and resolving paperwork gaps before a driver is waiting at the door."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can a Miami 3PL schedule containers, LTL pallets, parcel cartons, and local deliveries?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. A Miami 3PL can schedule containers, LTL pallets, full truckloads, parcel cartons, local courier deliveries, airport freight, and port-related drayage. The important control is using one receiving calendar and one inbound record per shipment so each delivery enters the warehouse cleanly."
+                }
+            }
+        ]
+    }
+    </script>
+    <link rel="alternate" type="text/markdown" title="LLM-friendly site summary" href="https://miamialliance3pl.com/llms.txt">
+    <link rel="alternate" type="text/markdown" title="LLM-friendly full reference" href="https://miamialliance3pl.com/llms-full.txt">
+    <link rel="alternate" type="application/json" title="AI plugin manifest" href="https://miamialliance3pl.com/.well-known/ai-plugin.json">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="logo">
+                <span class="logo-text">MIAMI ALLIANCE <span class="logo-accent">3PL</span></span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="../services.html" class="nav-link" data-i18n="nav.services">Services</a></li>
+                <li><a href="../quote.html" class="nav-link" data-i18n="nav.quote">Instant Quote</a></li>
+                <li><a href="../blog.html" class="nav-link active" data-i18n="nav.blog">Blog</a></li>
+                <li><a href="../about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li><a href="../faq.html" class="nav-link" data-i18n="nav.faq">FAQ</a></li>
+                <li><a href="../contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                <li><a href="../login.html" class="nav-link btn btn-outline" data-i18n="nav.portal">Customer Portal</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="page-header blog-header">
+            <div class="container">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="../index.html" data-i18n="blog.breadcrumb.home">Home</a> &rsaquo; <a href="../blog.html" data-i18n="blog.breadcrumb.blog">Blog</a> &rsaquo; <span>Warehousing</span>
+                </nav>
+                <span class="category-tag tag-3pl" style="margin-bottom: 1rem; display: inline-block;">Warehousing</span>
+                <h1>Inbound Freight Appointment Scheduling: How 3PL Dock Management Prevents Receiving Delays</h1>
+                <p class="article-subtitle">A practical dock scheduling guide for brands sending pallets, containers, cartons, and local deliveries into a Miami 3PL warehouse.</p>
+                <div class="article-byline">
+                    <span>By Miami Alliance 3PL Team</span>
+                    <span class="byline-separator">|</span>
+                    <time datetime="2026-08-25">August 25, 2026</time>
+                    <span class="byline-separator">|</span>
+                    <span>9 min read</span>
+                </div>
+            </div>
+        </section>
+
+        <div style="background: linear-gradient(135deg, #0ea5e9, #0369a1); padding: 12px 0; text-align: center;">
+            <div class="container">
+                <p style="color: #fff; margin: 0; font-weight: 600;">
+                    Freight arriving in Miami?
+                    <a href="../quote.html" style="color: #facc15; text-decoration: underline; margin-left: 8px;">Get Your Quote &rarr;</a>
+                </p>
+            </div>
+        </div>
+
+        <article class="blog-article">
+            <div class="container article-container">
+                <div class="article-body">
+                    <div class="lang-en">
+
+                    <p class="article-lead">Inbound freight delays rarely come from one dramatic failure. They usually come from small coordination gaps: a carrier arrives without an appointment, a driver has the wrong BOL, a supplier ships more pallets than expected, a container needs floor unloading but the dock is staffed for palletized freight, or nobody knows who can approve a shortage. By the time the freight is sitting at the door, every missing detail becomes expensive.</p>
+
+                    <p>Appointment scheduling is the control layer between the brand, supplier, carrier, and 3PL warehouse. It gives the warehouse enough notice to reserve dock space, prepare labor and equipment, match the delivery to an inbound record, and receive inventory without turning the dock into an exception queue.</p>
+
+                    <div class="article-toc">
+                        <h3>In This Guide</h3>
+                        <ul>
+                            <li><a href="#what-scheduling-means">What Freight Appointment Scheduling Means</a></li>
+                            <li><a href="#why-it-matters">Why Dock Windows Matter</a></li>
+                            <li><a href="#pre-arrival-data">Pre-Arrival Data Your 3PL Needs</a></li>
+                            <li><a href="#freight-types">Scheduling by Freight Type</a></li>
+                            <li><a href="#dock-calendar">Dock Calendar and Labor Planning</a></li>
+                            <li><a href="#detention">Detention, Wait Time, and Accessorial Control</a></li>
+                            <li><a href="#miami-inbound">Miami Inbound Freight Considerations</a></li>
+                            <li><a href="#checklist">Appointment Scheduling Checklist</a></li>
+                            <li><a href="#mistakes">Common Dock Scheduling Mistakes</a></li>
+                            <li><a href="#miami-alliance">How Miami Alliance 3PL Helps</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                        </ul>
+                    </div>
+
+                    <h2 id="what-scheduling-means">What Freight Appointment Scheduling Means</h2>
+
+                    <p>Inbound freight appointment scheduling is the process of assigning a delivery window before freight reaches the warehouse. The appointment should connect the shipment to a real inbound record, not just a calendar note. A useful appointment includes the carrier, driver contact if available, BOL or PRO number, PO or ASN reference, expected pallet or carton count, unloading requirements, product handling rules, and the person authorized to answer exception questions.</p>
+
+                    <p>In a 3PL environment, scheduling is more important than it is in a single-brand warehouse because several customers may be sending freight into the same dock network on the same day. Without appointment discipline, one client's late container can block another client's launch inventory, wholesale pickup, or parcel receiving lane.</p>
+
+                    <div class="article-callout">
+                        <div class="callout-icon">!</div>
+                        <div class="callout-content">
+                            <strong>Operational rule:</strong> an inbound appointment is not complete until the warehouse knows what is arriving, who owns it, how it will unload, where it should stage, and who can resolve exceptions.
+                        </div>
+                    </div>
+
+                    <h2 id="why-it-matters">Why Dock Windows Matter</h2>
+
+                    <p>A dock door is a shared constraint. It needs physical space, a forklift or pallet jack, receiving staff, staging area, system access, labels, scanning workflow, and time to inspect freight before it disappears into storage. If appointments are loose, the warehouse may still unload the truck, but the downstream process becomes messy.</p>
+
+                    <p>Good scheduling protects five parts of the operation:</p>
+
+                    <ul>
+                        <li><strong>Receiving speed:</strong> freight matched to a known appointment can move from truck to dock to system record faster.</li>
+                        <li><strong>Inventory accuracy:</strong> scheduled freight is easier to count against an ASN, packing list, PO, or BOL.</li>
+                        <li><strong>Carrier experience:</strong> drivers spend less time waiting for instructions, doors, paperwork, or labor.</li>
+                        <li><strong>Labor planning:</strong> the 3PL can staff for floor-loaded containers, mixed-SKU pallets, parcel inbounds, or simple pallet drops.</li>
+                        <li><strong>Exception control:</strong> shortages, overages, damages, and bad labels get documented while the facts are still fresh.</li>
+                    </ul>
+
+                    <p>Dock discipline also supports clean <a href="inbound-receiving-checklist-3pl-warehouse-guide.html">inbound receiving</a>. The appointment gets the freight to the right place at the right time; receiving controls make sure the inventory enters the system correctly.</p>
+
+                    <h2 id="pre-arrival-data">Pre-Arrival Data Your 3PL Needs</h2>
+
+                    <p>The 3PL should not learn the details of a shipment when the truck is already backing into the dock. Before the delivery window is confirmed, the brand or carrier should provide a complete inbound notice.</p>
+
+                    <p>At minimum, send:</p>
+
+                    <ul>
+                        <li><strong>Customer account:</strong> the brand or company that owns the freight.</li>
+                        <li><strong>PO, ASN, or inbound reference:</strong> one unique identifier for the shipment.</li>
+                        <li><strong>Carrier details:</strong> carrier name, dispatcher contact, driver contact if available, PRO, tracking, container number, or BOL.</li>
+                        <li><strong>Expected arrival window:</strong> requested date, time range, and any constraints from port, airport, supplier, or retailer routing.</li>
+                        <li><strong>Handling units:</strong> pallet count, carton count, loose cartons, floor-loaded freight, case count, or parcel count.</li>
+                        <li><strong>SKU detail:</strong> expected SKUs, unit counts, case packs, mixed-pallet notes, and carton-level packing lists when available.</li>
+                        <li><strong>Special handling:</strong> fragile items, lot control, expiration dates, serial capture, hazmat restrictions, temperature sensitivity, relabeling, quarantine, or photo requirements.</li>
+                        <li><strong>Decision contact:</strong> the person who can approve shortage acceptance, damaged freight notes, relabeling, sorting, additional labor, or a refused delivery.</li>
+                    </ul>
+
+                    <p>This information prevents the dock team from making blind decisions under time pressure. It also keeps the receiving record useful later if the supplier disputes a shortage or the carrier challenges a damage note.</p>
+
+                    <h2 id="freight-types">Scheduling by Freight Type</h2>
+
+                    <p>Not all inbound freight consumes the same dock time. A single pallet on an LTL truck may take minutes. A floor-loaded container can take hours and may require sorting, palletizing, stretch wrap, labels, photos, and extra staging space. A scheduling process has to recognize those differences.</p>
+
+                    <h3>LTL Pallets</h3>
+                    <p>LTL freight should arrive with a BOL, PRO number, pallet count, delivery appointment, and clear consignee details. The warehouse should know whether the pallets are single-SKU, mixed-SKU, stackable, fragile, or already labeled for storage. If the carrier needs a liftgate, inside delivery, or specific access instructions, those details should be clear before dispatch.</p>
+
+                    <h3>Full Truckload Freight</h3>
+                    <p>FTL shipments usually need a larger receiving window because the warehouse may be unloading more pallets, more cartons, or one customer's complete replenishment shipment. The appointment should confirm whether the freight is palletized, slip-sheeted, floor-loaded, or mixed, and whether the truck will be live unloaded or dropped if the facility supports it.</p>
+
+                    <h3>Ocean Containers and Drayage</h3>
+                    <p>Container delivery requires tighter coordination because timing can be affected by port release, customs clearance, terminal appointment availability, driver capacity, chassis issues, and demurrage or per diem exposure. For importers, the warehouse appointment should line up with drayage timing and the expected unload method. See the <a href="container-unloading-transloading-miami-3pl-guide.html">container unloading and transloading guide</a> for the operational handoff after the box reaches the warehouse.</p>
+
+                    <h3>Parcel and Courier Inbounds</h3>
+                    <p>Parcel cartons do not always need a formal dock door, but they still need inbound visibility. A 3PL should know when cartons are expected, which tracking numbers belong to which customer, and whether the parcels require SKU receiving, prep, photos, quarantine, or immediate outbound processing.</p>
+
+                    <h3>Local Vendor Deliveries</h3>
+                    <p>Local deliveries can look simple, but they often create problems because vendors treat them casually. The same appointment rules should apply: who is delivering, what reference they are using, how many cartons or pallets are coming, and who signs for exceptions.</p>
+
+                    <h2 id="dock-calendar">Dock Calendar and Labor Planning</h2>
+
+                    <p>A useful dock calendar does more than reserve a time slot. It tells the receiving team what kind of work is coming. The warehouse can then allocate labor, doors, equipment, staging area, and system work before freight arrives.</p>
+
+                    <p>Dock planning should account for:</p>
+
+                    <ul>
+                        <li><strong>Door availability:</strong> inbound freight should not collide with outbound pickups, cross-dock moves, or high-volume parcel staging.</li>
+                        <li><strong>Unloading method:</strong> palletized freight, floor-loaded cartons, slip sheets, mixed pallets, and oversized pieces require different labor plans.</li>
+                        <li><strong>Receiving depth:</strong> pallet count, carton count, SKU-level count, unit count, lot capture, and serial capture all take different amounts of time.</li>
+                        <li><strong>Space demand:</strong> freight may need to stage for inspection, relabeling, photography, quarantine, FBA prep, kitting, or immediate outbound orders.</li>
+                        <li><strong>System readiness:</strong> SKUs, barcodes, units of measure, storage rules, and customer account setup should be ready before the appointment.</li>
+                    </ul>
+
+                    <p>The goal is not to make the calendar look full. The goal is to make the dock predictable enough that receiving work does not disrupt fulfillment work. A warehouse can only ship cleanly if the inbound side feeds it clean inventory.</p>
+
+                    <h2 id="detention">Detention, Wait Time, and Accessorial Control</h2>
+
+                    <p>Unplanned dock delays often turn into accessorial charges. Depending on the carrier and shipment terms, those charges may show up as detention, waiting time, redelivery, attempted delivery, storage, liftgate, inside delivery, sorting, rework, or additional handling. Even when the dollar amount is manageable, the operational disruption can be larger than the fee.</p>
+
+                    <p>Appointment scheduling helps control those costs by making the delivery executable before the driver arrives. The warehouse knows the freight is expected, the paperwork is attached to the inbound record, the unloading method is understood, and the receiving team has a path for exceptions.</p>
+
+                    <div class="article-callout">
+                        <div class="callout-icon">$</div>
+                        <div class="callout-content">
+                            <strong>Margin watch:</strong> avoidable wait time is usually a coordination problem, not just a carrier problem. The best defense is complete pre-arrival data and a dock calendar that matches freight type to labor capacity.
+                        </div>
+                    </div>
+
+                    <p>If the appointment is missed, late, or incomplete, the 3PL should document what happened: arrival time, check-in time, door time, unload completion, paperwork gaps, photos, driver notes, and any decision made by the brand. That record matters when deciding whether a cost belongs to the carrier, supplier, brand, or warehouse.</p>
+
+                    <h2 id="miami-inbound">Miami Inbound Freight Considerations</h2>
+
+                    <p>Miami inbound scheduling has its own rhythm because freight may come from PortMiami, Miami International Airport, Port Everglades, local distributors, domestic suppliers, or consolidated shipments serving Latin America and the Caribbean. A Medley-area warehouse can be a strong operating base, but only if inbound appointments account for the way Miami freight actually moves.</p>
+
+                    <p>Common Miami considerations include:</p>
+
+                    <ul>
+                        <li><strong>Port and airport timing:</strong> container release, terminal windows, air cargo pickup, and local traffic can shift arrival times.</li>
+                        <li><strong>Drayage coordination:</strong> container appointments should align with port pickup, warehouse unload capacity, and return requirements.</li>
+                        <li><strong>Mixed import documentation:</strong> commercial invoices may describe master cartons while the warehouse needs sellable SKU detail.</li>
+                        <li><strong>Cross-border routing:</strong> inventory may need storage, fulfillment, wholesale distribution, or re-export handling from the same inbound shipment.</li>
+                        <li><strong>Local delivery variability:</strong> vendor trucks, couriers, and independent drivers may arrive without the discipline of a national LTL carrier.</li>
+                    </ul>
+
+                    <p>For brands using Miami as a gateway, scheduling is not just about the dock door. It is the first step in a broader <a href="miami-to-latin-america-latam-fulfillment-strategy.html">LATAM fulfillment strategy</a> that may include receiving, storage, value-added prep, parcel shipping, wholesale distribution, and export staging.</p>
+
+                    <h2 id="checklist">Appointment Scheduling Checklist</h2>
+
+                    <div style="overflow-x:auto;">
+                        <table style="width:100%; border-collapse: collapse; margin: var(--spacing-lg) 0;">
+                            <thead>
+                                <tr style="background: var(--color-primary); color: #fff;">
+                                    <th style="padding: 12px 16px; text-align: left;">Stage</th>
+                                    <th style="padding: 12px 16px; text-align: left;">Control</th>
+                                    <th style="padding: 12px 16px; text-align: left;">What to Confirm</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid var(--color-gray-200);">
+                                    <td style="padding: 12px 16px;">Before booking</td>
+                                    <td style="padding: 12px 16px;">Inbound reference</td>
+                                    <td style="padding: 12px 16px;">One PO, ASN, shipment ID, or receiving reference tied to the customer account.</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--color-gray-200);">
+                                    <td style="padding: 12px 16px;">Before booking</td>
+                                    <td style="padding: 12px 16px;">Freight type</td>
+                                    <td style="padding: 12px 16px;">LTL, FTL, container, parcel, courier, airport freight, or local vendor delivery.</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--color-gray-200);">
+                                    <td style="padding: 12px 16px;">Before booking</td>
+                                    <td style="padding: 12px 16px;">Handling units</td>
+                                    <td style="padding: 12px 16px;">Pallets, cartons, cases, loose units, floor-loaded cartons, or mixed freight.</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--color-gray-200);">
+                                    <td style="padding: 12px 16px;">Dock planning</td>
+                                    <td style="padding: 12px 16px;">Unloading needs</td>
+                                    <td style="padding: 12px 16px;">Forklift, pallet jack, floor unload labor, palletizing, stretch wrap, labels, or staging space.</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--color-gray-200);">
+                                    <td style="padding: 12px 16px;">Dock planning</td>
+                                    <td style="padding: 12px 16px;">Receiving depth</td>
+                                    <td style="padding: 12px 16px;">Pallet count, carton count, SKU count, unit count, lot capture, serial capture, or inspection.</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--color-gray-200);">
+                                    <td style="padding: 12px 16px;">Carrier handoff</td>
+                                    <td style="padding: 12px 16px;">Contact details</td>
+                                    <td style="padding: 12px 16px;">Dispatcher, driver, warehouse receiving contact, and brand decision contact.</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--color-gray-200);">
+                                    <td style="padding: 12px 16px;">Arrival</td>
+                                    <td style="padding: 12px 16px;">Document match</td>
+                                    <td style="padding: 12px 16px;">BOL, PRO, PO, ASN, container number, seal number, or tracking number matches the appointment.</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--color-gray-200);">
+                                    <td style="padding: 12px 16px;">Arrival</td>
+                                    <td style="padding: 12px 16px;">Condition check</td>
+                                    <td style="padding: 12px 16px;">Visible damage, moisture, leaning pallets, broken seals, crushed cartons, or tampering.</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--color-gray-200);">
+                                    <td style="padding: 12px 16px;">Exception</td>
+                                    <td style="padding: 12px 16px;">Decision path</td>
+                                    <td style="padding: 12px 16px;">Accept short, receive overage, quarantine, photograph, relabel, refuse, or hold for instructions.</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--color-gray-200);">
+                                    <td style="padding: 12px 16px;">Closeout</td>
+                                    <td style="padding: 12px 16px;">Receiving record</td>
+                                    <td style="padding: 12px 16px;">Appointment notes, timestamps, counts, photos, discrepancy notes, and next workflow.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h2 id="mistakes">Common Dock Scheduling Mistakes</h2>
+
+                    <p>Most dock scheduling problems are preventable. Watch for these patterns before they become routine:</p>
+
+                    <ul>
+                        <li><strong>Booking without an ASN:</strong> the warehouse knows a truck is coming but not what inventory should be received.</li>
+                        <li><strong>Using vague freight descriptions:</strong> "10 pallets" is not enough if the pallets are mixed, fragile, high-value, or need SKU-level count.</li>
+                        <li><strong>Ignoring unloading method:</strong> floor-loaded containers and palletized LTL freight should not be given the same dock slot.</li>
+                        <li><strong>No decision contact:</strong> the driver waits while the warehouse tries to find someone who can approve a shortage or damage exception.</li>
+                        <li><strong>Late carrier updates:</strong> appointment changes stay with the dispatcher and never reach the 3PL receiving team.</li>
+                        <li><strong>Mixing inbound and outbound priorities:</strong> a receiving appointment blocks scheduled wholesale pickups or parcel staging.</li>
+                        <li><strong>No closeout notes:</strong> the warehouse unloads the freight but does not document arrival time, discrepancies, or receiving status.</li>
+                    </ul>
+
+                    <p>The fix is boring by design: one inbound record, one appointment window, one shared set of documents, one exception path, and clear dock notes when the delivery closes.</p>
+
+                    <h2 id="miami-alliance">How Miami Alliance 3PL Helps</h2>
+
+                    <p>Miami Alliance 3PL receives freight at 8780 NW 100th ST in Medley, Florida, supporting brands that need practical coordination across warehousing, fulfillment, imports, wholesale distribution, e-commerce, kitting, black wrapping, and inventory control.</p>
+
+                    <p>Our inbound workflow helps brands manage:</p>
+
+                    <ul>
+                        <li><strong>Dock appointment coordination</strong> for LTL pallets, FTL shipments, containers, local deliveries, and parcel cartons.</li>
+                        <li><strong>Receiving preparation</strong> with customer account, PO, ASN, SKU, carton, pallet, and handling details connected before arrival.</li>
+                        <li><strong>Container and import handoff</strong> for brands moving goods from port or airport into a Miami warehouse.</li>
+                        <li><strong>Exception documentation</strong> for shortages, overages, visible damage, bad labels, unknown SKUs, and mixed shipments.</li>
+                        <li><strong>Warehouse routing</strong> into storage, pick-pack-ship, FBA prep, wholesale distribution, cross-docking, kitting, quarantine, or relabeling.</li>
+                        <li><strong>Inventory visibility</strong> so received freight becomes actionable system inventory instead of mystery stock.</li>
+                    </ul>
+
+                    <p>Inbound scheduling is the first operational checkpoint. When the appointment is clean, the warehouse can receive cleanly, store cleanly, and ship cleanly.</p>
+
+                    <div class="article-cta" style="margin-top: var(--spacing-xl);">
+                        <h3>Need Reliable Freight Receiving in Miami?</h3>
+                        <p>Coordinate pallets, containers, cartons, and local deliveries into one Medley warehouse with receiving controls, inventory visibility, and fulfillment support.</p>
+                        <a href="../quote.html" class="btn btn-primary">Get an Instant Quote</a>
+                    </div>
+
+                    <h2 id="faq">Frequently Asked Questions</h2>
+                    <div class="faq-section">
+                        <div class="faq-item">
+                            <h3>What is inbound freight appointment scheduling?</h3>
+                            <p>Inbound freight appointment scheduling is the process of reserving a warehouse delivery window before a carrier arrives. The appointment ties the carrier, BOL, PO or ASN, pallet or carton count, unloading needs, and contact details to a specific receiving slot so the 3PL can plan dock labor and avoid unidentified freight.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Why do 3PL warehouses require delivery appointments?</h3>
+                            <p>3PL warehouses require delivery appointments because inbound freight competes for dock doors, forklifts, receiving staff, staging space, and system processing time. Appointments help prevent carrier wait time, mixed freight, missed counts, receiving backlogs, and storage delays.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>What information should a brand send before booking a dock appointment?</h3>
+                            <p>A brand should send the PO or ASN, carrier name, PRO or tracking number, BOL, expected arrival date, pallet count, carton count, SKU list, units of measure, special handling instructions, unloading requirements, and the contact who can approve decisions if the freight arrives short, damaged, late, or undocumented.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>How does dock scheduling reduce detention and accessorial charges?</h3>
+                            <p>Dock scheduling reduces detention and accessorial charges by matching the delivery to an available dock window, confirming unloading requirements before arrival, preparing labor and equipment, and resolving paperwork gaps before a driver is waiting at the door.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Can a Miami 3PL schedule containers, LTL pallets, parcel cartons, and local deliveries?</h3>
+                            <p>Yes. A Miami 3PL can schedule containers, LTL pallets, full truckloads, parcel cartons, local courier deliveries, airport freight, and port-related drayage. The important control is using one receiving calendar and one inbound record per shipment so each delivery enters the warehouse cleanly.</p>
+                        </div>
+                    </div>
+
+                    <section class="related-articles" style="margin-top: var(--spacing-xl); padding-top: var(--spacing-lg); border-top: 1px solid var(--color-gray-200);">
+                        <h2>Related Articles</h2>
+                        <div class="related-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--spacing-md); margin-top: var(--spacing-md);">
+                            <a href="inbound-receiving-checklist-3pl-warehouse-guide.html" class="related-card">
+                                <h4>Inbound Receiving Checklist</h4>
+                                <p>Prepare ASNs, labels, counts, inspections, and discrepancy workflows before inventory reaches the warehouse.</p>
+                            </a>
+                            <a href="container-unloading-transloading-miami-3pl-guide.html" class="related-card">
+                                <h4>Container Unloading and Transloading</h4>
+                                <p>Move imported freight from container to pallets, storage, cross-dock lanes, or fulfillment workflows.</p>
+                            </a>
+                            <a href="cross-docking-explained-miami-warehouse-guide.html" class="related-card">
+                                <h4>Cross-Docking Explained</h4>
+                                <p>Use dock coordination to move inbound freight quickly into outbound distribution without long-term storage.</p>
+                            </a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </article>
+
+        <section class="blog-cta-section" style="text-align:center; padding: var(--spacing-xl) 0; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); color: #fff;">
+            <div class="container">
+                <h2 style="color:#fff; margin-bottom: var(--spacing-md);">Bring Freight Into Miami Without Dock Chaos</h2>
+                <p style="max-width:600px; margin: 0 auto var(--spacing-md); opacity:0.9;">Get inbound appointment coordination, receiving, storage, fulfillment, and inventory control from Miami Alliance 3PL.</p>
+                <a href="../quote.html" class="btn btn-primary btn-large" data-i18n="article.cta.btn">Get an Instant Quote</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-text">MIAMI ALLIANCE <span class="logo-accent">3PL</span></span>
+                    </div>
+                    <p data-i18n="footer.tagline">Your trusted logistics partner in Miami. Warehousing, fulfillment, and shipping services for businesses of all sizes.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-i18n="footer.quicklinks">Quick Links</h4>
+                    <ul>
+                        <li><a href="../services.html" data-i18n="footer.services.link">Services</a></li>
+                        <li><a href="../quote.html" data-i18n="footer.quote.link">Instant Quote</a></li>
+                        <li><a href="../blog.html" data-i18n="footer.blog.link">Blog</a></li>
+                        <li><a href="../about.html" data-i18n="footer.about.link">About Us</a></li>
+                        <li><a href="../faq.html" data-i18n="footer.faq.link">FAQ</a></li>
+                        <li><a href="../contact.html" data-i18n="footer.contact.link">Contact</a></li>
+                        <li><a href="../login.html" data-i18n="footer.portal.link">Customer Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 data-i18n="footer.services">Services</h4>
+                    <ul>
+                        <li><a href="../services.html#receiving" data-i18n="footer.receiving">Receiving</a></li>
+                        <li><a href="../services.html#warehousing" data-i18n="footer.warehousing">Warehousing</a></li>
+                        <li><a href="../services.html#fulfillment" data-i18n="footer.fulfillment">Fulfillment</a></li>
+                        <li><a href="../services.html#inventory" data-i18n="footer.inventory">Inventory Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 data-i18n="footer.contact">Contact</h4>
+                    <p>8780 NW 100th ST</p>
+                    <p>Medley, FL 33178</p>
+                    <p>contact@miamialliance3pl.com</p>
+                    <p>(786) 873-8819</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n-html="footer.copyright">&copy; 2026 Miami Alliance 3PL. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+    <script src="../js/lang/es.js" defer></script>
+    <script src="../js/lang/pt-br.js" defer></script>
+    <script src="../js/lang/zh.js" defer></script>
+    <script src="../js/i18n.js" defer></script>
+    <script src="../js/chat-widget.js"></script>
+</body>
+</html>
