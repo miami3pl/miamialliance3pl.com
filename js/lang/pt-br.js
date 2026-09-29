@@ -5,6 +5,12 @@
  */
 window.MA3PL_TRANSLATIONS = window.MA3PL_TRANSLATIONS || {};
 window.MA3PL_TRANSLATIONS["pt-br"] = {
+  "warehouse.scope.title": "Limitações dos serviços de armazenagem",
+  "warehouse.scope.statement": "A Miami Alliance 3PL não é um armazém alfandegado autorizado pela CBP e não está habilitada para operações FDA-FSMA.",
+  "warehouse.scope.detail": "Não oferecemos armazenagem alfandegada nem armazenagem em conformidade com FDA/FSMA. Mercadorias que exigem esses serviços devem ser atendidas por um fornecedor qualificado. Entre em contato para confirmar se podemos aceitar seu produto antes de agendar a entrega.",
+  "home.faq.q8": "A Miami Alliance 3PL é um armazém alfandegado autorizado pela CBP ou está habilitada para operações FDA-FSMA?",
+  "home.faq.a8": "Não. A Miami Alliance 3PL não é um armazém alfandegado autorizado pela CBP e não está habilitada para operações FDA-FSMA. Não oferecemos armazenagem alfandegada nem armazenagem em conformidade com FDA/FSMA. Mercadorias que exigem esses serviços devem ser atendidas por um fornecedor qualificado. Entre em contato para confirmar se podemos aceitar seu produto antes de agendar a entrega.",
+
   // ═══════════════════════════════════════════════════════════════════
   // SHARED: Navigation
   // ═══════════════════════════════════════════════════════════════════

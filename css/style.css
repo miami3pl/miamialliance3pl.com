@@ -7131,3 +7131,15 @@ h4,
   border-color: rgba(14, 165, 233, 0.34);
   background: rgba(14, 165, 233, 0.14);
 }
+
+/* Keep warehouse capability limitations visible on customer and article pages. */
+.warehouse-scope {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 4px solid #b45309;
+  border-radius: 0.5rem;
+  background: #fff7ed;
+  color: #1e293b;
+}
+.warehouse-scope p { margin: 0.5rem 0; color: #1e293b; opacity: 1; }
