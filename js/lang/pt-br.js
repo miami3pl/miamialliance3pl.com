@@ -270,7 +270,7 @@ window.MA3PL_TRANSLATIONS["pt-br"] = {
     "Sim! Integramos perfeitamente com Shopify, Amazon, WooCommerce, eBay e outras principais plataformas de e-commerce. Os pedidos se sincronizam automaticamente e as atualizações de rastreamento são enviadas diretamente aos seus clientes.",
   "home.faq.q4": "Quais são os requisitos mínimos de pedidos?",
   "home.faq.a4":
-    "Não temos requisitos mínimos de pedidos. Seja enviando 10 pedidos ou 10.000 por mês, escalamos com o seu negócio. Sem contratos de longo prazo — você paga apenas pelo que usar.",
+    "Temos um gasto mínimo mensal de $1.000. Não há número mínimo de pedidos: seja enviando 10 ou 10.000 pedidos por mês, escalamos com o seu negócio. Sem contratos de longo prazo.",
   "home.faq.q5": "Quanto custa o fulfillment 3PL?",
   "home.faq.a5":
     "Os preços variam de acordo com as necessidades de armazenagem, volume de pedidos e dimensões do produto. Oferecemos preços transparentes sem custos ocultos. Obtenha uma cotação instantânea gratuita usando nossa calculadora online ou entre em contato para uma proposta personalizada.",

@@ -60,7 +60,7 @@ The most important operational identity points are:
 - Climate-controlled warehousing
 - Box storage at $0.025 per cubic foot per day
 - Pallet storage at $0.75 per pallet per day
-- 24/7 monitored warehouse operations
+- 24/7 security monitoring
 - Real-time inventory tracking through customer portal
 
 ### Monthly Pallet Space
@@ -132,7 +132,7 @@ The most important operational identity points are:
 
 - Address: 8780 NW 100th ST, Medley, FL 33178
 - Size: 20,000+ sq ft
-- Features: climate-controlled, ESD-safe, serialized tracking, barcode scanning, loading docks, 24/7 monitoring
+- Features: climate-controlled, ESD-safe, serialized tracking, barcode scanning, loading docks, 24/7 security monitoring
 - Proximity: 8 miles from Miami International Airport, minutes from PortMiami, near Port Everglades access
 - Best fit: LATAM trade, gaming and electronics, e-commerce fulfillment, import/export staging
 

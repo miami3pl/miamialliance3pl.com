@@ -172,7 +172,20 @@ def load_articles():
 
 
 def redirect_urls():
-    return {"%s/blog/%s" % (SITE, p.name) for p in BLOG_DIR.glob("*.html") if is_redirect(p)}
+    """Every redirect stub or noindex page on the site, blog or not (a sitemap lists
+    canonical, indexable pages only). Directory stubs are served as /dir/."""
+    out = set()
+    for p in ROOT.rglob("*.html"):
+        rel = p.relative_to(ROOT).as_posix()
+        if rel.startswith((".git/", "node_modules/", "portal/", "admin/")) or not is_redirect(p):
+            continue
+        if rel.endswith("/index.html"):
+            out.add("%s/%s" % (SITE, rel[: -len("index.html")]))
+        elif rel == "index.html":
+            continue
+        else:
+            out.add("%s/%s" % (SITE, rel))
+    return out
 
 
 def newest_first(arts, order):

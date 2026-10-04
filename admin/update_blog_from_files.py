@@ -52,9 +52,13 @@ def extract_metadata(file_path: Path):
     if date_match:
         meta['date'] = datetime.fromisoformat(date_match.group(1).replace('Z', '+00:00'))
     else:
-        # Fallback to file modification time if no date is in metadata
-        stat = file_path.stat()
-        meta['date'] = datetime.fromtimestamp(stat.st_mtime)
+        # Fallback: the JSON-LD datePublished. Never the file's mtime: a fresh clone or
+        # checkout re-dated undated posts to "today" and floated them to the top (fixed 2026-10-04).
+        ld = re.search(r'"datePublished":\s*"(\d{4}-\d{2}-\d{2})', content)
+        if not ld:
+            print(f"Skipping {file_path.name}: no published date in its metadata")
+            return None
+        meta['date'] = datetime.fromisoformat(ld.group(1))
 
     # Add more metadata extraction as needed (e.g., category, author)
     # For now, we'll just use what we have.

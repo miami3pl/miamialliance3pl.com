@@ -14,6 +14,12 @@ Allow: /sitemap-ai.xml
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
 Disallow: /mcp/
 Disallow: /functions/
 Disallow: /*?*
@@ -29,6 +35,12 @@ Allow: /
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
 
 # OpenAI - SearchBot (search indexing)
 User-agent: OAI-SearchBot
@@ -36,6 +48,12 @@ Allow: /
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
 
 # OpenAI - GPTBot (training + search)
 User-agent: GPTBot
@@ -43,6 +61,12 @@ Allow: /
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
 
 # Anthropic - Claude crawlers
 User-agent: ClaudeBot
@@ -50,24 +74,48 @@ Allow: /
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
 
 User-agent: Claude-User
 Allow: /
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
 
 User-agent: Claude-SearchBot
 Allow: /
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
 
 User-agent: anthropic-ai
 Allow: /
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
 
 # Google Gemini / AI Overviews
 User-agent: Google-Extended
@@ -75,6 +123,12 @@ Allow: /
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
 
 # Perplexity AI Search
 User-agent: PerplexityBot
@@ -82,6 +136,12 @@ Allow: /
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
 
 # Meta AI
 User-agent: Meta-ExternalAgent
@@ -89,6 +149,12 @@ Allow: /
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
 
 # Apple Intelligence / Siri
 User-agent: Applebot
@@ -96,6 +162,12 @@ Allow: /
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
 
 # Amazon Alexa / AI
 User-agent: Amazonbot
@@ -103,6 +175,12 @@ Allow: /
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
 
 # Common Crawl (feeds many AI models)
 User-agent: CCBot
@@ -110,6 +188,12 @@ Allow: /
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
 
 # ByteDance / TikTok AI
 User-agent: Bytespider
@@ -117,6 +201,12 @@ Allow: /
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
 
 # Microsoft Copilot
 User-agent: Bingbot
@@ -124,6 +214,12 @@ Allow: /
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
 
 # Cohere AI
 User-agent: cohere-ai
@@ -131,6 +227,12 @@ Allow: /
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
 
 # You.com AI Search
 User-agent: YouBot
@@ -138,6 +240,12 @@ Allow: /
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
 
 # Mistral AI
 User-agent: MistralBot
@@ -145,6 +253,12 @@ Allow: /
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
 
 # DuckDuckGo AI Assist
 User-agent: DuckAssistBot
@@ -152,6 +266,12 @@ Allow: /
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
 
 # Meta / Facebook AI
 User-agent: FacebookBot
@@ -159,6 +279,12 @@ Allow: /
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
 
 # Google NotebookLM
 User-agent: Google-NotebookLM
@@ -166,6 +292,12 @@ Allow: /
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
 
 # Google Vertex AI
 User-agent: Google-CloudVertexBot
@@ -173,6 +305,12 @@ Allow: /
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
 
 # DeepSeek AI
 User-agent: DeepSeekBot
@@ -180,6 +318,12 @@ Allow: /
 Disallow: /portal/
 Disallow: /login.html
 Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
 
 # === SITEMAPS ===
 Sitemap: https://miamialliance3pl.com/sitemap.xml
