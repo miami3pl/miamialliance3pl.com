@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-04 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 142
+Articles: 143
 
+- 2026-10-04 · [Identity Thieves Target Customs Payments: What Miami Importers Should Do](https://miamialliance3pl.com/blog/identity-thieves-customs-payment-fraud-miami-importers.html): FreightWaves reports criminals are impersonating customs brokers to steal freight payments. What importers and Miami 3PL users can do to verify requests.
 - 2026-10-04 · [What Is a Warehouse Management System (WMS)? A 3PL Guide](https://miamialliance3pl.com/blog/warehouse-management-system-wms-3pl-guide.html): What is a warehouse management system (WMS)? Learn how WMS software works, core features, WMS vs ERP, and why a 3PL with a proven WMS beats building your own.
 - 2026-10-04 · [Amazon Seller Fulfilled Prime (SFP): Keep the Prime Badge Without FBA](https://miamialliance3pl.com/blog/amazon-seller-fulfilled-prime-sfp-3pl-miami-guide.html): Seller Fulfilled Prime (SFP) shows the Amazon Prime badge from your own 3PL warehouse — no FBA fees. Learn the 2026 SFP requirements and how a Miami 3PL helps.
 - 2026-08-25 · [Inbound Freight Appointment Scheduling: 3PL Dock Management Guide](https://miamialliance3pl.com/blog/inbound-freight-appointment-scheduling-3pl-dock-management-guide.html): Inbound freight appointment scheduling guide for brands using a 3PL warehouse. Learn dock windows, carrier communication, ASNs, unloading prep, detention control, and Miami receiving workflows.
