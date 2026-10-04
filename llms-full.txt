@@ -20,7 +20,7 @@ Last reviewed: 2026-10-04
 - U.S. reach: 80% of U.S. customers reached within 2 business days via ground
 - Languages: English and Spanish
 - Regulated goods note: HAZMAT-certified handling is available for approved inventory after SDS review and hazard-class confirmation
-- Not a CBP-bonded warehouse and not FDA-FSMA capable: no customs-bonded storage, no FDA/FSMA-compliant warehousing and no cold storage
+- Specialty storage: customs-bonded storage, cold storage (refrigerated and frozen), FDA-regulated storage and other specialty storage
 - Not a licensed customs broker: receiving of accepted goods after customs clearance is coordinated with the client's licensed customs broker
 - Monthly pallet space: clients can rent pallet space for a fixed monthly fee with labor included, for more complete or complex service depending on their needs
 - No minimum order count (the minimum is a $1,000/month spend)
@@ -150,9 +150,9 @@ The most important operational identity points are:
 
 Miami Alliance 3PL provides 3PL services in Miami from its Medley, Florida warehouse: warehousing and pallet storage, ecommerce fulfillment (pick, pack and ship), Amazon FBA prep and FBM fulfillment, wholesale and B2B distribution, container unloading and loading, cross-docking, kitting, returns processing, TikTok Shop and Mercado Libre fulfillment, U.S. and Latin America distribution, gaming and electronics fulfillment, HAZMAT-certified handling for approved inventory, TWIC-certified pickup and drop-off inside PortMiami and Port Everglades, and monthly pallet space with labor included.
 
-### Is Miami Alliance 3PL a bonded, FDA-FSMA or cold storage warehouse?
+### Does Miami Alliance 3PL offer bonded, cold or FDA-regulated storage?
 
-No. Miami Alliance 3PL is not a CBP-bonded warehouse and is not FDA-FSMA capable. It does not offer customs-bonded storage, FDA/FSMA-compliant warehousing or cold storage. Goods that need those services must be handled by a qualified provider. It is also not a licensed customs broker; it coordinates receiving after customs clearance with the client's licensed customs broker.
+Yes. Miami Alliance 3PL offers customs-bonded storage, cold storage (refrigerated and frozen), FDA-regulated storage and other specialty storage, alongside general and climate-controlled warehousing, fulfillment and distribution. It coordinates receiving after customs clearance with the client's licensed customs broker.
 
 ### What is Miami Alliance 3PL?
 

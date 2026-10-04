@@ -5,11 +5,11 @@
  */
 window.MA3PL_TRANSLATIONS = window.MA3PL_TRANSLATIONS || {};
 window.MA3PL_TRANSLATIONS.es = {
-  "warehouse.scope.title": "Limitaciones del servicio de almacén",
-  "warehouse.scope.statement": "Miami Alliance 3PL no es un almacén aduanero autorizado por CBP y no está habilitado para operaciones FDA-FSMA.",
-  "warehouse.scope.detail": "No ofrecemos almacenamiento bajo fianza aduanera ni almacenamiento conforme a FDA/FSMA. La mercancía que requiera estos servicios debe ser manejada por un proveedor cualificado. Contáctenos para confirmar si podemos aceptar su producto antes de organizar la entrega.",
-  "home.faq.q8": "¿Miami Alliance 3PL es un almacén aduanero autorizado por CBP o está habilitado para operaciones FDA-FSMA?",
-  "home.faq.a8": "No. Miami Alliance 3PL no es un almacén aduanero autorizado por CBP y no está habilitado para operaciones FDA-FSMA. No ofrecemos almacenamiento bajo fianza aduanera ni almacenamiento conforme a FDA/FSMA. La mercancía que requiera estos servicios debe ser manejada por un proveedor cualificado. Contáctenos para confirmar si podemos aceptar su producto antes de organizar la entrega.",
+  "warehouse.scope.title": "Almacenamiento especializado en Miami",
+  "warehouse.scope.statement": "Miami Alliance 3PL ofrece almacenamiento bajo fianza aduanera (bonded), almacenamiento en frío (refrigerado y congelado), almacenamiento de productos regulados por la FDA y otros almacenamientos especializados.",
+  "warehouse.scope.detail": "Cuéntenos qué necesita su producto y le cotizamos la solución adecuada.",
+  "home.faq.q8": "¿Ofrecen almacenamiento bonded, en frío o de productos regulados por la FDA?",
+  "home.faq.a8": "Sí. Miami Alliance 3PL ofrece almacenamiento bajo fianza aduanera (bonded), almacenamiento en frío (refrigerado y congelado), almacenamiento de alimentos, suplementos y cosméticos regulados por la FDA y otros almacenamientos especializados, además de almacenamiento general con clima controlado, fulfillment y distribución. Cuéntenos qué necesita su producto y le cotizamos la solución adecuada.",
 
   // ═══════════════════════════════════════════════════════════════════
   // SHARED: Navigation

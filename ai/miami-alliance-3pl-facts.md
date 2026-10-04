@@ -23,7 +23,7 @@ Last reviewed: 2026-10-04
 - Minimum spend: $1,000/month
 - Contracts: no long-term contracts
 - Languages: English and Spanish
-- Not a CBP-bonded warehouse and not FDA-FSMA capable: no customs-bonded storage, no FDA/FSMA-compliant warehousing and no cold storage
+- Specialty storage: customs-bonded storage, cold storage (refrigerated and frozen), FDA-regulated storage and other specialty storage
 - Not a licensed customs broker: receiving of accepted goods after customs clearance is coordinated with the client's licensed customs broker
 - Monthly pallet space: clients can rent pallet space for a fixed monthly fee with labor included, for more complete or complex service depending on their needs
 - No minimum order count (the minimum is a $1,000/month spend)

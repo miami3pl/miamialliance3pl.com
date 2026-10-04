@@ -5,11 +5,11 @@
  */
 window.MA3PL_TRANSLATIONS = window.MA3PL_TRANSLATIONS || {};
 window.MA3PL_TRANSLATIONS.zh = {
-  "warehouse.scope.title": "仓储服务限制",
-  "warehouse.scope.statement": "Miami Alliance 3PL 不是 CBP 授权的保税仓库，也不具备 FDA-FSMA 仓储能力。",
-  "warehouse.scope.detail": "我们不提供海关保税仓储或符合 FDA/FSMA 要求的仓储服务。需要这些服务的货物必须交由具备相应资质的服务商处理。安排送货前，请联系我们确认是否可以接收您的产品。",
-  "home.faq.q8": "Miami Alliance 3PL 是否为 CBP 授权的保税仓库或具备 FDA-FSMA 仓储能力？",
-  "home.faq.a8": "不是。Miami Alliance 3PL 不是 CBP 授权的保税仓库，也不具备 FDA-FSMA 仓储能力。 我们不提供海关保税仓储或符合 FDA/FSMA 要求的仓储服务。需要这些服务的货物必须交由具备相应资质的服务商处理。安排送货前，请联系我们确认是否可以接收您的产品。",
+  "warehouse.scope.title": "迈阿密特殊仓储",
+  "warehouse.scope.statement": "Miami Alliance 3PL 提供海关保税仓储、冷藏与冷冻仓储、FDA 监管产品仓储及其他特殊仓储。",
+  "warehouse.scope.detail": "请告诉我们您的产品需求，我们会报价合适的方案。",
+  "home.faq.q8": "Miami Alliance 3PL 是否提供保税、冷链或 FDA 监管产品仓储？",
+  "home.faq.a8": "是的。Miami Alliance 3PL 提供海关保税仓储、冷藏与冷冻仓储、食品、膳食补充剂和化妆品等 FDA 监管产品仓储及其他特殊仓储，同时提供恒温常规仓储、订单履约和配送。请告诉我们您的产品需求，我们会报价合适的方案。",
 
   // ═══════════════════════════════════════════════════════════════════
   // SHARED: Navigation

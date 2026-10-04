@@ -32,7 +32,7 @@ Last reviewed: 2026-10-04
 
 ## What It Does Not Offer
 
-- Not a CBP-bonded warehouse and not FDA-FSMA capable: no customs-bonded storage, no FDA/FSMA-compliant warehousing, no cold storage
+- Specialty storage: customs-bonded storage, cold storage (refrigerated and frozen), FDA-regulated storage and other specialty storage
 - Not a licensed customs broker: it coordinates receiving after customs clearance with the client's licensed customs broker
 
 ## Direct Answers
