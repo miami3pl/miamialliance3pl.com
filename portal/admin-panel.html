@@ -1976,23 +1976,23 @@
                     <div class="request-card">
                         <div class="request-header">
                             <div>
-                                <div class="request-id">${q.company_name || q.name || q.email || 'Quote'}</div>
-                                <div class="request-customer">📧 ${q.email || 'N/A'} | 📞 ${q.phone || 'N/A'}</div>
+                                <div class="request-id">${escapeHTML(q.company_name || q.name || q.email || 'Quote')}</div>
+                                <div class="request-customer">📧 ${escapeHTML(q.email || 'N/A')} | 📞 ${escapeHTML(q.phone || 'N/A')}</div>
                             </div>
-                            <span class="badge badge-${q.status || 'new'}">${(q.status || 'new').replace(/_/g, ' ').toUpperCase()}</span>
+                            <span class="badge badge-${escapeHTML(q.status || 'new')}">${escapeHTML((q.status || 'new').replace(/_/g, ' ').toUpperCase())}</span>
                         </div>
                         <div class="request-details">
                             <div class="detail-group">
                                 <h4>Service Requested</h4>
-                                <p>${q.service_type || q.services || 'General inquiry'}</p>
+                                <p>${escapeHTML(q.service_type || q.services || 'General inquiry')}</p>
                             </div>
                             <div class="detail-group">
                                 <h4>Pallets/Volume</h4>
-                                <p>${q.pallets || q.volume || 'N/A'}</p>
+                                <p>${escapeHTML(q.pallets || q.volume || 'N/A')}</p>
                             </div>
                             <div class="detail-group">
                                 <h4>Est. Budget</h4>
-                                <p>${q.estimated_budget ? '$' + q.estimated_budget : 'Not specified'}</p>
+                                <p>${q.estimated_budget ? '$' + escapeHTML(q.estimated_budget) : 'Not specified'}</p>
                             </div>
                             <div class="detail-group">
                                 <h4>Date</h4>
@@ -2000,14 +2000,14 @@
                             </div>
                         </div>
                         <div class="request-actions">
-                            <select class="status-select" onchange="updateQuoteStatus('${q.id}', this.value)">
+                            <select class="status-select" onchange="updateQuoteStatus('${escapeHTML(q.id)}', this.value)">
                                 <option value="new" ${q.status === 'new' || !q.status ? 'selected' : ''}>New</option>
                                 <option value="in_progress" ${q.status === 'in_progress' ? 'selected' : ''}>In Progress</option>
                                 <option value="quoted" ${q.status === 'quoted' ? 'selected' : ''}>Quoted</option>
                                 <option value="accepted" ${q.status === 'accepted' ? 'selected' : ''}>Accepted</option>
                                 <option value="declined" ${q.status === 'declined' ? 'selected' : ''}>Declined</option>
                             </select>
-                            <button class="btn-action btn-view" onclick="viewQuoteDetail('${q.id}')">View Details</button>
+                            <button class="btn-action btn-view" onclick="viewQuoteDetail('${escapeHTML(q.id)}')">View Details</button>
                         </div>
                     </div>`;
             }).join('');
@@ -2042,21 +2042,40 @@
             }
         };
 
+        // Where a website lead came from: AI assistant, referrer, UTM tags, landing page (js/contact-form.js)
+        function describeQuoteSource(q) {
+            const a = q.attribution || {};
+            const touch = a.session_touch || a.first_touch || {};
+            const first = a.first_touch || {};
+            const parts = [];
+            const ai = (a.ai_context && a.ai_context.ai_source) || touch.ai_source || first.ai_source;
+            if (ai) parts.push('AI assistant: ' + ai);
+            if (touch.referrer_host) parts.push('referrer ' + touch.referrer_host);
+            if (touch.utm_source) parts.push('utm ' + [touch.utm_source, touch.utm_medium, touch.utm_campaign].filter(Boolean).join(' / '));
+            if (touch.landing_page) parts.push('landed on ' + touch.landing_page);
+            if (first.at && first.at !== touch.at) parts.push('first visit ' + new Date(first.at).toLocaleDateString() + (first.referrer_host ? ' from ' + first.referrer_host : ''));
+            if (q.form_source) parts.push('form link ' + q.form_source);
+            if (!parts.length) return q.source === 'contact_form' ? 'direct (no referrer)' : 'N/A';
+            return parts.join('; ');
+        }
+
         window.viewQuoteDetail = function(quoteId) {
             const q = allQuotes.find(q => q.id === quoteId);
             if (!q) return;
             const html = `
                 <div style="display: grid; gap: var(--spacing-md);">
-                    <div><strong>Company:</strong> ${q.company_name || 'N/A'}</div>
-                    <div><strong>Contact:</strong> ${q.name || 'N/A'}</div>
-                    <div><strong>Email:</strong> ${q.email || 'N/A'}</div>
-                    <div><strong>Phone:</strong> ${q.phone || 'N/A'}</div>
-                    <div><strong>Service:</strong> ${q.service_type || q.services || 'General'}</div>
-                    <div><strong>Pallets:</strong> ${q.pallets || 'N/A'}</div>
-                    <div><strong>Volume:</strong> ${q.volume || 'N/A'}</div>
-                    <div><strong>Frequency:</strong> ${q.frequency || 'N/A'}</div>
-                    <div><strong>Message:</strong> ${q.message || q.notes || 'None'}</div>
-                    <div><strong>Status:</strong> <span class="badge badge-${q.status || 'new'}">${(q.status || 'new').replace(/_/g, ' ')}</span></div>
+                    <div><strong>Company:</strong> ${escapeHTML(q.company_name || 'N/A')}</div>
+                    <div><strong>Contact:</strong> ${escapeHTML(q.name || 'N/A')}</div>
+                    <div><strong>Email:</strong> ${escapeHTML(q.email || 'N/A')}</div>
+                    <div><strong>Phone:</strong> ${escapeHTML(q.phone || 'N/A')}</div>
+                    <div><strong>Service:</strong> ${escapeHTML(q.service_type || q.services || 'General')}</div>
+                    <div><strong>Pallets:</strong> ${escapeHTML(q.pallets || 'N/A')}</div>
+                    <div><strong>Volume:</strong> ${escapeHTML(q.volume || 'N/A')}</div>
+                    <div><strong>Frequency:</strong> ${escapeHTML(q.frequency || 'N/A')}</div>
+                    <div><strong>Message:</strong> <span style="white-space: pre-wrap;">${escapeHTML(q.message || q.notes || 'None')}</span></div>
+                    <div><strong>How they found us:</strong> ${escapeHTML(q.how_found_label || q.how_found || 'Not answered')}</div>
+                    <div><strong>Came from:</strong> ${escapeHTML(describeQuoteSource(q))}</div>
+                    <div><strong>Status:</strong> <span class="badge badge-${escapeHTML(q.status || 'new')}">${escapeHTML((q.status || 'new').replace(/_/g, ' '))}</span></div>
                     <div><strong>Created:</strong> ${q.created_at ? new Date(q.created_at).toLocaleString() : 'N/A'}</div>
                 </div>`;
             openModal('Quote Request', html);
@@ -2420,7 +2439,7 @@
                     type: 'quote',
                     id: q.id,
                     customer: q.company_name || q.name || q.email || 'Unknown',
-                    description: `${q.service_type || q.services || 'General inquiry'} | ${q.pallets || q.volume || '?'} pallets`,
+                    description: `${q.service_type || q.services || 'General inquiry'} | ${q.pallets ? q.pallets + ' pallets' : (q.volume || '?')}`,
                     cost: q.estimated_budget ? parseFloat(q.estimated_budget) : 0,
                     date: q.created_at ? new Date(q.created_at) : new Date(),
                     dateStr: q.created_at ? new Date(q.created_at).toLocaleDateString() : 'N/A',
@@ -2457,9 +2476,9 @@
                         <div class="req-info">
                             <div>
                                 <span class="req-type-badge ${item.type}">${typeIcon} ${typeLabel}</span>
-                                <span class="req-customer">${item.customer}</span>
+                                <span class="req-customer">${escapeHTML(item.customer)}</span>
                             </div>
-                            <div class="req-meta">${item.description} | Submitted: ${item.dateStr}</div>
+                            <div class="req-meta">${escapeHTML(item.description)} | Submitted: ${escapeHTML(item.dateStr)}</div>
                         </div>
                         <div class="req-actions">
                             <span class="req-cost">${costDisplay}</span>

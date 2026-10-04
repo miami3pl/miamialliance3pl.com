@@ -8,6 +8,9 @@
   'use strict';
 
   var AI_DISCOVERY_STORAGE_KEY = 'ma3pl_ai_discovery_context';
+  // Where the visitor came from, read by js/contact-form.js when a lead is saved.
+  var FIRST_TOUCH_KEY = 'ma3pl_first_touch';   // localStorage: first visit on this browser
+  var SESSION_TOUCH_KEY = 'ma3pl_session_touch'; // sessionStorage: this visit
   var AI_SOURCE_RULES = [
     { pattern: /(^|\.)chatgpt\.com$/i, source: 'chatgpt' },
     { pattern: /(^|\.)chat\.openai\.com$/i, source: 'chatgpt' },
@@ -226,6 +229,56 @@
     },
 
     /**
+     * Record how the visitor reached the site, so a saved lead can say it.
+     * The first touch is kept once per browser; the session touch is reset
+     * whenever the visitor arrives from outside (another site or a UTM link).
+     * Internal links tagged ?source=... never overwrite either one.
+     */
+    captureTouch: function() {
+      var params = new URLSearchParams(window.location.search);
+      var referrer = document.referrer || '';
+      var referrerHost = this.extractHostname(referrer);
+      var utmSource = params.get('utm_source') || '';
+      var touch;
+
+      if (referrerHost && this.isInternalHost(referrerHost)) {
+        referrer = '';
+        referrerHost = '';
+      }
+
+      touch = {
+        referrer: referrer.slice(0, 300),
+        referrer_host: referrerHost,
+        landing_page: this.getCurrentPath().slice(0, 300),
+        utm_source: utmSource.slice(0, 100),
+        utm_medium: (params.get('utm_medium') || '').slice(0, 100),
+        utm_campaign: (params.get('utm_campaign') || '').slice(0, 100),
+        utm_term: (params.get('utm_term') || '').slice(0, 100),
+        utm_content: (params.get('utm_content') || '').slice(0, 100),
+        ai_source: this.normalizeAISource(utmSource) || this.detectAIReferrer(referrerHost) || '',
+        at: new Date().toISOString()
+      };
+
+      try {
+        if (!window.sessionStorage.getItem(SESSION_TOUCH_KEY) || referrerHost || utmSource) {
+          window.sessionStorage.setItem(SESSION_TOUCH_KEY, JSON.stringify(touch));
+        }
+      } catch (error) {
+        // storage blocked: the lead is saved without it
+      }
+
+      try {
+        if (!window.localStorage.getItem(FIRST_TOUCH_KEY)) {
+          window.localStorage.setItem(FIRST_TOUCH_KEY, JSON.stringify(touch));
+        }
+      } catch (error) {
+        // storage blocked: the lead is saved without it
+      }
+
+      return touch;
+    },
+
+    /**
      * Track quote calculation completion
      * @param {string} packageType - e.g., 'standard', 'fragile', 'oversized'
      * @param {Object} dimensions - {length, width, height}
@@ -338,5 +391,6 @@
   // Expose to global scope
   window.MA3PLAnalytics = MA3PLAnalytics;
   MA3PLAnalytics.refreshAIDiscoveryContext();
+  MA3PLAnalytics.captureTouch();
 
 })();

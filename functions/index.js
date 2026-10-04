@@ -2403,7 +2403,7 @@ async function generateClaudeResponseWithTools(
   customerPhone,
 ) {
   if (!anthropicClient) {
-    return "Sorry, AI assistant is not configured. Please contact us at (305) 555-3PL1.";
+    return "Sorry, AI assistant is not configured. Please contact us at +1 (786) 873-8819.";
   }
 
   try {
@@ -2542,7 +2542,7 @@ async function generateClaudeResponseWithTools(
       timestamp: admin.firestore.FieldValue.serverTimestamp(),
     });
 
-    return "Sorry, I'm having trouble right now. Please try again or call (305) 555-3PL1.";
+    return "Sorry, I'm having trouble right now. Please try again or call +1 (786) 873-8819.";
   }
 }
 
@@ -3243,7 +3243,7 @@ const FAQ_KNOWLEDGE_BASE = {
   contact: {
     keywords: ["phone", "email", "contact", "call", "speak", "human", "person"],
     answer:
-      'Need to speak with someone? I can connect you with our team! Just say "talk to human" or call (305) 555-3PL1.',
+      'Need to speak with someone? I can connect you with our team! Just say "talk to human" or call +1 (786) 873-8819.',
   },
 };
 
@@ -3935,7 +3935,7 @@ const TRANSLATIONS = {
     not_found:
       "No encontré información sobre eso. ¿Puedo ayudarte con algo más?",
     error:
-      "Lo siento, tengo problemas ahora. Por favor intenta de nuevo o llama al (305) 555-3PL1.",
+      "Lo siento, tengo problemas ahora. Por favor intenta de nuevo o llama al +1 (786) 873-8819.",
     escalation:
       "Te he conectado con nuestro equipo. Un agente te contactará pronto.",
     feedback_request:
@@ -4586,7 +4586,7 @@ exports.portalChatWebhook = functions.https.onRequest(async (req, res) => {
   // Generate AI response
   if (!anthropicClient) {
     return res.json({
-      response: "AI assistant is offline. Please contact us at (305) 555-3PL1.",
+      response: "AI assistant is offline. Please contact us at +1 (786) 873-8819.",
     });
   }
 

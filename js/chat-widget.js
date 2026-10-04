@@ -98,6 +98,18 @@
 (function () {
   "use strict";
 
+  // The chat backend answers with a placeholder number, (305) 555-3PL1, and with
+  // "AI assistant is offline" when it has no model configured (2026-10-04,
+  // TN-1057). Visitors get the real ways to reach the team instead.
+  const OFFLINE_REPLY =
+    "Our assistant is offline right now. Message us on WhatsApp or call +1 (786) 873-8819, e-mail contact@miamialliance3pl.com, or use the form on our Contact page and we will reply within 24 hours.";
+  function realContact(text) {
+    if (/^\s*(Sorry, )?AI assistant is (offline|not configured)/i.test(text)) {
+      return OFFLINE_REPLY;
+    }
+    return text.replace(/\(305\) 555-3PL1/g, "+1 (786) 873-8819 (phone or WhatsApp)");
+  }
+
   /**
    * Widget configuration
    * @constant {Object} CONFIG
@@ -523,7 +535,7 @@
         this.hideTyping();
 
         if (data.response) {
-          this.addMessage("assistant", data.response);
+          this.addMessage("assistant", realContact(data.response));
         } else {
           this.addMessage(
             "assistant",
@@ -533,10 +545,7 @@
       } catch (error) {
         console.error("Chat error:", error);
         this.hideTyping();
-        this.addMessage(
-          "assistant",
-          "Connection error. Please try again or call (305) 555-3PL1.",
-        );
+        this.addMessage("assistant", OFFLINE_REPLY);
       }
     },
   };

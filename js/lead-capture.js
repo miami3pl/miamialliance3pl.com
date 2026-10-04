@@ -13,14 +13,60 @@
   const SCROLL_TRIGGER_PERCENT = 60; // Show scroll popup after 60% scroll
   const TIME_TRIGGER_MS = 45000; // Show timed popup after 45 seconds
 
-  // ─── Firebase ref (lazy) ───
-  let db = null;
+  // ─── Firestore (lazy) ───
+  // This used to look for the old global `firebase` (compat SDK), which no page
+  // loads, so every popup and newsletter lead stayed in the visitor's own
+  // localStorage (2026-10-04, TN-1057). Load the v10 modular SDK on demand
+  // instead, with the same project config as js/firebase.js.
+  const FIREBASE_CONFIG = {
+    apiKey: "AIzaSyA4wMm8-QmZGt3lJcZgTpbBa1W_TklrmRg",
+    authDomain: "miamialliance3pl.firebaseapp.com",
+    projectId: "miamialliance3pl",
+    storageBucket: "miamialliance3pl.firebasestorage.app",
+    messagingSenderId: "657614666588",
+    appId: "1:657614666588:web:20e50484fe5d90b5aa5f99",
+    measurementId: "G-KTW0F25ZM1",
+  };
+  const FIREBASE_SDK = "https://www.gstatic.com/firebasejs/10.7.1/";
+  let dbPromise = null;
   function getDb() {
-    if (db) return db;
-    if (typeof firebase !== "undefined" && firebase.firestore) {
-      db = firebase.firestore();
+    if (!dbPromise) {
+      dbPromise = Promise.all([
+        import(FIREBASE_SDK + "firebase-app.js"),
+        import(FIREBASE_SDK + "firebase-firestore.js"),
+      ])
+        .then(function (mods) {
+          const app = mods[0].getApps()[0] || mods[0].initializeApp(FIREBASE_CONFIG);
+          return { db: mods[1].getFirestore(app), fs: mods[1] };
+        })
+        .catch(function (err) {
+          dbPromise = null;
+          throw err;
+        });
     }
-    return db;
+    return dbPromise;
+  }
+
+  // Where the visitor came from (recorded by js/analytics.js captureTouch)
+  function readStored(storage, key) {
+    try {
+      const raw = window[storage].getItem(key);
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function withAttribution(data) {
+    if (data.attribution) return data;
+    const ga = document.cookie.match(/(?:^|;\s*)_ga=GA\d+\.\d+\.(\d+\.\d+)/);
+    data.attribution = {
+      first_touch: readStored("localStorage", "ma3pl_first_touch"),
+      session_touch: readStored("sessionStorage", "ma3pl_session_touch"),
+      ai_context: readStored("sessionStorage", "ma3pl_ai_discovery_context"),
+      ga_client_id: ga ? ga[1] : "",
+    };
+    return data;
   }
 
   // ─── GA4 helper ───
@@ -227,24 +273,21 @@
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   function saveLead(data) {
-    const firestore = getDb();
-    if (firestore) {
-      firestore
-        .collection("leads")
-        .add(data)
-        .then(function (doc) {
-          console.log("[LeadCapture] Lead saved:", doc.id);
-        })
-        .catch(function (err) {
-          console.warn(
-            "[LeadCapture] Firestore save failed, using fallback:",
-            err.message,
-          );
-          saveLeadFallback(data);
-        });
-    } else {
-      saveLeadFallback(data);
-    }
+    const lead = withAttribution(data);
+    getDb()
+      .then(function (h) {
+        return h.fs.addDoc(h.fs.collection(h.db, "leads"), lead);
+      })
+      .then(function (doc) {
+        console.log("[LeadCapture] Lead saved:", doc.id);
+      })
+      .catch(function (err) {
+        console.warn(
+          "[LeadCapture] Firestore save failed, using fallback:",
+          err.message,
+        );
+        saveLeadFallback(lead);
+      });
   }
 
   function saveLeadFallback(data) {
@@ -263,27 +306,31 @@
 
   // Flush any pending offline leads when Firestore becomes available
   function flushPendingLeads() {
-    const firestore = getDb();
-    if (!firestore) return;
+    let leads;
     try {
-      const leads = JSON.parse(
-        localStorage.getItem("ma3pl_pending_leads") || "[]",
-      );
-      if (leads.length === 0) return;
-      const batch = firestore.batch();
-      leads.forEach(function (lead) {
-        const ref = firestore.collection("leads").doc();
-        batch.set(ref, lead);
-      });
-      batch.commit().then(function () {
+      leads = JSON.parse(localStorage.getItem("ma3pl_pending_leads") || "[]");
+    } catch (e) {
+      return;
+    }
+    if (!leads.length) return;
+    getDb()
+      .then(function (h) {
+        const batch = h.fs.writeBatch(h.db);
+        leads.forEach(function (lead) {
+          lead.flushed_at = new Date().toISOString();
+          batch.set(h.fs.doc(h.fs.collection(h.db, "leads")), lead);
+        });
+        return batch.commit();
+      })
+      .then(function () {
         localStorage.removeItem("ma3pl_pending_leads");
         console.log(
           "[LeadCapture] Flushed",
           leads.length,
           "pending leads to Firestore",
         );
-      });
-    } catch (e) {}
+      })
+      .catch(function () {});
   }
 
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
