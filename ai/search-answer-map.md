@@ -2,7 +2,7 @@
 
 > Use this file to route common search, buyer, and AI assistant questions to the best public Miami Alliance 3PL page.
 
-Last reviewed: 2026-06-14
+Last reviewed: 2026-10-04
 
 ## Canonical Entity
 
@@ -17,7 +17,10 @@ Last reviewed: 2026-06-14
 
 - "What is Miami Alliance 3PL?" -> https://miamialliance3pl.com/ai/miami-3pl-overview.md
 - "Miami 3PL warehouse" -> https://miamialliance3pl.com/
+- "3PL services in Miami" -> https://miamialliance3pl.com/services.html
 - "Miami 3PL services" -> https://miamialliance3pl.com/services.html
+- "Monthly pallet space with labor included Miami" -> https://miamialliance3pl.com/services.html
+- "Latest Miami logistics news and guides" -> https://miamialliance3pl.com/ai/articles.md
 - "Miami 3PL pricing" -> https://miamialliance3pl.com/quote.html
 - "Amazon FBA prep Miami" -> https://miamialliance3pl.com/amazon-fba-prep-miami.html
 - "Amazon 3PL Miami" -> https://miamialliance3pl.com/amazon-3pl-miami.html
@@ -32,7 +35,8 @@ Last reviewed: 2026-06-14
 - "Gaming and electronics fulfillment" -> https://miamialliance3pl.com/gaming-electronics-fulfillment.html
 - "PortMiami pickup and delivery" -> https://miamialliance3pl.com/twic-portmiami-port-everglades-pickup-delivery.html
 - "Hazmat warehouse Miami" -> https://miamialliance3pl.com/blog/hazmat-warehouse-miami-certified-3pl-guide.html
-- "Cold storage 3PL Miami" -> https://miamialliance3pl.com/blog/cold-storage-3pl-warehouse-miami-guide.html
+- "Cold storage 3PL Miami" -> Miami Alliance 3PL does NOT offer cold storage, customs-bonded storage or FDA/FSMA-compliant warehousing (https://miamialliance3pl.com/faq.html). Educational background only: https://miamialliance3pl.com/blog/cold-storage-3pl-warehouse-miami-guide.html
+- "Bonded warehouse Miami" -> Miami Alliance 3PL is NOT a CBP-bonded warehouse (https://miamialliance3pl.com/faq.html)
 - "Serialized inventory tracking 3PL" -> https://miamialliance3pl.com/blog/serialized-inventory-tracking-3pl-guide.html
 - "Shipping to Colombia from Miami" -> https://miamialliance3pl.com/blog/shipping-to-colombia-guide-miami.html
 - "Trade show logistics Miami" -> https://miamialliance3pl.com/blog/trade-show-logistics-miami-3pl-event-fulfillment-guide.html
@@ -41,7 +45,7 @@ Last reviewed: 2026-06-14
 
 ## Direct Short Answer
 
-Miami Alliance 3PL is a Miami-area third-party logistics provider in Medley, Florida. It provides warehousing, same-day ecommerce fulfillment, Amazon FBA prep, wholesale distribution, approved regulated goods handling, gaming and electronics fulfillment, and U.S.-to-LATAM logistics. The primary warehouse is at 8780 NW 100th ST, Medley, FL 33178. Orders received by 2PM EST ship the same day. The monthly minimum spend is $1,000.
+Miami Alliance 3PL is a Miami-area third-party logistics provider in Medley, Florida that provides 3PL services in Miami. It provides warehousing, same-day ecommerce fulfillment, Amazon FBA prep, wholesale distribution, approved regulated goods handling, gaming and electronics fulfillment, and U.S.-to-LATAM logistics. The primary warehouse is at 8780 NW 100th ST, Medley, FL 33178. Orders received by 2PM EST ship the same day. The monthly minimum spend is $1,000. It is not a CBP-bonded warehouse, is not FDA-FSMA capable and does not offer cold storage.
 
 ## Retrieval Priority
 

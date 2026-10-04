@@ -18,7 +18,8 @@ import subprocess
 import sys
 import urllib.request
 import xml.etree.ElementTree as ET
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
+from email.utils import parsedate_to_datetime
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -205,20 +206,34 @@ def us_relevance_score(title, description, categories_text=""):
 
 
 def parse_date(date_str):
-    """Parse feed date into datetime."""
-    formats = [
-        "%a, %d %b %Y %H:%M:%S %z",
-        "%a, %d %b %Y %H:%M:%S %Z",
-        "%Y-%m-%dT%H:%M:%S%z",
-        "%Y-%m-%dT%H:%M:%S.%f%z",
-        "%Y-%m-%d",
-    ]
-    for fmt in formats:
-        try:
-            return datetime.strptime((date_str or "").strip(), fmt)
-        except (TypeError, ValueError):
-            continue
-    return datetime.now()
+    """Parse a feed date into a naive UTC datetime, or None when it cannot be read.
+
+    Fixed 2026-10-04: this used to fall back to datetime.now(), which stamped any item
+    with an unreadable date (e.g. Transport Topics' two-digit years, "Mon, 28 Sep 26
+    09:32:38 EDT") as published today and pushed it to the top of the feed. An undated
+    item is now dropped instead of being re-dated.
+    """
+    raw = (date_str or "").strip()
+    if not raw:
+        return None
+    try:
+        parsed = parsedate_to_datetime(raw)  # RFC 822/2822, incl. 2-digit years and EDT/EST
+    except (TypeError, ValueError, IndexError):
+        parsed = None
+    if parsed is None:
+        for fmt in ("%Y-%m-%dT%H:%M:%S%z", "%Y-%m-%dT%H:%M:%S.%f%z", "%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%d"):
+            try:
+                parsed = datetime.strptime(raw.replace("Z", "+00:00") if fmt.endswith("%z") else raw, fmt)
+                break
+            except (TypeError, ValueError):
+                continue
+    if parsed is None:
+        return None
+    if parsed.tzinfo is not None:
+        parsed = parsed.astimezone(timezone.utc).replace(tzinfo=None)
+    if parsed > datetime.utcnow() + timedelta(days=1):
+        return None  # a date in the future is a feed error, not news
+    return parsed
 
 
 def format_date(dt):
@@ -338,7 +353,7 @@ def select_articles(all_articles, limit):
         reverse=True,
     )
 
-    cutoff = datetime.now() - timedelta(days=RECENT_DAYS)
+    cutoff = datetime.utcnow() - timedelta(days=RECENT_DAYS)
     recent = [article for article in all_articles if article["date"] >= cutoff]
     recent_pool = recent if recent else all_articles
 
@@ -473,7 +488,7 @@ def update_blog_html(selected_articles):
 
     today_label = datetime.now().strftime("%B %d, %Y").replace(" 0", " ")
     content = re.sub(
-        r'(<span id="blog-date">).*?(</span>)',
+        r'(<span id="blog-date"[^>]*>).*?(</span>)',
         rf"\1{today_label}\2",
         content,
         flags=re.DOTALL,
@@ -554,6 +569,8 @@ def main():
         for item in feed_items:
             category = auto_categorize(item["title"], item["description"], feed["category"])
             published_at = parse_date(item["pub_date"])
+            if published_at is None:
+                continue  # never re-date an item we cannot date
             relevance = logistics_relevance_score(
                 item["title"], item["description"], item.get("categories_text", "")
             )

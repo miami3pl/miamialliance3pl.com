@@ -257,6 +257,8 @@ window.MA3PL_TRANSLATIONS["pt-br"] = {
   "home.faq.title": "Perguntas Frequentes",
   "home.faq.subtitle":
     "Perguntas comuns sobre nossos serviços de fulfillment 3PL",
+  "home.faq.qsvc": "Quais serviços 3PL em Miami vocês oferecem?",
+  "home.faq.asvc": "Oferecemos serviços 3PL em Miami a partir do nosso armazém em 8780 NW 100th ST, Medley, Flórida: armazenagem e espaço para paletes, fulfillment de e-commerce (separação, embalagem e envio), preparação para Amazon FBA e fulfillment FBM, distribuição atacadista e B2B, descarga e carga de contêineres, cross-docking, kitting, processamento de devoluções, fulfillment para TikTok Shop e Mercado Livre, e distribuição nos Estados Unidos e na América Latina. Também alugamos espaço para paletes por uma taxa mensal fixa com mão de obra incluída, e temos certificação TWIC para retirada e entrega dentro do PortMiami e do Port Everglades.",
   "home.faq.q1": "O que é um armazém 3PL?",
   "home.faq.a1":
     "Um armazém 3PL (logística de terceiros) cuida do armazenamento, fulfillment de pedidos e envio para negócios de e-commerce. Em vez de gerenciar seu próprio armazém, você terceiriza a logística para especialistas como a Miami Alliance 3PL, permitindo que você foque em fazer seu negócio crescer.",

@@ -1,0 +1,64 @@
+name: Site Index and IndexNow
+
+# Keeps every index of the original articles in step with blog/*.html (hub count and
+# ItemList, sitemap.xml, feed.xml, llms.txt, ai/articles.md, sitemap-ai.xml) no matter who
+# published the article, then tells IndexNow (Bing, Yandex, Seznam, Naver ...) which pages
+# changed. ChatGPT search draws on Bing's index, so a new article is visible to it sooner.
+# Added 2026-10-04. Script: admin/site_index.py (standard library only).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "blog/**"
+      - "blog.html"
+      - "*.html"
+      - "llms.txt"
+      - "llms-full.txt"
+      - "ai/**"
+      - "admin/site_index.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: site-index
+  cancel-in-progress: false
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Refresh the site indexes
+        run: python3 admin/site_index.py --apply
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet && [ -z "$(git ls-files --others --exclude-standard feed.xml ai/articles.md)" ]; then
+            echo "Indexes already up to date"
+            exit 0
+          fi
+          git config user.name "miami3pl-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add blog.html sitemap.xml sitemap-ai.xml feed.xml llms.txt ai/articles.md js/lang
+          git commit -m "Site index: refresh count, ItemList, sitemap, feed and llms.txt"
+          for i in 1 2 3; do
+            git push && break
+            git pull --rebase origin main
+            sleep $((i * 5))
+          done
+
+      - name: Submit changed pages to IndexNow
+        if: github.event_name == 'push'
+        run: python3 admin/site_index.py --indexnow-diff "${{ github.event.before }}" "${{ github.sha }}" || true

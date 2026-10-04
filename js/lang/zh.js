@@ -237,6 +237,8 @@ window.MA3PL_TRANSLATIONS.zh = {
   // ═══════════════════════════════════════════════════════════════════
   "home.faq.title": "常见问题",
   "home.faq.subtitle": "关于我们3PL履行服务的常见问题解答",
+  "home.faq.qsvc": "你们在迈阿密提供哪些3PL服务？",
+  "home.faq.asvc": "我们在佛罗里达州梅德利（8780 NW 100th ST）的仓库提供迈阿密3PL服务：仓储和托盘存储、电商履约（拣货、包装和发货）、亚马逊FBA预处理和FBM履约、批发和B2B分销、集装箱卸货和装货、越库配送、组套、退货处理、TikTok Shop和Mercado Libre履约，以及美国和拉丁美洲分销。我们还以固定月费出租托盘空间（含人工），并持有TWIC认证，可在PortMiami和Port Everglades港内提货和送货。",
   "home.faq.q1": "什么是3PL仓库？",
   "home.faq.a1":
     "3PL仓库（第三方物流）负责为电商企业处理仓储、订单履行和发货事务。您无需自己管理仓库，而是将物流外包给像Miami Alliance 3PL这样的专业公司，让您专注于业务增长。",

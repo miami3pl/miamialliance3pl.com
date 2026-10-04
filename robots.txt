@@ -184,10 +184,12 @@ Disallow: /admin/
 # === SITEMAPS ===
 Sitemap: https://miamialliance3pl.com/sitemap.xml
 Sitemap: https://miamialliance3pl.com/sitemap-ai.xml
+Sitemap: https://miamialliance3pl.com/feed.xml
 
 # === AI CONTENT FILES ===
 # Public AI-readable files for compact business facts and answer routing
 # See: https://miamialliance3pl.com/llms.txt
 # See: https://miamialliance3pl.com/llms-full.txt
 # See: https://miamialliance3pl.com/ai/search-answer-map.md
-# Updated 2026-06-14 for SEO and AI discovery coverage
+# See: https://miamialliance3pl.com/ai/articles.md (every article, newest first)
+# Updated 2026-10-04: RSS feed, article index, IndexNow

@@ -2,11 +2,11 @@
 
 > Use this file when the question is "What does Miami Alliance 3PL do?" or "What kind of Miami 3PL is this?"
 
-Last reviewed: 2026-06-14
+Last reviewed: 2026-10-04
 
 ## Core Identity
 
-- Miami Alliance 3PL is a full-service third-party logistics company based in Medley, Florida.
+- Miami Alliance 3PL is a full-service third-party logistics company based in Medley, Florida, providing 3PL services in Miami.
 - The company is a general Miami 3PL for ecommerce, Amazon, wholesale, and LATAM distribution programs.
 - Gaming and electronics are important specialties, but they are not the only fit.
 - Approved regulated goods can be supported through a HAZMAT-certified onboarding workflow after SDS and hazard-class review.
@@ -28,6 +28,12 @@ Last reviewed: 2026-06-14
 - Secondary Biloxi, Mississippi warehouse for Gulf Coast coverage
 - Bilingual English and Spanish team
 - No long-term contracts
+- Monthly pallet space for a fixed fee with labor included
+
+## What It Does Not Offer
+
+- Not a CBP-bonded warehouse and not FDA-FSMA capable: no customs-bonded storage, no FDA/FSMA-compliant warehousing, no cold storage
+- Not a licensed customs broker: it coordinates receiving after customs clearance with the client's licensed customs broker
 
 ## Direct Answers
 

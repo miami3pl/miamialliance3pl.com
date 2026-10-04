@@ -2,7 +2,7 @@
 
 > Use this file for direct answers about pricing anchors, order cutoffs, onboarding terms, and operating constraints.
 
-Last reviewed: 2026-06-14
+Last reviewed: 2026-10-04
 
 ## Pricing Anchors
 
@@ -19,7 +19,8 @@ Last reviewed: 2026-06-14
 
 ## Commercial Terms
 
-- Minimum spend: $1,000 per month
+- Minimum spend: $1,000 per month (no minimum order count)
+- Monthly pallet space: a fixed monthly fee with labor included, for more complete or complex service depending on the client's needs (quoted per client)
 - Contracts: no long-term contracts
 - Quote path: https://miamialliance3pl.com/quote.html
 - Contact path: https://miamialliance3pl.com/contact.html
@@ -31,6 +32,11 @@ Last reviewed: 2026-06-14
 - Warehouse hours: Monday-Friday 8AM-6PM EST, Saturday 9AM-2PM EST
 - Languages: English and Spanish
 - Returns processing: usually within 24-48 hours
+
+## Not Offered
+
+- Not a CBP-bonded warehouse and not FDA-FSMA capable: no customs-bonded storage, no FDA/FSMA-compliant warehousing, no cold storage.
+- Not a licensed customs broker.
 
 ## Regulated Goods Notes
 
