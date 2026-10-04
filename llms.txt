@@ -30,6 +30,11 @@ Miami Alliance 3PL provides 3PL services in Miami from its warehouse at 8780 NW 
 - [Article index](https://miamialliance3pl.com/ai/articles.md): Every original article on the blog, newest first, with dates and one-line summaries.
 - [RSS feed](https://miamialliance3pl.com/feed.xml): The newest articles as RSS 2.0.
 
+## Other Languages
+
+- [3PL en Miami (español)](https://miamialliance3pl.com/es/): the same facts in Spanish for Latin American sellers and distributors: services, location, minimum spend, Mercado Libre and LATAM distribution, what is not offered, and an FAQ.
+- [3PL em Miami (português)](https://miamialliance3pl.com/pt-br/): the same facts in Brazilian Portuguese for Brazilian sellers (Mercado Livre, consolidation for export from Miami), with an FAQ.
+
 ## Core Commercial Pages
 
 - [Homepage](https://miamialliance3pl.com/): Main company overview with proof points, schema, FAQs, AI facts, and primary conversion paths.
@@ -42,7 +47,7 @@ Miami Alliance 3PL provides 3PL services in Miami from its warehouse at 8780 NW 
 
 ## High-Intent Service Pages
 
-- [Amazon FBA Prep Services](https://miamialliance3pl.com/amazon-fba-prep-miami.html): FNSKU labeling, poly bagging, bundling, inspection, and Amazon prep pricing.
+- [Amazon FBA Prep Services](https://miamialliance3pl.com/amazon-fba-prep-miami.html): FNSKU labeling, poly bagging, bundling, and inspection.
 - [Amazon 3PL Miami](https://miamialliance3pl.com/amazon-3pl-miami.html): Amazon-focused warehousing, FBA prep, and FBM fulfillment from Miami.
 - [Gaming & Electronics Fulfillment](https://miamialliance3pl.com/gaming-electronics-fulfillment.html): ESD-safe, serialized, climate-controlled fulfillment for high-value products.
 - [TikTok Shop Fulfillment](https://miamialliance3pl.com/tiktok-shop-fulfillment-miami.html): Social commerce and influencer-order fulfillment from Miami.

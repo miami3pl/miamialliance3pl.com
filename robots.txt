@@ -20,8 +20,12 @@ Disallow: /tests/
 Disallow: /mcp/
 Disallow: /scripts/
 Disallow: /skills/
-Disallow: /mcp/
-Disallow: /functions/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
 Disallow: /*?*
 Allow: /css/
 Allow: /js/
@@ -41,6 +45,12 @@ Disallow: /tests/
 Disallow: /mcp/
 Disallow: /scripts/
 Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
 
 # OpenAI - SearchBot (search indexing)
 User-agent: OAI-SearchBot
@@ -54,6 +64,12 @@ Disallow: /tests/
 Disallow: /mcp/
 Disallow: /scripts/
 Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
 
 # OpenAI - GPTBot (training + search)
 User-agent: GPTBot
@@ -67,6 +83,12 @@ Disallow: /tests/
 Disallow: /mcp/
 Disallow: /scripts/
 Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
 
 # Anthropic - Claude crawlers
 User-agent: ClaudeBot
@@ -80,6 +102,12 @@ Disallow: /tests/
 Disallow: /mcp/
 Disallow: /scripts/
 Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
 
 User-agent: Claude-User
 Allow: /
@@ -92,6 +120,12 @@ Disallow: /tests/
 Disallow: /mcp/
 Disallow: /scripts/
 Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
 
 User-agent: Claude-SearchBot
 Allow: /
@@ -104,6 +138,12 @@ Disallow: /tests/
 Disallow: /mcp/
 Disallow: /scripts/
 Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
 
 User-agent: anthropic-ai
 Allow: /
@@ -116,6 +156,12 @@ Disallow: /tests/
 Disallow: /mcp/
 Disallow: /scripts/
 Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
 
 # Google Gemini / AI Overviews
 User-agent: Google-Extended
@@ -129,6 +175,12 @@ Disallow: /tests/
 Disallow: /mcp/
 Disallow: /scripts/
 Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
 
 # Perplexity AI Search
 User-agent: PerplexityBot
@@ -142,6 +194,12 @@ Disallow: /tests/
 Disallow: /mcp/
 Disallow: /scripts/
 Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
 
 # Meta AI
 User-agent: Meta-ExternalAgent
@@ -155,6 +213,12 @@ Disallow: /tests/
 Disallow: /mcp/
 Disallow: /scripts/
 Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
 
 # Apple Intelligence / Siri
 User-agent: Applebot
@@ -168,6 +232,12 @@ Disallow: /tests/
 Disallow: /mcp/
 Disallow: /scripts/
 Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
 
 # Amazon Alexa / AI
 User-agent: Amazonbot
@@ -181,6 +251,12 @@ Disallow: /tests/
 Disallow: /mcp/
 Disallow: /scripts/
 Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
 
 # Common Crawl (feeds many AI models)
 User-agent: CCBot
@@ -194,6 +270,12 @@ Disallow: /tests/
 Disallow: /mcp/
 Disallow: /scripts/
 Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
 
 # ByteDance / TikTok AI
 User-agent: Bytespider
@@ -207,6 +289,12 @@ Disallow: /tests/
 Disallow: /mcp/
 Disallow: /scripts/
 Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
 
 # Microsoft Copilot
 User-agent: Bingbot
@@ -220,6 +308,12 @@ Disallow: /tests/
 Disallow: /mcp/
 Disallow: /scripts/
 Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
 
 # Cohere AI
 User-agent: cohere-ai
@@ -233,6 +327,12 @@ Disallow: /tests/
 Disallow: /mcp/
 Disallow: /scripts/
 Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
 
 # You.com AI Search
 User-agent: YouBot
@@ -246,6 +346,12 @@ Disallow: /tests/
 Disallow: /mcp/
 Disallow: /scripts/
 Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
 
 # Mistral AI
 User-agent: MistralBot
@@ -259,6 +365,12 @@ Disallow: /tests/
 Disallow: /mcp/
 Disallow: /scripts/
 Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
 
 # DuckDuckGo AI Assist
 User-agent: DuckAssistBot
@@ -272,6 +384,12 @@ Disallow: /tests/
 Disallow: /mcp/
 Disallow: /scripts/
 Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
 
 # Meta / Facebook AI
 User-agent: FacebookBot
@@ -285,6 +403,12 @@ Disallow: /tests/
 Disallow: /mcp/
 Disallow: /scripts/
 Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
 
 # Google NotebookLM
 User-agent: Google-NotebookLM
@@ -298,6 +422,12 @@ Disallow: /tests/
 Disallow: /mcp/
 Disallow: /scripts/
 Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
 
 # Google Vertex AI
 User-agent: Google-CloudVertexBot
@@ -311,6 +441,12 @@ Disallow: /tests/
 Disallow: /mcp/
 Disallow: /scripts/
 Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
 
 # DeepSeek AI
 User-agent: DeepSeekBot
@@ -324,6 +460,69 @@ Disallow: /tests/
 Disallow: /mcp/
 Disallow: /scripts/
 Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
+
+# Perplexity - user-triggered fetches (docs.perplexity.ai/guides/bots)
+User-agent: Perplexity-User
+Allow: /
+Disallow: /portal/
+Disallow: /login.html
+Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
+
+# Apple - Applebot data for Apple generative AI (support.apple.com/en-us/119829)
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /portal/
+Disallow: /login.html
+Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
+
+# Mistral - user-triggered fetches (docs.mistral.ai/robots)
+User-agent: MistralAI-User
+Allow: /
+Disallow: /portal/
+Disallow: /login.html
+Disallow: /admin/
+Disallow: /functions/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /mcp/
+Disallow: /scripts/
+Disallow: /skills/
+Disallow: /*.md$
+Allow: /ai/*.md$
+Disallow: /*.py$
+Disallow: /firebase.json
+Disallow: /firestore.rules
+Disallow: /firestore.indexes.json
 
 # === SITEMAPS ===
 Sitemap: https://miamialliance3pl.com/sitemap.xml
@@ -337,3 +536,5 @@ Sitemap: https://miamialliance3pl.com/feed.xml
 # See: https://miamialliance3pl.com/ai/search-answer-map.md
 # See: https://miamialliance3pl.com/ai/articles.md (every article, newest first)
 # Updated 2026-10-04: RSS feed, article index, IndexNow
+# Updated 2026-10-04 (geo-a): groups for Perplexity-User, Applebot-Extended, MistralAI-User;
+#   internal notes and config (*.md outside /ai/, *.py, Firebase files) disallowed for every group
