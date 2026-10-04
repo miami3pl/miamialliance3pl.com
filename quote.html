@@ -449,6 +449,44 @@
 
                         <!-- Black Wrapping is now per-item inside cargo items -->
 
+                        <!-- Container Services (Jorge 2026-06-23): fixed fee per container -->
+                        <div class="quote-control-group" id="container-services-group">
+                            <label class="quote-label" data-i18n="quote.container.title">Container Services</label>
+                            <p data-i18n="quote.container.note" style="margin: 0 0 8px; font-size: var(--font-size-sm); color: var(--color-gray-500, #64748b);">Fixed fee per container: $275 palletized, $475 loose boxes.</p>
+                            <div class="container-service" style="margin-bottom: 10px;">
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                    <input type="checkbox" id="container-offloading-enabled" style="width: 18px; height: 18px; cursor: pointer;">
+                                    <span data-i18n="quote.container.offloading">Container Offloading</span>
+                                </label>
+                                <div class="container-service-options" id="container-offloading-options" style="display: none; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0 0 26px;">
+                                    <select id="container-offloading-type" class="zone-select" aria-label="Offloading: palletized or loose boxes" data-i18n-aria="quote.container.offloadingType" style="flex: 1 1 100%; width: 100%; min-width: 0;">
+                                        <option value="pallet" data-i18n="quote.container.pallet">Palletized: $275</option>
+                                        <option value="box" data-i18n="quote.container.box">Loose boxes: $475</option>
+                                    </select>
+                                    <label style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; font-size: var(--font-size-sm);">
+                                        <span data-i18n="quote.container.containers">Containers</span>
+                                        <input type="number" id="container-offloading-qty" class="cargo-dim-input" value="1" min="1" max="50" style="width: 64px;">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="container-service" style="margin-bottom: 10px;">
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                    <input type="checkbox" id="container-loading-enabled" style="width: 18px; height: 18px; cursor: pointer;">
+                                    <span data-i18n="quote.container.loading">Container Loading</span>
+                                </label>
+                                <div class="container-service-options" id="container-loading-options" style="display: none; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0 0 26px;">
+                                    <select id="container-loading-type" class="zone-select" aria-label="Loading: palletized or loose boxes" data-i18n-aria="quote.container.loadingType" style="flex: 1 1 100%; width: 100%; min-width: 0;">
+                                        <option value="pallet" data-i18n="quote.container.pallet">Palletized: $275</option>
+                                        <option value="box" data-i18n="quote.container.box">Loose boxes: $475</option>
+                                    </select>
+                                    <label style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; font-size: var(--font-size-sm);">
+                                        <span data-i18n="quote.container.containers">Containers</span>
+                                        <input type="number" id="container-loading-qty" class="cargo-dim-input" value="1" min="1" max="50" style="width: 64px;">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- FBA Prep Services -->
                         <div class="quote-control-group" id="fba-prep-group">
                             <div class="fba-section-header">
@@ -588,6 +626,11 @@
                                 <span id="result-fba-prep">$0.00</span>
                             </div>
                             <div id="fba-prep-breakdown"></div>
+                            <div class="quote-line" id="container-row" style="display: none;">
+                                <span data-i18n="quote.results.container">Container Services</span>
+                                <span id="result-container">$0.00</span>
+                            </div>
+                            <div id="container-breakdown"></div>
 
                             <div class="quote-divider"></div>
 
@@ -722,10 +765,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
     <!-- Shared pricing engine -->
-    <script src="js/quote-pricing-engine.js?v=20260527-2" defer></script>
+    <script src="js/quote-pricing-engine.js?v=20261004-1" defer></script>
 
     <!-- Quote Calculator (non-module) -->
-    <script src="js/quote-calculator.js?v=20260527-2" defer></script>
+    <script src="js/quote-calculator.js?v=20261004-1" defer></script>
 
     <!-- Warehouse selector highlight updater -->
     <script>

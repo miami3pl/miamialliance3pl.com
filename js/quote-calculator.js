@@ -101,6 +101,11 @@ class QuoteCalculator {
     this.storageDays = 30;
     this.dropShipQty = { envelope: 0, small: 0, medium: 0, large: 0 };
     this.selectedWarehouse = "miami";
+    // Container services (Jorge 2026-06-23): fixed fee per container
+    this.containerServices = {
+      offloading: { enabled: false, type: "pallet", qty: 1 },
+      loading: { enabled: false, type: "pallet", qty: 1 },
+    };
     this.fbaPrep = {
       enabled: true,
       services: {
@@ -285,6 +290,41 @@ class QuoteCalculator {
         );
         this.calculate();
       });
+    });
+
+    // Container services: toggle, palletized/boxes, number of containers
+    ["offloading", "loading"].forEach((key) => {
+      const enabledEl = document.getElementById(`container-${key}-enabled`);
+      const typeEl = document.getElementById(`container-${key}-type`);
+      const qtyEl = document.getElementById(`container-${key}-qty`);
+      const optionsEl = document.getElementById(`container-${key}-options`);
+      const svc = this.containerServices[key];
+      // pick up values the browser restored on back/refresh
+      if (typeEl) svc.type = typeEl.value === "box" ? "box" : "pallet";
+      if (qtyEl) svc.qty = Math.max(1, Math.min(50, parseInt(qtyEl.value) || 1));
+      if (enabledEl) {
+        svc.enabled = enabledEl.checked;
+        if (optionsEl) optionsEl.style.display = svc.enabled ? "flex" : "none";
+        enabledEl.addEventListener("change", (e) => {
+          svc.enabled = e.target.checked;
+          if (optionsEl) {
+            optionsEl.style.display = e.target.checked ? "flex" : "none";
+          }
+          this.calculate();
+        });
+      }
+      if (typeEl) {
+        typeEl.addEventListener("change", (e) => {
+          svc.type = e.target.value === "box" ? "box" : "pallet";
+          this.calculate();
+        });
+      }
+      if (qtyEl) {
+        qtyEl.addEventListener("input", (e) => {
+          svc.qty = Math.max(1, Math.min(50, parseInt(e.target.value) || 1));
+          this.calculate();
+        });
+      }
     });
 
     this.applyPrefillFromQuery();
@@ -827,6 +867,13 @@ class QuoteCalculator {
       };
     }
 
+    // Container services are a per-quote fee, added once (not per cargo item)
+    const containerTotal = this.getContainerTotal();
+    result = Object.assign({}, result, {
+      containerTotal: containerTotal,
+      total: (result.total || 0) + containerTotal,
+    });
+
     // Store multiResult for PDF generation
     this._lastMultiResult = multiResult;
 
@@ -845,6 +892,7 @@ class QuoteCalculator {
       wrapping: result.wrapping || 0,
       dropship: result.dropship,
       fbaPrepTotal: result.fbaPrepTotal || 0,
+      containerTotal: result.containerTotal || 0,
       total: result.total,
     });
 
@@ -874,6 +922,7 @@ class QuoteCalculator {
       wrapping: result.wrapping || 0,
       dropship: result.dropship,
       fbaPrepTotal: result.fbaPrepTotal || 0,
+      containerTotal: result.containerTotal || 0,
       total: result.total,
     };
   }
@@ -889,6 +938,7 @@ class QuoteCalculator {
       "result-wrapping": this.formatCurrency(values.wrapping),
       "result-dropship": this.formatCurrency(values.dropship),
       "result-fba-prep": this.formatCurrency(values.fbaPrepTotal || 0),
+      "result-container": this.formatCurrency(values.containerTotal || 0),
       "result-total": this.formatCurrency(values.total),
     };
 
@@ -924,8 +974,18 @@ class QuoteCalculator {
           : "none";
     }
 
+    // Show/hide container services row
+    const containerRow = document.getElementById("container-row");
+    if (containerRow) {
+      containerRow.style.display =
+        (values.containerTotal || 0) > 0 ? "flex" : "none";
+    }
+
     // Render FBA prep per-service breakdown
     this.renderFbaPrepBreakdown();
+
+    // Render container services per-line breakdown
+    this.renderContainerBreakdown();
 
     // Show/hide shipping row (hide when no shipping or dropship)
     const shippingEl = document.getElementById("result-shipping");
@@ -1008,6 +1068,29 @@ class QuoteCalculator {
     container.innerHTML = html;
   }
 
+  renderContainerBreakdown() {
+    const container = document.getElementById("container-breakdown");
+    if (!container) return;
+
+    const breakdown = this.getContainerBreakdown();
+    let html = "";
+    breakdown.forEach((row) => {
+      // short label; the amount never shrinks in the narrow results panel
+      html +=
+        '<div class="quote-line fba-breakdown-line">' +
+        '<span class="fba-breakdown-label">' +
+        row.pdfLabel +
+        " x" +
+        row.qty +
+        "</span>" +
+        '<span style="flex-shrink: 0;">' +
+        this.formatCurrency(row.total) +
+        "</span>" +
+        "</div>";
+    });
+    container.innerHTML = html;
+  }
+
   calculateDropShipTotal() {
     let total = 0;
     for (const [size, qty] of Object.entries(this.dropShipQty)) {
@@ -1053,6 +1136,43 @@ class QuoteCalculator {
       }
     }
     return lines;
+  }
+
+  getContainerRates() {
+    return (
+      (PRICING && PRICING.containerServices) || {
+        offloading: { label: "Container Offloading", pallet: 275.0, box: 475.0 },
+        loading: { label: "Container Loading", pallet: 275.0, box: 475.0 },
+      }
+    );
+  }
+
+  getContainerBreakdown() {
+    const rates = this.getContainerRates();
+    const rows = [];
+    ["offloading", "loading"].forEach((key) => {
+      const svc = this.containerServices && this.containerServices[key];
+      if (!svc || !svc.enabled || !rates[key]) return;
+      const type = svc.type === "box" ? "box" : "pallet";
+      const qty = Math.max(1, Math.min(50, parseInt(svc.qty) || 1));
+      const rate = rates[key][type];
+      rows.push({
+        label: rates[key].label,
+        typeLabel: type === "box" ? "Loose boxes" : "Palletized",
+        // short form for the 28-character PDF price column
+        pdfLabel:
+          (key === "offloading" ? "Offloading" : "Loading") +
+          (type === "box" ? ", loose boxes" : ", palletized"),
+        qty: qty,
+        rate: rate,
+        total: rate * qty,
+      });
+    });
+    return rows;
+  }
+
+  getContainerTotal() {
+    return this.getContainerBreakdown().reduce((sum, row) => sum + row.total, 0);
   }
 
   formatCurrency(amount) {
@@ -1431,6 +1551,14 @@ class QuoteCalculator {
       }
     }
 
+    // Container services (fixed fee per container)
+    this.getContainerBreakdown().forEach((row) => {
+      priceRows.push([
+        `${row.pdfLabel} x${row.qty}`,
+        this.formatCurrency(row.total),
+      ]);
+    });
+
     // Limit pricing rows to max 15 to prevent overflow — summarize extras
     const maxPriceRows = 15;
     let priceRowsToShow = priceRows;
@@ -1559,6 +1687,18 @@ class QuoteCalculator {
         doc.text(fbaRateLines, 105, yPos, { align: "center" });
         yPos += fbaRateLines.length * 4;
       }
+    }
+
+    // Container services rate details (separate line if any selected)
+    if (this.getContainerBreakdown().length > 0) {
+      yPos += 4;
+      const cRates = this.getContainerRates();
+      const containerRateLines = doc.splitTextToSize(
+        `Container Offloading / Loading (per container): palletized $${cRates.offloading.pallet.toFixed(2)} | loose boxes $${cRates.offloading.box.toFixed(2)}`,
+        170,
+      );
+      doc.text(containerRateLines, 105, yPos, { align: "center" });
+      yPos += containerRateLines.length * 4;
     }
 
     // ===== IMPORTANT NOTES — dynamic Y =====

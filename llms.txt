@@ -34,7 +34,7 @@ Miami Alliance 3PL provides 3PL services in Miami from its warehouse at 8780 NW 
 
 - [Homepage](https://miamialliance3pl.com/): Main company overview with proof points, schema, FAQs, AI facts, and primary conversion paths.
 - [Services](https://miamialliance3pl.com/services.html): Service catalog for warehousing, fulfillment, Amazon FBA prep, TWIC port pickup, approved regulated goods handling, and reverse logistics.
-- [Instant Quote Calculator](https://miamialliance3pl.com/quote.html): Pricing entry point for storage and fulfillment estimates.
+- [Instant Quote Calculator](https://miamialliance3pl.com/quote.html): Pricing entry point for storage, fulfillment, Amazon FBA prep, and container offloading and loading estimates.
 - [FBA Calculator](https://miamialliance3pl.com/fba-calculator.html): Amazon FBA fee calculator and cost comparison tool for sellers evaluating 3PL prep.
 - [Contact](https://miamialliance3pl.com/contact.html): Phone, email, form, and warehouse map for direct contact.
 - [About](https://miamialliance3pl.com/about.html): Company background, warehouse capabilities, and team context.

@@ -117,6 +117,8 @@ The most important operational identity points are:
 - Retailer compliance support
 - TWIC-credentialed pickup and drop-off inside PortMiami and Port Everglades
 - Warehouse receiving, staging, and handoff after port pickup
+- Container offloading: $275 per container palletized, $475 per container loose boxes (fixed fee per container)
+- Container loading: $275 per container palletized, $475 per container loose boxes (fixed fee per container)
 
 ### Reverse Logistics and Special Handling
 

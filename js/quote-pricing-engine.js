@@ -71,6 +71,11 @@
       medium: 5.0,
       large: 20.0,
     },
+    /* Container services, fixed fee per container (Jorge 2026-06-23): palletized vs loose boxes */
+    containerServices: {
+      offloading: { label: "Container Offloading", pallet: 275.0, box: 475.0 },
+      loading: { label: "Container Loading", pallet: 275.0, box: 475.0 },
+    },
     fbaPrep: {
       fnskuLabeling: { rate: 0.3, label: "FNSKU Labeling", unit: "unit" },
       polyBagging: { rate: 0.5, label: "Poly Bagging", unit: "unit" },
@@ -158,6 +163,26 @@
         if (svc && svc.selected && svc.qty > 0) {
           total += svc.qty * services[key].rate;
         }
+      }
+    }
+    return total;
+  }
+
+  /**
+   * Container services total. input: { offloading: {enabled, type: "pallet"|"box", qty},
+   * loading: {...} }. Fixed fee per container; qty = number of containers (1-50).
+   */
+  function getContainerServicesTotal(input) {
+    var src = input || {};
+    var rates = PRICING.containerServices;
+    var total = 0;
+    for (var key in rates) {
+      if (Object.prototype.hasOwnProperty.call(rates, key)) {
+        var svc = src[key] || {};
+        if (!svc.enabled) continue;
+        var type = svc.type === "box" ? "box" : "pallet";
+        var qty = clampNumber(svc.qty, 1, 1, 50);
+        total += rates[key][type] * qty;
       }
     }
     return total;
@@ -404,6 +429,7 @@
     getBillableWeight: getBillableWeight,
     getDropShipTotal: getDropShipTotal,
     getFbaPrepTotal: getFbaPrepTotal,
+    getContainerServicesTotal: getContainerServicesTotal,
     getZoneLabel: getZoneLabel,
     calculateEstimate: calculateEstimate,
     calculateMultiEstimate: calculateMultiEstimate,

@@ -16,6 +16,8 @@ Last reviewed: 2026-10-04
 - Amazon FBA prep, inspection and QC: $0.15 per unit
 - Receiving and intake: $15.00 per pallet
 - Black wrapping: $7.00 per pallet
+- Container offloading: $275 per container palletized, $475 per container loose boxes (fixed fee per container)
+- Container loading: $275 per container palletized, $475 per container loose boxes (fixed fee per container)
 
 ## Commercial Terms
 
@@ -56,7 +58,7 @@ The base commercial minimum is $1,000 per month.
 
 ### Is pricing available without a sales call?
 
-Yes. The public quote calculator and service pages expose pricing anchors for storage, pick and pack, and Amazon FBA prep.
+Yes. The public quote calculator and service pages expose pricing anchors for storage, pick and pack, Amazon FBA prep, and container offloading and loading.
 
 ## Best URLs
 
