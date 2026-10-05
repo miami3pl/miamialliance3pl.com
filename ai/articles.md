@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-04 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 148
+Articles: 149
 
+- 2026-10-04 · [Colombia y EE. UU.: aranceles, ecommerce y un 3PL en Miami](https://miamialliance3pl.com/blog/colombia-eeuu-aranceles-ecommerce-3pl-miami-guia.html): Guía para empresas de Colombia: lo que dice la ITA sobre ecommerce, aranceles y el CTPA, y cómo preparar inventario en un almacén en Miami.
 - 2026-10-04 · [Café e cacau do Brasil para os EUA: armazenagem seca e ventilada em Miami](https://miamialliance3pl.com/blog/cafe-cacau-brasil-eua-armazenagem-seca-ventilada-miami.html): Guia para exportadores de café e cacau do Brasil: regras da CBP e da FDA, aviso prévio e o que preparar para armazenagem seca e ventilada em Miami.
 - 2026-10-04 · [Importing Food Through Miami: FDA Registration and Prior Notice Guide](https://miamialliance3pl.com/blog/fda-food-import-registration-prior-notice-miami-3pl.html): What FDA says about food facility registration, prior notice and import entry review, and what Miami importers should prepare before food reaches a 3PL.
 - 2026-10-04 · [México y EE. UU.: guía para vender e importar con un 3PL en Miami](https://miamialliance3pl.com/blog/mexico-eeuu-3pl-miami-importar-exportar-vender-online.html): Guía para empresas de México: comercio electrónico, RFC, tasa global y de minimis según la ITA, y cómo preparar inventario en un almacén en Miami.
