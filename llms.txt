@@ -71,6 +71,7 @@ Miami Alliance 3PL provides 3PL services in Miami from its warehouse at 8780 NW 
 
 Newest original articles from the Miami Alliance 3PL blog. Full index of every article: [https://miamialliance3pl.com/ai/articles.md](https://miamialliance3pl.com/ai/articles.md). RSS: [https://miamialliance3pl.com/feed.xml](https://miamialliance3pl.com/feed.xml).
 
+- [Brasil e EUA: como usar um 3PL em Miami para importar e vender online](https://miamialliance3pl.com/blog/brasil-eua-3pl-miami-importar-exportar-vender-online.html): Guia para empresas brasileiras: o que a ITA diz sobre e-commerce, impostos de importação e aduana no Brasil, e como preparar estoque em um armazém em Miami. (published 2026-10-04)
 - [Identity Thieves Target Customs Payments: What Miami Importers Should Do](https://miamialliance3pl.com/blog/identity-thieves-customs-payment-fraud-miami-importers.html): FreightWaves reports criminals are impersonating customs brokers to steal freight payments. What importers and Miami 3PL users can do to verify requests. (published 2026-10-04)
 - [What Is a Warehouse Management System (WMS)? A 3PL Guide](https://miamialliance3pl.com/blog/warehouse-management-system-wms-3pl-guide.html): What is a warehouse management system (WMS)? Learn how WMS software works, core features, WMS vs ERP, and why a 3PL with a proven WMS beats building your own. (published 2026-10-04)
 - [Amazon Seller Fulfilled Prime (SFP): Keep the Prime Badge Without FBA](https://miamialliance3pl.com/blog/amazon-seller-fulfilled-prime-sfp-3pl-miami-guide.html): Seller Fulfilled Prime (SFP) shows the Amazon Prime badge from your own 3PL warehouse — no FBA fees. Learn the 2026 SFP requirements and how a Miami 3PL helps. (published 2026-10-04)
@@ -82,7 +83,6 @@ Newest original articles from the Miami Alliance 3PL blog. Full index of every a
 - [SKU Rationalization for E-Commerce Fulfillment: 3PL Guide](https://miamialliance3pl.com/blog/sku-rationalization-ecommerce-fulfillment-3pl-guide.html): SKU rationalization guide for e-commerce brands: reduce slow movers, cut warehouse complexity, improve pick accuracy, and lower 3PL fulfillment costs. (published 2026-06-28)
 - [Trade Show Logistics Miami: 3PL Storage, Kitting & Event Fulfillment Guide](https://miamialliance3pl.com/blog/trade-show-logistics-miami-3pl-event-fulfillment-guide.html): Miami trade show logistics guide: store booth inventory, prep sample kits, stage event freight, manage returns, and keep expo materials controlled with a 3PL. (published 2026-06-12)
 - [From Miami to Medellín: A Step-by-Step Guide to Shipping to Colombia](https://miamialliance3pl.com/blog/shipping-to-colombia-guide-miami.html): Learn how to ship from Miami to Colombia and other Latin American countries. This guide covers customs, carriers, and costs. (published 2026-06-08)
-- [Choosing a Miami 3PL: Why Local Expertise Beats National Chains](https://miamialliance3pl.com/blog/local-vs-national-3pl-miami.html): Should you choose a local Miami 3PL or a national chain like FedEx or XPO? Discover the benefits of working with a boutique 3PL in Miami. (published 2026-06-08)
 
 <!-- latest-articles:end -->
 
