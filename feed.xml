@@ -6,8 +6,17 @@
     <atom:link href="https://miamialliance3pl.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Guides and logistics news from Miami Alliance 3PL, a 3PL warehouse in Medley, Florida: 3PL services in Miami, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America trade.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Oct 2026 08:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 08:00:00 -0400</lastBuildDate>
     <generator>admin/site_index.py</generator>
+    <item>
+      <title>Colombia Ecommerce Air Cargo Squeeze Shapes Miami 3PL Planning</title>
+      <link>https://miamialliance3pl.com/blog/colombia-ecommerce-air-cargo-miami-warehouse-planning.html</link>
+      <guid isPermaLink="true">https://miamialliance3pl.com/blog/colombia-ecommerce-air-cargo-miami-warehouse-planning.html</guid>
+      <pubDate>Mon, 05 Oct 2026 08:00:00 -0400</pubDate>
+      <dc:creator>Miami Alliance 3PL</dc:creator>
+      <category>LATAM Trade</category>
+      <description>Colombia's ecommerce growth is tightening air cargo space. See what The Loadstar's report means for inventory and 3PL planning in Miami.</description>
+    </item>
     <item>
       <title>Exportar alimentos a EE. UU. por Miami: FDA, aviso previo y FSVP</title>
       <link>https://miamialliance3pl.com/blog/exportar-alimentos-eeuu-miami-fda-aviso-previo-fsvp.html</link>
@@ -444,15 +453,6 @@
       <dc:creator>Miami Alliance 3PL</dc:creator>
       <category>E-Commerce</category>
       <description>Master Mercado Libre returns management from the US. Learn how a Miami 3PL handles MeLi reverse logistics, claim resolution, restocking, and cross-border return shipping to protect seller metrics.</description>
-    </item>
-    <item>
-      <title>Mercado Libre Hot Sale &amp; CyberMonday 2026: The Complete Promotional Calendar for US Sellers</title>
-      <link>https://miamialliance3pl.com/blog/mercadolibre-hot-sale-cybermonday-calendar-2026-seller-guide.html</link>
-      <guid isPermaLink="true">https://miamialliance3pl.com/blog/mercadolibre-hot-sale-cybermonday-calendar-2026-seller-guide.html</guid>
-      <pubDate>Sat, 04 Apr 2026 08:00:00 -0400</pubDate>
-      <dc:creator>Miami Alliance 3PL</dc:creator>
-      <category>Cross-Border E-Commerce</category>
-      <description>Complete 2026 Mercado Libre promotional calendar for US sellers: Hot Sale, CyberMonday, Buen Fin, Black Friday dates by country. Inventory prep timelines, listing optimization, and logistics playbook from a Miami 3PL shipping across LATAM daily.</description>
     </item>
   </channel>
 </rss>

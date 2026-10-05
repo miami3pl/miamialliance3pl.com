@@ -214,9 +214,15 @@
   <!-- latest-articles:start (maintained by admin/site_index.py) -->
   <url>
     <loc>https://miamialliance3pl.com/ai/articles.md</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://miamialliance3pl.com/blog/colombia-ecommerce-air-cargo-miami-warehouse-planning.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://miamialliance3pl.com/blog/exportar-alimentos-eeuu-miami-fda-aviso-previo-fsvp.html</loc>
@@ -268,12 +274,6 @@
   </url>
   <url>
     <loc>https://miamialliance3pl.com/blog/identity-thieves-customs-payment-fraud-miami-importers.html</loc>
-    <lastmod>2026-10-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://miamialliance3pl.com/blog/warehouse-management-system-wms-3pl-guide.html</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-10-04 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-10-05 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 151
+Articles: 152
 
+- 2026-10-05 · [Colombia Ecommerce Air Cargo Squeeze Shapes Miami 3PL Planning](https://miamialliance3pl.com/blog/colombia-ecommerce-air-cargo-miami-warehouse-planning.html): Colombia's ecommerce growth is tightening air cargo space. See what The Loadstar's report means for inventory and 3PL planning in Miami.
 - 2026-10-04 · [Exportar alimentos a EE. UU. por Miami: FDA, aviso previo y FSVP](https://miamialliance3pl.com/blog/exportar-alimentos-eeuu-miami-fda-aviso-previo-fsvp.html): Guía para exportadores de alimentos de América Latina que envían por Miami: registro de instalaciones, aviso previo y FSVP según la FDA, y qué preparar.
 - 2026-10-04 · [Bonded Storage vs. Foreign-Trade Zones in Miami: A Duty Deferral Guide](https://miamialliance3pl.com/blog/bonded-storage-foreign-trade-zones-miami-duty-deferral.html): How CBP customs bonded warehouses and Foreign-Trade Zones defer import duty, what each allows, and how Miami importers can choose between them.
 - 2026-10-04 · [Colombia y EE. UU.: aranceles, ecommerce y un 3PL en Miami](https://miamialliance3pl.com/blog/colombia-eeuu-aranceles-ecommerce-3pl-miami-guia.html): Guía para empresas de Colombia: lo que dice la ITA sobre ecommerce, aranceles y el CTPA, y cómo preparar inventario en un almacén en Miami.
