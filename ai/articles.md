@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-04 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 145
+Articles: 146
 
+- 2026-10-04 · [México y EE. UU.: guía para vender e importar con un 3PL en Miami](https://miamialliance3pl.com/blog/mexico-eeuu-3pl-miami-importar-exportar-vender-online.html): Guía para empresas de México: comercio electrónico, RFC, tasa global y de minimis según la ITA, y cómo preparar inventario en un almacén en Miami.
 - 2026-10-04 · [Cold Storage in Miami: FDA Rules for Refrigerated and Frozen Food](https://miamialliance3pl.com/blog/cold-storage-miami-fda-sanitary-transportation-refrigerated-frozen-food.html): What the FDA Sanitary Transportation rule and FDA food-storage guidance say about temperature control, and what Miami food importers should prepare.
 - 2026-10-04 · [Brasil e EUA: como usar um 3PL em Miami para importar e vender online](https://miamialliance3pl.com/blog/brasil-eua-3pl-miami-importar-exportar-vender-online.html): Guia para empresas brasileiras: o que a ITA diz sobre e-commerce, impostos de importação e aduana no Brasil, e como preparar estoque em um armazém em Miami.
 - 2026-10-04 · [Identity Thieves Target Customs Payments: What Miami Importers Should Do](https://miamialliance3pl.com/blog/identity-thieves-customs-payment-fraud-miami-importers.html): FreightWaves reports criminals are impersonating customs brokers to steal freight payments. What importers and Miami 3PL users can do to verify requests.
