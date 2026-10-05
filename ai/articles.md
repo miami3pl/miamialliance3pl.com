@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-05 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 152
+Articles: 153
 
+- 2026-10-05 · [Congestión ferroviaria en Asia: claves para un 3PL en Miami](https://miamialliance3pl.com/blog/congestion-ferroviaria-asia-planificacion-logistica-miami.html): La congestión ferroviaria entre China y Rusia impulsa la carga marítima desde Corea del Sur: lecciones para planificar inventario y recepción en Miami.
 - 2026-10-05 · [Colombia Ecommerce Air Cargo Squeeze Shapes Miami 3PL Planning](https://miamialliance3pl.com/blog/colombia-ecommerce-air-cargo-miami-warehouse-planning.html): Colombia's ecommerce growth is tightening air cargo space. See what The Loadstar's report means for inventory and 3PL planning in Miami.
 - 2026-10-04 · [Exportar alimentos a EE. UU. por Miami: FDA, aviso previo y FSVP](https://miamialliance3pl.com/blog/exportar-alimentos-eeuu-miami-fda-aviso-previo-fsvp.html): Guía para exportadores de alimentos de América Latina que envían por Miami: registro de instalaciones, aviso previo y FSVP según la FDA, y qué preparar.
 - 2026-10-04 · [Bonded Storage vs. Foreign-Trade Zones in Miami: A Duty Deferral Guide](https://miamialliance3pl.com/blog/bonded-storage-foreign-trade-zones-miami-duty-deferral.html): How CBP customs bonded warehouses and Foreign-Trade Zones defer import duty, what each allows, and how Miami importers can choose between them.
