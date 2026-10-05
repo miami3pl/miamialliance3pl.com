@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-04 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 147
+Articles: 148
 
+- 2026-10-04 · [Café e cacau do Brasil para os EUA: armazenagem seca e ventilada em Miami](https://miamialliance3pl.com/blog/cafe-cacau-brasil-eua-armazenagem-seca-ventilada-miami.html): Guia para exportadores de café e cacau do Brasil: regras da CBP e da FDA, aviso prévio e o que preparar para armazenagem seca e ventilada em Miami.
 - 2026-10-04 · [Importing Food Through Miami: FDA Registration and Prior Notice Guide](https://miamialliance3pl.com/blog/fda-food-import-registration-prior-notice-miami-3pl.html): What FDA says about food facility registration, prior notice and import entry review, and what Miami importers should prepare before food reaches a 3PL.
 - 2026-10-04 · [México y EE. UU.: guía para vender e importar con un 3PL en Miami](https://miamialliance3pl.com/blog/mexico-eeuu-3pl-miami-importar-exportar-vender-online.html): Guía para empresas de México: comercio electrónico, RFC, tasa global y de minimis según la ITA, y cómo preparar inventario en un almacén en Miami.
 - 2026-10-04 · [Cold Storage in Miami: FDA Rules for Refrigerated and Frozen Food](https://miamialliance3pl.com/blog/cold-storage-miami-fda-sanitary-transportation-refrigerated-frozen-food.html): What the FDA Sanitary Transportation rule and FDA food-storage guidance say about temperature control, and what Miami food importers should prepare.
