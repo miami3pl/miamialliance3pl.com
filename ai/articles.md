@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-05 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 154
+Articles: 155
 
+- 2026-10-05 · [Chile y Estados Unidos: comercio y logística con un 3PL en Miami](https://miamialliance3pl.com/blog/chile-estados-unidos-comercio-almacen-miami.html): Guía para empresas de Chile sobre comercio electrónico, aranceles e IVA, y cómo preparar inventario y distribución con servicios 3PL en Miami.
 - 2026-10-05 · [EUA descartam veto ao diesel: impactos para o 3PL em Miami](https://miamialliance3pl.com/blog/eua-diesel-exportacao-planejamento-logistico-miami.html): Transport Topics relata recuo dos EUA sobre veto à exportação de diesel. Entenda o que avaliar no frete, no estoque e nos serviços de 3PL em Miami.
 - 2026-10-05 · [Congestión ferroviaria en Asia: claves para un 3PL en Miami](https://miamialliance3pl.com/blog/congestion-ferroviaria-asia-planificacion-logistica-miami.html): La congestión ferroviaria entre China y Rusia impulsa la carga marítima desde Corea del Sur: lecciones para planificar inventario y recepción en Miami.
 - 2026-10-05 · [Colombia Ecommerce Air Cargo Squeeze Shapes Miami 3PL Planning](https://miamialliance3pl.com/blog/colombia-ecommerce-air-cargo-miami-warehouse-planning.html): Colombia's ecommerce growth is tightening air cargo space. See what The Loadstar's report means for inventory and 3PL planning in Miami.
