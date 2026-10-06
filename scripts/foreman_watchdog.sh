@@ -30,15 +30,16 @@ else
   FAILURES=$((FAILURES + 1))
 fi
 
-if rg -q '<h1>Worthy News in the Logistics World</h1>' blog.html; then
+# The blog's headline is translated (data-i18n), so match the stable attribute, not the text.
+if grep -qE '<h1[^>]*data-i18n="blog.title"' blog.html; then
   echo "- [x] Blog headline marker present" >> "${REPORT_PATH}"
 else
   echo "- [ ] Blog headline marker missing" >> "${REPORT_PATH}"
   FAILURES=$((FAILURES + 1))
 fi
 
-FEATURED_COUNT="$(rg -c '<article class="featured-card"' blog.html || true)"
-GRID_COUNT="$(rg -c '<article class="blog-card"' blog.html || true)"
+FEATURED_COUNT="$(grep -cF '<article class="featured-card"' blog.html || true)"
+GRID_COUNT="$(grep -cF '<article class="blog-card"' blog.html || true)"
 
 if [[ "${FEATURED_COUNT}" -ge 1 && "${GRID_COUNT}" -ge 6 ]]; then
   echo "- [x] Blog card counts healthy (featured=${FEATURED_COUNT}, grid=${GRID_COUNT})" >> "${REPORT_PATH}"
@@ -47,16 +48,21 @@ else
   FAILURES=$((FAILURES + 1))
 fi
 
-TODAY_LABEL="$(python3 - <<'PY'
-from datetime import datetime
-print(datetime.now().strftime("%B %d, %Y").replace(" 0", " "))
+# The blog is rebuilt once a day (~13:50 UTC, "Daily Logistics News Update"), so the date shown is current
+# when it is today or yesterday in UTC. The span carries a style attribute: read its text, not the exact tag.
+DATE_LABELS="$(python3 - <<'PY'
+from datetime import datetime, timedelta, timezone
+now = datetime.now(timezone.utc)
+for d in (now, now - timedelta(days=1)):
+    print(d.strftime("%B %d, %Y").replace(" 0", " "))
 PY
 )"
+BLOG_DATE="$(grep -oE '<span id="blog-date"[^>]*>[^<]*</span>' blog.html | sed -E 's/<[^>]*>//g' | head -n 1 || true)"
 
-if rg -q "<span id=\"blog-date\">${TODAY_LABEL}</span>" blog.html; then
-  echo "- [x] Blog date marker is current (${TODAY_LABEL})" >> "${REPORT_PATH}"
+if [[ -n "${BLOG_DATE}" ]] && grep -qxF "${BLOG_DATE}" <<< "${DATE_LABELS}"; then
+  echo "- [x] Blog date marker is current (${BLOG_DATE})" >> "${REPORT_PATH}"
 else
-  echo "- [ ] Blog date marker not current (${TODAY_LABEL})" >> "${REPORT_PATH}"
+  echo "- [ ] Blog date marker not current (${BLOG_DATE:-missing}; expected today or yesterday, UTC)" >> "${REPORT_PATH}"
   FAILURES=$((FAILURES + 1))
 fi
 
