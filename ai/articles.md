@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-06 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 156
+Articles: 157
 
+- 2026-10-06 · [Exceso de inventario navideño: claves para un 3PL en Miami](https://miamialliance3pl.com/blog/exceso-inventario-navideno-planificacion-logistica-miami.html): Las compras anticipadas por aranceles ponen el inventario navideño bajo presión. Qué revisar si su empresa utiliza servicios 3PL en Miami para distribuir.
 - 2026-10-06 · [Evri's Florida Acquisition Plan: What Miami 3PL Users Need](https://miamialliance3pl.com/blog/evri-florida-acquisition-miami-fulfillment-planning.html): FreightWaves reports Evri's planned purchase of Florida's Cross Border Connect. Explore delivery, returns and warehouse planning for Miami 3PL users.
 - 2026-10-05 · [Chile y Estados Unidos: comercio y logística con un 3PL en Miami](https://miamialliance3pl.com/blog/chile-estados-unidos-comercio-almacen-miami.html): Guía para empresas de Chile sobre comercio electrónico, aranceles e IVA, y cómo preparar inventario y distribución con servicios 3PL en Miami.
 - 2026-10-05 · [EUA descartam veto ao diesel: impactos para o 3PL em Miami](https://miamialliance3pl.com/blog/eua-diesel-exportacao-planejamento-logistico-miami.html): Transport Topics relata recuo dos EUA sobre veto à exportação de diesel. Entenda o que avaliar no frete, no estoque e nos serviços de 3PL em Miami.
