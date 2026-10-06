@@ -6,8 +6,17 @@
     <atom:link href="https://miamialliance3pl.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Guides and logistics news from Miami Alliance 3PL, a 3PL warehouse in Medley, Florida: 3PL services in Miami, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America trade.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Oct 2026 08:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 08:00:00 -0400</lastBuildDate>
     <generator>admin/site_index.py</generator>
+    <item>
+      <title>Evri's Florida Acquisition Plan: What Miami 3PL Users Need</title>
+      <link>https://miamialliance3pl.com/blog/evri-florida-acquisition-miami-fulfillment-planning.html</link>
+      <guid isPermaLink="true">https://miamialliance3pl.com/blog/evri-florida-acquisition-miami-fulfillment-planning.html</guid>
+      <pubDate>Tue, 06 Oct 2026 08:00:00 -0400</pubDate>
+      <dc:creator>Miami Alliance 3PL</dc:creator>
+      <category>E-Commerce</category>
+      <description>FreightWaves reports Evri's planned purchase of Florida's Cross Border Connect. Explore delivery, returns and warehouse planning for Miami 3PL users.</description>
+    </item>
     <item>
       <title>Chile y Estados Unidos: comercio y logística con un 3PL en Miami</title>
       <link>https://miamialliance3pl.com/blog/chile-estados-unidos-comercio-almacen-miami.html</link>
@@ -444,15 +453,6 @@
       <dc:creator>Miami Alliance 3PL</dc:creator>
       <category>E-Commerce</category>
       <description>Compare Mercado Envios Full vs 3PL fulfillment for MeLi sellers. Costs, control, speed, and multi-country coverage from a Miami warehouse.</description>
-    </item>
-    <item>
-      <title>Mercado Libre Shipping Costs Explained: A US Seller's Complete Guide to LATAM Logistics</title>
-      <link>https://miamialliance3pl.com/blog/mercadolibre-shipping-costs-guide-usa-latam.html</link>
-      <guid isPermaLink="true">https://miamialliance3pl.com/blog/mercadolibre-shipping-costs-guide-usa-latam.html</guid>
-      <pubDate>Sat, 04 Apr 2026 08:00:00 -0400</pubDate>
-      <dc:creator>Miami Alliance 3PL</dc:creator>
-      <category>Cross-Border Logistics</category>
-      <description>Complete guide to Mercado Libre shipping costs from the USA to Latin America. Covers Mercado Envios, customs duties, air vs ocean freight, per-country cost breakdowns, and how a Miami 3PL cuts fulfillment expenses by up to 40%.</description>
     </item>
   </channel>
 </rss>

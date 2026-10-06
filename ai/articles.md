@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-10-05 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-10-06 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 155
+Articles: 156
 
+- 2026-10-06 · [Evri's Florida Acquisition Plan: What Miami 3PL Users Need](https://miamialliance3pl.com/blog/evri-florida-acquisition-miami-fulfillment-planning.html): FreightWaves reports Evri's planned purchase of Florida's Cross Border Connect. Explore delivery, returns and warehouse planning for Miami 3PL users.
 - 2026-10-05 · [Chile y Estados Unidos: comercio y logística con un 3PL en Miami](https://miamialliance3pl.com/blog/chile-estados-unidos-comercio-almacen-miami.html): Guía para empresas de Chile sobre comercio electrónico, aranceles e IVA, y cómo preparar inventario y distribución con servicios 3PL en Miami.
 - 2026-10-05 · [EUA descartam veto ao diesel: impactos para o 3PL em Miami](https://miamialliance3pl.com/blog/eua-diesel-exportacao-planejamento-logistico-miami.html): Transport Topics relata recuo dos EUA sobre veto à exportação de diesel. Entenda o que avaliar no frete, no estoque e nos serviços de 3PL em Miami.
 - 2026-10-05 · [Congestión ferroviaria en Asia: claves para un 3PL en Miami](https://miamialliance3pl.com/blog/congestion-ferroviaria-asia-planificacion-logistica-miami.html): La congestión ferroviaria entre China y Rusia impulsa la carga marítima desde Corea del Sur: lecciones para planificar inventario y recepción en Miami.
