@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-07 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 160
+Articles: 161
 
+- 2026-10-07 · [Carga retenida en India: claves para planificar con un 3PL en Miami](https://miamialliance3pl.com/blog/carga-retenida-india-planificacion-logistica-miami.html): La suspensión de carga vinculada con Rusia en aeropuertos de India plantea qué revisar en rutas, inventario y recepción con servicios 3PL en Miami.
 - 2026-10-07 · [South American Weather Risks Shape Miami 3PL Inventory Plans](https://miamialliance3pl.com/blog/south-america-weather-miami-inventory-planning.html): The Loadstar reports weather pressure on South American exports. Learn what Miami 3PL users should review for receiving, storage and distribution.
 - 2026-10-06 · [Storing Dietary Supplements in Miami: FDA and FSVP Guide](https://miamialliance3pl.com/blog/dietary-supplement-storage-miami-fda-fsvp-guide.html): Learn what FDA dietary supplement and FSVP requirements mean for importers and brands preparing for storage and order fulfillment with a Miami 3PL.
 - 2026-10-06 · [Pedidos e devoluções simultâneos desafiam o 3PL em Miami](https://miamialliance3pl.com/blog/pedidos-devolucoes-simultaneos-planejamento-logistico-miami.html): Pedidos e devoluções disputam espaço na alta temporada. Veja como planejar estoque, equipe e capacidade com serviços de 3PL em Miami para sua operação.
