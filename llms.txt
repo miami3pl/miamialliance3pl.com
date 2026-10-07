@@ -71,6 +71,7 @@ Miami Alliance 3PL provides 3PL services in Miami from its warehouse at 8780 NW 
 
 Newest original articles from the Miami Alliance 3PL blog. Full index of every article: [https://miamialliance3pl.com/ai/articles.md](https://miamialliance3pl.com/ai/articles.md). RSS: [https://miamialliance3pl.com/feed.xml](https://miamialliance3pl.com/feed.xml).
 
+- [Cosméticos do Brasil nos EUA: FDA e armazenagem em Miami](https://miamialliance3pl.com/blog/cosmeticos-brasil-eua-fda-mocra-armazenagem-miami.html): Entenda as orientações da FDA para cosméticos do Brasil nos EUA, as exigências da MoCRA e o que preparar para armazenagem e fulfillment em Miami. (published 2026-10-07)
 - [Divergência comercial China-EUA pede atenção ao 3PL em Miami](https://miamialliance3pl.com/blog/divergencia-comercial-china-eua-logistica-miami.html): Entenda a divergência nos dados comerciais entre China e EUA e o que ela sugere para conferir embarques e planejar operações com um 3PL em Miami. (published 2026-10-07)
 - [Carga retenida en India: claves para planificar con un 3PL en Miami](https://miamialliance3pl.com/blog/carga-retenida-india-planificacion-logistica-miami.html): La suspensión de carga vinculada con Rusia en aeropuertos de India plantea qué revisar en rutas, inventario y recepción con servicios 3PL en Miami. (published 2026-10-07)
 - [South American Weather Risks Shape Miami 3PL Inventory Plans](https://miamialliance3pl.com/blog/south-america-weather-miami-inventory-planning.html): The Loadstar reports weather pressure on South American exports. Learn what Miami 3PL users should review for receiving, storage and distribution. (published 2026-10-07)
@@ -82,7 +83,6 @@ Newest original articles from the Miami Alliance 3PL blog. Full index of every a
 - [EUA descartam veto ao diesel: impactos para o 3PL em Miami](https://miamialliance3pl.com/blog/eua-diesel-exportacao-planejamento-logistico-miami.html): Transport Topics relata recuo dos EUA sobre veto à exportação de diesel. Entenda o que avaliar no frete, no estoque e nos serviços de 3PL em Miami. (published 2026-10-05)
 - [Congestión ferroviaria en Asia: claves para un 3PL en Miami](https://miamialliance3pl.com/blog/congestion-ferroviaria-asia-planificacion-logistica-miami.html): La congestión ferroviaria entre China y Rusia impulsa la carga marítima desde Corea del Sur: lecciones para planificar inventario y recepción en Miami. (published 2026-10-05)
 - [Colombia Ecommerce Air Cargo Squeeze Shapes Miami 3PL Planning](https://miamialliance3pl.com/blog/colombia-ecommerce-air-cargo-miami-warehouse-planning.html): Colombia's ecommerce growth is tightening air cargo space. See what The Loadstar's report means for inventory and 3PL planning in Miami. (published 2026-10-05)
-- [Exportar alimentos a EE. UU. por Miami: FDA, aviso previo y FSVP](https://miamialliance3pl.com/blog/exportar-alimentos-eeuu-miami-fda-aviso-previo-fsvp.html): Guía para exportadores de alimentos de América Latina que envían por Miami: registro de instalaciones, aviso previo y FSVP según la FDA, y qué preparar. (published 2026-10-04)
 
 <!-- latest-articles:end -->
 
