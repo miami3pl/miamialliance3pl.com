@@ -6,8 +6,17 @@
     <atom:link href="https://miamialliance3pl.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Guides and logistics news from Miami Alliance 3PL, a 3PL warehouse in Medley, Florida: 3PL services in Miami, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America trade.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Oct 2026 08:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 08:00:00 -0400</lastBuildDate>
     <generator>admin/site_index.py</generator>
+    <item>
+      <title>South American Weather Risks Shape Miami 3PL Inventory Plans</title>
+      <link>https://miamialliance3pl.com/blog/south-america-weather-miami-inventory-planning.html</link>
+      <guid isPermaLink="true">https://miamialliance3pl.com/blog/south-america-weather-miami-inventory-planning.html</guid>
+      <pubDate>Wed, 07 Oct 2026 08:00:00 -0400</pubDate>
+      <dc:creator>Miami Alliance 3PL</dc:creator>
+      <category>LATAM Trade</category>
+      <description>The Loadstar reports weather pressure on South American exports. Learn what Miami 3PL users should review for receiving, storage and distribution.</description>
+    </item>
     <item>
       <title>Storing Dietary Supplements in Miami: FDA and FSVP Guide</title>
       <link>https://miamialliance3pl.com/blog/dietary-supplement-storage-miami-fda-fsvp-guide.html</link>
@@ -444,15 +453,6 @@
       <dc:creator>Miami Alliance 3PL</dc:creator>
       <category>Brand Fulfillment</category>
       <description>Apparel fulfillment in Miami for fashion brands. Learn how a 3PL handles SKU variants, poly bagging, returns, exchange workflows, TikTok and Shopify orders, and LATAM-ready distribution.</description>
-    </item>
-    <item>
-      <title>Selling on Mercado Livre Brazil from the USA: Complete 2026 Guide</title>
-      <link>https://miamialliance3pl.com/blog/mercadolibre-brazil-mercado-livre-us-sellers-guide.html</link>
-      <guid isPermaLink="true">https://miamialliance3pl.com/blog/mercadolibre-brazil-mercado-livre-us-sellers-guide.html</guid>
-      <pubDate>Sun, 05 Apr 2026 08:00:00 -0400</pubDate>
-      <dc:creator>Miami Alliance 3PL</dc:creator>
-      <category>E-Commerce</category>
-      <description>Complete guide to selling on Mercado Livre Brazil from the United States. Learn Brazilian marketplace regulations, INMETRO compliance, Portuguese listings, shipping, and how a Miami 3PL simplifies cross-border fulfillment to Brazil.</description>
     </item>
   </channel>
 </rss>

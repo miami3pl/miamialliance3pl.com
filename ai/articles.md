@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-10-06 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-10-07 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 159
+Articles: 160
 
+- 2026-10-07 · [South American Weather Risks Shape Miami 3PL Inventory Plans](https://miamialliance3pl.com/blog/south-america-weather-miami-inventory-planning.html): The Loadstar reports weather pressure on South American exports. Learn what Miami 3PL users should review for receiving, storage and distribution.
 - 2026-10-06 · [Storing Dietary Supplements in Miami: FDA and FSVP Guide](https://miamialliance3pl.com/blog/dietary-supplement-storage-miami-fda-fsvp-guide.html): Learn what FDA dietary supplement and FSVP requirements mean for importers and brands preparing for storage and order fulfillment with a Miami 3PL.
 - 2026-10-06 · [Pedidos e devoluções simultâneos desafiam o 3PL em Miami](https://miamialliance3pl.com/blog/pedidos-devolucoes-simultaneos-planejamento-logistico-miami.html): Pedidos e devoluções disputam espaço na alta temporada. Veja como planejar estoque, equipe e capacidade com serviços de 3PL em Miami para sua operação.
 - 2026-10-06 · [Exceso de inventario navideño: claves para un 3PL en Miami](https://miamialliance3pl.com/blog/exceso-inventario-navideno-planificacion-logistica-miami.html): Las compras anticipadas por aranceles ponen el inventario navideño bajo presión. Qué revisar si su empresa utiliza servicios 3PL en Miami para distribuir.
