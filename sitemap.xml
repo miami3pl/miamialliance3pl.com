@@ -164,7 +164,7 @@
   </url>
   <url>
     <loc>https://miamialliance3pl.com/blog.html</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1167,6 +1167,12 @@
   <url>
     <loc>https://miamialliance3pl.com/blog/cosmeticos-brasil-eua-fda-mocra-armazenagem-miami.html</loc>
     <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://miamialliance3pl.com/blog/mexico-auto-export-slump-miami-logistics-planning.html</loc>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

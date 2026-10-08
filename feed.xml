@@ -6,8 +6,17 @@
     <atom:link href="https://miamialliance3pl.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Guides and logistics news from Miami Alliance 3PL, a 3PL warehouse in Medley, Florida: 3PL services in Miami, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America trade.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Oct 2026 08:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 08:00:00 -0400</lastBuildDate>
     <generator>admin/site_index.py</generator>
+    <item>
+      <title>Mexico Auto Export Slump Puts Miami 3PL Planning in Focus</title>
+      <link>https://miamialliance3pl.com/blog/mexico-auto-export-slump-miami-logistics-planning.html</link>
+      <guid isPermaLink="true">https://miamialliance3pl.com/blog/mexico-auto-export-slump-miami-logistics-planning.html</guid>
+      <pubDate>Thu, 08 Oct 2026 08:00:00 -0400</pubDate>
+      <dc:creator>Miami Alliance 3PL</dc:creator>
+      <category>Tariffs &amp; Customs</category>
+      <description>Mexico's auto export decline puts shipment planning in focus. Learn what Miami 3PL users should review before changing inventory or distribution plans.</description>
+    </item>
     <item>
       <title>Cosméticos do Brasil nos EUA: FDA e armazenagem em Miami</title>
       <link>https://miamialliance3pl.com/blog/cosmeticos-brasil-eua-fda-mocra-armazenagem-miami.html</link>
@@ -444,15 +453,6 @@
       <dc:creator>Miami Alliance 3PL</dc:creator>
       <category>Supply Chain</category>
       <description>The Strait of Hormuz is effectively closed in 2026. Shipping costs up 60%, insurance premiums up 300%, diesel at $5.52/gal. Learn how a Miami-based 3PL protects your supply chain from global chokepoint disruptions.</description>
-    </item>
-    <item>
-      <title>Hormuz Ceasefire Collapsed: 5 Emergency Supply Chain Moves Your Business Must Make This Week</title>
-      <link>https://miamialliance3pl.com/blog/hormuz-ceasefire-failed-emergency-supply-chain-plan-april-2026.html</link>
-      <guid isPermaLink="true">https://miamialliance3pl.com/blog/hormuz-ceasefire-failed-emergency-supply-chain-plan-april-2026.html</guid>
-      <pubDate>Mon, 13 Apr 2026 08:00:00 -0400</pubDate>
-      <dc:creator>Miami Alliance 3PL</dc:creator>
-      <category>Supply Chain</category>
-      <description>The Hormuz ceasefire failed on April 12, 2026. A US naval blockade is now in effect. 230 oil tankers stranded. Here are 5 emergency supply chain actions every importer and e-commerce brand must take this week.</description>
     </item>
   </channel>
 </rss>
