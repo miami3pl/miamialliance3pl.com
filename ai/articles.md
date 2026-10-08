@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-08 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 165
+Articles: 166
 
+- 2026-10-08 · [Recorde em Savannah reforça atenção ao estoque e ao 3PL em Miami](https://miamialliance3pl.com/blog/recorde-savannah-estoque-planejamento-logistico-miami.html): Recorde de contêineres em Savannah traz pontos de atenção para recebimento, estoque e distribuição de empresas que usam serviços de 3PL em Miami.
 - 2026-10-08 · [Cambios aduaneros exigen ajustar la logística 3PL en Miami](https://miamialliance3pl.com/blog/cambios-aduaneros-planificacion-logistica-miami.html): Los cambios aduaneros en Estados Unidos y México obligan a revisar documentos, transporte y recepción de mercancías con los servicios 3PL en Miami.
 - 2026-10-08 · [Mexico Auto Export Slump Puts Miami 3PL Planning in Focus](https://miamialliance3pl.com/blog/mexico-auto-export-slump-miami-logistics-planning.html): Mexico's auto export decline puts shipment planning in focus. Learn what Miami 3PL users should review before changing inventory or distribution plans.
 - 2026-10-07 · [Cosméticos do Brasil nos EUA: FDA e armazenagem em Miami](https://miamialliance3pl.com/blog/cosmeticos-brasil-eua-fda-mocra-armazenagem-miami.html): Entenda as orientações da FDA para cosméticos do Brasil nos EUA, as exigências da MoCRA e o que preparar para armazenagem e fulfillment em Miami.
