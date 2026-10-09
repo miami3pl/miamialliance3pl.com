@@ -6,8 +6,17 @@
     <atom:link href="https://miamialliance3pl.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Guides and logistics news from Miami Alliance 3PL, a 3PL warehouse in Medley, Florida: 3PL services in Miami, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America trade.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 08 Oct 2026 08:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 08:00:00 -0400</lastBuildDate>
     <generator>admin/site_index.py</generator>
+    <item>
+      <title>Tariff Refund Class Action Puts Miami Import Planning in Focus</title>
+      <link>https://miamialliance3pl.com/blog/tariff-refund-class-action-miami-import-planning.html</link>
+      <guid isPermaLink="true">https://miamialliance3pl.com/blog/tariff-refund-class-action-miami-import-planning.html</guid>
+      <pubDate>Fri, 09 Oct 2026 08:00:00 -0400</pubDate>
+      <dc:creator>Miami Alliance 3PL</dc:creator>
+      <category>Tariffs &amp; Customs</category>
+      <description>Transport Topics reports a broader tariff refund lawsuit. Explore what the development means for import planning and businesses using Miami 3PL services.</description>
+    </item>
     <item>
       <title>Perú y Estados Unidos: guía comercial con un almacén en Miami</title>
       <link>https://miamialliance3pl.com/blog/peru-estados-unidos-guia-comercial-almacen-miami.html</link>
@@ -445,15 +454,6 @@
       <dc:creator>Miami Alliance 3PL</dc:creator>
       <category>Warehousing</category>
       <description>Choosing a temperature-controlled warehouse in Miami: what to check for refrigerated goods. Cold storage, refrigerated and frozen, with Miami Alliance 3PL.</description>
-    </item>
-    <item>
-      <title>Peak Season Fulfillment: How to Prepare Your E-Commerce Supply Chain for Q4 2026</title>
-      <link>https://miamialliance3pl.com/blog/peak-season-fulfillment-q4-2026-ecommerce-preparation-guide.html</link>
-      <guid isPermaLink="true">https://miamialliance3pl.com/blog/peak-season-fulfillment-q4-2026-ecommerce-preparation-guide.html</guid>
-      <pubDate>Sat, 18 Apr 2026 08:00:00 -0400</pubDate>
-      <dc:creator>Miami Alliance 3PL</dc:creator>
-      <category>E-Commerce Fulfillment</category>
-      <description>Complete Q4 2026 peak season fulfillment guide. Plan inventory, scale warehouse capacity, negotiate carrier rates, and avoid stockouts. Start preparing now with a Miami 3PL.</description>
     </item>
   </channel>
 </rss>

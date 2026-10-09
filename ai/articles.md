@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-10-08 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-10-09 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 167
+Articles: 168
 
+- 2026-10-09 · [Tariff Refund Class Action Puts Miami Import Planning in Focus](https://miamialliance3pl.com/blog/tariff-refund-class-action-miami-import-planning.html): Transport Topics reports a broader tariff refund lawsuit. Explore what the development means for import planning and businesses using Miami 3PL services.
 - 2026-10-08 · [Perú y Estados Unidos: guía comercial con un almacén en Miami](https://miamialliance3pl.com/blog/peru-estados-unidos-guia-comercial-almacen-miami.html): Guía para empresas de Perú sobre ecommerce, aranceles y preparación de inventario al comprar en Estados Unidos o vender mediante un almacén en Miami.
 - 2026-10-08 · [Recorde em Savannah reforça atenção ao estoque e ao 3PL em Miami](https://miamialliance3pl.com/blog/recorde-savannah-estoque-planejamento-logistico-miami.html): Recorde de contêineres em Savannah traz pontos de atenção para recebimento, estoque e distribuição de empresas que usam serviços de 3PL em Miami.
 - 2026-10-08 · [Cambios aduaneros exigen ajustar la logística 3PL en Miami](https://miamialliance3pl.com/blog/cambios-aduaneros-planificacion-logistica-miami.html): Los cambios aduaneros en Estados Unidos y México obligan a revisar documentos, transporte y recepción de mercancías con los servicios 3PL en Miami.
