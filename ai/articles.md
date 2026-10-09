@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-09 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 169
+Articles: 170
 
+- 2026-10-09 · [Frete da Ásia recua e pede revisão logística com 3PL em Miami](https://miamialliance3pl.com/blog/frete-asia-recua-planejamento-logistico-miami.html): Queda do frete da Ásia aos EUA abre discussão sobre contratos e sobretaxas. Veja o que avaliar no estoque e nos serviços de 3PL em Miami.
 - 2026-10-09 · [Importaciones pierden ritmo: cómo planificar con un 3PL en Miami](https://miamialliance3pl.com/blog/importaciones-moderan-ritmo-planificacion-inventario-miami.html): Las importaciones de contenedores en Estados Unidos moderan su ritmo. Claves para revisar inventario, recepción y distribución con un 3PL en Miami.
 - 2026-10-09 · [Tariff Refund Class Action Puts Miami Import Planning in Focus](https://miamialliance3pl.com/blog/tariff-refund-class-action-miami-import-planning.html): Transport Topics reports a broader tariff refund lawsuit. Explore what the development means for import planning and businesses using Miami 3PL services.
 - 2026-10-08 · [Perú y Estados Unidos: guía comercial con un almacén en Miami](https://miamialliance3pl.com/blog/peru-estados-unidos-guia-comercial-almacen-miami.html): Guía para empresas de Perú sobre ecommerce, aranceles y preparación de inventario al comprar en Estados Unidos o vender mediante un almacén en Miami.
