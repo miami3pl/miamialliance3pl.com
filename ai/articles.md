@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-10 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 174
+Articles: 175
 
+- 2026-10-10 · [Argentina y Estados Unidos: guía para operar con un 3PL en Miami](https://miamialliance3pl.com/blog/argentina-estados-unidos-comercio-almacen-miami.html): Guía para empresas de Argentina sobre ecommerce, clasificación arancelaria y preparación de inventario para vender y comprar con un almacén en Miami.
 - 2026-10-10 · [Walmart amplia automação e inspira planejamento de 3PL em Miami](https://miamialliance3pl.com/blog/walmart-automacao-planejamento-logistico-miami.html): Novo centro do Walmart na Califórnia traz lições sobre estoque, pedidos e planejamento para marcas brasileiras que usam serviços de 3PL em Miami.
 - 2026-10-10 · [Walmart amplía su logística: claves para el ecommerce en Miami](https://miamialliance3pl.com/blog/walmart-logistica-ecommerce-planificacion-miami.html): La apertura logística de Walmart en California invita a revisar inventario, preparación de pedidos y distribución con servicios 3PL en Miami.
 - 2026-10-10 · [Levi's Ecommerce Growth Puts Miami 3PL Planning in Focus](https://miamialliance3pl.com/blog/levis-ecommerce-growth-miami-fulfillment-planning.html): Levi's ecommerce gains and shifting product demand offer practical lessons for Miami businesses planning inventory, wholesale orders and fulfillment.
