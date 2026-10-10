@@ -6,8 +6,17 @@
     <atom:link href="https://miamialliance3pl.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Guides and logistics news from Miami Alliance 3PL, a 3PL warehouse in Medley, Florida: 3PL services in Miami, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America trade.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Oct 2026 08:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 08:00:00 -0400</lastBuildDate>
     <generator>admin/site_index.py</generator>
+    <item>
+      <title>Levi's Ecommerce Growth Puts Miami 3PL Planning in Focus</title>
+      <link>https://miamialliance3pl.com/blog/levis-ecommerce-growth-miami-fulfillment-planning.html</link>
+      <guid isPermaLink="true">https://miamialliance3pl.com/blog/levis-ecommerce-growth-miami-fulfillment-planning.html</guid>
+      <pubDate>Sat, 10 Oct 2026 08:00:00 -0400</pubDate>
+      <dc:creator>Miami Alliance 3PL</dc:creator>
+      <category>E-Commerce</category>
+      <description>Levi's ecommerce gains and shifting product demand offer practical lessons for Miami businesses planning inventory, wholesale orders and fulfillment.</description>
+    </item>
     <item>
       <title>Cosmetics Storage in Miami: FDA Import Rules and MoCRA</title>
       <link>https://miamialliance3pl.com/blog/cosmetics-miami-storage-fda-import-mocra-guide.html</link>
@@ -445,15 +454,6 @@
       <dc:creator>Miami Alliance 3PL</dc:creator>
       <category>E-Commerce</category>
       <description>Plan your peak season fulfillment strategy now. Learn demand forecasting, inventory positioning, carrier rate locks, and 3PL coordination to crush Q4 2026.</description>
-    </item>
-    <item>
-      <title>3PL Warehouse KPIs: How to Measure Fulfillment Performance</title>
-      <link>https://miamialliance3pl.com/blog/3pl-warehouse-kpis-measure-fulfillment-performance.html</link>
-      <guid isPermaLink="true">https://miamialliance3pl.com/blog/3pl-warehouse-kpis-measure-fulfillment-performance.html</guid>
-      <pubDate>Mon, 20 Apr 2026 08:00:00 -0400</pubDate>
-      <dc:creator>Miami Alliance 3PL</dc:creator>
-      <category>3PL Guide</category>
-      <description>Learn the 12 essential KPIs to measure your 3PL warehouse performance. Track order accuracy, shipping speed, inventory precision, and cost per order to optimize your supply chain.</description>
     </item>
   </channel>
 </rss>
