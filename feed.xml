@@ -6,8 +6,17 @@
     <atom:link href="https://miamialliance3pl.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Guides and logistics news from Miami Alliance 3PL, a 3PL warehouse in Medley, Florida: 3PL services in Miami, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America trade.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Oct 2026 08:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 11 Oct 2026 08:00:00 -0400</lastBuildDate>
     <generator>admin/site_index.py</generator>
+    <item>
+      <title>Mexico Vehicle Export Decline Calls for Careful Miami 3PL Plans</title>
+      <link>https://miamialliance3pl.com/blog/mexico-vehicle-exports-miami-inventory-review.html</link>
+      <guid isPermaLink="true">https://miamialliance3pl.com/blog/mexico-vehicle-exports-miami-inventory-review.html</guid>
+      <pubDate>Sun, 11 Oct 2026 08:00:00 -0400</pubDate>
+      <dc:creator>Miami Alliance 3PL</dc:creator>
+      <category>Supply Chain</category>
+      <description>FreightWaves reports a sharp decline in Mexico's vehicle exports. Here is what Miami 3PL users should review before changing inventory and receiving plans.</description>
+    </item>
     <item>
       <title>Argentina y Estados Unidos: guía para operar con un 3PL en Miami</title>
       <link>https://miamialliance3pl.com/blog/argentina-estados-unidos-comercio-almacen-miami.html</link>
@@ -445,15 +454,6 @@
       <dc:creator>Miami Alliance 3PL</dc:creator>
       <category>Operations Guide</category>
       <description>A practical 2026 hurricane-season logistics plan for importers, e-commerce brands, and wholesalers using Miami: inventory positioning, storm SOPs, carrier backups, and 3PL continuity planning.</description>
-    </item>
-    <item>
-      <title>Electronics Fulfillment Center Guide: ESD Safety, Serial Tracking &amp; Secure 3PL Operations</title>
-      <link>https://miamialliance3pl.com/blog/electronics-fulfillment-center-3pl-guide.html</link>
-      <guid isPermaLink="true">https://miamialliance3pl.com/blog/electronics-fulfillment-center-3pl-guide.html</guid>
-      <pubDate>Wed, 06 May 2026 08:00:00 -0400</pubDate>
-      <dc:creator>Miami Alliance 3PL</dc:creator>
-      <category>Industry Guide</category>
-      <description>What electronics brands should demand from a 3PL: ESD-safe handling, serialized inventory tracking, climate-controlled storage, secure packing, and returns workflows.</description>
     </item>
   </channel>
 </rss>
