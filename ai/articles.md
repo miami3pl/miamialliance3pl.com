@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-11 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 177
+Articles: 178
 
+- 2026-10-11 · [Frete intermodal no SONAR orienta decisões de 3PL em Miami](https://miamialliance3pl.com/blog/frete-intermodal-sonar-planejamento-logistico-miami.html): SONAR adiciona tarifas intermodais à comparação de fretes. Entenda como avaliar economia, prazos e recebimento ao contratar serviços de 3PL em Miami.
 - 2026-10-11 · [Ventas de octubre: claves para planificar su 3PL en Miami](https://miamialliance3pl.com/blog/ventas-octubre-planificacion-logistica-miami.html): Las ventas durante Prime Big Deal Days invitan a revisar inventario, preparación y despachos con servicios 3PL en Miami antes de nuevas promociones.
 - 2026-10-11 · [Mexico Vehicle Export Decline Calls for Careful Miami 3PL Plans](https://miamialliance3pl.com/blog/mexico-vehicle-exports-miami-inventory-review.html): FreightWaves reports a sharp decline in Mexico's vehicle exports. Here is what Miami 3PL users should review before changing inventory and receiving plans.
 - 2026-10-10 · [Argentina y Estados Unidos: guía para operar con un 3PL en Miami](https://miamialliance3pl.com/blog/argentina-estados-unidos-comercio-almacen-miami.html): Guía para empresas de Argentina sobre ecommerce, clasificación arancelaria y preparación de inventario para vender y comprar con un almacén en Miami.
