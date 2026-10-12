@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-12 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 182
+Articles: 183
 
+- 2026-10-12 · [Ecuador y Estados Unidos: guía para usar un almacén en Miami](https://miamialliance3pl.com/blog/ecuador-estados-unidos-guia-almacen-miami.html): Guía para empresas de Ecuador: comercio electrónico, aranceles y preparación del inventario para comprar y vender con apoyo de un almacén en Miami.
 - 2026-10-12 · [Caminhões usados em baixa: planejamento de 3PL em Miami](https://miamialliance3pl.com/blog/caminhoes-usados-planejamento-logistico-miami.html): Queda nas vendas de caminhões usados e estoques menores pedem atenção ao planejamento de recebimento, armazenagem e distribuição com um 3PL em Miami.
 - 2026-10-12 · [Alza del transporte por carretera: claves para su 3PL en Miami](https://miamialliance3pl.com/blog/alza-transporte-carretera-planificacion-logistica-miami.html): FreightWaves reporta aumentos en el transporte por carretera. Conozca qué revisar en sus rutas, inventario y servicios 3PL en Miami ante este escenario.
 - 2026-10-12 · [China's Car-Carrier Expansion Puts Miami 3PL Planning in Focus](https://miamialliance3pl.com/blog/china-car-carrier-expansion-miami-logistics-planning.html): China's planned car-carrier expansion raises questions about shipping capacity, destinations and inventory planning for businesses using Miami 3PL services.
