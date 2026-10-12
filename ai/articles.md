@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-12 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 181
+Articles: 182
 
+- 2026-10-12 · [Caminhões usados em baixa: planejamento de 3PL em Miami](https://miamialliance3pl.com/blog/caminhoes-usados-planejamento-logistico-miami.html): Queda nas vendas de caminhões usados e estoques menores pedem atenção ao planejamento de recebimento, armazenagem e distribuição com um 3PL em Miami.
 - 2026-10-12 · [Alza del transporte por carretera: claves para su 3PL en Miami](https://miamialliance3pl.com/blog/alza-transporte-carretera-planificacion-logistica-miami.html): FreightWaves reporta aumentos en el transporte por carretera. Conozca qué revisar en sus rutas, inventario y servicios 3PL en Miami ante este escenario.
 - 2026-10-12 · [China's Car-Carrier Expansion Puts Miami 3PL Planning in Focus](https://miamialliance3pl.com/blog/china-car-carrier-expansion-miami-logistics-planning.html): China's planned car-carrier expansion raises questions about shipping capacity, destinations and inventory planning for businesses using Miami 3PL services.
 - 2026-10-11 · [Importing Wine and Spirits Through Miami: TTB and Storage](https://miamialliance3pl.com/blog/wine-spirits-miami-import-permits-storage-guide.html): Prepare wine, beer and spirits imports through Miami with a guide to TTB permits, label approvals, FDA prior notice and specialty storage planning.
