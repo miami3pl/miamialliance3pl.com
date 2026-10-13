@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-10-12 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-10-13 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 183
+Articles: 184
 
+- 2026-10-13 · [Strong US Import Demand Puts Miami 3PL Receiving Plans in Focus](https://miamialliance3pl.com/blog/strong-import-demand-miami-warehouse-receiving-plans.html): The Loadstar reports firm transpacific freight rates and shipping delays. Explore what the outlook means for Miami receiving and inventory planning.
 - 2026-10-12 · [Ecuador y Estados Unidos: guía para usar un almacén en Miami](https://miamialliance3pl.com/blog/ecuador-estados-unidos-guia-almacen-miami.html): Guía para empresas de Ecuador: comercio electrónico, aranceles y preparación del inventario para comprar y vender con apoyo de un almacén en Miami.
 - 2026-10-12 · [Caminhões usados em baixa: planejamento de 3PL em Miami](https://miamialliance3pl.com/blog/caminhoes-usados-planejamento-logistico-miami.html): Queda nas vendas de caminhões usados e estoques menores pedem atenção ao planejamento de recebimento, armazenagem e distribuição com um 3PL em Miami.
 - 2026-10-12 · [Alza del transporte por carretera: claves para su 3PL en Miami](https://miamialliance3pl.com/blog/alza-transporte-carretera-planificacion-logistica-miami.html): FreightWaves reporta aumentos en el transporte por carretera. Conozca qué revisar en sus rutas, inventario y servicios 3PL en Miami ante este escenario.
