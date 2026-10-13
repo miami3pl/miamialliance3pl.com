@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-13 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 185
+Articles: 186
 
+- 2026-10-13 · [Disputa sobre diesel russo pede cautela no frete em Miami](https://miamialliance3pl.com/blog/disputa-diesel-russo-planejamento-frete-miami.html): MercoPress relata contestação ao acordo sobre diesel russo. Veja como tratar a notícia no planejamento de frete, estoque e serviços de 3PL em Miami.
 - 2026-10-13 · [Información dispersa: el freno operativo del 3PL en Miami](https://miamialliance3pl.com/blog/informacion-dispersa-freno-operativo-almacen-miami.html): Supply Chain Brain aborda las demoras por información dispersa en el almacén. Claves para revisar instrucciones y coordinar sus servicios 3PL en Miami.
 - 2026-10-13 · [Strong US Import Demand Puts Miami 3PL Receiving Plans in Focus](https://miamialliance3pl.com/blog/strong-import-demand-miami-warehouse-receiving-plans.html): The Loadstar reports firm transpacific freight rates and shipping delays. Explore what the outlook means for Miami receiving and inventory planning.
 - 2026-10-12 · [Ecuador y Estados Unidos: guía para usar un almacén en Miami](https://miamialliance3pl.com/blog/ecuador-estados-unidos-guia-almacen-miami.html): Guía para empresas de Ecuador: comercio electrónico, aranceles y preparación del inventario para comprar y vender con apoyo de un almacén en Miami.
