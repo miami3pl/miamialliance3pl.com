@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-14 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 189
+Articles: 190
 
+- 2026-10-14 · [Produtos volumosos exigem rever a operação de 3PL em Miami](https://miamialliance3pl.com/blog/produtos-volumosos-operacao-armazem-miami.html): Produtos volumosos pedem outra lógica de armazenagem e entrega. Entenda o que avaliar ao contratar serviços de 3PL em Miami para sua operação.
 - 2026-10-14 · [Exportación de camiones en México: claves para su 3PL en Miami](https://miamialliance3pl.com/blog/exportacion-camiones-mexico-planificacion-logistica-miami.html): FreightWaves reporta un repunte de las exportaciones mexicanas de camiones. Claves para revisar inventario y coordinar servicios 3PL en Miami.
 - 2026-10-14 · [Canada Tariff Shifts Put Miami 3PL Inventory Plans in Focus](https://miamialliance3pl.com/blog/canada-tariff-shifts-miami-inventory-plans.html): FreightWaves reports that Canada tariff uncertainty is reshaping warehouse networks. Learn what Miami businesses should review before moving inventory.
 - 2026-10-13 · [Seafood Imports in Miami: FDA Controls and Cold Storage](https://miamialliance3pl.com/blog/seafood-imports-miami-fda-controls-cold-storage.html): Prepare seafood imports for Miami cold storage with FDA guidance on hazard controls, receiving records, refrigerated and frozen handling, and prior notice.
