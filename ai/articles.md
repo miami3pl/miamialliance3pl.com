@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-10-13 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-10-14 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 187
+Articles: 188
 
+- 2026-10-14 · [Canada Tariff Shifts Put Miami 3PL Inventory Plans in Focus](https://miamialliance3pl.com/blog/canada-tariff-shifts-miami-inventory-plans.html): FreightWaves reports that Canada tariff uncertainty is reshaping warehouse networks. Learn what Miami businesses should review before moving inventory.
 - 2026-10-13 · [Seafood Imports in Miami: FDA Controls and Cold Storage](https://miamialliance3pl.com/blog/seafood-imports-miami-fda-controls-cold-storage.html): Prepare seafood imports for Miami cold storage with FDA guidance on hazard controls, receiving records, refrigerated and frozen handling, and prior notice.
 - 2026-10-13 · [Disputa sobre diesel russo pede cautela no frete em Miami](https://miamialliance3pl.com/blog/disputa-diesel-russo-planejamento-frete-miami.html): MercoPress relata contestação ao acordo sobre diesel russo. Veja como tratar a notícia no planejamento de frete, estoque e serviços de 3PL em Miami.
 - 2026-10-13 · [Información dispersa: el freno operativo del 3PL en Miami](https://miamialliance3pl.com/blog/informacion-dispersa-freno-operativo-almacen-miami.html): Supply Chain Brain aborda las demoras por información dispersa en el almacén. Claves para revisar instrucciones y coordinar sus servicios 3PL en Miami.
