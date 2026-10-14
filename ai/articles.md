@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-14 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 190
+Articles: 191
 
+- 2026-10-14 · [República Dominicana y Miami: guía comercial para operar con un 3PL](https://miamialliance3pl.com/blog/republica-dominicana-miami-guia-comercial-almacen.html): Guía para empresas de República Dominicana sobre ecommerce, aranceles y preparación de inventario para vender y distribuir desde un almacén en Miami.
 - 2026-10-14 · [Produtos volumosos exigem rever a operação de 3PL em Miami](https://miamialliance3pl.com/blog/produtos-volumosos-operacao-armazem-miami.html): Produtos volumosos pedem outra lógica de armazenagem e entrega. Entenda o que avaliar ao contratar serviços de 3PL em Miami para sua operação.
 - 2026-10-14 · [Exportación de camiones en México: claves para su 3PL en Miami](https://miamialliance3pl.com/blog/exportacion-camiones-mexico-planificacion-logistica-miami.html): FreightWaves reporta un repunte de las exportaciones mexicanas de camiones. Claves para revisar inventario y coordinar servicios 3PL en Miami.
 - 2026-10-14 · [Canada Tariff Shifts Put Miami 3PL Inventory Plans in Focus](https://miamialliance3pl.com/blog/canada-tariff-shifts-miami-inventory-plans.html): FreightWaves reports that Canada tariff uncertainty is reshaping warehouse networks. Learn what Miami businesses should review before moving inventory.
