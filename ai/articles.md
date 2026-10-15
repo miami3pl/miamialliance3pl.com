@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-15 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 193
+Articles: 194
 
+- 2026-10-15 · [Recorde em Los Angeles orienta planejamento de 3PL em Miami](https://miamialliance3pl.com/blog/recorde-los-angeles-planejamento-estoques-miami.html): O recorde de cargas em Los Angeles traz pontos de atenção para importadores brasileiros que planejam estoques e serviços de 3PL em Miami.
 - 2026-10-15 · [Walmart amplía sus planes de drones: claves logísticas para Miami](https://miamialliance3pl.com/blog/walmart-drones-planificacion-logistica-negocios-miami.html): Walmart incluye a Miami en sus planes de entregas con drones. Qué revisar en inventario, preparación de pedidos y servicios 3PL para su negocio.
 - 2026-10-15 · [De Minimis Suspension Puts Miami Import Data Under Scrutiny](https://miamialliance3pl.com/blog/de-minimis-suspension-miami-import-shipment-data.html): Defensible shipment data matters after de minimis suspension. Learn what Miami importers should align with suppliers, customs brokers and their 3PL.
 - 2026-10-14 · [República Dominicana y Miami: guía comercial para operar con un 3PL](https://miamialliance3pl.com/blog/republica-dominicana-miami-guia-comercial-almacen.html): Guía para empresas de República Dominicana sobre ecommerce, aranceles y preparación de inventario para vender y distribuir desde un almacén en Miami.
