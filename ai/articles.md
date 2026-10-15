@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-10-14 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-10-15 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 191
+Articles: 192
 
+- 2026-10-15 · [De Minimis Suspension Puts Miami Import Data Under Scrutiny](https://miamialliance3pl.com/blog/de-minimis-suspension-miami-import-shipment-data.html): Defensible shipment data matters after de minimis suspension. Learn what Miami importers should align with suppliers, customs brokers and their 3PL.
 - 2026-10-14 · [República Dominicana y Miami: guía comercial para operar con un 3PL](https://miamialliance3pl.com/blog/republica-dominicana-miami-guia-comercial-almacen.html): Guía para empresas de República Dominicana sobre ecommerce, aranceles y preparación de inventario para vender y distribuir desde un almacén en Miami.
 - 2026-10-14 · [Produtos volumosos exigem rever a operação de 3PL em Miami](https://miamialliance3pl.com/blog/produtos-volumosos-operacao-armazem-miami.html): Produtos volumosos pedem outra lógica de armazenagem e entrega. Entenda o que avaliar ao contratar serviços de 3PL em Miami para sua operação.
 - 2026-10-14 · [Exportación de camiones en México: claves para su 3PL en Miami](https://miamialliance3pl.com/blog/exportacion-camiones-mexico-planificacion-logistica-miami.html): FreightWaves reporta un repunte de las exportaciones mexicanas de camiones. Claves para revisar inventario y coordinar servicios 3PL en Miami.

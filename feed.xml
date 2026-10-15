@@ -6,8 +6,17 @@
     <atom:link href="https://miamialliance3pl.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Guides and logistics news from Miami Alliance 3PL, a 3PL warehouse in Medley, Florida: 3PL services in Miami, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America trade.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Oct 2026 08:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 08:00:00 -0400</lastBuildDate>
     <generator>admin/site_index.py</generator>
+    <item>
+      <title>De Minimis Suspension Puts Miami Import Data Under Scrutiny</title>
+      <link>https://miamialliance3pl.com/blog/de-minimis-suspension-miami-import-shipment-data.html</link>
+      <guid isPermaLink="true">https://miamialliance3pl.com/blog/de-minimis-suspension-miami-import-shipment-data.html</guid>
+      <pubDate>Thu, 15 Oct 2026 08:00:00 -0400</pubDate>
+      <dc:creator>Miami Alliance 3PL</dc:creator>
+      <category>Supply Chain</category>
+      <description>Defensible shipment data matters after de minimis suspension. Learn what Miami importers should align with suppliers, customs brokers and their 3PL.</description>
+    </item>
     <item>
       <title>República Dominicana y Miami: guía comercial para operar con un 3PL</title>
       <link>https://miamialliance3pl.com/blog/republica-dominicana-miami-guia-comercial-almacen.html</link>
@@ -448,15 +457,6 @@
       <dc:creator>Miami Alliance 3PL</dc:creator>
       <category>Freight</category>
       <description>FreightWaves reports criminals are impersonating customs brokers to steal freight payments. What importers and Miami 3PL users can do to verify requests.</description>
-    </item>
-    <item>
-      <title>What Is a Warehouse Management System (WMS)? A 3PL Guide</title>
-      <link>https://miamialliance3pl.com/blog/warehouse-management-system-wms-3pl-guide.html</link>
-      <guid isPermaLink="true">https://miamialliance3pl.com/blog/warehouse-management-system-wms-3pl-guide.html</guid>
-      <pubDate>Sun, 04 Oct 2026 08:00:00 -0400</pubDate>
-      <dc:creator>Miami Alliance 3PL</dc:creator>
-      <category>Technology</category>
-      <description>What is a warehouse management system (WMS)? Learn how WMS software works, core features, WMS vs ERP, and why a 3PL with a proven WMS beats building your own.</description>
     </item>
   </channel>
 </rss>
