@@ -492,3 +492,31 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(type, 1000);
   }
 });
+
+// FDA food facility registration line in every footer (Jorge, 2026-10-16).
+// Static pages already carry it; this adds it to any page published without it.
+(function () {
+  var REG = "10950317712";
+  function addFdaLine() {
+    var footer = document.querySelector("footer");
+    if (!footer || footer.textContent.indexOf(REG) !== -1) return;
+    var lang = (document.documentElement.getAttribute("lang") || "en").toLowerCase();
+    var p = document.createElement("p");
+    p.className = "footer-fda";
+    if (lang.indexOf("es") === 0) {
+      p.textContent = "Instalaci\u00f3n de alimentos registrada ante la FDA \u00b7 Registro FDA n.\u00ba " + REG;
+    } else if (lang.indexOf("pt") === 0) {
+      p.textContent = "Instala\u00e7\u00e3o de alimentos registrada na FDA \u00b7 Registro FDA n\u00ba " + REG;
+    } else {
+      p.textContent = "Registered FDA Food Facility \u00b7 FDA Reg. No. " + REG;
+      p.setAttribute("data-i18n", "footer.fda");
+    }
+    var target = footer.querySelector(".footer-contact") || footer.querySelector(".footer-bottom") || footer;
+    target.appendChild(p);
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", addFdaLine);
+  } else {
+    addFdaLine();
+  }
+})();

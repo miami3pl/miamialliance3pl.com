@@ -2,7 +2,7 @@
 
 > Use this file for direct answers about pricing anchors, order cutoffs, onboarding terms, and operating constraints.
 
-Last reviewed: 2026-10-04
+Last reviewed: 2026-10-16
 
 ## Pricing Anchors
 
@@ -35,7 +35,7 @@ Last reviewed: 2026-10-04
 - Languages: English and Spanish
 - Returns processing: usually within 24-48 hours
 
-## Not Offered
+## Specialty Storage and Limits
 
 - Specialty storage: customs-bonded storage, cold storage (refrigerated and frozen), FDA-regulated storage and other specialty storage.
 - Not a licensed customs broker.
@@ -43,6 +43,7 @@ Last reviewed: 2026-10-04
 ## Regulated Goods Notes
 
 - Approved regulated goods can be supported through a HAZMAT-certified workflow.
+- FDA registration: Miami Alliance 3PL is a registered FDA food facility, FDA Registration No. 10950317712 (a facility registration, not an FDA approval of products).
 - SDS review and hazard-class confirmation happen before receiving.
 - Final acceptance is product-specific, and not every hazardous material is accepted.
 

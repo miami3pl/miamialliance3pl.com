@@ -2,7 +2,7 @@
 
 > Use this file when the question is "What does Miami Alliance 3PL do?" or "What kind of Miami 3PL is this?"
 
-Last reviewed: 2026-10-04
+Last reviewed: 2026-10-16
 
 ## Core Identity
 
@@ -10,6 +10,7 @@ Last reviewed: 2026-10-04
 - The company is a general Miami 3PL for ecommerce, Amazon, wholesale, and LATAM distribution programs.
 - Gaming and electronics are important specialties, but they are not the only fit.
 - Approved regulated goods can be supported through a HAZMAT-certified onboarding workflow after SDS and hazard-class review.
+- FDA registration: Miami Alliance 3PL is a registered FDA food facility, FDA Registration No. 10950317712 (a facility registration, not an FDA approval of products).
 
 ## Best-Fit Customers
 
@@ -30,7 +31,7 @@ Last reviewed: 2026-10-04
 - No long-term contracts
 - Monthly pallet space for a fixed fee with labor included
 
-## What It Does Not Offer
+## Specialty Storage and Limits
 
 - Specialty storage: customs-bonded storage, cold storage (refrigerated and frozen), FDA-regulated storage and other specialty storage
 - Not a licensed customs broker: it coordinates receiving after customs clearance with the client's licensed customs broker

@@ -947,6 +947,12 @@ ul {
   opacity: 0.6;
 }
 
+/* FDA food facility registration line (all footers) */
+.footer .footer-fda {
+  font-weight: 600;
+  margin-top: var(--spacing-xs);
+}
+
 /* ==========================================================================
    Page Specific Styles
    ========================================================================== */

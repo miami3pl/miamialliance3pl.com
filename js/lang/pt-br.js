@@ -5,11 +5,15 @@
  */
 window.MA3PL_TRANSLATIONS = window.MA3PL_TRANSLATIONS || {};
 window.MA3PL_TRANSLATIONS["pt-br"] = {
+  "footer.fda": "Instalação de alimentos registrada na FDA · Registro FDA nº 10950317712",
+  "home.trust.fda": "Registrada na FDA (alimentos)",
+  "faq.fda.q": "A Miami Alliance 3PL é registrada na FDA?",
+  "faq.fda.a": "Sim. A Miami Alliance 3PL é uma instalação de alimentos registrada na FDA, com o Registro FDA nº 10950317712. O registro na FDA é um registro da instalação; não significa aprovação ou certificação de nenhum produto pela FDA.",
   "warehouse.scope.title": "Armazenagem especializada em Miami",
-  "warehouse.scope.statement": "A Miami Alliance 3PL oferece armazenagem alfandegada (bonded), armazenagem refrigerada e congelada (câmara fria), armazenagem de produtos regulados pela FDA e outras armazenagens especializadas.",
+  "warehouse.scope.statement": "A Miami Alliance 3PL é uma instalação de alimentos registrada na FDA (Registro FDA nº 10950317712) e oferece armazenagem alfandegada (bonded), armazenagem refrigerada e congelada (câmara fria), armazenagem de produtos regulados pela FDA e outras armazenagens especializadas.",
   "warehouse.scope.detail": "Conte o que o seu produto precisa e fazemos a cotação da solução certa.",
   "home.faq.q8": "Vocês oferecem armazenagem alfandegada (bonded), câmara fria ou armazenagem de produtos regulados pela FDA?",
-  "home.faq.a8": "Sim. A Miami Alliance 3PL oferece armazenagem alfandegada (bonded), armazenagem refrigerada e congelada (câmara fria), armazenagem de alimentos, suplementos e cosméticos regulados pela FDA e outras armazenagens especializadas, além de armazenagem geral com clima controlado, fulfillment e distribuição. Conte o que o seu produto precisa e fazemos a cotação da solução certa.",
+  "home.faq.a8": "Sim. A Miami Alliance 3PL é uma instalação de alimentos registrada na FDA (Registro FDA nº 10950317712) e oferece armazenagem alfandegada (bonded), armazenagem refrigerada e congelada (câmara fria), armazenagem de alimentos, suplementos e cosméticos regulados pela FDA e outras armazenagens especializadas, além de armazenagem geral com clima controlado, fulfillment e distribuição. Conte o que o seu produto precisa e fazemos a cotação da solução certa.",
 
   // ═══════════════════════════════════════════════════════════════════
   // SHARED: Navigation

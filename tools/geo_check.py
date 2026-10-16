@@ -60,7 +60,8 @@ PRIVATE_DIRS = (
 KNOWN_TYPES = frozenset(
     """
 AboutPage AggregateRating Answer Article BlogPosting Brand BreadcrumbList City CollectionPage
-ContactPage ContactPoint Country DigitalDocument EntryPoint FAQPage GeoCoordinates ImageObject
+ContactPage ContactPoint Country DigitalDocument EducationalOccupationalCredential EntryPoint FAQPage
+GeoCoordinates GovernmentOrganization ImageObject
 ItemList ListItem LocalBusiness LocationFeatureSpecification NewsArticle Offer OfferCatalog
 OpeningHoursSpecification Organization Person Place PostalAddress PriceSpecification Product
 ProfessionalService PropertyValue QuantitativeValue Question Rating Review SearchAction Service

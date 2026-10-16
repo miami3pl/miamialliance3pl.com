@@ -5,11 +5,15 @@
  */
 window.MA3PL_TRANSLATIONS = window.MA3PL_TRANSLATIONS || {};
 window.MA3PL_TRANSLATIONS.es = {
+  "footer.fda": "Instalación de alimentos registrada ante la FDA · Registro FDA n.º 10950317712",
+  "home.trust.fda": "Registrada ante la FDA (alimentos)",
+  "faq.fda.q": "¿Miami Alliance 3PL está registrada ante la FDA?",
+  "faq.fda.a": "Sí. Miami Alliance 3PL es una instalación de alimentos registrada ante la FDA, con el Registro FDA n.º 10950317712. El registro ante la FDA es un registro de la instalación; no significa que la FDA apruebe o certifique ningún producto.",
   "warehouse.scope.title": "Almacenamiento especializado en Miami",
-  "warehouse.scope.statement": "Miami Alliance 3PL ofrece almacenamiento bajo fianza aduanera (bonded), almacenamiento en frío (refrigerado y congelado), almacenamiento de productos regulados por la FDA y otros almacenamientos especializados.",
+  "warehouse.scope.statement": "Miami Alliance 3PL es una instalación de alimentos registrada ante la FDA (Registro FDA n.º 10950317712) y ofrece almacenamiento bajo fianza aduanera (bonded), almacenamiento en frío (refrigerado y congelado), almacenamiento de productos regulados por la FDA y otros almacenamientos especializados.",
   "warehouse.scope.detail": "Cuéntenos qué necesita su producto y le cotizamos la solución adecuada.",
   "home.faq.q8": "¿Ofrecen almacenamiento bonded, en frío o de productos regulados por la FDA?",
-  "home.faq.a8": "Sí. Miami Alliance 3PL ofrece almacenamiento bajo fianza aduanera (bonded), almacenamiento en frío (refrigerado y congelado), almacenamiento de alimentos, suplementos y cosméticos regulados por la FDA y otros almacenamientos especializados, además de almacenamiento general con clima controlado, fulfillment y distribución. Cuéntenos qué necesita su producto y le cotizamos la solución adecuada.",
+  "home.faq.a8": "Sí. Miami Alliance 3PL es una instalación de alimentos registrada ante la FDA (Registro FDA n.º 10950317712) y ofrece almacenamiento bajo fianza aduanera (bonded), almacenamiento en frío (refrigerado y congelado), almacenamiento de alimentos, suplementos y cosméticos regulados por la FDA y otros almacenamientos especializados, además de almacenamiento general con clima controlado, fulfillment y distribución. Cuéntenos qué necesita su producto y le cotizamos la solución adecuada.",
 
   // ═══════════════════════════════════════════════════════════════════
   // SHARED: Navigation

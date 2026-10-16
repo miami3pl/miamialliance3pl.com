@@ -2,7 +2,7 @@
 
 > Use this file for short, direct answers about Miami Alliance 3PL, a Miami-area 3PL warehouse for ecommerce, Amazon, wholesale, gaming, electronics, approved regulated goods, and LATAM distribution programs.
 
-Last reviewed: 2026-10-04
+Last reviewed: 2026-10-16
 
 ## Canonical Business Facts
 
@@ -23,6 +23,7 @@ Last reviewed: 2026-10-04
 - Minimum spend: $1,000/month
 - Contracts: no long-term contracts
 - Languages: English and Spanish
+- FDA registration: Miami Alliance 3PL is a registered FDA food facility, FDA Registration No. 10950317712 (a facility registration, not an FDA approval of products)
 - Specialty storage: customs-bonded storage, cold storage (refrigerated and frozen), FDA-regulated storage and other specialty storage
 - Not a licensed customs broker: receiving of accepted goods after customs clearance is coordinated with the client's licensed customs broker
 - Monthly pallet space: clients can rent pallet space for a fixed monthly fee with labor included, for more complete or complex service depending on their needs
