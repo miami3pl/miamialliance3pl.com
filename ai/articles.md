@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-16 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 196
+Articles: 197
 
+- 2026-10-16 · [El cambio de 3PL de Chagrinovations y sus lecciones para Miami](https://miamialliance3pl.com/blog/cambio-operador-logistico-chagrinovations-lecciones-miami.html): El caso de Chagrinovations muestra qué evaluar al cambiar de operador logístico y ampliar canales de venta con servicios 3PL en Miami para su negocio.
 - 2026-10-16 · [Warehouse System Integration Shapes Miami 3PL Buying Decisions](https://miamialliance3pl.com/blog/warehouse-system-integration-miami-3pl-buying-decisions.html): Supply Chain Brain examines warehouse system integration. Learn what businesses should review when choosing 3PL services in Miami for fulfillment.
 - 2026-10-15 · [Clean Medical Device Storage in Miami: FDA Import and QMSR Rules](https://miamialliance3pl.com/blog/medical-device-storage-miami-fda-import-qmsr.html): Prepare medical devices for Miami storage with a practical guide to FDA import requirements, QMSR responsibilities, and warehouse handling instructions.
 - 2026-10-15 · [Recorde em Los Angeles orienta planejamento de 3PL em Miami](https://miamialliance3pl.com/blog/recorde-los-angeles-planejamento-estoques-miami.html): O recorde de cargas em Los Angeles traz pontos de atenção para importadores brasileiros que planejam estoques e serviços de 3PL em Miami.
