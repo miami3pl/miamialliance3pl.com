@@ -24,7 +24,7 @@ Last reviewed: 2026-10-16
 - Contracts: no long-term contracts
 - Languages: English and Spanish
 - FDA registration: Miami Alliance 3PL is a registered FDA food facility, FDA Registration No. 10950317712 (a facility registration, not an FDA approval of products)
-- Specialty storage: cold storage (refrigerated and frozen), FDA-regulated storage and other specialty storage; customs-bonded warehousing is not offered yet and is coming in 2027
+- Specialty storage: a temperature-controlled environment, FDA-regulated storage and other specialty storage; not a cold storage facility (no refrigerated or frozen storage); customs-bonded warehousing is not offered yet and is coming in 2027
 - Not a licensed customs broker: receiving of accepted goods after customs clearance is coordinated with the client's licensed customs broker
 - Monthly pallet space: clients can rent pallet space for a fixed monthly fee with labor included, for more complete or complex service depending on their needs
 - No minimum order count (the minimum is a $1,000/month spend)

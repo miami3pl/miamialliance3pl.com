@@ -37,7 +37,7 @@ Last reviewed: 2026-10-16
 
 ## Specialty Storage and Limits
 
-- Specialty storage: cold storage (refrigerated and frozen), FDA-regulated storage and other specialty storage; customs-bonded warehousing is not offered yet and is coming in 2027.
+- Specialty storage: a temperature-controlled environment, FDA-regulated storage and other specialty storage; not a cold storage facility (no refrigerated or frozen storage); customs-bonded warehousing is not offered yet and is coming in 2027.
 - Not a licensed customs broker.
 
 ## Regulated Goods Notes
