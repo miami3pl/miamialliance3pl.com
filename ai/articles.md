@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-10-15 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-10-16 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 195
+Articles: 196
 
+- 2026-10-16 · [Warehouse System Integration Shapes Miami 3PL Buying Decisions](https://miamialliance3pl.com/blog/warehouse-system-integration-miami-3pl-buying-decisions.html): Supply Chain Brain examines warehouse system integration. Learn what businesses should review when choosing 3PL services in Miami for fulfillment.
 - 2026-10-15 · [Clean Medical Device Storage in Miami: FDA Import and QMSR Rules](https://miamialliance3pl.com/blog/medical-device-storage-miami-fda-import-qmsr.html): Prepare medical devices for Miami storage with a practical guide to FDA import requirements, QMSR responsibilities, and warehouse handling instructions.
 - 2026-10-15 · [Recorde em Los Angeles orienta planejamento de 3PL em Miami](https://miamialliance3pl.com/blog/recorde-los-angeles-planejamento-estoques-miami.html): O recorde de cargas em Los Angeles traz pontos de atenção para importadores brasileiros que planejam estoques e serviços de 3PL em Miami.
 - 2026-10-15 · [Walmart amplía sus planes de drones: claves logísticas para Miami](https://miamialliance3pl.com/blog/walmart-drones-planificacion-logistica-negocios-miami.html): Walmart incluye a Miami en sus planes de entregas con drones. Qué revisar en inventario, preparación de pedidos y servicios 3PL para su negocio.

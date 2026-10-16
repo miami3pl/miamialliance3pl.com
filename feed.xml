@@ -6,8 +6,17 @@
     <atom:link href="https://miamialliance3pl.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Guides and logistics news from Miami Alliance 3PL, a 3PL warehouse in Medley, Florida: 3PL services in Miami, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America trade.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Oct 2026 08:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 08:00:00 -0400</lastBuildDate>
     <generator>admin/site_index.py</generator>
+    <item>
+      <title>Warehouse System Integration Shapes Miami 3PL Buying Decisions</title>
+      <link>https://miamialliance3pl.com/blog/warehouse-system-integration-miami-3pl-buying-decisions.html</link>
+      <guid isPermaLink="true">https://miamialliance3pl.com/blog/warehouse-system-integration-miami-3pl-buying-decisions.html</guid>
+      <pubDate>Fri, 16 Oct 2026 08:00:00 -0400</pubDate>
+      <dc:creator>Miami Alliance 3PL</dc:creator>
+      <category>Technology</category>
+      <description>Supply Chain Brain examines warehouse system integration. Learn what businesses should review when choosing 3PL services in Miami for fulfillment.</description>
+    </item>
     <item>
       <title>Clean Medical Device Storage in Miami: FDA Import and QMSR Rules</title>
       <link>https://miamialliance3pl.com/blog/medical-device-storage-miami-fda-import-qmsr.html</link>
@@ -448,15 +457,6 @@
       <dc:creator>Miami Alliance 3PL</dc:creator>
       <category>Specialty Storage</category>
       <description>What FDA says about food facility registration, prior notice and import entry review, and what Miami importers should prepare before food reaches a 3PL.</description>
-    </item>
-    <item>
-      <title>México y EE. UU.: guía para vender e importar con un 3PL en Miami</title>
-      <link>https://miamialliance3pl.com/blog/mexico-eeuu-3pl-miami-importar-exportar-vender-online.html</link>
-      <guid isPermaLink="true">https://miamialliance3pl.com/blog/mexico-eeuu-3pl-miami-importar-exportar-vender-online.html</guid>
-      <pubDate>Sun, 04 Oct 2026 08:00:00 -0400</pubDate>
-      <dc:creator>Miami Alliance 3PL</dc:creator>
-      <category>Comercio con Latinoamérica</category>
-      <description>Guía para empresas de México: comercio electrónico, RFC, tasa global y de minimis según la ITA, y cómo preparar inventario en un almacén en Miami.</description>
     </item>
   </channel>
 </rss>
