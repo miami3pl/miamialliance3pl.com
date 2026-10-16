@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-16 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 198
+Articles: 199
 
+- 2026-10-16 · [Costa Rica y Miami: guía para comprar, almacenar y vender](https://miamialliance3pl.com/blog/costa-rica-miami-comprar-almacenar-vender.html): Guía para empresas de Costa Rica sobre comercio electrónico, aranceles y preparación de inventario para comprar y vender con un almacén en Miami.
 - 2026-10-16 · [Política e custos das entregas entram na decisão de 3PL em Miami](https://miamialliance3pl.com/blog/politica-custos-entregas-decisao-logistica-miami.html): Análise publicada pela FreightWaves mostra como trabalho, combustível e comércio exterior entram na escolha de transportadoras e de 3PL em Miami.
 - 2026-10-16 · [El cambio de 3PL de Chagrinovations y sus lecciones para Miami](https://miamialliance3pl.com/blog/cambio-operador-logistico-chagrinovations-lecciones-miami.html): El caso de Chagrinovations muestra qué evaluar al cambiar de operador logístico y ampliar canales de venta con servicios 3PL en Miami para su negocio.
 - 2026-10-16 · [Warehouse System Integration Shapes Miami 3PL Buying Decisions](https://miamialliance3pl.com/blog/warehouse-system-integration-miami-3pl-buying-decisions.html): Supply Chain Brain examines warehouse system integration. Learn what businesses should review when choosing 3PL services in Miami for fulfillment.
