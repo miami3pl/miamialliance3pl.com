@@ -10,10 +10,10 @@ window.MA3PL_TRANSLATIONS.zh = {
   "faq.fda.q": "Miami Alliance 3PL 是否在 FDA 注册？",
   "faq.fda.a": "是的。Miami Alliance 3PL 是在美国 FDA 注册的食品设施，FDA 注册号 10950317712。FDA 注册是设施注册，并不代表 FDA 批准或认证任何产品。",
   "warehouse.scope.title": "迈阿密特殊仓储",
-  "warehouse.scope.statement": "Miami Alliance 3PL 是在美国 FDA 注册的食品设施（FDA 注册号 10950317712），提供海关保税仓储、冷藏与冷冻仓储、FDA 监管产品仓储及其他特殊仓储。",
+  "warehouse.scope.statement": "Miami Alliance 3PL 是在美国 FDA 注册的食品设施（FDA 注册号 10950317712），提供冷藏与冷冻仓储、FDA 监管产品仓储及其他特殊仓储。海关保税仓储目前尚未提供，将于 2027 年推出。",
   "warehouse.scope.detail": "请告诉我们您的产品需求，我们会报价合适的方案。",
   "home.faq.q8": "Miami Alliance 3PL 是否提供保税、冷链或 FDA 监管产品仓储？",
-  "home.faq.a8": "是的。Miami Alliance 3PL 是在美国 FDA 注册的食品设施（FDA 注册号 10950317712），提供海关保税仓储、冷藏与冷冻仓储、食品、膳食补充剂和化妆品等 FDA 监管产品仓储及其他特殊仓储，同时提供恒温常规仓储、订单履约和配送。请告诉我们您的产品需求，我们会报价合适的方案。",
+  "home.faq.a8": "冷链和 FDA 监管产品仓储：是的。海关保税仓储目前尚未提供，将于 2027 年推出。Miami Alliance 3PL 是在美国 FDA 注册的食品设施（FDA 注册号 10950317712），提供冷藏与冷冻仓储、食品、膳食补充剂和化妆品等 FDA 监管产品仓储及其他特殊仓储，同时提供恒温常规仓储、订单履约和配送。请告诉我们您的产品需求，我们会报价合适的方案。",
 
   // ═══════════════════════════════════════════════════════════════════
   // SHARED: Navigation
