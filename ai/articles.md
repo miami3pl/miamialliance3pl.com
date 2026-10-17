@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-17 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 200
+Articles: 201
 
+- 2026-10-17 · [Diésel más caro: decisiones de transporte para su 3PL en Miami](https://miamialliance3pl.com/blog/diesel-caro-decisiones-transporte-almacen-miami.html): El alza del diésel presiona al transporte. Qué revisar sobre recargos, disponibilidad de camiones y despachos al contratar servicios 3PL en Miami.
 - 2026-10-17 · [California Port Records Put Miami 3PL Inventory Plans in Focus](https://miamialliance3pl.com/blog/california-port-records-miami-inventory-plans.html): Record imports at Los Angeles and Long Beach put receiving schedules, inventory allocation and warehouse planning in focus for Miami 3PL customers.
 - 2026-10-16 · [Costa Rica y Miami: guía para comprar, almacenar y vender](https://miamialliance3pl.com/blog/costa-rica-miami-comprar-almacenar-vender.html): Guía para empresas de Costa Rica sobre comercio electrónico, aranceles y preparación de inventario para comprar y vender con un almacén en Miami.
 - 2026-10-16 · [Política e custos das entregas entram na decisão de 3PL em Miami](https://miamialliance3pl.com/blog/politica-custos-entregas-decisao-logistica-miami.html): Análise publicada pela FreightWaves mostra como trabalho, combustível e comércio exterior entram na escolha de transportadoras e de 3PL em Miami.
