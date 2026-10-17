@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-17 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 202
+Articles: 203
 
+- 2026-10-17 · [Secure Storage in Miami: CTPAT Criteria for 3PL Buyers](https://miamialliance3pl.com/blog/secure-storage-miami-ctpat-warehouse-criteria.html): Use CBP's CTPAT criteria to assess secure storage in Miami, review container seals and access controls, and prepare questions for your warehouse.
 - 2026-10-17 · [Varejo prevê alta nas festas e exige planejamento de 3PL em Miami](https://miamialliance3pl.com/blog/varejo-festas-planejamento-estoque-logistica-miami.html): Previsão da NRF aponta crescimento nas vendas de fim de ano. Veja como avaliar estoque, preparação de pedidos e custos com serviços de 3PL em Miami.
 - 2026-10-17 · [Diésel más caro: decisiones de transporte para su 3PL en Miami](https://miamialliance3pl.com/blog/diesel-caro-decisiones-transporte-almacen-miami.html): El alza del diésel presiona al transporte. Qué revisar sobre recargos, disponibilidad de camiones y despachos al contratar servicios 3PL en Miami.
 - 2026-10-17 · [California Port Records Put Miami 3PL Inventory Plans in Focus](https://miamialliance3pl.com/blog/california-port-records-miami-inventory-plans.html): Record imports at Los Angeles and Long Beach put receiving schedules, inventory allocation and warehouse planning in focus for Miami 3PL customers.
