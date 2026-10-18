@@ -72,6 +72,7 @@ Miami Alliance 3PL provides 3PL services in Miami from its warehouse at 8780 NW 
 
 Newest original articles from the Miami Alliance 3PL blog. Full index of every article: [https://miamialliance3pl.com/ai/articles.md](https://miamialliance3pl.com/ai/articles.md). RSS: [https://miamialliance3pl.com/feed.xml](https://miamialliance3pl.com/feed.xml).
 
+- [Ventas navideñas e inflación: cómo planificar su 3PL en Miami](https://miamialliance3pl.com/blog/ventas-navidenas-inflacion-planificacion-logistica-miami.html): Las ventas navideñas previstas en EE. UU. exigen distinguir precios y unidades al planificar inventario y servicios 3PL en Miami para su negocio. (published 2026-10-18)
 - [US Trucking Enforcement Puts Miami 3PL Receiving Plans in Focus](https://miamialliance3pl.com/blog/us-trucking-enforcement-miami-receiving-plans.html): FreightWaves reports concerns over US trucking enforcement. What Miami 3PL buyers should review for Mexico freight, receiving and inventory planning. (published 2026-10-18)
 - [Secure Storage in Miami: CTPAT Criteria for 3PL Buyers](https://miamialliance3pl.com/blog/secure-storage-miami-ctpat-warehouse-criteria.html): Use CBP's CTPAT criteria to assess secure storage in Miami, review container seals and access controls, and prepare questions for your warehouse. (published 2026-10-17)
 - [Varejo prevê alta nas festas e exige planejamento de 3PL em Miami](https://miamialliance3pl.com/blog/varejo-festas-planejamento-estoque-logistica-miami.html): Previsão da NRF aponta crescimento nas vendas de fim de ano. Veja como avaliar estoque, preparação de pedidos e custos com serviços de 3PL em Miami. (published 2026-10-17)
@@ -83,7 +84,6 @@ Newest original articles from the Miami Alliance 3PL blog. Full index of every a
 - [Warehouse System Integration Shapes Miami 3PL Buying Decisions](https://miamialliance3pl.com/blog/warehouse-system-integration-miami-3pl-buying-decisions.html): Supply Chain Brain examines warehouse system integration. Learn what businesses should review when choosing 3PL services in Miami for fulfillment. (published 2026-10-16)
 - [Clean Medical Device Storage in Miami: FDA Import and QMSR Rules](https://miamialliance3pl.com/blog/medical-device-storage-miami-fda-import-qmsr.html): Prepare medical devices for Miami storage with a practical guide to FDA import requirements, QMSR responsibilities, and warehouse handling instructions. (published 2026-10-15)
 - [Recorde em Los Angeles orienta planejamento de 3PL em Miami](https://miamialliance3pl.com/blog/recorde-los-angeles-planejamento-estoques-miami.html): O recorde de cargas em Los Angeles traz pontos de atenção para importadores brasileiros que planejam estoques e serviços de 3PL em Miami. (published 2026-10-15)
-- [Walmart amplía sus planes de drones: claves logísticas para Miami](https://miamialliance3pl.com/blog/walmart-drones-planificacion-logistica-negocios-miami.html): Walmart incluye a Miami en sus planes de entregas con drones. Qué revisar en inventario, preparación de pedidos y servicios 3PL para su negocio. (published 2026-10-15)
 
 <!-- latest-articles:end -->
 

@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-18 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 204
+Articles: 205
 
+- 2026-10-18 · [Ventas navideñas e inflación: cómo planificar su 3PL en Miami](https://miamialliance3pl.com/blog/ventas-navidenas-inflacion-planificacion-logistica-miami.html): Las ventas navideñas previstas en EE. UU. exigen distinguir precios y unidades al planificar inventario y servicios 3PL en Miami para su negocio.
 - 2026-10-18 · [US Trucking Enforcement Puts Miami 3PL Receiving Plans in Focus](https://miamialliance3pl.com/blog/us-trucking-enforcement-miami-receiving-plans.html): FreightWaves reports concerns over US trucking enforcement. What Miami 3PL buyers should review for Mexico freight, receiving and inventory planning.
 - 2026-10-17 · [Secure Storage in Miami: CTPAT Criteria for 3PL Buyers](https://miamialliance3pl.com/blog/secure-storage-miami-ctpat-warehouse-criteria.html): Use CBP's CTPAT criteria to assess secure storage in Miami, review container seals and access controls, and prepare questions for your warehouse.
 - 2026-10-17 · [Varejo prevê alta nas festas e exige planejamento de 3PL em Miami](https://miamialliance3pl.com/blog/varejo-festas-planejamento-estoque-logistica-miami.html): Previsão da NRF aponta crescimento nas vendas de fim de ano. Veja como avaliar estoque, preparação de pedidos e custos com serviços de 3PL em Miami.
