@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-19 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 208
+Articles: 209
 
+- 2026-10-19 · [Transbordo en la frontera con México: claves para su 3PL en Miami](https://miamialliance3pl.com/blog/transbordo-frontera-mexico-logistica-miami.html): La presión sobre el transporte entre México y Estados Unidos impulsa el transbordo. Qué revisar en rutas, recepción e inventario con su 3PL en Miami.
 - 2026-10-19 · [EU Parcel Charges Put Miami 3PL Inventory Planning in Focus](https://miamialliance3pl.com/blog/eu-parcel-charges-miami-inventory-planning.html): Expected EU parcel fees raise inventory questions for Miami businesses. Learn what to compare when planning direct shipping and regional fulfillment.
 - 2026-10-18 · [Panamá y Miami: guía para comprar, almacenar y vender](https://miamialliance3pl.com/blog/panama-miami-guia-comprar-almacenar-vender.html): Guía para empresas de Panamá: comercio electrónico, aranceles y preparación del inventario para comprar y vender con apoyo de un almacén en Miami.
 - 2026-10-18 · [Automação flexível orienta a escolha de 3PL em Miami](https://miamialliance3pl.com/blog/automacao-flexivel-escolha-operador-logistico-miami.html): Entenda como avaliar flexibilidade, capacidade e compromisso financeiro na automação de armazéns ao contratar serviços de 3PL em Miami para sua operação.
