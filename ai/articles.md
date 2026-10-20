@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-20 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 212
+Articles: 213
 
+- 2026-10-20 · [Carga aérea de invierno: ajustes para su 3PL en Miami](https://miamialliance3pl.com/blog/carga-aerea-invierno-ajustes-logistica-miami.html): Las nuevas rutas aéreas y los ajustes de capacidad para el invierno plantean decisiones de recepción, inventario y distribución con su 3PL en Miami.
 - 2026-10-20 · [DHL Raises Outlook: Peak-Season Planning for Miami 3PL Buyers](https://miamialliance3pl.com/blog/dhl-peak-season-outlook-miami-warehouse-planning.html): FreightWaves reports DHL raised its outlook ahead of peak season. Explore receiving, inventory and fulfillment planning for businesses using Miami 3PLs.
 - 2026-10-19 · [Pet Food Imports: FDA Rules and Storage Planning in Miami](https://miamialliance3pl.com/blog/pet-food-imports-fda-storage-miami.html): Learn FDA pet food and foreign supplier verification requirements, plus what importers should prepare for storage and fulfillment with a Miami 3PL.
 - 2026-10-19 · [Avanço solar na África orienta planejamento de 3PL em Miami](https://miamialliance3pl.com/blog/avanco-solar-africa-planejamento-logistico-miami.html): The Loadstar relata avanço das exportações solares africanas. Entenda como avaliar fornecedores, recebimento e distribuição com um operador em Miami.
