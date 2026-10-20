@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-20 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 214
+Articles: 215
 
+- 2026-10-20 · [Guatemala y Miami: guía para comprar, almacenar y vender](https://miamialliance3pl.com/blog/guatemala-miami-guia-compras-inventario-distribucion.html): Guía para empresas de Guatemala sobre aranceles, compras de bienes estadounidenses e inventario en Miami para ventas y distribución con apoyo de un 3PL.
 - 2026-10-20 · [Air Canada amplia rotas e orienta planejamento de 3PL em Miami](https://miamialliance3pl.com/blog/air-canada-rotas-planejamento-logistico-miami.html): Novas rotas cargueiras da Air Canada ampliam opções na América Latina e orientam decisões de estoque, recebimento e serviços de 3PL em Miami para empresas.
 - 2026-10-20 · [Carga aérea de invierno: ajustes para su 3PL en Miami](https://miamialliance3pl.com/blog/carga-aerea-invierno-ajustes-logistica-miami.html): Las nuevas rutas aéreas y los ajustes de capacidad para el invierno plantean decisiones de recepción, inventario y distribución con su 3PL en Miami.
 - 2026-10-20 · [DHL Raises Outlook: Peak-Season Planning for Miami 3PL Buyers](https://miamialliance3pl.com/blog/dhl-peak-season-outlook-miami-warehouse-planning.html): FreightWaves reports DHL raised its outlook ahead of peak season. Explore receiving, inventory and fulfillment planning for businesses using Miami 3PLs.
