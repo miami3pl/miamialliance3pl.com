@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-10-19 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-10-20 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 211
+Articles: 212
 
+- 2026-10-20 · [DHL Raises Outlook: Peak-Season Planning for Miami 3PL Buyers](https://miamialliance3pl.com/blog/dhl-peak-season-outlook-miami-warehouse-planning.html): FreightWaves reports DHL raised its outlook ahead of peak season. Explore receiving, inventory and fulfillment planning for businesses using Miami 3PLs.
 - 2026-10-19 · [Pet Food Imports: FDA Rules and Storage Planning in Miami](https://miamialliance3pl.com/blog/pet-food-imports-fda-storage-miami.html): Learn FDA pet food and foreign supplier verification requirements, plus what importers should prepare for storage and fulfillment with a Miami 3PL.
 - 2026-10-19 · [Avanço solar na África orienta planejamento de 3PL em Miami](https://miamialliance3pl.com/blog/avanco-solar-africa-planejamento-logistico-miami.html): The Loadstar relata avanço das exportações solares africanas. Entenda como avaliar fornecedores, recebimento e distribuição com um operador em Miami.
 - 2026-10-19 · [Transbordo en la frontera con México: claves para su 3PL en Miami](https://miamialliance3pl.com/blog/transbordo-frontera-mexico-logistica-miami.html): La presión sobre el transporte entre México y Estados Unidos impulsa el transbordo. Qué revisar en rutas, recepción e inventario con su 3PL en Miami.
