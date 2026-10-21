@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-21 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 216
+Articles: 217
 
+- 2026-10-21 · [Stord compra AMS: claves para elegir servicios 3PL en Miami](https://miamialliance3pl.com/blog/stord-compra-ams-claves-logistica-miami.html): La compra de AMS por Stord abre una conversación sobre escala, inventario y preparación de pedidos para empresas que buscan servicios 3PL en Miami.
 - 2026-10-21 · [Duty Drawback Puts Miami Import and Export Records in Focus](https://miamialliance3pl.com/blog/duty-drawback-miami-import-export-records.html): Supply Chain Brain explains duty drawback for exporters. Learn what the reported tariff recovery opportunity means for Miami warehouse planning.
 - 2026-10-20 · [Guatemala y Miami: guía para comprar, almacenar y vender](https://miamialliance3pl.com/blog/guatemala-miami-guia-compras-inventario-distribucion.html): Guía para empresas de Guatemala sobre aranceles, compras de bienes estadounidenses e inventario en Miami para ventas y distribución con apoyo de un 3PL.
 - 2026-10-20 · [Air Canada amplia rotas e orienta planejamento de 3PL em Miami](https://miamialliance3pl.com/blog/air-canada-rotas-planejamento-logistico-miami.html): Novas rotas cargueiras da Air Canada ampliam opções na América Latina e orientam decisões de estoque, recebimento e serviços de 3PL em Miami para empresas.
