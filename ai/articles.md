@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-21 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 218
+Articles: 219
 
+- 2026-10-21 · [Dry and Ambient Storage in Miami: FDA Guidance for Brands](https://miamialliance3pl.com/blog/dry-ambient-storage-miami-fda-guide-brands.html): Plan dry and ambient storage in Miami with FDA guidance on food labels, damaged packaging, preventive controls, and documents to prepare for a warehouse.
 - 2026-10-21 · [Australia Post amplia frota: lições para o ecommerce em Miami](https://miamialliance3pl.com/blog/australia-post-amplia-frota-licoes-ecommerce-miami.html): Australia Post amplia a frota antes das festas. Veja como o caso orienta decisões sobre estoque, expedição e serviços de 3PL em Miami para sua empresa.
 - 2026-10-21 · [Stord compra AMS: claves para elegir servicios 3PL en Miami](https://miamialliance3pl.com/blog/stord-compra-ams-claves-logistica-miami.html): La compra de AMS por Stord abre una conversación sobre escala, inventario y preparación de pedidos para empresas que buscan servicios 3PL en Miami.
 - 2026-10-21 · [Duty Drawback Puts Miami Import and Export Records in Focus](https://miamialliance3pl.com/blog/duty-drawback-miami-import-export-records.html): Supply Chain Brain explains duty drawback for exporters. Learn what the reported tariff recovery opportunity means for Miami warehouse planning.
