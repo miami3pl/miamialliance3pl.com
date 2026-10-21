@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-10-20 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-10-21 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 215
+Articles: 216
 
+- 2026-10-21 · [Duty Drawback Puts Miami Import and Export Records in Focus](https://miamialliance3pl.com/blog/duty-drawback-miami-import-export-records.html): Supply Chain Brain explains duty drawback for exporters. Learn what the reported tariff recovery opportunity means for Miami warehouse planning.
 - 2026-10-20 · [Guatemala y Miami: guía para comprar, almacenar y vender](https://miamialliance3pl.com/blog/guatemala-miami-guia-compras-inventario-distribucion.html): Guía para empresas de Guatemala sobre aranceles, compras de bienes estadounidenses e inventario en Miami para ventas y distribución con apoyo de un 3PL.
 - 2026-10-20 · [Air Canada amplia rotas e orienta planejamento de 3PL em Miami](https://miamialliance3pl.com/blog/air-canada-rotas-planejamento-logistico-miami.html): Novas rotas cargueiras da Air Canada ampliam opções na América Latina e orientam decisões de estoque, recebimento e serviços de 3PL em Miami para empresas.
 - 2026-10-20 · [Carga aérea de invierno: ajustes para su 3PL en Miami](https://miamialliance3pl.com/blog/carga-aerea-invierno-ajustes-logistica-miami.html): Las nuevas rutas aéreas y los ajustes de capacidad para el invierno plantean decisiones de recepción, inventario y distribución con su 3PL en Miami.

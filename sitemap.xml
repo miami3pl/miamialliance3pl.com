@@ -164,7 +164,7 @@
   </url>
   <url>
     <loc>https://miamialliance3pl.com/blog.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1479,6 +1479,12 @@
   <url>
     <loc>https://miamialliance3pl.com/blog/guatemala-miami-guia-compras-inventario-distribucion.html</loc>
     <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://miamialliance3pl.com/blog/duty-drawback-miami-import-export-records.html</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
