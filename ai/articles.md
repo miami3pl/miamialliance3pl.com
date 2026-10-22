@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-22 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 220
+Articles: 221
 
+- 2026-10-22 · [Incendios en la Amazonía: criterios para su 3PL en Miami](https://miamialliance3pl.com/blog/incendios-amazonia-planificacion-inventario-miami.html): MercoPress reporta más incendios en la Amazonía brasileña. Qué revisar con proveedores y servicios 3PL en Miami antes de ajustar compras e inventarios.
 - 2026-10-22 · [DSV's Laredo Expansion Offers Planning Lessons for Miami 3PL Buyers](https://miamialliance3pl.com/blog/dsv-laredo-expansion-miami-3pl-planning.html): FreightWaves reports on DSV's Laredo expansion. Explore what Miami 3PL buyers should review about customs handoffs, receiving and distribution.
 - 2026-10-21 · [Dry and Ambient Storage in Miami: FDA Guidance for Brands](https://miamialliance3pl.com/blog/dry-ambient-storage-miami-fda-guide-brands.html): Plan dry and ambient storage in Miami with FDA guidance on food labels, damaged packaging, preventive controls, and documents to prepare for a warehouse.
 - 2026-10-21 · [Australia Post amplia frota: lições para o ecommerce em Miami](https://miamialliance3pl.com/blog/australia-post-amplia-frota-licoes-ecommerce-miami.html): Australia Post amplia a frota antes das festas. Veja como o caso orienta decisões sobre estoque, expedição e serviços de 3PL em Miami para sua empresa.
