@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-10-21 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-10-22 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 219
+Articles: 220
 
+- 2026-10-22 · [DSV's Laredo Expansion Offers Planning Lessons for Miami 3PL Buyers](https://miamialliance3pl.com/blog/dsv-laredo-expansion-miami-3pl-planning.html): FreightWaves reports on DSV's Laredo expansion. Explore what Miami 3PL buyers should review about customs handoffs, receiving and distribution.
 - 2026-10-21 · [Dry and Ambient Storage in Miami: FDA Guidance for Brands](https://miamialliance3pl.com/blog/dry-ambient-storage-miami-fda-guide-brands.html): Plan dry and ambient storage in Miami with FDA guidance on food labels, damaged packaging, preventive controls, and documents to prepare for a warehouse.
 - 2026-10-21 · [Australia Post amplia frota: lições para o ecommerce em Miami](https://miamialliance3pl.com/blog/australia-post-amplia-frota-licoes-ecommerce-miami.html): Australia Post amplia a frota antes das festas. Veja como o caso orienta decisões sobre estoque, expedição e serviços de 3PL em Miami para sua empresa.
 - 2026-10-21 · [Stord compra AMS: claves para elegir servicios 3PL en Miami](https://miamialliance3pl.com/blog/stord-compra-ams-claves-logistica-miami.html): La compra de AMS por Stord abre una conversación sobre escala, inventario y preparación de pedidos para empresas que buscan servicios 3PL en Miami.
