@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-10-22 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-10-23 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 223
+Articles: 224
 
+- 2026-10-23 · [Secondary Tariff Risks Put Miami Inventory Plans in Focus](https://miamialliance3pl.com/blog/secondary-tariff-risks-miami-inventory-planning.html): Supply Chain Brain examines secondary tariff risks. For Miami importers, the planning issues include supplier exposure, receiving schedules and storage.
 - 2026-10-22 · [Café y cacao hacia Miami: guía de almacenamiento e importación](https://miamialliance3pl.com/blog/cafe-cacao-miami-almacenamiento-importacion.html): Guía para exportadores de café y cacao: clasificación de CBP, aviso previo de FDA y preparación del almacenamiento seco y ventilado de mercancía en Miami.
 - 2026-10-22 · [Avanço aéreo entre México e EUA pede cautela no 3PL em Miami](https://miamialliance3pl.com/blog/aviacao-mexico-eua-planejamento-logistico-miami.html): A abertura a novos voos entre México e EUA ainda não trouxe planos de cargueiros. Veja como avaliar o impacto no estoque e nos serviços de 3PL em Miami.
 - 2026-10-22 · [Incendios en la Amazonía: criterios para su 3PL en Miami](https://miamialliance3pl.com/blog/incendios-amazonia-planificacion-inventario-miami.html): MercoPress reporta más incendios en la Amazonía brasileña. Qué revisar con proveedores y servicios 3PL en Miami antes de ajustar compras e inventarios.
