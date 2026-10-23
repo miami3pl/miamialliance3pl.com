@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-23 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 226
+Articles: 227
 
+- 2026-10-23 · [Honduras y Miami: guía de compras, inventario y ventas](https://miamialliance3pl.com/blog/honduras-miami-compras-inventario-ventas.html): Guía para empresas de Honduras que compran bienes estadounidenses o venden hacia ese mercado: comercio electrónico, inventario y logística desde Miami.
 - 2026-10-23 · [Cancelamentos de viagens marítimas pedem revisão do 3PL em Miami](https://miamialliance3pl.com/blog/cancelamentos-viagens-maritimas-planejamento-logistico-miami.html): A alta dos fretes e os cancelamentos de viagens marítimas entram no planejamento de estoque, recebimento e distribuição de quem usa um 3PL em Miami.
 - 2026-10-23 · [Carga aérea desigual: claves para planificar su 3PL en Miami](https://miamialliance3pl.com/blog/carga-aerea-desigual-planificacion-logistica-miami.html): El crecimiento aéreo de Kuehne + Nagel y la caída del ecommerce chino aportan criterios para coordinar inventario y servicios 3PL en Miami esta temporada.
 - 2026-10-23 · [Secondary Tariff Risks Put Miami Inventory Plans in Focus](https://miamialliance3pl.com/blog/secondary-tariff-risks-miami-inventory-planning.html): Supply Chain Brain examines secondary tariff risks. For Miami importers, the planning issues include supplier exposure, receiving schedules and storage.

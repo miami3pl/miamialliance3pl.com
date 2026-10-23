@@ -72,6 +72,7 @@ Miami Alliance 3PL provides 3PL services in Miami from its warehouse at 8780 NW 
 
 Newest original articles from the Miami Alliance 3PL blog. Full index of every article: [https://miamialliance3pl.com/ai/articles.md](https://miamialliance3pl.com/ai/articles.md). RSS: [https://miamialliance3pl.com/feed.xml](https://miamialliance3pl.com/feed.xml).
 
+- [Honduras y Miami: guía de compras, inventario y ventas](https://miamialliance3pl.com/blog/honduras-miami-compras-inventario-ventas.html): Guía para empresas de Honduras que compran bienes estadounidenses o venden hacia ese mercado: comercio electrónico, inventario y logística desde Miami. (published 2026-10-23)
 - [Cancelamentos de viagens marítimas pedem revisão do 3PL em Miami](https://miamialliance3pl.com/blog/cancelamentos-viagens-maritimas-planejamento-logistico-miami.html): A alta dos fretes e os cancelamentos de viagens marítimas entram no planejamento de estoque, recebimento e distribuição de quem usa um 3PL em Miami. (published 2026-10-23)
 - [Carga aérea desigual: claves para planificar su 3PL en Miami](https://miamialliance3pl.com/blog/carga-aerea-desigual-planificacion-logistica-miami.html): El crecimiento aéreo de Kuehne + Nagel y la caída del ecommerce chino aportan criterios para coordinar inventario y servicios 3PL en Miami esta temporada. (published 2026-10-23)
 - [Secondary Tariff Risks Put Miami Inventory Plans in Focus](https://miamialliance3pl.com/blog/secondary-tariff-risks-miami-inventory-planning.html): Supply Chain Brain examines secondary tariff risks. For Miami importers, the planning issues include supplier exposure, receiving schedules and storage. (published 2026-10-23)
@@ -83,7 +84,6 @@ Newest original articles from the Miami Alliance 3PL blog. Full index of every a
 - [Australia Post amplia frota: lições para o ecommerce em Miami](https://miamialliance3pl.com/blog/australia-post-amplia-frota-licoes-ecommerce-miami.html): Australia Post amplia a frota antes das festas. Veja como o caso orienta decisões sobre estoque, expedição e serviços de 3PL em Miami para sua empresa. (published 2026-10-21)
 - [Stord compra AMS: claves para elegir servicios 3PL en Miami](https://miamialliance3pl.com/blog/stord-compra-ams-claves-logistica-miami.html): La compra de AMS por Stord abre una conversación sobre escala, inventario y preparación de pedidos para empresas que buscan servicios 3PL en Miami. (published 2026-10-21)
 - [Duty Drawback Puts Miami Import and Export Records in Focus](https://miamialliance3pl.com/blog/duty-drawback-miami-import-export-records.html): Supply Chain Brain explains duty drawback for exporters. Learn what the reported tariff recovery opportunity means for Miami warehouse planning. (published 2026-10-21)
-- [Guatemala y Miami: guía para comprar, almacenar y vender](https://miamialliance3pl.com/blog/guatemala-miami-guia-compras-inventario-distribucion.html): Guía para empresas de Guatemala sobre aranceles, compras de bienes estadounidenses e inventario en Miami para ventas y distribución con apoyo de un 3PL. (published 2026-10-20)
 
 <!-- latest-articles:end -->
 
