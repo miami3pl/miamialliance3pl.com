@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-24 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 230
+Articles: 231
 
+- 2026-10-24 · [El Salvador y Miami: guía para comprar, almacenar y vender](https://miamialliance3pl.com/blog/el-salvador-miami-compras-almacenamiento-ventas.html): Guía para empresas de El Salvador sobre comercio electrónico, compras e importación, con claves para organizar inventario y distribución desde Miami.
 - 2026-10-24 · [Frete transpacífico sobe e pede revisão do estoque em Miami](https://miamialliance3pl.com/blog/frete-transpacifico-alta-planejamento-estoque-miami.html): Alta do frete transpacífico reforça a importância de revisar compras, recebimento e distribuição com serviços de 3PL em Miami para sua operação nos EUA.
 - 2026-10-24 · [Amazon ante la justicia: claves para la logística en Miami](https://miamialliance3pl.com/blog/amazon-disputa-laboral-planificacion-logistica-miami.html): La disputa entre Amazon y el sindicato de Staten Island plantea qué revisar al planificar inventario y contratar servicios de logística externa en Miami.
 - 2026-10-24 · [Walmart Shopping Controls Put Miami Fulfillment in Focus](https://miamialliance3pl.com/blog/walmart-shopping-controls-miami-fulfillment-planning.html): Walmart's new shopping agent controls put product listings, stock availability and returns planning in focus for businesses using Miami fulfillment.
