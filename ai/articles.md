@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-24 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 228
+Articles: 229
 
+- 2026-10-24 · [Amazon ante la justicia: claves para la logística en Miami](https://miamialliance3pl.com/blog/amazon-disputa-laboral-planificacion-logistica-miami.html): La disputa entre Amazon y el sindicato de Staten Island plantea qué revisar al planificar inventario y contratar servicios de logística externa en Miami.
 - 2026-10-24 · [Walmart Shopping Controls Put Miami Fulfillment in Focus](https://miamialliance3pl.com/blog/walmart-shopping-controls-miami-fulfillment-planning.html): Walmart's new shopping agent controls put product listings, stock availability and returns planning in focus for businesses using Miami fulfillment.
 - 2026-10-23 · [Honduras y Miami: guía de compras, inventario y ventas](https://miamialliance3pl.com/blog/honduras-miami-compras-inventario-ventas.html): Guía para empresas de Honduras que compran bienes estadounidenses o venden hacia ese mercado: comercio electrónico, inventario y logística desde Miami.
 - 2026-10-23 · [Cancelamentos de viagens marítimas pedem revisão do 3PL em Miami](https://miamialliance3pl.com/blog/cancelamentos-viagens-maritimas-planejamento-logistico-miami.html): A alta dos fretes e os cancelamentos de viagens marítimas entram no planejamento de estoque, recebimento e distribuição de quem usa um 3PL em Miami.
