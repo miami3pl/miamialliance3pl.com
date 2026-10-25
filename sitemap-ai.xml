@@ -214,9 +214,15 @@
   <!-- latest-articles:start (maintained by admin/site_index.py) -->
   <url>
     <loc>https://miamialliance3pl.com/ai/articles.md</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://miamialliance3pl.com/blog/avocado-import-study-miami-3pl-planning.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://miamialliance3pl.com/blog/el-salvador-miami-compras-almacenamiento-ventas.html</loc>
@@ -268,12 +274,6 @@
   </url>
   <url>
     <loc>https://miamialliance3pl.com/blog/cafe-cacao-miami-almacenamiento-importacion.html</loc>
-    <lastmod>2026-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://miamialliance3pl.com/blog/aviacao-mexico-eua-planejamento-logistico-miami.html</loc>
     <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
