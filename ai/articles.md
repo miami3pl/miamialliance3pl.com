@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-25 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 234
+Articles: 235
 
+- 2026-10-25 · [Uruguay y Miami: guía para comprar, almacenar y vender](https://miamialliance3pl.com/blog/uruguay-miami-compras-almacenamiento-ventas.html): Guía para empresas de Uruguay: comercio electrónico, importaciones y preparación del inventario para comprar y vender con un almacén en Miami.
 - 2026-10-25 · [Isenções para produtos canadenses pedem revisão do 3PL em Miami](https://miamialliance3pl.com/blog/isencoes-produtos-canadenses-planejamento-logistico-miami.html): Mudanças nas tarifas dos EUA para produtos canadenses pedem revisão de compras, embalagens e estoque por empresas que usam serviços de 3PL em Miami.
 - 2026-10-25 · [Chery evalúa fabricar en Canadá: claves para su 3PL en Miami](https://miamialliance3pl.com/blog/chery-canada-claves-planificacion-logistica-miami.html): Chery estudia fabricar en Canadá. Conozca qué enseña este proyecto sobre acceso a mercados, inventario y planificación de servicios 3PL en Miami.
 - 2026-10-25 · [Avocado Import Study Offers Miami 3PL Planning Lessons](https://miamialliance3pl.com/blog/avocado-import-study-miami-3pl-planning.html): FreightWaves reports on avocado imports and U.S. logistics activity, with practical receiving and distribution lessons for Miami 3PL buyers.
