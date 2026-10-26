@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-26 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 237
+Articles: 238
 
+- 2026-10-26 · [Frete rodoviário em alta exige revisão do 3PL em Miami](https://miamialliance3pl.com/blog/frete-rodoviario-alta-revisao-logistica-miami.html): FreightWaves aponta reajustes de frete rodoviário nos EUA. Entenda o impacto no planejamento de estoque e na contratação de serviços de 3PL em Miami.
 - 2026-10-26 · [CH Robinson amplía la automatización: claves para su 3PL en Miami](https://miamialliance3pl.com/blog/ch-robinson-automatizacion-logistica-miami.html): La expansión de la automatización de CH Robinson plantea cómo coordinar reservas, documentos y recepción de mercancía con servicios 3PL en Miami.
 - 2026-10-26 · [Beef Import Shortfall Puts Miami 3PL Planning in Focus](https://miamialliance3pl.com/blog/beef-import-shortfall-miami-warehouse-planning.html): Beef imports fell short of announced allowances. See what the reported gap means for receiving schedules, inventory decisions and Miami 3PL planning.
 - 2026-10-25 · [Uruguay y Miami: guía para comprar, almacenar y vender](https://miamialliance3pl.com/blog/uruguay-miami-compras-almacenamiento-ventas.html): Guía para empresas de Uruguay: comercio electrónico, importaciones y preparación del inventario para comprar y vender con un almacén en Miami.
