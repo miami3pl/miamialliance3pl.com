@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-10-25 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-10-26 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 235
+Articles: 236
 
+- 2026-10-26 · [Beef Import Shortfall Puts Miami 3PL Planning in Focus](https://miamialliance3pl.com/blog/beef-import-shortfall-miami-warehouse-planning.html): Beef imports fell short of announced allowances. See what the reported gap means for receiving schedules, inventory decisions and Miami 3PL planning.
 - 2026-10-25 · [Uruguay y Miami: guía para comprar, almacenar y vender](https://miamialliance3pl.com/blog/uruguay-miami-compras-almacenamiento-ventas.html): Guía para empresas de Uruguay: comercio electrónico, importaciones y preparación del inventario para comprar y vender con un almacén en Miami.
 - 2026-10-25 · [Isenções para produtos canadenses pedem revisão do 3PL em Miami](https://miamialliance3pl.com/blog/isencoes-produtos-canadenses-planejamento-logistico-miami.html): Mudanças nas tarifas dos EUA para produtos canadenses pedem revisão de compras, embalagens e estoque por empresas que usam serviços de 3PL em Miami.
 - 2026-10-25 · [Chery evalúa fabricar en Canadá: claves para su 3PL en Miami](https://miamialliance3pl.com/blog/chery-canada-claves-planificacion-logistica-miami.html): Chery estudia fabricar en Canadá. Conozca qué enseña este proyecto sobre acceso a mercados, inventario y planificación de servicios 3PL en Miami.
