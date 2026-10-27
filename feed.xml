@@ -6,8 +6,17 @@
     <atom:link href="https://miamialliance3pl.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Guides and logistics news from Miami Alliance 3PL, a 3PL warehouse in Medley, Florida: 3PL services in Miami, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America trade.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 26 Oct 2026 08:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 08:00:00 -0400</lastBuildDate>
     <generator>admin/site_index.py</generator>
+    <item>
+      <title>Etsy Photo Rules Put Miami Ecommerce Fulfillment in Focus</title>
+      <link>https://miamialliance3pl.com/blog/etsy-photo-rules-miami-ecommerce-fulfillment.html</link>
+      <guid isPermaLink="true">https://miamialliance3pl.com/blog/etsy-photo-rules-miami-ecommerce-fulfillment.html</guid>
+      <pubDate>Tue, 27 Oct 2026 08:00:00 -0400</pubDate>
+      <dc:creator>Miami Alliance 3PL</dc:creator>
+      <category>E-Commerce</category>
+      <description>Etsy's updated listing photo requirements put product accuracy in focus. See what Miami ecommerce sellers should review with their fulfillment teams.</description>
+    </item>
     <item>
       <title>Almacén bajo fianza o zona franca en Miami: cómo elegir</title>
       <link>https://miamialliance3pl.com/blog/almacen-fianza-zona-franca-miami-como-elegir.html</link>
@@ -448,15 +457,6 @@
       <dc:creator>Miami Alliance 3PL</dc:creator>
       <category>Comercio con Latinoamérica</category>
       <description>Guía para empresas de República Dominicana sobre ecommerce, aranceles y preparación de inventario para vender y distribuir desde un almacén en Miami.</description>
-    </item>
-    <item>
-      <title>Produtos volumosos exigem rever a operação de 3PL em Miami</title>
-      <link>https://miamialliance3pl.com/blog/produtos-volumosos-operacao-armazem-miami.html</link>
-      <guid isPermaLink="true">https://miamialliance3pl.com/blog/produtos-volumosos-operacao-armazem-miami.html</guid>
-      <pubDate>Wed, 14 Oct 2026 08:00:00 -0400</pubDate>
-      <dc:creator>Miami Alliance 3PL</dc:creator>
-      <category>Armazenagem</category>
-      <description>Produtos volumosos pedem outra lógica de armazenagem e entrega. Entenda o que avaliar ao contratar serviços de 3PL em Miami para sua operação.</description>
     </item>
   </channel>
 </rss>
