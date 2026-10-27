@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-27 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 242
+Articles: 243
 
+- 2026-10-27 · [Paraguay y Miami: guía de compras, inventario y ventas](https://miamialliance3pl.com/blog/paraguay-miami-compras-inventario-ventas.html): Guía para empresas de Paraguay: qué señala la ITA sobre comercio electrónico y cómo preparar compras, inventario y distribución desde un almacén en Miami.
 - 2026-10-27 · [Fiscalização de caminhões na Califórnia alerta o 3PL em Miami](https://miamialliance3pl.com/blog/fiscalizacao-caminhoes-california-planejamento-logistico-miami.html): Fiscalização na Califórnia expõe problemas no transporte rodoviário e orienta a revisão de entregas e recebimentos para quem usa serviços de 3PL em Miami.
 - 2026-10-27 · [USPS prepara la temporada alta: claves para su 3PL en Miami](https://miamialliance3pl.com/blog/usps-temporada-alta-planificacion-logistica-miami.html): USPS refuerza su red para la temporada alta. Revise qué implica para inventario, preparación de pedidos y servicios 3PL en Miami antes de despachar.
 - 2026-10-27 · [Etsy Photo Rules Put Miami Ecommerce Fulfillment in Focus](https://miamialliance3pl.com/blog/etsy-photo-rules-miami-ecommerce-fulfillment.html): Etsy's updated listing photo requirements put product accuracy in focus. See what Miami ecommerce sellers should review with their fulfillment teams.
