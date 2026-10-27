@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-27 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 240
+Articles: 241
 
+- 2026-10-27 · [USPS prepara la temporada alta: claves para su 3PL en Miami](https://miamialliance3pl.com/blog/usps-temporada-alta-planificacion-logistica-miami.html): USPS refuerza su red para la temporada alta. Revise qué implica para inventario, preparación de pedidos y servicios 3PL en Miami antes de despachar.
 - 2026-10-27 · [Etsy Photo Rules Put Miami Ecommerce Fulfillment in Focus](https://miamialliance3pl.com/blog/etsy-photo-rules-miami-ecommerce-fulfillment.html): Etsy's updated listing photo requirements put product accuracy in focus. See what Miami ecommerce sellers should review with their fulfillment teams.
 - 2026-10-26 · [Almacén bajo fianza o zona franca en Miami: cómo elegir](https://miamialliance3pl.com/blog/almacen-fianza-zona-franca-miami-como-elegir.html): Compare almacenes bajo fianza y zonas francas en Miami: cuándo se pagan aranceles, qué límites establece CBP y qué preparar para su operación logística.
 - 2026-10-26 · [Frete rodoviário em alta exige revisão do 3PL em Miami](https://miamialliance3pl.com/blog/frete-rodoviario-alta-revisao-logistica-miami.html): FreightWaves aponta reajustes de frete rodoviário nos EUA. Entenda o impacto no planejamento de estoque e na contratação de serviços de 3PL em Miami.
