@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-28 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 245
+Articles: 246
 
+- 2026-10-28 · [GLP-1 muda devoluções e orienta estoques do ecommerce em Miami](https://miamialliance3pl.com/blog/devolucoes-vestuario-planejamento-estoque-miami.html): Entenda como a tendência dos medicamentos GLP-1 afeta devoluções e estoques e o que avaliar ao contratar serviços de 3PL em Miami para seu ecommerce.
 - 2026-10-28 · [Houston aumenta su carga: claves para la logística en Miami](https://miamialliance3pl.com/blog/houston-contenedores-planificacion-logistica-miami.html): El alza de contenedores en Houston abre una revisión de recepción, inventario y distribución para empresas que usan servicios 3PL en Miami.
 - 2026-10-28 · [MIA Cargo Platform Puts Miami 3PL Receiving Plans in Focus](https://miamialliance3pl.com/blog/mia-cargo-platform-miami-3pl-receiving-plans.html): MIA's new cargo platform targets better truck scheduling and communication. Learn what Miami importers should review with their warehouse teams.
 - 2026-10-27 · [Paraguay y Miami: guía de compras, inventario y ventas](https://miamialliance3pl.com/blog/paraguay-miami-compras-inventario-ventas.html): Guía para empresas de Paraguay: qué señala la ITA sobre comercio electrónico y cómo preparar compras, inventario y distribución desde un almacén en Miami.
