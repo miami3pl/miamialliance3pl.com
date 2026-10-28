@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-28 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 246
+Articles: 247
 
+- 2026-10-28 · [Armazém alfandegado e FTZ em Miami: como adiar impostos](https://miamialliance3pl.com/blog/armazem-alfandegado-ftz-miami-adiar-impostos.html): Entenda as diferenças entre armazém alfandegado e FTZ para planejar impostos, estoque e distribuição em Miami, com orientações oficiais para sua operação.
 - 2026-10-28 · [GLP-1 muda devoluções e orienta estoques do ecommerce em Miami](https://miamialliance3pl.com/blog/devolucoes-vestuario-planejamento-estoque-miami.html): Entenda como a tendência dos medicamentos GLP-1 afeta devoluções e estoques e o que avaliar ao contratar serviços de 3PL em Miami para seu ecommerce.
 - 2026-10-28 · [Houston aumenta su carga: claves para la logística en Miami](https://miamialliance3pl.com/blog/houston-contenedores-planificacion-logistica-miami.html): El alza de contenedores en Houston abre una revisión de recepción, inventario y distribución para empresas que usan servicios 3PL en Miami.
 - 2026-10-28 · [MIA Cargo Platform Puts Miami 3PL Receiving Plans in Focus](https://miamialliance3pl.com/blog/mia-cargo-platform-miami-3pl-receiving-plans.html): MIA's new cargo platform targets better truck scheduling and communication. Learn what Miami importers should review with their warehouse teams.
