@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-29 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 248
+Articles: 249
 
+- 2026-10-29 · [Devoluciones de temporada alta: cómo preparar su 3PL en Miami](https://miamialliance3pl.com/blog/devoluciones-temporada-alta-preparar-logistica-miami.html): Las devoluciones exigen revisar costos, documentos y recepción. Claves para preparar su operación con servicios 3PL en Miami antes de temporada alta.
 - 2026-10-29 · [FedEx Raises Outlook as Miami 3PL Buyers Plan Holiday Shipping](https://miamialliance3pl.com/blog/fedex-outlook-miami-holiday-fulfillment-planning.html): Transport Topics reports a higher FedEx outlook before holiday shipping. What Miami businesses should review in inventory, fulfillment and carrier plans.
 - 2026-10-28 · [Armazém alfandegado e FTZ em Miami: como adiar impostos](https://miamialliance3pl.com/blog/armazem-alfandegado-ftz-miami-adiar-impostos.html): Entenda as diferenças entre armazém alfandegado e FTZ para planejar impostos, estoque e distribuição em Miami, com orientações oficiais para sua operação.
 - 2026-10-28 · [GLP-1 muda devoluções e orienta estoques do ecommerce em Miami](https://miamialliance3pl.com/blog/devolucoes-vestuario-planejamento-estoque-miami.html): Entenda como a tendência dos medicamentos GLP-1 afeta devoluções e estoques e o que avaliar ao contratar serviços de 3PL em Miami para seu ecommerce.
