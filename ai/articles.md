@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-29 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 249
+Articles: 250
 
+- 2026-10-29 · [Combustível pressiona carga aérea e pede atenção ao 3PL em Miami](https://miamialliance3pl.com/blog/combustivel-carga-aerea-planejamento-estoque-miami.html): Alta do combustível aperta a operação dos cargueiros. Veja o que considerar ao planejar recebimento, estoque e serviços de 3PL em Miami para sua empresa.
 - 2026-10-29 · [Devoluciones de temporada alta: cómo preparar su 3PL en Miami](https://miamialliance3pl.com/blog/devoluciones-temporada-alta-preparar-logistica-miami.html): Las devoluciones exigen revisar costos, documentos y recepción. Claves para preparar su operación con servicios 3PL en Miami antes de temporada alta.
 - 2026-10-29 · [FedEx Raises Outlook as Miami 3PL Buyers Plan Holiday Shipping](https://miamialliance3pl.com/blog/fedex-outlook-miami-holiday-fulfillment-planning.html): Transport Topics reports a higher FedEx outlook before holiday shipping. What Miami businesses should review in inventory, fulfillment and carrier plans.
 - 2026-10-28 · [Armazém alfandegado e FTZ em Miami: como adiar impostos](https://miamialliance3pl.com/blog/armazem-alfandegado-ftz-miami-adiar-impostos.html): Entenda as diferenças entre armazém alfandegado e FTZ para planejar impostos, estoque e distribuição em Miami, com orientações oficiais para sua operação.
