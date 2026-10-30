@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-30 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 254
+Articles: 255
 
+- 2026-10-30 · [Suplementos y cosméticos: guía FDA para operar desde Miami](https://miamialliance3pl.com/blog/suplementos-cosmeticos-reglas-fda-logistica-miami.html): Guía para marcas latinoamericanas de suplementos y cosméticos: clasificación, etiquetas, MoCRA y preparación para usar servicios 3PL en Miami.
 - 2026-10-30 · [DoorDash anuncia acordo pela Instacart: reflexos para o 3PL em Miami](https://miamialliance3pl.com/blog/doordash-instacart-planejamento-logistico-miami.html): Acordo entre DoorDash e Instacart coloca canais de venda e tecnologia em foco. Veja o que considerar ao planejar estoque e serviços de 3PL em Miami.
 - 2026-10-30 · [Mayor control aduanero: claves para importadores y 3PL en Miami](https://miamialliance3pl.com/blog/control-aduanero-importadores-logistica-miami.html): Los cambios en el control aduanero exigen revisar el papel del importador extranjero y coordinar la recepción de mercancías con su 3PL en Miami.
 - 2026-10-30 · [Florida Diesel Costs Put Miami Freight Planning Under Pressure](https://miamialliance3pl.com/blog/florida-diesel-costs-miami-freight-planning.html): FreightWaves reports pressure on Florida carriers from rising diesel costs. Learn what Miami businesses should review in freight and warehouse plans.
