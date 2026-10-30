@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-10-29 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-10-30 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 251
+Articles: 252
 
+- 2026-10-30 · [Florida Diesel Costs Put Miami Freight Planning Under Pressure](https://miamialliance3pl.com/blog/florida-diesel-costs-miami-freight-planning.html): FreightWaves reports pressure on Florida carriers from rising diesel costs. Learn what Miami businesses should review in freight and warehouse plans.
 - 2026-10-29 · [Importing Produce Through Miami: CBP, FDA and Storage Plans](https://miamialliance3pl.com/blog/miami-produce-imports-inspections-storage-planning.html): Prepare agricultural imports through Miami with a practical guide to CBP inspections, FDA food prior notice, ventilation and temperature-sensitive storage.
 - 2026-10-29 · [Combustível pressiona carga aérea e pede atenção ao 3PL em Miami](https://miamialliance3pl.com/blog/combustivel-carga-aerea-planejamento-estoque-miami.html): Alta do combustível aperta a operação dos cargueiros. Veja o que considerar ao planejar recebimento, estoque e serviços de 3PL em Miami para sua empresa.
 - 2026-10-29 · [Devoluciones de temporada alta: cómo preparar su 3PL en Miami](https://miamialliance3pl.com/blog/devoluciones-temporada-alta-preparar-logistica-miami.html): Las devoluciones exigen revisar costos, documentos y recepción. Claves para preparar su operación con servicios 3PL en Miami antes de temporada alta.
