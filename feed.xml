@@ -6,8 +6,17 @@
     <atom:link href="https://miamialliance3pl.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Guides and logistics news from Miami Alliance 3PL, a 3PL warehouse in Medley, Florida: 3PL services in Miami, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America trade.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 30 Oct 2026 08:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2026 08:00:00 -0400</lastBuildDate>
     <generator>admin/site_index.py</generator>
+    <item>
+      <title>Air Cargo Capacity Concerns Put Miami Inventory Plans in Focus</title>
+      <link>https://miamialliance3pl.com/blog/air-cargo-capacity-miami-inventory-planning.html</link>
+      <guid isPermaLink="true">https://miamialliance3pl.com/blog/air-cargo-capacity-miami-inventory-planning.html</guid>
+      <pubDate>Sat, 31 Oct 2026 08:00:00 -0400</pubDate>
+      <dc:creator>Miami Alliance 3PL</dc:creator>
+      <category>Freight</category>
+      <description>The Loadstar reports air cargo capacity concerns in Miami. Learn what they mean for inventory, warehouse receiving and fulfillment planning with a 3PL.</description>
+    </item>
     <item>
       <title>Suplementos y cosméticos: guía FDA para operar desde Miami</title>
       <link>https://miamialliance3pl.com/blog/suplementos-cosmeticos-reglas-fda-logistica-miami.html</link>
@@ -448,15 +457,6 @@
       <dc:creator>Miami Alliance 3PL</dc:creator>
       <category>Comercio con Latinoamérica</category>
       <description>Guía para empresas de Panamá: comercio electrónico, aranceles y preparación del inventario para comprar y vender con apoyo de un almacén en Miami.</description>
-    </item>
-    <item>
-      <title>Automação flexível orienta a escolha de 3PL em Miami</title>
-      <link>https://miamialliance3pl.com/blog/automacao-flexivel-escolha-operador-logistico-miami.html</link>
-      <guid isPermaLink="true">https://miamialliance3pl.com/blog/automacao-flexivel-escolha-operador-logistico-miami.html</guid>
-      <pubDate>Sun, 18 Oct 2026 08:00:00 -0400</pubDate>
-      <dc:creator>Miami Alliance 3PL</dc:creator>
-      <category>Tecnologia</category>
-      <description>Entenda como avaliar flexibilidade, capacidade e compromisso financeiro na automação de armazéns ao contratar serviços de 3PL em Miami para sua operação.</description>
     </item>
   </channel>
 </rss>

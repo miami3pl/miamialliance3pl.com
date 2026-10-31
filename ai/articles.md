@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-10-30 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-10-31 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 255
+Articles: 256
 
+- 2026-10-31 · [Air Cargo Capacity Concerns Put Miami Inventory Plans in Focus](https://miamialliance3pl.com/blog/air-cargo-capacity-miami-inventory-planning.html): The Loadstar reports air cargo capacity concerns in Miami. Learn what they mean for inventory, warehouse receiving and fulfillment planning with a 3PL.
 - 2026-10-30 · [Suplementos y cosméticos: guía FDA para operar desde Miami](https://miamialliance3pl.com/blog/suplementos-cosmeticos-reglas-fda-logistica-miami.html): Guía para marcas latinoamericanas de suplementos y cosméticos: clasificación, etiquetas, MoCRA y preparación para usar servicios 3PL en Miami.
 - 2026-10-30 · [DoorDash anuncia acordo pela Instacart: reflexos para o 3PL em Miami](https://miamialliance3pl.com/blog/doordash-instacart-planejamento-logistico-miami.html): Acordo entre DoorDash e Instacart coloca canais de venda e tecnologia em foco. Veja o que considerar ao planejar estoque e serviços de 3PL em Miami.
 - 2026-10-30 · [Mayor control aduanero: claves para importadores y 3PL en Miami](https://miamialliance3pl.com/blog/control-aduanero-importadores-logistica-miami.html): Los cambios en el control aduanero exigen revisar el papel del importador extranjero y coordinar la recepción de mercancías con su 3PL en Miami.
