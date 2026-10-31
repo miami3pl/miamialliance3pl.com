@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-10-31 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 257
+Articles: 258
 
+- 2026-10-31 · [FedEx avança no frete premium e exige atenção ao 3PL em Miami](https://miamialliance3pl.com/blog/fedex-frete-premium-planejamento-logistico-miami.html): FreightWaves relata avanço da FedEx em serviços premium. Entenda o que revisar no frete, no estoque e na contratação de serviços de 3PL em Miami.
 - 2026-10-31 · [Fletes bajo presión: cómo planificar su inventario en Miami](https://miamialliance3pl.com/blog/fletes-presion-planificar-inventario-miami.html): The Loadstar reporta menor demanda y dudas sobre alzas marítimas. Claves para coordinar inventario, recepción y servicios 3PL en Miami.
 - 2026-10-31 · [Air Cargo Capacity Concerns Put Miami Inventory Plans in Focus](https://miamialliance3pl.com/blog/air-cargo-capacity-miami-inventory-planning.html): The Loadstar reports air cargo capacity concerns in Miami. Learn what they mean for inventory, warehouse receiving and fulfillment planning with a 3PL.
 - 2026-10-30 · [Suplementos y cosméticos: guía FDA para operar desde Miami](https://miamialliance3pl.com/blog/suplementos-cosmeticos-reglas-fda-logistica-miami.html): Guía para marcas latinoamericanas de suplementos y cosméticos: clasificación, etiquetas, MoCRA y preparación para usar servicios 3PL en Miami.
