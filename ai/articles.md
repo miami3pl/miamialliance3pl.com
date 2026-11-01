@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-01 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 259
+Articles: 260
 
+- 2026-11-01 · [Rusia extiende el veto al diésel: claves logísticas para Miami](https://miamialliance3pl.com/blog/rusia-veto-diesel-planificacion-logistica-miami.html): Rusia prolonga la restricción a las exportaciones de diésel. Qué revisar en su inventario, transporte y servicios 3PL en Miami ante esta noticia.
 - 2026-11-01 · [Cabotage Enforcement Puts Miami Inventory Planning in Focus](https://miamialliance3pl.com/blog/cabotage-enforcement-miami-inventory-planning.html): FreightWaves reports tougher cabotage enforcement. Learn what potential trucking constraints mean for inventory planning and 3PL services in Miami.
 - 2026-10-31 · [FedEx avança no frete premium e exige atenção ao 3PL em Miami](https://miamialliance3pl.com/blog/fedex-frete-premium-planejamento-logistico-miami.html): FreightWaves relata avanço da FedEx em serviços premium. Entenda o que revisar no frete, no estoque e na contratação de serviços de 3PL em Miami.
 - 2026-10-31 · [Fletes bajo presión: cómo planificar su inventario en Miami](https://miamialliance3pl.com/blog/fletes-presion-planificar-inventario-miami.html): The Loadstar reporta menor demanda y dudas sobre alzas marítimas. Claves para coordinar inventario, recepción y servicios 3PL en Miami.
