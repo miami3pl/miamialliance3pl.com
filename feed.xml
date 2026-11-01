@@ -6,8 +6,17 @@
     <atom:link href="https://miamialliance3pl.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Guides and logistics news from Miami Alliance 3PL, a 3PL warehouse in Medley, Florida: 3PL services in Miami, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America trade.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 31 Oct 2026 08:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2026 08:00:00 -0500</lastBuildDate>
     <generator>admin/site_index.py</generator>
+    <item>
+      <title>Cabotage Enforcement Puts Miami Inventory Planning in Focus</title>
+      <link>https://miamialliance3pl.com/blog/cabotage-enforcement-miami-inventory-planning.html</link>
+      <guid isPermaLink="true">https://miamialliance3pl.com/blog/cabotage-enforcement-miami-inventory-planning.html</guid>
+      <pubDate>Sun, 01 Nov 2026 08:00:00 -0500</pubDate>
+      <dc:creator>Miami Alliance 3PL</dc:creator>
+      <category>Freight</category>
+      <description>FreightWaves reports tougher cabotage enforcement. Learn what potential trucking constraints mean for inventory planning and 3PL services in Miami.</description>
+    </item>
     <item>
       <title>FedEx avança no frete premium e exige atenção ao 3PL em Miami</title>
       <link>https://miamialliance3pl.com/blog/fedex-frete-premium-planejamento-logistico-miami.html</link>
@@ -448,15 +457,6 @@
       <dc:creator>Miami Alliance 3PL</dc:creator>
       <category>Cadeia de suprimentos</category>
       <description>The Loadstar relata avanço das exportações solares africanas. Entenda como avaliar fornecedores, recebimento e distribuição com um operador em Miami.</description>
-    </item>
-    <item>
-      <title>Transbordo en la frontera con México: claves para su 3PL en Miami</title>
-      <link>https://miamialliance3pl.com/blog/transbordo-frontera-mexico-logistica-miami.html</link>
-      <guid isPermaLink="true">https://miamialliance3pl.com/blog/transbordo-frontera-mexico-logistica-miami.html</guid>
-      <pubDate>Mon, 19 Oct 2026 08:00:00 -0400</pubDate>
-      <dc:creator>Miami Alliance 3PL</dc:creator>
-      <category>Cadena de suministro</category>
-      <description>La presión sobre el transporte entre México y Estados Unidos impulsa el transbordo. Qué revisar en rutas, recepción e inventario con su 3PL en Miami.</description>
     </item>
   </channel>
 </rss>

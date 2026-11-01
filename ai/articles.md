@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-10-31 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-11-01 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 258
+Articles: 259
 
+- 2026-11-01 · [Cabotage Enforcement Puts Miami Inventory Planning in Focus](https://miamialliance3pl.com/blog/cabotage-enforcement-miami-inventory-planning.html): FreightWaves reports tougher cabotage enforcement. Learn what potential trucking constraints mean for inventory planning and 3PL services in Miami.
 - 2026-10-31 · [FedEx avança no frete premium e exige atenção ao 3PL em Miami](https://miamialliance3pl.com/blog/fedex-frete-premium-planejamento-logistico-miami.html): FreightWaves relata avanço da FedEx em serviços premium. Entenda o que revisar no frete, no estoque e na contratação de serviços de 3PL em Miami.
 - 2026-10-31 · [Fletes bajo presión: cómo planificar su inventario en Miami](https://miamialliance3pl.com/blog/fletes-presion-planificar-inventario-miami.html): The Loadstar reporta menor demanda y dudas sobre alzas marítimas. Claves para coordinar inventario, recepción y servicios 3PL en Miami.
 - 2026-10-31 · [Air Cargo Capacity Concerns Put Miami Inventory Plans in Focus](https://miamialliance3pl.com/blog/air-cargo-capacity-miami-inventory-planning.html): The Loadstar reports air cargo capacity concerns in Miami. Learn what they mean for inventory, warehouse receiving and fulfillment planning with a 3PL.
