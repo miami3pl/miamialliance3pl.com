@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-02 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 262
+Articles: 263
 
+- 2026-11-02 · [Bangladesh: protestas textiles y planificación 3PL en Miami](https://miamialliance3pl.com/blog/bangladesh-protestas-textiles-planificacion-logistica-miami.html): Las protestas textiles en Bangladesh amenazan los embarques. Claves para revisar inventario, recepciones y distribución con servicios 3PL en Miami.
 - 2026-11-02 · [Ocean Disruption Tests Airfreight Choices for Miami Importers](https://miamialliance3pl.com/blog/ocean-disruption-airfreight-choices-miami-importers.html): The Loadstar reports why ocean disruption is not driving a major airfreight shift, with planning lessons for importers using 3PL services in Miami.
 - 2026-11-01 · [Omron amplia produção na Índia: lições para o 3PL em Miami](https://miamialliance3pl.com/blog/omron-producao-india-planejamento-logistico-miami.html): A expansão da Omron na Índia traz pontos de atenção para fornecedores, recebimento e estoque de empresas que usam serviços de 3PL em Miami.
 - 2026-11-01 · [Rusia extiende el veto al diésel: claves logísticas para Miami](https://miamialliance3pl.com/blog/rusia-veto-diesel-planificacion-logistica-miami.html): Rusia prolonga la restricción a las exportaciones de diésel. Qué revisar en su inventario, transporte y servicios 3PL en Miami ante esta noticia.
