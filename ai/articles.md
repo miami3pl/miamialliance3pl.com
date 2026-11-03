@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-11-02 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-11-03 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 264
+Articles: 265
 
+- 2026-11-03 · [Latin America Air Cargo Shifts Test Miami Ecommerce Plans](https://miamialliance3pl.com/blog/latin-america-air-cargo-miami-ecommerce-plans.html): The Loadstar reports that ecommerce growth has not resolved Latin America's air cargo imbalance. What Miami 3PL buyers should review in receiving plans.
 - 2026-11-02 · [Estoque de fim de ano exige revisão da distribuição em Miami](https://miamialliance3pl.com/blog/estoque-fim-ano-distribuicao-miami.html): Estoque nos Estados Unidos não basta: entenda como revisar produtos, destinos e reposição no fim de ano ao contratar serviços de 3PL em Miami.
 - 2026-11-02 · [Bangladesh: protestas textiles y planificación 3PL en Miami](https://miamialliance3pl.com/blog/bangladesh-protestas-textiles-planificacion-logistica-miami.html): Las protestas textiles en Bangladesh amenazan los embarques. Claves para revisar inventario, recepciones y distribución con servicios 3PL en Miami.
 - 2026-11-02 · [Ocean Disruption Tests Airfreight Choices for Miami Importers](https://miamialliance3pl.com/blog/ocean-disruption-airfreight-choices-miami-importers.html): The Loadstar reports why ocean disruption is not driving a major airfreight shift, with planning lessons for importers using 3PL services in Miami.
