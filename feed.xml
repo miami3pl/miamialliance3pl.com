@@ -6,8 +6,17 @@
     <atom:link href="https://miamialliance3pl.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Guides and logistics news from Miami Alliance 3PL, a 3PL warehouse in Medley, Florida: 3PL services in Miami, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America trade.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Nov 2026 08:00:00 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 08:00:00 -0500</lastBuildDate>
     <generator>admin/site_index.py</generator>
+    <item>
+      <title>Inventory Surge Puts Miami 3PL Freight Planning Under Pressure</title>
+      <link>https://miamialliance3pl.com/blog/inventory-surge-miami-3pl-freight-planning.html</link>
+      <guid isPermaLink="true">https://miamialliance3pl.com/blog/inventory-surge-miami-3pl-freight-planning.html</guid>
+      <pubDate>Wed, 04 Nov 2026 08:00:00 -0500</pubDate>
+      <dc:creator>Miami Alliance 3PL</dc:creator>
+      <category>Supply Chain</category>
+      <description>FreightWaves reports rising inventories and tighter freight capacity. See what Miami businesses should review in warehouse, shipping and fulfillment plans.</description>
+    </item>
     <item>
       <title>Walmart amplia aposta em robótica: lições para o 3PL em Miami</title>
       <link>https://miamialliance3pl.com/blog/walmart-robotica-estoque-operacao-logistica-miami.html</link>
@@ -448,15 +457,6 @@
       <dc:creator>Miami Alliance 3PL</dc:creator>
       <category>Specialty Storage</category>
       <description>Plan dry and ambient storage in Miami with FDA guidance on food labels, damaged packaging, preventive controls, and documents to prepare for a warehouse.</description>
-    </item>
-    <item>
-      <title>Australia Post amplia frota: lições para o ecommerce em Miami</title>
-      <link>https://miamialliance3pl.com/blog/australia-post-amplia-frota-licoes-ecommerce-miami.html</link>
-      <guid isPermaLink="true">https://miamialliance3pl.com/blog/australia-post-amplia-frota-licoes-ecommerce-miami.html</guid>
-      <pubDate>Wed, 21 Oct 2026 08:00:00 -0400</pubDate>
-      <dc:creator>Miami Alliance 3PL</dc:creator>
-      <category>E-commerce</category>
-      <description>Australia Post amplia a frota antes das festas. Veja como o caso orienta decisões sobre estoque, expedição e serviços de 3PL em Miami para sua empresa.</description>
     </item>
   </channel>
 </rss>
