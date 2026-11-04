@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-04 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 268
+Articles: 269
 
+- 2026-11-04 · [Amazon enfrenta mayores fletes: claves para el inventario en Miami](https://miamialliance3pl.com/blog/amazon-fletes-inventario-operacion-logistica-miami.html): FreightWaves reporta mayores costos logísticos en el comercio minorista. Qué revisar en inventario y despachos al contratar servicios 3PL en Miami.
 - 2026-11-04 · [Inventory Surge Puts Miami 3PL Freight Planning Under Pressure](https://miamialliance3pl.com/blog/inventory-surge-miami-3pl-freight-planning.html): FreightWaves reports rising inventories and tighter freight capacity. See what Miami businesses should review in warehouse, shipping and fulfillment plans.
 - 2026-11-03 · [Walmart amplia aposta em robótica: lições para o 3PL em Miami](https://miamialliance3pl.com/blog/walmart-robotica-estoque-operacao-logistica-miami.html): O acordo entre Walmart e Symbotic coloca capacidade e gestão de estoque em foco. Veja o que avaliar ao contratar serviços de 3PL em Miami para sua operação.
 - 2026-11-03 · [Aguacates retenidos en México: planificación 3PL en Miami](https://miamialliance3pl.com/blog/aguacates-mexico-planificacion-logistica-miami.html): La detección de una plaga en aguacates mexicanos plantea riesgos logísticos y orienta la planificación de inventario para empresas con operaciones en Miami.
