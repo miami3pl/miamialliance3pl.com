@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-05 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 271
+Articles: 272
 
+- 2026-11-05 · [Congestión aérea en Taiwán: claves para su inventario en Miami](https://miamialliance3pl.com/blog/congestion-aerea-taiwan-inventario-miami.html): La congestión de carga en Taiwán exige revisar salidas, recepción e inventario. Claves para importadores que utilizan servicios 3PL en Miami.
 - 2026-11-05 · [DDP Customs Risks Put Miami Import Receiving Plans in Focus](https://miamialliance3pl.com/blog/ddp-customs-risks-miami-import-receiving.html): The Loadstar reports warnings over DDP customs exposure. What Miami importers should review before planning warehouse receiving and fulfillment.
 - 2026-11-04 · [Frete aéreo da Ásia em alta exige revisão do estoque em Miami](https://miamialliance3pl.com/blog/frete-aereo-asia-revisao-estoque-miami.html): Freightos aponta alta no frete aéreo da Ásia à América do Norte. Veja como revisar compras, estoque e serviços de 3PL em Miami para sua operação.
 - 2026-11-04 · [Amazon enfrenta mayores fletes: claves para el inventario en Miami](https://miamialliance3pl.com/blog/amazon-fletes-inventario-operacion-logistica-miami.html): FreightWaves reporta mayores costos logísticos en el comercio minorista. Qué revisar en inventario y despachos al contratar servicios 3PL en Miami.
