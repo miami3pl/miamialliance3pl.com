@@ -164,7 +164,7 @@
   </url>
   <url>
     <loc>https://miamialliance3pl.com/blog.html</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1809,6 +1809,12 @@
   <url>
     <loc>https://miamialliance3pl.com/blog/frete-aereo-asia-revisao-estoque-miami.html</loc>
     <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://miamialliance3pl.com/blog/ddp-customs-risks-miami-import-receiving.html</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

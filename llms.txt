@@ -72,6 +72,7 @@ Miami Alliance 3PL provides 3PL services in Miami from its warehouse at 8780 NW 
 
 Newest original articles from the Miami Alliance 3PL blog. Full index of every article: [https://miamialliance3pl.com/ai/articles.md](https://miamialliance3pl.com/ai/articles.md). RSS: [https://miamialliance3pl.com/feed.xml](https://miamialliance3pl.com/feed.xml).
 
+- [DDP Customs Risks Put Miami Import Receiving Plans in Focus](https://miamialliance3pl.com/blog/ddp-customs-risks-miami-import-receiving.html): The Loadstar reports warnings over DDP customs exposure. What Miami importers should review before planning warehouse receiving and fulfillment. (published 2026-11-05)
 - [Frete aéreo da Ásia em alta exige revisão do estoque em Miami](https://miamialliance3pl.com/blog/frete-aereo-asia-revisao-estoque-miami.html): Freightos aponta alta no frete aéreo da Ásia à América do Norte. Veja como revisar compras, estoque e serviços de 3PL em Miami para sua operação. (published 2026-11-04)
 - [Amazon enfrenta mayores fletes: claves para el inventario en Miami](https://miamialliance3pl.com/blog/amazon-fletes-inventario-operacion-logistica-miami.html): FreightWaves reporta mayores costos logísticos en el comercio minorista. Qué revisar en inventario y despachos al contratar servicios 3PL en Miami. (published 2026-11-04)
 - [Inventory Surge Puts Miami 3PL Freight Planning Under Pressure](https://miamialliance3pl.com/blog/inventory-surge-miami-3pl-freight-planning.html): FreightWaves reports rising inventories and tighter freight capacity. See what Miami businesses should review in warehouse, shipping and fulfillment plans. (published 2026-11-04)
@@ -83,7 +84,6 @@ Newest original articles from the Miami Alliance 3PL blog. Full index of every a
 - [Ocean Disruption Tests Airfreight Choices for Miami Importers](https://miamialliance3pl.com/blog/ocean-disruption-airfreight-choices-miami-importers.html): The Loadstar reports why ocean disruption is not driving a major airfreight shift, with planning lessons for importers using 3PL services in Miami. (published 2026-11-02)
 - [Omron amplia produção na Índia: lições para o 3PL em Miami](https://miamialliance3pl.com/blog/omron-producao-india-planejamento-logistico-miami.html): A expansão da Omron na Índia traz pontos de atenção para fornecedores, recebimento e estoque de empresas que usam serviços de 3PL em Miami. (published 2026-11-01)
 - [Rusia extiende el veto al diésel: claves logísticas para Miami](https://miamialliance3pl.com/blog/rusia-veto-diesel-planificacion-logistica-miami.html): Rusia prolonga la restricción a las exportaciones de diésel. Qué revisar en su inventario, transporte y servicios 3PL en Miami ante esta noticia. (published 2026-11-01)
-- [Cabotage Enforcement Puts Miami Inventory Planning in Focus](https://miamialliance3pl.com/blog/cabotage-enforcement-miami-inventory-planning.html): FreightWaves reports tougher cabotage enforcement. Learn what potential trucking constraints mean for inventory planning and 3PL services in Miami. (published 2026-11-01)
 
 <!-- latest-articles:end -->
 
