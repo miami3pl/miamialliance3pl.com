@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-06 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 275
+Articles: 276
 
+- 2026-11-06 · [Bark perde receita e põe canais no foco do 3PL em Miami](https://miamialliance3pl.com/blog/bark-receita-canais-planejamento-logistico-miami.html): A queda da receita da Bark, apesar do avanço nas vendas ao varejo, traz pontos de atenção para estoque, distribuição e serviços de 3PL em Miami.
 - 2026-11-06 · [Amazon: comisiones y publicidad bajo la lupa del 3PL en Miami](https://miamialliance3pl.com/blog/amazon-comisiones-publicidad-margen-logistica-miami.html): Las comisiones y la publicidad ganan peso en Amazon. Qué revisar en el margen por canal y cómo evaluar sus servicios 3PL en Miami con esos datos.
 - 2026-11-06 · [Canada Trade Uncertainty Puts Miami Inventory Plans in Focus](https://miamialliance3pl.com/blog/canada-trade-uncertainty-miami-inventory-plans.html): Transport Topics reports uncertainty over U.S.-Canada tariff talks. Explore what Miami importers and distributors should review with their 3PL.
 - 2026-11-05 · [Déficit dos EUA recua: leitura para a logística em Miami](https://miamialliance3pl.com/blog/deficit-eua-exportacoes-planejamento-logistico-miami.html): Entenda a queda do déficit comercial dos EUA e o que avaliar no estoque, no recebimento e na distribuição ao contratar serviços de 3PL em Miami.
