@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-11-05 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-11-06 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 273
+Articles: 274
 
+- 2026-11-06 · [Canada Trade Uncertainty Puts Miami Inventory Plans in Focus](https://miamialliance3pl.com/blog/canada-trade-uncertainty-miami-inventory-plans.html): Transport Topics reports uncertainty over U.S.-Canada tariff talks. Explore what Miami importers and distributors should review with their 3PL.
 - 2026-11-05 · [Déficit dos EUA recua: leitura para a logística em Miami](https://miamialliance3pl.com/blog/deficit-eua-exportacoes-planejamento-logistico-miami.html): Entenda a queda do déficit comercial dos EUA e o que avaliar no estoque, no recebimento e na distribuição ao contratar serviços de 3PL em Miami.
 - 2026-11-05 · [Congestión aérea en Taiwán: claves para su inventario en Miami](https://miamialliance3pl.com/blog/congestion-aerea-taiwan-inventario-miami.html): La congestión de carga en Taiwán exige revisar salidas, recepción e inventario. Claves para importadores que utilizan servicios 3PL en Miami.
 - 2026-11-05 · [DDP Customs Risks Put Miami Import Receiving Plans in Focus](https://miamialliance3pl.com/blog/ddp-customs-risks-miami-import-receiving.html): The Loadstar reports warnings over DDP customs exposure. What Miami importers should review before planning warehouse receiving and fulfillment.
