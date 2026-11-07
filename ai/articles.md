@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-07 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 277
+Articles: 278
 
+- 2026-11-07 · [Incautación en Texas: custodia de carga y logística 3PL en Miami](https://miamialliance3pl.com/blog/incautacion-texas-custodia-carga-logistica-miami.html): Una incautación en un camión con puerros en Texas pone el foco en la custodia de carga y la documentación para empresas que usan servicios 3PL en Miami.
 - 2026-11-07 · [Container Imports Rise as Miami 3PL Buyers Review Freight Plans](https://miamialliance3pl.com/blog/container-import-growth-miami-warehouse-freight-plans.html): FreightWaves reports rising container imports and freight price pressure. See what Miami businesses should review in receiving and distribution plans.
 - 2026-11-06 · [Bark perde receita e põe canais no foco do 3PL em Miami](https://miamialliance3pl.com/blog/bark-receita-canais-planejamento-logistico-miami.html): A queda da receita da Bark, apesar do avanço nas vendas ao varejo, traz pontos de atenção para estoque, distribuição e serviços de 3PL em Miami.
 - 2026-11-06 · [Amazon: comisiones y publicidad bajo la lupa del 3PL en Miami](https://miamialliance3pl.com/blog/amazon-comisiones-publicidad-margen-logistica-miami.html): Las comisiones y la publicidad ganan peso en Amazon. Qué revisar en el margen por canal y cómo evaluar sus servicios 3PL en Miami con esos datos.
