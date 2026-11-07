@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-11-06 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-11-07 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 276
+Articles: 277
 
+- 2026-11-07 · [Container Imports Rise as Miami 3PL Buyers Review Freight Plans](https://miamialliance3pl.com/blog/container-import-growth-miami-warehouse-freight-plans.html): FreightWaves reports rising container imports and freight price pressure. See what Miami businesses should review in receiving and distribution plans.
 - 2026-11-06 · [Bark perde receita e põe canais no foco do 3PL em Miami](https://miamialliance3pl.com/blog/bark-receita-canais-planejamento-logistico-miami.html): A queda da receita da Bark, apesar do avanço nas vendas ao varejo, traz pontos de atenção para estoque, distribuição e serviços de 3PL em Miami.
 - 2026-11-06 · [Amazon: comisiones y publicidad bajo la lupa del 3PL en Miami](https://miamialliance3pl.com/blog/amazon-comisiones-publicidad-margen-logistica-miami.html): Las comisiones y la publicidad ganan peso en Amazon. Qué revisar en el margen por canal y cómo evaluar sus servicios 3PL en Miami con esos datos.
 - 2026-11-06 · [Canada Trade Uncertainty Puts Miami Inventory Plans in Focus](https://miamialliance3pl.com/blog/canada-trade-uncertainty-miami-inventory-plans.html): Transport Topics reports uncertainty over U.S.-Canada tariff talks. Explore what Miami importers and distributors should review with their 3PL.
