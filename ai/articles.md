@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-08 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 280
+Articles: 281
 
+- 2026-11-08 · [Walmart amplía entregas con drones: claves para el 3PL en Miami](https://miamialliance3pl.com/blog/walmart-drones-planificacion-logistica-miami.html): Walmart anuncia su expansión con Zipline. Conozca qué conviene revisar en inventario y preparación de pedidos al contratar servicios 3PL en Miami.
 - 2026-11-08 · [USMCA Duty Dispute Puts Miami 3PL Inventory Plans in Focus](https://miamialliance3pl.com/blog/usmca-duty-dispute-miami-warehouse-planning.html): FreightWaves reports a push to change USMCA duty treatment for foreign-trade zones. What Miami 3PL buyers should review before changing inventory plans.
 - 2026-11-07 · [Incerteza no USMCA exige rever planos de estoque em Miami](https://miamialliance3pl.com/blog/incerteza-usmca-planos-estoque-miami.html): Entenda como a incerteza no USMCA e a pressão sobre o frete entram no planejamento de estoque, recebimento e serviços de 3PL em Miami para sua empresa.
 - 2026-11-07 · [Incautación en Texas: custodia de carga y logística 3PL en Miami](https://miamialliance3pl.com/blog/incautacion-texas-custodia-carga-logistica-miami.html): Una incautación en un camión con puerros en Texas pone el foco en la custodia de carga y la documentación para empresas que usan servicios 3PL en Miami.
