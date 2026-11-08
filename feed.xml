@@ -6,8 +6,17 @@
     <atom:link href="https://miamialliance3pl.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Guides and logistics news from Miami Alliance 3PL, a 3PL warehouse in Medley, Florida: 3PL services in Miami, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America trade.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 07 Nov 2026 08:00:00 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 08:00:00 -0500</lastBuildDate>
     <generator>admin/site_index.py</generator>
+    <item>
+      <title>USMCA Duty Dispute Puts Miami 3PL Inventory Plans in Focus</title>
+      <link>https://miamialliance3pl.com/blog/usmca-duty-dispute-miami-warehouse-planning.html</link>
+      <guid isPermaLink="true">https://miamialliance3pl.com/blog/usmca-duty-dispute-miami-warehouse-planning.html</guid>
+      <pubDate>Sun, 08 Nov 2026 08:00:00 -0500</pubDate>
+      <dc:creator>Miami Alliance 3PL</dc:creator>
+      <category>Tariffs &amp; Customs</category>
+      <description>FreightWaves reports a push to change USMCA duty treatment for foreign-trade zones. What Miami 3PL buyers should review before changing inventory plans.</description>
+    </item>
     <item>
       <title>Incerteza no USMCA exige rever planos de estoque em Miami</title>
       <link>https://miamialliance3pl.com/blog/incerteza-usmca-planos-estoque-miami.html</link>
@@ -448,15 +457,6 @@
       <dc:creator>Miami Alliance 3PL</dc:creator>
       <category>Comercio con Latinoamérica</category>
       <description>Guía para empresas de El Salvador sobre comercio electrónico, compras e importación, con claves para organizar inventario y distribución desde Miami.</description>
-    </item>
-    <item>
-      <title>Frete transpacífico sobe e pede revisão do estoque em Miami</title>
-      <link>https://miamialliance3pl.com/blog/frete-transpacifico-alta-planejamento-estoque-miami.html</link>
-      <guid isPermaLink="true">https://miamialliance3pl.com/blog/frete-transpacifico-alta-planejamento-estoque-miami.html</guid>
-      <pubDate>Sat, 24 Oct 2026 08:00:00 -0400</pubDate>
-      <dc:creator>Miami Alliance 3PL</dc:creator>
-      <category>Carga</category>
-      <description>Alta do frete transpacífico reforça a importância de revisar compras, recebimento e distribuição com serviços de 3PL em Miami para sua operação nos EUA.</description>
     </item>
   </channel>
 </rss>
