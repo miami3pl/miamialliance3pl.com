@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-09 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 283
+Articles: 284
 
+- 2026-11-09 · [Importaciones DDP: nuevas exigencias y recepción en Miami](https://miamialliance3pl.com/blog/importaciones-ddp-exigencias-aduaneras-recepcion-miami.html): Las nuevas exigencias para importadores bajo DDP obligan a revisar responsables aduaneros y la coordinación de recepción con servicios 3PL en Miami.
 - 2026-11-09 · [Bangkok Cargo Backlog Tests Miami 3PL Inventory Planning](https://miamialliance3pl.com/blog/bangkok-cargo-backlog-miami-inventory-planning.html): The Loadstar reports Bangkok cargo delays affecting imports and exports. What businesses using Miami 3PL services should review in their inventory plans.
 - 2026-11-08 · [Amazon integra Uber Eats ao Prime: leitura para o 3PL em Miami](https://miamialliance3pl.com/blog/amazon-uber-eats-prime-logistica-miami.html): Amazon inclui Uber Eats no Prime. Entenda o anúncio e o que avaliar no estoque, nos canais de venda e nos serviços de 3PL em Miami para sua operação.
 - 2026-11-08 · [Walmart amplía entregas con drones: claves para el 3PL en Miami](https://miamialliance3pl.com/blog/walmart-drones-planificacion-logistica-miami.html): Walmart anuncia su expansión con Zipline. Conozca qué conviene revisar en inventario y preparación de pedidos al contratar servicios 3PL en Miami.
