@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-11-08 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-11-09 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 282
+Articles: 283
 
+- 2026-11-09 · [Bangkok Cargo Backlog Tests Miami 3PL Inventory Planning](https://miamialliance3pl.com/blog/bangkok-cargo-backlog-miami-inventory-planning.html): The Loadstar reports Bangkok cargo delays affecting imports and exports. What businesses using Miami 3PL services should review in their inventory plans.
 - 2026-11-08 · [Amazon integra Uber Eats ao Prime: leitura para o 3PL em Miami](https://miamialliance3pl.com/blog/amazon-uber-eats-prime-logistica-miami.html): Amazon inclui Uber Eats no Prime. Entenda o anúncio e o que avaliar no estoque, nos canais de venda e nos serviços de 3PL em Miami para sua operação.
 - 2026-11-08 · [Walmart amplía entregas con drones: claves para el 3PL en Miami](https://miamialliance3pl.com/blog/walmart-drones-planificacion-logistica-miami.html): Walmart anuncia su expansión con Zipline. Conozca qué conviene revisar en inventario y preparación de pedidos al contratar servicios 3PL en Miami.
 - 2026-11-08 · [USMCA Duty Dispute Puts Miami 3PL Inventory Plans in Focus](https://miamialliance3pl.com/blog/usmca-duty-dispute-miami-warehouse-planning.html): FreightWaves reports a push to change USMCA duty treatment for foreign-trade zones. What Miami 3PL buyers should review before changing inventory plans.
