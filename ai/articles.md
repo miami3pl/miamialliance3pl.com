@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-10 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 286
+Articles: 287
 
+- 2026-11-10 · [Pico de importaciones en EE. UU.: claves para el 3PL en Miami](https://miamialliance3pl.com/blog/pico-importaciones-planificacion-logistica-miami.html): El máximo anual de importaciones de septiembre plantea cómo revisar recepciones, inventario y distribución con los servicios 3PL en Miami.
 - 2026-11-10 · [UPS Tariff Refund Lawsuit Puts Miami Import Budgets in Focus](https://miamialliance3pl.com/blog/ups-tariff-refund-lawsuit-miami-import-budget-planning.html): The Loadstar reports on UPS seeking tariff refunds and interest, with practical planning considerations for importers using 3PL services in Miami.
 - 2026-11-09 · [Diesel encarece o intermodal e exige revisão logística em Miami](https://miamialliance3pl.com/blog/diesel-intermodal-revisao-logistica-miami.html): FreightWaves aponta pressão do diesel nas tarifas intermodais. Entenda como revisar frete, recebimento e estoque ao contratar serviços de 3PL em Miami.
 - 2026-11-09 · [Importaciones DDP: nuevas exigencias y recepción en Miami](https://miamialliance3pl.com/blog/importaciones-ddp-exigencias-aduaneras-recepcion-miami.html): Las nuevas exigencias para importadores bajo DDP obligan a revisar responsables aduaneros y la coordinación de recepción con servicios 3PL en Miami.
