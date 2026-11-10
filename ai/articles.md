@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-11-09 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-11-10 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 285
+Articles: 286
 
+- 2026-11-10 · [UPS Tariff Refund Lawsuit Puts Miami Import Budgets in Focus](https://miamialliance3pl.com/blog/ups-tariff-refund-lawsuit-miami-import-budget-planning.html): The Loadstar reports on UPS seeking tariff refunds and interest, with practical planning considerations for importers using 3PL services in Miami.
 - 2026-11-09 · [Diesel encarece o intermodal e exige revisão logística em Miami](https://miamialliance3pl.com/blog/diesel-intermodal-revisao-logistica-miami.html): FreightWaves aponta pressão do diesel nas tarifas intermodais. Entenda como revisar frete, recebimento e estoque ao contratar serviços de 3PL em Miami.
 - 2026-11-09 · [Importaciones DDP: nuevas exigencias y recepción en Miami](https://miamialliance3pl.com/blog/importaciones-ddp-exigencias-aduaneras-recepcion-miami.html): Las nuevas exigencias para importadores bajo DDP obligan a revisar responsables aduaneros y la coordinación de recepción con servicios 3PL en Miami.
 - 2026-11-09 · [Bangkok Cargo Backlog Tests Miami 3PL Inventory Planning](https://miamialliance3pl.com/blog/bangkok-cargo-backlog-miami-inventory-planning.html): The Loadstar reports Bangkok cargo delays affecting imports and exports. What businesses using Miami 3PL services should review in their inventory plans.
