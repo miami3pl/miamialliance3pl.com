@@ -6,8 +6,17 @@
     <atom:link href="https://miamialliance3pl.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Guides and logistics news from Miami Alliance 3PL, a 3PL warehouse in Medley, Florida: 3PL services in Miami, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America trade.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Nov 2026 08:00:00 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 08:00:00 -0500</lastBuildDate>
     <generator>admin/site_index.py</generator>
+    <item>
+      <title>ASICS Inventory Drones Offer Lessons for Miami 3PL Buyers</title>
+      <link>https://miamialliance3pl.com/blog/asics-inventory-drones-miami-3pl-buyers.html</link>
+      <guid isPermaLink="true">https://miamialliance3pl.com/blog/asics-inventory-drones-miami-3pl-buyers.html</guid>
+      <pubDate>Wed, 11 Nov 2026 08:00:00 -0500</pubDate>
+      <dc:creator>Miami Alliance 3PL</dc:creator>
+      <category>Warehousing</category>
+      <description>FreightWaves reports how ASICS uses drones to find misplaced inventory, with practical questions for businesses evaluating 3PL services in Miami.</description>
+    </item>
     <item>
       <title>China prorroga pausa tarifária: planejamento logístico em Miami</title>
       <link>https://miamialliance3pl.com/blog/china-prorroga-pausa-tarifaria-planejamento-logistico-miami.html</link>
@@ -448,15 +457,6 @@
       <dc:creator>Miami Alliance 3PL</dc:creator>
       <category>E-Commerce</category>
       <description>Etsy's updated listing photo requirements put product accuracy in focus. See what Miami ecommerce sellers should review with their fulfillment teams.</description>
-    </item>
-    <item>
-      <title>Almacén bajo fianza o zona franca en Miami: cómo elegir</title>
-      <link>https://miamialliance3pl.com/blog/almacen-fianza-zona-franca-miami-como-elegir.html</link>
-      <guid isPermaLink="true">https://miamialliance3pl.com/blog/almacen-fianza-zona-franca-miami-como-elegir.html</guid>
-      <pubDate>Mon, 26 Oct 2026 08:00:00 -0400</pubDate>
-      <dc:creator>Miami Alliance 3PL</dc:creator>
-      <category>Aranceles y aduanas</category>
-      <description>Compare almacenes bajo fianza y zonas francas en Miami: cuándo se pagan aranceles, qué límites establece CBP y qué preparar para su operación logística.</description>
     </item>
   </channel>
 </rss>
