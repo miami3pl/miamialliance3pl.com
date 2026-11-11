@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-11 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 290
+Articles: 291
 
+- 2026-11-11 · [Frete rodoviário sem impulso exige atenção ao estoque em Miami](https://miamialliance3pl.com/blog/frete-rodoviario-estoque-distribuicao-miami.html): FreightWaves aponta rejeições elevadas sem forte avanço do mercado rodoviário. Entenda os efeitos para estoque, expedição e serviços de 3PL em Miami.
 - 2026-11-11 · [Importaciones elevadas: cómo planificar su 3PL en Miami](https://miamialliance3pl.com/blog/importaciones-elevadas-planificacion-almacenaje-miami.html): Las importaciones previstas para el cierre del año plantean decisiones de recepción, inventario y distribución para empresas que operan con un 3PL en Miami.
 - 2026-11-11 · [ASICS Inventory Drones Offer Lessons for Miami 3PL Buyers](https://miamialliance3pl.com/blog/asics-inventory-drones-miami-3pl-buyers.html): FreightWaves reports how ASICS uses drones to find misplaced inventory, with practical questions for businesses evaluating 3PL services in Miami.
 - 2026-11-10 · [China prorroga pausa tarifária: planejamento logístico em Miami](https://miamialliance3pl.com/blog/china-prorroga-pausa-tarifaria-planejamento-logistico-miami.html): China mantém suspensão de tarifa adicional sobre bens dos EUA. Veja o que revisar em compras, estoque e serviços de 3PL em Miami durante a trégua.
