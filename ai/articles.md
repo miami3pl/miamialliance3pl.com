@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-11-11 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-11-12 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 291
+Articles: 292
 
+- 2026-11-12 · [Latam's Bogotá Cargo Expansion Puts Miami Planning in Focus](https://miamialliance3pl.com/blog/latam-bogota-cargo-expansion-miami-planning.html): FreightWaves reports Latam's planned Bogotá cargo expansion. See what Miami businesses should review before changing receiving and distribution plans.
 - 2026-11-11 · [Frete rodoviário sem impulso exige atenção ao estoque em Miami](https://miamialliance3pl.com/blog/frete-rodoviario-estoque-distribuicao-miami.html): FreightWaves aponta rejeições elevadas sem forte avanço do mercado rodoviário. Entenda os efeitos para estoque, expedição e serviços de 3PL em Miami.
 - 2026-11-11 · [Importaciones elevadas: cómo planificar su 3PL en Miami](https://miamialliance3pl.com/blog/importaciones-elevadas-planificacion-almacenaje-miami.html): Las importaciones previstas para el cierre del año plantean decisiones de recepción, inventario y distribución para empresas que operan con un 3PL en Miami.
 - 2026-11-11 · [ASICS Inventory Drones Offer Lessons for Miami 3PL Buyers](https://miamialliance3pl.com/blog/asics-inventory-drones-miami-3pl-buyers.html): FreightWaves reports how ASICS uses drones to find misplaced inventory, with practical questions for businesses evaluating 3PL services in Miami.
