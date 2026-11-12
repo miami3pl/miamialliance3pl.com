@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-12 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 293
+Articles: 294
 
+- 2026-11-12 · [Carga aérea digital exige mais integração com o 3PL em Miami](https://miamialliance3pl.com/blog/carga-aerea-digital-integracao-logistica-miami.html): Investimentos de LATAM Cargo, Atlas Air e Changi mostram por que integrar documentos, transporte e recebimento merece atenção no seu 3PL em Miami.
 - 2026-11-12 · [Amenaza arancelaria a México: claves para su logística en Miami](https://miamialliance3pl.com/blog/amenaza-arancelaria-mexico-planificacion-logistica-miami.html): La amenaza de duplicar aranceles a México exige revisar supuestos de compra, inventario y recepción para empresas que usan servicios 3PL en Miami.
 - 2026-11-12 · [Latam's Bogotá Cargo Expansion Puts Miami Planning in Focus](https://miamialliance3pl.com/blog/latam-bogota-cargo-expansion-miami-planning.html): FreightWaves reports Latam's planned Bogotá cargo expansion. See what Miami businesses should review before changing receiving and distribution plans.
 - 2026-11-11 · [Frete rodoviário sem impulso exige atenção ao estoque em Miami](https://miamialliance3pl.com/blog/frete-rodoviario-estoque-distribuicao-miami.html): FreightWaves aponta rejeições elevadas sem forte avanço do mercado rodoviário. Entenda os efeitos para estoque, expedição e serviços de 3PL em Miami.
