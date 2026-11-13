@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-13 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 296
+Articles: 297
 
+- 2026-11-13 · [Importações em alta na Califórnia: como planejar o 3PL em Miami](https://miamialliance3pl.com/blog/importacoes-california-planejamento-estoque-miami.html): A alta das importações nos portos da Califórnia pede atenção ao estoque. Veja o que avaliar no recebimento e nos serviços de 3PL em Miami para sua empresa.
 - 2026-11-13 · [Repunte de camiones en México: claves para la logística en Miami](https://miamialliance3pl.com/blog/repunte-camiones-mexico-logistica-miami.html): El repunte de las exportaciones mexicanas de camiones invita a revisar inventario, recepción y distribución con sus servicios 3PL en Miami.
 - 2026-11-13 · [Mexico Tariff Threat Puts Miami 3PL Inventory Plans in Focus](https://miamialliance3pl.com/blog/mexico-tariff-threat-miami-inventory-planning.html): FreightWaves reports a threat to double tariffs on Mexican imports. Explore what the uncertainty means for Miami 3PL inventory and receiving plans.
 - 2026-11-12 · [Carga aérea digital exige mais integração com o 3PL em Miami](https://miamialliance3pl.com/blog/carga-aerea-digital-integracao-logistica-miami.html): Investimentos de LATAM Cargo, Atlas Air e Changi mostram por que integrar documentos, transporte e recebimento merece atenção no seu 3PL em Miami.
