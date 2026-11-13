@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-11-12 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-11-13 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 294
+Articles: 295
 
+- 2026-11-13 · [Mexico Tariff Threat Puts Miami 3PL Inventory Plans in Focus](https://miamialliance3pl.com/blog/mexico-tariff-threat-miami-inventory-planning.html): FreightWaves reports a threat to double tariffs on Mexican imports. Explore what the uncertainty means for Miami 3PL inventory and receiving plans.
 - 2026-11-12 · [Carga aérea digital exige mais integração com o 3PL em Miami](https://miamialliance3pl.com/blog/carga-aerea-digital-integracao-logistica-miami.html): Investimentos de LATAM Cargo, Atlas Air e Changi mostram por que integrar documentos, transporte e recebimento merece atenção no seu 3PL em Miami.
 - 2026-11-12 · [Amenaza arancelaria a México: claves para su logística en Miami](https://miamialliance3pl.com/blog/amenaza-arancelaria-mexico-planificacion-logistica-miami.html): La amenaza de duplicar aranceles a México exige revisar supuestos de compra, inventario y recepción para empresas que usan servicios 3PL en Miami.
 - 2026-11-12 · [Latam's Bogotá Cargo Expansion Puts Miami Planning in Focus](https://miamialliance3pl.com/blog/latam-bogota-cargo-expansion-miami-planning.html): FreightWaves reports Latam's planned Bogotá cargo expansion. See what Miami businesses should review before changing receiving and distribution plans.
