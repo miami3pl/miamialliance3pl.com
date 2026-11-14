@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-11-13 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-11-14 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 297
+Articles: 298
 
+- 2026-11-14 · [Asics Inventory Recovery Puts Miami 3PL Stock Checks in Focus](https://miamialliance3pl.com/blog/asics-stock-recovery-miami-warehouse-counts.html): Digital Commerce 360 reports faster inventory recovery at Asics. See what Miami 3PL buyers should ask about stock counts, returns and marketplace feeds.
 - 2026-11-13 · [Importações em alta na Califórnia: como planejar o 3PL em Miami](https://miamialliance3pl.com/blog/importacoes-california-planejamento-estoque-miami.html): A alta das importações nos portos da Califórnia pede atenção ao estoque. Veja o que avaliar no recebimento e nos serviços de 3PL em Miami para sua empresa.
 - 2026-11-13 · [Repunte de camiones en México: claves para la logística en Miami](https://miamialliance3pl.com/blog/repunte-camiones-mexico-logistica-miami.html): El repunte de las exportaciones mexicanas de camiones invita a revisar inventario, recepción y distribución con sus servicios 3PL en Miami.
 - 2026-11-13 · [Mexico Tariff Threat Puts Miami 3PL Inventory Plans in Focus](https://miamialliance3pl.com/blog/mexico-tariff-threat-miami-inventory-planning.html): FreightWaves reports a threat to double tariffs on Mexican imports. Explore what the uncertainty means for Miami 3PL inventory and receiving plans.
