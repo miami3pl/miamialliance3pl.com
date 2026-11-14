@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-14 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 299
+Articles: 300
 
+- 2026-11-14 · [Cancelamentos de viagens exigem rever o estoque em Miami](https://miamialliance3pl.com/blog/cancelamentos-viagens-planejamento-estoque-miami.html): Cancelamentos de viagens marítimas avançam enquanto o frete recua. Veja como revisar recebimento, estoque e distribuição com seu operador em Miami.
 - 2026-11-14 · [Fletes altos e incertidumbre comercial: decisiones 3PL en Miami](https://miamialliance3pl.com/blog/fletes-altos-incertidumbre-comercial-logistica-miami.html): La incertidumbre comercial y los fletes transpacíficos elevados exigen revisar compras, recepción e inventario con los servicios 3PL en Miami.
 - 2026-11-14 · [Asics Inventory Recovery Puts Miami 3PL Stock Checks in Focus](https://miamialliance3pl.com/blog/asics-stock-recovery-miami-warehouse-counts.html): Digital Commerce 360 reports faster inventory recovery at Asics. See what Miami 3PL buyers should ask about stock counts, returns and marketplace feeds.
 - 2026-11-13 · [Importações em alta na Califórnia: como planejar o 3PL em Miami](https://miamialliance3pl.com/blog/importacoes-california-planejamento-estoque-miami.html): A alta das importações nos portos da Califórnia pede atenção ao estoque. Veja o que avaliar no recebimento e nos serviços de 3PL em Miami para sua empresa.
