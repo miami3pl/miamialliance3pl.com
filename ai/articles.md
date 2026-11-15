@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-15 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 301
+Articles: 302
 
+- 2026-11-15 · [Ley de última milla en Nueva York apunta a Amazon: claves para Miami](https://miamialliance3pl.com/blog/ley-ultima-milla-nueva-york-amazon-3pl-miami.html): FreightWaves informa que Nueva York probablemente aprobará una ley de entregas de última milla. Qué implica para quienes contratan servicios 3PL en Miami.
 - 2026-11-15 · [Trucking Recession Thins Carriers: What It Means for Miami 3PL Buyers](https://miamialliance3pl.com/blog/trucking-recession-carrier-exits-miami-3pl-planning.html): FreightWaves reports U.S. trucking lost about 100,000 for-hire tractors in a year. What carrier exits and rising rates mean for Miami 3PL users.
 - 2026-11-14 · [Cancelamentos de viagens exigem rever o estoque em Miami](https://miamialliance3pl.com/blog/cancelamentos-viagens-planejamento-estoque-miami.html): Cancelamentos de viagens marítimas avançam enquanto o frete recua. Veja como revisar recebimento, estoque e distribuição com seu operador em Miami.
 - 2026-11-14 · [Fletes altos e incertidumbre comercial: decisiones 3PL en Miami](https://miamialliance3pl.com/blog/fletes-altos-incertidumbre-comercial-logistica-miami.html): La incertidumbre comercial y los fletes transpacíficos elevados exigen revisar compras, recepción e inventario con los servicios 3PL en Miami.
