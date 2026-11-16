@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-16 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 304
+Articles: 305
 
+- 2026-11-16 · [Los Ángeles y Long Beach superan el millón de TEU: claves para Miami](https://miamialliance3pl.com/blog/importaciones-los-angeles-long-beach-millon-teu-3pl-miami.html): Los Ángeles y Long Beach sumaron 1,000,500 TEU importados en octubre. Qué implica para importadores y vendedores que usan servicios 3PL en Miami.
 - 2026-11-16 · [India Opens Chemical Warehouse in Jafza: Lessons for Miami 3PL Buyers](https://miamialliance3pl.com/blog/india-jafza-chemical-warehouse-lessons-miami-3pl.html): Maritime Executive reports India opened its first overseas chemical warehouse in Jafza. Here is what it means for businesses using Miami 3PL services.
 - 2026-11-15 · [Reembolsos tarifários na mira da FTC: leitura para o 3PL em Miami](https://miamialliance3pl.com/blog/reembolsos-tarifarios-ftc-importadores-3pl-miami.html): Senadores democratas pedem à FTC que investigue empresas que não repassaram reembolsos de tarifas. Veja o que isso significa para quem usa 3PL em Miami.
 - 2026-11-15 · [Ley de última milla en Nueva York apunta a Amazon: claves para Miami](https://miamialliance3pl.com/blog/ley-ultima-milla-nueva-york-amazon-3pl-miami.html): FreightWaves informa que Nueva York probablemente aprobará una ley de entregas de última milla. Qué implica para quienes contratan servicios 3PL en Miami.
