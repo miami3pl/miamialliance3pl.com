@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-11-16 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-11-17 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 306
+Articles: 307
 
+- 2026-11-17 · [Carguero de UPS fuera de servicio en Miami: claves para su 3PL](https://miamialliance3pl.com/blog/carguero-ups-miami-temporada-alta-planificacion-3pl.html): Un carguero 767 de UPS quedó fuera de servicio tras un choque en el aeropuerto de Miami en plena temporada alta. Qué implica para quien usa un 3PL en Miami.
 - 2026-11-16 · [Petróleo volta ao excedente: o que muda para quem usa 3PL em Miami](https://miamialliance3pl.com/blog/petroleo-excedente-golfo-planejamento-3pl-miami.html): A AIE prevê excedente no mercado de petróleo com a retomada das exportações do Golfo. Veja o que isso indica para frete, diesel e estoque em Miami.
 - 2026-11-16 · [Los Ángeles y Long Beach superan el millón de TEU: claves para Miami](https://miamialliance3pl.com/blog/importaciones-los-angeles-long-beach-millon-teu-3pl-miami.html): Los Ángeles y Long Beach sumaron 1,000,500 TEU importados en octubre. Qué implica para importadores y vendedores que usan servicios 3PL en Miami.
 - 2026-11-16 · [India Opens Chemical Warehouse in Jafza: Lessons for Miami 3PL Buyers](https://miamialliance3pl.com/blog/india-jafza-chemical-warehouse-lessons-miami-3pl.html): Maritime Executive reports India opened its first overseas chemical warehouse in Jafza. Here is what it means for businesses using Miami 3PL services.
