@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-17 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 307
+Articles: 308
 
+- 2026-11-17 · [DHL contrata 7.000 temporários para o pico: lições para o 3PL em Miami](https://miamialliance3pl.com/blog/dhl-temporarios-pico-planejamento-3pl-miami.html): A DHL Supply Chain planeja contratar 7.000 temporários para um pico de fim de ano mais longo. Veja o que muda para quem usa 3PL em Miami.
 - 2026-11-17 · [Carguero de UPS fuera de servicio en Miami: claves para su 3PL](https://miamialliance3pl.com/blog/carguero-ups-miami-temporada-alta-planificacion-3pl.html): Un carguero 767 de UPS quedó fuera de servicio tras un choque en el aeropuerto de Miami en plena temporada alta. Qué implica para quien usa un 3PL en Miami.
 - 2026-11-16 · [Petróleo volta ao excedente: o que muda para quem usa 3PL em Miami](https://miamialliance3pl.com/blog/petroleo-excedente-golfo-planejamento-3pl-miami.html): A AIE prevê excedente no mercado de petróleo com a retomada das exportações do Golfo. Veja o que isso indica para frete, diesel e estoque em Miami.
 - 2026-11-16 · [Los Ángeles y Long Beach superan el millón de TEU: claves para Miami](https://miamialliance3pl.com/blog/importaciones-los-angeles-long-beach-millon-teu-3pl-miami.html): Los Ángeles y Long Beach sumaron 1,000,500 TEU importados en octubre. Qué implica para importadores y vendedores que usan servicios 3PL en Miami.
