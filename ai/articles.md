@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-18 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 310
+Articles: 311
 
+- 2026-11-18 · [Importação recorde de contêineres nos EUA: lições para o 3PL em Miami](https://miamialliance3pl.com/blog/importacao-recorde-conteineres-eua-3pl-miami.html): As importações em contêineres dos EUA bateram recorde de 2,67 milhões de TEUs em outubro. Veja o que isso significa para quem usa 3PL em Miami.
 - 2026-11-18 · [Primer contrato sindical de Amazon en Canadá: claves para el 3PL en Miami](https://miamialliance3pl.com/blog/contrato-sindical-amazon-canada-claves-3pl-miami.html): Amazon operará un centro en Columbia Británica bajo un contrato sindical por tres años. Qué implica para vendedores que usan servicios 3PL en Miami.
 - 2026-11-18 · [EU Parcel Charges Test Black Friday Bundles: Lessons for Miami 3PL Users](https://miamialliance3pl.com/blog/eu-parcel-charges-black-friday-bundles-miami-3pl.html): The EU's new €3 duty and €2 handling fee raise the cost of Black Friday bundles. What sellers using 3PL services in Miami should review now.
 - 2026-11-17 · [DHL contrata 7.000 temporários para o pico: lições para o 3PL em Miami](https://miamialliance3pl.com/blog/dhl-temporarios-pico-planejamento-3pl-miami.html): A DHL Supply Chain planeja contratar 7.000 temporários para um pico de fim de ano mais longo. Veja o que muda para quem usa 3PL em Miami.
