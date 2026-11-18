@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-11-17 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-11-18 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 308
+Articles: 309
 
+- 2026-11-18 · [EU Parcel Charges Test Black Friday Bundles: Lessons for Miami 3PL Users](https://miamialliance3pl.com/blog/eu-parcel-charges-black-friday-bundles-miami-3pl.html): The EU's new €3 duty and €2 handling fee raise the cost of Black Friday bundles. What sellers using 3PL services in Miami should review now.
 - 2026-11-17 · [DHL contrata 7.000 temporários para o pico: lições para o 3PL em Miami](https://miamialliance3pl.com/blog/dhl-temporarios-pico-planejamento-3pl-miami.html): A DHL Supply Chain planeja contratar 7.000 temporários para um pico de fim de ano mais longo. Veja o que muda para quem usa 3PL em Miami.
 - 2026-11-17 · [Carguero de UPS fuera de servicio en Miami: claves para su 3PL](https://miamialliance3pl.com/blog/carguero-ups-miami-temporada-alta-planificacion-3pl.html): Un carguero 767 de UPS quedó fuera de servicio tras un choque en el aeropuerto de Miami en plena temporada alta. Qué implica para quien usa un 3PL en Miami.
 - 2026-11-16 · [Petróleo volta ao excedente: o que muda para quem usa 3PL em Miami](https://miamialliance3pl.com/blog/petroleo-excedente-golfo-planejamento-3pl-miami.html): A AIE prevê excedente no mercado de petróleo com a retomada das exportações do Golfo. Veja o que isso indica para frete, diesel e estoque em Miami.

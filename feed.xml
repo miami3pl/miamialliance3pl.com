@@ -6,8 +6,17 @@
     <atom:link href="https://miamialliance3pl.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Guides and logistics news from Miami Alliance 3PL, a 3PL warehouse in Medley, Florida: 3PL services in Miami, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America trade.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Nov 2026 08:00:00 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 08:00:00 -0500</lastBuildDate>
     <generator>admin/site_index.py</generator>
+    <item>
+      <title>EU Parcel Charges Test Black Friday Bundles: Lessons for Miami 3PL Users</title>
+      <link>https://miamialliance3pl.com/blog/eu-parcel-charges-black-friday-bundles-miami-3pl.html</link>
+      <guid isPermaLink="true">https://miamialliance3pl.com/blog/eu-parcel-charges-black-friday-bundles-miami-3pl.html</guid>
+      <pubDate>Wed, 18 Nov 2026 08:00:00 -0500</pubDate>
+      <dc:creator>Miami Alliance 3PL</dc:creator>
+      <category>Tariffs &amp; Customs</category>
+      <description>The EU's new €3 duty and €2 handling fee raise the cost of Black Friday bundles. What sellers using 3PL services in Miami should review now.</description>
+    </item>
     <item>
       <title>DHL contrata 7.000 temporários para o pico: lições para o 3PL em Miami</title>
       <link>https://miamialliance3pl.com/blog/dhl-temporarios-pico-planejamento-3pl-miami.html</link>
@@ -448,15 +457,6 @@
       <dc:creator>Miami Alliance 3PL</dc:creator>
       <category>Cadena de suministro</category>
       <description>Rusia prolonga la restricción a las exportaciones de diésel. Qué revisar en su inventario, transporte y servicios 3PL en Miami ante esta noticia.</description>
-    </item>
-    <item>
-      <title>Cabotage Enforcement Puts Miami Inventory Planning in Focus</title>
-      <link>https://miamialliance3pl.com/blog/cabotage-enforcement-miami-inventory-planning.html</link>
-      <guid isPermaLink="true">https://miamialliance3pl.com/blog/cabotage-enforcement-miami-inventory-planning.html</guid>
-      <pubDate>Sun, 01 Nov 2026 08:00:00 -0500</pubDate>
-      <dc:creator>Miami Alliance 3PL</dc:creator>
-      <category>Freight</category>
-      <description>FreightWaves reports tougher cabotage enforcement. Learn what potential trucking constraints mean for inventory planning and 3PL services in Miami.</description>
     </item>
   </channel>
 </rss>
