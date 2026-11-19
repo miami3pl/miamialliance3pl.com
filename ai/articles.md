@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-19 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 312
+Articles: 313
 
+- 2026-11-19 · [Fretamentos de carga México-EUA à espera: impacto para o 3PL em Miami](https://miamialliance3pl.com/blog/fretamentos-carga-mexico-eua-espera-3pl-miami.html): The Loadstar relata que voos fretados de carga entre México e EUA ainda esperam aprovação. Veja o que isso muda para quem usa serviços de 3PL em Miami.
 - 2026-11-19 · [Truckload Spot Rates Rise as Diesel Falls: Miami 3PL Takeaways](https://miamialliance3pl.com/blog/truckload-spot-rates-diesel-divergence-miami-3pl.html): FreightWaves reports dry van spot rates climbed while diesel fell. What capacity limits and a late inventory push mean for Miami 3PL buyers this season.
 - 2026-11-18 · [Importação recorde de contêineres nos EUA: lições para o 3PL em Miami](https://miamialliance3pl.com/blog/importacao-recorde-conteineres-eua-3pl-miami.html): As importações em contêineres dos EUA bateram recorde de 2,67 milhões de TEUs em outubro. Veja o que isso significa para quem usa 3PL em Miami.
 - 2026-11-18 · [Primer contrato sindical de Amazon en Canadá: claves para el 3PL en Miami](https://miamialliance3pl.com/blog/contrato-sindical-amazon-canada-claves-3pl-miami.html): Amazon operará un centro en Columbia Británica bajo un contrato sindical por tres años. Qué implica para vendedores que usan servicios 3PL en Miami.
