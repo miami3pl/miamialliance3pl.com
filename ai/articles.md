@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-11-18 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-11-19 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 311
+Articles: 312
 
+- 2026-11-19 · [Truckload Spot Rates Rise as Diesel Falls: Miami 3PL Takeaways](https://miamialliance3pl.com/blog/truckload-spot-rates-diesel-divergence-miami-3pl.html): FreightWaves reports dry van spot rates climbed while diesel fell. What capacity limits and a late inventory push mean for Miami 3PL buyers this season.
 - 2026-11-18 · [Importação recorde de contêineres nos EUA: lições para o 3PL em Miami](https://miamialliance3pl.com/blog/importacao-recorde-conteineres-eua-3pl-miami.html): As importações em contêineres dos EUA bateram recorde de 2,67 milhões de TEUs em outubro. Veja o que isso significa para quem usa 3PL em Miami.
 - 2026-11-18 · [Primer contrato sindical de Amazon en Canadá: claves para el 3PL en Miami](https://miamialliance3pl.com/blog/contrato-sindical-amazon-canada-claves-3pl-miami.html): Amazon operará un centro en Columbia Británica bajo un contrato sindical por tres años. Qué implica para vendedores que usan servicios 3PL en Miami.
 - 2026-11-18 · [EU Parcel Charges Test Black Friday Bundles: Lessons for Miami 3PL Users](https://miamialliance3pl.com/blog/eu-parcel-charges-black-friday-bundles-miami-3pl.html): The EU's new €3 duty and €2 handling fee raise the cost of Black Friday bundles. What sellers using 3PL services in Miami should review now.
