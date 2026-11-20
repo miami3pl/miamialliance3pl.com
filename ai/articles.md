@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-20 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 315
+Articles: 316
 
+- 2026-11-20 · [Amazon amenaza con salir de Nueva York: lecciones para su 3PL en Miami](https://miamialliance3pl.com/blog/amazon-amenaza-salir-nueva-york-lecciones-3pl-miami.html): Transport Topics informa que Amazon amenaza con dejar Nueva York por la Delivery Protection Act. Qué implica para quien usa servicios 3PL en Miami.
 - 2026-11-20 · [2026 Holiday Ecommerce Forecasts: Planning Notes for Miami 3PL Users](https://miamialliance3pl.com/blog/holiday-ecommerce-forecast-peak-planning-miami-3pl.html): Adobe, Deloitte, ICSC and NRF forecasts point to steady holiday ecommerce growth. Here is how Miami 3PL users can plan stock, cutoffs and returns.
 - 2026-11-19 · [Fletes spot de camión ceden y los contratos suben: claves para Miami](https://miamialliance3pl.com/blog/fletes-spot-camion-contratos-3pl-miami.html): FreightWaves: el flete spot de camión baja a US$2,58 por milla, sin combustible, y los contratos suben. Claves para quien usa 3PL en Miami.
 - 2026-11-19 · [Fretamentos de carga México-EUA à espera: impacto para o 3PL em Miami](https://miamialliance3pl.com/blog/fretamentos-carga-mexico-eua-espera-3pl-miami.html): The Loadstar relata que voos fretados de carga entre México e EUA ainda esperam aprovação. Veja o que isso muda para quem usa serviços de 3PL em Miami.
