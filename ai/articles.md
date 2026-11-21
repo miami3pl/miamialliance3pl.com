@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-21 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 319
+Articles: 320
 
+- 2026-11-21 · [México endurece regras digitais para caminhões: lições para 3PL em Miami](https://miamialliance3pl.com/blog/mexico-regras-digitais-caminhoes-3pl-miami.html): A SICT do México publicou regras digitais de autorregulação para transportadoras, com controle de peso. Veja o que muda para quem usa 3PL em Miami.
 - 2026-11-21 · [México y la Unión Europea se acercan: claves para su 3PL en Miami](https://miamialliance3pl.com/blog/mexico-union-europea-acuerdo-comercial-3pl-miami.html): El comisario europeo Christophe Hansen espera que México ratifique el acuerdo con la UE este año: qué implica para quien usa un 3PL en Miami.
 - 2026-11-21 · [Holiday Truckload Rejections Near 14%: Planning for Miami 3PL Users](https://miamialliance3pl.com/blog/holiday-truckload-tender-rejections-miami-3pl-planning.html): FreightWaves reports truckload tender rejections toward 13% before Thanksgiving, with roughly 14% forecast. What it means for Miami 3PL users.
 - 2026-11-20 · [Diesel pressiona o Walmart: o que muda para quem usa 3PL em Miami](https://miamialliance3pl.com/blog/walmart-diesel-custos-transporte-3pl-miami.html): Walmart eleva metas anuais, mas o CEO diz que diesel e transporte somaram cerca de US$ 2 bilhões em custos extras. O que muda para quem usa 3PL em Miami.
