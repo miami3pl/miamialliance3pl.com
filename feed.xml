@@ -6,8 +6,17 @@
     <atom:link href="https://miamialliance3pl.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Guides and logistics news from Miami Alliance 3PL, a 3PL warehouse in Medley, Florida: 3PL services in Miami, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America trade.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Nov 2026 08:00:00 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 08:00:00 -0500</lastBuildDate>
     <generator>admin/site_index.py</generator>
+    <item>
+      <title>Holiday Truckload Rejections Near 14%: Planning for Miami 3PL Users</title>
+      <link>https://miamialliance3pl.com/blog/holiday-truckload-tender-rejections-miami-3pl-planning.html</link>
+      <guid isPermaLink="true">https://miamialliance3pl.com/blog/holiday-truckload-tender-rejections-miami-3pl-planning.html</guid>
+      <pubDate>Sat, 21 Nov 2026 08:00:00 -0500</pubDate>
+      <dc:creator>Miami Alliance 3PL</dc:creator>
+      <category>Freight</category>
+      <description>FreightWaves reports truckload tender rejections toward 13% before Thanksgiving, with roughly 14% forecast. What it means for Miami 3PL users.</description>
+    </item>
     <item>
       <title>Diesel pressiona o Walmart: o que muda para quem usa 3PL em Miami</title>
       <link>https://miamialliance3pl.com/blog/walmart-diesel-custos-transporte-3pl-miami.html</link>
@@ -448,15 +457,6 @@
       <dc:creator>Miami Alliance 3PL</dc:creator>
       <category>Cadena de suministro</category>
       <description>FreightWaves reporta mayores costos logísticos en el comercio minorista. Qué revisar en inventario y despachos al contratar servicios 3PL en Miami.</description>
-    </item>
-    <item>
-      <title>Inventory Surge Puts Miami 3PL Freight Planning Under Pressure</title>
-      <link>https://miamialliance3pl.com/blog/inventory-surge-miami-3pl-freight-planning.html</link>
-      <guid isPermaLink="true">https://miamialliance3pl.com/blog/inventory-surge-miami-3pl-freight-planning.html</guid>
-      <pubDate>Wed, 04 Nov 2026 08:00:00 -0500</pubDate>
-      <dc:creator>Miami Alliance 3PL</dc:creator>
-      <category>Supply Chain</category>
-      <description>FreightWaves reports rising inventories and tighter freight capacity. See what Miami businesses should review in warehouse, shipping and fulfillment plans.</description>
     </item>
   </channel>
 </rss>
