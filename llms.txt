@@ -72,6 +72,7 @@ Miami Alliance 3PL provides 3PL services in Miami from its warehouse at 8780 NW 
 
 Newest original articles from the Miami Alliance 3PL blog. Full index of every article: [https://miamialliance3pl.com/ai/articles.md](https://miamialliance3pl.com/ai/articles.md). RSS: [https://miamialliance3pl.com/feed.xml](https://miamialliance3pl.com/feed.xml).
 
+- [DHL simplifica la descripción aduanera: claves para su 3PL en Miami](https://miamialliance3pl.com/blog/dhl-descripcion-aduanera-foto-3pl-miami.html): DHL Express lanzó en 10 mercados de América una herramienta que genera descripciones aduaneras a partir de una foto. Qué implica para quien usa 3PL en Miami. (published 2026-11-22)
 - [México endurece regras digitais para caminhões: lições para 3PL em Miami](https://miamialliance3pl.com/blog/mexico-regras-digitais-caminhoes-3pl-miami.html): A SICT do México publicou regras digitais de autorregulação para transportadoras, com controle de peso. Veja o que muda para quem usa 3PL em Miami. (published 2026-11-21)
 - [México y la Unión Europea se acercan: claves para su 3PL en Miami](https://miamialliance3pl.com/blog/mexico-union-europea-acuerdo-comercial-3pl-miami.html): El comisario europeo Christophe Hansen espera que México ratifique el acuerdo con la UE este año: qué implica para quien usa un 3PL en Miami. (published 2026-11-21)
 - [Holiday Truckload Rejections Near 14%: Planning for Miami 3PL Users](https://miamialliance3pl.com/blog/holiday-truckload-tender-rejections-miami-3pl-planning.html): FreightWaves reports truckload tender rejections toward 13% before Thanksgiving, with roughly 14% forecast. What it means for Miami 3PL users. (published 2026-11-21)
@@ -83,7 +84,6 @@ Newest original articles from the Miami Alliance 3PL blog. Full index of every a
 - [Truckload Spot Rates Rise as Diesel Falls: Miami 3PL Takeaways](https://miamialliance3pl.com/blog/truckload-spot-rates-diesel-divergence-miami-3pl.html): FreightWaves reports dry van spot rates climbed while diesel fell. What capacity limits and a late inventory push mean for Miami 3PL buyers this season. (published 2026-11-19)
 - [Importação recorde de contêineres nos EUA: lições para o 3PL em Miami](https://miamialliance3pl.com/blog/importacao-recorde-conteineres-eua-3pl-miami.html): As importações em contêineres dos EUA bateram recorde de 2,67 milhões de TEUs em outubro. Veja o que isso significa para quem usa 3PL em Miami. (published 2026-11-18)
 - [Primer contrato sindical de Amazon en Canadá: claves para el 3PL en Miami](https://miamialliance3pl.com/blog/contrato-sindical-amazon-canada-claves-3pl-miami.html): Amazon operará un centro en Columbia Británica bajo un contrato sindical por tres años. Qué implica para vendedores que usan servicios 3PL en Miami. (published 2026-11-18)
-- [EU Parcel Charges Test Black Friday Bundles: Lessons for Miami 3PL Users](https://miamialliance3pl.com/blog/eu-parcel-charges-black-friday-bundles-miami-3pl.html): The EU's new €3 duty and €2 handling fee raise the cost of Black Friday bundles. What sellers using 3PL services in Miami should review now. (published 2026-11-18)
 
 <!-- latest-articles:end -->
 
