@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-23 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 323
+Articles: 324
 
+- 2026-11-23 · [Bangladesh recurre al flete aéreo: lecciones para su 3PL en Miami](https://miamialliance3pl.com/blog/bangladesh-prendas-flete-aereo-3pl-miami.html): La crisis laboral en Bangladesh empuja a los exportadores de prendas al flete aéreo. Qué implica para importadores y vendedores que usan un 3PL en Miami.
 - 2026-11-23 · [Belgian Air Traffic Strike Hits Peak Cargo: Lessons for Miami 3PL Users](https://miamialliance3pl.com/blog/belgian-air-traffic-strike-cargo-black-friday-miami-3pl.html): A Belgian air traffic control strike disrupted Liège and Brussels cargo before Black Friday. Here is what Miami 3PL users can learn about peak planning.
 - 2026-11-22 · [Nova York revê lei de entregas da Amazon: lições para o 3PL em Miami](https://miamialliance3pl.com/blog/nova-york-lei-entregas-amazon-licoes-3pl-miami.html): Vereadores de Nova York discutem trocar a contratação direta de entregadores da Amazon por opções. Veja o que isso ensina a quem vende nos EUA via Miami.
 - 2026-11-22 · [DHL simplifica la descripción aduanera: claves para su 3PL en Miami](https://miamialliance3pl.com/blog/dhl-descripcion-aduanera-foto-3pl-miami.html): DHL Express lanzó en 10 mercados de América una herramienta que genera descripciones aduaneras a partir de una foto. Qué implica para quien usa 3PL en Miami.
