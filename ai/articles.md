@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-11-22 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-11-23 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 322
+Articles: 323
 
+- 2026-11-23 · [Belgian Air Traffic Strike Hits Peak Cargo: Lessons for Miami 3PL Users](https://miamialliance3pl.com/blog/belgian-air-traffic-strike-cargo-black-friday-miami-3pl.html): A Belgian air traffic control strike disrupted Liège and Brussels cargo before Black Friday. Here is what Miami 3PL users can learn about peak planning.
 - 2026-11-22 · [Nova York revê lei de entregas da Amazon: lições para o 3PL em Miami](https://miamialliance3pl.com/blog/nova-york-lei-entregas-amazon-licoes-3pl-miami.html): Vereadores de Nova York discutem trocar a contratação direta de entregadores da Amazon por opções. Veja o que isso ensina a quem vende nos EUA via Miami.
 - 2026-11-22 · [DHL simplifica la descripción aduanera: claves para su 3PL en Miami](https://miamialliance3pl.com/blog/dhl-descripcion-aduanera-foto-3pl-miami.html): DHL Express lanzó en 10 mercados de América una herramienta que genera descripciones aduaneras a partir de una foto. Qué implica para quien usa 3PL en Miami.
 - 2026-11-21 · [México endurece regras digitais para caminhões: lições para 3PL em Miami](https://miamialliance3pl.com/blog/mexico-regras-digitais-caminhoes-3pl-miami.html): A SICT do México publicou regras digitais de autorregulação para transportadoras, com controle de peso. Veja o que muda para quem usa 3PL em Miami.

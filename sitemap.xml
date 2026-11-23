@@ -164,7 +164,7 @@
   </url>
   <url>
     <loc>https://miamialliance3pl.com/blog.html</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -2121,6 +2121,12 @@
   <url>
     <loc>https://miamialliance3pl.com/blog/nova-york-lei-entregas-amazon-licoes-3pl-miami.html</loc>
     <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://miamialliance3pl.com/blog/belgian-air-traffic-strike-cargo-black-friday-miami-3pl.html</loc>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
