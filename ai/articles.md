@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-24 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 327
+Articles: 328
 
+- 2026-11-24 · [Williams-Sonoma cresce 6,8% no e-commerce: lições para o 3PL em Miami](https://miamialliance3pl.com/blog/williams-sonoma-ecommerce-diesel-licoes-3pl-miami.html): As vendas comparáveis online da Williams-Sonoma subiram 6,8% mesmo com diesel mais caro e portos congestionados. Lições para quem usa 3PL em Miami.
 - 2026-11-24 · [Importaciones récord y carga inaccesible: claves para su 3PL en Miami](https://miamialliance3pl.com/blog/importaciones-record-carga-inaccesible-3pl-miami.html): Según Descartes, EE. UU. importó 2,674,808 TEU en octubre, pero la carga inaccesible frenó a los camioneros. Lo que implica para su 3PL en Miami.
 - 2026-11-24 · [Savannah Port Volume Jumps 25% in October: Lessons for Miami 3PL Users](https://miamialliance3pl.com/blog/savannah-port-october-container-surge-miami-3pl-planning.html): FreightWaves reports the Port of Savannah handled 565,366 TEUs in October, up 25%. What the surge means for importers and sellers using a Miami 3PL.
 - 2026-11-23 · [Equipamento antigo e risco cibernético: lições para o 3PL em Miami](https://miamialliance3pl.com/blog/equipamento-antigo-risco-cibernetico-3pl-miami.html): Supply Chain Brain mostra como equipamentos antigos de armazém abrem brechas cibernéticas e o que isso muda para quem usa serviços de 3PL em Miami.
