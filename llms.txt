@@ -72,6 +72,7 @@ Miami Alliance 3PL provides 3PL services in Miami from its warehouse at 8780 NW 
 
 Newest original articles from the Miami Alliance 3PL blog. Full index of every article: [https://miamialliance3pl.com/ai/articles.md](https://miamialliance3pl.com/ai/articles.md). RSS: [https://miamialliance3pl.com/feed.xml](https://miamialliance3pl.com/feed.xml).
 
+- [Savannah Port Volume Jumps 25% in October: Lessons for Miami 3PL Users](https://miamialliance3pl.com/blog/savannah-port-october-container-surge-miami-3pl-planning.html): FreightWaves reports the Port of Savannah handled 565,366 TEUs in October, up 25%. What the surge means for importers and sellers using a Miami 3PL. (published 2026-11-24)
 - [Equipamento antigo e risco cibernético: lições para o 3PL em Miami](https://miamialliance3pl.com/blog/equipamento-antigo-risco-cibernetico-3pl-miami.html): Supply Chain Brain mostra como equipamentos antigos de armazém abrem brechas cibernéticas e o que isso muda para quem usa serviços de 3PL em Miami. (published 2026-11-23)
 - [Bangladesh recurre al flete aéreo: lecciones para su 3PL en Miami](https://miamialliance3pl.com/blog/bangladesh-prendas-flete-aereo-3pl-miami.html): La crisis laboral en Bangladesh empuja a los exportadores de prendas al flete aéreo. Qué implica para importadores y vendedores que usan un 3PL en Miami. (published 2026-11-23)
 - [Belgian Air Traffic Strike Hits Peak Cargo: Lessons for Miami 3PL Users](https://miamialliance3pl.com/blog/belgian-air-traffic-strike-cargo-black-friday-miami-3pl.html): A Belgian air traffic control strike disrupted Liège and Brussels cargo before Black Friday. Here is what Miami 3PL users can learn about peak planning. (published 2026-11-23)
@@ -83,7 +84,6 @@ Newest original articles from the Miami Alliance 3PL blog. Full index of every a
 - [Diesel pressiona o Walmart: o que muda para quem usa 3PL em Miami](https://miamialliance3pl.com/blog/walmart-diesel-custos-transporte-3pl-miami.html): Walmart eleva metas anuais, mas o CEO diz que diesel e transporte somaram cerca de US$ 2 bilhões em custos extras. O que muda para quem usa 3PL em Miami. (published 2026-11-20)
 - [Amazon amenaza con salir de Nueva York: lecciones para su 3PL en Miami](https://miamialliance3pl.com/blog/amazon-amenaza-salir-nueva-york-lecciones-3pl-miami.html): Transport Topics informa que Amazon amenaza con dejar Nueva York por la Delivery Protection Act. Qué implica para quien usa servicios 3PL en Miami. (published 2026-11-20)
 - [2026 Holiday Ecommerce Forecasts: Planning Notes for Miami 3PL Users](https://miamialliance3pl.com/blog/holiday-ecommerce-forecast-peak-planning-miami-3pl.html): Adobe, Deloitte, ICSC and NRF forecasts point to steady holiday ecommerce growth. Here is how Miami 3PL users can plan stock, cutoffs and returns. (published 2026-11-20)
-- [Fletes spot de camión ceden y los contratos suben: claves para Miami](https://miamialliance3pl.com/blog/fletes-spot-camion-contratos-3pl-miami.html): FreightWaves: el flete spot de camión baja a US$2,58 por milla, sin combustible, y los contratos suben. Claves para quien usa 3PL en Miami. (published 2026-11-19)
 
 <!-- latest-articles:end -->
 
