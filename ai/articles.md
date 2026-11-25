@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-11-24 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-11-25 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 328
+Articles: 329
 
+- 2026-11-25 · [Guarulhos Air Cargo Backlog: Lessons for Miami 3PL and LatAm Shippers](https://miamialliance3pl.com/blog/guarulhos-air-cargo-backlog-lessons-miami-3pl.html): Tighter export checks filled Brazil's Guarulhos cargo terminal, leaving trucks waiting days. What the backlog means for importers using a Miami 3PL.
 - 2026-11-24 · [Williams-Sonoma cresce 6,8% no e-commerce: lições para o 3PL em Miami](https://miamialliance3pl.com/blog/williams-sonoma-ecommerce-diesel-licoes-3pl-miami.html): As vendas comparáveis online da Williams-Sonoma subiram 6,8% mesmo com diesel mais caro e portos congestionados. Lições para quem usa 3PL em Miami.
 - 2026-11-24 · [Importaciones récord y carga inaccesible: claves para su 3PL en Miami](https://miamialliance3pl.com/blog/importaciones-record-carga-inaccesible-3pl-miami.html): Según Descartes, EE. UU. importó 2,674,808 TEU en octubre, pero la carga inaccesible frenó a los camioneros. Lo que implica para su 3PL en Miami.
 - 2026-11-24 · [Savannah Port Volume Jumps 25% in October: Lessons for Miami 3PL Users](https://miamialliance3pl.com/blog/savannah-port-october-container-surge-miami-3pl-planning.html): FreightWaves reports the Port of Savannah handled 565,366 TEUs in October, up 25%. What the surge means for importers and sellers using a Miami 3PL.
