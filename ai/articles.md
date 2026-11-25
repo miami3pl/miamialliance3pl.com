@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-25 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 330
+Articles: 331
 
+- 2026-11-25 · [EUA preparam tarifas sobre China e UE: o que muda no 3PL em Miami](https://miamialliance3pl.com/blog/tarifas-secao-301-china-uniao-europeia-3pl-miami.html): Transport Topics informa que os EUA preparam tarifas da Seção 301 sobre China, UE e outras economias. Veja como planejar estoque e logística em Miami.
 - 2026-11-25 · [Importaciones récord sostienen el tonelaje de octubre: claves para Miami](https://miamialliance3pl.com/blog/tonelaje-camiones-importaciones-record-3pl-miami.html): Según Transport Topics, el tonelaje de camiones en EE. UU. subió 1,8 % interanual en octubre por importaciones récord. Claves para su 3PL en Miami.
 - 2026-11-25 · [Guarulhos Air Cargo Backlog: Lessons for Miami 3PL and LatAm Shippers](https://miamialliance3pl.com/blog/guarulhos-air-cargo-backlog-lessons-miami-3pl.html): Tighter export checks filled Brazil's Guarulhos cargo terminal, leaving trucks waiting days. What the backlog means for importers using a Miami 3PL.
 - 2026-11-24 · [Williams-Sonoma cresce 6,8% no e-commerce: lições para o 3PL em Miami](https://miamialliance3pl.com/blog/williams-sonoma-ecommerce-diesel-licoes-3pl-miami.html): As vendas comparáveis online da Williams-Sonoma subiram 6,8% mesmo com diesel mais caro e portos congestionados. Lições para quem usa 3PL em Miami.
