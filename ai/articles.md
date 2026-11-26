@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-11-25 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-11-26 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 331
+Articles: 332
 
+- 2026-11-26 · [Shein Revenue Slides 6% on EU Fees: Lessons for Miami 3PL Users](https://miamialliance3pl.com/blog/shein-eu-import-fees-local-inventory-miami-3pl.html): FreightWaves reports Shein revenue fell 6% as EU parcel fees hit Europe. What local fulfillment and delivery claims mean for Miami 3PL users.
 - 2026-11-25 · [EUA preparam tarifas sobre China e UE: o que muda no 3PL em Miami](https://miamialliance3pl.com/blog/tarifas-secao-301-china-uniao-europeia-3pl-miami.html): Transport Topics informa que os EUA preparam tarifas da Seção 301 sobre China, UE e outras economias. Veja como planejar estoque e logística em Miami.
 - 2026-11-25 · [Importaciones récord sostienen el tonelaje de octubre: claves para Miami](https://miamialliance3pl.com/blog/tonelaje-camiones-importaciones-record-3pl-miami.html): Según Transport Topics, el tonelaje de camiones en EE. UU. subió 1,8 % interanual en octubre por importaciones récord. Claves para su 3PL en Miami.
 - 2026-11-25 · [Guarulhos Air Cargo Backlog: Lessons for Miami 3PL and LatAm Shippers](https://miamialliance3pl.com/blog/guarulhos-air-cargo-backlog-lessons-miami-3pl.html): Tighter export checks filled Brazil's Guarulhos cargo terminal, leaving trucks waiting days. What the backlog means for importers using a Miami 3PL.

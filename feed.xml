@@ -6,8 +6,17 @@
     <atom:link href="https://miamialliance3pl.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Guides and logistics news from Miami Alliance 3PL, a 3PL warehouse in Medley, Florida: 3PL services in Miami, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America trade.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Nov 2026 08:00:00 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 08:00:00 -0500</lastBuildDate>
     <generator>admin/site_index.py</generator>
+    <item>
+      <title>Shein Revenue Slides 6% on EU Fees: Lessons for Miami 3PL Users</title>
+      <link>https://miamialliance3pl.com/blog/shein-eu-import-fees-local-inventory-miami-3pl.html</link>
+      <guid isPermaLink="true">https://miamialliance3pl.com/blog/shein-eu-import-fees-local-inventory-miami-3pl.html</guid>
+      <pubDate>Thu, 26 Nov 2026 08:00:00 -0500</pubDate>
+      <dc:creator>Miami Alliance 3PL</dc:creator>
+      <category>E-Commerce</category>
+      <description>FreightWaves reports Shein revenue fell 6% as EU parcel fees hit Europe. What local fulfillment and delivery claims mean for Miami 3PL users.</description>
+    </item>
     <item>
       <title>EUA preparam tarifas sobre China e UE: o que muda no 3PL em Miami</title>
       <link>https://miamialliance3pl.com/blog/tarifas-secao-301-china-uniao-europeia-3pl-miami.html</link>
@@ -448,15 +457,6 @@
       <dc:creator>Miami Alliance 3PL</dc:creator>
       <category>Freight</category>
       <description>The Loadstar reports Bangkok cargo delays affecting imports and exports. What businesses using Miami 3PL services should review in their inventory plans.</description>
-    </item>
-    <item>
-      <title>Amazon integra Uber Eats ao Prime: leitura para o 3PL em Miami</title>
-      <link>https://miamialliance3pl.com/blog/amazon-uber-eats-prime-logistica-miami.html</link>
-      <guid isPermaLink="true">https://miamialliance3pl.com/blog/amazon-uber-eats-prime-logistica-miami.html</guid>
-      <pubDate>Sun, 08 Nov 2026 08:00:00 -0500</pubDate>
-      <dc:creator>Miami Alliance 3PL</dc:creator>
-      <category>E-commerce</category>
-      <description>Amazon inclui Uber Eats no Prime. Entenda o anúncio e o que avaliar no estoque, nos canais de venda e nos serviços de 3PL em Miami para sua operação.</description>
     </item>
   </channel>
 </rss>
