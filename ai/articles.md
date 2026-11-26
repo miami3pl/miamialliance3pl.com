@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-26 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 332
+Articles: 333
 
+- 2026-11-26 · [Nuevos aranceles a China y la UE: claves para su 3PL en Miami](https://miamialliance3pl.com/blog/aranceles-seccion-301-china-union-europea-3pl-miami.html): EE. UU. prepara aranceles de 20 % a China y 15 % a la UE bajo la Sección 301. Claves para importadores latinoamericanos que usan un 3PL en Miami.
 - 2026-11-26 · [Shein Revenue Slides 6% on EU Fees: Lessons for Miami 3PL Users](https://miamialliance3pl.com/blog/shein-eu-import-fees-local-inventory-miami-3pl.html): FreightWaves reports Shein revenue fell 6% as EU parcel fees hit Europe. What local fulfillment and delivery claims mean for Miami 3PL users.
 - 2026-11-25 · [EUA preparam tarifas sobre China e UE: o que muda no 3PL em Miami](https://miamialliance3pl.com/blog/tarifas-secao-301-china-uniao-europeia-3pl-miami.html): Transport Topics informa que os EUA preparam tarifas da Seção 301 sobre China, UE e outras economias. Veja como planejar estoque e logística em Miami.
 - 2026-11-25 · [Importaciones récord sostienen el tonelaje de octubre: claves para Miami](https://miamialliance3pl.com/blog/tonelaje-camiones-importaciones-record-3pl-miami.html): Según Transport Topics, el tonelaje de camiones en EE. UU. subió 1,8 % interanual en octubre por importaciones récord. Claves para su 3PL en Miami.
