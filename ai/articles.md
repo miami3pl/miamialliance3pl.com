@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-27 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 336
+Articles: 337
 
+- 2026-11-27 · [Frete de contêiner sobe na Europa e cai nos EUA: lições para 3PL em Miami](https://miamialliance3pl.com/blog/frete-conteiner-europa-eua-sobretaxas-pico-3pl-miami.html): Sobretaxas de pico elevam o frete Ásia-Europa em dezembro, enquanto o spot para os EUA cai. Veja o que isso muda para quem usa 3PL em Miami.
 - 2026-11-27 · [Carguero de FedEx se sale de la pista en Miami: claves para su 3PL](https://miamialliance3pl.com/blog/carguero-fedex-sale-pista-miami-claves-3pl.html): Un MD-11 de FedEx se salió de la pista en el aeropuerto de Miami y la FAA detuvo los vuelos. Qué implica para quien usa servicios 3PL en Miami.
 - 2026-11-27 · [Ecommerce Air Hubs Lose Freighter Capacity: Lessons for Miami 3PL Users](https://miamialliance3pl.com/blog/ecommerce-air-hubs-freighter-capacity-miami-3pl.html): The Loadstar reports freighter capacity into Europe fell 15% as air rates climb. What tighter air cargo means for sellers planning inventory with a Miami 3PL.
 - 2026-11-26 · [Aço asiático avança apesar da tarifa de 50%: lições para 3PL em Miami](https://miamialliance3pl.com/blog/aco-asiatico-tarifas-eua-licoes-3pl-miami.html): Mesmo com tarifas de 50%, o aço asiático ganha espaço nos EUA. Veja o que a escassez e os prazos longos ensinam a quem importa e usa 3PL em Miami.
