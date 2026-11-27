@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-11-26 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-11-27 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 334
+Articles: 335
 
+- 2026-11-27 · [Ecommerce Air Hubs Lose Freighter Capacity: Lessons for Miami 3PL Users](https://miamialliance3pl.com/blog/ecommerce-air-hubs-freighter-capacity-miami-3pl.html): The Loadstar reports freighter capacity into Europe fell 15% as air rates climb. What tighter air cargo means for sellers planning inventory with a Miami 3PL.
 - 2026-11-26 · [Aço asiático avança apesar da tarifa de 50%: lições para 3PL em Miami](https://miamialliance3pl.com/blog/aco-asiatico-tarifas-eua-licoes-3pl-miami.html): Mesmo com tarifas de 50%, o aço asiático ganha espaço nos EUA. Veja o que a escassez e os prazos longos ensinam a quem importa e usa 3PL em Miami.
 - 2026-11-26 · [Nuevos aranceles a China y la UE: claves para su 3PL en Miami](https://miamialliance3pl.com/blog/aranceles-seccion-301-china-union-europea-3pl-miami.html): EE. UU. prepara aranceles de 20 % a China y 15 % a la UE bajo la Sección 301. Claves para importadores latinoamericanos que usan un 3PL en Miami.
 - 2026-11-26 · [Shein Revenue Slides 6% on EU Fees: Lessons for Miami 3PL Users](https://miamialliance3pl.com/blog/shein-eu-import-fees-local-inventory-miami-3pl.html): FreightWaves reports Shein revenue fell 6% as EU parcel fees hit Europe. What local fulfillment and delivery claims mean for Miami 3PL users.
