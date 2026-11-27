@@ -72,6 +72,7 @@ Miami Alliance 3PL provides 3PL services in Miami from its warehouse at 8780 NW 
 
 Newest original articles from the Miami Alliance 3PL blog. Full index of every article: [https://miamialliance3pl.com/ai/articles.md](https://miamialliance3pl.com/ai/articles.md). RSS: [https://miamialliance3pl.com/feed.xml](https://miamialliance3pl.com/feed.xml).
 
+- [Carguero de FedEx se sale de la pista en Miami: claves para su 3PL](https://miamialliance3pl.com/blog/carguero-fedex-sale-pista-miami-claves-3pl.html): Un MD-11 de FedEx se salió de la pista en el aeropuerto de Miami y la FAA detuvo los vuelos. Qué implica para quien usa servicios 3PL en Miami. (published 2026-11-27)
 - [Ecommerce Air Hubs Lose Freighter Capacity: Lessons for Miami 3PL Users](https://miamialliance3pl.com/blog/ecommerce-air-hubs-freighter-capacity-miami-3pl.html): The Loadstar reports freighter capacity into Europe fell 15% as air rates climb. What tighter air cargo means for sellers planning inventory with a Miami 3PL. (published 2026-11-27)
 - [Aço asiático avança apesar da tarifa de 50%: lições para 3PL em Miami](https://miamialliance3pl.com/blog/aco-asiatico-tarifas-eua-licoes-3pl-miami.html): Mesmo com tarifas de 50%, o aço asiático ganha espaço nos EUA. Veja o que a escassez e os prazos longos ensinam a quem importa e usa 3PL em Miami. (published 2026-11-26)
 - [Nuevos aranceles a China y la UE: claves para su 3PL en Miami](https://miamialliance3pl.com/blog/aranceles-seccion-301-china-union-europea-3pl-miami.html): EE. UU. prepara aranceles de 20 % a China y 15 % a la UE bajo la Sección 301. Claves para importadores latinoamericanos que usan un 3PL en Miami. (published 2026-11-26)
@@ -83,7 +84,6 @@ Newest original articles from the Miami Alliance 3PL blog. Full index of every a
 - [Importaciones récord y carga inaccesible: claves para su 3PL en Miami](https://miamialliance3pl.com/blog/importaciones-record-carga-inaccesible-3pl-miami.html): Según Descartes, EE. UU. importó 2,674,808 TEU en octubre, pero la carga inaccesible frenó a los camioneros. Lo que implica para su 3PL en Miami. (published 2026-11-24)
 - [Savannah Port Volume Jumps 25% in October: Lessons for Miami 3PL Users](https://miamialliance3pl.com/blog/savannah-port-october-container-surge-miami-3pl-planning.html): FreightWaves reports the Port of Savannah handled 565,366 TEUs in October, up 25%. What the surge means for importers and sellers using a Miami 3PL. (published 2026-11-24)
 - [Equipamento antigo e risco cibernético: lições para o 3PL em Miami](https://miamialliance3pl.com/blog/equipamento-antigo-risco-cibernetico-3pl-miami.html): Supply Chain Brain mostra como equipamentos antigos de armazém abrem brechas cibernéticas e o que isso muda para quem usa serviços de 3PL em Miami. (published 2026-11-23)
-- [Bangladesh recurre al flete aéreo: lecciones para su 3PL en Miami](https://miamialliance3pl.com/blog/bangladesh-prendas-flete-aereo-3pl-miami.html): La crisis laboral en Bangladesh empuja a los exportadores de prendas al flete aéreo. Qué implica para importadores y vendedores que usan un 3PL en Miami. (published 2026-11-23)
 
 <!-- latest-articles:end -->
 
