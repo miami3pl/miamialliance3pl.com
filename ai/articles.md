@@ -4,8 +4,9 @@
 
 Generated from blog/*.html on 2026-11-28 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 339
+Articles: 340
 
+- 2026-11-28 · [Nvidia suspende servidores na Ásia: lições para quem usa 3PL em Miami](https://miamialliance3pl.com/blog/nvidia-servidores-asia-controle-exportacao-licoes-3pl-miami.html): Regras dos EUA para chips avançados alcançam o Sudeste Asiático e o Brasil, e a Nvidia suspende servidores. Lições para quem usa 3PL em Miami.
 - 2026-11-28 · [Aranceles por sobrecapacidad a China y la UE: impacto en su 3PL en Miami](https://miamialliance3pl.com/blog/aranceles-sobrecapacidad-china-ue-brasil-3pl-miami.html): Estados Unidos prepara aranceles por sobrecapacidad a China, la UE y otras economías. Qué revisar si importa por Miami y distribuye en Latinoamérica.
 - 2026-11-28 · [Alaska Doubles Freighter Fleet: Air Cargo Lessons for Miami 3PL Users](https://miamialliance3pl.com/blog/alaska-freighter-fleet-hawaii-cargo-lessons-miami-3pl.html): Alaska Air Group is doubling its dedicated freighter fleet to grow Hawaii cargo. What added air capacity means for shippers using 3PL services in Miami.
 - 2026-11-27 · [Frete de contêiner sobe na Europa e cai nos EUA: lições para 3PL em Miami](https://miamialliance3pl.com/blog/frete-conteiner-europa-eua-sobretaxas-pico-3pl-miami.html): Sobretaxas de pico elevam o frete Ásia-Europa em dezembro, enquanto o spot para os EUA cai. Veja o que isso muda para quem usa 3PL em Miami.
