@@ -2,10 +2,11 @@
 
 > Every original article on the Miami Alliance 3PL blog, newest first. Miami Alliance 3PL is a third-party logistics (3PL) warehouse at 8780 NW 100th ST, Medley, FL 33178 offering 3PL services in Miami: warehousing, ecommerce fulfillment, Amazon FBA prep, wholesale distribution and Latin America logistics.
 
-Generated from blog/*.html on 2026-11-27 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
+Generated from blog/*.html on 2026-11-28 by admin/site_index.py. RSS feed: https://miamialliance3pl.com/feed.xml
 
-Articles: 337
+Articles: 338
 
+- 2026-11-28 · [Alaska Doubles Freighter Fleet: Air Cargo Lessons for Miami 3PL Users](https://miamialliance3pl.com/blog/alaska-freighter-fleet-hawaii-cargo-lessons-miami-3pl.html): Alaska Air Group is doubling its dedicated freighter fleet to grow Hawaii cargo. What added air capacity means for shippers using 3PL services in Miami.
 - 2026-11-27 · [Frete de contêiner sobe na Europa e cai nos EUA: lições para 3PL em Miami](https://miamialliance3pl.com/blog/frete-conteiner-europa-eua-sobretaxas-pico-3pl-miami.html): Sobretaxas de pico elevam o frete Ásia-Europa em dezembro, enquanto o spot para os EUA cai. Veja o que isso muda para quem usa 3PL em Miami.
 - 2026-11-27 · [Carguero de FedEx se sale de la pista en Miami: claves para su 3PL](https://miamialliance3pl.com/blog/carguero-fedex-sale-pista-miami-claves-3pl.html): Un MD-11 de FedEx se salió de la pista en el aeropuerto de Miami y la FAA detuvo los vuelos. Qué implica para quien usa servicios 3PL en Miami.
 - 2026-11-27 · [Ecommerce Air Hubs Lose Freighter Capacity: Lessons for Miami 3PL Users](https://miamialliance3pl.com/blog/ecommerce-air-hubs-freighter-capacity-miami-3pl.html): The Loadstar reports freighter capacity into Europe fell 15% as air rates climb. What tighter air cargo means for sellers planning inventory with a Miami 3PL.
